@@ -1,0 +1,61 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: projektet.aux
+The style file: biblatex.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: projektet-blx.bib
+Database file #2: bibtest.bib
+Biblatex version: 2.8
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+You've used 6 entries,
+            6047 wiz_defined-function locations,
+            1153 strings with 8642 characters,
+and the built_in function-call counts, 18281 in all, are:
+= -- 913
+> -- 575
+< -- 223
++ -- 230
+- -- 159
+* -- 1013
+:= -- 1173
+add.period$ -- 0
+call.type$ -- 6
+change.case$ -- 154
+chr.to.int$ -- 34
+cite$ -- 10
+duplicate$ -- 1958
+empty$ -- 1865
+format.name$ -- 280
+if$ -- 4294
+int.to.chr$ -- 0
+int.to.str$ -- 14
+missing$ -- 0
+newline$ -- 130
+num.names$ -- 316
+pop$ -- 1669
+preamble$ -- 1
+purify$ -- 162
+quote$ -- 0
+skip$ -- 1178
+stack$ -- 0
+substring$ -- 703
+swap$ -- 600
+text.length$ -- 142
+text.prefix$ -- 5
+top$ -- 1
+type$ -- 216
+warning$ -- 0
+while$ -- 134
+width$ -- 0
+write$ -- 123

@@ -1,0 +1,7 @@
+\frametitle{Properties of different actions}
+It turns out that some of the properties we've seen behave nicely and have certain properties:
+\begin{itemize}
+\item<2-> The $G$-boundary property is preserved under quotients,
+\item<3-> Strongly proximality is preserved under taking products,
+\item<4-> If $G \acts Y$ is minimal and $X$ is a $G$-boundary, then any continuous $G$-map $\varphi \colon Y \to X$ will be unique and surjective.
+\end{itemize}

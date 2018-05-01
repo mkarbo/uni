@@ -1,0 +1,1319 @@
+\documentclass[10pt,twoside,openany,final]{memoir}
+\usepackage[utf8]{inputenc}
+\usepackage[pass]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{cd}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[style=authoryear,backend=bibtex]{biblatex}
+\usepackage{filecontents}
+\usepackage[english, status=draft]{fixme}
+\fxusetheme{color}
+\usepackage{cleveref} 
+\usepackage[backgroundcolor=cyan]{todonotes}
+\usepackage{wallpaper}
+
+
+\usepackage{xcolor}
+
+\makeatletter
+\def\mathcolor#1#{\@mathcolor{#1}}
+\def\@mathcolor#1#2#3{%
+\protect\leavevmode
+\begingroup
+\color#1{#2}#3%
+\endgroup
+}
+\makeatother
+
+
+\addtolength{\textwidth}{30pt}
+\addtolength{\foremargin}{-30pt}
+\checkandfixthelayout
+
+\title{Reflexivity in Banach spaces}
+\author{Malthe Munk Karbo & Magnus Kristensen}
+
+\setlength{\parindent}{2em}
+\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{1}
+\def\sgn{\mathrm{sgn}}
+\def\acts{\curvearrowright}
+\newtheoremstyle{break}
+{\topsep}{\topsep}
+{\itshape}{}
+{\bfseries}{}
+{\newline}{}
+\theoremstyle{break}
+\newtheorem{theorem}[section]{Theorem}
+\newtheorem{lemma}[section]{Lemma}
+\newtheorem{proposition}[section]{Proposition}
+\newtheorem{corollary}[section]{Corollary}
+\newtheorem{definition}[section]{Definition}
+\newtheoremstyle{Break}
+{\topsep}{\topsep}
+{}{}
+{\bfseries}{}
+{\newline}{}
+\theoremstyle{Break}
+\newtheorem{example}[section]{Example}
+\newtheorem{remark}[section]{Remark}
+\newtheorem{note}[section]{Note}
+\setcounter{secnumdepth}{0}
+\usepackage{xpatch}
+\xpatchcmd{\proof}{\ignorespaces}{\mbox{}\\\ignorespaces}{}{}
+%\newenvironment{Proof}{\proof \mbox{} \\ \\ *}{\endproof}
+
+\chapterstyle{thatcher}
+
+
+\makepagestyle{abs}
+\makeevenhead{abs}{}{}{malthe}
+\makeoddhead{abs}{}{}{malthe}
+\makeevenfoot{abs}{}{\scshape I }{}
+\makeoddfoot{abs}{}{\scshape  I }{}
+%\makeheadrule{abs}{\textwidth}{\normalrulethickness}
+%\makefootrule{abs}{\textwidth}{\normalrulethickness}{\footruleskip}
+\pagestyle{abs}
+
+
+\makepagestyle{cont}
+\makeevenhead{cont}{}{}{}
+\makeoddhead{cont}{}{}{}
+\makeevenfoot{cont}{}{\scshape II }{}
+\makeoddfoot{cont}{}{\scshape  II }{}
+%\makeheadrule{abs}{\textwidth}{\normalrulethickness}
+%\makefootrule{abs}{\textwidth}{\normalrulethickness}{\footruleskip}
+\pagestyle{cont}
+
+\newcommand{\lv}{\lVert}
+\newcommand{\rv}{\rVert}
+
+\let\Hom\relax
+\DeclareMathOperator{\Hom}{Hom}
+
+\renewcommand\chaptermarksn[1]{}
+\nouppercaseheads
+\createmark{chapter}{left}{shownumber}{}{.\space}
+\makepagestyle{dut}
+\makeevenhead{dut}{\scshape\rightmark Malthe Karbo}{}{\scshape\leftmark}
+\makeoddhead{dut}{\scshape\leftmark}{}{\scshape\rightmark Malthe Karbo}
+\makeevenfoot{dut}{}{\scshape $-$ \thepage\ $-$}{}
+\makeoddfoot{dut}{}{\scshape $-$ \thepage\ $-$}{}
+\makeheadrule{dut}{\textwidth}{\normalrulethickness}
+\makefootrule{dut}{\textwidth}{\normalrulethickness}{\footruleskip}
+\pagestyle{dut}
+
+\let\End\relax
+\DeclareMathOperator{\End}{End}
+
+\makepagestyle{chap}
+\makeevenhead{chap}{}{}{}
+\makeoddhead{chap}{}{}{}
+\makeevenfoot{chap}{}{\scshape $-$ \thepage\ $-$}{}
+\makeoddfoot{chap}{}{\scshape $-$ \thepage\ $-$}{}
+\makefootrule{chap}{\textwidth}{\normalrulethickness}{\footruleskip}
+\copypagestyle{plain}{chap}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\mbr}{(X,\mathcal{A})}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\PP}{\mathcal{P}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\dd}{\partial}
+\newcommand{\ee}{\epsilon}
+\newcommand{\la}{\lambda}
+\newcommand{\Bil}{\mathrm{Bil}}
+\newcommand{\Rg}{\mathcal{R}}
+\newcommand{\Nl}{\mathcal{N}}
+
+\let\Span\relax
+\DeclareMathOperator{\Span}{Span}
+
+
+
+\makeatletter
+\newcommand{\Spvek}[2][r]{%
+\gdef\@VORNE{1}
+\left(\hskip-\arraycolsep%
+\begin{array}{#1}\vekSp@lten{#2}\end{array}%
+\hskip-\arraycolsep\right)}
+
+\def\vekSp@lten#1{\xvekSp@lten#1;vekL@stLine;}
+\def\vekL@stLine{vekL@stLine}
+\def\xvekSp@lten#1;{\def\temp{#1}%
+\ifx\temp\vekL@stLine
+\else
+\ifnum\@VORNE=1\gdef\@VORNE{0}
+\else\@arraycr\fi%
+#1%
+\expandafter\xvekSp@lten
+\fi}
+\makeatother
+
+\newcommand{\K}{\mathbb{K}}
+\addtocontents{toc}{\protect\thispagestyle{empty}} 
+\let\emph\relax
+\DeclareTextFontCommand{\emph}{\bfseries\em}
+
+\title{Dispositions for \\\textbf{AdVec}}
+\author{Malthe Munk Karbo '14}
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents*
+\pagenumbering{arabic}
+\chapter{Basis and dimension}
+\section*{Agenda}
+\begin{enumerate}
+	\item Basic definitions: vector space, linear dependence, dimension and basis
+	\item Lemma about basis and spanning sets
+	\item Characterization of spanning sets, linear independent sets and bases of vector spaces.
+\end{enumerate}
+\section*{Content}
+\begin{definition}
+	A \emph{vector space} $V$ of a field $\F$ is an algebraic object consisting of a set $V$ and a binary map $+ \colon V \times V \to V$ turning $V$ into an abelian group (with 0) and a map $F \times V \to V$ of scalar multiplication satisfying basic axioms:
+	\begin{itemize}
+		\item $\alpha ( \beta v)= (\alpha \beta ) v$ for al $v \in V$ and $\alpha, \beta \in \F$.
+		\item $1_{\F} v = v$ for all $v \in V$.
+		\item $\alpha(v+v')=\alpha v + \alpha v'$ for all $\alpha \in \F$ and $v,v' \in V$.
+		\item $(\alpha + \beta)v=\alpha v + \beta v$ for all $\alpha,\beta \in \F$ and $v \in V$.
+	\end{itemize}
+\end{definition}
+From now on $V$ will denote a vector space over a field $\F$.
+
+\begin{definition}
+	Given a set of vectors $v_1,\dots,v_n \in V$, a \emph{linear combination} of these vectors is an element of the form
+	\begin{align*}
+		x=\sum_{i = 1}^n \alpha_i v_i, \text{ for } \alpha_1,\dots,\alpha_n \in \F
+	\end{align*}
+\end{definition}
+
+
+\begin{definition}
+	Given a subset $S \subseteq V$, we define the \emph{span} of $S$ to be the set
+	\begin{align*}
+		\mathrm{Span}_{\F}(S)=\left\{ \sum_{i \in F} \alpha_i x_i\ \big| \ F \subseteq \N_0 \text{ finite },\ \alpha_i \in \F, \ x_i \in S\right\}
+	\end{align*}
+\end{definition}
+
+\begin{definition}
+	We say that a subset $S \subseteq V$ \emph{spans} $V$ if $\mathrm{Span}(S)=V$.
+\end{definition}
+
+\begin{definition}
+	If there is a finite subset $S \subseteq V$ spanning $V$, we say that $V$ is \emph{finite dimensional} (and infinite otherwise).
+\end{definition}
+
+\begin{definition}
+	For finite dimensional $V$, we say that \emph{the dimension} of $V$ is the minimal number of vectors needed to span all of $V$, abbreviated $\dim(V)$. That is
+	\begin{align*}
+		\dim(V)=\min\left\{n \in \N \ \big| \ \text{ there is } x_1,\dots,x_n \in V \text{ such that } \mathrm{Span}_{\F}\left(\left\{ x_1,\dots,x_n \right\}\right)=V\right\}
+	\end{align*}
+\end{definition}
+
+\begin{definition}
+	A subset $S \subseteq V$ is \emph{linearly dependent} if there is $n >0$,$x_1,\dots,x_n \in S$ and $\alpha_1,\dots,\alpha_n \in \F$ with at least one $1 \leq i \leq n$ such that $\alpha_i \neq 0$ such that
+	\begin{align*}
+		\sum_{1 \leq i \leq n} \alpha_i x_i =0.
+	\end{align*}
+And we say that $S$ is linearly independent otherwise.
+\end{definition}
+Linear independence passes to subsets, and no set containing $0$ can be linearly independent.
+
+
+\begin{theorem}[Do not show]
+	If $x_1,\dots,x_n \in V$, then the following are equivalent:
+	\begin{enumerate}
+		\item $\{x_1,\dots,x_n\}$ is lin. dependent
+		\item There is an integer $1 \leq k \leq $ such that $x_k \in \mathrm{Span}_{\F} \{x_1,\dots,x_{k-1}\}$.
+	\end{enumerate}
+\begin{proof}
+	$(2) \implies (1)$: If $x_k \in \Span_{\F}\left\{ x_1,\dots,x_{k-1} \right\}$, then there is $\alpha_1,\dots,\alpha_{k-1} \in \F$ such that
+	\begin{align*}
+		x_k = \sum_{i=1}^{k-1} \alpha_i x_i \implies \sum_{i=1}^{k-1}\alpha_i x_i - x = 0
+	\end{align*}
+	so the set $\{x_1,\dots,x_{k-1},x_k\}$ is linearly dependent, and since linear independance passes to subsets, we conclude that $\{x_1,\dots,x_n\}$ can't be linearly independent.
+	
+	
+	$(1) \implies (2)$: Pick the smallest $1 \leq k \leq n$ such that $\{x_1,\dots,x_k\}$ is linearly dependent (by using the assumption of (1)). Then $\{x_1,\dots,x_{k-1}\}$ islinearly independent. Let $\alpha_1,\dots,\alpha_{k-1}, \beta \in \F$ be such that
+	\begin{align*}
+		\sum_{i=1}^{k-1}\alpha_i x_i + \beta x_k = 0 \implies \beta \neq 0	
+	\end{align*}
+	Since else $\{x_1,\dots,x_{k-1}\}$ would be linearly depenedent. Then 
+	\begin{align*}
+		x=\sum_{i=1}^{k-1}\left( - \frac{\alpha_i}{\beta} \right)x_i \in \Span_{\F}\{x_1,\dots,x_{k-1}\}
+	\end{align*}
+\end{proof}
+\end{theorem}
+
+\begin{definition}
+	A set of vectors $\left\{ x_i \right\}$ is a basis for $V$ if
+	\begin{enumerate}
+		\item It spans $V$
+		\item It is linearly independent.
+	\end{enumerate}
+\end{definition}
+
+\begin{lemma}[do not show]
+	A set $S=\left\{ x_i \right\}$ is a basis for $V$ if and only if every $x \in V$ is represented in a unique way as a linear combination of $x_i$'s
+	\begin{proof}
+	Proof is trivial: $S$ spans $V$ $\iff$ every element is represented by $S$ is clear, and $S$ is independent $\iff$ every such representation is unique.
+	\end{proof}
+\end{lemma}
+
+\begin{theorem}[do not show]
+	If $X=\left\{ x_1,\dots,x_n \right\}, Y=\left\{ y_1,\dots,y_m \right\}$ are finite subsets of $V$ with $X$ spanning $V$ and $Y$ linearly independent, then there is a subset $X'=\left\{ x_{i_1},\dots,x_{i_k} \right\} \subseteq X$ such that $Y \cup X'$ forms a basis for $V$.
+\begin{proof}
+Form the set $S= \left\{ y_1,\dots,y_m, x_1,\dots,x_n \right\}= Y \cup X$. Since $X \subseteq S$ we have $S$. If $S$ is linearly independent, we are done. If not: First note that we may write 
+\begin{align*}
+	S=\left\{ z_1,z_2,\dots,z_{n+m} \right\}, \text{ where } z_i=y_i \text{ for } 1 \leq i \leq m \text{ and } z_i= x_i-m \text{ for } m \leq i \leq m+n
+\end{align*}
+By theorem above, we obtain $1 \leq i \leq n+m$ such that $\left\{ z_1,\dots,z_{i-1} \right\}$ is linearly dependent. Since $y_1,\dots,y_m$ is linearly independent, $m+1 < i  \leq n+m$. Remove this element from the list $S$ to form 
+\begin{align*}
+	S' = \left\{ z_1,.z_2,\dots,z_m,z_{m+1}, z_{m+3},\dots,z_{n+m} \right\}= \left\{ y_1,\dots,y_m,x_1,x_3,\dots,x_n \right\}
+\end{align*}
+If $S'$ is linearly independent, if not continue this process. Since $S$ is a finite list, the process terminates at some point, finishing the proof.
+\end{proof}
+\end{theorem}
+The above theorem implies that any finite dimensional space $V$ has a basis. ($X$ finite spanning, $Y=\emptyset$).
+
+
+\begin{lemma}
+	If $X=\left\{ x_1,\dots,x_n \right\}$ spans $V$ and $Y=\left\{ y_1,\dots,y_m \right\}$ is linearly independent, then $m \leq n$
+\begin{proof}
+Assume towards a contradiction that $ m>n$. Then $X$ spans $V$ $\implies$ $S_1:={y_1} \cup X$ spans $V$. Use theorem §6to pick $ 1 <i \leq n$ such that 
+\begin{align*}
+	x_i \in \Span_{\F}\left\{ y_1,x_1,\dots,x_{i-1}\right\}.
+\end{align*}
+Set $X_1:=\left\{ y_1,x_1,\dots,x_{i-1},x_{i+1},\dots,x_n \right\}$ and $Y_{1}:=\left\{ y_2,\dots,y_m \right\}$. Remove $x_i$ does not change the span, so $X_1$ spans all of $V$ and $Y_1$ is linearly independent since $Y_1 \subseteq Y$. This process terminates after $n$ steps, and we see that $X_n=\left\{ y_1,\dots,y_n \right\}$ and $Y_{n}=\left\{ y_{n+1},\dots,y_m \right\}$ are non-empty sets ($m > n$) with $X_n$ spanning $V$. Hence $y_{n+1} \in \Span_{\F}X_n$ contradicting the fact that $\left\{ y_1,\dots,y_n,y_{n+1} \right\}$ is linearly independent (linear independence passes to subsets)
+\end{proof}
+\end{lemma}
+
+
+This lemma has some nice implications:
+
+\begin{theorem}
+	If $V$ is a vector space with a basis of $n$ elements ($n \in \N_0$). Then
+	\begin{enumerate}
+		\item Every lin. independent subset of $V$ has $\leq n$ elements.
+		\item Every spanning set in $V$ has $\geq n$ elements
+		\item Every basis has $n$ elements
+	\end{enumerate}
+\begin{proof}
+	The proof of (1) and (2) follows directly from the lemma. (3) follows from (1) and (2)
+\end{proof}
+\end{theorem}
+
+\chapter{Dual space, dual basis}
+\section*{Agenda}
+\begin{enumerate}
+	\item Basic definitions: 
+	\item Lemma about basis and spanning sets
+	\item Characterization of spanning sets, linear independent sets and bases of vector spaces.
+\end{enumerate}
+\section*{Content}
+In the following we let $V$ be a vector space over a field $\F$.
+
+\begin{definition}
+	A linear function $y \colon V \to \F$ is a \emph{linear functional}. The space of linear functionals is denoted by $V'$. 
+\end{definition}
+
+\begin{definition}
+	If $n=\dim(V) < \infty$, define the $n$'th coordinate functional $y_j \colon V \to \F$ by
+	\begin{align*}
+		y_j (\alpha_1 x_1+ \alpha_2 x_2+\dots+\alpha_n x_n)=\alpha_j.
+	\end{align*}
+	where $x_1,\dots,x_n$ is a basis for $V$
+\end{definition}
+For finite dimensional $V$, we then see that all $x \in V$ we have
+\begin{align*}
+	x=\sum_{i=1}^n y_i(x) x_i,
+\end{align*}
+and moreover
+\begin{align*}
+	y_j(x_i)=\delta_{ij}, \text{ for } 1 \leq i,j \leq n
+\end{align*}
+So that 
+\begin{align*}
+	y(x_j)=\sum_{i=1}^n y(x_i) \delta_{ij}=\sum_{i=1}^n y(x_i)y_i(x_j)
+\end{align*}
+which implies that
+\begin{lemma}
+	Given $y \in V'$, it holds that $y=\sum_{i=1}^n y(x_i)y_i$.
+\end{lemma}
+So that we have $\Span\left\{ y_1,\dots,y_n \right\}=V'$. In fact the set $\left\{ y_1,\dots,y_n \right\}$ is a basis:
+\begin{theorem}
+	$\dim(V')=n$ and $\left\{ y_1,\dots,y_n \right\}$ is a basis for $V'$.
+	\begin{proof}
+		Suppose that $\alpha_1,\dots,\alpha_n \in \F$ such that
+		\begin{align*}
+			\sum_{i=1}^n \alpha_{i}y_{i}=0
+		\end{align*}
+		Then, for all $j = 1,\dots,n$ we have
+		\begin{align*}
+			0=\sum_{i=1}^n \alpha_i y_i(x_j)=\sum_{i=1}^n \alpha_i \delta_{ij} = \alpha_j.
+		\end{align*}
+	\end{proof}
+\end{theorem}
+
+\begin{definition}
+	The basis $\left\{ y_1,\dots,y_n \right\}$ is called the \emph{dual basis}.
+\end{definition}
+
+There is a natural correspondance between $V$ and it's bidual $V'':=(V')'$.
+\begin{definition}
+	The map $T \colon V \to V''$ given by $T(x)(y)=y(x)$ is called \emph{the natural correspondance}. It is a linear map in $x$, clearly. 
+\end{definition}
+Applying the above theorem twice we see that for finite dimensional $V$ we have $n=\dim(V)=\dim(V')=\dim(V'')$, and in fact the map $T$ is a linear isomorphism:
+\begin{theorem}
+	The natural correspondance $T \colon V \to V''$  is a linear isomorphism for $\dim(V) < \infty$.
+	\begin{proof}
+		Choose a basis $\{x_1,\dots,x_n\}$ for $V$. We then claim that $\{T(x_1),\dots,T(x_n)\}$ is a basis for $V''$, and it will follow from showing that it is a linear independent set. Linear independence comes from the fact that $T$ is injective, for if $u\neq v$, then they differ in one of their coordinates, i.e. 
+		\begin{align*}
+		T(u)(y_j)=y_j(u)\neq y_j(v) = T(v)(y_j)	
+		\end{align*}
+		for some $1 \leq j \leq n$. So $T$ is injective. And injective linear functions carries linearly independent sets to linearly independent sets, finishing the proof.
+	\end{proof}
+\end{theorem}
+
+\chapter{Tensor products}
+\section*{Agenda}
+\begin{enumerate}
+	\item Bilinear forms definition and space of bilinear forms.
+	\item Bilinear forms basis and characterisation as matrices
+	\item Tensor product as linear functionals on bilinear forms
+	\item True and proper characterization of tensor products
+\end{enumerate}
+\section*{Content}
+Let $U,V$ be vector spaces over $\F$. 
+\begin{definition}
+	A \emph{bilinear form} on $U \times V$ is a map $w \colon U \times V \to \F$ such that
+	\begin{itemize}
+		\item The map $x \mapsto w(x,y)$ is linear for all $y \in V$
+		\item The map $y \mapsto w(x,y)$ is linear for all $x \in U$.
+	\end{itemize}
+\end{definition}
+\textcolor{red}{(This is \textbf{not} a regular linear functional on $U\times V$)} 
+
+Examples include $w(x,y)=axy$ for some $a \in \R$ as a bilinear form on $\R^2$. 
+\begin{definition}
+	We denote by $\Bil(U,V)$ the set of bilinear forms $U \times V \to \F$. This is a vector space over $\F$.
+\end{definition}
+
+For finite dimensional $U,V$ we achieve a nice characterization of $\Bil(U,V)$:
+\begin{theorem}
+	If $\dim(U)=n$ and $\dim(V)=m$ have bases $\left\{ x_1,\dots,x_n \right\}$ and $\left\{ y_1,\dots,y_m \right\}$, then the map
+	\begin{align*}
+		w \mapsto \left( w(x_i,y_j) \right)_{i,j}
+	\end{align*}
+	is a linear isomorphism $\Bil(U,V) \to M_{n,m}(\F)$.
+	\begin{proof}
+		Linearity of the map is easy to convince oneself of. So we show injectivity and surjectivity instead: 
+		
+		\textbf{Injectivity}: If $\left\{ u_1,\dots,u_n \right\}$ and $\left\{ v_1,\dots,v_m \right\}$ are dual bases for $U'$ and $V'$, then for $w \in \Bil(U,V)$ we see that
+		\begin{align*}
+			w(x,y)=w\left( \sum_{i=1}^n u_i(x)x_i, \sum_{j=1}^m v_j(y)u_j \right) = \sum_{i,j}u_{i}(x)v_{j}(y) w(x_{i},y_{j})
+		\end{align*}
+		for all $x \in U$ and $y \in V$. Setting $(a_{i,j}):=(w(x_i,y_j))$ we see that $w$ is uniquely deterimined by this matrix, so if two bilinear forms have the same matrix then they are equal.
+
+		\textbf{Surjectivity}: Given $(a_{i,j}) \in M_{n,m}(\F)$, define the bilinear form $w \in \Bil(U,V)$ by
+		\begin{align*}
+			w(x,y)=\sum_{i,j}u_i(x) v_j(y) a_{i,j}
+		\end{align*}
+		This is clearly a bilinear map, and moreover $w(x_p,y_q)=\sum_{i,j}\delta_{i,p}\delta_{j,q}a_{i,j}=a_{p,q}$, so $w$ is mapped to $\left( w(x_i,y_j) \right)=(a_{i,j})$, so it is surjective.
+	\end{proof}
+\end{theorem}
+
+\begin{theorem}
+	Let $w_{i,j}(x,y):=u_i(x)v_j(y)$, then $w_{i,j} \in \Bil(U,V)$ and the set of $w_{i,j}$ form a basis for $\Bil(U,V)$.
+	\begin{proof}
+		We see that $w_{i,j}(x_p,y_q)=u_i(x_p)v_j(y_q)=\delta_{i,p}\delta_{j,q}$, so $w_{i,j}$ is mapped to the $ij$'th matrix unit in $M_{n,m}(\F)$. The matrix units form a basis, and since the correspondance is an isomorphism, the set $\{w_{i,j}\}$ form a basis of $\Bil(U,V)$.
+	\end{proof}
+\end{theorem}
+
+\begin{definition}
+	The \emph{tensor product} of $U,V$ is defined as $U \otimes V := \Bil(U,V)'$, and the tensor product of $x$ and $y$ is defined on $w \in \Bil(U,V)$ by the map $w \mapsto w(x,y)$
+\end{definition}
+
+\begin{theorem}
+	The basis of $U,V$ induces the basis of $U \otimes V$, i.e., the set $\{ x_i \otimes y_j\}$ forms a basis for $U \otimes V$.
+	\begin{proof}
+		It is not hard to see, for it is just the dual basis of $\{w_{p,q}\}$:
+		\begin{align*}
+			x_{i}\otimes y_j (w_{p,q})=w_{p,q}(x_i,y_j)=\delta_{i,p}\delta_{j,q}
+		\end{align*}
+	\end{proof}
+\end{theorem}
+
+One can generalize this notion:
+
+\begin{definition}
+	A tensor product of any vector spaces $U,V$ is a vector space $T$ and a bilinear maps $B \colon U \times V \to T$ such that for all vector spaces $S$ and bilinear maps $A \colon U \times V \to S$ we have the following diagram
+	\[
+\begin{tikzcd}
+	U \times V \ar[r,"B"] \ar[d,"A"] & T \ar[ld,dashed,"!\exists \varphi"]\\
+	 S &
+\end{tikzcd}
+	\]
+\end{definition}
+
+\begin{theorem}
+	There exists a tensor product and it is unique up to isomorphism.
+	\begin{proof}
+		For finite dimensional case, the existence is shown above: If the setting is the same as above, then the map $\varphi$ making the diagram commute is simply the map $\varphi(x_i \otimes y_j)=A(x_i,y_j)$.
+
+		For uniqueness, assume that $(T_1,B_1)$ and $(T_2,B_2)$ are two tensor products of $U,V$. Then we get
+	\[
+\begin{tikzcd}
+	U \times V \ar[r,"B_1"] \ar[d,"B_2"] & T_1 \ar[ld,dashed,"!\exists \varphi"]\\
+	 T_2 &
+\end{tikzcd}
+	\]
+	and
+	\[
+\begin{tikzcd}
+	U \times V \ar[r,"B_2"] \ar[d,"B_1"] & T_2 \ar[ld,dashed,"!\exists \psi"]\\
+	 T_1 &
+\end{tikzcd}
+	\]
+	Giving us the commutative diagram
+	\[
+\begin{tikzcd}
+	U \times V \ar[r," B_1"] \ar[d,"B_1"] & T_1 \ar[ld,"\psi \circ \varphi \circ B_1 "]\\
+	 T_1 &
+\end{tikzcd}
+	\]
+	But also the identity makes the diagram
+	\[
+\begin{tikzcd}
+	U \times V \ar[r,"B_1"] \ar[d, "B_1"] & T_1 \ar[ld, "\textrm{id}_{T_1}"]\\
+	T_1&
+\end{tikzcd}
+	\]
+	So uniqueness ensures that $\psi \circ \varphi= \textrm{id}_{T_1}$ and similarly $\varphi \circ \psi$ is the identity on $T_2$, so they are inverses hence isomorphisms.
+	\end{proof}
+\end{theorem}
+
+
+\chapter{Alternating forms}
+\section*{Agenda}
+\begin{enumerate}
+	\item Basic definitions: Multilinear forms and the vector space of $k$-linear forms. 
+	\item $S_k$ action on $\mathcal{L}^k(V)$
+	\item Skew-symmetric $k$-forms, alternating $k$-forms definitions. Alt $\implies$ Skew. $\textrm{char}(F)\neq 2$: Skew $\implies$ alt and lin dept set => Alt forms are $0$
+	\item Wedge product definition and wedgeproduct is alternating
+	\item Define $I_n^k$, $y_I$ and $x_J$. $y_I(x_J)=\delta_{I,J}$.
+	\item Basis of $A^k(V)$ is $\{y_I\}$ (Right transversal mode)
+	\item $\dim(A^n(V))=1$. Basis
+	\item Determinant
+\end{enumerate}
+\section*{Content}
+In the following, we let $V$ be a vector space over $\F$.
+\begin{definition}
+	The set of multilinear $k$-forms is the set $\mathcal{L}^k(V)$ of maps $\varphi \colon V^k \to \F$ which is linear in each variable separately.
+\end{definition}
+For $k=2$ it is the set $\mathcal{L}^2(V)=\Bil(V,V)$. There is a special subspace of multilinear $k$-forms:
+\begin{definition}
+	A $k$-multilinear form $w \in \mathcal{L}^k(V)$ is said to be alternating if for all $(x_1,\dots,x_n)$ with $x_i=x_j$ for some $i\neq j$ it holds that
+	\begin{align*}
+		w(x_1,\dots,x_n)=0.
+	\end{align*}
+	The set of alternating $k$-forms is a vector space over $\F$, which we denote by $A^k(V)$
+\end{definition}
+There is an action $S_k \acts \mathcal{L}^k(V)$, given by 
+\begin{align*}
+	\sigma w(v_1,\dots,v_k)=w(v_{\sigma(1)},\dots,v_{\sigma(k)}) \text{ for all } (v_1,\dots,v_k) \in V^k, w \in \mathcal{L}^k(V).
+\end{align*}
+\begin{definition}
+	A multilinear $k$-form $w$ is called \emph{skew} if $\sigma w = \sgn(\sigma) w $ for all $\sigma \in S_k$
+\end{definition}
+
+If $w$ is alternating, then $w$ is skew: 
+\begin{align*}
+	0=w(x_1+x_2,x_1+x_2,x_3,\dots,x_k)&=\underbrace{w(x_1,x_1,\dots)}_{=0}+w(x_2,x_1,\dots)+w(x_1,x_2,\dots)+\underbrace{w(x_2,x_2,\dots)}_{=0}\\
+	&=w(x_1,x_2,\dots)=w(x_2,x_1,\dots),
+\end{align*}
+here we just used the transposition $(12)$, but it works for any transposition hence any permutation. If $\textrm{char}(\F)\neq 2$ then skew implies alternating:
+\begin{align*}
+	w(x_1,x_1,x_3,\dots,x_k)=-w(x_1,x_1,x_3,\dots,x_k) \implies w(x_1,x_1,x_3,\dots)=0.
+\end{align*}
+\begin{theorem}
+	If $w \in A^k(V)$ and $(x_1,\dots,x_k)$ is linearly dependent, then $w(x_1,\dots,x_k)=0$.
+	\begin{proof}
+		Independence implies that one coordinate can be written as a sum of the others. Alternating forms a linear in one coefficient, so by definition it will be $0$ on linear dependent sets.
+	\end{proof}
+\end{theorem}
+This implies that $A^k(v)=\{0\}$ if $k > \dim(V)$.
+
+\begin{definition}
+	If $u_1,\dots,u_k \in V'$ are any linear functionals, we define their \emph{wedge-product} to be the $k$-linear form
+	\begin{align*}
+		u_1 \land \dots \land u_k:= \sum_{\sigma \in S_k}\sgn(\sigma) \sigma(u_1 \cdots u_k)
+	\end{align*}
+\end{definition}
+
+\begin{theorem}
+	The wedge product is alternating, i.e.,  $u_1 \land \dots \land u_k\in A^k(V)$
+	\begin{proof}
+		Let $w=u_1 \land \dots \land u_k$ and let $z_1,\dots,z_k \in V$ with $z_i = z_j$ for some $i < j$. The goal is to show that $u_1\land \dots \land u_k(z_1,\dots,z_k)=0$. Let $H=\{1,(ij)\} \leq S_k$ be the subgroup generated by the transposition $(ij)$. Pick a right transversal $R$ of $S_k/H$, i.e. a set containing one representant for each right coset. Then we see that
+		\begin{align*}
+			G= \bigcup_{\tau \in R} [\tau]_{S_k/H}
+		\end{align*}
+		so we see that
+		\begin{align*}
+			u_1 \land \dots \land u_k=\sum_{\sigma \in S_k} \sgn(\sigma) \sigma(u_1\cdots u_k) = \sum_{\tau \in R} \sum_{\sigma \in [\tau]}\sgn(\sigma) \sigma(u_1\cdots u_k).
+		\end{align*}
+		Since $\sigma \in [\tau]$ is of the form ${\tau,\tau(ij)}$, we see that the inner sum is
+		\begin{align*}
+			\sum_{\sigma\in \{\tau,\tau(ij)\}} \sgn(\sigma) \sigma(u_1 \cdots u_k)&=\sgn(\tau)\tau(u_1 \cdots u_k)+\underbrace{\sgn(\tau(ij))}_{=-\sgn(\tau)}\left(\tau\circ(ij)\right)(u_1 \cdots u_k)\\
+			&= \sgn(\tau)(\tau(u_1 \cdots u_i \cdots u_j \cdots u_k)- \tau(u_1 \cdots u_j \cdots u_i \cdots u_k))
+		\end{align*}
+		which applied to $(z_1,\dots,z_k)$ gives
+		\begin{align*}
+			\sum_{\sigma \in \{\tau,\tau(ij)\}} \sgn(\sigma)\sigma(u_1 \cdots u_k) (z_1,\dots,z_k)&=u_1(z_{\tau(1)})\cdots u_i(z_{\tau(i)})\cdots u_j(z_{\tau(j)})\cdots u_k(z_{\tau(k)})\\
+			&- u_1(z_{\tau(1)})\cdots u_i(z_{\tau(j)}) \cdots u_j(z_{\tau(i)}) \cdots u_k(z_{\tau(k)})\\
+			&=0
+		\end{align*}
+		since $z_i=z_j$.
+	\end{proof}
+\end{theorem}
+
+Let $\{x_1,\dots,x_n\}$ be a basis for $V$ and let $\{y_1,\dots,y_n\}$ be the associated dual basis. For $1 \leq k \leq n$ we define
+\begin{align*}
+	I_n^k:=\left\{ I \in \{1,\dots,n\}^k\ : \ 1 \leq j \leq j' \leq k \implies I(j)<I(j') \right\}.
+\end{align*}
+Then define $y_I:=y_{i_1} \land \dots., y_{i_k}$  and $x_I=(x_{i_1},\dots,x_{i_k})\in V^k$ for all $I=\left\{ i_1,\dots,i_k \right\} \in I_{n}^k$. 
+\begin{lemma}
+	For $I,J \in I_{n}^k$ we have $y_I(x_J)=\delta_{I,J}$
+	\begin{proof}
+		By definition
+		\begin{align*}
+			y_I(x_J)=y_{i_1} \land \dots \land y_{i_k}(x_{j_1},\dots,x_{j_k})&=\sum_{\sigma \in S_k} \sgn(\sigma) y_{i_1}\left(x_{j_{\sigma(1)}}\right) \cdots y_{i_k}\left(x_{j_{\sigma(k)}}\right) \\ 
+			&= \sum_{\sigma \in S_k}\sgn(\sigma) \delta_{i_1, j_{\sigma(1)}} \cdots \delta_{i_k,j_{\sigma(k)}}
+		\end{align*}
+		which is non-zero only if $I=J$ and $\sigma=\textrm{id}$ in which case it is $1$. 
+	\end{proof}
+\end{lemma}
+
+\begin{theorem}
+	The set of $\{y_I\}_{I \in I_n^k}$ forms a basis for $A^k(V)$.
+	\begin{proof}
+		We first prove linear independence: Assume $\sum_{I \in I_n^k} \alpha_I y_I=0$ for some scalars $\alpha_I$. Then, for all $J \in I_n^k$ we have
+		\begin{align*}
+			0 = \left( \sum_{I \in I_n^k}\alpha_I y_I \right)(x_J) = \sum_{I \in I_n^k}\alpha_I \delta_{I,J}=\alpha_J
+		\end{align*}
+		so it is linearly independent.
+
+		Now we prove that is spans: Let $w \in A^k(V)$, $I \in I_n^k$ and set $\alpha_I:=w(x_I) \in \F$. Then we claim that $w = \sum_{I \in I_n^k } \alpha_I y_I$. To see this, we check on the $k$-tuples of basis vectors $x_J$, since both sides are multilinear:
+		
+		\noindent Let $J \in \{1,\dots,n\}^k$. Since both $w$ and $\sum_{I \in \{1,\dots,n\}^k} \alpha_I y_I$ are alternating, we may assume that $x_J$ have distinct members: $j \neq j' \implies x_j\neq x_j'$, and since alternating forms are skew, we may assume that the order of $J$ is increasing, i.e., that $J \in I_n^k$. Then
+		\begin{align*}
+			w(x_J)=\sum_{I \in I_n^k}\alpha_I y_I (x_J)=\alpha_J
+		\end{align*}
+		as wanted.
+	\end{proof}
+\end{theorem}
+Since $I_{n}^k$ has cardinality $n$-choose-$k$, we see that $\dim(A^k(V))=\begin{pmatrix}
+	n \\ k
+\end{pmatrix}$. In particular:
+\begin{theorem}
+	if $dim(V)=n$ then $\dim(A^n(V))=1$ and it has basis $\{y_1 \land \dots \land y_n\}$.
+	\begin{proof}
+		follows directly from the previous theorem. In particular, $w \in A^n(V) \implies w= c y_{1} \land \dots \land y_n$ for some $c \in \F$.
+	\end{proof}
+\end{theorem}
+Which implies the following theorem
+\begin{theorem}
+	If $w \in A^n(V)$ with $w \neq 0$ then $w(x_1,\dots,x_n)\neq 0$.
+	\begin{proof}
+		By the above, $w= c y_1 \land \dots \land y_n$ for some $c \in \F^\times$, so
+		\begin{align*}
+			w(x_1,\dots,x_n)=c y_1 \land \dots \land y_n (x_1,\dots,x_n)=cy_1(x_1) \cdots y_n(x_n)=c \neq 0..
+		\end{align*}
+	\end{proof}
+\end{theorem}
+This allows us to define the determinant of $A \in \textrm{End}(V)$ by letting $\bar{A} \in \textrm{End}(A^n(V))$ to be the map $\bar{A}(w)(x_1,\dots,x_n)=w(Ax_1,\dots,x_n)$. Since $\dim(A^n(V))=1$, there is $\delta \in \F$ such that $\bar{A}w=\delta w$ for all $w \in A^n(V)$.
+\begin{definition}
+	The scalar $\delta$ is called the determinant of $A$
+\end{definition}
+\chapter{Invariance, reducibility and projections}
+\section*{Agenda}
+\todo{Fix agenda}\begin{enumerate}
+	\item Basic definitions: 
+	\item Lemma about basis and spanning sets
+	\item Characterization of spanning sets, linear independent sets and bases of vector spaces.
+\end{enumerate}
+\section*{Content}
+In the following $V$ is a vector space over $\F$. We use $M,N$ to denote subspaces of $V$.
+\begin{definition}
+	If $V=M \oplus N$, then a projection on $M$ along $N$ is a linear map $E \colon V \to V$ given by $Ez=x$ for $z=x+y$ with $x \in M$ and $y \in N$.
+\end{definition}
+If $E$ is a projection on $M$ along $N$, then $1-E$ is the projection on $N$ along $M$. This is clear.
+\begin{theorem}
+	There exists a direct sum $V=M \oplus N$ if and only if there is $E \in \End(V)$ such that $E^2=E$.
+	\begin{proof}
+		If $V= M \oplus N$, then the projection on $M$ along $N$ satisfies $E(x+y)=x$ and $E^2(x+y)=Ex=x$ so $E^2=E$. Conversely, suppose that $E^2=E \in \End(V)$. Then $M:=Range(E)$ and $N:=\ker(E)$ satisfy $M\cap N= \{0\}$, for if $Ez=z$ and $Ez=0$ then $z=0$. Also $M+N=V$, for if $z \in V$, then $z=Ez+(1-E)z$, and $Ez \in M$ since $Ez=E ( Ez) \in Range(E)$ And $E(1-E)z=Ez-Ez=0$ so $(1-E)z \in \ker(E)$
+	\end{proof}
+\end{theorem}
+
+\begin{definition}
+	A subspace $M \subseteq V$ is invariant under $A \in \End(V)$ if $A(M) \subseteq M$. If $V= M \oplus N$ with $M$ and $N$ invariant under $A$, then we say that $A$ is reduced by $M$ and $N$. 
+\end{definition}
+
+It is worth to note the following: If $A\in \End(V)$ and $M\subseteq V$ is invariant under $A$, and $\{x_1,,\dots,x_m,\dots,x_n\}$ is a basis for $V$ with $\{x_1,\dots,x_m\}$ as a basis for $M$, then the matrix of $A$ with respect to this basis is of the form
+\begin{align*}
+	[A]=\begin{pmatrix}
+		\bullet & \bullet \\
+		0 & \bullet
+	\end{pmatrix}
+\end{align*}
+If moreover $A$ is reduced by $M,N$ with $V=M \oplus N$ and $\{x_{m+1},\dots,x_n\}$ is a basis for $N$, then $[A]$ is of the form
+\begin{align*}
+	[A]= \begin{pmatrix}
+		\bullet_M & 0 \\
+		0 & \bullet_N
+	\end{pmatrix}
+\end{align*}
+where $\bullet_m=\left[ A\big|_{M}  \right]$ and $\bullet_N=\left[A\big|_{ N}  \right]$, i.e. $[A]=\left[ A \big|_M \right] \oplus \left[ A \big|_N \right]$
+
+\begin{theorem}
+	Let $V=M \oplus N$ with $E$ the projection on $M$ along $N$. For $A \in \End(V)$ the following are equivalent:
+	\begin{enumerate}
+		\item $A$ is reduced by $N$ and $M$ (both $M,N$ are invariant under $A$)
+		\item $EA=AE$
+	\end{enumerate}
+	\begin{proof}
+		$1 \implies 2$: First we show that $EAz=AEz$ for $z \in M$ and then for $z \in N$: 
+\begin{itemize}
+	\item If $z \in M$, then as $Az \in M$ and $Ez=z$ we have $EAz=Az=AEz$.
+	\item If $z \in N$, then $Ez=0$ and $Az \in N$, so $AEz=A0=0$ and $EAz=0$ so $EAz=AEz$.
+\end{itemize}	
+		$2 \implies 1$:
+\begin{itemize}
+	\item If $z \in M$ then $Ez=z$ and $M$ is the image of $E$ so $EAz=AEz=Az \in M$.
+	\item IF $z \in N$ then $Ez=0$ and $N$ is the kernel of $E$ so $EAz=AEz=A0=0 \in N$
+\end{itemize}
+	\end{proof}
+\end{theorem}
+\chapter{Combination of projections}
+\section*{Agenda}
+\todo{Fix agenda}\begin{enumerate}
+	\item Basic definitions: 
+	\item Lemma about basis and spanning sets
+	\item Characterization of spanning sets, linear independent sets and bases of vector spaces.
+\end{enumerate}
+\section*{Content}
+In the following, $V$ denotes a vector space over a field $\F$, and $M,N\subseteq V$ will denote subspaces.
+\begin{definition}
+	If $V=M \oplus N$, then a projection on $M$ along $N$ is a linear map $E \colon V \to V$ given by $Ez=x$ for $z=x+y$ with $x \in M$ and $y \in N$.
+\end{definition}
+If $E$ is a projection on $M$ along $N$, then $1-E$ is the projection on $N$ along $M$. This is clear.
+\begin{theorem}
+	Assume that $E_i$ is the projection onto $M_i$ along $N_i$ for $i=1,2$ so $V=M_1 \oplus N_1=M_2 \oplus N_2$. If $E_1E_2=E_2E_1$ then $V=(M_1 \cap M_2) \oplus (N_1 +N_2)$ and $E:=E_1E_2$ is the projection onto $M_1 \cap M_2$ along $N_1+N_2$.
+	\begin{proof}
+	Clearly $E$ is idempotent: $E^2=(E_1E_2)^2=E_1E_2E_1E_2=E_1E_1E_2E_2=E_1E_2=E$. We need to show that $M_1 \cap M_2$ is the range of $E$ and $N_1+N_2$ is the kernel. 
+\begin{itemize}
+	\item If $Ez=z$, then $E_1z=E_1Ez=E_1E_1E_2z=E_1E_2z=Ez$, so $Ez \in M_1$, and similarly $Ez \in M_2$. If $z \in M_1 \cap M_2$, then both $E_1z=z=E_2z$ so $Ez=E_1E_2z=z$ hence $z$ is in the image of $E$.
+	\item if $z \in N_i$ then $E_iz=0$ so $E E_iz=Ez=0$ for $i=1,2$. By linearity, if $z \in N_1 + N_2$ then $Ez=0$. If $Ez=0$, then $E_1(E_2z)=0$ so $E_2z \in N_1$, but $(1-E_2)z \in N_2$, so $z=E_2z+(1-E_2)z \in N_1+N_2$, as wanted. 
+\end{itemize}
+and whenever we have an idempotent we may decompose our domain into range and nullspace.
+	\end{proof}
+\end{theorem}
+\begin{theorem}
+	If $E_1E_2=E_1E_2=0$, then $V=M_1 \oplus M_2 \oplus (N_1 \cap N_2)$ and $E_1 + E_2$ is the projection onto $M_1 \oplus M_2$ along $N_1 \cap N_2$
+\end{theorem}
+Before proving this, we will need the following lemma, which we state without proving. The idea is to consider the projections $E_1E_2$, $E_1(1-E_2), (1-E_1)E_2$ and $(1-E_1)(1-E_2)$.
+\begin{lemma}
+	If $E_1E_2=E_2E_1$ then $V=(M_1 \cap M_2) \oplus (M_1 \cap N_2) \oplus (N_1 \cap M_2) \oplus (N_1 \cap N_2)$
+\end{lemma}
+\begin{proof}[Proof of Theorem 6.3.]
+	Since $E_2E_1=0$ we see that $M_1 \subseteq N_2$, since $M_1=\textrm{Rg}(E_1)$ So $M_1 \cap N_2 = M_1$. Similarly we see that $M_2 \cap N_1 = M_2$, and by theorem 6.1 $M_1 \cap M_2$ is the image of $E_1E_2$, which is $0$ by assumption, i.e. $M_1\cap M_2 = 0$. So By the lemma above, we have
+	\begin{align*}
+	V&=\underbrace{(M_1\cap M_2)}_{=0} \oplus \underbrace{M_1 \cap N_2)}_{=M_1} \oplus \underbrace{(N_1 \cap M_2)}_{=M_2} \oplus (N_1 \cap N_2)\\
+	&= M_1 \oplus M_2 \oplus (N_1 \cap N_2).
+	\end{align*}
+	Since $E_1E_2=E_2E_1=0$, we see that $E_1+E_2$ is a projection:
+	\begin{align*}
+		(E_1+E_2)^2=E_1^2+E_2^2+E_1E_2+E_2E_1=E_1+E_2
+	\end{align*}
+	And it has range in $M_1+M_2$ and kernel $N_1 \cap N_2$, so it is indeed the projection onto $M_1 \oplus M_2$ along $N_1 \cap N_2$
+\end{proof}
+
+\begin{proof}[Proof of converse for $\textrm{char}(\F)\neq 2$ of the above]
+If $E_1^2=E_1, E_2^2=E_2$ and $(E_1+E_2)^2=E_1+E_2$, then 
+\begin{align*}
+	E_1+E_2=(E_1+E_2)^2=E_1+E_2+E_1E_2+E_2E_1 \implies E_1E_2=-E_2E_1,
+\end{align*}
+And then we see that
+\begin{align*}
+	E_1E_2=E_1(E_1E_2)=E_1(-E_2E_1)=(-E_1E_2)E_1=E_2E_1E_1=E_2E_1 \implies 2E_1E_2=0
+\end{align*}
+and since $\textrm{Char}(\F)\neq 2$, this implies $E_1E_2=0$.
+\end{proof}
+
+\chapter{Range, null-space, rank and nullity}
+\section*{Agenda}
+\begin{enumerate}
+	\item 
+\end{enumerate}
+\section*{Content}
+In the following we let $U,V$ be vector spaces over the same field $\F$. For $A \in \Hom(U,V)$ We let $\Rg(A)=\{Ax \ \big|\ x \in U\}$ and $\Nl(A)=\{x \in U \ \big|\ Ax=0\}$ denote the range- and nullspace of $A$. In particular, we note that $\Rg(A) \subseteq V$ and $\Nl(A) \subseteq U$.
+
+\begin{definition}
+	Let $A \in \Hom(U,V)$ and let $K \subseteq U$ and $L \subseteq V$. Suppose that $A$ maps $K$ into $L$, i.e. that $\Rg(A) \subseteq Y$. Then the operator $\bar{A} \colon U/K \to V/L$ given by
+	\begin{align*}
+		\bar{A}(x+K)= Ax+L
+	\end{align*}
+	is called the \emph{quotient map} of $A$
+\end{definition}
+
+\begin{lemma}
+	The quotient map is well-defined and linear.
+	\begin{proof}
+		As vector spaces in particular are abelian groups, the map is clearly well-defined, i.e. if $x+K=y+K$ then $x-y \in K$ so $Ax-Ay=A(x-y)\in L$ so $Ax+L=Ay+L$. Linearity follows from linearity of $A$ and $(a+b)+L=(a+L)+(b+L)$.
+	\end{proof}
+\end{lemma}
+In particular, if $K=\Nl(A)$, then $AK=\{0\}$, so if $L=\{0\}$ in the above, then as $V/\{0\}\cong V$ we achieve a map $\bar{A} \colon U / \Nl(A) \to V$ given by $x+\Nl(A) \mapsto Ax$, i.e., we actually have $\bar{A} \colon U/\Nl(A) \to \Rg(A)$.
+\begin{theorem}
+	For $A \in \Hom(U,V)$, the map $\bar{A} U / \Nl(A) \to \Rg(A)$ above is an isomorphism.
+	\begin{proof}
+		$\bar{A}$ is linear by the above lemma. We see that $\bar{A}$ is injective, for 
+		\begin{align*}
+			0=\bar{A}(x+\Nl(A))=Ax \implies x \in \Nl(A) \iff x=0 \in U/\Nl(A).
+		\end{align*}
+		Also we see that $\bar{A}(U/\Nl(A))=A(U)=\Rg(A)$, so $\bar{A}$ is surjective.
+	\end{proof}
+\end{theorem}
+We assign to an operator $A \in \Hom(U,V)$ a few more things, namely two parameters which measure how well it behaves
+\begin{definition}
+	Let $A \in \Hom(U,V)$, then the \emph{Rank} of $A$ is $\rho(A):=\dim(\Rg(A))$ and the \emph{nullity} of $A$ is $\nu(A):=\dim(\Nl(A))$
+\end{definition}
+And if $\dim(U) < \infty$ then we can calculate either if we know something about the other and the domain/codomain:
+\begin{corollary}
+	If $\dim(U)=n< \infty$ and $A \in \Hom(U,V)$, then $\rho(A)=n-\nu(A)$.
+\begin{proof}
+	By the theorem above, $\Rg(A) \cong U/\Nl(A)$, hence $\rho(A) = \dim(\Rg(A))=\dim(U/\Nl(A))=\dim(U)-\nu(A)=n-\nu(A)$.
+\end{proof}
+\end{corollary}
+
+With this in mind we can prove the following
+\begin{theorem}
+Let $A \in \Hom(V,W)$ and $B \in \Hom(U,V)$, i.e. $A \colon V \to W$ and $B \colon U \to V$ so $AB \in \Hom(U,W)$. Then
+\begin{enumerate}
+	\item $\rho(AB) \leq \min\left\{ \rho(A),\rho(B) \right\}$
+	\item $\nu(A) \leq \nu(A) + \nu(B)$
+\end{enumerate}
+\begin{proof}
+	\textbf{(1):} First we note that $\Rg(AB) \subseteq \Rg(A)$, so $\rho\left( AB \right) \leq \rho(A)$. Also, we see that $\Rg(AB)=\Rg(A\big|_{\Rg(B)}$ so $\Nl(AB)=\Nl(A\big|_{\Rg(B)})=\Nl(A) \cap \Rg(B)$. By the theorem above applied to $A\big| _{\Rg(B)}$ we see that
+	\begin{align*}
+		\Rg(AB) \cong \Rg(B)/(\Nl(A) \cap \Rg(B)) \implies \rho(AB) \leq \rho(B)
+	\end{align*}
+
+	\textbf{(2):} Clearly $B$ restricted to $\Nl(AB)$ maps onto $\Rg(B) \cap \Nl(A)$, for if $x \in \Nl(AB)$, then $A(Bx)=0$ and $\Nl(B) \subseteq \Nl(AB)$ as well, hence by the above theorem we see that
+	\begin{align*}
+		\Rg(B) \cap \Nl(A) \cong \Nl(AB) / \Nl(B)
+	\end{align*}
+	which implies that 
+\begin{align*}
+	\nu(AB)-\nu(B)&=\dim(\Nl(AB))-\dim(\Nl(B))\\
+	&=\dim(\Nl(AB) / \Nl(B))\\
+	&=\dim(\Rg(B) \cap \Nl(A))\\
+	&\leq \dim(\Nl(A))\\
+	&=\nu(A)\\ 
+	\implies \dim(\Nl(AB))&\leq \nu(A) + \nu(B)
+\end{align*}
+as wanted
+\end{proof}
+\end{theorem}
+
+\chapter{Triangular form}
+\section*{Agenda}
+\begin{enumerate}
+	\item 
+\end{enumerate}
+\section*{Content}
+In the following, $V$ is a vector space with $\dim(V)=n< \infty$ over a field $\F$.
+
+\begin{definition}
+	A \emph{flag} in $V$ is a chain of subspaces 
+	\begin{align*}
+		0=M_0\subset M_1 \subset M_2 \subset \dots \subset M_q =V.
+	\end{align*}
+	A \emph{full flag} is a flag $(M_i)_{i=0}^q$ satisfying $\dim(M_i)=i$, which in particular implies that $q=n$. For $A \in \End(V)$, a flag is said to be $A$-invariant if each subspace is $A$-invariant.
+\end{definition}
+\begin{lemma}
+	Every basis of $V$ gives rise to a full flag, and every full flag gives rise to a basis of $V$.
+	\begin{proof}
+		Given a basis $\{x_1,\dots,x_n\}$ of $V$, setting $M_j:=\Span\{x_1,\dots,x_j\}$ we obtain a full flag $0=M_0 \subset M_1 \subset\dots \subset M_n = V$. Conversely, assume that $0=M_0 \subset M_1 \subset\dots \subset M_n = V$, we can pick $x_i \in M_i$ consecutively such that $M_i=\Span\{x_1,\dots,x_i\}$ and then $V=\Span\{x_1,\dots,x_n\}$.
+	\end{proof}
+\end{lemma}
+
+\begin{lemma}
+	Let $A\in \End(V)$. Then the matrix $[A]$ with respect to a basis $\{x_1,\dots,x_n\}$ is \emph{upper triangular} if and only if the corresponding full flag is invariant.
+	\begin{proof}
+		Assume that $[A]$ is upper triangular. That means that $Ax_j \subseteq \Span\left\{ x_1,\dots,x_j \right\}=M_j$ so $AM_j \subset M_j$. If the full flag is invariant, then $A M_j \subset M_j$ so that $Ax_j \in \Span\left\{ x_1,\dots,x_j \right\}$ so $[A]$ is upper triangular w.r.t the basis	
+	\end{proof}
+\end{lemma}
+We recall that a field $\F$ is algebraically closed if every polynomial in $\F[x]$ has all its roots in $\F$. And that for $A \in \End(V)$ we define $A' \in \End(V')$ by $A'(y)=y \circ A$ for all $y \in V'$.
+\begin{theorem}
+	If $\F$ is algebraically closed, then ever $A \in \End(V)$ admits a full invariant flag.
+	\begin{proof}
+	Induction on the dimension $\dim(V)=n$: For $n=0$ there is nothing to show, and the same is true for $n=1$.
+	
+	Assume that $n>1$ and that it is true for $n-1$. Since $\F$ is algebraically closed, the characteristic polynomial $\chi_{A'}$ has a root in $\F$, i.e., and eigenvalue of $A'$ and denote it by $\lambda$. Pick a non-zero eigenvector $y \in V'$ associated to the eigenvalue $\lambda$. Then $\dim(\Rg(y))=1$ since $y \neq 0$. By the fundamental theorem, $V / \Nl(y)\cong \Rg(y)$, so $\dim(Nl(y))=n-1$. So let $M_{n-1}=\Nl(y)$. All we need to show is that $M_{n-1}$ is $A$-invariant:
+	\begin{align*}
+		x \in M_{n-1} \iff y(x)=0 \implies 0= \lambda y(x)=A'y(x)=y(Ax) \implies Ax \in M_{n-1}.
+	\end{align*}
+	Our induction hypothesis now ensures the existence of a full invariant flag 
+	\begin{align*}
+		0=M_0\subset M_1 \subset \dots \subset M_{n-1}\subset M_n=V
+	\end{align*}
+	\end{proof}
+\end{theorem}
+
+We can now show the following
+\begin{theorem}
+	If $\F$ is algebraically closed, then for every $A \in \End(V)$ there is a basis for $V$ such that $[A]$ is upper triangular.
+	\begin{proof}
+		Given $A$, use the above theorem to obtain a full invariant flag. Use the lemma to obtain a basis for this full flag. Then $[A]$ is upper triangular with respect to this basis.
+	\end{proof}
+\end{theorem}
+We recall the definition of the characteristic polynomial
+\begin{definition}
+For $A \in \End(V)$, the characteristic polynomial $\chi_A(x):=\det([A]-x)$ is a polynomial in $\F$, and since $\det$ is independent of basis choice, so is the characteristic polynomial.
+\end{definition}
+\begin{theorem}
+	When $[A]$ is upper triangular, the diagonal elements $\alpha_{11},\dots,\alpha_{nn}$ are the eigenvalues of $A$, each occuring according to its algebraic multiplicity.
+	\begin{proof}
+		If $[A]$ is triangular, then the determinant $\det([A])$ is the product of the diagonal elements of $[A]$. If $[A]$ is triangular, then $[A]-x$ is triangular, and so
+		\begin{align*}
+			\chi_A(x)=(\alpha_{11}-x)\cdots(\alpha_{nn}-x)
+		\end{align*}
+		hence the roots of $\chi$ is the diagonal values of $[A]$.
+	\end{proof}
+\end{theorem}
+
+
+\chapter{Nilpotence}
+\section*{Agenda}
+\todo{fix agenda}\begin{enumerate}
+	\item 
+\end{enumerate}
+\section*{Content}
+In the following, we let $V$ be a vector space with $\dim(V)=n < \infty$ over a field $\F$.
+\begin{definition}
+	An endomorphism $A \in \End(V)$ is nilpotent if there is $q \geq 0$ such that $A^q=0$. The index is the smallest integer $q$ such that $A^q=0$ but $A^{q-1}\neq 0$.
+\end{definition}
+We wish to characterise all nilpotent maps in the following. We will do this by the following theorem:
+\begin{theorem}
+	Let $\dim(V)<\infty$ and $A \in \End(V)$ nilpotent. Then there is $r \geq 0$ and integers $q_1 \geq q_2 \geq \dots \geq q_r >0$ and $x_1,\dots,x_r \in V$ such that:
+	\begin{enumerate}
+		\item The vectors $A^j x_i$ where $\left\{ 0 \leq j < q_i \right\}$ for $1 \leq i \leq r$ gives a basis of $V$. In particular we note that this implies that $q_1+q_2+\dots+q_r=n$
+		\item $A^{q_i}x_i=0$ for $1 \leq i \leq r$
+	\end{enumerate}
+\end{theorem}
+to prove this theorem, we need the following:
+\begin{theorem}
+	Assume $\dim(V)<\infty$ and $A \in \End(V)$ of index $q$. Let $x_0 \in V$ satisfy $A^{q-1}x_0\neq 0$ (which assume by definition of $q$, i.e. $A^{q-1}\neq 0$) Then
+	\begin{enumerate}
+		\item The vectors $x_0,Ax_0,\dots,A^{q-1}x_0$ are linearly independent.
+		\item The space $H=\Span\left\{ x_0,Ax_0,\dots,A^{q-1}x_0 \right\}$ is $A$ invariant.
+		\item There exists an $A$-invariant subspace $K$ such that $V=H \oplus K$
+	\end{enumerate}
+\end{theorem}
+It is not hard to see that the above theorem will imply the proof of the other theorem:
+\begin{proof}[Proof of theorem 9.2]
+First let $q:=q_1$ and write $V=H_1\oplus K$. Then clearly $A\big|_K$ is nilpotent of index $q_2 \leq q_1$. Apply the theorem again and again. It will terminate since $\dim(V)<\infty$.
+\end{proof}
+We now prove the needed theorem:
+\begin{proof}[Proof of theorem 9.3]
+	Recall that $A$ have nilpotence index $q$ and $x_0$ witnessed this: $A^{q-1}x_0\neq 0$.
+
+	\textbf{(1)}: Assume that the set $\{x_0,Ax_0,\dots,A^{q-1}x_0\}$ is linearly dependent. This means that there is $k \leq q_1$ (if $k=q-1$ then the span is $0$) such that 
+	\begin{align*}
+		A^{q-1} \in \Span\left\{ A^{k+1},\dots,A^{q-1}x_0 \right\}
+	\end{align*}
+	Then $A^kx_0=\alpha_{k+1} A^{k+1}x_0+\dots+\alpha_{q-1}A^{q-1}x_0$. Applying $A^{q-1-k}$ to this we get $A^{q-1}x_0=0$, contradicting our assumption.
+	
+	\textbf{(2)}: This is clear, as $A(\Span\{x_0,\dots,A^{q-1}x_0\})=\Span\{Ax_0,\dots,A^{q-1}x_0,0\}=\Span\left\{ Ax_0,\dots,A^{q-1}x_0 \right\}$.
+
+	\textbf{(3)}: Now $H:=\Span\left\{ x_0,\dots,A^{q-1}x_0 \right\}$. We wish to find $K \subseteq V$ such that $A(K) \subseteq K$ and $V=H\oplus K$. We do so by induction on $q$: for $q=1$ we have $A=0$ so every subspace is invariant.
+
+	Assume it holds for all nillpotent of index $<q$. Set $R:=\Rg(A)$. Then $R$ is $A$-invariant and $A\big|_R$ is nilpotent of index $q-1$, so we may apply the induction hypothesis to $y_0=Ax_0 \in R$ to obtain decomposition $R=H_0 \oplus K_0$ where $H_0=\Span\left\{ y_0, Ay_0,\dots,A^{q-2}y_0 \right\}=A(H)$, since $y_0=Ax_0$ and $K_0 \subset R$ is some invariant subspace. 
+	
+	Set $K_1 := A^{-1}(K_0)$ to be the preimage of $K_0$ under $A$. Then $K_0 \subset K_1$, since if $x \in K_0$ then invariance implies $Ax_0 \in K_0$ so $x \in A^{-1}\{Ax_0\} \subseteq A^{-1}(K_0)$. We then have
+
+	\begin{itemize}
+		\item $H+K_1=V$: For if $x \in V$ then $Ax \in R=H_0 \oplus K_0$ so $Ax=y+z$ for some $y \in H_0, z \in K_0$. Since $H_0 = A(H)$, there is $y_1 \in H$ so $y= Ay_1$. Then $A(x-y_1)=Ax-y=z \in K_0$ so $x-y_1 \in K_1$ so $x = y_1+(x-y_1) \in H+K_1$.
+		\item $H \cap K_1 = \Span\left\{ A^{q-1}x_0 \right\}$: Let $x \in H \cap K_1$, then 
+			\begin{align*}
+				Ax \in A(H \cap K_1) \subseteq A(H) \cap A(K_1) \subseteq H_0 \cap K_0=\{0\}.
+			\end{align*}
+			In particular, since $\{x_0,\dots,A^{q-1}x_0\}$ is linearly independent, this implies in particular that $x \in \Span\{A^{q-1}x_0\}$, since $A\left( \sum \alpha_i A^ix_0 \right)=0$ implies that $\alpha_i=0$ for all $i$ not equal $q-1$ (Or equivalently, $H \cap \Nl(A)=\Span\left\{ A^{q-1}x_0 \right\}$).
+		\item $H \cap K_0= \{0\}$: Since $K_0 \subset K_1$ and $A^{q-1}x_0 \not\in K_0$, since $\Rg(A)=K_0 \oplus H_0$ and $A^{q-1}x_0 \in H_0$, so the statement holds.
+		\item Let now $K$ be any subspace of $K_1$ of codimension $1$ containing $K_0$ but not $A^{q-1}x_0$. Then $H \oplus K=V$ and $K$ is invariant under $A$:
+			\begin{align*}
+				A(K) \subset A(K_1) \subset K_0 \subset K
+			\end{align*}
+	\end{itemize}
+This finishes the proof.
+\end{proof}
+\todo{uniqueness}
+
+\chapter{Jordan Normal Form}
+\section*{Agenda}
+\begin{enumerate}
+	\item 
+\end{enumerate}
+\section*{Content}
+In the following, let $V$ be a vector space over a field $\F$ with $\dim(V)=n<\infty$. We wish to classify all $A \in \End(V)$ for algebraically closed $\F$ to be of the form (for a suitable base):
+\begin{align*}
+	[A]=\begin{pmatrix}
+		\bullet &  &0 \\
+		  &\ddots  &\\
+		 0 & & \bullet
+	\end{pmatrix}
+\end{align*}
+Where $\bullet=\begin{pmatrix}
+	\lambda_i & & 0 \\
+	& \ddots &\\
+	0 & & \lambda_i
+\end{pmatrix}+[Nilpotent]$ and $\lambda_i$ is an eigenvalue, and each bullet correspond to one eigenvalue, and the size of the bullets is the algebraic multiplicity of the eigenvalue. To do so, we prove the following
+\begin{theorem}
+	Let $A \in \End(V)$ with spectrum $\sigma(A) = \left\{ \lambda_1,\dots,\lambda_p \right\}$ (distinct). Then there exists a unique invariant subspace $R$ such that
+	\begin{align*}
+		V=M_{\lambda_1} \oplus \dots \oplus M_{\lambda_p} \oplus R,
+	\end{align*}
+	Where $M_{\lambda_i}=\bigcup_{k > 0} \Nl\left((A-\lambda_i)^k\right)$ are the generalized eigenspaces, and where $\chi_{A\big|_ R}$ has no roots in $\F$.
+	\label{thm:58.2}
+\end{theorem}
+The proof of this requires the following theorem
+\begin{theorem}
+	For $A \in \End(V)$, $\dim(V) < \infty$ there exists a unique reduction $V= R \oplus N$ such that $A\big|_R \in \End(R)$ is invertible and $A\big|_N \in \End(N)$ is nilpotent.
+	\label{thm:58.1}
+\end{theorem}
+The proof follows nicely from the following two lemmas:
+\begin{lemma}
+	Set $N:=\left\{ x \in V \big| \exists k > 0 : A^k x= 0 \right\}=\bigcup_{k > 0} \Nl(A^k)$. Then $N$ is $A$-invariant and the restriction $A\big|_N\in \End(N)$ is nilpotent, and every invariant subspace $N'$ such that $A\big|_{N'} \in \End(N')$ is nilpotent is contained in $N$  
+\end{lemma}
+and
+\begin{lemma}
+	Let $R=\left\{ x \in V \big| \forall k > 0 : x \in \Rg(A^k) \right\}=\bigcap_{k > 0 } \Rg(A^k)$. Then $R$ is $A$-invariant and the restriction $A\big|_{R}\in \End(R)$ is invertible. Moreover, every invariant subspace $R'$ such that $A\big|_{R'}\in \End(R')$ is invertible is contained in $R$.	
+\end{lemma}
+We prove both of them at the same time:
+\begin{proof}[Proof of lemmas:]
+	Set $N_k:=\Nl(A^k)$ and $R_k:=\Rg(A^k)$ for $k \in \N$. Then we obtain
+	\begin{align*}
+		0 &= N_0 \subset N_1 \subset \dots \subset N_k \subset \dots\\
+		V &= R_0 \supset R_1 \supset \dots \supset R_k \supset \dots
+	\end{align*}
+	where $A(N_k) \subset N_{k-1}\subset N_k$ and $A(R_k) \subset R_{k+1} \subset R_k$ so they are invariant subspaces. Since $\dim(V)$ is finite, these stabilize. So there is $q>0$ usch that $N_k=N_q$ and $R_k=R_q$ for $k \geq q$. Then $N=N_q$ and $R=R_q$ are invariant subspaces.
+
+	Clearly $(A\big|_{N})^q=0$, so it is nilpotent. We also see that $A(R)=R_{q+1}=R_q$ so $A\big|_{R} \in \End(R)$ is surjective and hence invertible. 
+
+	\textbf{uniquenss of N} follows from if $A\big|_{N'}$ is nilpotent and $N'$ invariant subspace, then $N' \subset N_k$ where $k$ is the nilpotence index of $A\big|_{N'}$, so $N' \subseteq N$.
+
+	\textbf{uniqueness of R} follows from: If $A\big|_{R'} \in \End(R')$ is invertible, then all powers of it is invertible, hence $R' \in R_k$ for all $k >0$ so $R' \subset R$.
+\end{proof}
+We can now prove \Cref{thm:58.1}
+\begin{proof}[Proof of \Cref{thm:58.1}]
+	Let $R$ and $N$ as in the lemmas. Then invertibility of $A\big|_{R}$ implies that $A^k\big|_R$ is invertible for all $k$, so $A^k\big|_{R \cap N_k}$ is invertible for all $k$, but $A^k\big|_{N_k}=0$ so $R\cap N_k=0$ for all $k$ so $R \cap N_k=0$. Now, let $q$ be such that $R=\Rg(A^q)$ and $N=\Nl(A^q)$. Then $R\cong V/N$ so $\dim(R)=\dim(V)-\dim(N)\iff \dim(R)+\dim(N)=\dim(V)$. Since their intersection is empty $R \oplus N \subset V$. Since their dimension is the same as $V$'s: $V \subset  R \oplus N$.
+\end{proof}
+
+We can now prove the main theorem: 
+\begin{proof}[Proof of\Cref{thm:58.2}]
+Let $V=M_i \oplus R_i$ be reductions for $A-\lambda_i$. If $i \neq j$, then 
+\begin{align*}
+	\chi_{\left( A-\lambda_j \right)\big|_{M_i}}(x)&=\chi_{\left( A-\lambda_j+\lambda_j-\lambda_i \right)\big|_{M_i}}(x+\lambda_j-\lambda_i)\\
+	&=\chi_{\left( A-\lambda_i \right)\big|_{M_i}}(x+\lambda_j-\lambda_i)\\
+	&=(-x+\lambda_i-\lambda_j)^{m_i}
+\end{align*}
+where $m_i$ is the algebraic multiplicity of $\lambda_i$. In particular, when evaluated at $0$ we obtain the determintant of $\det((A-\lambda_j)_{M_i})=(\lambda_i-\lambda_j)^{m_i}\neq 0$, so it is invertible. By the previous lemma, since $M_i$ is invariant under $A$ it is also invariant under $A-\lambda_j$, we see that $M_i \subset R_j$ (invertible and invariance).
+
+Now, let $E_i,E_j$ be the projections on $ M_i$ and $M_j$ along $R_i$ and $R_j$, respectively. As $M_j \subseteq R_i$ and $M_i \subseteq R_j$ we haver
+\begin{align*}
+	E_i E_j = 0 = E_j E_i
+\end{align*}
+and $E_1+E_j$ is the projection on $M_i \oplus M_j $ along $R_i \cap R_j$ and $V=M_i \oplus M_j \oplus \left( R_i \cap R_j \right)$. This holds pairwise for all $i \neq j$, and the theorem of projections generalises, so we obtain $R:=R_1 \cap \dots \cap R_p$ and
+\begin{align*}
+	V=\bigoplus_{i=1}^p M_i \oplus R
+\end{align*}
+and hence
+\begin{align*}
+	\chi_a=\prod_{i=1}^p \left( \chi_{A \big| _{M_i}} \right) \chi_{A \big|_R}=\prod_{i=1}^p (\lambda_i-x)^{m_i}\chi_{A \big|_R}
+\end{align*}
+as wanted.
+\end{proof}
+The jordan normal then follows since if $\F$ is algebraically closed, then $V= M_{\lambda_1}\oplus \dots \oplus M_{\lambda_p}$ and 
+\begin{align*}
+	A\big|_{M_{\lambda_i}}=\left(A-\lambda_i+\lambda_i\right)\big|_{M_{\lambda_i}}=\lambda_i+\underbrace{\left( A-\lambda_i \right)\big|_{M_{\lambda_i}}}_{\text{nilpotent of index }m_i }
+\end{align*}
+
+\chapter{Perpendicular projections}
+\section*{Agenda}
+\begin{enumerate}
+	\item 
+\end{enumerate}
+\section*{Content}
+In the following we let $V$ be a vector space over $\F=\R$ or $\F=\C$. If $V=M \oplus N$ then the map $z=x+y \mapsto x \in M$ is the projection on $M$ along $N$. This happens if and only if $E \in \End(V)$ satisfy $E=E^2$ and $M=\Rg(E)$ and $N=\Nl(E)$. The map $1-E$ is the projection on $N$ along $M$ in this case, and $E$ is a projection if and only if $1-E$ is a projection.
+
+If $\dim(V)<\infty$, then every subspace $M$ of $V$ satisfy $V=M\oplus M^\perp$.
+
+\begin{definition}
+	A \emph{perpendicular projection} is a projection $E$ such that $\Rg(E)\perp\Nl(E)$.
+\end{definition}
+And we have a lemma
+\begin{lemma}
+	If $V=M+N$ and $M \perp N$ then $V=M\oplus N$ and $N=M^\perp$
+	\begin{proof}
+		From $M \perp N$ we see that $N \subset M^\perp$ by definition. If $x \perp x$ then $x=0$, since $\langle x,x \rangle=0 \iff x=0$ so $M \cap M^\perp=0$. 
+
+		This implies that $M \cap N=0$, so $V=M \oplus N$. We need $M^\perp \subset N$: If $z \in M^\perp$, then $z=x+y$ for $x \in M$ and $y \in N$, hence $x = y-z \in M \cap M^\perp=0$ so $z=y \in N$ as wanted.
+	\end{proof}
+\end{lemma}
+
+We can now completely classify when a projection is a perpendicular projection, by the following theorem:
+\begin{theorem}
+	Let $V=M \oplus N$ and let $E$ be the projection on $M$ along $N$. Then the following are equivalent:
+	\begin{enumerate}
+		\item $E$ is self-adjoint
+		\item $E$ is a perpendicular projection ($\Rg(E)\perp \Nl(E)$).
+		\item $\lv Ez \rv \leq \lv z \rv$ for all $z \in V$
+	\end{enumerate}
+	If these holds, then $E$ is positive (self-adjoint and $\langle Ez,z\rangle \geq 0$ for all $z \in V$) and “$=$” holds in (3) only if $Ez=z$.
+	\begin{proof}
+		$1 \implies 2$: Let $z \in V$. Then $\langle Ez, (1-E)z \rangle = \langle z,E(1-E)z\rangle=\langle z,0 \rangle=0$ so $\Rg(E) \perp \Nl(E)$ as wanted.
+
+		$2 \implies 1$. Let $z, w \in V=\Rg(E) \oplus \Nl(E)$. Then $z=Ez+(1-E)z$ and $w = Ew + (1-E)w$ and by assumption $(1-E)z \perp Ew$ and $Ez \perp (1-E)w$, so
+		\begin{align*}
+			\langle Ez,w \rangle  \langle Ez,Ew\rangle =\langle z, Ew \rangle \implies E^*=E.
+		\end{align*}
+		
+		$2 \implies 3$: By pythagoras and the assumption $Ez\perp (1-E)z$:
+		\begin{align*}
+			\lv z \rv ^2 = \lv Ez+(1-E)z\rv^2 =  \lv Ez \rv^2 + \lv (1-E)z \rv ^2 \geq \lv Ez\rv^2.
+		\end{align*}
+
+		$3 \implies 2$ Let $x \in M$ and $y \in N$. For all $t \in \R$ we get
+		\begin{align*}
+			\lv x+ty \rv^2 = \lv x \rv^2 + 2 t \textrm{Re}\langle x,y \rv + t^2 \lv y \rv^2 \geq \lv x \rv ^2
+		\end{align*}
+		which implies
+		\begin{align*}
+			f(t)=t^2 \lv y \rv ^2 - 2 t  \textrm{Re}\langle x,y \rv \geq 0
+		\end{align*}
+		It has two roots, $t=0$ and $t= - 2 \textrm{Re}\langle x,y \rv \lv y \rv^{-2}$ and between these roots it take negative values if $\textrm{Re}\langle x,y \rangle \neq 0$, contradicting $f(t) \geq 0$. Hence $\textrm{Re}\langle x,y \rv =0$. If $\F = \R$ we are done. If $\F= \C$ then consider $iy$ in the above. Then we get
+		\begin{align*}
+			\langle x+ity , x + ity \rangle &= \lv x  \rv ^2 + (x,ity)+ (ity,x)+t^2 \lv y \rv^2 \\
+			&= \lv x \rv ^2 +i(-t\langle x , iy \rangle + t \langle iy,x \rangle ) +t^2 \lv x \rv ^2 \\
+			&= \lv x \rv^2 + 2 t\textrm{Im} (\langle x, y \rangle ) + t^2 \lv y \rv ^2 \\
+			&\geq \lv x\rv^2 		
+		\end{align*}
+		again implying that also $\textrm{Im}\langle x,y \rangle=0$. So $\Rg(E) \perp \Nl(E)$.
+	\end{proof}
+\end{theorem}
+
+We end with an example: If 
+\begin{align*}
+A=\begin{pmatrix}
+	1 & 0 \\
+	1 & 0
+\end{pmatrix}
+\end{align*} then $A$ is idempotent, but $A \neq A^*$. The range of $A$ is the diagonal $\left\{ (x,x) \right\}$ and the kernel is $\left\{ (0,x) \right\}$ and these are not perpendicular. 
+\chapter{Spectral theorem}
+In the following $V$ is a vector space over $\F=\R$ or $\F=\C$ of dimension $\dim(V)=n<\infty$ and $A \in \End(V)$. For each $\lambda \in \sigma(A)$ we denote by $V_\lambda$ the associated eigenspace, i.e., $V_\lambda = \Nl(A-\lambda)$ and we denote by $E_\lambda$ the orthogonal projection hereon. Then we have the following theorem
+
+\begin{theorem}[Spectral theorem for self-adjoint operators]
+	Assume $A=A^*$ and $\dim(V) < \infty$. Then the following holds:
+	\begin{enumerate}
+		\item $\sigma(A) \subseteq \R$
+		\item $E_\lambda E_\mu=0$ for $\lambda \neq \mu \in \sigma(A)$.
+		\item $ \sum_{\lambda \in \sigma(A)}E_\lambda=1 $
+		\item $A= \sum_{\lambda \in \sigma(A)} \lambda E_\lambda$ (spectral resolution)
+		\item If $p$ is a polynomial then $p(A)=\sum_{\lambda \in \sigma(A)}p(\lambda) E_\lambda$
+		\item For each $\lambda \in \sigma(A)$ there exists a polynomial $p_\lambda$ such that $E_\lambda= p_\lambda(A)$
+		\item If $B \in \End(V)$ then $BA=AB$ is and only if for all $\lambda \in \sigma(A)$ we have $B E_\lambda = E_\lambda B$.
+	\end{enumerate}
+	\begin{proof}
+		\textbf{(1)}: If $\F=\R$ nothing to prove. If $\F=\C$ then let $\lambda \in \sigma(A)$ and let $x$ be any eigenvector associated to $\lambda$. Without loss of generality assume $\lv x \rv=1$. Then $\langle Ax,x\rangle=\langle \lambda x ,x \rangle = \lambda$ and so
+		\begin{align*}
+			\lambda=\langle Ax ,x \rangle = \langle x,A^*x \rangle = \langle x,Ax \rangle = \overline{\langle Ax,x\rangle}= \overline{\lambda}
+		\end{align*}
+		so $\lambda \in \R$.
+
+		\noindent\textbf{(2)}: If $\lambda \neq \mu \in \sigma(A)$ and $x \in V_\lambda$ and $y \in V_\mu$ then
+		\begin{align*}
+			\lambda \langle x,y \rangle = \langle Ax,y\rangle = \langle x,Ay \rangle = \overline{\mu} \langle x,y \rangle = \mu \langle x, y \rangle
+		\end{align*}
+		and since $\mu \neq \lambda$ this implies $\langle x,y \rangle = 0$ so $V_\lambda \perp V_\mu$.
+
+		\noindent\textbf{(3)}: Let $E:=\sum_{\lambda \in \sigma(A)} E_\lambda$. This is an orthogonal projection since $E_\lambda \perp E_\mu$ for $\lambda \neq \mu \in \sigma(A)$ by (2). It is the projection onto $M:= \bigoplus_{\lambda \in \sigma(A)} \Rg(E_\lambda)$ along $N=M^\perp$, and $M$ is $A$ invariant so $N$ is $A^*$ invariant, hence $A$ invariant since $A^*=A$. All eigenvectors of $A$ are in $M$, and$A\big|_N$ is self-adjoint so every eigenvalue is real. If $N$ is not $0$, this would contradict the fact that $A^*=A \implies \sigma(A) \subseteq \R$ for both $\F=\C$ or $\F=\R$ which would give an eigenvector of $A$ not contained in $M$. Hence $N=0$ and $E=1$.
+
+		\noindent\textbf{(4)}: Apply $A$ to $E$ from both sides to see the desired result: $AE_\lambda x = \lambda E_\lambda x$ for all $\lambda \in \sigma(A)$ and $x \in V$, and $\sum_{\lambda \in \sigma(A)}E_\lambda=1$ finishes the proof.
+		
+		\noindent\textbf{(5)}: We note that for any power $A^n=\sum_{\lambda \in \sigma(A)} \lambda^n E_{\lambda}$, as seen for $n=2$ since $A^2=\sum_{\lambda, \mu \in \sigma(A)}\lambda \mu E_{\lambda} E_\mu= \sum_{\lambda \in \sigma(A)} \lambda^2 E_\lambda$ since each eigenprojection is perpendicular to the others.
+
+		\noindent\textbf{(6)}: Note that the lagrangian interpolation polynomial exists: given data points $(x_1,y_1),\dots,(x_n,y_n)$ there is a polynomial $F(x)$ such that $F(x_i)=y_i$ and it is the sum of polynomials $\ell_{y_i}(x)$ satisfying $\ell_{y_i}(x_j)=\delta_{ij}$, so setting $\sigma(A)=\left\{ \lambda_1,\dots,\lambda_n \right\}$ the lagrangian polynomials for $(\lambda_1,\lambda_n),\dots,(\lambda_n,\lambda_n)$ satisfy $\ell_{\lambda_i}(A)=\ell_{\lambda_i}(\lambda_i)E_{\lambda_i}=E_{\lambda_i}$, the result follows from (5).
+
+		\noindent\textbf{(7)}:by (4) we see that $B E_\lambda = E_\lambda B$ implies $BA=AB$. By 5 and 6, we see that, with $p_{\lambda}$ being the polynomail in (6) that
+		\begin{align*}
+			B p_\lambda(A)=B\sum_{\lambda \in \sigma(A)} p(\lambda) E_{\lambda} = B E_\lambda
+		\end{align*}
+		but clearly $AB=BA$ implies $ Bp_{\lambda}(A)=p_{\lambda}(A)B$. The claim follows now.
+	\end{proof}
+\end{theorem}
+
+\chapter{Polar decomposition}
+\section*{Agenda}
+\begin{enumerate}
+	\item 
+\end{enumerate}
+\section*{Content}
+We begin by noting the following: Given any set of values $(x_1,y_1),\dots,(x_n,y_n) \in \C^2$ the polynomial 
+\begin{align*}
+	f_{k}(t):=y_k \prod_{\stackrel{1 \leq j \leq n}{  j \neq k }} \frac{t-x_j}{x_k-x_j}
+\end{align*}
+satisfy $f_k(x_j)=y_k \delta_{k,j}$. In the following $V$ is a complex vector space (i.e. over the field $\F=\C$) of dimension $\dim(V)=n< \infty$. Any operator $A \in \End(V)$ satisfies
+\begin{align*}
+	A=\frac{A+A^*}{2}+i\frac{A-A^*}{2i}
+\end{align*}
+and each part is self-adjoint. The spectral theorem for self-adjoint operators then ensure, together with the fact, that for normal operators $A$ that $\textrm{Re}(A)$ and $\textrm{Im}(A)$ commute, so the spectral theorem for self-adjoint operators extend to the class of normal operators. 
+
+Then, any function which is defined on the spectrum $\sigma(A)$ for normal operators $A$ will give rise to a well-defined element $f(A)$, since we may just use the interpolation polynomial above on the pairs $(\lambda,f(\lambda))$ for $\lambda \in \sigma(A)$. In particular, for any operator $A$, the element $A^*A$ is positive and self-adjoint, so all its spectrum is contained in $\R_+$, so we may define $\sqrt{A^*A}$ by the spectral theorem.
+
+\begin{theorem}
+	If $A \in \End(V)$ where $V$ is a finite dimensional inner-product space, then there is a unique positive $P$ and there is an isometry $U$ such that $A=UP$. If $A$ is invertible then $U$ is also uniquely determined by $A$.
+	\begin{proof}
+		We show first for $A$ invertible: Since $A^*A$ is positive, the element $P:=\sqrt{A^*A}$ is the unique positive square root. Set $V=PA^-1$. Then $VA=P$, and we need to show that $V$ is an isometry, so $V^*=V^{-1}$ and setting $U:=V^{-1}$ would satisfy $A=UP$. We see that
+		\begin{align*}
+			V^*=(A^{-1})^*P^*=(A^*)^{-1}P
+		\end{align*}
+		so
+		\begin{align*}
+			V^*V=(A^*)^{-1}P PA^{-1}=\left( A^* \right)^{-1}\sqrt{A^*A}\sqrt{A^*A}A^{-1}=\left( A^* \right)^{-1}A^*AA^{-1}=1
+		\end{align*}
+		so $V$ is an isometry. Assume now that $UP=U_0P_0$. Then $PU^*=P_0U_0^*$, so
+		\begin{align*}
+			P^2=PU^*UP=P_0U_0^*U_0P_0=P_0^2
+		\end{align*}
+		And the transformation $P \mapsto P^2=P_0^2$ has only one positive square root, $P=P_0$. If $A$ is invertible, then $P$ is invertible, since $P=U^{-1}A$, so $UP=U_0P_0=U_0P\implies U=U_0$.
+
+		Now let $A\in \End(V)$ be any operator not necessarily invertible. Set $P=\sqrt{A^*A}$ to be the positive square root. Letting $V_1:=\Nl(A)^\perp$ and $V_2 := \Rg(A)$, we see that $A\big|_{V_1} \in \Hom(V_1,V_2)$ is surjective and hence bijective. We now have the following: $V=\Nl(A) \oplus \Nl(A)^\perp=\Rg(A)^\perp \oplus \Rg(A)$ and $\Nl(A)^\perp \cong \Rg(A)$ so $\Nl(A) \cong \Rg(A)^\perp$. By the above, there is $P_0 \in \End(V_1)$ positive and isometry $U_0 \in \Hom(V_1,V_2)$ such that $A\big|_{V_1}=UP$. Pick now any isometry $U_2 \in \Hom(V_1^\perp,V_2^\perp)$ then
+		\begin{align*}
+			U:=U_1 \oplus U_2 \in \End(V), \ P:=P_0 \oplus 0 \in \End(V)
+		\end{align*}
+		satisfy $U$ is an isometry and $P$ is positive and $A=UP$ for $Ax=Ax\oplus 0 = U_1 P_0 x \oplus 0 = UPx$.
+	\end{proof}
+\end{theorem}
+We can by the above describe exactly when an operator is normal:
+\begin{theorem}
+	Let $A \in \End(V)$ with polar decomposition $A=UP$. Then $A$ is normal if and only if $UP=PU$.
+	\begin{proof}
+		$A^*A=AA^*$ if and only if $PU^*UP=UPPU^*$ and $PU^*UP=P^2$ if and only if $P^2=UP^2U^{-1}$ if and only if $P^2U=UP^2$ if and only if $PU=UP$ by the spectral theorem for self-adjoint (e.g. positive as $P$)
+	\end{proof}
+\end{theorem}
+
+
+\chapter{Norms of linear transformations}
+For a normed vector space $V$ we say that $A \in \End(V)$ is bounded if there is $K \geq 0$ such that for all $x \in V$ we have $\lv Ax \rv \leq K \lv x \rv$. In this case, we define
+\begin{align*}
+	\lv A \rv := \sup_{\lv x \rv = 1} \left\{ \lv Ax \rv \right\}= \sup_{\lv x \rv \neq 0} \left\{ \frac{\lv Ax \rv}{\lv x \rv} \right\}.
+\end{align*}
+The set of all bounded maps is denoted by $B(V)$.
+\begin{definition}
+	The spectral radius of $A \in B(V)$ is the number $\rho:=\sup\left\{ |\lambda | , \ \lambda \in \sigma(A) \right\}$.
+\end{definition}
+
+\begin{theorem}
+	Let $\dim(V) < \infty$ and let $\langle \cdot  \cdot \rangle $ be an inner-product on $V$. Then every $A \in B(V)$ normal satisfy
+	\begin{align*}
+		\rho = \sup\left\{ | \langle Ax,x \rangle| , \lv x \rv = 1  \right\} = \lv A \rv.
+	\end{align*}
+\begin{proof}
+	Let $\gamma:=\sup_{\lv x \rv = 1}\left\{ \lv \langle Ax,x\rangle \right\}$. If $\lv x \rv =1$ is any normalized eigenvector for an eigenvalue $\lambda \in \sigma(A)$ then $|\lambda|=|\lambda| | \langle x,x \rangle|= | \langle Ax ,x \rangle |  $ so $\rho \leq \gamma$. We recall that for inner product spaces, the operator norm is also determined by the expression $\lv A \rv=\sup_{\lv x \rv = \lv y \rv = 1} \left\{ |\langle Ax,y\rangle \right\}$, so in particular $\gamma \leq \lv A \rv$. We now have
+	\begin{align*}
+		\rho \leq \gamma \leq \lv A \rv.
+	\end{align*}
+
+	Now, since $A$ is normal, it is of the form $A=\sum_{\lambda \in \sigma(A)}\lambda E_\lambda$ where $E_\lambda$ are the eigenspace projections on the eigenspaces of $A$. So
+	\begin{align*}
+		\lv A x \rv^2 = \sum_{\lambda \in \sigma(A)} \lv \lambda E_\lambda x\rv ^2 \leq \sum_{\lambda \in \sigma(A)} \rho^2 \lv E_{\lambda} x \rv^2 = \rho^2 \lv x \rv^2
+	\end{align*}
+	so $\lv A \rv  \leq \rho$, finishing the proof.
+\end{proof}
+\end{theorem}
+
+We can now characterise all the eigenvalues of a normal operator by the following
+
+\begin{theorem}
+	Let $A=A^* \in \End(V)$ with $\dim(V)=n < \infty$. Let $\lambda_1\geq \lambda_2 \geq \lambda_n$ be the eigenvalues of $A$ (repetitions the number of alg. multiplicity of each eigenvalue). Define for each subspace $M \subseteq V$ the number $\mu(M)=\max_{\stackrel{\lv x \rv = 1}{x \in M}} \left\{ \langle Ax,x\rangle \right\}$. Then it holds that
+	\begin{align*}
+		\lambda_k=\mu_k:=\inf\left\{ \mu(M) : \dim(M)=n-k+1 \right\}.
+	\end{align*}
+	\begin{proof}
+	Since $A$ is self-adjoint, we may by the spectral theorem pick a basis of orthonormal vectors $x_1,\dots,x_n$ such that
+	\begin{align*}
+		Ax_i=\lambda_i x_i.
+	\end{align*}
+	Set now $M_k:=\Span\left\{ x_1,\dots,x_k \right\}$. We now show that $\lambda_k \leq \inf\left\{ \mu(M) : \dim(M)= n-k+1 \right\}$. So let $M \subseteq V$ be a subspace of dimension $\dim(M)=n-k+1$. Then $\dim(M_k \oplus M)=k+n-k+1=n+1>n=\dim(V)$ so $M \cap M_k \neq \left\{ 0 \right\}$. By self-adjointness, the set $\left\{ \langle Ax,x \rangle : \lv x \rv =1 \right\}$ is the convex hull of $\sigma(A)$, and since $A\big|_{M_k}$ is normal: $\left\{ \langle Ax,x \rangle : x \in M_k \right\}=\textrm{conv}\left(\sigma\left((A\big|_{M_k}\right)\right)=[\lambda_k,\lambda_1]$ since $\sigma(A\big|_{M_k})=\left\{ \lambda_1,\dots,\lambda_k \right\} $ and $\lambda_k \leq \lambda_1$. In particular, we infer that
+	\begin{align*}
+		\langle Ax,x \rangle  \geq \lambda_k \text{ for } x \in M_k \cap M, \lv x \rv = 1
+	\end{align*}
+	And so the number $\mu(M)=\max\{\langle Ax, x \rangle : \lv x \rv = 1  \ , x \in M\} \geq \lambda_k$, and since $M$ was arbitrary this shows that the inf of such spaces satsify this as well, i.e. $\lambda_k \leq \mu_k$. 
+
+	To show the other implication, we note that if one space of dimension $n-k+1$ satisfy $\mu(M)=\lambda_k$ then we are done, since the inf is greater than or equal to it. Let $M=\Span\left\{ x_k,\dots,x_n \right\}$. This is an $A$ invariant space of dimension $n-k+1$ and $\sigma(A\big|_{M})=\left\{ \lambda_k,\dots,\lambda_n \right\}$ so the set  
+	\begin{align*}
+		\left\{ \langle Ax,x \rangle : \lv x \rv = 1 , x \in M \right\} \subseteq [\lambda_n,\lambda_k]
+	\end{align*}
+	Moreover $\mu(M)=\lambda_k$, since $\langle Ax_k,x_k \rangle = \lambda_k$ and $x_k \in M$.
+	
+	\end{proof}
+\end{theorem}
+
+We now turn to discuss different properties of normed vector spaces and linear maps between them:
+\begin{definition}
+	The norm topology on $B(V)$ is the topology generated by the operator norm.
+\end{definition}
+
+\begin{theorem}
+	If $V$ is a banach space, then so is $B(V)$: If any cauchy sequence converges in $V$ then so will any cauchy sequence in $B(V)$ since $\lv Ax \rv \leq \lv A \rv \lv x \rv$.
+	\begin{proof}
+		Set $Ax:=\lim_{n} A_n x$ for each $x \in V$. Since $A_n$ is cauchy, $\lv A_n \rv \leq K$ for some $K$. So $\lv Ax \rv = \lim \lv A_n x \rv \leq K\lv x \rv$. Clearly $A$ is linear. And $A_n \to A$ for if $\varepsilon > 0 $ then there is $N \geq 0$ such that $\lv A_n -A_m\rv < \varepsilon$ for $m,n \geq N$. Then 
+		\begin{align*}
+			\lv (A_n-A_m)x\rv \leq \varepsilon\lv x \rv
+		\end{align*}
+		for $m,n \geq N$ and hence
+		\begin{align*}
+			\lv (A_n-A)x \rv = \lim_{m} \lv (A_n-A_m)x\rv \leq \varepsilon\lv x \rv
+		\end{align*}
+		for $n \geq N$. So $A_n \to A$.
+	\end{proof}
+\end{theorem}
+We equip $B(V)$ and $V$ with different topologies.
+\begin{definition}
+	The weak topology on $V$ is the toplogy of point-wise convergence generated by $V^*$: $x_n \to x$ weakly if $f(x_n) \to f(x)$ for all $f \in V^*$. For finite dimensional vector spaces with inner product this is equivalent to $\langle x_n,y \rangle \to \langle x,y \rangle$ for all $y \in V$ by the riesz representation theorem.
+\end{definition}
+\begin{definition}
+	The weak operator topology is the topology generated by the family of functionals $F_{x,y}: T \mapsto \langle Tx,y\rangle$ for all $x,y \in V$. We say that $T_n to T$ in the weak operator topology if and only if $\langle T_n x,y \rangle \to \langle Tx,y \rangle$ for all $x,y \in V$. It is the weakest such topology making the maps $F_{x,y}$ continuous for all $x,y$.
+\end{definition}
+\begin{definition}
+	The strong operator topology is the topology generated by the family of semi-norms $F_x : T \mapsto \lv Tx \rv$. We say that $T_n \to T$ in the strong operator topology if and only if $\langle T_n x - Tx \rv \to 0$ for all $x \in V$. This the weakest topology making the maps $F_x$ continous.
+\end{definition}
+
+If $\dim(V)< \infty$ then the topologies agree, by an argument of hilbert-schmidt norms.
+
+\end{document} 
+

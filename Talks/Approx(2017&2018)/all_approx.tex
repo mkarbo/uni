@@ -1,0 +1,1125 @@
+\documentclass[10pt,oneside,openany,final]{memoir}
+\usepackage[utf8]{inputenc}
+\usepackage[pass]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb} 
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[all]{xy}
+\usepackage{tikz-cd}
+\usepackage[style=authoryear,backend=bibtex]{biblatex}
+\usepackage{filecontents}
+\usepackage[english, status=draft]{fixme}
+\fxusetheme{color}
+\usepackage{cleveref} 
+\usepackage{tensor}
+\usepackage[backgroundcolor=cyan]{todonotes}
+\usepackage{wallpaper}
+\usepackage{titlesec}
+
+\titleformat{\chapter}[display]
+{\center\normalfont\bfseries}{}{0pt}{\Large}
+
+\renewcommand\chaptermarksn[1]{}
+\newcommand{\ssection}[1]{%
+\newpage%
+\section[#1]{\centering\normalfont\scshape \textbf{#1}}}
+
+\newcommand{\sssection}[1]{%
+\section[#1]{\centering\normalfont\scshape \textbf{#1}}}
+\addtolength{\textwidth}{30pt}
+\addtolength{\foremargin}{-30pt}
+\checkandfixthelayout
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{1}
+
+
+\newtheoremstyle{break}
+{\topsep}{\topsep}
+{\itshape}{}
+{\bfseries}{}
+{\newline}{}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheoremstyle{Break}
+{\topsep}{\topsep}
+{}{}
+{\bfseries}{}
+{\newline}{}
+\theoremstyle{Break}
+\newtheorem*{example}{Example}
+\newtheorem*{remark}{Remark}
+\newtheorem*{note}{Note}
+\setcounter{secnumdepth}{0}
+\usepackage{xpatch}
+\xpatchcmd{\proof}{\ignorespaces}{\mbox{}\\\ignorespaces}{}{}
+%\newenvironment{Proof}{\proof \mbox{} \\ \\ *}{\endproof}
+
+\chapterstyle{thatcher}
+
+\newenvironment{abst}{\rightskip1in\itshape}{}
+
+\makepagestyle{abs}
+\makeevenhead{abs}{}{}{}
+\makeoddhead{abs}{}{}{}
+\makeevenfoot{abs}{}{\scshape I }{}
+\makeoddfoot{abs}{}{\scshape  I }{}
+%\makeheadrule{abs}{\textwidth}{\normalrulethickness}
+%\makefootrule{abs}{\textwidth}{\normalrulethickness}{\footruleskip}
+\pagestyle{abs}
+
+
+\makepagestyle{cont}
+\makeevenhead{cont}{}{}{}
+\makeoddhead{cont}{}{}{}
+\makeevenfoot{cont}{}{\scshape II }{}
+\makeoddfoot{cont}{}{\scshape  II }{}
+%\makeheadrule{abs}{\textwidth}{\normalrulethickness}
+%\makefootrule{abs}{\textwidth}{\normalrulethickness}{\footruleskip}
+\pagestyle{cont}
+
+\newcommand{\lv}{\left\lVert}
+\newcommand{\rv}{\right\rVert}
+
+
+%\renewcommand\chaptermarksn[1]{}
+\nouppercaseheads
+\createmark{section}{left}{shownumber}{}{.\space}
+\makepagestyle{dut}
+\makeevenhead{dut}{Malthe karbo\scshape\rightmark}{}{\scshape\leftmark}
+\makeoddhead{dut}{\scshape\leftmark}{}{Malthe Karbo\scshape\rightmark}
+\makeevenfoot{dut}{}{\scshape $-$ \thepage\ $-$}{}
+\makeoddfoot{dut}{}{\scshape $-$ \thepage\ $-$}{}
+\makeheadrule{dut}{\textwidth}{\normalrulethickness}
+\makefootrule{dut}{\textwidth}{\normalrulethickness}{\footruleskip}
+\pagestyle{dut}
+
+\makepagestyle{chap}
+\makeevenhead{chap}{}{}{}
+\makeoddhead{chap}{}{}{}
+\makeevenfoot{chap}{}{\scshape $-$ \thepage\ $-$}{}
+\makeoddfoot{chap}{}{\scshape $-$ \thepage\ $-$}{}
+\makefootrule{chap}{\textwidth}{\normalrulethickness}{\footruleskip}
+\copypagestyle{plain}{chap}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\mbr}{(X,\mathcal{A})}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\B}{\mathbb{B}}
+\newcommand{\dd}{\partial}
+\newcommand{\ee}{\epsilon}
+\newcommand{\la}{\lambda}
+\newcommand{\cc}{\text{C}_{\text{c}}}
+\renewcommand{\H}{\mathcal{H}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\S}{\mathcal{S}}
+\newcommand{\Prob}{\mathrm{Prob}}
+\DeclareMathOperator{\Aut}{Aut}
+\newcommand{\PM}{\mathrm{PM}}
+\renewcommand{\d}{\mathrm{d}}
+\renewcommand{\Re}{\mathrm{Re}}
+\renewcommand{\Im}{\mathrm{Im}}
+
+\makeatletter
+\newcommand{\Spvek}[2][r]{%
+\gdef\@VORNE{1}
+\left(\hskip-\arraycolsep%
+\begin{array}{#1}\vekSp@lten{#2}\end{array}%
+\hskip-\arraycolsep\right)}
+
+\def\vekSp@lten#1{\xvekSp@lten#1;vekL@stLine;}
+\def\vekL@stLine{vekL@stLine}
+\def\xvekSp@lten#1;{\def\temp{#1}%
+\ifx\temp\vekL@stLine
+\else
+\ifnum\@VORNE=1\gdef\@VORNE{0}
+\else\@arraycr\fi%
+#1%
+\expandafter\xvekSp@lten
+\fi}
+\makeatother
+
+\newcommand{\K}{\mathbb{K}}
+\addtocontents{toc}{\protect\thispagestyle{empty}} 
+\def\acts{\curvearrowright}
+
+
+\begin{document}
+\pagenumbering{none}
+\chapter{Approx Lecture Note Collection\\Malthe Karbo}
+\pagenumbering{arabic}
+\chapter{Approx lecture notes on inner amenability with relations to Property (T), Property RD and $C^*$-simplicity}
+\sssection{Introduction to inner amenability}
+The goal of this lecture is to define the notion of a group $G$ being \textit{Inner amenable} and consequences thereof. We begin by some notation and recalling some previously covered topics, which should be familiar to the audience.
+
+\begin{itemize}
+	\item By $X$ we denote simultaniously both any arbitrary set or any arbitrary discrete measure space.
+	\item By $\ell^\infty(X)$ we denote the space of bounded complex-valued functions on $X$, equipped with the uniform norm $\lv \cdot \rv_{\infty}$.
+	\item By $E(X)$ we denote the set of complex-valued simple function on $X$. We note that $E(X) \subseteq \ell^\infty(X)$ is dense with respect $\lv \cdot \rv_\infty$.
+	\item By $\Prob(X)$ we denote the space of probability measures on $X$.
+	\item By $\PM(X)$ we denote the space of means on $X$, i.e., the space of finitely-additive probability measures on $X$. A mean is atomless if every singleton is of measure zero.
+	\item By $\S(X)$ we denote the set of states on $\ell^\infty(X)$, i.e., the set of positive bounded linear functionals of norm one on $\ell^\infty(X)$. Recall that in lecture 6 and 7 a bijection between $\PM(X)$ and $\S(X)$ was established. We will use this interchangeably throughout the following lecture.
+	\item By $G$ we denote any discrete group and we denote an action of $G$ on a set $X$ by $G\acts X$ for which we write $g.x$ for the action of $g\in G$ applied to $x \in X$.	
+\end{itemize}
+\begin{note}
+	An action $G \acts X$ induces an action $G \acts \Prob(X)$, given by 
+	\begin{align*}
+		g.\mu(A):=\mu(g^{-1}.A), \text{ for } g \in G, \ \mu \in \Prob(X) \text{ and } A \subseteq X.
+	\end{align*}
+This also defines an action $G \acts \S(X)$ given by $g.\varphi(f)=\varphi(g^{-1}.f)$ for $\varphi \in \S(X)$, $g \in G$ and $f \in \ell^\infty(X)$.
+\end{note}
+This induced action is very important in several fields, and can have many different properties. Measures can also behave in numerous different ways with respect to the induced action. One such behavior is invariance:
+\begin{definition}
+	If $G \acts X$ and $\mu \in \Prob(X)$, we say that $\mu$ is $G$-invariant if $g.\mu=\mu$ for all $g \in G$. We also say that $\mu$ is invariant under the action of $G$. And similarly for $G \acts \S(X)$.
+\end{definition}
+A special case of this is the notion of a left-invariant measure on $G$, where $G$ is also seen as a discrete measure space:
+\begin{definition}
+	A measure $\mu$ on a group $G$ is \emph{left-invariant} if it satisfies $\mu(gA)=\mu(A)$ for all $g \in G$ and $A \subseteq G$. This is equivalent to $\mu$ being invariant under the induced action $G \acts \Prob(G)$. There is an equivalent notion of right-invariant measures.
+\end{definition}
+Using these definitions, we may now recall the definition of an amenable group
+\begin{definition}
+	A group $G$ is amenable if there is a left-invariant mean $\mu$ on $G$.
+\end{definition}
+The property that a group is amenable is a very strong one, so naturally we wish to extend this to a less demanding property. We first extend the above definition in the following way
+\begin{definition}
+	Given $G \acts X$, we say that the action of $G$ on $X$ is amenable if there is a $G$-invariant mean on $X$.  
+\end{definition}
+Setting $X=G$ and the action to be the left-translation action we see that $G$ is amenable if and only if the left-translation action on itself is amenable.
+
+If $G$ is amenable and $\mu\in \PM(G)$ is left-invariant, then any action $G \acts X$ will be amenable: Fix $x \in X$, then we may define a measure $\nu$ on $X$ by
+\begin{align*}
+	\nu(A):=\mu(\left\{ g \in G : g.x \in A \right\}), \text{ for all } A \subseteq X,
+\end{align*}
+is a mean satisfying $g.\nu=\nu$ for all $g \in G$.
+
+Now, if $G$ has a left-invariant mean $\mu_{l}$, we may define a right-invariant mean $\mu_r$ by $\mu_r(A):=\mu_l(A^{-1})$ and vice-versa. Hence $G$ has a left-invariant mean if and only if it has a right-invariant mean.
+\begin{proposition}
+	Let $G \acts X$ and let $m$ be a $G$-invariant mean. Then all $f \in \ell^\infty(X)$ satisfy
+	\begin{align*}
+		\int_{X}f(g.x) \d m(x)= \int_{X}f(x) \d m(x), \text{ for all } g \in G.
+	\end{align*}
+\begin{proof}
+This follows from change of variable since the map $x \mapsto g.x$ is measureable ($X$ is discrete) and that the pushforward measure with respect to this map is $g.m=m$.
+%	Since $X$ is a discrete measure space, any function is measurable. Note that for $A \subseteq X$ it holds for all $g \in G$ and $x \in X$ that $1_{A}(g.x)=1_{g^{-1}.A}(x)$, hence
+%	\begin{align*}
+%		\int_{X}1_{A}(g.x)\d m(x)=\int_{X} 1_{g^{-1}.A}(x) \d m (x) = m(g^{-1}.A) = m(A) = \int_{X} 1_A(x) \d m (x)
+%	\end{align*}
+%	and linearity of the integral ensures that this holds for all simple functions. If now $f \in \ell^\infty(X)$ is a positive function, then an application of lebesgue dominated convergence theorem and an approximation of $f$ from below by simple functions yields that
+%	\begin{align*}
+%		\int_{X}f(g.x)\d m(x)= \int_{X}f(x) \d m (x).
+%	\end{align*}
+%Now, given a general $f \in \ell^\infty(X)$, we may decompose it $f=\Re(f)+i\Im(f)$, and we may decompose the real and imaginary part into a difference of positives, thus linearity of the integral ensures that the statement holds.
+\end{proof}
+\end{proposition}
+Using the above, we may show the following:
+\begin{proposition}
+	If $G$ is amenable and $\mu_l$ is a left-invariant mean witnessing this, then $G$ admits a two-sided invariant mean $m$ given by the convolution of $\mu_l$ and $\mu_r$, i.e., by
+	\begin{align*}
+		m(A):=\mu_l \ast \mu_r(A):=\int_G g.\mu_r(A) \d \mu_l(g), \text{ for all } A \subseteq G.
+	\end{align*}
+
+\end{proposition}
+\begin{proof}
+	It is not difficult to see that the above defines a new mean:
+	\begin{align*}
+		\mu_l \ast \mu_r (G) = \int_G g.\mu_l(G) \d \mu_r(g)=\int_G 1 \mu_r(G) = 1
+	\end{align*}
+	and for disjoint subsets $A,B$ of $G$
+	\begin{align*}
+		\mu_l \ast \mu_r (A \cup B) = \int_G g.\mu_l(A \cup B) \d \mu_r(g)&=\int_G \mu_l(g^{-1}A \cup g^{-1}B) \d \mu_r(g)\\
+		&= \mu_l \ast \mu_r (A) + \mu_l \ast \mu_r(B)
+	\end{align*}
+	All that is left to show is that it is invariant under both the left and right action of $G$: Let $A \subseteq G$ and $h \in G$, then we see that
+	\begin{align*}
+		\mu_l \ast \mu_r(Ah)&=\int_G g.\mu_r(Ah) \d \mu_l(g)\\
+		&= \int_G \mu_r(g^{-1}Ah) \d \mu_l (g)\\
+		&= \int_G \mu_l(h^{-1}A^{-1}g) \d \mu_l(g)\\
+		&=\int_G \mu_l (A^{-1}g) \d \mu_l(g)\\
+		&=\int_G g.\mu_r(A) \d \mu_l(g)= \mu_l \ast \mu_r(A)
+	\end{align*}
+	and similarly using proposition 6 above we see that
+	\begin{align*}
+		\mu_l \ast \mu_r(h^{-1}A) &= \int_G g. \mu_r(h^{-1}A) \d \mu_l(g) \\&=\int_G h.(g.\mu_r(A)) \d \mu_l(g)\\&= \int_G g.\mu_r(A) \d \mu_l(g)= \mu_l \ast \mu_r(A)	
+	\end{align*}
+	since the map $g \mapsto g.\mu_r(A)$ is a bounded function in $G$ which is being integrated with respect to $\mu_l$
+\end{proof}
+We are now ready to introduce a new group property, one that extends the notion of amenability
+\begin{definition}
+	A group $G$ is \emph{inner amenable} if the conjugation acion $G \acts G\backslash\{e\}$, $g.h=ghg^{-1}$, is amenable.
+\end{definition}
+
+To see that this notion extends the notion of amenability, we prove that every non-trivial amenable group is inner amenable. For this, recall that every finite group is amenable with respect to the normalized counting measure. Similarly, we have the following
+\begin{lemma}
+	Let $G$ be a non-trivial finite group. Then $G$ is inner amenable.
+\end{lemma}
+\begin{proof}
+	Assume that $|G|=n$, let $m$ be the normalised counting measure on $G \backslash\left\{ e \right\}$, i.e., $m$ is given by
+	\begin{align*}
+		m(A)=\frac{|A|}{n-1},\ \text{for all } A \subseteq G.
+	\end{align*}
+	Then clearly $m$ is a mean, and moreover, since the conjugation action is an automorphism, it preserves cardinality so $g.m=m$, proving that $m$ is $G$-invariant.
+\end{proof}
+\begin{remark}
+	A group $G$ is inner amenable if and only if there is a mean $m$ on $G$ which is invariant under the conjugation action $G \acts G$ such that $m(\{e\})=0$: If $m$ is such a mean on $G$, then $m$ restricts to a mean on $G\backslash\{e\}$ satisfying the definition of inner amenability. If $m$ is a mean on $G \backslash \{e\}$ which is invariant under the induced conjugation action, then $m$ extends to an invariant mean on $G$ by setting $m(\{e\})=0$.
+\end{remark}
+This characterisation will be useful in the proof of the following:
+\begin{proposition}
+	If $G$ is an infinite amenable group, then $G$ is inner amenable.
+\end{proposition}
+\begin{proof}
+	By the earlier shown proposition, amenability of $G$ ensures the existence of a two-sided invariant mean $m$ on $G$. Assume for contradiction that this mean does not satisfy $m(\{e\})=0$, say $m(\{e\})=\varepsilon$ for some $\varepsilon>0$. Then $m(\{e\})=m(g^{-1}\{g\})=g.m(\{g\})=m(\{g\})$ for all $g \in G$ by left-invariance of $m$. Pick $N>\frac{1}{\varepsilon}$ and pick $N$ distinct elements $g_1,\dots,g_N\in G$. Then finite additivity of $m$ tells us that
+	\begin{align*}
+		1=m(G)\geq m\left(\bigcup_{1 \leq i \leq N}\{g_i\}\right) = \sum_{1 \leq i \leq N}m(\{g_i\}) = N\varepsilon > 1,
+	\end{align*}
+	a contradiction. Thus $m(\{e\})=0$, so $G$ is inner amenable.
+\end{proof}
+Now, since finite groups are amenable (again by the normalised counting measure on the whole group), we obtain the following
+\begin{proposition}
+	For non-trivial groups $G$, amenability implies inner amenability.
+\end{proposition}
+
+\ssection{Characterising inner amenability further}
+We now proceed to show that inner amenability is a weaker property than amenability. To do this, we find a group which is inner amenable but not amenable.
+\begin{definition}
+	A group $G$ is \emph{ICC} (infinite conjugacy classes) if for all $h\in G\backslash\{e\}$ the conjugacy classes $\left\{ ghg^{-1}: g \in G \right\}$ are infinite.
+\end{definition}
+Using this and ideas from the proof that infinite amenable groups are inner-amenable, we achieve the following:
+\begin{proposition}
+	If $G$ is both ICC and inner amenable, then it has an atomless mean
+\end{proposition}
+\begin{proof}
+	Let $m$ be a mean witnessing the inner amenability of $G$ and suppose towards contradiction that there is $b \in G\backslash\{e\}$ such that $m(\{b\})>0$. Since the conjugacy class is infinite, given $\varepsilon>0$ there is $N \geq 1$ such that $N \varepsilon > 1$. Since the conjugacy class of $b$ is infinite, there are $N$ elements $g_1,\dots,g_N$ such that $g_i b g_i^{-1} \neq g_j b g_j^{-1}$ for $1\leq i \neq j\leq N$. Then
+	\begin{align*}
+		1=m(G)\geq m(\bigcup_{1 \leq i \leq N} \{g_i b g_{i}^{-1}\})=\sum_{1 \leq i \leq N}m(\{g_ibg_i^{-1}\})=\sum_{1 \leq i \leq N}m(\{b\})=N\varepsilon > 1,
+	\end{align*}
+	a contradiction. Hence $m$ must be atomless.
+\end{proof}
+
+We may now obtain the following additional class of inner amenable groups:
+\begin{proposition}
+ If $G$ is a non-trivial non-ICC group, then $G$ is inner-amenable	
+\end{proposition}
+\begin{proof}
+	Let $g \in G\backslash\{e\}$ witness $B:=[g]=\left\{ hgh^{-1} : h \in G \right\}=\left\{ h_1g_1h_1^{-1},\dots,h_ngh_n^{-1} \right\}$ for some $n \in \N$. Define a measure $m$ on $G$ by
+	\begin{align*}
+		m(A):=\frac{1}{n}|A \cap B|, \text{ for } A \subseteq G.
+	\end{align*}
+	Clearly $m(G)=1$ and $m(A \cup C)=m(A)+m(C)$ for disjoint subsets $A,C \subseteq G$. Also
+	\begin{align*}
+	m(h^{-1}A h)=\frac{1}{n}|h^{-1}Ah \cap B| &= \frac{1}{n}|h^{-1}Ah \cap h B h^{-1}| \\&= \frac{1}{n}|h^{-1}(A \cap hBh^{-1})h|\\&=\frac{1}{n}|A \cap B| = m(A),
+	\end{align*}
+	since conjugation is cardinality preserving and $B$ is invariant under conjugation. We note that $m(\{e\})=0$, since else $e \in B$ would imply $e=g$.
+\end{proof}
+
+If a group $G$ has non-trivial center, then any element of the center will have finite conjugation class, hence the group $G$ will be inner amenable by the above.
+
+\begin{proposition}
+	If $G=H \times K$ be a group where $H$ is inner amenable. Then $G$ is inner amenable.
+\end{proposition}
+\begin{proof}
+	Let $\varphi \in \S(H)$ witness the inner amenability of $H$, i.e., $h.\varphi=\varphi$ for all $h \in H$ and $\varphi(\delta_{e_H})=0$. Define $\tilde{\varphi} \colon \ell^\infty(H \times K) \to \C$ by
+	\begin{align*}
+		\tilde{\varphi}(f):=\varphi\left(f_H \right), \text{ for } f \in \ell^\infty(H \times K),
+	\end{align*}
+	where $f_H \colon H \to \C$ is the map $f_H(h):=f(h,e_K)$ for all $h \in H$. Clearly $\tilde{\varphi}$ is linear, positive and $\tilde{\varphi}(1)=1$ so that it is a state on $\ell^\infty(H \times K)$ also satisfying 
+	\begin{align*}
+		\tilde{\varphi}(\delta_{e_G})=\varphi(\delta_{e_H})=0.
+	\end{align*}
+
+	If $(h,k) \in H \times K$ and $A\times B \subseteq H \times K$, then 
+	\begin{align*}
+		\tilde{\varphi}(1_{hAh^{-1}\times kBk^{-1}})
+		=\begin{cases}
+			\varphi(1_{hAh^{-1}}) , &\text{for }e_K \in kB k^{-1}\\
+			0, &\text{for } e_K \not\in kB k^{-1}
+		\end{cases}
+		=\begin{cases}
+			\varphi(1_{A}), &\text{for } e_K \in B\\
+			0, &\text{for } e_K \not\in B
+		\end{cases}= \tilde{\varphi}(1_{A \times B}).
+	\end{align*}
+	Linearity ensures that it holds for simple functions as well and finally density of simple functions in $\ell^\infty(H \times K)$ and continuity ensures that it holds everywhere. Thus we obtain a mean witnessing inner amenability of $G=H \times K$.
+\end{proof}
+Amenability passes to normal subgroups, so the group $G=\Z/2\Z \times \mathbb{F}_2$ group is non-amenable since $\mathbb{F}_2$ is not amenable (e.g. because it is paradoxical). However, $G$ is inner amenable since $\Z/2\Z$ is inner amenable (being finite and non-trivial). 
+
+We now conclude this section with some permanence properties of inner amenability applied to the class of ICC groups:
+
+\begin{proposition}
+	Let $G$ be an ICC group and suppose that there is an inner amenable and ICC normal subgroup $N \unlhd G$ with an mean $m \in \PM(N)$ such that $m$ is invariant under the conjugation action $G \acts N$. Then $G$ is inner amenable.
+\end{proposition}
+\begin{proof}
+	Simply form the measure $\tilde{m}$ on $G$ defined by $\tilde{m}(A)=m(A \cap N)$. It is not hard to verify that this is a mean which is invariant under the conjugation action $G \acts G$ and satisfies $\tilde{m}(\{e\})=0$.
+\end{proof}
+
+We include for completeness the definition of 'strong inner amenability', but we will not go in to detail with it, for it is outside the general scope of this talk.
+\begin{definition}
+	A group $G$ is said to be \emph{strongly inner amenable} if the conjugation action $G \acts G$ is amenable with respect to an atomless mean $m$. 
+\end{definition}
+\begin{remark}
+	Note that strong inner amenability implies inner amenability, but not the other way around: if $G$ is strongly inner amenable with respect to an atomless mean $m$, just restrict $m$ to $G\backslash\{e\}$. To see that the converse doesn't hold, just look at any finite group $G$: No mean on $G$ can be atomless.
+
+	Moreover, if $G$ is ICC and inner amenable, then by Proposition 12, $G$ will be strongly inner amenable.
+\end{remark}
+The following result is included for completeness, but we omit the proof as they rely on the notioin of 'strong inner amenability' and are not very enlightning for us:
+\begin{proposition}
+	Let 
+	\begin{align*}
+		1 \to N \to G \to K \to 1
+	\end{align*}
+	be an exact sequence of groups. Then the following holds:
+	\begin{enumerate}
+		\item If $N$ and $G$ are ICC and $N$ is inner amenable and $K$ is amenable, then $G$ is inner amenable.
+		\item If $N,G$ and $K$ are ICC and $G$ is inner amenable, then either $N$ or $K$ is inner amenable.
+	\end{enumerate}
+\end{proposition}
+A corollary of the above (in its full generality) is that
+\begin{corollary}
+	If $G$ is an inner amenable ICC group with an ICC subgroup $H$ of finite index, then $H$ is inner amenable.
+\end{corollary}
+
+Recall the left- and right-regular representations of a group $G$ are the representation $\lambda,\rho$ on $B(\ell^2(G))$ given by left respectively right translation: 
+\begin{align*}
+	\lambda_g \xi(h)&=\xi(g^{-1}h) \text{ and } \rho_g \xi(h)=\xi(hg),
+\end{align*}
+for $\xi \in \ell^2(G)$ and $h,g \in G$. We define a representation $\sigma$ of $G$ on $B(\ell^2(G))$ by
+\begin{align*}
+	\sigma_g=\lambda_g \rho_g, \text{ for } g \in G,
+\end{align*}
+so that $\sigma_g \delta_h=\delta_{ghg^{-1}}$ for $g,h \in G$.
+
+In a similar way that we may characterize amenability of discrete countable groups by the left-regular representation, we too may characterize inner amenability of ICC groups $G$ by $\sigma$ above. In particular, we have the following:
+\begin{proposition}
+	Let $G$ be an ICC group. Then the following are equivalent:
+	\begin{itemize}
+		\item There exists a net of unit vectors $(\xi_i)_{i \in I} \subseteq \ell^2(G)$ such that $\xi_i(e) \to 0$ and $\lv \sigma_g \xi_i - \xi_i \rv_2 \to  0$ for all $g \in G$.
+		\item There exists a net of positive unit vectors $(\eta_i)_{i \in I} \subseteq \ell^1(G)$ (i.e. probability measures) such that $\eta_i(e) \to 0$ and $\lv \sigma_g \eta_i - \eta_i\rv_1 \to 0$ for all $g \in G$.
+		\item $G$ is inner amenable
+	\end{itemize}
+\end{proposition}
+If we replace "inner amenable" with "amenable" and $\sigma$ with $\lambda$, we recover a well-known statement which also holds, and the proof is very similar to that one, hence we will omit it.
+See e.g. [Effros, "Property $\Gamma$ and inner amenability"] or [Paul Jolissaint, "Relative inner amenability, relative property gamma and non-Kazhdan groups."]
+
+
+\ssection{$\mathbb{F}_2$ is not inner amenable}
+Recall that for an action $G \acts X$, we define the stabilizer at a point $x \in X$ of $G$ to be the set 
+\begin{align*}
+	G_x:=\{g \in G | g.x =x\} \subseteq G.
+\end{align*}
+We may use this to describe amenable groups via amenable actions via the following
+\begin{proposition}
+	Given an amenable action $G \acts X$ such that every stabilizer $G_x$ is amenable, then $G$ itself is amenable.
+\end{proposition}
+\begin{proof}
+Given an action $G \acts X$, let $Y \subseteq X$ be a set containing exactly one element of each orbit $G.x \subseteq X$. Then given $x \in X$ there is a pair $(g,y) \in G\times Y$ such that $g.y=x$. The stabilizer $G_y$ is amenable hence there is a $G$-invariant mean $m_y$ on $G_y$, which we extend to a mean on $G$ by setting it zero outside of $G_y$. Then we may define for $x=g.y$, a mean $m_x$ on $G$ by
+\begin{align*}
+	m_x=m_{g.y}:=g.m_y.
+\end{align*}
+Note that $m_x$ is only $G_y$-invariant a priori by amenability of $G_y$. If $s.y=t.y$ then 
+\begin{align*}
+	t^{-1}s.y=y \implies t^{-s}s \in G_y,
+\end{align*}
+so $t^{-1}s.m_y=m_y$ so $s.m_y=t.m_y$. This shows that the map $x \mapsto m_x$ is well-defined. Now, by the assumption that $G \acts X$ is amenable, there is some $G$-invariant mean $M$ on $X$. We then define the function $m \colon \mathcal{P}(G) \to [0,\infty]$ by 
+\begin{align*}
+	m(A):=\int_X m_x(A) \d M(x)
+\end{align*}
+for $A \subseteq G$. The integral makes sense since $x \mapsto m_x(A)$ is measurable for each $A$. Simple calculations show that $m(G)=1$ and for $A,B \subseteq G$ with $A \cap B=\emptyset$ we have $m(A \cup B)=m(A)+m(B)$, so that $m$ is in fact a mean on $G$. Now to check that this is $G$-invariant, given $g \in G$ and $A \subseteq G$ we calculate
+\begin{align*}
+	g.m(A)=m(g^{-1}A)=\int_X m_x(g^{-1}A) \d M(x) &= \int_X g.m_x(A) \d M(x)\\ &= \int_X m_{g.x}(A) \d M(x)\\ &= \int_X m_x(A) \d M(x) \\&= m(A),
+\end{align*}
+so that $G$ is amenable.
+\end{proof}
+We now return to $\mathbb{F}_2$, but before we show anything we mention a result due to the Nielsen-Schreier theorem about free groups: All subgroups of free groups are free.
+\begin{proposition}
+	If $g \in \F_2 \backslash\{e\}$, then the centralizer $C_{\F_2}(g)=\left\{ h \in G | gh=hg \right\}$ is cyclic.
+\end{proposition}
+\begin{proof}
+	Let $g \neq e$. Then the centraliser is a free group, by the Nielsen-Schreier theorem. If $h,k \in C_{\F_2}(g)$, then the groups $\langle h,g \rangle$ and $\langle k,g \rangle$ are abelian groups and free, hence cyclic. Let $h',k'$ be the generators of these, i.e.
+	\begin{align*}
+		\langle h,g \rangle = \langle h'\rangle \text{ and } \langle k,g \rangle = \langle k' \rangle.
+	\end{align*}
+	In particular, their intersection is non-emppty since $g \in \langle h'\rangle \cap \langle k'\rangle$. Thus there is $n,m \in \Z$ such that
+	\begin{align*}
+		g=h'^n=k'^m.
+	\end{align*}
+	In particular, this implies that the group $\langle h',k'\rangle$ is free and cyclic (it cannot be free of rank $2$ or greater, since $h'=(h')^{-n+1}k'^m$ by the above.). We see that $h, k \in \langle h',k'\rangle$ which is cyclic hence abelian so $hk=kh$. Since $h,k$ was arbitrary elements of the centraliser, we conclude that $C_{\F_2}(g)$ is abelian and free, hence cyclic.
+\end{proof}
+We may now prove the following:
+\begin{proposition}
+	The free group on two generators, $\F_2$, is not inner amenable.
+\end{proposition}
+\begin{proof}
+	Asumme towards contradiction that $\F_2$ is inner amenable. We note that the stabilizers with respect to the conjugation action are the centralisers:
+	\begin{align*}
+		(\F_2)_g=\{h \in \F_2 | g.h = h\} = \{h \in \F_2 | g^{-1}hg=h\}= C_{\F_2}(g) \text{ for } g \in \F_2 \backslash\{e\}.
+	\end{align*}
+	By the above, the stabilizers are abelian hence amenable which implies that $\F_2$ is amenable, a contradiction. 
+\end{proof}
+In particular, since $\Z_2\times \F_2$ is inner amenable, the above example gives us the following:
+\begin{proposition}
+	Inner amenability does not pass to subgroups.
+\end{proposition}
+
+\ssection{Connections with property(T)}
+Recall the definition of Kazhdan's property (T) for discrete groups:
+\begin{definition}
+	A group $G$ has Kazhdan's property (T) if it holds that for all unitary representations $\pi \colon G \to \mathbb{B}(\H)$ and any net of unit vectors $(\eta_i)_{i \in I} \subseteq \H$ such that $\pi_g \eta_i \to \eta_i$ for all $g \in G$ implies the existence of a non-zero element $\eta \in \H$ such that $\pi_g \eta = \eta$ for all $g \in G$.
+\end{definition}
+Let $\sigma$ denote the representation corresponding to the conjugation action and let $C_\sigma^* (G)$ denote the corresponding group $C^*$-algebra. We let $P_e$ denote the projection onto $\C \delta_e$ in $\mathbb{B}(\ell^2(G))$. The relationship between $P_e$ and $C_\sigma^*(G)$ holds quite a bit of information as we're about to see. For now, we note the following:
+\begin{lemma}
+	Let $G$ be a infinite group and assume that $P_e \not\in C_\sigma^*(G)$. Then $C_\sigma^*(G)+\C P_e$ is a $C^*$-algebra.
+\end{lemma}
+\begin{proof}
+	It's easy to see, by self-adjointness of $P_e$ that $C_\sigma^*(G)+\C P_e$ is a $^*$-algebra: Indeed, since $\sigma_g \delta_e=\delta_e$, we have $\sigma_g P_e=P_e$ for all $g \in G$ so $P_e \sigma_g=P_e$ by self-adjointness of $P_e$. Linearity and density of $\C G$ ensures that $aP_e=P_e=P_ea$ for all $a \in C_\sigma^*(G)$.
+	
+	It remains to show that it is closed in the operator norm: Suppose $(a_n)_{n \in \N}\subseteq C_\sigma^*(G)$ and $(z_n)_{n \in \N}\subseteq \C$ is such that $a_n+z_nP_e \to b$ for some $b \in \B(\H)$. Now, we see that $\sup|z_n| < \infty$ for else there would be a subsequence $z_{n_k} \to \infty$ implying that
+	\begin{align*}
+		-z_{n_k}^{-1}a_{n_k}  \to P_e,
+	\end{align*}
+	contradicting the assumption that $P_e \not \in C_\sigma^*(G)$. By the Heine-Borel Theorem, we may up to passing to a subsequence of $z_{n}$ assume that $z_n$ converges to some $z \in \C$. Then $a_n=a_n+z_n P_e - z_nP_e \to a \in C_\sigma^*(G)$ implying that $b=a+zP_e \in C_\sigma^*(G)+\C P_e$.
+\end{proof}
+
+With this, we may prove the following theorem by Paschke:
+\begin{theorem}
+	For an infinite group $G$ the following are equivalent:
+	\begin{enumerate}
+		\item $G$ is inner amenable.
+		\item There exists a state $\psi$ on $\B(\ell^2(G))$ such that $\psi(P_e)=0$ and $\psi(\sigma_g)=1$ for all $g \in G$.
+		\item $P_e \not\in C_\sigma^*(G)$.
+	\end{enumerate}
+\end{theorem}
+\begin{proof}
+$3 \implies 2$: Define $\varphi \colon C_\sigma^*(G)+\C P_e \to \C$ by
+\begin{align*}
+	\varphi(a+zP_e)=\langle a \delta_e,\delta_e\rangle \text{ for } a \in C_\sigma^*(G) \text{ and } z \in \C.
+\end{align*}
+Immediately we see that $\varphi(1)= \lv\delta_{1}\rv_2^2=1$. Moreover, if $y = a+zP_e$ for some $a \in C_\sigma^*(G)$ and $z \in \C$ then $x=y^*y\geq 0$ and we see that
+\begin{align*}
+	\varphi(x)=\varphi(y^*y)=\varphi\left( (a+zP_e )^*(a+z P_e) \right)= \langle a^*a \delta_e,\delta_e\rangle =  \lv a \delta_e \rv_2^2 \geq 0,
+\end{align*}
+since $a^*P_e$ and $P_e a$ are projections onto $\delta_e$, hence not in $C_\sigma^*(G)$. We conclude that $\varphi$ is a state satisfying $\varphi(P_e)=0$ and $\varphi(\sigma_g)=1$ for all $g \in G$. By Hahn-Banach, we may extend this to a state on $\B(\ell^2(G))$ satisfying (2).
+
+$2 \implies 3$: Let $\psi$ be a state satisfying (2) and assume to reach a contradiction that $\mathrm{dist}(P_e,C_\sigma^*(G))<\frac{1}{2}$. By density of $\sigma(\C G) \subseteq C_\sigma^*(G)$, there is then some element $a= \sum_{i=1}^n \alpha_i \sigma_{g_i}$ such that
+\begin{align*}
+	\lv a - P_e \rv <\frac{1}{2}.
+\end{align*}
+Now, since $\psi(P_e)=0$ by assumption and $\psi(a)=\sum_{i=1}^n \alpha_i \langle \sigma_{g_i} \delta_e,\delta_e \rangle = \sum_{i=1}^{n}\alpha_i$, we see that
+\begin{align*}
+	\left| \sum_{i=1}^n \alpha_i \right| = |\psi(a)| = | \psi(a-P_e)|\leq \lv a-P_e\rv < \frac{1}{2}.
+\end{align*}
+but also
+\begin{align*}
+	\langle (a-P_e)\delta_e,\delta_e \rangle =\sum_{i=1}^n \alpha_i\langle \sigma_{g_i}\delta_e,\delta_e \rangle - \langle P_e \delta_e,\delta_e\rangle= \sum_{i=1}^n \alpha_i-1
+\end{align*}
+so that
+\begin{align*}
+	\left| \sum_{i=1}^{n}\alpha_i-1 \right| = |\langle(a-P_e) \delta_e,\delta \rangle| \leq \lv a-P_e\rv < \frac{1}{2},
+\end{align*}
+so that $\sum_{i=1}^{n}\alpha_i < \frac{1}{2}$ and $\sum_{i=1}^{n}\alpha_i > \frac{1}{2}$, a contradiction. Hence $P \not\in C_\sigma^*(G)$.
+
+$2 \implies 1$: Let $\psi$ be a state satisfying (2) on $\B(\ell^2(G))$. Then the map $\varphi \colon \ell^\infty(G) \to \C$, $f \mapsto \psi(M_f)$ is a state on $\ell^\infty(G)$. We note that for $g,h \in G$ and $f \in \ell^\infty(G)$ we have $M_f\delta_g=f(g)\delta_g$, hence we see that
+\begin{align*}
+	\sigma_g M_f \sigma_{g^{-1}} \delta_h=f(g^{-1}.h)\delta_h=(g.f)(h) \delta_h=M_{g.f}\delta_h,
+\end{align*}
+so that $\sigma_g M_f \sigma_{g^{-1}}=M_{g.f}$. Then we see that 
+\begin{align*}
+	\varphi(g.f)=\psi(M_{g.f})=\psi(\sigma_gM_f\sigma_{g^{-1}})=\psi(\sigma_g)\psi(M_f)\psi(\sigma_{g^{-1}})=\psi(M_f)=\varphi(f),
+\end{align*}
+where we used [BO, 1.5.7] to ensure that $\sigma_g$ is in the multiplicative domain of $\psi$. Hence we have a state on $\ell^\infty(G)$ invariant under the action induced by the conjugation action. Moreover, we have that $\varphi(1_{{e}})=P_e=0$, so $G$ is indeed inner amenable.
+
+$1 \implies 2$: By the previous characterisation of inner amenability, there is some net of unit vectors $(\xi_i)_{i \in I} \subseteq \ell^2(G)$ such that $\xi_i(e) \to 0$ and $\sigma_g \xi_i\to \xi_i$ for all $g \in G$. Let $\psi_i$ denote the vector state on $\B(\ell^2(G))$ given by 
+\begin{align*}
+	\psi_i(a):=\langle a \xi_i,  \xi_i \rangle, \text{ for } a \in \B(\ell^2(G)).
+\end{align*}
+In particular, we note that $\psi_i(P_e)=\langle P_e \xi_i,\xi_i\rangle =\langle P_e \xi_i, P_e \xi_i \rangle = \lv P_e \xi_i \rv^2 \to 0$ and similarly $\psi_i(\sigma_g)\to 1$.
+
+Now, since the closed unit ball is weak$^*$-compact, there is a subnet of $\psi_i$ converging to some state $\psi$ on $\B(\ell^2(G))$. Then 
+\begin{align*}
+	\psi(P_e)=\lim_i \psi_i(P_e)=\lim_i \langle P_e \xi_i, \xi_i\rangle = 0 
+\end{align*}
+and for similiarly $\psi(\sigma_g)=1$ for all $g \in G$. Hence $\psi$ is a state satisfying (2).
+\end{proof}
+
+Before continuing we state a few facts needed, but which are beyond the scope of this presentation, hence not shown:
+
+
+If $\pi_0$ denotes the trivial representation of $G$ on a Hilbert space $\H$, then there is a central projection $q \in (C^*(G))^{**}$ such that
+\begin{align*}
+	q(\pi_0)=1 \text{ and }q u_g=u_gq=q \text{ for all } g \in G,
+\end{align*}
+where $u$ is the universal representation of $G$. This central projection plays an important role in the characterisation of groups with property (T):
+\begin{proposition}
+A group $G$ has property (T) if and only if $q \in C^*(G)$.	
+\end{proposition}
+for proof see [Akemann-Walter, "Unbounded negative definite functions"]. It builds on results by Dixmier from the 70's.
+
+With this in mind, we may show the following theorem, which is also due to Akemann and Walter
+\begin{theorem}
+Let $G$ be a countable ICC group with property (T). Then $G$ is not inner amenable.	
+\end{theorem}
+\begin{proof}
+	Let $\pi \colon C^*(G) \to C_\sigma^*(G)$ denote the unique $^*$-homomorphism $u_g \mapsto \sigma_g$ for $g \in G$. Define $\varphi \colon C^*(G) \to \C$ by 
+	\begin{align*}
+		\varphi(x):=\langle \pi(x) \delta_e, \delta_e\rangle \text{ for } x \in C^*(G).
+	\end{align*}
+	Evidently $\varphi \in (C^*(G))^*$, and we see that for all $g \in G$
+	\begin{align*}
+		\varphi(u_g)=\langle \pi(u_g) \delta_e, \delta_e\rangle = \langle \sigma_g \delta_e, \delta_e \rangle = 1,
+	\end{align*}
+	so that $\varphi=\pi_0$, i.e., it is the trivial representation on $\C$. By the above paragraph, it then holds that $\langle \pi(q) \delta_e , \delta_e \rangle =q(\varphi)=1$. Then
+	\begin{align*}
+		\lv \pi(q)\delta_e - \delta_e\rv_2^2 &=\lv \pi(q) \delta_e\rv_2 + \lv \delta_e \rv_2 - 2\mathrm{Re}\langle \pi(q) \delta_e,\delta_e\rangle\\
+		&\leq 2-2=0
+	\end{align*}
+	by the triangle inequality and the fact that $\lv\pi(q)\rv \leq 1$ since $\pi$ is a $^*$-homomorphism. 
+	
+	Assume that there is $0 \neq \eta \in \ell^2(G)$ with $\lv \eta \rv_2 = 1$ and $\eta \perp \delta_e$ such that $\pi(q)\eta = \eta$. Writing $\eta=\sum_{s \in G}\alpha_s \delta_s$ with $\sum_{s \in G}|\alpha_s|^2 =1$, we then see that for all $g \in G$ that
+	\begin{align*}
+		\sigma_g \eta = \pi(u_g) \eta = \pi(u_g)\pi(q) \eta = \pi(u_gq) \eta = \pi(q) \eta = \eta.
+	\end{align*} 
+	So that 
+\begin{align*}
+	\sigma_g \eta=  \sum_{s \in G}\alpha_s \delta_{gsg^{-1}}=\sum_{s \in G}\alpha_{g^{-1}sg}\delta_s=\sum_{s \in G}\alpha_s \delta_s
+\end{align*}
+for all $g \in G$, implying that $\alpha_{g^{-1}tg}= \langle \sigma_{g} \eta , \delta_t \rangle = \langle\eta,\delta_t \rangle = \alpha_t$ for all $t,g \in G$. By assumption that $\eta \perp \delta_e$, let $h \in G$ be such that $\alpha_h\neq 0$. Then 
+\begin{align*}
+	\sum_{g \in G} |\alpha_g|^2 \geq \sum_{g \in [h]}|\alpha_{g}|^2=\sum_{g \in [h]}|\alpha_h|^2 = \infty
+\end{align*}
+since $G$ is ICC. This is a contradiction, so $\pi(q)\eta=0$ for $\eta \perp \delta_e$, hence $\pi(q)=P_e$ is in $C_\sigma^*(G)$. We conclude that $G$ is not inner amenable.
+\end{proof}
+
+\ssection{Further characterization of inner amenability}
+We give yet another very useful characterization of inner amenability of a group $G$ via the representation $\sigma$:
+\begin{proposition}
+	A group $G$ is not inner amenable if and only if there is $g_1,\dots,g_n \in G$ such that 
+	\begin{align*}
+		\lv \frac{1}{n}\sum_{i=1}^n \sigma_{g_i}\rv < 1.
+	\end{align*}
+\end{proposition}
+\begin{proof}
+	$\Leftarrow$: Suppose that $G$ is inner amenable, i.e., the conjugation action $G \acts G\backslash\{e\}$ is amenable. As previously mentioned, this means that there is a net of unit vectors $(\xi_i)_{i \in I} \subseteq \ell^2(G\backslash\{e\})$ such that $\sigma_g \xi_i \to \xi_i$ for all $g \in G$. By the reverse triangle inequality, it holds for all $i \in I$ that
+	\begin{align*}
+		1 \geq \lv \frac{1}{n} \sum_{k=1}^{n}\sigma_{g_k} \rv\geq \lv \frac{1}{n} \sum_{k=1}^{n}\sigma_{g_k} \xi_i \rv_{2} = \lv \frac{1}{n} \sum_{k=1}^{n}\sigma_{g_k}\xi_i-\xi_i+\xi_i\rv_2 \geq 1- \lv \frac{1}{n} \sum_{k=1}^{n} \sigma_{g_k}\xi_i-\xi_i\rv_2,
+	\end{align*}
+	where the right hand side tends to $1$, so that $\lv \frac{1}{n} \sum_{k=1}^{n} \sigma_{g_k}\rv=1$. 
+
+	$\Rightarrow$: Suppose that $\lv \frac{1}{n} \sum_{k=1}^{n} \sigma_{g_k}\rv = 1$ for all $ g_1,\dots,g_n \in G$. Let $h_1,\dots,h_n \in G$ and $\varepsilon>0$. We wish to find a unit vector $\xi \in \ell^2(G\backslash\{e\})$ such that $\lv\sigma_{h_j} \xi - \xi \rv_2 < \varepsilon$. Since $\sigma_e=\mathrm{id}$ we may assume that $h_1=e$. Then, since $\lv \sum_{j=1}^n \sigma_{g_j}\rv = n$, there is a unit vector $\xi \in \ell^2(G\backslash\{e\})$ such that $\lv \sum_{j=1}^{n}\sigma_{g_j} \xi \rv_2^2 > n^2 - \frac{1}{2}\varepsilon^2$. 
+	
+	Since $h_1^{-1}h_j=h_j$ for $j=1,\dots,n$, we see that
+\begin{align*}
+	\sum_{j=1}^{n} \lv \sigma_{h_j}\xi - \xi\rv_2^2 \leq \sum_{i,j=1}^n \lv \sigma_{h_{i}^{-1}h_j}\xi-\xi\rv_2^2 &= \sum_{i,j=1}^n \langle \sigma_{h_{i}^{-1}h_j}\xi-\xi,\sigma_{h_{i}^{-1}h_j}\xi-\xi \rangle\\
+	&=2n^2 - \lv \sum_{j=1}^n \sigma_{h_j}\xi \rv_2^2 < \varepsilon^2,
+\end{align*}
+as wanted.
+\end{proof}
+\begin{note}
+The above proposition actually holds when $G \acts X$ is any action and $\sigma$ is replaced with $\pi$ for the induced representation of $G$ on $\ell^2(X)$.
+\end{note}
+Recall that for a discrete group $G$, the reduced group $C^*$-algebra of $G$, $C_r^*(G)$ comes with a canonical faithful tracial state $\tau$ given by the vector state 
+\begin{align*}
+	a \mapsto \langle a \delta_e, \delta_e \rangle, \text{ for all } a \in C_r^*(G).
+\end{align*}
+This extends to a tracial state on the group von Neumann algebra $L(G)=C_r^*(G)''$ and gives rise to a norm $\lv  \cdot \rv_\tau$ given by $\lv a \rv_\tau^2 := \tau(a^*a)=\lv a \delta_e \rv_2^2$. For all $a \in L(G)$ and $g \in G$ it is not hard to see that $\rho_g a \delta_e = a \lambda_g^* \delta_e$ and that the set 
+\begin{align*}
+	\left\{ x \delta_e\ | \  x \in L(G) \text{ such that } \tau(x)=0 \right\} \subseteq \ell^2(G \backslash\{e\}),
+\end{align*}
+is a dense subset. We now rephrase the above statement using these facts:
+\begin{proposition}
+	For a non-trivial group $G$, then $G$ is non-inner amenable if and only if there exists elements $g_1,\dots,g_n \in G$ and $0 < c < 1$ such that 
+	\begin{align*}
+		\lv \frac{1}{n} \sum_{k=1}^n \lambda_{g_k}x \lambda_{g_k}^* \delta_e \rv_2 =\lv \frac{1}{n} \sum_{k=1}^n \lambda_{g_k} x \lambda_{g_k}^* \rv_\tau \leq c \lv x \rv_\tau
+	\end{align*}
+	for all $x \in C_r^*(G)$ with $\tau(x)=0$.
+\end{proposition}
+\begin{proof}
+	Indeed, by the above we have that $G$ is non-inner amenable if and only if there exists $g_1,\dots,g_n \in G$ such that the restriction of $\sum_{k=1}^n \lambda_{g_k}\rho_{g_k}$ to $\ell^2(G \backslash\{e\})$ has norm $0 < c < 1$, which is equivalent to 
+	\begin{align*}
+		\lv \frac{1}{n} \sum_{k=1}^{n} \lambda_{g_k}\rho_{g_k}\xi \rv_2 \leq c \lv \xi \rv_2 \text{ for all } \xi \in \ell^2(G) \text{ such that } \xi(e)=0.
+	\end{align*}
+	By the above remarks, this is equivalent to the stated formulation.
+\end{proof}
+
+Recall the notion of Dixmier property for a unital $C^*$-algebra $\A$: 
+\begin{definition}
+We say that $\A$ has the Dixmier property if 
+\begin{align*}
+	\C 1_{\A} \cap \overline{\mathrm{conv}\{uau^* \ | \ u \in \A \text{ unitary} \}} \neq \emptyset \text{ for all } a \in \A.
+\end{align*}
+\end{definition}
+And that this implied, if $\A$ had a faithful tracial state, that it was unique and that $\A$ was simple.
+
+Recall also that is is enough to check the above on self-adjoint elements from a dense $^*$-subalgebra $\A_0$ of $\A$ with trace zero.
+
+Before continuing, we need recall the following:
+\begin{definition}
+	A length-function on a discrete group $G$ is a function $L \colon G \to [0,\infty)$ satisfying
+		\begin{enumerate}
+			\item $L(gh)\leq L(g)+L(h)$ for all $g,h \in G$.
+			\item $L(g)=L(g^{-1})$ for all $ g \in G$.
+			\item $L(e)=0$.
+		\end{enumerate}
+\end{definition}
+There is a certain kind of length-functions, namely the so called word length-functions on finitely generated groups $G:$
+\begin{definition}
+	A word length-function on a finitely generated group $G$ is a length-function $L_S$ associated to a finite subset $S \subseteq G$ generating $G$ defined by
+	\begin{align*}
+		L_S(g)=\min_{n\in \N}\left\{h_1h_2\cdots h_n \ | \ g=h_1h_2\cdots h_n \text{ and }h_1h_2\cdots h_n \in S\cup S^{-1} \right\}.
+	\end{align*}
+\end{definition}
+
+which ties into the notion of a group having the rapid decay property (or an equivalent condition):
+\begin{definition}
+A group $G$ equipped with a length-function $L$ has the rapid decay property with respect to $L$ if and only if there is a polynomial $P$ such that given $r>0$ and $f \in \R_+ G$ with $\mathrm{supp}(f) \subseteq B_L(e,r)$ it holds that
+\begin{align*}
+	\lv f \rv \leq P(r) \lv f \rv_\tau.
+\end{align*}
+\end{definition}
+
+Recall also the two following facts about property RD:
+\begin{lemma}
+	A finitely generated group $G$ has the rapid decay property if and only if it has the rapid decay property with respect to any word length-function.
+\end{lemma}
+\begin{proposition}
+	If $G$ has the rapid decay property with respect to a length-function $L$ then any subgroup $H \leq G$ has the rapid decay property with respect to $L\big|_H$. In particular, the rapid decay property passes to subgroups.
+\end{proposition}
+
+With this in mind, we obtain a sufficient condition for a group $G$ to be $C^*$-simple (result due to Kristian Olesen):
+\begin{theorem}
+	Let $G$ be a group with the rapid decay property which is not inner amenable. Then $C_r^*(G)$ has the Dixmier property, hence is simple with unique faithful tracial state.
+\end{theorem}
+\begin{proof}
+Since $G$ is not inner amenable, pick $g_1,\dots,g_n \in G$ and $0 < c < 1$ such that 
+\begin{align*}
+	\lv \frac{1}{n} \sum_{k=1}^{n} \lambda_{g_k} f \lambda_{g_k}^* \rv_\tau \leq c \lv f \rv_\tau
+\end{align*}
+for all $f \in C_r^*(G)$ such that $\tau(f)=0$. Define now $\varphi \colon C_r^*(G) \to C_r^*(G)$ to be the map 
+\begin{align*}
+	f \mapsto \frac{1}{n} \sum_{k=1}^{n } \lambda_{g_k} f \lambda_{g_k}^*.
+\end{align*}
+Then $\varphi$ is linear and satisfies $\lv\varphi(f)\rv \leq \lv f \rv$ for all $f \in C_r^*(G)$. Moreover, it also holds that $\varphi(f) \in \mathrm{conv}\left\{ ufu^* \ | \ u \in C_r^*(G) \text{ unitary}  \right\}$ for all $f \in C_r^*(G)$, hence so is $\varphi^k(f)$ for all $k \in \N$. 
+
+It suffices to show that $\varphi^k(f) \to \tau(f)1$ as $k \to \infty$ for all $f \in C_r^*(G)$, for then $C_r^*(G)$ will have the Dixmier property. It is enough to check on a generators of a dense $^*$-subalgebra of $C_r^*(G)$ and moreover to check on elements with trace zero, since $\varphi$ is a linear unital contraction. Hence it suffices to show for all $ s \in G \backslash \{e\}$ that $\varphi^k(\lambda_s) \to 0$ as $k \to \infty$.
+
+Let $ s \in G \backslash\{e\}$, and denote by $H$ the subgroup generated by $S=\{s,g_1,\dots,g_n\}$, i.e., $H=\langle S \rangle \leq G$. Since $H$ is a subgroup of a group with rapid decay, it has rapid decay. Since it is finitely generated, it has the rapid decay with respect to the word length-function $L_S$.
+
+Let $P$ denote the polynomial satisfying the (equivalent) condition of property rapid decay with respect to $L_S$. If $f \in \C G$ with $\mathrm{supp}(f) \subseteq B_{L_S}(e,r)$ for some $r > 0$. Then for all $k=1,\dots,n$ we see that $\lambda_{g_k} f \lambda_{g_k}^{*}$ has support in $B_{L_S}(e,r+2)$ since $g_1,\dots,g_k \in S$. Evidently, we then see that $\varphi(\lambda_s)$ is supported on $B_{L_S}(e,r+2)$ as well so that $\varphi^k(\lambda_s)$ is supported on $B_{L_S}(e,r+2k)$ for all $k \in \N$. We then, by the property imposed on the choice of $P$ and $g_1,\dots,g_n$, see that
+\begin{align*}
+	\lv \varphi^k(\lambda_s)\rv \leq P(2+2k) \lv \varphi^k(\lambda_s)\rv_\tau \leq P(2+2k)c^k \lv \lambda_{s}\rv_\tau \to 0, \text{ as } k \to \infty,
+\end{align*}
+since $0 < c < 1$. We conclude that $C_r^*(G)$ has the Dixmier property, hence is simple with unique faithful tracial state $\tau$.
+\end{proof}
+
+\newpage
+
+\chapter{Approx lecture notes on amenable group actions on $C^*$-algebras} 
+\sssection{Recalling crossed products}
+In this chapter we recall the reduced crossed product and the universal
+crossed product. Everything here can be found in section 4.1 [BO] or lecture
+notes from lecture 9. If $\A$ is a unital $C*$-algebra, $G$ a discrete group and
+$\alpha \colon G \to \text{Aut}(\A)$ a group homomorphism, we denote by $(\A,\alpha,G)$ a $C^*$-dynamic system. Recall that for such a triple we made the space 
+\begin{align*}
+\cc(G,\A)=\left\{\sum_{g \in G}a_{g}\delta_{g} \colon a_{g} \in \A\ \text{only
+finitely many $a_{g}$ are non-zero}\right\}
+\end{align*}
+into a $*$-algebra by defining a product by the twisted convolution and an involution by a twisted involution defined by
+\begin{align*}
+\left(\sum_{g \in G}a_{g}\delta_{g} \right) \cdot \left( \sum_{s \in G}b_{s}\delta_{s}\right) &= \sum_{s,g \in G} a_{g} \alpha_{g}(b_{s})\delta_{gs}, \\ \left(\sum_{g \in G}a_{g}\delta_{g}\right)^*&=\sum_{g \in G}\alpha_{g^{-1}}(a_{g}^*)\delta_{g^{-1}}.
+\end{align*}
+Then $\cc(G,\A)$ is the $*$-algebra generated by $\A$ and unitaries $\{u_{g} \}_{g \in G}$  given by $u_{g}=1_{\A} \delta_{g} \in \cc(G,\A)$ such that $\alpha_{s}(\cdot)=u_{s}(\cdot)u_{s}^*$. This way $\cc(G,\A)$ contains a copy of $\A$ and a copy of $G$ by the maps $a \mapsto a u_{e}$, respectively $g \mapsto u_{g}$. 
+
+In the following we denote by $\A$ a unital $C*$-algebra and $G$ any discrete group.
+\begin{definition}
+A \textbf{covariant representation} of a $C^*$-dynamical system
+$(\A,\alpha,G)$ is a triple $(\pi,\rho,\H)$ such that $\H$ is a Hilbert space,
+$\pi \colon \A \to B(\H)$ is a representation and $\rho \colon G \to
+\mathcal{U}(\H)$ is a unitary representation such that $\pi(
+\alpha_{g}(a))=\rho_{g}(\pi(a))\rho_{g}^*$ for every $a \in \A$. 
+\end{definition}
+
+\begin{remark}
+Whenever $(\pi,\rho,\H)$ is a covariant representation for $(\A,\alpha,G)$, then the map $\pi \times \rho \colon \cc(G,\A) \to B(\H)$ defined by
+\begin{align*}
+(\pi \times \rho) \left(\sum_{g \in G}a_{g}\delta_{g} \right)= \sum_{g \in G} \pi(a_{g}) \rho_{g}
+\end{align*}
+is a $*$-representation of $\cc(G,\A)$ on $B(\H)$. Furthermore, it is faithful resp. non-degenerate whenever $\pi$ is faithful resp. non-degenerate.
+And whenever $\pi \colon \A \to B(\H)$ a faithful representation, define $\pi_{\alpha} \colon A \to B(\H \otimes \ell^2(G))$ by $\pi_{\alpha}(a)(\xi \otimes \delta_{g})=\pi(\alpha_{g^{-1}}(a))\xi \otimes \delta_{g}$ for $g \in G, a \in \A$ and $\xi \in \H $. If $\lambda \colon G \to \mathcal{U}(\ell^2(G))$ denotes the left-regular representation, we get that the triple $(\pi_{\alpha}, I \otimes \lambda,\H)$ is a covariant representation, and thus $\pi_{\alpha} \times (I \otimes \lambda)$ is a faithful $*$-representation of $\cc(G,\A)$ on $B(\H \otimes \ell^2(G))$. Such a representation is called a regular representation, and it gives rise to a norm on $\cc(G,\A)$ called the reduced norm, given by 
+\begin{align*}
+\lv x \rv_{r}=\lv (\pi_{\alpha} \times (I \otimes \lambda))(x)\rv_{\H \otimes \ell^2(G)}.
+\end{align*}
+\end{remark}
+
+
+\begin{definition}
+The \textbf{universal crossed product} $A \rtimes_{\alpha} G$ associated to the $C^*$-dynamic system $(\A,\alpha,G)$ is the closure of $\cc(G,\A)$ with respect to the norm
+\begin{align*}
+\lv x \rv_{u}=\sup\{\lv \pi(x) \rv \ : \ (\pi,\rho,\H) \ \text{non-degenerate covariant representation of $(\A,\alpha,G)$} \}.
+\end{align*} 
+Moreover it has a universal property, whenever $(\pi,\rho,\H)$ is a covariant representation, there is a $*$-homomorphism $\pi \times \rho \colon A \rtimes_{\alpha} G \to B(\H)$.
+\end{definition}
+
+\begin{definition}
+The \textbf{reduced crossed product} $A \rtimes_{\alpha,r}G$ is the norm closure of the image under a faithful regular representation $\pi_{\alpha} \times(I\otimes \lambda)$. That is
+\begin{align*}
+A \rtimes_{\alpha,r}G= \overline{(\pi_{\alpha}\times(I \otimes \lambda))(\cc(G,\A))}^{\lv \cdot \rv} \hookrightarrow B(\H \otimes \ell^2(G)).
+\end{align*}
+Then $A \rtimes_{\alpha,r} G=C^*(\{(\pi_{\alpha} \times (I \otimes \lambda))(a u_{g}) \colon a \in \A, g \in G\})$ 
+\end{definition}
+
+For a group $G$ acting on $\A$, one can define $\langle \cdot, \cdot \rangle \colon \cc(G,\A) \to \A$ by 
+\begin{align*}
+	\langle S,T \rangle = \sum_{g \in G}S(g)^*T(g) \in \A \text{ for } S,T \in \cc(G,\A).
+\end{align*}
+This defines a new norm on $\cc(G,\A)$ by $\lv T \rv_{2}:= \lv \langle T,T \rangle_{\A}\rv^{\frac{1}{2}}$ such that 
+\begin{align*}
+\lv \langle S,T \rangle \rv_{2} \leq \lv S \rv_{2} \lv T \rv_{2}.
+\end{align*}
+
+By Proposition 4.1.5 in [BO], the choice of the above faithful representation $\pi_\alpha \colon \A \to B(\H)$ is irrelevant.
+
+\ssection{Amenable group actions}
+\begin{definition}
+Let $\Gamma$ be a discrete group, $\mathcal{A}$ a unital $C*$-algebra and $\Gamma \stackrel{\alpha}{\acts} \mathcal{A}$. We say that the action $\alpha$ is amenable if there is a net $(T_{i})_{i \in I} \subset C_{c}(\Gamma,\mathcal{A})$ such that for all $i \in I$
+\begin{enumerate}
+\item $0 \leq T_{i}(g) \in \mathcal{Z}(\mathcal{A})$ for all $g \in \Gamma$,\\
+\item $\langle T_{i}, T_{i} \rangle = \sum_{g \in \Gamma} T_{i}(g)^2=1_{\mathcal{A}}$,\\
+\item $\lv \delta_{s} \ast_{\alpha} T_{i}-T_{i}\rv_{2} \to 0$ for all $s \in \Gamma$.
+\end{enumerate}
+\end{definition}
+This might seem confusing, how does this relate to amenability of groups? Well, it turns out that if a group $G$ is amenable, then the action will also be amenable
+\begin{example}
+Let $G$ be an amenable discrete group acting on a unital $C^*$-algebra $\A$. Then the action is amenable.
+\begin{proof}
+Since $G$ is amenable, there is by theorem 2.6.8 [BO] a net $(\xi_{i})_{i \in I} \subset \ell^2(G)$ of positive finitely supported unit vectors such that $\lv \lambda_{s} (\xi_{i})-\xi_{i}\rv \to 0$. For $i \in I$ define $T_{i}\in \cc(G,\A)$ by $T_{i}(g):=\xi_{i}(g) 1_{\A}$. Then 
+\begin{enumerate}
+\item $0 \leq T_{i}(g) \in \mathcal{Z}(\A)$ for all $g \in G$.
+\item $\langle T_{i},T_{i}\rangle= \sum_{g \in G} \xi_{i}(g)^2 1_{\A}=1_{\A} \lv \xi_{i} \rv=1_{\A}$.
+\end{enumerate}
+Now note that for $T=\sum_{g \in G} a_{g} \delta_{g}$, the $\alpha$-twisted convolution with $1_{\A}\delta_{s} \in \cc(G,\A)$ is 
+\begin{align*}
+(1_{\A} \delta_{s} \ast_{\alpha} T)(g)=\alpha_{s}(T(s^{-1}g)).
+\end{align*}
+And we see that for $s \in G$
+\begin{align*}
+\lv \delta_{s} \ast_{\alpha} T_{i}-T_{i}\rv_{2}^2&=\lv \langle \delta_{s} \ast_{\alpha}T_{i}-T_{i}, \delta_{s} \ast_{\alpha}T_{i}-T_{i}\rangle \rv\\
+&=\lv \langle T_{i},T_{i} \rangle - \langle \delta_{s} \ast_{\alpha} T_{i},T_{i} \rangle-\langle T_{i},\delta_{s} \ast_{\alpha} T_{i}\rangle+\langle\delta_{s} \ast_{\alpha} T_{i},\delta_{s} \ast_{\alpha} T_{i}\rangle \rv\\
+&=\big\lVert 1_{\A}-\sum_{g \in G} (\delta_{s} \ast_{\alpha} T_{i})(g)^*T_{i}(g)-\sum_{g \in G} T_{i}(g)^*(\delta_{s} \ast_{\alpha} T_{i})(g)\\ 
+&+\sum_{g \in G} (\delta_{s} \ast_{\alpha} T_{i})(g)^*(\delta_{s} \ast_{\alpha} T_{i})(g)\big\rVert\\
+&=\lVert 1_{\A} - \sum_{g \in G} (\xi_{i}(s^{-1}g)1_{\A})^*\xi_{i}(g)1_{\A}-\sum_{g \in G}(\xi_{i}(g)1_{\A})^*\xi_{i}(s^{-1}g)1_{\A}\\
+&+\sum_{g \in G}(\xi_{i}(s^{-1}g)1_{\A})^*\xi_{i}(s^{-1}g)1_{\A}\rVert\\
+&=\lv 1_{\A}-2 \sum_{g \in G} \xi_{i}(s^{-1}g) \xi_{i}(g)1_{\A}+\sum_{g \in G} \xi_{i}(s^{-1}g)^21_{\A}\rv\\
+&=\lv 1_{\A}(2-2\sum_{g \in G}\xi_{i}(s^{-1}g)\xi_{i}(g)\rv\\
+&=|2  -2\sum_{g \in G}\xi_{i}(s^{-1}g)\xi_{i}(g)|\\
+&=|\langle\lambda_{s} \xi_{i},\lambda_{s} \xi_{i}\rangle+ \langle \xi_{i},\xi_{i}\rangle -2\langle \lambda_{s}(\xi_{i}), \xi_{i}\rangle|\\
+&=|\langle \lambda_{s} \xi_{i}-\xi_{i}, \lambda_{s} \xi_{i}-\xi_{i} \rangle|\\
+&=\lv \lambda_{s}(\xi_{i})-\xi_{i}\rv \to 0.
+\end{align*}
+So by the definition, $G$ admits an amenable action on $\A$.
+\end{proof}
+\end{example}
+\begin{lemma}[4.3.2 \text{[BO]}]
+Let $G$ be a group acting on a $C^*$-algebra $\A$ via an action $\alpha$. Let $T \colon G \to \A $ with finite support $F \in G$ such that $0 \leq T(g) \in \mathcal{Z}(\A)$ for all $g \in G$ and $\sum_{g \in G}T(g)^2=1_{\A}$. Then
+\begin{enumerate}
+\item $\displaystyle T \ast_{\alpha} T^*(s)=\sum_{g \in F \cap sF} T(g)\alpha_{s}(T(s^{-1}g))$, \\
+\item $\lv 1_{\A} - T \ast_{\alpha}T^*(s)\rv \leq \lv T - 1_{\A} \delta_{s}\ast_{\alpha}T \rv_{2}$ for all $s \in G$.
+\end{enumerate}
+\begin{proof}
+We show \textbf{(2)}. \textbf{(2)}: We see the following
+\begin{align*}
+1_{\A}-T \ast_{\alpha}T^*(s)&=\sum_{g \in G}T(g)^2- \sum_{g \in G}T(g)\alpha_{s}(T(s^{-1}g))\\
+&=\sum_{g \in G} T(g)\left( T(g)-\alpha_{s}(T(s^{-1}g))\right)\\
+&=\langle T,T-1_{\A}\delta_{s} \ast_{\alpha}T\rangle
+\end{align*}
+And the inequality follows from the Cauchy-Schwarz inequality described in the end of chapter 1, since $\lv T \rv_{2}^2=1$
+\end{proof}
+\end{lemma}
+\begin{lemma}
+Let $(T_{i})_{i \in I}$ be the net satisfying the three conditions in  definition 2.1. Then
+\begin{align*}
+\sum_{g \in G} T_{i}(g) a \alpha_{s}(T_{i}(s^{-1}g)) \to a
+\end{align*}
+for all $a \in \A, s \in G$.
+\begin{proof}
+Let $(T_{i})$ be a net such that the hypothesis holds. By the above lemma, $T\ast_{\alpha}T^*(s) \to 1_{\A}$ for all $s \in G$. Since $T_{i}(g) \in \mathcal{Z}(\A)$ for all $g \in G$, we have for all $s \in G$
+\begin{align*}
+\sum_{g \in G}T_{i}(g) a \alpha_{s}(T_{i}(s^{-1}g)&=a\sum_{g \in G}T_{i}(g)\alpha_{s}(T_{i}(s^{-1}g))\\ 
+&=a \left(T_{i} \ast_{\alpha}T_{i}^*(s)\right)\to a.
+\end{align*}
+\end{proof}
+\end{lemma}
+\begin{proposition}[Fell's absorption principle II, prop. 4.1.7 \text{[BO]}]
+If $(\pi,u,\H)$ is a covariant representation with $\pi$ faithful of a $C^*$-dynamical system $(\A,\alpha,G)$, then the covariant representation
+\begin{align*}
+(u \otimes \lambda, \pi(A) \otimes 1_{\ell^2(G)}, \H \otimes \ell^2(G))
+\end{align*}
+is unitarily equivalent to a regular representation. Moreover, there is a natural $*$-isomorphism
+\begin{align*}
+	C^*(\{(u \otimes \lambda)_{g}\}_{g \in G}, \{\pi(a)\otimes 1 \colon a \in \A\}) \cong \A_{\alpha,r}G.
+\end{align*}
+\begin{proof}
+Define $U \in \mathcal{U}(\H \otimes \ell^2(G))$ by $U(\xi \otimes \delta_{t})=u_{t}\xi \otimes \delta_{t}$, and let $\pi_{\alpha}$ be the associated representation to $\pi$. Then we see that for $\xi \in \H$ that
+\begin{align*}
+U (\pi_{\alpha} \times (1 \otimes \lambda)(a \delta_{s}) (\xi \otimes \delta_{t})&= U \pi_{\alpha}(a)(1 \otimes \lambda_{s})(\xi \otimes \delta_{t})\\
+&= U \pi_{\alpha}(a) (\xi \otimes \delta st)\\
+&= U \pi(\alpha_{(st)^{-1}}(a))\xi \otimes \delta_{st}\\
+&= u_{st} \pi(\alpha_{(st)^{-1}}(a))\xi \otimes \delta_{st}\\
+&= \pi(a)u_{st} \xi \otimes \delta_{st}\\
+&=(\pi(a)\otimes 1)(u_{s} \otimes \lambda_{s})(u_{t}\xi \otimes \delta_{t})\\
+&= (\pi(a)\otimes 1)(u_{s} \otimes \lambda_{s})U(\xi \otimes \delta_{t})
+\end{align*}
+And so we see that
+\begin{align*}
+U (\pi_{\alpha} \times (1 \otimes \lambda))(a \delta_{s})U^*=(\pi(a)\otimes 1)(u_{s} \otimes \lambda_{s})
+\end{align*}
+But then we have that
+\begin{align*}
+A \rtimes_{\alpha,r} G &=C^*((\pi_{\alpha}\times(1 \otimes \lambda)(a u_{g}) \colon a \in A, g \in G )\\ 
+&\cong C^*((u_{g} \otimes \lambda_{g}) ( \pi(a) \otimes 1_{\ell^2(G)}) \colon a \in \A , g \in G).
+\end{align*}
+\end{proof}
+\end{proposition}
+\begin{proposition}[Exercise 4.3.2 \text{[BO]}]
+If $G$ admits an amenable action on $\A$, then $\A \rtimes_{\alpha}G=\A \rtimes_{\alpha,r}G$.
+\begin{proof}
+Let $\pi \colon A \rtimes_{\alpha} G \to B(\H)$ be a unital faithful representation. Define $u\colon G \to B(\H)$ by $u(g)=\pi(\delta_{g})$ and $\rho \colon \A \to B(\H)$ by $\rho(a)=\pi(a \delta_{e})$. Then we have that $(\rho,u,\H)$ is a covariant representation with $\rho$ faithful. Indeed, let $x=a^*a>0 \in \A$, then $\rho(a^*a)=\pi(a^*a \delta_{e})>0$, and if $x=0$ then $\rho(x)=0$ and for $g \in G$ and $a \in \A$ 
+\begin{align*}
+u_{g} \rho(a) u_{g}^*&=\pi(1_{\A} \delta_{g} a \delta_{e} \alpha_{g^{-1}}(1_{\A})\delta_{g^{-1}})\\
+&= \pi(\alpha_{g}(a) \alpha_{e}(1_{\A}) \delta_{e})\\
+&=\pi(\alpha_{g}(a) \delta_{e})=\rho(\alpha_{g}(a)). 
+\end{align*}
+Now, let $(T_{i})_{i \in I} \subset \cc(G,\A)$ be a net satisfying the conditions of an amenable action. For $i \in I$ let $\varphi_{i} \colon \H \to \H \otimes \ell^2(G)$ be defined by $\varphi_{i}(\xi):=\sum_{g \in G} \pi(T_{i}(g)\delta_{e})(\xi) \otimes \delta_{g}$, then each $\varphi_{i}$ is an isometry. Indeed, let $\xi \in \H$, then 
+\begin{align*}
+\lv \varphi_{i}(\xi)\rv^2&= \langle \varphi_{i}(\xi), \varphi_{i}(\xi)\rangle\\
+&=\langle \sum_{g \in G} \pi(T_{i}(g)\delta_{e})(\xi) \otimes \delta_{g}, \sum_{s \in G} \pi(T_{i}(s)\delta_{e})(\xi) \otimes \delta_{s} \rangle\\
+&=\sum_{g \in G} \sum_{s \in G} \langle \pi(T_{i}(g)\delta_{e})(\xi), \pi(T_{i}(s)\delta_{e})(\xi)\rangle \langle \delta_{g}, \delta_{s}\rangle\\
+&=\sum_{g \in G} \langle \pi(T_{i}(g)\delta_{e}) (\xi), \pi(T_{i}(g)\delta_{e}) (\xi)\rangle\\
+&=\langle \sum_{g \in G} \pi(T_{i}(g)^2 \delta_{e})(\xi),\xi\rangle\\
+&=\lv \xi  \rv^2.
+\end{align*} 
+Now, for each $i \in I$ let $V_{i} \colon \A \rtimes_{\alpha,r} G \to B(\H)$ be defined by $V_{i}(x)=\varphi_{i}^* x \varphi_{i}$ for $x \in \A \rtimes_{\alpha,r}G$. Then $V_{i}$ is contractive, and moreover we see that 
+\begin{align*}
+\varphi_{i}^*(\pi(a \delta_{g} \otimes \lambda_{g}) \varphi_{i}\to \pi(a)
+\end{align*}
+To see this, let $\xi, \eta \in \H$, then we have
+\begin{align*}
+\langle (\pi(a \delta_{g})\otimes \lambda_{g}) \varphi_{i} (\xi), \varphi_{i}(\eta)\rangle&=\langle (\pi(a \delta_{g})\otimes \lambda_{g}) \left(\sum_{h \in G} \pi(T_{i}(h) \delta_{e}) (\xi)\otimes e_{h}\right),\sum_{k \in G} \pi(T_{i}(k) \delta_{e}) (\eta)\otimes e_{k} \rangle\\
+&=\sum_{h,k \in G} \langle (\pi(a \delta_{g})\otimes \lambda_{g}) (\pi(T_{i}(h) \delta_{e}) (\xi)\otimes e_{h}),\pi(T_{i}(k) \delta_{e}) (\eta)\otimes e_{k} \rangle\\
+&=\sum_{h,k \in G} \langle \pi(a\delta_{g}) \pi(T_{i}(h) \delta_{e})(\xi) \otimes \delta_{gh}, \pi(T_{i}(k)\delta_{e})(\eta),\delta_{k}\rangle\\
+&=\sum_{h,k \in G}\langle \pi(a\alpha_{g}(\pi(T_{i}(h)) \delta_{g})(\xi) , \pi(T_{i}(k)\delta_{e})(\eta)\rangle \langle \delta_{gh},\delta_{k}\rangle\\
+&=\sum_{k \in G} \langle \pi(a\alpha_{g}(T_{i}(g^{-1}k))) \delta_{g})\xi,\pi(T_{i}(k)\delta_{e})\eta)\rangle\\
+&=\sum_{k \in G} \langle \pi(T_{i}(k)a\alpha_{g}(T_{i}(g^{-1}k)) \delta_{g})( \xi), \eta\rangle\\
+&=\langle\sum_{k \in G} \pi(T_{i}(k)a\alpha_{g}(T_{i}(g^{-1}k)) \delta_{g})( \xi), \eta\rangle\\
+&\to \langle \pi(a) \xi, \eta \rangle.
+\end{align*}
+So $V_{i}(x) \to \pi(x)$ for all $x \in \cc(G,\A)$. Now, we know that $\lv x \rv_r \leq \lv x \rv_{u}$. So let $x \in \cc(G,\A)$. Then
+\begin{align*}
+\lv V_{i}(x)\rv \to \lv\pi(x)\rv
+\end{align*}
+But we have that
+\begin{align*}
+\lv V_{i}(x)\rv\leq  \lv x \rv_{r}
+\end{align*}
+So, since $\lv x \rv_{u} = \lv \pi (x) \rv = \lim_{i} \lv V_{i}(x) \rv \leq \lv x \rv_{r}$, we get that $A \rtimes_{\alpha} G \cong C^*(\{\pi(a\delta_{g}) \otimes \lambda_{g} \in B(\H \otimes \ell^2(G) \colon a \in A, g \in G\}) \cong A \rtimes_{\alpha,r}G$.
+\end{proof}
+\end{proposition}
+\begin{lemma}[Exercise 4.1.3 \text{[BO]}]
+If $G$ acts on a unital $C^*$-algebra $\A$ by an action $\alpha \colon G \to \mathrm{Aut}(\A)$ and $\B$ is a unital $C^*$-algebra, and $\tau \otimes \alpha \colon G \to \emph{Aut}(B\otimes \A)$ defined by $(\tau \otimes \alpha)_{g}=\text{id}_{B} \otimes \alpha_{g}$, then 
+\begin{align*}
+(B \otimes \A) \rtimes_{\tau \otimes \alpha,r}G \simeq B \otimes(\A \rtimes_{\alpha,r}G)
+\end{align*}
+\begin{proof}
+Let $\pi \colon A \to B(\H)$ be a faithful representation, and $\rho \colon B \to B(\mathcal{K})$ faithfully. Then the map 
+\begin{align*}
+\rho \otimes \pi \colon B \otimes A \to B(\mathcal{K}) \otimes B(\H) \subset B(\mathcal{K} \otimes \H)
+\end{align*}
+is a faithful representation of $B \otimes \A$. Since 
+\begin{align*}
+A \rtimes_{\alpha,r}G= \overline{(\pi_{\alpha} \times \lambda)(\cc(G,\A)} \subset B(\H \otimes \ell^2(G)),
+\end{align*}
+we get that 
+\begin{align*}
+\rho \otimes (\pi_{\alpha} \times \lambda) \colon B \otimes( \A \rtimes_{\alpha,r}G) &\to B(\mathcal{K} \otimes \H \otimes \ell^2(G))\\
+((\rho \otimes \pi)_{\tau \otimes \alpha} \times \lambda) \colon (B \otimes \A) \rtimes_{\tau \otimes \alpha,r}G &\to B(\mathcal{K} \otimes \H \otimes \ell^2(G)).
+\end{align*}
+To show that they are similar, let $b \in B, a \in \A$ and  $g \in G$ such that $(b \otimes a)\delta_{g} \in \cc(G, B \otimes \A)$. Then for $\xi \in \mathcal{K}, \eta \in \H$ we have
+\begin{align*}
+&((\rho \otimes \pi)_{\tau \otimes \alpha} \times \lambda)((b \otimes a)\delta_{g})(\xi \otimes \eta \otimes \delta_{h})\\
+&=((\rho \otimes \pi)(\tau \otimes \alpha)_{g^{-1}}(b \otimes a))\otimes \lambda_{g})(\xi \otimes \eta \otimes \delta_{h})\\
+&=((\rho \otimes \pi)(b \otimes \alpha_{g^{-1}}(a)))\otimes \lambda_{g}) (\xi \otimes \eta \otimes \delta_{h})\\
+&= \rho(b)\eta \otimes \pi(\alpha_{g^{-1}}(a)) \eta \otimes \delta_{gh}\\
+&= (\rho \otimes(\pi_{\alpha} \times \lambda))((b \otimes a)\delta_{g})(\xi \otimes \eta \otimes \delta_{h}),
+\end{align*}
+as wanted.
+\end{proof}
+\end{lemma}
+
+\begin{lemma}
+Every positive element $a =[b_{i,j}]^*[b_{i,j}] \in M_{n}(\A)$ for a $C^*$-algebra $\A$ is of the form $a =\sum_{k=1}^n [b^*_{k,i}b_{k,j}]_{i,j}$
+\begin{proof}
+Let $a=[b_{i,j}]^*[b_{i,j}] \in M_{n}(\A)_{+}$. We have that $[b_{i,j}]_{i,j}=\sum_{k=1}^n [\delta_{k,i}b_{i,j}]_{i,j}$. But then $a=\sum_{k=1}^n [b^*_{k,i}b_{k,j}]_{i,j}$ as wanted.
+\end{proof}
+\end{lemma}
+
+\begin{lemma}
+If $(\A, \alpha, G)$ is a $C^*$-dynamical system and $F \in G$ is any finite set, then the map $\psi_{\alpha} \colon \A \otimes M_{F} \C \to A \rtimes_{\alpha,r} G $ defined by $\psi_{\alpha}(a,e_{p,q})=\alpha_{p}(a)\delta_{pq^{-1}}$ is positive.
+\begin{proof}
+By the above lemma, we need to check that for every $\left({a_{p}}\right)_{p \in F}$ the image of $\sum a_{p}^*a_{q} \otimes e_{p,q}$ under $\psi_{\alpha}$ is positive. To see this we compute it
+\begin{align*}
+\psi_{\alpha}\left(\sum_{p,q \in F}a_{p}^*a_{q} \otimes e_{p,q}\right)&=\sum_{p,q \in F}\alpha_{p}(a_{p}^*a_{q})\delta_{pq^{-1}}\\
+&=\sum_{p,q \in F}\alpha_{p}(a_{p}^*)\delta_{p}a_{q}\delta_{q^{-1}}\\
+&=\sum_{p,q \in F} (a_{p}\delta_{p^{-1}})^* a_{q} \delta_{q^{-1}}\\
+&=\sum_{p \in F}(a_{p}\delta_{p^{-1}})^*\sum_{q \in F} a_{q}\delta_{q^{-1}}\\
+&=\left(\sum_{p \in F}a_{p}\delta_{p^{-1}}\right)^* \cdot \left( \sum_{q \in F} a_{q} \delta_{q^{-1}}\right) \geq 0.
+\end{align*}
+\end{proof}
+\end{lemma}
+
+\begin{corollary}
+For all $n \in \N$, if $(M_{n} \C \otimes \A, \tau\otimes\alpha,G)$ is a $C^*$-dynamical system with $\A$ unital and $\tau \otimes \alpha$ as in the earlier lemma, then for every finite set $F \in G$, the map $\psi_{\tau \otimes \alpha} \colon (M_{n} \C \otimes \A) \otimes M_{F} \C \to (M_{n} \C \otimes \A)\rtimes_{\tau \otimes \alpha,r}G$ is positive with $\psi_{\tau \otimes \alpha}$ as above.
+\end{corollary}
+
+\begin{lemma}
+If $(\A, \alpha, G)$ is a $C^*$-dynamical system and $F \in G$ is finite, then the map $\psi_{\alpha} \colon \A \otimes M_{F} \C \to \A \rtimes_{\alpha,r}G$ as above is c.p.
+\begin{proof}
+To see this, note the following commutative diagram:
+
+\begin{center}
+\begin{tikzcd}
+M_{n} \C \otimes (\A \otimes M_{F} \C) \arrow[swap]{dd}{\text{id}_{M_{n}\C} \otimes \psi_{\alpha}} \arrow{rr}{\cong} & & (M_{n} \C \otimes \A)\otimes M_{F}\C \arrow{dd}{\psi_{\tau \otimes \alpha}} \\
+&&\\
+M_{n} \C \otimes (A \rtimes_{\alpha,r} G) \arrow{rr}{\cong} && (M_{n} \C \otimes \A) \rtimes_{\tau \otimes \alpha,r} G
+\end{tikzcd}
+\end{center}
+since $\psi_{\tau \otimes \alpha}$ is positive for every $n \in \N$, we get that $\text{id}_{M_{n}\C} \otimes \psi_{\alpha}$ is positive, and so $\psi_{\alpha}$ is c.p
+\end{proof}
+\end{lemma}
+\begin{lemma}[part of proof of proposition 4.1.5 \text{[BO]}]
+Let $(\A,\alpha,G)$ be a $C^*$-dynamical system. For all finite sets $F \subseteq G$ there is a c.p map $\varphi_{F} \colon A \rtimes_{\alpha,r} G \to A \otimes M_{F} \C$ defined by
+\begin{align*}
+\varphi_{F} (a \delta_{s}) = \sum_{g \in F \cap sF} \alpha_{g^{-1}}(a) \otimes e_{g,s^{-1}g}
+\end{align*}
+\end{lemma}
+\begin{lemma}[Exercise 2.3.11 \text{[BO]}]
+Suppose $B$ is a unital $C^*$-algebra and $(B_{i})_{i \in I}$ is a family of nuclear $C^*$-algebras. If $(\varphi_{i})_{i \in I}$, $(\psi_{i})_{i \in I}$  are nets of c.c.p maps $\varphi_{i} \colon B \to B_{i}, \psi_{i} \colon B_{i} \to B$ such that $\psi_{i} \circ \varphi_{i} \to \text{id}_{B}$ in point-norm topology, then $B$ is nuclear.
+\end{lemma}
+
+\begin{lemma}[Exercise 2.3.12 \text{[BO]}]
+Let $\A$ be a unital $C^*$-algebra and $\pi \colon \A \to B(\H)$ be a faithful representation. If $(A_{i})_{i \in I}$ is a family of exact unital $C^*$-algebras and $(\varphi_{i} \colon \A \to \A_{i})_{i \in I}$ and $(\psi_{i} \colon \A_{i} \to B(\H))_{i \in I}$ are nets of c.c.p maps such that $\psi_{i} \circ \varphi_{i} \to \pi$ in point norm, then $\A$ is exact. 
+\begin{proof}
+For each $i \in I$, let $\pi_{i} \colon \A_{i} \to B(\H_{i})$ be faithful representations. Since $\A_{i}$ is exact, there are nets of c.c.p maps $(\varphi_{i,j_{i}} \colon \A_{i} \to M_{k(i,j_{i})} \C)_{i \in J_{i}}$ and $(\psi_{i,j_{i}} \colon M_{k(i,j_{i})} \C \to B(\H_{i}))_{i \in J_{i}}$ such that the composition $\psi_{i,j_{i}} \circ \varphi_{i,j_{i}} \to \pi_{i}$ in the point norm topology. Moreover, for each $i \in I$ we may view $A_{i} \subset B(\H_{i})$ as an operator subsystem. Then Arveson's Theorem gives us a c.c.p map $\overline{\psi_{i}} \colon B(\H_{i}) \to B(\H)$ making the following diagram commute:
+\begin{equation*}
+\xymatrix{ 
+&& B(\H)\\
+A_{i} \ar[urr]^{\psi_{i} \ \text{c.c.p}} \ar[rr]_{\pi_{i} \ \text{c.c.p}}&& B(\H_{i}) \ar@{.>}[u]_{\exists \overline{\psi_{i}} \ \text{c.c.p}}
+}
+\end{equation*}
+Now, set $\displaystyle \Lambda:=I \times \Pi_{i \in J} J_{i}$ and order it by the following relation 
+\begin{align*}
+(i^1,(j_{i}^2)_{i \in I}) \leq (i^2,(j_{i}^2)_{i \in I}) \iff i^1 \leq i^2 \quad \text{and} \quad j_{i}^1 \leq j_{i}^2 \ \text{for all $i \in I$}.
+\end{align*}
+Then $(\Lambda,\leq)$ is a directed set. for $\alpha =(i,(j_{i})_{i \in J_{i}})$ define c.c.p maps $\Phi_{\alpha} \colon \A \to M_{k(i,j_{i})} \C$ and $\Psi_{\alpha} \colon M_{k(i,j_{i})}\C \to \A$ by
+\begin{align*}
+\Phi_{\alpha}:= \varphi_{i,j_{i}} \circ \varphi_{i} \quad \Psi_{\alpha}:= \overline{\psi_{i}} \circ \psi_{i,j_{i}}
+\end{align*}
+Then for $i \in I$ we have the following diagram
+\begin{align*}
+\xymatrix{
+\A \ar[rrrr]^{\pi} \ar[dr]^{\varphi_{i}} \ar@/_2pc/[ddrr]_{\Phi_{\alpha}} & & & & B(\H)\\
+& \A_{i} \ar[rr]^{\pi_{i}} \ar[dr]_{\varphi_{i,j_{i}}} &  & B(\H_{i})\ar[ur]^{\overline{\psi_{i}}} & \\
+& & M_{k_{(i,j_{i})}} \C \ar@/_	2pc/ [uurr]_{\Psi_{\alpha}} \ar[ur]_{\psi_{i,j_{i}}}& &
+}
+\end{align*}
+where everything is c.c.p and $\Psi_{\alpha} \circ \Phi_{\alpha} \to \pi$ point-norm. Indeed, let $a \in \A$ and $\varepsilon>0$. Then there is $i^{0} \in I$ such that
+\begin{align*}
+\lv \psi_{i} \circ \varphi_{i}(a) - \pi(a) \rv < \frac{\varepsilon}{2}
+\end{align*}
+for $i \geq i_{0}$. For such $i \geq i_{0}$ pick $j_{i}^0 \in J_{i} $ such that
+\begin{align*}
+\lv \psi_{i,j_{i}} \circ \varphi_{i,j_{i}} \circ \varphi_{i}(a)-\pi_{i}(\varphi_{i}(a))\rv < \frac{\varepsilon}{2}
+\end{align*}
+for all $j_{i} \geq j_{i}^0$. If $\beta=(i_{0},(j_{i}^0)_{i \in I}) \in \Lambda$ and $\alpha=(k,(j_{k})_{k \in I}) \geq \beta $ we have
+\begin{align*}
+\lv \Psi_{\alpha} \circ \Phi_{\alpha}(a)-\pi(a) \rv &\leq \lv \Psi_{\alpha} \circ \Phi_{\alpha}(a)- \psi_{k} \circ \varphi_{k}(a)\rv + \lv \psi_{k} \circ \varphi_{k}(a)-\pi(a)\rv\\
+&= \lv \overline{\psi_{k}} \circ \psi_{k,j_{k}} \circ \varphi_{k,j_{k}} \circ \varphi_{k}(a) - \psi_{k} \circ \varphi_{k}(a)\rv\\
+&\leq \lv \psi_{k,j_{k}} \circ \varphi_{k,j_{k}} \circ \varphi_{k}(a)-\varphi_{k}(a) \rv + \lv \psi_{k} \circ \psi_{k}(a)-a\rv\\
+&< \frac{\varepsilon}{2}+\frac{\varepsilon}{2}<\varepsilon.
+\end{align*}
+\end{proof}
+\end{lemma}
+
+\begin{lemma}
+Let $(\A,\alpha,G)$ be a $C^*$-dynamical system where $\alpha$ is an amenable action of $G$ on $\A$. If $(T_{i})_{i \in I}$ is the net satisfying the amenable action conditions and if $F_{i}$ denotes the finite support for $T_{i}$, then there are c.c.p maps $\phi_{F_i} \A \rtimes_{\alpha,r} G \to A \otimes M_{F_i} \C$ and $\psi_{F_i} \colon \A \otimes M_{F_i} \C \to \A \rtimes_{\alpha,r} G$ satisfy that $\psi_{F_i} \circ \phi_{F_i} \to id_{\A \rtimes_{\alpha,r}G}$ in point norm topology.
+\begin{proof}
+Let $(T_{i})_{i \in I} \in \cc(G,\A)$ be the net such that the required properties for an amenable action are satisfied. Denote by $F_{i}$ the support for $T_{i}$. For each $i \in I$ define the u.c.p map $\varphi_{i} \colon \A \rtimes_{\alpha,r} G \to \A \otimes M_{F_{i}} \C$ by 
+\begin{align*}
+\varphi_{i}(a \delta_{s})=\sum_{q \in F \cap sF} \alpha_{q^{-1}}(a) \otimes e_{q,s^{-1}q},
+\end{align*}
+as from Lemma 2.12. Furthermore define self-adjoint elements of $\A \otimes M_{F_{i}}\C$ by
+\begin{align*}
+X_{i}:= \sum_{p \in F_{i}}\alpha_{p^{-1}}(T_{i}(p)) \otimes e_{p,p},
+\end{align*}
+and c.p maps  $f_{i} \colon \A \otimes M_{F_{i}}\C \to \A \otimes M_{F_{i}} \C$ by $f_{i}(a \otimes [c_{i,j}])=X_{i}(a \otimes [c_{i,j}])X_{i}$.
+Define also u.c.p maps $\psi_{F_{i}} \colon \A \otimes M_{F_{i}}\C \to \A \rtimes_{\alpha,r} G$ as in Lemma 2.9. This gives us the following diagram
+\begin{equation*}
+\xymatrix{
+\A \rtimes_{\alpha,r} G \ar[dr]_{\varphi_{F_i}\ \text{u.c.p}}  \ar[rrr]^{\text{id}} & & & \A \rtimes_{\alpha,r}G\\
+& \A \otimes M_{F_{i}}\C \ar[r]^{f_{F_{i}} \ \text{c.p}} & \A \otimes M_{F_{i}}C \ar[ur]_{\psi_{F_{i}} \ \text{u.c.p}}& 
+}
+\end{equation*}
+Then, since $T_{i}(g) \in \mathcal{Z}(\A)$ for all $g \in G$, we see that for $a \in A$ and $s \in G$ 
+\begin{align*}
+\psi_{F_{i}} \circ f_{i}\circ \varphi_{F_{i}}(a \delta_{s}) = (T_{i} \ast_{\alpha} T^*_{i}(s))a \delta_{s} \to a \delta_{s}.
+\end{align*}
+So $\psi_{F_{i}} \circ f_{i}\circ \varphi_{F_{i}} \to id_{A \rtimes_{\alpha,r}}$ point-norm, as wanted.
+\end{proof}
+\end{lemma}
+\begin{proposition}
+Let $(\A,\alpha,G)$ be a $C^*$-dynamical system with the action amenable. If $\A$ is nuclear, then $\A \rtimes_{\alpha,r}G$ is nuclear.
+\begin{proof}
+If $G$ acts amenably on $\A$ and $\A$ is nuclear, then for any finite set $F \in G$ it we have that $\A \otimes M_{F} \C$ is nuclear. And by lemma 2.13 it follows that $\A \rtimes_{\alpha,r} G$ is nuclear.
+\end{proof}
+\end{proposition}
+
+\begin{lemma}[4.1.9 \text{[BO]}]
+Let $(\A,\alpha,G)$ be a $C^*$-dynamical system. The map $E \colon \cc(G,\A) \to \A$ defined by
+\begin{align*}
+E\left(\sum_{g \in G}a_{g \delta_{g}}\right)=a_{e}
+\end{align*}
+extends to a faithful conditional expectation from $\A \rtimes_{\alpha,r} G$ onto $\A$. Moreover
+\begin{align*}
+\max_{s \in G} \lv a_{s}\rv \leq \lv \sum_{s \in G} a_{s} \delta_{s}\rv_{\A \rtimes_{\alpha,r}G}
+\end{align*}
+\end{lemma}
+
+\begin{theorem}[4.3.4 \text{[BO]}]
+If $(\A,\alpha,G)$ is a $C^*$-dynamical system with $\alpha$ being an amenable action of $G$ on $\A$, then the following statements hold:
+\begin{enumerate}
+\item $\A \rtimes_{\alpha,r}G=\A \rtimes_{\alpha}G$;\\
+\item $\A$ is nuclear if and only if $\A\rtimes_{\alpha}G$ is nuclear;\\
+\item $\A$ is exact if and only if $\A \times_{\alpha}G$ is exact.
+\end{enumerate}
+\begin{proof}
+\textbf{(1)} follows from Proposition 2.6. 
+
+\noindent \textbf{(2)} $" \Rightarrow"$: follows from Proposition 2.16. $" \Leftarrow"$: By Lemma 2.17 there is a conditional expectation $E \colon \A \rtimes_{\alpha,r}G \to \A$, so if $\A \rtimes_{\alpha,r}G$ is nuclear then $\A$ is nuclear.
+
+\noindent \textbf{(3)} $"\Rightarrow"$: If $\A$ is exact use Lemma 2.14 together with the fact that $\A \otimes M_{F_{i}} \C$ is exact, this implies that $\A \rtimes_{\alpha,r}G$ is exact. $"\Leftarrow"$: Since exactness passes through subalgebras, we get that $\A$ becomes exact.
+\end{proof}
+\end{theorem}
+
+\end{document}
+

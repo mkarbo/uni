@@ -1,0 +1,76 @@
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+The topic of this thesis is $C^*$-simplicty and the unique trace property of discrete groups. A discrete group $G$ is \textit{$C^*$-simple} if the reduced group $C^*$-algebra $C_r^*(G)$ is simple, and $G$ has the \textit{unique trace property} if $C_r^*(G)$ has unique faithful tracial state. This thesis aims to describe these properties both in terms of classical Dixmier properties and in terms of boundary actions of $G$.
+
+In the first chapter we will discuss amenability of discrete groups $G$ and amenability of normal subgroups of $G$. We prove that every discrete group $G$ has a maximal amenable normal subgroup, called the \emph{amenable radical} of $G$. 
+
+The second chapter is about the topic of representing a group $G$ unitarily in a $C^*$-algebra, specifically the \textit{left-regular representation} of $G$ on $B(\ell^2(G))$, and the \textit{reduced group $C^*$-algebra} $C_r^*(G)$. We also show that this $C^*$-algebra has a faithful trace. We then show that for a discrete group $G$ acting on a $C^*$-algebra $\A$, there is a way of constructing a $C^*$-algebra, called the \textit{reduced crossed product}, which contains a copy of $C_r^*(G)$ and $\A$.
+
+In the third chapter we discuss simplicity and uniqueness of trace of unital $C^*$-algebras in terms of Dixmier properties. We end the chapter by proving that the free group on two generators is $C^*$-simple and has unique faithful tracial state.
+
+In the fourth chapter, we discuss \textit{boundary actions}, which are \textit{minimal} and \textit{strongly proximal} actions of second countable locally compact groups on compact Hausdorff spaces. We prove that for such a group $G$, there is a universal $G$-boundary, i.e. a compact Hausdorff space $X$ such that the action of $G$ on $X$ is a boundary action, satisfying a certain universal property. This universal $G$-boundary is called the \textit{Furstenberg boundary}, and we show that every closed amenable normal subgroup of $G$ acts trivially on every $G$-boundary. We end the chapter by noting that if $G$ is discrete and non-amenable, then there is a boundary action of $G$ which is non-trivial.
+
+The last chapter of this thesis will combine the topics discussed in the preceeding chapters, we will prove sufficient and necessary conditions for discrete groups $G$ to have the unique trace property and to be $C^*$-simple by combining results about the amenable radical of $G$, boundary actions and dixmier properties. We also show that $C^*$-simplicity implies the unique trace property. The results of this chapter are due to the late Uffe Haagerup, and we follow \cite{haagerup2015new}.
+\chapter*{Preliminaries}
+\addcontentsline{toc}{chapter}{Preliminaries}
+This thesis relies heavily on results and notions from topics such as functional analysis, group theory, $C^*$-algebras, point-set topology and such. We will for the sake of completeness provide a proofless list of definitions and results, which will be used throughout this thesis. 
+
+For any set $\Omega$, we denote the powerset of $\Omega$ by $\PP(\Omega)$. For two disjoint subsets $A,B \in \PP(\Omega)$, we use $A \cupdot B$ to denote their disjoint union.
+\subsubsection*{Groups}
+\begin{itemize}
+\item We use $G$ to denote a group, and we will frequently use $H$ to denote a subgroup of $G$.
+\item The neutral element of $G$ will be denoted by $e_G$.
+\item A topological group $G$ is a group $G$ with a topology such that multiplication is jointly continuous and inversion is continuous.
+\end{itemize}
+
+\subsubsection*{Hilbert spaces}
+We use $\H$ to denote an arbitary Hilbert space, and the inner product of two elements $\xi, \eta \in \H$ is denoted by $\langle \xi , \eta \rangle$, and if needed we add a subscript to emphasize that it is the inner product in $\H$. For discrete groups $G$, we will often look at $\ell^2(G)$, the Hilbert space of square summable functions with inner product 
+\begin{align*}
+\langle \xi,\eta \rangle = \sum_{g \in G} \xi(g) \overline{\eta(g)}, \ \xi,\eta \in \ell^2(G).
+\end{align*}  For $s \in G$, the point mass at $s$ is a function $\delta_s \colon G \to \C$ defined by
+\begin{align*}
+\delta_s(t)=\begin{cases}
+1 & \text{if }s=t\\
+0 & \text{else}
+\end{cases}, \quad t \in G.
+\end{align*}
+One may verify that the family of all point masses $\{ \delta_s\}_{s \in G}$ is an orthonormal basis for $\ell^2(G)$. All bounded linear functionals on a Hilbert space $ \H$ are of the form $f_y(x)=\langle x,y\rangle$ for some unique $y \in \H$ cf. \cite[5.25][174]{folland2013real}. We denote by $B(\H)$ the $C^*$-algebra of bounded linear operators $T \colon \H \to \H$.
+
+\subsubsection*{$C^*$-algebras}
+A $C^*$-algebra $\A$ is a complex Banach algebra which is also a $*$-algebra satisfying the $C^*$-identity; 
+\begin{align*}
+\lv x^*x \rv = \lv x\rv^2, \quad \text{for all } a \in \A
+\end{align*}
+We use $\A$ to denote an arbitary $C^*$-algebra. We always assume a $C^*$-algebra to be unital, and denote the unit of $\A$ by $1_{\A}$. 
+\begin{itemize}
+\item A $C^*$-algebra $\A$ is simple if it contains no non-trivial proper closed two-sides ideals.
+\item For a $C^*$-algebra $\A$ and $a \in \A$ we say that
+\begin{itemize}
+\item $a$ is \emph{self-adjoint} if $a^*=a$. The set of all self-adjoint elements of $\A$ is denoted by $(\A)_{\text{s-a}}$,
+\item $a$ is \emph{positive} if $a=c^*c$ for some $c \in \A$. We write $a \geq 0$ if and only if $a$ is positve. The \emph{positive cone} of all positive elements in $\A$ is denoted by $(\A)_{+}$,
+\item $a$ is a \emph{projection} if $a=a^2=a^*$, i.e. idempotent and self-adjoint,
+\item $a$ is \emph{unitary} if $a^*a=aa^*=1_{\A}$. The group of all unitary elements of $\A$ is denoted by $\mathcal{U}(\A)$.
+\end{itemize}
+\item A \emph{$*$-homomorphism} $\Phi \colon \A \to \mathcal{B}$ between unital $C^*$-algebras $\A , \mathcal{B}$ is a unital, multiplicative and linear map which carries involution. We say that two $C^*$-algebras $\A,\mathcal{B}$ are isomorphic if there is a bijective $*$-homomorphism between them.
+\item Every commutative $C^*$-algebra is isomorphic to the $C^*$-algebra of continuous functions $C(K)$ on some compact Hausdorff space $K$ cf. \cite[Theorem 9.4][56]{zhu}.
+\item A linear map $\varphi \colon \A \to \mathcal{B}$ between $C^*$-algebras is said to be positive if it carries positive elements to positive elements, i.e., if $\varphi\left( (\A)_{+} \right) \subseteq \left(\mathcal{B}\right)_+$. Hence a positive continuous linear functional $\varphi \in \A^*$ is a functional such that $\varphi\left( \left( \A \right)_+\right) \subseteq \R_+$. By \cite[Theorem 13.5][79]{zhu}, a functional $\varphi$ on $\A$ is positive if and only if it is bounded and $\lv \varphi \rv = \varphi(1)$. For a positive linear functional $\varphi$ on $\A$ we say that
+\begin{itemize}
+\item $\varphi$ is a \emph{state} if $\varphi(1)=1=\lv \varphi \rv$. The space of all states on $\A$ is called the state space of $\A$, and is denoted by $\mathcal{S}(\A)$.
+\item $\varphi$ is said to be \emph{faithful} if $\varphi(x) > 0$ for all non-zero positive elements $x \in (\A)_+$.
+\item $\varphi$ is said to be a \emph{trace} is it is a state and it is tracial, i.e., if $\varphi(ab)=\varphi(ba)$ for all $a,b \in A$ and $\varphi(1)=1$.
+\end{itemize}
+\item A representation of a $C^*$-algebra on a Hilbert space $\H$ is a $*$-homomorphism $\pi \colon \A \to B(\H)$. For any $C^*$-algebra $\A$, there is a Hilbert space $\H$ such that $\A$ is faithfully represented on it by the GNS-construction \cite[Thoerem 14.4][87]{zhu}
+\item A linear map $\varphi \colon \A \to \mathcal{B}$ between $C^*$-algebras is \emph{c.c.p} (\textit{contractive completely positive}) if for all $n \geq 1$, the map $\varphi_n \colon M_n(A) \to M_n(B)$ defined by
+\begin{align*}
+\varphi_n([a_{ij}]):=[\varphi(a_{ij})], \ [a_{ij}] \in M_n(A),
+\end{align*}
+is positive and contractive.
+\item We will by $X$ and $Y$ denote compact topological spaces, and we denote by $C(X)$ the unital $C^*$-algebra of continuous functions $f \colon X \to \C$ equipped the supremum norm and involution $f \mapsto \overline{f}$.
+\item Given a bounded linear functional $\omega$ on a unital $C^*$-algebra $\A$, we define its adjoint $\omega^*$ by $\omega^*(a)=\overline{\omega(a^*)}$ for $a \in \A$.
+\item Every bounded linear functional $\omega$ on a unital $C^*$-algebra $\A$ can be decomposed into $\mathrm{Re}\omega+i \mathrm{Im}\omega$, where $\mathrm{Re}\omega, \mathrm{Im}\omega$ are the self-adjoint linear functionals defined by
+\begin{align*}
+\mathrm{Re}\omega=\frac{\omega+\omega^*}{2}, \ \mathrm{Im}\omega = \frac{\omega-\omega^*}{2i}.
+\end{align*}
+\item Every self-adjoint linear functional $\gamma$ on $C_r^*(G)$ has a unique \emph{Jordan decomposition}, there exists two positive linear functionals $\gamma_{\pm}$ on $C_r^*(G)$ such that $\gamma=\gamma_+-\gamma_-$ which satisfy $\lv \gamma \rv = \lv \gamma_+\rv + \lv \gamma_-\rv$, and they are unique.
+\item As a consequence of the above, we see that every bounded linear functional can be decomposed into a linear combination of four states.
+\end{itemize}

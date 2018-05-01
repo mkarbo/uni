@@ -1,0 +1,948 @@
+\documentclass[10pt,twoside,openany,final]{memoir}
+\usepackage[utf8]{inputenc}
+\usepackage[pass]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[danish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{cd}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[style=authoryear,backend=bibtex]{biblatex}
+\usepackage{filecontents}
+\usepackage[english, status=draft]{fixme}
+\fxusetheme{color}
+\usepackage{cleveref} 
+\usepackage[backgroundcolor=cyan]{todonotes}
+\usepackage{wallpaper}
+
+
+\usepackage{xcolor}
+
+\makeatletter
+\def\mathcolor#1#{\@mathcolor{#1}}
+\def\@mathcolor#1#2#3{%
+  \protect\leavevmode
+  \begingroup
+    \color#1{#2}#3%
+  \endgroup
+}
+\makeatother
+
+
+\addtolength{\textwidth}{30pt}
+\addtolength{\foremargin}{-30pt}
+\checkandfixthelayout
+
+\title{Reflexivity in Banach spaces}
+\author{Malthe Munk Karbo & Magnus Kristensen}
+
+\setlength{\parindent}{2em}
+\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{1}
+
+
+\newtheoremstyle{break}
+	{\topsep}{\topsep}
+	{\itshape}{}
+	{\bfseries}{}
+	{\newline}{}
+\theoremstyle{break}
+\newtheorem{theorem}[section]{Theorem}
+\newtheorem{lemma}[section]{Lemma}
+\newtheorem{proposition}[section]{Proposition}
+\newtheorem{corollary}[section]{Corollary}
+\newtheorem{definition}[section]{Definition}
+\newtheoremstyle{Break}
+	{\topsep}{\topsep}
+	{}{}
+	{\bfseries}{}
+	{\newline}{}
+\theoremstyle{Break}
+\newtheorem{example}[section]{Example}
+\newtheorem{remark}[section]{Remark}
+\newtheorem{note}[section]{Note}
+\setcounter{secnumdepth}{0}
+\usepackage{xpatch}
+\xpatchcmd{\proof}{\ignorespaces}{\mbox{}\\\ignorespaces}{}{}
+%\newenvironment{Proof}{\proof \mbox{} \\ \\ *}{\endproof}
+
+\chapterstyle{thatcher}
+
+
+\makepagestyle{abs}
+    \makeevenhead{abs}{}{}{malthe}
+    \makeoddhead{abs}{}{}{malthe}
+    \makeevenfoot{abs}{}{\scshape I }{}
+    \makeoddfoot{abs}{}{\scshape  I }{}
+    %\makeheadrule{abs}{\textwidth}{\normalrulethickness}
+    %\makefootrule{abs}{\textwidth}{\normalrulethickness}{\footruleskip}
+\pagestyle{abs}
+
+
+\makepagestyle{cont}
+    \makeevenhead{cont}{}{}{}
+    \makeoddhead{cont}{}{}{}
+    \makeevenfoot{cont}{}{\scshape II }{}
+    \makeoddfoot{cont}{}{\scshape  II }{}
+    %\makeheadrule{abs}{\textwidth}{\normalrulethickness}
+    %\makefootrule{abs}{\textwidth}{\normalrulethickness}{\footruleskip}
+\pagestyle{cont}
+
+\newcommand{\lv}{\lVert}
+\newcommand{\rv}{\rVert}
+
+
+\renewcommand\chaptermarksn[1]{}
+\nouppercaseheads
+\createmark{chapter}{left}{shownumber}{}{.\space}
+\makepagestyle{dut}
+    \makeevenhead{dut}{\scshape\rightmark Malthe Karbo}{}{\scshape\leftmark}
+    \makeoddhead{dut}{\scshape\leftmark}{}{\scshape\rightmark Malthe Karbo}
+    \makeevenfoot{dut}{}{\scshape $-$ \thepage\ $-$}{}
+    \makeoddfoot{dut}{}{\scshape $-$ \thepage\ $-$}{}
+    \makeheadrule{dut}{\textwidth}{\normalrulethickness}
+    \makefootrule{dut}{\textwidth}{\normalrulethickness}{\footruleskip}
+\pagestyle{dut}
+
+\makepagestyle{chap}
+    \makeevenhead{chap}{}{}{}
+    \makeoddhead{chap}{}{}{}
+    \makeevenfoot{chap}{}{\scshape $-$ \thepage\ $-$}{}
+    \makeoddfoot{chap}{}{\scshape $-$ \thepage\ $-$}{}
+    \makefootrule{chap}{\textwidth}{\normalrulethickness}{\footruleskip}
+\copypagestyle{plain}{chap}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\mbr}{(X,\mathcal{A})}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\PP}{\mathcal{P}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\dd}{\partial}
+\newcommand{\ee}{\epsilon}
+\newcommand{\la}{\lambda}
+
+\makeatletter
+\newcommand{\Spvek}[2][r]{%
+  \gdef\@VORNE{1}
+  \left(\hskip-\arraycolsep%
+    \begin{array}{#1}\vekSp@lten{#2}\end{array}%
+  \hskip-\arraycolsep\right)}
+
+\def\vekSp@lten#1{\xvekSp@lten#1;vekL@stLine;}
+\def\vekL@stLine{vekL@stLine}
+\def\xvekSp@lten#1;{\def\temp{#1}%
+  \ifx\temp\vekL@stLine
+  \else
+    \ifnum\@VORNE=1\gdef\@VORNE{0}
+    \else\@arraycr\fi%
+    #1%
+    \expandafter\xvekSp@lten
+  \fi}
+\makeatother
+
+\newcommand{\K}{\mathbb{K}}
+\addtocontents{toc}{\protect\thispagestyle{empty}} 
+
+
+\title{Disposition til \\\textbf{Algebra 2}}
+\author{Malthe Munk Karbo '14}
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents*
+\pagenumbering{arabic}
+\chapter{Homomorfier, idealer og kvotientringe}
+\section*{Taleplan}
+\begin{enumerate}
+\item Ringhomomorfier, idealer og kvotientringe defineres,
+\item Første isomorfisætning for ringe,
+\item Fjerde isomorfisætning for ringe.
+\end{enumerate}
+\section*{Beviser}
+\begin{definition}
+En \emph{ringhomomorfi} $\varphi$ mellem to ringe $R,S$ er en funktion $\varphi \colon R \to S$ som opfylder:
+\begin{enumerate}
+\item $\varphi$ er en gruppehomomorfi,
+\item $\varphi$ bevarer multiplikation, i.e., for alle $a,b \in R$ gælder der $\varphi(ab)=\varphi(a)\varphi(b)$.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}
+En delring $I \subseteq R$ er et \emph{(venstre- hhv. højre- hhv. tosidet-)ideal} hvis $aI \subseteq I $ hhv. $Ia \subseteq I$ hhv. begge to for alle $a \in R$.
+\end{definition}
+
+\begin{definition}
+Lad $R$ være en ring med ideal $I \subseteq R$, da defineres \emph{kvotientringen} til $R / I:=\left\{a+I |  a \in R\right\}$. Dette er en ring under naturlige operatoner. 
+\end{definition}
+
+\begin{proposition}[proposition 5 DF]
+Hvis $\varphi \colon R \to S$ er en ring homomorfi er $\varphi(R)$ en delring af $S$ og $\ker \varphi$ er et ideal i $R$.
+\end{proposition}
+
+\begin{proposition}[1. isomorfisætning for ringe]
+Hvis $\varphi \colon R \to S$ er en ringhomomorfi mellem ringe $R$ og $S$ så er $R / \ker(\varphi) \cong \varphi(R)$ via $\overline{r} \mapsto \varphi(r)$, $\overline{r} \in R / \ker(\varphi)$.
+
+\noindent Ydermere, givet et ideal $I \subseteq R$, så er afbildningen $R \to R/I$, $r \mapsto [r]_I$ en surjektiv ringhomomorfi med $\ker=I$. Altså er alle idealer lig kernen for en ring homomorfi.
+\end{proposition}
+\begin{proof}
+Pr. første isomorfisætning for grupper gælder der at afbildningen $\overline{\varphi} \colon R/\ker(\varphi) \to \mathrm{Im}(\varphi)$, $[r]_{\ker(\varphi)} \mapsto \varphi(r)$ er en veldefineret isomorfi af grupper. Så der mangler kun at vise at den bevarer multiplikation. Lad $[a]_{\ker(\varphi)}, [b]_{\ker(\varphi)} \in R/\ker(\varphi)$, da har vi
+\begin{align*}
+\overline{\varphi}([ab]_{\ker(\varphi)})=\varphi(ab)=\varphi(a)\varphi(b)=\overline{\varphi}([b]_{\ker(\varphi)})\overline{\varphi}([b]_{\ker(\varphi)})
+\end{align*}
+
+Givet et ideal $I \subseteq R$, så er afbildningen $\pi \colon r \mapsto [r]_I$ en surjektiv gruppehomomorfi $R \to R/I$  pr. første isomorfisætning for grupper. Og hvis $r,s \in R$ da er
+\begin{align*}
+\pi(rs)=[rs]_I=[r]_I[s]_I=\pi(r)\pi(s),
+\end{align*}
+så $\pi$ er en surjektiv ringhomomorfi med $\ker(\pi)=I$.
+\end{proof}
+
+\begin{proposition}[4. isomorfisætning for ringe]
+For et ideal $I \subseteq R$, da giver tilordningen $A \mapsto A/I$ inklusionsbevarende bijektive korrespondancer:
+\begin{align*}
+\{\text{Delringe af } R \text{ som indeholder I} \} &\to \{\text{Delringe af } R/I\},\\
+\{\text{Idealer af } R \text{ som indeholder I} \} & \to \{\text{Idealer af } R/I\}.
+\end{align*}
+\end{proposition}
+\begin{proof}
+Fjerde isomorfisætning for grupper giver, da $(I,+)$ er en normal undergruppe af $(R,+)$, en inklusionsbevarende bijektive korrespondancer mellem additive undergrupper af $R$ som indeholder $I$ og additive undergrupper af $R/I$, så lad $A$ være en gruppe med $I \subseteq A$.
+\begin{enumerate}
+\item Lad $a,b \in A$. Da er $[a]_I[b]_I=[ab]_I \in A/I \iff ab \in A$, så $A$ er en ring hvis og kun hvis $A/I$ er en ring.
+\item Lad $a \in A$ og $r \in R$. Da er $[r]_I[a]_I=[ra]_I \in A/I \iff ra \in A$, så $A$ er et ideal hvis og kun hvis $A/I$ er et ideal.
+\end{enumerate}
+\end{proof}
+
+\begin{example}
+\begin{enumerate}
+\item Afbildningen $\varphi \colon \Z[x] \to \Z$, $p(x) \mapsto p(0)$ er en ring-homomorfi med $\ker \varphi=(x)$, og $\textrm{im}\varphi=\Z$ så sætningen ovenover giver $\Z[x]/(x) \cong \Z$.
+\item $n \Z$ er et ideal i $\Z$.
+\item $(x) \subseteq \Z[x]$ ideal.
+\end{enumerate}
+\end{example}
+
+\chapter{Maksimalidealer og primidealer}
+\section*{Taleplan}
+\begin{enumerate}
+\item Definering af maksimalidealer og primidealer.
+\item Ethvert ægte ideal er indeholdt i et maksimalidealer.
+\item $R$ kommutativ ring, $M \subseteq R$ maksimalideal hvis og kun hvis $R/M$ legeme.
+\item $R$ kommutativ ring, $P $ primideal i $R$ hvis og kun hvis $R/P$ integritetsområde.
+\end{enumerate}
+\section*{Beviser}
+\begin{definition}
+For en ring $R$ defineres $\mathcal{R}:=\{ I \subseteq R | I \text{ ideal i } R \}$. Dette er en partielt ordnet mængde ved inklusion.
+\end{definition}
+\begin{definition}[maksimal ideal]
+Et ideal $M$ i en ring $R$ siges at være et maksimalideal hvis $M \neq R$ og $M$ er maksimalt element i den partielt ordnede mængde $\mathcal{R}$ (i.e. $M \subset I $ medfører $I = M$ eller $I = R$).
+\end{definition}
+\begin{lemma}[zorns]
+Hvis alle totalt ordnede delmængder i en partielt ordnet mængde $(A,\leq)$ har en øvre grænse, så har $A$ et maksimalt element.
+\end{lemma}
+
+\begin{proposition}
+Ethvert ægte ideal $I$ i en ring $R$ med enhed er indeholdt i et maksimalt ideal.
+\begin{proof}
+Lad $I\subseteq R$ være et ægte ideal i en ring $R$ med enhed, så $1 \in R \Rightarrow R \neq 0$. 
+
+\noindent Lad $\mathcal{S}:=\{ S \in R \ | \ S \text{ ægte ideal med } I \subseteq S\} $. Da er $\mathcal{S}$ en ikke-tom (da $I \in \mathcal{S}$) partielt ordnet mængde ved inklusion. Lad $\mathcal{T}$ være en totalt ordnet delmængde (kæde) af $\mathcal{S}$, og definer
+\begin{align*}
+J := \bigcup_{T \in \mathcal{T}} T.
+\end{align*} 
+Da er $J$ et ideal: $0 \in T$ for alle $T \in \mathcal{T}$ så $J \neq \emptyset $. Hvis $a,b \in J$, er der idealer $A,B \in \mathcal{T}$ med $a \in A$ og $b \in B$. Da $\mathcal{T}$ totalt-ordnet antager vi $A \subseteq B$. Så er $a,b \in B$ og $a+b \in B$ så $a+b \in J$. For $r \in R$ har vi
+\begin{align*}
+rJ = \bigcup_{T \in \mathcal{T}} \underbrace{rT}_{\subseteq T} \subseteq \bigcup_{T \in \mathcal{T}} T = J,
+\end{align*}
+og tilsvarende er $Jr \subseteq J$, så $J$ er et ideal i $R$.
+
+Vi mangler blot at vise, at $J \in \mathcal{S}$. Hvis ikke, så er $J=R \iff 1 \in J \iff 1 \in T$ for et $T \in \mathcal{T}$, men det er antaget umuligt. Så $J$ er en øvre grænse for $\mathcal{T}$, så zorns lemma sikrer eksistensen af et maksimalideal $M \in \mathcal{S}$.   
+\end{proof}
+\end{proposition}
+
+\begin{proposition}
+Lad $I \subseteq R$ være et ideal i en ring $R$ med $1 \neq 0$. Da gælder
+\begin{enumerate}
+\item $I=R$ hvis og kun hvis $I$ indeholder en enhed.
+\item Hvis $R$ er kommutativ, så er $R$ er legeme hvis og kun hvis $\mathcal{R}=\{ 0 , R\}$.
+\end{enumerate}
+\begin{proof}
+\textbf{(1):} $I=R$ medfører $1 \in I$. Antag $u \in I$ er en enhed, så er $1=u^{-1}u \in I $ så for alle $r \in R$ har vi $r=r \cdot 1 \in I$.
+
+\noindent \textbf{(2):} $R$ legeme hvis og kun hvis $R^{\times}=R\backslash\{0\}$. Lad $(0) \neq I$ være et ideal i $R$. Da er $I \cap R^{\times} \neq \emptyset$, så pr. (1) er $I= R$. Antag nu at de eneste idealer i $R$ er $0$ og $R$. Lad $u$ være et vilkårligt element i $R\backslash\{0\}$. Per antagelse er $(u) = R$, så $1 \in (u)$, og derfor er der $u^{-1} \in R$ så $u^{-1}u=1$.
+\end{proof}
+\end{proposition}
+
+
+\begin{proposition}[R komm ideal max iff kvotient legeme]
+Lad $R$ være en unital kommutativ ring. Da er et ideal $M$ i $R$ maksimalt hvis og kun hvis kvotientringen $R/M$ er et legeme.
+\begin{proof}
+Per fjerde isomorfisætning er der en bijektiv korrespondance mellem idealer $A$ i $R$ som indeholder $M$ og idealer $A/M$ i $R/M$. Så $M$ er maksimal hvis og kun hvis de eneste idealer i $R/M$ lig $R/M$ og $(0)$ og per ovenstående sker dette hvis og kun hvis $R/M$ et legeme.
+\end{proof}
+\end{proposition}
+
+\begin{definition}
+Et primideal $P$ i en kommutativ ring $R$ er et ægte ideal sådan at hvis $ab \in P$ så er $a \in P$ eller $b \in P$ for alle $a,b \in R$.
+\end{definition}
+
+\begin{proposition}
+Et ideal $P$ i en kommutativ ring $R$ er et primideal hvis og kun hvis $R/P$ er et integritetsområde
+\begin{proof}
+For $a,b \in R$: 
+\begin{align*}
+ab \in P \iff \overline{ab}=\overline{a}\overline{b}=0
+\end{align*}
+ses let nu.
+\end{proof}
+\end{proposition}
+
+\begin{proposition}
+For $R$ kommutativ gælder: $M \subseteq R$ maksimal ideal medfører $M$ primideal
+\begin{proof}
+$M$ maksimalt $\iff$ $R/M$ legeme $\implies$ at $R/M$ integritetsområde $\iff$ $M$ prim.
+\end{proof}
+\end{proposition}
+Modsatte gælder ikke: $(x) \in \Z[x]$ prim men ikke maks ($\Z[x]/(x) \cong \Z$ ikke legeme eller $(x) \subseteq (2,x) \subseteq \Z[x]$).
+\begin{example}
+\begin{enumerate}
+\item $2\Z$ er maksimalt i $\Z$ men $4\Z \subseteq 2\Z$ er ikke.
+\item $(2,x) \subseteq \Z[x]$ er maksimalt ( $\Z[x] /(2,x) \cong \Z/2\Z$ som er et legeme)
+\end{enumerate}
+\end{example}
+
+\chapter{Brøkringe}
+\section*{Taleplan}
+\begin{enumerate}
+\item Definering af en relation på $R \times D$ for kommutativ ring $R$ og multiplikativt lukket mængde $D \subseteq R$.
+\item Definition af brøkringen $D^{-1}R$.
+\item Naturlig ring homomorfi $R \mapsto D^{-1}R$.
+\item Brøkringens universalegenskab.
+\end{enumerate}
+\section*{Beviser}
+\begin{definition}
+En delmængde $D$ af en kommutativ unital ring $R$ siges at være multiplikativt lukket hvis $1 \in D$ og for all $d,d' \in D: dd' \in D$.
+\end{definition}
+I det følgende er $R$ en unital kommutativ ring, og $D \subseteq R$ er en multiplikativt lukket delmængde. (eks $R\backslash \mathfrak{P} $ hvor $\mathfrak{P}$ er et primideal, $R^{\times}$ mængden af enheder og lign.)
+\begin{definition}
+For multiplikativt lukket delmængde, $D \subseteq R$, defineres en relation $\sim$ på $R \times D$ til \begin{align*}
+(r,d) \sim (r',d') \iff \exists u \in D : rd'u=r'du
+\end{align*}
+\end{definition}
+\noindent Dette er en ækvivalensrelation (kan vises), og vi annoterer $[(r,d)]_{\sim}:=\frac{r}{d}$
+\begin{definition}[Brøkringen]
+For multiplikativt lukket delmængde, $D \subseteq R$, defineres delmængden af ækvivalensklasser $R$ mht. $D$ til
+\begin{align*}
+D^{-1}R:=\left\{ \frac{r}{d}\  |\  r \in R ,\ d \in D \right(\}
+\end{align*}
+Dette kan vises at være en kommutativ unital ring med $0:=\frac{0}{1}$ og $1:= \frac{1}{1}$ og $(+,\cdot)$ defineret ved
+\begin{align*}
+\frac{r}{d}+\frac{s}{t}:=\frac{rt+sd}{dt} \text{  og  } \frac{r}{d} \frac{s}{t}:=\frac{rs}{dt}.
+\end{align*} (disse kan vises at være veldefinerede, i.e., uafhængige af valg af repræsentanter). I denne ring gælder de 'almindelige' regneregler for brøker fx forlængelse af brøker med elementer fra $D$.
+\end{definition}
+\noindent \textbf{Bemærk:} hvis $D$ ikke indeholder $0$ eller nogen nuldivisorer, så er $\frac{r}{d}=0  \iff r=0$, og hvis $0 \in D$ så er $D^{-1}R=0$-ringen.
+
+\begin{definition}
+Afbildningen $\rho \colon R \to D^{-1}R$, $r \mapsto \frac{r}{1}$ er 'den kanoniske ringhomomorfi til brøkringen'. Det er let at vise at det er en ringhomomorfi med $\rho(1)=1$.
+\end{definition}
+Pr bemærkningen: hvis $D$ ikke indeholder $0$ eller nogen nuldivisorer, da er $\rho$ injektiv (kernen er nul).
+\begin{theorem}[brøkringens universalegenskab]
+Den kanoniske ringhomomorfi $\rho \colon R \to D^{-1}R$ har følgende universalegenskab: For alle kommutative unitale ringe $S$ og alle ringhomomorfier $\varphi \colon R \to S$ så $\varphi(D) \subseteq S^{\times}$ eksisterer $\tilde{\varphi} \colon D^{-1}R \to S$ så følgende diagram kommuterer:
+\begin{center}
+\begin{tikzcd}
+R\arrow{rr}{\varphi} \arrow{rd}[swap]{\rho}  & & S\\
+& D \arrow{ru}[swap]{\tilde{\varphi}}&
+\end{tikzcd}
+\end{center}
+Og den er givet ved $\tilde{\varphi}(\frac{r}{d})=\varphi(r)\varphi(d)^{-1}$ for $\frac{r}{d} \in D^{-1}R$, og $\varphi$ injektiv medfører $\tilde{\varphi}$ injektiv.
+\begin{proof}
+Først vises \textbf{entydighed}: Hertil bemærkes at $\frac{r}{d}=\frac{r}{1}(\frac{d}{1})^{-1}=\rho(r)\rho(d)^{-1}$. Så hvis $\tilde{\varphi} \colon D^{-1}R \to S$ er en unital ringhomomorfi så diagrammet kommuterer, da gælder $\tilde{\varphi}(\frac{r}{d})=\tilde{\varphi}(\rho(r)\rho(d)^{-1})=\varphi(r)\varphi(d)^{-1}$, så denne afbildning må være på den form.
+
+\noindent Eksistensen: Vi skal blot vise denne afbildning er veldefineret. Lad $\frac{r}{d}=\frac{r'}{d'}$, sådan at $rd'u=r'du$ for et $u \in D$. Da $\varphi(D) \subseteq S^{\times}$, findes $\varphi(u)^{-1} \in S$, og har
+\begin{align*}
+\varphi(rd'u)=\varphi(r'du) \iff \varphi(r)\varphi(d)^{-1} = \varphi(r')\varphi(d')^{-1} \iff \tilde{\varphi}(\frac{r}{d})=\tilde{\varphi}(\frac{r'}{d'}).
+\end{align*}
+Det vises let at denne bevarer produkter og addition samt er unital. 
+
+Så vises \textbf{injektivitet}: Antag $\varphi$ injektiv og at $\tilde{\varphi}(\frac{r}{d})=0 \iff \varphi(r)\varphi(d)^{-1}=0$, så må $r = 0$ så $\frac{r}{d}=0$, så $\ker(\tilde{\varphi})=0$.
+\end{proof}
+\end{theorem}
+
+\begin{example}
+\begin{enumerate}
+\item Hvis $D=R\backslash \{0\}$ kaldes brøkringen $D^{-1}R$ for brøklegemet over $R$. For $\Z$ får vi $\Q$.
+\item samme som ovenover: For $R=Z[x]$ får vi $Q[x]$, for $Q[x]$ får vi $Q[x]$ igen.
+\end{enumerate}
+\end{example}
+
+\chapter{Den Kinesiske restklassesætning}
+\section*{Taleplan}
+\begin{enumerate}
+\item Produktring og komaksimalitet
+\item Den kinesiske restklassesætning ($n=2$)
+\item Den kinesiske restklassesætning $n \geq 2$
+\item En anvendelse. \todo{her}
+\end{enumerate}
+\section*{Beviser}
+For en familie af ringe $(R_{\alpha})_{\alpha \in A}$ kan man danne produktringen $\prod_{\alpha \in A} R_{\alpha}$ hvor addition og multiplikation sker indgangsvist. Fra nu af er $R$ en kommutativ unital ring.
+\begin{definition}
+To idealer $I,J \subseteq R$ siges at være komaksimale hvis $I+J=R$, i.e., hvis der findes $x \in I$ og $y \in J$ så $x+y=1$.
+\end{definition}
+\textbf{Eksempel}: For $n,m \in \Z$ indbyrdesk primiske er $n\Z+m\Z=\Z$.
+
+\begin{proposition}[DKR n=2]
+Givet idealer $I_1, I_2 \subseteq R$, da er afbildningen $\varphi \colon R\to R/I_1 \times R/I_2$ givet ved
+\begin{align*}
+r \mapsto ([r]_{I_1},[r]_{I_2}), \quad r \in R
+\end{align*}
+en ringhomomorfi med $\ker \varphi = I_1 \cap I_2$. Hvis $I_1$ og $I_2$ er komaksimale er $\varphi$ surjektiv og $I_1 \cap I_2 = I_1 I_2$ og
+\begin{align*}
+R /(I_1 I_2) \cong R/I_1 \times R/I_2.
+\end{align*}
+\begin{proof}
+Det er oplagt en ringhomomorfi. Hvis $\varphi(r)=(0,0)$ så er $r \in I_1$ og $r \in I_2$, så $\ker \varphi = I_1 \cap I_2$. Antag nu at $I_1$ og $I_2$ er komaksimale, og vælg $x \in I_1$ og $y \in I_2$ så $1=x+y$. Da er $x=1-y$ og $y=1-x$ så $\varphi(x)=(0,1)$ og $\varphi(y)=(1,0)$. Så for $([r_1]_{I_1},[r_2]_{I_2}) \in R/I_1 \times R/I_2$ har vi
+\begin{align*}
+\varphi(r_1y + r_2x)=\varphi(r_1)(1,0)+\varphi(r_2)(0,1)=([r_1]_{I_1},0)+(0,[r_2]_{I_2})=[r_1]_{I_1},[r_2]_{I_2}).
+\end{align*}
+Og der gælder generelt at $I_1 I_2 \subseteq I_1 \cap I_2$. Den modsatte inklusion vises ved: lad $c \in I_1 \cap I_2$, og lad $x \in I_1$ og $y \in I_2$ så $x+y=1$. Så er
+\begin{align*}
+c=c\cdot 1 = c(x+y)=\underbrace{cx}_{\in I_1 I_2} +\underbrace{cy}_{\in I_1 I_2} \in I_1 I_2.
+\end{align*}
+Ved første isomorfisætning har vi 
+\begin{align*}
+R/I_1 \times R/I_2 \cong R/(I_1 \cap I_2)=R/(I_1I_2).
+\end{align*}
+\end{proof}
+\end{proposition}
+
+I tilfældet med $I_1,I_2,\dots,I_n$ idealer fås en generalisering
+\begin{proposition}
+Lad $I_1,I_2,\dots,I_n \subseteq R$ være idealer. Da er afbildningen $\varphi \colon R \to R/I_1 \times \dots \times R/I_n$ givet ved
+\begin{align*}
+r \mapsto ([r]_{I_j})_{1 \leq j \leq n}
+\end{align*}
+en ringhomomorfi med $\ker \varphi = I_1 \cap I_2 \cap \dots \cap I_n$. Ydermere, hvis $I_1,I_2,\dots,I_n$ er indbyrdes komaksimale er afbildningen surjektiv og $I_1 \cap I_2 \cap \dots \cap I_n=I_1I_2\dots I_n$ og der er en isomorfi
+\begin{align*}
+R/(I_1I_2\dots I_n) \cong R/I_1 \times R/I_2 \times \dots \times R/I_n.
+\end{align*}
+\begin{proof}
+$\varphi$ er klart en veldefineret homomorfi og 
+\begin{align*}
+r \in \ker \varphi \iff [r]_{I_j} = 0\ \forall 1 \leq j \leq n \iff r \in I_1 \cap \dots \cap I_n.
+\end{align*} 
+Resten af beviset følger direkte hvis vi kan vise at $I_1$ og $I_2 I_3 \dots I_n$ er komaksimale. Dette gøres ved induktion: gælder for $n=2$ pr. ovenstående. Antag det gælder for $n > 2$ og lad $I_1,I_2,\dots, I_{n+1}$ være indbyrdes komaksimale. For $2 \geq i \geq n+1$ vælges $x_j \in I_1$ og $y_j \in I_j$ så $x_j+y_j=1$. Definer $J:=I_2 I_3 \cdots I_{n+1}$ Så er
+\begin{align*}
+1=\prod_{2 \leq j \leq n+1}(x_j+y_j) \in I_1+y_2y_3\cdots y_{n+1} \subseteq I_1 + J.
+\end{align*}
+Så $I_1$ og $J=I_2I_3 \cdots I_{n+1}$ er komaksimale, så tilfældet $n=2$ giver $I_1I_2 \cdots I_{n+1}=I_1 \cap I_2 \cap \dots \cap I_{n+1}$.
+
+Vi mangler at vise at afbildningen $R \to R/I_1 \times R/I_2 \times \dots R/I_{n+1}$ er surjektiv. lad $[b_i]_{I_i} \in R/I_i$ for $i=1,2,\dots,n+1$. Pr. induktionsantagelsen findes $b \in R$ så $[b]_{I_i}=[b_i]_{I_i}$ for $i=2,3,\dots,n+1$. Pr. n=2 findes også $a \in R$ så $[a]_{I_1}=[b_1]_{I_1}$ og $[a]_J=[b]_J$. Da har vi $a-b_j=\underbrace{(a-b)}_{\in J}+(b-b_j)\in J+I_j\subseteq I_j$ for $j=2,3,\dots,n+1$. Så $[a-b_j]_{I_j}=[0]_{I_j} \iff [a]_{I_j}=[b_j]_{I_j}$ for $j=2,3,\dots,n+1$. Så
+\begin{align*}
+a \mapsto ([a]_{I_1},[a]_{I_2},\dots,[a]_{I_{n+1}})=([b_1]_{I_1},[b_2]_{I_2},\dots,[b_{n+1}]_{I_{n+1}}).
+\end{align*}
+\end{proof}
+\end{proposition}
+
+\begin{example}
+For $\Z$: Hvis $n_1,\dots,n_k \in \Z$ er parvist primiske og $a_1,\dots,a_k \in \Z$, da findes $x \in \Z$ så $x \equiv a_i \textrm{ mod } n_i$ for $1 \leq i \leq k$. Eksempel: $n_1=3$ og $n_2=10$, da får vi $\Z/30\Z \cong \Z/3\Z \times \Z/10\Z$, via $[n]_3{0} \mapsto ([n]_3,[n]_1{0}$ med invers $([a]_3,[b]_{10})\mapsto [10a-9b]_{30}$. Så hvis vi vil løse
+\begin{align*}
+x &\cong 2 \ | 3\\
+x &\cong 6 \ | 10
+\end{align*}
+har vi $x=10 \cdot 2 - 9 \cdot 6=-34$, så alle løsningerne er lig $-34 \textrm{ mod } 30$, altså $x=\dots,-94,-64,-34,-4,26,56,\dots$.
+\end{example}
+
+\chapter{Euklidiske ringe}
+\section*{Taleplan}
+\begin{enumerate}
+\item Definition af euklidiske ringe (og få eksempler)
+\item Euklidisk $\implies$ PID
+\item Euklids algoritme samt GCD
+\item GCD =rest fra euklids algoritme
+\end{enumerate}
+\section*{Beviser}
+I det følgende antages $R$ at være et integritetsområde (kommutativ uden nuldivisorere)
+\begin{definition}
+En funktion $N  \colon R \to \N_0$ med $N(0)=0$ kaldes en \emph{norm} på integritetsområdet $R$. Hvis $N(a) >0$ for $a \neq 0$ kaldes $N$ en positiv norm.
+\end{definition}
+
+\begin{definition}
+Et integritetsområde $R$ siges at være \emph{Euklidisk} hvis der er en norm $N$ på $R$ så for alle $a,b \in R$ hvor $b \neq 0$ findes elementer $q,r \in R$ så
+\begin{align*}
+a=qb+r \quad \text{ hvor } r=0 \text{ eller } N(r) < N(b).
+\end{align*}
+\end{definition}
+
+\begin{example}
+Følgende er eksempler på euklidiske ringe:
+\begin{enumerate}
+\item Ethvert legeme: $N=0$, har $a=ab^{-1}b$ for $b \neq 0$.
+\item De hele tal $\Z$: $N=\lv \cdot \rv$: For $b\neq 0$, antag $b>0$. Da $\Z=\cup_{n \in \Z} [nb,(n+1)b[$ findes der givet $a \in \Z$ et $k\in \Z$ så $a \in [kb,(k+1)b[$. Sættes $r:= a-kb\in [0,b[$ har vi $a=kb+r=kb+a-kb$ og $|r|<|b|$. For $b<0$ er $-b>0$. 
+\item De Gaussiske heltal $\Z[i]$ med $N=\lv \cdot \rv^2$ (skitse).
+\end{enumerate}
+\end{example}
+
+\begin{definition}[Hovedidealområde (PID)]
+Et hovedidealområde (PID) er et integritetsområde $R$ hvori de eneste ægte idealer er idealerne frembragt af enkelte elementer, i.e. $I\subseteq R$ ideal og $(0)\neq I\neq R \implies I=(a)$ for et $a \in R\backslash\{0\}$. 
+\end{definition}
+
+\begin{proposition}[euklid => PID]
+Hvis $R$ er en euklidisk ring så er $R$ et integritetsområde.
+\begin{proof}
+Lad $I$ være et ideal i $R$. Hvis $I=(0)$ er vi færdige. Antag $I \neq (0)$. Lad $0\neq d\in I$ sådan at $N(d)\leq N(a)$ for alle $0 \neq a \in I$. Da er $(d) \subseteq I$. Lad $a \in I$. Da er $a=qd+r$ med $N(r) < N(d)$. Da $N(d) \leq N(a)$ for $a \neq 0$ må $r=0$ så $a=qd$ derfor er $a \in (d)$. 
+\end{proof}
+\end{proposition}
+
+
+\begin{theorem}[Euklids algoritme]
+I en euklidiske ring $R$ med norm $N$, så givet $a \in R$, $0 \neq b \in R$, da findes $q_0,\dots,q_n,q_{n+1} \in R$ og $r_0,\dots,r_n \in R$ så
+\begin{align*}
+a&=q_0 b + r_0,  r_0 \neq \quad 0 \text{ og } N(r_0) < N(b) \tag{0}\\ 
+b&=q_1 r_0 + r_1,  r_1 \neq \quad 0 \text{ og } N(r_1) < N(r_0)\tag{1}\\
+r_0&=q_2 r_1 + r_2, \quad r_2 \neq 0 \text{ og } N(r_2) < N(r_1)\tag{2}\\
+&\ \vdots\\
+r_{n-2}&=q_n r_{n-1} + r_n, \quad r_n \neq 0 \text{ og } N(r_n) < N(r_{n-1}) \tag{n}\\
+r_{n-1}&=q_{n+1}r_n \tag{n+1}
+\end{align*}
+\begin{proof}
+For $(a,b) \in R \times R\backslash\{0\}$ findes $q,r \in R$ så 
+\begin{align*}
+a=qt+r \text{ hvor } r=0 \text{ eller } N(r) < N(b).
+\end{align*}
+successivt opnås følger $q_0,q_1,\dots$ og $r_0, r_1,\dots$ som opfylder (0),(1),..., og sådan at følgen $N(r_i)$ aftager i $\N_0$, derfor er følgen $0$ fra et vist $n+1 \in \N$.
+\end{proof}
+\end{theorem}
+
+\begin{example}
+Lad $R=\Z$ og $a=100,b=6$. Da har vi 
+\begin{align*}
+a=100&=16\cdot 6 + 4 \\
+4 &= 4 \cdot 1 + 0,
+\end{align*}så $r_0 =4$, $q_0 = 16$ og $q_1=1$ og $r_1=0$.
+\end{example}
+\begin{definition}
+For $a,b \in R$, hvor $R$ er et integritetsområde siger vi at $b$ går op i $a$ ($b \mid a$) hvis der findes $x \in R$ så $a=bx$, eller ækvivalent, hvis $(a) \subseteq (b)$.
+\end{definition}
+
+\begin{definition}[GCD]
+For $a,b \in R$, så siges et element $d \in R$ at være største fælles divisor for $a$ og $b$ hvis:
+\begin{enumerate}
+\item $d \mid a$ og $d \mid b$, eller ækvivalent, $(a) \subseteq (d)$ og $(b) \subseteq (d)$.
+\item $d'\mid a$ og $d' \mid b$ medfører $d' \mid d$ eller ækvivalent $(a) \subseteq (d)$ og $(b) \subseteq (d)$ medfører $(d) \subseteq (d')$.
+\end{enumerate}
+I dette tilfælde sættes $d:=gcd(a,b)$.
+\end{definition}
+
+\begin{proposition}
+For $a,b \in R$ vil $(a,b)=(d)$ medføre, at  $d=gcd(a,b)$ og der findes $x,y \in R$ så $d=ax+by$.
+\begin{proof}
+da $d \in (a,b)$ findes der (pr. definition) $x,y \in R$ så $d=ax+by$. Vi har også $(a),(b) \subseteq (a,b)=(d)$ så pr. definition vil $d \mid a$ og $d \mid b$. Hvis der findes $d'$ så $(a) \subseteq (d')$ og $(b) \subseteq (d')$ da vil $(d)=(a,b) \subseteq (d')$ så $d' \mid d$.
+\end{proof}
+\end{proposition}
+Nemt korollar
+\begin{corollary}
+$R$ PID medfører at $gcd(a,b)$ findes for alle $a,b \in R$.
+\end{corollary}
+
+\begin{theorem}
+For en euklidisk ring $R$, med $a \in R$ og $b \in R\backslash\{0\}$, da vil slut elementet $r_{n}$ af euklids algoritme 
+\begin{align*}
+a&=q_0 b + r_0,  r_0 \neq \quad 0 \text{ og } N(r_0) < N(b) \tag{0}\\ 
+b&=q_1 r_0 + r_1,  r_1 \neq \quad 0 \text{ og } N(r_1) < N(r_0)\tag{1}\\
+r_0&=q_2 r_1 + r_2, \quad r_2 \neq 0 \text{ og } N(r_2) < N(r_1)\tag{2}\\
+&\ \vdots\\
+r_{n-2}&=q_n r_{n-1} + r_n, \quad r_n \neq 0 \text{ og } N(r_n) < N(r_{n-1}) \tag{n}\\
+r_{n-1}&=q_{n+1}r_n \tag{n+1}
+\end{align*}
+være $gcd(a,b)$, altså $(a,b)=(r_n)$.
+\begin{proof}
+Sæt $r_{-2}:=a$, $r_{-1}:=b$ og $r_{n+1}:=0$. Da er
+\begin{align*}
+r_{i-2}=q_ir_{i-1} + r_i, \quad \text{ for alle } i = 0,\dots,n+1
+\end{align*}
+sådan at $(r_{i-2},r_{i-1})=(r_{i-1},r_i)$ for alle $i=0,\dots,n+1$, sådan at
+\begin{align*}
+(a,b)=(r_{-2},r_{-1})=(r_{-1},r_0)=\dots=(r_{n-1},r_n)=(r_n,r_{n+1})=(r_n)
+\end{align*}
+da $r_{n+1}=0$.
+\end{proof}
+\end{theorem}
+
+\chapter{Hovedidealområder (PID)}
+\section*{Taleplan}
+\begin{enumerate}
+\item Definition af hovedidealområder (PID'er) samt nogle eksempler
+\item I hovedidealområde findes $gcd(a,b)$ for alle $a,b$ og $gcd(a,b)=ax+by$
+\item Ikke-nul primidealer i hovedidealområder er maksimalidealer
+\item integritetsområde + D-H norm => hovedidealområde.
+\end{enumerate}
+\section*{Beviser}
+$R$ integritetsområde.
+\begin{definition}[Hovedidealområde (PID)]
+Et hovedidealområde (PID) er et integritetsområde $R$ hvori de eneste ægte idealer er idealerne frembragt af enkelte elementer (hovedidealer), i.e. $I\subseteq R$ ideal og $(0)\neq I\neq R \implies I=(a)$ for et $a \in R\backslash\{0\}$. 
+\end{definition}
+
+\begin{definition}[GCD]
+For $a,b \in R$, så siges et element $d \in R$ at være største fælles divisor for $a$ og $b$ hvis:
+\begin{enumerate}
+\item $d \mid a$ og $d \mid b$, eller ækvivalent, $(a) \subseteq (d)$ og $(b) \subseteq (d)$.
+\item $d'\mid a$ og $d' \mid b$ medfører $d' \mid d$ eller ækvivalent $(a) \subseteq (d)$ og $(b) \subseteq (d)$ medfører $(d) \subseteq (d')$.
+\end{enumerate}
+I dette tilfælde sættes $d:=gcd(a,b)$.
+\end{definition}
+
+\begin{proposition}
+For $a,b \in R$ vil $(a,b)=(d)$ medføre, at  $d=gcd(a,b)$ og der findes $x,y \in R$ så $d=ax+by$.
+\begin{proof}
+da $d \in (a,b)$ findes der (pr. definition) $x,y \in R$ så $d=ax+by$. Vi har også $(a),(b) \subseteq (a,b)=(d)$ så pr. definition vil $d \mid a$ o.g $d \mid b$. Hvis der findes $d'$ så $(a) \subseteq (d')$ og $(b) \subseteq (d')$ da vil $(d)=(a,b) \subseteq (d')$ så $d' \mid d$.
+\end{proof}
+\end{proposition}
+
+\begin{corollary}
+$R$ PID medfører at $gcd(a,b)$ findes for alle $a,b \in R$.
+\end{corollary}
+
+\begin{proposition}[prim ideal er maksimalt i hovedidealområde]
+Lad $(p)$ være et ikke-nul primideal i et hovedidealområde $R$. Da er $(p)$ maksimalt.
+\begin{proof}
+Antag $(m)$ er et ideal som indeholder $(p)$ med $(m) \neq R$. Da er $p \in (m)$, så der er $sr \in R$ så $p=rm$, så $rm=p\in (p)$. Da $(p)$ er et primideal er $r \in (p)$ eller $m \in (p)$. Hvis $m \in (p)$ er $(m)=(p)$ så antag at det er $r \in (p)$. Da er $r=ps$ for et $s \in R$, og vi har 
+\begin{align*}
+p=rm=psm \implies sm=1,
+\end{align*}
+så $m$ er en enhed så $(m)=R$
+\end{proof}
+\end{proposition}
+Og den modsatte gælder altid: $R$ kommutativ og $M$ maksimaltideal i $R$ medfører $M$ primideal ($R/M$ legeme => integritet iff prim).
+
+\begin{definition}
+En norm $N$ er en Dedekind-Hasse norm hvis $N$ er positiv og for alle ikke-nul $a,b \in R$ holder det at enten er $a \in (b)$ eller der er et ikke-nul element i $r \in (a,b)$ med $N(r)<N(b)$ (altså enten $b \mid a$ eller $\exists s,t \in R$ så $0 < N(sa-tb)<N(b)$).
+\end{definition}
+
+
+\begin{proposition}
+Et integritetsområde $R$ med en D-H norm $N$ er et hovedidealområde.
+\begin{proof}
+Antag $I$ er et ikke-nul ideal i $R$ og $0 \neq b \in I$ med $N(b)$ minimalt ($N(a) \geq N(b)$ for alle $0 \neq a \in I$). Lad $0 \neq a \in I$, da er $(a,b) \subseteq I$. Da vil $(a) \in (b)$, for ellers ville der være $sa-tb \in (a,b) \subseteq I$ så $N(as-tb) < N(b)$, men $N(b)$ er antaget mindst muligt, heraf får vi $I \subseteq (b)$, så $I=(b)$.
+\end{proof}
+\end{proposition}
+
+
+
+\chapter{Faktorielle ringe (UFD)}
+\section*{Taleplan}
+\begin{enumerate}
+\item Definition af faktorielle ringe (UFD)
+\item Eksempler
+\item PID => faktoriel ring
+\end{enumerate}
+\section*{Beviser}
+Lad $R$ være et integritetsområde (kommutativt med enhed uden nul-divisorere).
+\begin{definition}
+$R$ integritetsområde:
+\begin{enumerate}
+\item Lad $r \in R$ være en ikke-enhed og et ikke-nul element. Så er $r$ \emph{irreducibel} i $R$ hvis $r=ab$, $a,b \in R$ medfører $a$ eller $b$ er enhed.
+\item Et ikke nul-element $p \in R$ er et \emph{primelement} hvis $(p)$ er et prim ideal. (tænk $p\mid ab$ medfører $p \mid a$ eller $p \mid b$).
+\item $a,b \in R$ \emph{associerer} hvis $a=bu$ for en enhed $u \in R$, skriver $a \stackrel{asc}{\sim} b$.
+\item $p \in R$ prim $\implies$ $p$ irreducibel
+\end{enumerate}
+\end{definition}
+\textbf{I PID ring $R$:} $r \in R$ $\implies$ $r$ primelement.
+\begin{definition}[faktorielle ringe (UFD)]
+Et faktoriel ring (UFD) et et integritetsområde $R$ sådan at alle ikke-enheder $0 \neq r \in R\backslash R^{\times}$ opfylder følgende:
+\begin{enumerate}
+\item $r$ kan skrives som et endeligt produkt af irreducerbare elementer $p_i \in R$, i.e., $r=p_1p_2\cdots p_n$.
+\item Ovenstående dekomposition er entydig op til associerede: $r=q_1q_2\cdots q_m$ medfører $n=m$ og man kan få $p_i\stackrel{asc}{\sim} q_i$ ved om-nummerering.
+\end{enumerate}  
+\end{definition}
+\begin{example}
+Eksempler omfatter bl.a. $\Z$ eller alle legemer $F$ samt $F[x]$ (dette følger af nedestående samt UFD iff polynomie ring UFD)
+\end{example}
+
+\begin{proposition}[PID => faktoriel ring (UFD)]
+Alle hovedidealområder (PID) er faktorielle ringe (UFD).
+\begin{proof}
+Lad $R$ være et hovedidealområde og $r \in R$ være ikke-nul og ikke-enhed. Hvis $r$ er irreducibel er vi færdige. Antag for modstrid, at $r$ er reducerbar, men $r$ ikke er et produkt af endeligt mange irreducerbare. Da har vi for $k \geq 2$ at vi kan skrive $r=\prod_{i \geq 1}^k r_i^{k}$ med i hvert fald $r_k^{k}$ en reducerbar ikke-enhed for $2 \leq k$, måske flere. Dette giver en følge hvis $r_1^1:=r$.
+
+\noindent Antag for simpeltheds skyld at for $k> 2 \in \N$ er $r_i^k=r_i^{k-1}$ for $1 \leq i <k-1$, så bogens eksempel genskabes, i.e., 
+\begin{align*}
+r=\mathcolor{blue}{r_1^2}r_2^2&=\mathcolor{blue}{r_1}r_2\\
+\mathcolor{blue}{r_1^3}\mathcolor{red}{r_{2}^3} r_{3}^3&= \mathcolor{blue}{r_1} \mathcolor{red}{r_{21}} r_{22}\\
+\mathcolor{blue}{r_1^4}\mathcolor{red}{r_{2}^4} \mathcolor{green}{r_{3}^4} r_{4}^4&=\mathcolor{blue}{r_1} \mathcolor{red}{r_{21}} \mathcolor{green}{r_{221}}  r_{222}\\
+\mathcolor{blue}{r_1^5}\mathcolor{red}{r_{2}^5} \mathcolor{green}{r_{3}^5} \mathcolor{yellow}{r_{4}^5}r_5&=\mathcolor{blue}{r_1} \mathcolor{red}{r_{21}} \mathcolor{green}{r_{221}}  \mathcolor{yellow}{r_{2221}}r_{2222}\\
+\end{align*} For hvert $k \geq 2$ vælg da $r_k:=r_{k}^k \in (r^k_i)_{i=1}^k$ sådan at vi får en strengt-voksende følge af idealer i $R$, altså:
+\begin{align*}
+(r) \subset (r_2) \subset (r_3) \subset \dots \subset R
+\end{align*}
+\textbf{Dette kan ikke ske!} Givet en voksende kæde af idealer i $R$, $I_1,I_2,\dots$ vil der være $n\in \N$ så $I_k=I_n$ for $k \geq n$: Lad $I_1 \subset I_2 \subset \dots \subset R$ være en voksende kæde af ægte idealer, og definer idealet $I:=\cup_{i\geq 1} I_i$. Da $R$ er PID er $I=(a)$ for et $a \in I_n$ for et $n$. Men da har vi $I_n\subset I =(a) \subset I_n$. Så $I=I_n$, så $I_k = I_n$ for $k \geq n$. Derfor må processen ovenover terminerer, sådan at vi får en endelig dekomposition af $r$ ved irreducible.
+
+\textbf{Nu vises entydighed af dekompositionen op til association}: Lad $n$ være antallet af irreducible faktorer i dekompositionen for $r$. Hvis $n=0$ er $r$ enhed. Antag $n \geq 1$ og at det er sandt for $n-1$. Lad
+\begin{align*}
+r=p_1p_2\cdots p_n=q_1q_2\cdots q_m \quad m \geq n,
+\end{align*}
+hvor $q_i$ og $p_j$ er irreducible. Her tillades $q_i=p_j$. Da $p_1$ er irreducible og $R$ er PID er $p_1$ et primelement så $p_1 \mid q_1q_2\cdots q_m$, så $p_1 \mid q_1$ (ved omrokering af $q_i$'erne). Så er $q_1=p_1u$ for en enhed $u$, da $q_1$ er irreducibel. Så har vi ved at fjerne $p_1$ fra begge sider
+\begin{align*}
+p_2p_3\cdots p_n = uq_2q_3\cdots q_m.
+\end{align*}
+Pr. induktionsantagelsen er $p_i\stackrel{asc}{\sim}q_i$ for $2 \leq i \leq n$ ved passende omrokering. Hvis $m >n$, da findes en enhed $u$ så, ved at fjerne venstre siden ovenover:
+\begin{align*}
+1=uq_{n+1}q_{n+2}\cdots q_{m}
+\end{align*}
+Altså er $q_{n+1}q_{n+2}\cdots q_{m}=u^{-1}$ hvorfor $m=n$.
+\end{proof}
+\end{proposition}
+
+
+\chapter{Faktorisering i de Gaussiske heltal.}
+\section*{Taleplan}
+\begin{enumerate}
+\item Definition af Gaussiske Heltal og Field-norm.
+\item Kriterie for irreducibel i $\Z[i]$
+\item Et lemma om primtalsform
+\item Sætning om primtal=sum af to kvadrater 
+\item De irreducible elementer i $\Z[i]$
+\end{enumerate}
+\section*{Beviser}
+\begin{definition}
+De \textbf{Gaussiske heltal} $\Z[i]$ er mængden $\{ a+i b \mid a,b, \in \Z\}\subseteq \C$. De er udstyret med en \textbf{Field-norm}: $N \colon \Z[i] \to \N_0$, $a+ib \mapsto a^2+b^2=(a+ib)(a-ib)$. Enhederne  er $\{ \pm 1 , \pm i\}$ (et element $x$ er enhed hvis og kun hvis $N(x)=\pm 1$). Den er \textbf{Euklidisk} og derfor \textbf{PID} og derfor \textbf{UFD}.
+\end{definition}
+
+Hvis $\alpha \in \Z[i]$ opfylder $N(\alpha)=\pm p$ hvor $p$ er et primtal, da er $\alpha$ irreducibel: Lad $\alpha=b y$ for $b,y \in \Z[i]$. Da field-normen $N$ er multipliktiv får vi
+\begin{align*}
+&\pm p=N(\alpha)=N(by)=N(b)N(y)
+\end{align*}
+Hvorfor vi får
+\begin{align*}
+N(b) = \pm p \text{ og }  N(y) = \pm 1  \text{ eller }  N(y)=\pm p\text{ og } N(b)=\pm 1
+\end{align*}
+Så enten $b$ eller $y$ er enhed, så $\alpha$ er reducibel.
+
+Det følgende lemma kan bevises:
+\begin{lemma}
+Et primtal $p \in \Z$ deler et heltal $n^2+1$ hvis og kun hvis $p =2$ eller $p \equiv 1\ \textrm{mod}\ 4$.
+\end{lemma}
+
+\textbf{En kort bemærkning}: Alle tal $n \in \Z$ opfylder $n^2\equiv 0,1 \textrm{ mod } 4$. Thi hvis $n$ er lige er $n=2m$ for et $m \in \Z$ og så har vi $n^2=4m^2 \equiv 0 \textrm{ mod } 4$. Hvis $n$ ulige er $n=2m+1$ for $m \in Z$ og så er $n^2=(2m+1)^2=4(m^2+m)+1 \equiv 1 \textrm{ mod } 4$. 
+
+\begin{theorem}[Fermats sum of square theorem]
+Et primtal $p$ er summen af to kvadrater, $p=a^2+b^2$ for $a,b \in \Z$ hvis og kun hvis $p=2$ eller $p \equiv 1\ \textrm{mod} \ 4$. Og $a,b$ er entydige op til fortegn og at bytte plads.
+\begin{proof}
+Hvis $a^2+b^2=p=c^2+d^2$ i $\Z$ er $N(a+ib)=p=N(c+id)$ i $\Z[i]$. Da er $N(a+ib)$ et primtal, så $a+ib$ er irreducibel, samme gælder for $a-ib$ og $c+id$ og $c-id$. Ergo er
+\begin{align*}
+a+ib&=\pm 1(c+id) =\pm c+(\pm d) i \textrm{ eller } \\
+a+ib&=\pm i(c+id) =\mp d+(\pm c) i \textrm{ eller } \\
+a+ib&=\pm 1(c-id) =\dots
+\end{align*}
+Så entydigheden holder. Hvis $p=2$ er $p=1^2+1^2$ og vi er færdige. 
+
+\noindent $\implies$: Antag $p > 2$ og $p=a^2+b^2$ for $a,b \in \Z$. Da er $p \equiv 0,1,2 \textrm{ mod } 4$ pr. bemærkningen ovenover ($b^2,a^2 \equiv 0$ eller $1 \textrm{ mod } 4$). Da $p$ er ulige må $p \equiv 1 \textrm{ mod } 4$. 
+
+\noindent $\impliedby$: Antag $p>2$ og $p\equiv 1 \textrm{ mod } 4$. Da har vi pr. lemma'et tidligere at $p \mid n^2+1$ i $\Z$ for et $n \in \Z$. Så har vi
+\begin{align*}
+p \mid n^2+1=(n+i)(n-i) \in \Z[i].
+\end{align*}
+Hvis $p$ er irreducibel (og derfor primelement) i $\Z[i]$, da vil $p \mid n+i$ eller $p \mid n-i$ i $\Z[i]$, hvilket det ikke kan. Derfor er $p$ reducibel, så $p = (a+ib)(c+id)$. Da $N(p)=p^2$ må $N(c+id)=N(a+ib)= p$, men så har vi $N(a+ib)=a^2+b^2=p$.
+\end{proof}  
+\end{theorem}	
+
+\begin{theorem}
+Op til association er de irreducible elementer i $\Z[i]$:
+\begin{enumerate}
+\item $1+i$
+\item primtal $p$, $p \equiv 3 \textrm{ mod } 4$
+\item elementerne af formen $a\pm ib$ med $a^2+b^2=p$, $p$ primtal med $p \equiv 1 \textrm{ mod } 4$.
+\end{enumerate}
+\begin{proof}
+Først $\implies$:
+
+\noindent \textbf{(1):} Vi har $N(1+i)=2$ så pr. tidligere argument er det irreducibelt. 
+
+\noindent \textbf{(2):} Kontraposition: Lad $p$ være et reducibelt primtal. Da har vi $p=\alpha \beta$, hvor $\alpha=\alpha_1+i\alpha_2$ og $\beta=\beta_1+i\beta_2$ og $N(p)=p^2$ medfører $N(\alpha)=p=N(\beta)$, så $p=\alpha_1^2+\alpha_2^2$, men, igen pr. tidligere argument, er $p=\alpha_1^2+\alpha_2^2 \not \equiv  3 \textrm{ mod } 4$. 
+
+\noindent \textbf{(3):} Hvis $a+ib$ opfylder $a^2+b^2=p$, hvor $p$ er et primtal med $p \equiv 1 \textrm{ mod } 4$ har vi pr. tidligere argument at $a+ib$ er irreducibelt i $\Z[i]$. 
+
+\noindent Så $\impliedby:$ Lad $\pi \in \Z[i]$ være et irreducibelt (og derfor primelement). Da er $P:=Z\cap (\pi)$ prim ideal i $\Z$, som er et hovedidealområde, så $P=(p)$ for et primelement i $\Z.$ Da har vi $p \in (p) \subseteq (\pi)$ i $\Z[i]$ så $p=k \pi$ for $k \in \Z[i]$. Vi har nu tre tilfælde for $p$:
+\begin{enumerate}
+\item Hvis $p=2$ er $p=(1+i)(1-i)=(-i)(1+i)^2$, som er irreducibelt, altså er $\pi \stackrel{asc}{\sim} (1+i)^2$.
+\item Hvis $p\equiv 3 \textrm{ mod } 4$ er $p$ irreducibelt i $\Z[i]$ pr ovenstående. Så $\pi \stackrel{asc}{\sim} p$.
+\item Hvis $p \equiv 1 \textrm { mod } 4$ er, pr. fermats sum of square theorem, $p=(a+ib)(a-ib)$, hvor både $(a-ib),(a+ib)$ er irreducible, så $\pi \stackrel{asc}{\sim} a+ib$ eller $a-ib$.
+\end{enumerate}
+\end{proof}
+\end{theorem}
+
+\chapter{Faktorielle polynomiumsringe}
+\section*{Taleplan}
+\begin{enumerate}
+\item Kort genopfriskning af polynomiumsringen $R[x]$
+\item $R$ integritetsområde $\implies R[x]$ integritetsområde og $R^{\times}=R[x]^{\times}$
+\item Definition af primitiv
+\item Lemmaer: 1.1 og Gauss om primelementer og primitive elemente i $R[x]$.
+\item Theorem: $R$ UFD $\implies$ $R[x]$ UFD.
+\end{enumerate}
+\section*{Beviser}
+I det følgende er $R$ et integritetsområde. Da har vi
+\begin{enumerate}
+\item $R[x]$ er et integritetsområde
+\item Polynomiumsringen $R[x]$ har de samme enheder som $R$, altså $R[x]^{\times}=R^\times$
+\item $\deg(f(x)g(x))=\deg(f(x))+\deg(g(x))$ for $f,g\neq 0$.
+\item For et ideal $I \subseteq R$ har vi, hvis $I[x]$ er idealet frembragt af $I$ i $R[x]$, at $R[x]/I[x] \cong (R/I)[x]$.
+\item Hvis $p \in R$ er primelement da er $p \in R[x]$ også et primelement, i.e. $(p)\subseteq R$ primideal $\implies (p)[x] \subseteq R[x]$ primideal.
+\end{enumerate}
+\textbf{Note:} For $R$ UFD (faktoriel) så eksisterer GCD altid.
+
+\begin{definition}[primitive polynomier]
+For $R$ UFD ring, da siges et polynomium $f(x) = \sum_{i\geq 0} a_i x^i$ siges at være \emph{primitivt} hvis $gcd(f(x)):=gcd(a_i) \in R^\times$, altså største fælles divisor for koefficienterne i  $f(x)$ er en enhed.
+\end{definition}
+\noindent \textbf{Note:} For $R$ UFD: $f(x) \in R[x]$ er ikke-primitivt hvis og kun hvis der er irreducibelt (eller prim) element $p \in R$ så $p \mid f(x)$ i $R[x]$.
+
+Følgende lemmaer gælder for $R$ UFD:
+\begin{lemma}[Gauss]
+For $R$ UFD og $f(x), g(x) \in R[x]$ gælder:
+\begin{align*}
+f(x)g(x) \text{ primitivt } \iff f(x) \text{ og } g(x) \text{ primitive}.
+\end{align*}
+\begin{proof}
+\textbf{skitse:} For $\implies$: Antag $f(x) \in R[x]$ ikke primitivt, da findes irreducibel $p\in R$ så $p \mid f(x)$ så $p \mid f(x)g(x)$
+
+\noindent For $\impliedby$: Antag $f(x)g(x)$ ikke primitivt. Da findes irreducibel (primelement) $p \in R$ så $p \mid f(x)g(x)$ i $R[x]$. Da $p$ også primelement i $R[x]$ må $p \mid f(x)$ eller $p \mid g(x)$, altså er en af dem er ikke-primitiv.
+\end{proof}
+\end{lemma}
+
+Der gælder også følgende lemma:
+\begin{proposition}
+Hvis $R$ UFD med brøklegeme $F$, og $c \in F$. Lad $f(x) \in R[x]$. Hvis $c f(x) \in R[x]$ og er primitivt, da er $c=\frac{1}{u}$ for $u \neq 0$ i $R$. Hvis $f(x)$ selv er primitivt, da er $u $ enhed og vi har $c=u^{-1} \in R$.
+\begin{proof}
+Skriv $c = \frac{r}{s}$ sådan at $gcd(r,s)=1$ og $s \neq 0$. Lad $f(x)=a_0+a_1x+\dots$. Da er $cf(x)=\frac{ra_0}{s}+\frac{ra_1}{s}x+\dots$, altså koefficienterne er $c_i:= \frac{a_i r}{s}$. Så $s \mid r a_i$, og $gcd(r,s)=1$ medfører $s \mid a_i$. Da $c_i=r \frac{a_i}{s}$ må $r \mid c_i$ i $R$. Antagelsen $cf(x)$ er primitivt, så $r$ må være en enhed, så $c=\frac{r}{s}=\frac{1}{sr^{-1}}$ hvor $sr^{-1} \in R$. 
+
+Da $cf(x) = \frac{1}{u} f(x) \in R[x]$ må $u \mid a_i$. Så hvis $gcd(a_1,a_2,\dots)=1$ må $u$ være en enhed, altså hvis $f(x)$ primitivt er $u$ enhed.
+\end{proof}
+\end{proposition}
+
+Vi har også sætning:
+\begin{theorem}
+For $R$ UFD med brøklegeme $F$ med $f(x) \in R[x]$ gælder:
+\begin{enumerate}
+\item For $\deg(f(x))=0$: $f(x)$ irreducibel i $R[x]$ $\iff$ $f(x)$ irreducibel i $R$.
+\item For $\deg(f(x)) > 0$: $f(x)$ irreducibel i $R[x]$ $\iff$ $f(x)$ primitiv i $R[x]$ og irreducibel i $F[x]$.
+\end{enumerate}
+\end{theorem}
+
+Vi har lemma:
+\begin{lemma}
+For $R$ UFD: ethvert ikke-nul og ikke-enhed primitivt polynomium $f(x) \in R[x]$ med $\deg f(x) >0$ har en irreducibel opløsning i $R[x]$.
+\begin{proof}
+Vi gør det ved induktion over $n= \deg f(x)$: 
+
+\textbf{For $n=1$:} Da $ \deg f(x)=1$ er $f(x)$ irreducibel i $F[x]$ (for $f(x)=g(x)h(x)$ medfører $1=\deg(f(x))=\deg(g(x))+\deg(h(x))$ så enten $g(x)$ eller $h(x)$ er konstante i $F[x]$, og i legemet $F$ er konstante polynomier enheder), og da $f(x)$ ogs er antaget primitiv i er det derfor irreducibel i $R[x]$ (ovenstående sætning (2)).
+
+\textbf{For $n > 1$:} Hvis $f(x)$ er irreducibelt i $R[x]$ er vi færdige. Antag ikke og lad $f(x)=g(x)h(x)$ være en faktorisering af irreducible $g(x),h(x) \in R[x]$. Da $f(x)$ er primitiv har vi pr. gauss at $g(x)$ og $h(x)$ er primitive i $R[x]$, og da de ikke er enheder må $\deg(h(x)), \deg(g(x)) > 0$. Da har vi
+\begin{align*}
+n=\deg(f(x)) = \deg(h(x)) + \deg(g(x)) \implies \deg(h(x)),\deg(g(x)) < n
+\end{align*}
+Så pr. induktionsantagelsen har de begge en irreducibel opløsning i $R[x]$, hvorfor deres produkt må være en irreducibel opløsning for $f(x)$ i $R[x]$.
+\end{proof}
+\end{lemma}
+
+\begin{lemma}
+For integritetsområde $R$ er primopløsninger entydige op til associering.
+\end{lemma}
+\begin{proposition}
+$R$ UFD medfører $R[x]$ UFD
+\begin{proof}
+To dele: \textbf{Eksistens og \textbf{entydighed op til asociation}}.
+
+\textbf{Eksistens:} Lad $f(x) \in R[x]$ være $\neq 0$ og ikke-enhed. Lad $d=gcd(f(x))$ så $f(x)=df_1(x)$ hvor $f_1(x)$ er et primitivt polynomium i $R[x]$. Hvis $d \in R$ er enhed, da er $f(x)$ primitivt. Hvis $d$ ikke er en enhed, så har $d$ en faktorisering $d_1d_2\cdots d_n$ af irreducible elementer i $R$, som også er irreducible i $R[x]$. Og da $f_1(x)$ er primitivt så har $f_1(x)$ pr. lemmaet ovenover en opløsning til irreducible. Så $f(x)$ har kan faktoriseres til et produkt af irreducible i $R[x]$.
+
+\textbf{Entydighed:}
+Lad $f(x)=p \in R[x]$ være et konstant irreducibelt polynomium, da er $p$ irreducibel i $R$ og derfor også primelement ($R$ UFD) og derfor også primelement i $R[x]$ pr. tidligere lemma.
+
+Antag nu $0<\deg(f(x))$ for irreducibelt polynomium $f(x) \in R[x]$. Da er $f(x)$ primitiv og irreducibel i $F[x]$. Da $F[x]$ er UFD, er $f(x)$ et primelement i $F[x]$. Antag $f(x) \mid g(x) h(x)$ i $R[x]$, så $f(x) \mid h(x) g(x)$ i $F[x]$, og derfor har vi enten $f(x) \mid h(x)$ eller $f(x) \mid g(x)$ i $F[x]$. Antag $f(x) \mid g(x)$, altså $g(x)=p(x)f(x) \in F[x]$ for et $p(x) \in F[x]$. Vælg $c \in F$ så $c p(x) \in R[x]$ og er primitivt (sæt koefficienter på fælles brøkstreg og gang med nævner og derefter med gcd for resten). Da har vi 
+\begin{align*}
+g(x)=cp(x) \cdot f(x) \in R[x]
+\end{align*}
+Og pr. Gauss sætning, da $cp(x)$ og $f(x)$ er primitive er $cg(x)$ også primitivt. Derfor får vi pr. lemma (1.4) at $c=\frac1u$ for et $0 \neq u \in R$ så $uc=1$. Da er $p(x)=ucp(x)$, hvorfor $p(x)$ må tilhøre $R[x]$, og derfor har vi $g(x)=p(x)f(x) \in R[x]$, så $f(x) \mid g(x)$ i $R[x]$, så $f(x)$ er et primelement.
+
+Da primopløsninger er entydige (op til association), er vi færdige.
+\end{proof}
+\end{proposition}
+
+
+\chapter{Irreducibilitetskriterier i polynomiumsringe}
+\section*{Taleplan}
+\begin{enumerate}
+\item For legeme $F$ er $F[x]$ euklidisk m.m.
+\item Sætning: om rødder i $F[x]$ og faktorisering 
+\item Sætning: 2. eller 3. grad: $p(x) \in F[x]$ reducibel iff $p(x)$ har rod i $F$.
+\item Lemmaer: 1.1 og Gauss om primelementer og primitive elemente i $R[x]$.
+\item Theorem: $R$ UFD $\implies$ $R[x]$ UFD.
+\end{enumerate}
+\section*{Beviser}
+For et legeme $F$ har $F[x]$ normen $\deg$, som gør $F[x]$ euklidisk. Da kan man udføre divison med rest. Specielt er $F$ integritetsområde og $F^\times=F\backslash\{0\}$, derfor er $F[x]^\times=F\backslash\{0\}$.
+\begin{proposition}
+For $a \in F$, hvor $F$  er et legeme. Hvis $p(x) \in F[x]$, da gælder
+\begin{align*}
+p(a)=0 \iff (x-a) \mid p(x) \in F[x].
+\end{align*}
+\begin{proof}
+$\implies$: Hvis $p(a)=0$, da giver division med rest $r(x),q(x) \in F[x]$ så $p(x)=q(x)(x-a)+r(x)$, og enten er $r(x)=0$ eller $\deg r(x) < \deg (x-a) =1$. Da $0=p(a)=r(a)$ er $r(x)=0$ så $p(x)=q(x)(x-a) \iff (x-a) \mid p(x) \in F[x]$.
+
+\noindent $\impliedby$: Hvis $(x-a) \mid p(x) \in F[x]$ findes $q(x) \in F[x]$ så $p(x)=q(x)(x-a)$, men da er $p(a)=0$.
+\end{proof}
+\end{proposition}
+
+\begin{proposition}
+Lad $F$ være et legeme. Hvis $p(x) \in F[x]$ med $\deg p(x) = 2$ eller $3$, da gælder
+\begin{align*}
+p(x) \text{ reducibel i } F[x] \iff p(x) \text{ har en rod i }F.
+\end{align*}
+\begin{proof}
+$\implies$: Lad $p(x)=f(x)g(x)$ være en opløsning med $f(x)$ og $g(x)$ ikke enheder i $F[x]$, så $\deg f(x), \deg g(x) >0$. Hvis $\deg f(x)=n$ og $\deg g(x)=m$ har vi $n+m= 2$ eller $3$, så enten $n$ eller $m$ er lig $1$. Antag $n$, så $f(x)=a_0+a_1x$. Da er $-a_0 a_1^{-1}$ en rod, for $f(-a_0 a_1^{-1})=a_0-a_0=0$. derfor er $p(-a_0a_1^{-1})=0$.
+
+\noindent $ \impliedby$: Hvis $a \in F$ er en rod for $p(x)$ da er $p(x)=q(x)(x-a)$, og da $\deg p(x) = 2$ eller $3$ må $\deg q(x) = 1$ eller $2$, så både $q(x)$ og $(x-a)$ er ikke-enheder, ergo er $p(x)$ reducibel i $F[x]$.
+\end{proof}
+\end{proposition}
+
+\begin{proposition}
+For $R$ UFD med brøklegeme $F$ gælder der: hvis $f(x) \in R[x]$ med $\deg f(x) =n > 0$, så $f(x)=a_0+a_1x^1+\dots a_n x^n$ har en rod $\frac{r}{s} \in F$ med $\gcd(r,s)=1$, da gælder, at $r \mid a_0$ og $s \mid a_n$.
+\begin{proof}
+Pr. antagelse har vi
+\begin{align*}
+p\left(\frac{r}{s}\right)=0&=a_0+a_1 \frac{r}{s}+a_2 \left(\frac{r}{s}\right)^2+\dots+a_n\left(\frac{r}{s}\right)^n\\
+\iff 0&=a_0 s^n+a_1rs^{n-1}+\dots + a_n r^n
+\end{align*}
+Ved isolering får vi
+\begin{align*}
+a_n r^n = s(-a_{n-1}r^{n-1}-\dots-a_0s^{n-1}) \text{ og } a_0s^n=r(-a_1s^{n-1}-a_2s^{n-2}r-\dots-a_nr^{n-1})
+\end{align*}
+Så $r\mid a_0 s^n$ og $s \mid a_n r^n$, men $gcd(r,s)=1$ så $r \mid a_0$ og $s \mid a_n$.
+\end{proof}
+\end{proposition}
+
+\begin{theorem}[Eisensteins' kriterium]
+Lad $P\subseteq R$ være et primideal i integritetsområdet $R$, og lad $f(x)=a_0+a_1x+\dots a_{n-1}x^{n-1}+x^n$ være et monisk polynomium med $\deg f(x) = n > 0$. Hvis $a_i \in P$, for $0 \leq i \leq n-1$ og $a_0 \not \in P^2$ da er $f(x)$ irreducibel i $R[x]$.
+\begin{proof}
+Antag for modstrid, at $f(x) \in R[x]$ er monisk og opfylder men er reducibel i $R[x]$. Da er $f(x)=p(x)q(x)$ for ikke-enheder 
+\begin{align*}
+p(x)=\sum_{0 \leq i \leq k} p_i x^i \text{ og } q(x)=\sum_{0 \leq j \leq m} q_j x^j
+\end{align*}
+Og da $n=k+m$ er $p_k,q_m \neq 0$. Da $f(x)$ monisk er $p_k q_m = a_n = 1 \in R$, så $p_k,q_m$ enheder i $R$. Da både $p(x)$ og $q(x)$ er ikke-enheder også, må $\deg p(x), \deg q(x) > 0$.
+
+Da får vi, i $(R/P)[x]$, da $a_i \in P$ for $0 \leq i \leq n-1$ at $\overline{a_i}=0$
+\begin{align*}
+\overline{p(x)q(x)}=\overline{f(x)}&=\overline{a_0}+\overline{a_1} x+\overline{a_2}x^2+\dots +x^n=x^n,
+\end{align*}
+Ergo får vi $\overline{p(x)}=\overline{p_k}x^k$ og $\overline{q(x)}=\overline{q_m}x^m$, hvorfor $\overline{q_0}=0=\overline{p_0}$, så $q_0,p_0 \in P$ og derfor har vi $a_0=p_0q_0 \in P^2$, modstrid.
+\end{proof}
+\end{theorem}
+
+\begin{example}
+Hvis $p \in \Z$ er et primtal, og $f(x)=a_0+a_1x+\dots a_{k-1}x^{k-1}+x^k$ opfylder $a_i p\Z$ for alle $1\leq i \leq k-1$, men $a_0 \not\in p^2 \Z$, da er $f(x)$ irreducibel i $\Z[x]$ og $\Q[x]$.
+\end{example}
+\end{document} 

@@ -1,0 +1,294 @@
+\documentclass[a4paper,oneside,12pt]{memoir}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[danish]{babel}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{parskip}
+\usepackage{MnSymbol}
+\usepackage{mathrsfs}
+\usepackage{bbm}
+\usepackage[left=2.4cm,top=2cm,bottom=2cm,right=2.4cm]{geometry}
+\usepackage[T1]{fontenc}
+
+\nouppercaseheads
+\makepagestyle{mystyle} 
+\setlength{\headwidth}{\dimexpr\textwidth+\marginparsep+\marginparwidth\relax}
+\makerunningwidth{mystyle}{\headwidth}
+\makeevenhead{mystyle}{\itshape\leftmark}{}{} 
+\makeoddhead{mystyle}{}{}{\itshape\leftmark} 
+\makeevenfoot{mystyle}{\thepage}{}{} 
+\makeoddfoot{mystyle}{}{}{\thepage} 
+\makeatletter
+\makepsmarks{mystyle}{%
+  \createmark{chapter}{left}{shownumber}{\@chapapp\ }{.\ }}
+\makeatother
+
+
+\title{Disposition til \\\textbf{VT 2017}}
+\author{Malthe Munk Karbo '14}
+
+
+
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\mbr}{(X,\mathcal{A})}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\PP}{\mathcal{P}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\dd}{\partial}
+\newcommand{\ee}{\epsilon}
+\newcommand{\la}{\lambda}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\se}{\end{equation}}
+
+\renewcommand{\thesection}{}
+\renewcommand{\thesubsection}{\arabic{section}\arabic{subsection}}
+\makeatletter
+\def\@seccntformat#1{\csname #1ignore\expandafter\endcsname\csname the#1\endcsname\quad}
+\let\sectionignore\@gobbletwo
+\let\latex@numberline\numberline
+\def\numberline#1{\if\relax#1\relax\else\latex@numberline{#1}\fi}
+\makeatother
+
+\makeatletter
+\newsavebox\myboxA
+\newsavebox\myboxB
+\newlength\mylenA
+
+\newcommand*\xol[2][0.75]{%
+    \sbox{\myboxA}{$\m@th#2$}%
+    \setbox\myboxB\null% Phantom box
+    \ht\myboxB=\ht\myboxA%
+    \dp\myboxB=\dp\myboxA%
+    \wd\myboxB=#1\wd\myboxA% Scale phantom
+    \sbox\myboxB{$\m@th\overline{\copy\myboxB}$}%  Overlined phantom
+    \setlength\mylenA{\the\wd\myboxA}%   calc width diff
+    \addtolength\mylenA{-\the\wd\myboxB}%
+    \ifdim\wd\myboxB<\wd\myboxA%
+       \rlap{\hskip 0.5\mylenA\usebox\myboxB}{\usebox\myboxA}%
+    \else
+        \hskip -0.5\mylenA\rlap{\usebox\myboxA}{\hskip 0.5\mylenA\usebox\myboxB}%
+    \fi}
+\makeatother
+
+\makeatletter
+\newcommand{\Spvek}[2][r]{%
+  \gdef\@VORNE{1}
+  \left(\hskip-\arraycolsep%
+    \begin{array}{#1}\vekSp@lten{#2}\end{array}%
+  \hskip-\arraycolsep\right)}
+
+\def\vekSp@lten#1{\xvekSp@lten#1;vekL@stLine;}
+\def\vekL@stLine{vekL@stLine}
+\def\xvekSp@lten#1;{\def\temp{#1}%
+  \ifx\temp\vekL@stLine
+  \else
+    \ifnum\@VORNE=1\gdef\@VORNE{0}
+    \else\@arraycr\fi%
+    #1%
+    \expandafter\xvekSp@lten
+  \fi}
+\makeatother
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+\chapter{Dispositioner}
+\section{1) Fremlæg og diskuter forskellige teorier for videnskabens udvikling.}
+\subsection{Positivisme og empirisme}
+En gennemgående tanke i videnskaben er, at vi laver forsøg, samler data og bruger dem til at fremstille hypoteser. Positivismen og empirismen er induktive i deres natur, og søger at slutte generellse sætninger/love om naturen ud fra empirien.
+
+Møder stor kritik bl.a. på grund af induktionsproblemet - er nature uniform m.m? (Kun observeret sorte ravne -> alle ravne er sorte. Gyldig lov?)
+\subsection{Poppers falsikationisme}
+Poppers teori er et modspil til positivismen/verifikationismen. Popper mener, at en teori er videnskabelig netop kun når den er gendrivbar (Demarkationskriteriet), og at verifikation/empiri for en teori kun bør tælle, når det er resultatet af hårde og dristige test af en teori, og hvis vi gendriver en teori med et modeksempel så forkastes hypotesen. Nogle konsekvenser for dette bliver:
+\begin{enumerate}
+\item Videnskaben bliver kommulativ.
+\item Gør ikke brug af induktion - omgår induktionsproblemet
+\item Forsøg på at redde gendrevede teorier ved ad hoc løsninger skal kunne testes separat.
+\end{enumerate}
+
+\subsubsection{Kritik af popper}
+\textbf{1. Duheme-Quine tesen:}
+Det er umuligt at teste en hypotese isoleret, kan kun teste som del af et netværk af sammensatte hypoteser. 
+\textbf{2. Experimenter's regress:}
+Når vi laver et forsøg og får et negativt resultat for en teori, hvordan kan vi så være sikre på at det ikke er en fejl i forsøget? Ved at vide om teorien er sand. Hvordan ved vi at teorien er sand? Ved at lave et forsøg. Osv.
+
+\subsection{Kuhn's paradigmer}
+Videnskab udøves i paradigmer, og sammenligninger af viden på tværs af paradigmer er umuligt - de er ikke-kommensurable.
+Vi udøver normalvidenskab inden for et paradigme indtil der opstår tilpas mange anomalier for det paradigme -> revolution -> nyt paradigme. Vigtigt at vi forsøger at beskytte paradigmet (til en vis grad).
+
+
+\subsection{Case: Kogalskab}
+Kogalskab begyndte at smitte rundt. Man hypotiserede at det var på grund af et virus. En række test, som nedbryder vira, nedsatte ikke smitsomhed, hvilket fik nogle forskere til at hypotisere at sygdommen skyldtes et protein. Test som nedbryder proteiner støttede denne hypotese.
+
+Ifølge popper: Burde vi forkaste hypotesen for, at det smitsomme agens er en virus. I praksis: Forskere tilføjede ad hoc sætninger som beskyttede teorien -- fx. var virus måske beskyttet af en skal? De afkastede muligheden for, at et protein var skyld i sygdom.
+
+Ifølge popper: Vi skal kunne teste hjælpehypoteser særskilt! \textbf{Duheme-Quine tesen siger at vi ikke kan gøre dette.}
+\newpage
+\section{2) Beskriv fænomenet 'experimenters regress' og diskuter fænomenets betydning for videnskabens udvikling.}
+\subsection{Experimenters regress fænomenet}
+Experimenters regress beskriver et problem vedrørende situationen hvori et eksperiment vedrørende en teori udføres med et bestemt udfald. Problemer lyder på, hvordan ved vi, at eksperimentet er udført korrekt? Ved at undersøge om udfaldet stemmer overens med en sand teori. Hvordan ved vi hvad en sand teori er? Ved at udføre eksperimenter. Osv.
+
+\subsection{Eksempel: Tyngdebølger}
+Der blev udført eksperimenter for eksistensen af såkaldte observerbare tyngdebølger. Nogle fik positive resultater og andre negative. For at vurdere, hvem der lavede et rigtigt eksperiment, skal vi vide om tyngdebølger eksisterer og kan observeres, og for at vide det skal vi udføre et eksperiment som understøtter det.
+
+\subsection{Modspil til Poppers metode}
+Popper mener, at vi skal teste hypoteser med dristige eksperimenter. Men hvordan kan vi det, når vi pr. experimenters regress aldrig kan være sikre på, at testene er udført korrekt?
+
+\subsection{Kuhn og experimenters regress}
+Ifølge Kuhn så er der et socialt aspekt i beslutningstagning i videnskab, og dette sociale aspekt kan bruges til at løse experimenters regress. Experimenters regress kan føre til revolution i paradigmet eventuelt.
+
+\subsection{Eksempel: Kogalskab}
+Hypotesen opstilles: Kogalskab skyldes et virus, og kan smitte ved indsprøjtning af hjernevæv i levende køer. \textit{Test:} Vi undersøger ved virus nedbrydende metoder, om hjernevæv fra en død ko kan smitte. \textit{Resultatet:} Det smitter stadig.
+
+Hvad gør man så? Man kan enten antage, at teorien er forfalsket, men man kan også enten antage: Forsøget er forløbet forkert, eller der er noget som gør, at forsøget viser forkert (fx. er viruset beskyttet af en skal).
+
+Hvordan afgør vi, hvad der er rigtigt? Dette er experimenters regress problemet.
+
+\newpage
+\section{3) Beskriv forskellige opfattelser af, hvor vores erkendelse af matematikken stammer fra, og diskutér disse.}
+\subsection{Hvor lever matematik?}
+Der er mange forskellige opfattelser af matematikken og hvor den stammer fra, dette er specielt for matematikken ift. andre videnskaber.
+
+\subsection{Platon:}
+Matematikken er noget som lever i et separat univers (Ontologisk realisme), og vores erkendelse kommer i form af "generendring" fra sjælen, som har været i dette univers. 
+
+\subsection{Empirismen:}
+
+To prominente empirister: \textbf{Hume} og \textbf{Mill}.
+
+\subsubsection{Hume:}
+Mener at matematik er analystisk a priori -- sikker viden som kan opnås udelukkende ved at tænke sig om. Vi går ud og laver sanseerfaringer, og når vi så har fået nogle idéer til matematik, så undersøger vi i den rene anskuelse begrebernes relationer og indhold.
+	
+\subsubsection{Mill:}
+Matematik er ligesom alle andre videnskaber induktiv, og dermed bygger matematikken på et usikkert grundlag. Vi gør os erfaringer i naturen, og disse erfaringer bliver til matematik. fx en sten lagt sammen med en anden sten giver 1+1=2. Altså er erkendelsen af matematikken syntetisk a posteriori.
+
+\subsection{Kant:}
+
+Matematik er syntetisk a priori. Vi kan ikke blot undersøge begreberne for egenskaber, eksempelvis kan vi ikke bevise sætningen om trekanters vinkelsum uden at konstruere en trekant og så undersøge den. Dermed er matematik syntetisk frem for analytisk.
+
+I modsætningen til Hume og Mill er matematikken også a priori. Vi undersøger objekter i vores anskuelse, altså igennem vores erkendapparat (som er ens for alle).
+
+
++Eventuelt noget formalisme/intuitionisme og ZFC
+
+\newpage
+\section{4) Beskriv og diskuter en eller flere af de tre grundlagsskoler (intuitionisme, logicisme og formalisme) samt nogle af de ideer, der lå bag udviklingen af ZFC.}
+
+\subsection{Grundlagskrisen:}
+Samtidig med at analysen m.m. blev gjort stringent forsøgte man at skabe et grundlag for matematikken vha. mængdelære og logik (Frege). Dette viste sig at føre nogle problemer med sig, bl.a. var det muligt at formulere såkaldte paradokser. Resultatet af dette: grundlagskrisen, hvori man ivrigt forsøgte at sikre matematikkens grundlag.
+
+\subsection{Logicismen:}
+Logicismen er den tidligst optrædende grundlagsskole. Russel m.m forsøgte, ud fra logikken at sikre et grundlag for matematikken. Det lykkedes til del, men der var et problem: Russel blev nødt til at antage nogle ikke logiske aksiomer (tre) for at kunne danne sit grundlag.
+
+\subsection{Intuitionismen (brouwer):}
+Brouwer var kantianer, og mente at vi anså verden igennem et filter som var ens for alle. Til forskel fra Kant mente Brouwer dog at kun den tidslige den var ens for alle og kunne bruges som et sikkert grundlag. På den måde var det kun konstruerbare objekter, altså endelige mængder, som havde en sandhedsværdi. Han afviste det tredje udelukkedes princip, og dermed blev bl.a. en række sætninger som vi anser for sande til ugyldige. Fx sætning som et tal er enten større, lig eller mindre end 0, kan ikke længere bevises. 
+
+Resultatet blev en helt ny matematik, hvori vi ikke opretholdte den tidligere matematik.
+
+\subsection{Formalismen (Hilbert):}
+Formalismen ser matematik som regelbunden leg med symboler, og intet andet. Hilbert var også formalist, og hans program, Hilbertsprogram, var et forsøg på at sikre matematikkens grundlag ved lave et fuldstændigt og konsistent aksiomsystem, hvori al tidligere matematik indgik. Han var præget af Kant, og mente at symbolmanipulation kunne foretages a priori, og vi dermed kunne opnå sikkerhed for bl.a. aritmetikken og de naturlige tal.
+
+Hilbert søgte at sikre sit formelle system vha. de aritmetikken, som han mente var helt sikker (han var jo kantianer). Udvidelser med ideelle elementer var altså okay, så længe de ikke førte til modstriden "$1 \neq 1$", fx som indførelsen af imaginære enheder og komplekse tal eller uendelighed og infinitesimaler.
+
+\subsubsection{kritik:} Gödelsufuldstændighedssætninger. Den første af disse sagde, at hvis vi har et fuldstændigtsystem så kan en modstrid fremtræde i det. Som svar krævede Hilbert nu blot konsistens. Gödels sætning nr 2 sagde så, at man kun kan tjekke konsistensen af et system ved brug af et større system som indeholder ens system. Ergo kan Hilbert ikke sikre konsistens af matematikken vha. de naturlige tal, som han mente var logisk sikre.
+
+\subsection{ZFC (pragmatisk formalisme):}
+Et forsøg på at lave et aksiomssystem som er stærkt nok til at vi kan lave matematik vi laver uden nogen synlige problemer.
+
+-- ZFC sejrede.
+
+\newpage
+\section{6) Beskriv og diskuter forskellige opfattelser af, hvordan matematikken udvikler sig.}
+Matematikken lader til at være kummulativ og oversætbar. Der er forskellige bud på hvordan matematikken udvikler sig.
+
+\subsection{Kuhnske paradigmer.}
+Man kunne forestille sig at i en eller anden grad er der paradigmer sådan som kuhn forestillede sig, og at ind imellem skifter vi paradigme grundet en anomali mod vores paradigme, som fører til en revolution. Eksempler på sådanne kunne være
+\begin{enumerate}
+\item Usammålelige linjestykker
+\item Ikke-euklidisk geometri
+\item Intuitionismen.
+\end{enumerate}
+Der er dog en stor forskel fra klassiske kuhnske paradigmer -- Vi kan sagtens sammenligne resultater, grundlag, beviser i et system og et andet. 
+
+Man kunne dermed sige at vi får revolutioner som leder til nye grundlag, bevisteknikker, sætninger m.m., men som stadig indeholder de tidligere resultater / grene af matematikken på en måde.
+
+\subsection{Lakatos}
+Lakatos forsøger at føre Poppers' teori ind over matematikken. Han mener, at matematik udvikles løbende af mennesker og dermed retter han fokus fra færdige / absolut sande sætninger til en process hvori begreber, beviser og sætninger løbende er under udvikling. Han mener at matematik udvikles på følgende måde:
+\begin{enumerate}
+\item Man definerer nogle begreber
+\item Så formulerer man sætninger
+\item Så forsøger man at bevis disse sætninger
+\item Så forsøger man at modbevise ens bevis ved at finde modeksempler
+\item Og så forsøger man at forfine begrebet/sætningen/trinnet i beviset el. lignende.
+\end{enumerate}
+
+På den måde forfiner vi begreber hele tiden og vi opdager modeksempler til vores beviser og forfiner vores sætninger m.m.
+
+Lakatos' teori handler i høj grad om at begreber er bevisgenererede og dermed konstruerede begreber, og beviser/sætninger er konstant testbare, og dermed fejlbare. Matematiske sætninger er dermed ikke længere absolutte sande, og lakatos beskriver ikke rigtig hvornår vi er færdige med processen.
+
+Især er Lakatos' teori intrinsisk. Matematik udvikles af matematikere for matematikere i forbindelse med matematik, og påvirkes ikke af udefrakommende kræfter, men i virkeligheden er matematikken ofte påvirket af bl.a. fysik, økonomi og flere andre fag.
+
+\section{7) Forklar, hvad man forstår ved en matematisk model, og diskuter hvorvidt modeller kan give pålidelig viden om omverdenen.}
+En matematisk model er et system af ligninger, som forsøger at beskrive en virkelighed / fænomener. De kan opstå på forskellige måder, fx ved dataindsamling og så et forsøg på at forklare denne data, eller de kan fx være deduktive modeller hvor man teoretiserer sig til hvad et udfald bliver.
+
+En vigtig detalje er det, at en model netop \textbf{forsøger} at beskrive virkeligheden. En model fungerer nemlig ved at man inputter nogle parametre i et system som så spytter et svar ud, men vi ved jo aldrig om metoden i modellen er korrekt / parametrene er rigtige o. lign.
+
+\subsection{Oreskos kritik af modelbrug i praksis:}
+Et stort problem for brugen af modeller er, at folk ofte tolker resultater forkert. Man tolker svar som bekræftelser af hypoteser, altså verifikation. Men verifikation kan kun ske i et lukket system som fx et logisk system, hvor udsagn er sande eller falske i kraft af deres logiske form, og aldrig i naturen. 
+
+Modeller rammes i høj grad også af induktionsproblemet. Hvordan kan vi, baseret på at en model har skudt rigtigt $n$ gange, være sikker på den også rammer rigtig den $n+1$'te gang? Det kan vi ikke.
+
+Til sidst er der underbestemthedsproblemet -- mere end én model vil kunne forudsige det samme resultat. Hvordan ved vi hvilken der er bedst? Hvordan ved vi at der ikke er to forkerte antagelser som udligner hinanden? 
+
+Til sidst har vi også følgeligt, i hvert fald for datadrevne modeller, at de arver alle Poppers problemer, grundet Experimenters' Regress.
+
+Alligevel er matematiske modeller i høj grad smarte og gode til at guide os i beslutningstagninger, men de må ikke mistolkes som endegyldige sandhedsmaskiner. Det ville være en dødssynd.
+
+\subsection{AAA og redelighed}
+Det er, som sagt, en form for dødssynd at misbruge modellerne. Vi, matematikere, har en meget stærk position til at påvirke data og tolke på dem sådan, at folk uden uddannelse, tror på det vi siger. Vi skal altså handle etisk korrekt og ikke misbruge vores viden. Hvis vi mistænker andre i at misbruge modeller, er det vores pligt at anmelde dem til UVVU, som så skal undersøge om der er tale om videnskabelig uredelighed.
+
+\newpage
+\section{8) Redegør for hovedsynspunkterne i den platonistiske opfattelse af matematikken og diskuter, om matematikkens objekter eksisterer.}
+Platonismens holdning til matematikken er, at det er noget som eksisterer separat af mennesket og naturen. Den moderne Platonist er mere eller mindre enig i følgende 7 punkter:
+\begin{enumerate}
+\item Matematiske objekter eksisterer uafhængigt af os mennesker \textit{(Ontologisk realisme).}
+\item Matematiske sætninger er sande ller falske uafhængigt af os \textit{Semantisk realisme).}
+\item Matematiske objekter eksisterer uden for tid og rum.
+\item Matematiske objekter kan erkandes a priori (med tanken).
+\item Matematisk viden er ikke baseret på erfaring.
+\item Matematik er normativ, i.e., det giver mening at tale om rigtigt og forkert i matematik.
+\item Med den rette metode kan matematik give sikker nødvendig viden.
+\end{enumerate}
+Ofte bruger platonister \textit{slutning til bedste forklaring} som begrundelse for deres holdning mht. matematikken. De føler at matematikken eksisterer, så er den nemmeste forklaring at det gør den. Fregé, Hardy og Gödel er prominente moderne platonister, Gödel argumenterer bl.a. ved at ligesom vi antager at den fysiske verden eksisterer, så er det ikke noget vi ved med absolut sikkerhed, men alt andet giver ikke mening for os. Argumenter som indispensability argumentet, som ligesom Gödel bygger på, at naturvidenskaben tror på eksistensen af ikke observerbare størrelser (elektroner m.m.), fordi det er den bedste forklaring, så bør matematikere også gøre det.
+
+\newpage
+
+\section{9) Beskriv og diskuter udvalgte etiske teorier og diskuter matematikerens sociale og etiske ansvar.}
+
+\subsection{Kants pligtetik:}
+Ifølge Kant er det eneste som betyder noget, når vi handler, at vi kan acceptere at andre handlede på samme måde. Dette er det kategoriske imperativ:
+\begin{quote}
+`` Act only according to that maxim whereby you can, at the same time, will that it should become a universal law.''\\-- Kant
+\end{quote}
+Dermed er selve konsekvensen af ens handlinger ligegyldige, det er kun intentionen bag handlingen som betyder noget.
+
+En anden formulering (også af Kant) af det kategoriske imperativ er:
+
+\begin{quote}
+`` Act in such a way that you treat humanity, whether in your own person or in the person of any other, never merely as a means to an end, but always at the same time as an end. '' \\ -- Kant.
+\end{quote}
+
+
+\subsection{Utilitarisme \textit{(nytteetik)}:}
+Ifølge utilitarismen er det kun konsekvenserne af ens handlinger som betyder noget.
+\end{document}

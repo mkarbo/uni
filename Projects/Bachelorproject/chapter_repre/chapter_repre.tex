@@ -1,0 +1,194 @@
+\chapter{Representations of groups}
+
+\section{The reduced group $C^*$-algebra}
+For a Hilbert space $\H$ we denote by $\U(\H)\subseteq B(\H)$ the set of unitary operators on $\H$. The set $\U(\H)$ forms a group under composition. If $u_{1},u_{2} \in \U(\H)$, then $u_{1}u_{2} \in \U(\H)$, $u^{-1}=u^* \in \U(\H)$ for all $u \in \U(\H)$ and $I\in \U(\H)$. 
+
+\begin{definition}
+Let $G$ be a topological group. A unitary representation of $G$ on a Hilbert space $\H$ is a strongly continuous group homomorphism $\pi \colon G \to \U(\H)$. We define $\pi_{s}:=\pi(s) \in \U(\H)$ for all $s \in G$ and we note that $\pi_{e}=I$. By the defined notation we see that
+\begin{align*}
+\pi_s^*=\pi_s^{-1}=\pi_{s^{-1}},
+\end{align*} 
+for every $s \in G$.
+\end{definition}
+
+\noindent For a discrete group $G$ consider the Hilbert space 
+\begin{align*}
+\ell^2(G)= \{ f \colon G \to \C \ : \ \sum_{g \in G} |f(g)|^2\ < \infty\},
+\end{align*}
+with inner-product  $ \langle \xi , \eta \rangle = \sum_{g \in G} \xi(g) \overline{\eta(g)}$, $\xi,\eta \in \ell^2(G)$. It has a canonical orthonormal basis $\{ \delta_{g}\}_{g \in G}$ defined by
+\begin{align*}
+\delta_{g}(s)=\begin{cases}
+1 & g=s\\
+0 & g \neq s
+\end{cases}
+\end{align*}
+
+\begin{definition}
+For a discrete group $G$ define $\lambda \colon G \to B(\ell^2(G))$ by
+\begin{align*}
+\lambda(s) \xi(t):=\xi(s^{-1}t), \quad s,t \in G, \ \xi \in \ell^2(G).
+\end{align*}
+This is the \emph{left-regular} representation of $G$, and we use the notation $\lambda(s):= \lambda_s$. This is a unitary representation of $G$, since for any $\xi,\eta\in \ell^2(G)$ and $s \in G$ we have 
+\begin{align*}
+\langle \lambda_s \xi , \eta \rangle &= \sum_{g \in G} \xi(s^{-1} g) \overline{\eta (g)}\\
+&= \sum_{g \in G} \xi(g) \overline{\eta(sg)}\\
+&= \sum_{g \in G} \xi(g) \overline{\lambda_{s^{-1}}\eta(g)}\\
+&=\langle \xi,\lambda_{s^{-1}} \eta \rangle,
+\end{align*}
+so $(\lambda_s)^* = \lambda_{s^{-1}}$. For $s,t \in G$, we see that 
+\begin{align*}
+\lambda_{s} \delta_{t}(g) = \delta_{t} (s^{-1} g) = \delta_{st}(g), \quad g \in G.
+\end{align*}
+\end{definition}
+
+For a discrete group $G$, we consider the group ring $\C G$ of $G$, which is the the set of finite linear combinations of elements of $G$ with coefficients in $\C$, i.e.,
+\begin{align*}
+\C G= \left \{ \sum_{g \in G} \alpha_g g \ \colon \ \alpha_g \in \C \text{ with only finitely many } \alpha_g \text{ are non-zero} \right \}.
+\end{align*}
+One can check that defining multiplication and involution by
+\begin{align*}
+\left( \sum_{s \in G} a_s s \right) \left( \sum_{t \in G} b_t t \right)&= \sum_{s,t \in G} a_s b_t st\\
+\left( \sum_{g \in G} a_g g\right)^*&=\sum_{g \in G} \overline{a_g} g^{-1},
+\end{align*} 
+turns $\C G$ into a $*$-algebra. If $u \colon G \to B(\H)$, $g \mapsto u_g$ is a unitary representation of $G$, it induces a unital $*$-homomorphism $\pi \colon \C G \to B(\H)$ by
+\begin{align*}
+\pi(g)= u_g, \quad g \in G.
+\end{align*}
+There is a one-to-one correspondance between unitary representations of $G$ and $*$-representations of $\C G$. Moreover, if we let $u=\lambda$ be the left regular representation, we denote also by $\lambda$ the induced $*$-representation $\lambda \colon \C G \to B(\ell^2(G))$. This $*$-representation is injective, indeed, if $t \in G$ and $x = \sum_{g \in G} a_g g \in \C G$ we then see that
+\begin{align*}
+\langle \lambda(x) \delta_e,\delta_t\rangle &= \sum_{g \in G} a_g \langle \delta_g , \delta_t \rangle = a_t.
+\end{align*}
+So if $\lambda(x)=0$, then $a_t=0$ for all $t \in G$, so $x=0$.
+
+\begin{definition}\label{reduc alg def}
+For a discrete group $G$, we define the reduced group $C^*$-algebra, abbreviated $C_r^*(G)$, to be the completion of the image of $\C G$ under $\lambda$, i.e.,
+\begin{align*}
+C_r^*(G)=\overline{\lambda(\C G)}^{\lv \cdot \rv} \subset B(\ell^2(G)),
+\end{align*} 
+or equivalently, by the completion under the norm $\lv a \rv_r=\lv \lambda(a) \rv_{B(\ell^2(G))}$ for $a \in \C G$.
+\end{definition}
+
+Besides the left-regular representation, there is also a right-regular representation $\rho \colon G \to B(\ell^2(G))$, acting on the orthonormal basis by
+\begin{align*}
+\rho_s ( \delta_t)=\delta_{t s^{-1}}, \quad s,t \in G.
+\end{align*}
+The right-regular representation evidently commutes with $C_r^*(G)$, since it commutes with the generators $\{\lambda_s\}_{s \in G}$, indeed if $s,t,h \in G$ then
+\begin{align*}
+\rho_{t} \lambda_{s} \delta_{h} = \delta_{sht^{-1}}= \lambda_s \rho_t \delta_h.
+\end{align*}
+With this in mind we may prove the following lemma:
+
+\begin{lemma}\label{orth sep}
+Let $G$ be a discrete group and $x,y \in C_r^*(G)$. If $x\delta_e = y \delta_e$, then $x=y$.
+\begin{proof}
+Let $s \in G$, and assume that $x \delta_e = y \delta_e$. Since the right-regular representation of $G$, $\rho$, commutes with $C_r^*(G)$ we see that
+\begin{align*}
+x \delta_s = x \delta_{e(s^{-1})^{-1}}=x \rho_{s^{-1}} \delta_e=\rho_{s^{-1}} x \delta_e=\rho_{s^{-1}} y \delta_e =y \delta_s.
+\end{align*}
+Since $\ell^2(G)$ is a Hilbert space with $\{\delta_s\}_{s \in G}$ as a complete orthonormal basis, every $\xi \in \ell^2(G)$ can be written as 
+\begin{align*}
+\xi = \sum_{g \in G} \langle \xi,\delta_g\rangle \delta_g.
+\end{align*}
+Hence, for every $\xi \in \ell^2(G)$ we have
+\begin{align*}
+x \xi = \sum_{g \in G} \langle x \xi , \delta_g \rangle \delta_g = \sum_{g \in G} \langle \xi , x^* \delta_g\rangle \delta_g= \sum_{g \in G} \langle \xi , y^* \delta_g \rangle \delta_g=\sum_{g \in G} \langle y\xi , \delta_g \rangle \delta_g = y \xi
+\end{align*}
+So $x=y$.
+\end{proof}
+\end{lemma}
+
+\begin{proposition}
+For a discrete group $G$, the function $\tau_0 \colon C_r^*(G) \to \C$ defined by $\tau_0(x)=\langle x \delta_e,\delta_e\rangle$ is a faithful tracial state on $C_r^*(G)$. 
+\begin{proof}
+$\tau_0$ is positive, for if $x \in C_r^*(G)$, then $\tau_0(x^*x)=\langle x \delta_e, x \delta_e\rangle= \lv x \delta_e \rv^2 \geq 0$, and by \cite[Corollary 13.6][80]{zhu} it also a state, since $\tau_0(\lambda_e)=1= \lv \tau_0 \rv$. We also see that $\tau_0$ is tracial on the dense subset $\lambda(\C G) \subseteq C_r^*(G)$, for if $s,t \in G$ then
+\begin{align*}
+\tau_0(\lambda_s \lambda_t) &= \begin{cases}
+1 & \text{if } st=e \iff s=t^{-1}\\
+0 & \text{else}
+\end{cases}\\
+\tau_0(\lambda_t \lambda_s) &=\begin{cases}
+1 & \text{if } ts=e \iff s=t^{-1}\\
+0 & \text{else}
+\end{cases},
+\end{align*}
+Linearity and continuity of $\tau_0$ allows us to conclude that $\tau_0(xy)=\tau_0(yx)$ for all $x,y \in C_r^*(G)$. We now show that it is also faithful. Let $0 \leq x \in C_r^*(G)$ with $\tau_0 (x)=0$. The positivity of $x$ allows us to define the positive element $x^{\frac{1}{2}} \in C_r^*(G)$ using the continuous functional calculus cf. \cite[Theorem 10.3][62]{zhu}. We then see that
+\begin{align*}
+0=\langle x \delta_e ,\delta_e\rangle=\langle x^{\frac{1}{2}} \delta_e, x^{\frac{1}{2}} \delta_e \rangle= \lv x^{\frac{1}{2}} \delta_e\rv,
+\end{align*} 
+so $x^{\frac12}\delta_e=0$. By \Cref{orth sep}, this implies that $x^{\frac12}=0$, which in turn implies that $x=0$. So $\tau_0$ is faithful.
+\end{proof}
+\end{proposition}
+
+\begin{proposition}[\mbox{\cite[Proposition 2.5.9][46]{brown2008c}}]
+If $H \leq G$ is a subgroup of a discrete group $G$, then $C_r^*(H) \subseteq C_r^*(G)$ canonically. 
+\end{proposition}
+
+\begin{proposition}[\mbox{\cite[Corollary 2.5.12][47]{brown2008c}}]
+If $H \leq G$ is a subgroup of a discrete group $G$, and $C_r^*(H) \subseteq C_r^*(G)$ is the inclusion above, then there is a conditional expectation $E_H \colon C_r^*(G) \to C_r^*(H)$ satsfying (and is uniquely determined by) the following
+\begin{align*}
+E_H(\lambda_s)=\begin{cases}
+\lambda_s & s \in H\\
+0 & s \not\in H
+\end{cases}.
+\end{align*}
+\end{proposition}
+
+\section{Crossed products}
+\begin{definition}
+For a discrete group $G$ and a $C^*$-algebra $\A$, an action of $G$ on $\A$ is a group homomorphism $\alpha \colon G \to \Aut(\A)$, the group of $^*$-automorphism on $\A$ with composition as product. We write $G \stackrel{\alpha}{\acts} \A$ to say that $G$ acts on $\A$ by an action $\alpha$. If the action $\alpha$ is understood we simply write $G \acts \A$.
+\end{definition}
+
+The triple $(\A, \alpha,G)$ is called a $C^*$-dynamical system. For $g \in G$ define the function $\delta_g \colon G \to \C$ by $\delta_g(g)=1$ and $\delta_g(s)=0$ for $g \neq s \in G$.
+For a triple $(\A,\alpha,G)$ one may check that we turn 
+\begin{align*}
+\cc(G,\A)=\left\{\sum_{g \in G}a_{g}\delta_{g} \colon a_{g} \in \A\ \text{only
+finitely many $a_{g}$ are non-zero}\right\}
+\end{align*}
+into a $*$-algebra by defining a product by the twisted convolution and an involution by a twisted involution defined by
+\begin{align*}
+\left(\sum_{g \in G}a_{g}\delta_{g} \right) \cdot \left( \sum_{s \in G}b_{s}\delta_{s}\right) &= \sum_{s,g \in G} a_{g} \alpha_{g}(b_{s})\delta_{gs}, \\ \left(\sum_{g \in G}a_{g}\delta_{g}\right)^*&=\sum_{g \in G}\alpha_{g^{-1}}(a_{g}^*)\delta_{g^{-1}}.
+\end{align*}
+Then $\cc(G,\A)$ is the $*$-algebra generated by $\A$ and unitaries $\{u_{g} \}_{g \in G}$ given by $u_{g}=1_{\A} \delta_{g} \in \cc(G,\A)$ such that $\alpha_{s}(\cdot)=u_{s}(\cdot)u_{s}^*$. This way $\cc(G,\A)$ contains a copy of $\A$ and a unitary copy of $G$ by the maps $a \mapsto a u_{e}$, respectively, $g \mapsto u_{g}$. 
+
+\begin{definition}
+A \textbf{covariant representation} of a $C^*$-dynamical system
+$(\A,\alpha,G)$ is a triple $(\pi,\rho,\H)$ such that $\H$ is a Hilbert space,
+$\pi \colon \A \to B(\H)$ is a representation and $\rho \colon G \to
+\mathcal{U}(\H)$ is a unitary representation such that $\pi(
+\alpha_{g}(a))=\rho_{g}(\pi(a))\rho_{g}^*$ for every $a \in \A$. 
+\end{definition}
+
+\begin{remark}
+Whenever $(\pi,\rho,\H)$ is a covariant representation for $(\A,\alpha,G)$, then the map $\pi \times \rho \colon \cc(G,\A) \to B(\H)$ defined by
+\begin{align*}
+(\pi \times \rho) \left(\sum_{g \in G}a_{g}\delta_{g} \right)= \sum_{g \in G} \pi(a_{g}) \rho_{g}
+\end{align*}
+is a $*$-representation of $\cc(G,\A)$ on $B(\H)$. Furthermore, it is faithful resp. non-degenerate whenever $\pi$ is faithful resp. non-degenerate.
+
+\noindent Given a faithful represntation $\pi \colon \A \to B(\H)$, define a new representation $\pi_{\alpha} \colon A \to B(\H \otimes \ell^2(G))$ by
+\begin{align*}
+\pi_{\alpha}(a)(\xi \otimes \delta_{g})=\pi(\alpha_{g^{-1}}(a))\xi \otimes \delta_{g},
+\end{align*} for $g \in G, a \in \A$ and $\xi \in \H $. If $\lambda \colon G \to \mathcal{U}(\ell^2(G))$ denotes the left-regular representation, we get that the triple $(\pi_{\alpha}, I \otimes \lambda,\H)$ is a covariant representation, and thus $\pi_{\alpha} \times (I \otimes \lambda)$ is a faithful $*$-representation of $\cc(G,\A)$ on $B(\H \otimes \ell^2(G))$. Such a representation is called a regular representation, and it gives rise to a norm on $\cc(G,\A)$ called the reduced norm, given by 
+\begin{align*}
+\lv x \rv_{r}=\lv (\pi_{\alpha} \times (I \otimes \lambda))(x)\rv_{\H \otimes \ell^2(G)}.
+\end{align*}
+\end{remark}
+\noindent When it is clear from context, we will denote $(I \otimes \lambda)$ by $\lambda$, i.e., $\lambda_s(\xi \otimes \delta_t)=\xi \otimes \delta_{st}$.	
+
+\begin{definition}
+The \textbf{reduced crossed product} $A \rtimes_{\alpha,r}G$ is the norm closure of the image under a faithful regular representation $\pi_{\alpha} \times(I\otimes \lambda)$. That is
+\begin{align*}
+A \rtimes_{\alpha,r}G= \overline{(\pi_{\alpha}\times(I \otimes \lambda))(\cc(G,\A))}^{\lv \cdot \rv} \subseteq B(\H \otimes \ell^2(G)).
+\end{align*}
+Then $A \rtimes_{\alpha,r} G=C^*(\{(\pi_{\alpha} \times (I \otimes \lambda))(a u_{g}) \colon a \in \A, g \in G\})$. Moreover, it contains an isometrically isomorphic copy of $C_r^*(G)$, indeed, for all $s,t \in G$, $\xi \in H$ and $a \in A$ we have 
+\begin{align*}
+(\pi_\alpha \times (I \otimes \lambda))(a u_s) (\xi \otimes \delta_t)=(\pi({\alpha_s}(a))\otimes \lambda_s)(\xi \otimes \delta_t),
+\end{align*}
+where $ \pi(\alpha_s(a)) \otimes \lambda_s \in \pi(A) \otimes C_r^*(G)$. The representation $I \otimes \lambda \colon \C G \to B(\H \otimes \ell^2(G))$ is a faithful representation, and since the norm on $B(\H \otimes \ell^2(G))$ is a cross-norm, $\A \rtimes_{\alpha},G$ contains an isometrically isomorphic copy of $C_r^*(G)$.
+\end{definition}
+
+Throughout this thesis, $G$ will often be a group acting on a compact Hausdorff space $X$ by an action $\alpha \colon G \to \Aut(X)$, where $\alpha_s (x):=s.x$. This action induces an action on $C(X)$, defined by
+\begin{align*}
+\alpha_s(f)(x)=f(s^{-1}.x),\quad f \in C(X),\ s \in G,\ x \in X.
+\end{align*}
+We write $s.f$ instead of $\alpha_s(f)$. Since $C(X)$ is a $C^*$-algebra, we may now form the reduced crossed product $C(X) \rtimes_{\alpha,r}G$ which contains both a copy of $C_r^*(G)$ and $C(X)$ which are related by $\lambda_s f \lambda_s^*=\alpha_s(f):=s.f$. The reader may note that we omitted the representation $\pi \colon C(X) \to B(\H \otimes \ell^2(G))$ and we wrote $\lambda_s$ instead of $(I \otimes \lambda)(s)$. We will continue this notation for sake of readability, if needed we will note when to distinguish between notations.

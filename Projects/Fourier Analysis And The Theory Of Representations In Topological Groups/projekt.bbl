@@ -1,0 +1,148 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.6 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{blackadar2006operator}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Blackadar}{B.}%
+     {Bruce}{B.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer Science \& Business Media}%
+  }
+  \strng{namehash}{BB1}
+  \strng{fullhash}{BB1}
+  \field{labelyear}{2006}
+  \field{sortinit}{B}
+  \field{title}{Operator algebras: theory of C*-algebras and von Neumann
+  algebras}
+  \field{volume}{122}
+  \field{year}{2006}
+\endentry
+
+\entry{conway2013course}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Conway}{C.}%
+     {John~B}{J.~B.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer Science \& Business Media}%
+  }
+  \strng{namehash}{CJB1}
+  \strng{fullhash}{CJB1}
+  \field{labelyear}{2013}
+  \field{sortinit}{C}
+  \field{title}{A course in functional analysis}
+  \field{volume}{96}
+  \field{year}{2013}
+\endentry
+
+\entry{folland2013real}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Folland}{F.}%
+     {Gerald~B}{G.~B.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {John Wiley \& Sons}%
+  }
+  \strng{namehash}{FGB1}
+  \strng{fullhash}{FGB1}
+  \field{labelyear}{2013}
+  \field{sortinit}{F}
+  \field{title}{Real analysis: modern techniques and their applications}
+  \field{year}{2013}
+\endentry
+
+\entry{hewitt2012abstract}{book}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Hewitt}{H.}%
+     {Edwin}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ross}{R.}%
+     {Kenneth~A}{K.~A.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer Science \& Business Media}%
+  }
+  \strng{namehash}{HERKA1}
+  \strng{fullhash}{HERKA1}
+  \field{labelyear}{2012}
+  \field{sortinit}{H}
+  \field{title}{Abstract Harmonic Analysis: Volume I Structure of Topological
+  Groups Integration Theory Group Representations}
+  \field{volume}{115}
+  \field{year}{2012}
+\endentry
+
+\entry{rudin1991functional}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Rudin}{R.}%
+     {Walter}{W.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {McGraw-Hill, Inc., New York}%
+  }
+  \strng{namehash}{RW1}
+  \strng{fullhash}{RW1}
+  \field{labelyear}{1991}
+  \field{sortinit}{R}
+  \field{title}{Functional analysis. International series in pure and applied
+  mathematics}
+  \field{year}{1991}
+\endentry
+
+\entry{zhu1993introduction}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Zhu}{Z.}%
+     {Kehe}{K.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {CRC press}%
+  }
+  \strng{namehash}{ZK1}
+  \strng{fullhash}{ZK1}
+  \field{labelyear}{1993}
+  \field{sortinit}{Z}
+  \field{title}{An introduction to operator algebras}
+  \field{volume}{9}
+  \field{year}{1993}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput

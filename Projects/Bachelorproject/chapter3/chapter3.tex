@@ -1,0 +1,371 @@
+\chapter{Boundary actions}
+\section{G-spaces}
+In the following, we let $X$ be a compact Hausdorff space and $G$ be a second countable locally compact group.
+
+
+\begin{definition}\label{group action compact haus}
+A \emph{$G$-action} on a compact Hausdorff space $X$ is a continuous group action 
+\begin{align*}
+\alpha \colon G  \times X  &\to X
+\end{align*}
+We abbreviate $G$-actions by $G \acts X$ and write 
+\begin{align*}
+\alpha(g)(x):=g.x, \quad x \in X , \ g \in G.
+\end{align*} 
+A space $X$ equipped with a $G$-action is called a \emph{$G$-space}.
+\end{definition}
+
+\begin{remark}
+If $X$ is a $G$-space, then one may turn $C(X)$ into a $G$-space by defining $G \acts C(X)$ by
+\begin{align*}
+g.f(x)=f(g^{-1}.x), \ g \in G, \ x \in X, f \in C(X),
+\end{align*}
+where $G$ is viewed as a discrete group.
+\end{remark}
+
+For a compact Hausdorff space $X$, given any state $\varphi$ on $C(X)$, the Riesz Representation Theorem, cf. \cite[Theorem 7.2][212]{folland2013real} ensures that there is a unique Radon probability measure $\mu \in \Prob(X)$, where $\Prob(X)$ is the set of all Radon probability measures on $X$, such that 
+\begin{align*}
+\varphi(f)= \int_{X}f \diff \mu, \ f \in C(X).
+\end{align*}
+The correspondance between the state space of $C(X)$ and $\Prob(X)$ is a bijective and affine correspondance, and so we write $\mu$ for both the state on $C(X)$ and the measure. We give $\Prob(X)$ the weak$^*$ topology inherited from the state space of $C(X)$ through this isomorphism. The state space of $C(X)$ is convex and compact in the weak$^*$-topology, cf. \cite[Proposotition 13.8][81]{zhu}. 
+
+Again, if $X$ is a compact $G$-space, we put a $G$-space structure on $\Prob(X)$, where $G$ is viewed as a discrete space, by defining
+\begin{align*}
+(g .\mu)(E):=\mu(g^{-1}.E), \quad g \in G, \mu \in \Prob(X),\ E \subseteq X\text{ Borel}.
+\end{align*}
+The map $\mu \mapsto g.\mu$ is indeed continuous: If $g \in G$  and $(\mu_{\alpha})_{\alpha \in A} \subseteq \Prob(X) $ is a net converging in the weak$^*$-topology to $\mu \in \Prob(X)$, then for all $f \in C(X)$, using the abstract change-of-variable formula, we have
+\begin{align*}
+(g.\mu _{\alpha})(f) = \int_{X} f \diff (g.\mu_{\alpha}) =\int_{X} g^{-1}.f \diff \mu _{\alpha} \to \int_{X} g^{-1}. f \diff \mu = \int_{X} f \diff g.\mu =(g.\mu)(f).
+\end{align*}
+Moreover, it is also bijective, since the map $\mu \mapsto g.\mu$ has inverse $\mu \mapsto g^{-1}.\mu$. Since $\Prob(X)$ is compact in the weak$^*$-topology, it follows that for $g \in G$, the map $\mu \mapsto g.\mu$, $\mu \in \Prob(X)$, is a homeomorphism of $\Prob(X)$ into $\Prob(X)$. The action $G \acts \Prob(X)$ is affine, for if $0\leq \alpha \leq 1$ and $\mu_1, \mu_2 \in \Prob(X)$ we get for all $g \in G$ and $E \subseteq X$ that
+\begin{align*}
+g .(\alpha \mu_1 + (1-\alpha)\mu_2)(E)&=\alpha \mu_2(g^{-1}.E) + (1-\alpha) \mu_2(g^{-1}.E)\\
+&=\alpha(g. \mu_1)(E)+(1-\alpha)(g.\mu_2)(E).
+\end{align*}\
+
+\section{Boundary actions}
+\begin{definition}\label{minimal}
+A $G$-space $X$ is said to be \emph{minimal} if it contains no non-trivial closed $G$-invariant subsets, or equivalently, if every $G$-orbit is dense in $X$, i.e., for each $x \in X$ the set
+\begin{align*}
+G.x=\{ g.x : g \in G\}
+\end{align*}
+is dense in $X$.
+\end{definition}
+
+\begin{example}\label{irat}
+Let $\theta \in \R \backslash \Q$ be any irrational number and define the group 
+\begin{align*}
+G_{\theta}:=\{ \left(e^{2i \pi \theta}\right)^n \colon n \in \Z \} \cong \Z.
+\end{align*} Then $Z \acts S^1$ by rotation via
+\begin{align*}
+e^{2 \pi i \theta n}. e^{2 \pi i t}:= e^{2 \pi i (\theta n + t)}, \quad \text{for all } t \in [0,1), \ n \in \Z.
+\end{align*} Since $\theta$ is irrational, the orbit $G_{\theta}.x \subseteq S^1$ is dense in $S^1$ for every $x \in S^1$. Indeed, since $\theta \in \R \backslash \Q$, we have for $n \in \Z \backslash \{ 0 \}$ that $e^{2 \pi i n \theta} \neq 1$, for else there would be $k \in \Z\backslash\{0\}$ so that $\theta = \frac{n}{k}$, from this it follows that all points of $(e^{2 \pi i n \theta})_{n \in \N}$ are distinct. Given $\varepsilon>0$, it follows that there are positive integers $m< n$ so that $\left| e^{2 \pi i n \theta} - e^{2 \pi i m \theta}\right| < \varepsilon$. Setting $N:=m-n$, see that 
+\begin{align*}
+\left| e^{2 \pi i N \theta} - 1 \right| = \left|  e^{2 \pi i n \theta} - e^{2 \pi i m \theta}\right| < \varepsilon.
+\end{align*}
+For all $k \geq 1$ set $N_k:= k N = kn - km$, then
+\begin{align*}
+\left| e^{2 \pi i N_k \theta} - e^{2 \pi i N_{k+1} \theta} \right| = \left|  e^{2 \pi i kN\theta}\left(1 - e^{2 \pi i N \theta} \right)\right|<\varepsilon, \ k \geq 0.
+\end{align*}
+So the sequence $\left( e^{2 \pi i N_k \theta}\right)_{k \geq 1}$ partitions $S^1$ into arcs of length $\varepsilon$. Thus, given any $t \in [0,1)$, there is $k \geq 1$ so that $\left| e^{2 \pi i kN \theta} - e^{2 \pi i t}\right| < \varepsilon$, so $S^1$ is a minimal $G_{\theta}$-space.
+\end{example}
+
+\begin{definition}\label{Sprox}
+For a $G$-space $X$, the action of $G$ is said to be \emph{strongly proximal} if for each $\mu \in \Prob(X)$ it holds that
+\begin{align*}
+\overline{G.\mu}^{w^*} \cap \{ \delta_{x} \colon x \in X\} \neq \emptyset.
+\end{align*}
+\end{definition} 
+\noindent If $X$ is a compact Hausdorff space, then the map $X \to \{\delta_x \colon x \in X\} \subseteq \Prob(X)$, $x \mapsto \delta_{x}$, is bijective continuous map, in fact a homeomorphism. Indeed, by Uryhson's lemma a net $(x_{\alpha})_{\alpha \in A} \subseteq X$ converges to some $x$ if and only if $f(x_{\alpha}) \to f(x)$ for all $f \in C(X)$. But then 
+\begin{align*}
+\delta_{x_\alpha}(f)=f(x_{\alpha}) \to f(x) = \delta_{x}(f), \quad \text{for all } f \in C(X),
+\end{align*}
+so $\delta_{x_{\alpha}}$ converges to $\delta_{x}$ in the weak$^*$ topology. Likewise, if $\delta_{x_{\alpha}}$ converges to $\delta_{x}$ in the weak$^*$-topology, then $f(x_{\alpha}) \to f(x)$ for all $f \in C(X)$, and by Uryhson's lemma $x_{\alpha} \to x$. We abbreviate the set of point masses by $\delta_X := \{\delta_x \colon x \in X\}$. Also, given $g \in G$ and $x \in X$, then for all $f \in C(X)$ we have
+\begin{align*}
+g.\delta_x(f)=\delta_x(g^{-1}.f)=g^{-1}.f(x)=f(g.x)=\delta_{g.x}(f),
+\end{align*}
+so $g.\delta_x=\delta_{g.x}$.
+\begin{definition}
+A compact $G$-space $X$ for which the action $G \acts X$ is both minimal and strongly proximal will be called a \emph{$G$-boundary}.
+\end{definition}
+
+\begin{definition}
+A subset $Y \subseteq X$ of a $G$-space $X$ is \emph{minimal} if it is non-empty, closed and $G$-invariant and minimal with respect to these properties in the set of non-empty, closed and $G$-invariant subsets of $X$ partially ordered by inclusion.
+\end{definition}
+
+\begin{remark}\label{zorn}
+It is worth noting that a subset $Y \subseteq X$ of a compact $G$-space $X$ is minimal if and only if $G \acts Y$ is minimal. Moreover, for every compact $G$-space $X$, Zorn's lemma yields a minimal subset. 
+\begin{proof}
+Let $\mathcal{F}$ denote the set of all non-empty compact $G$-invariant subsets of $X$, partially ordered by inclusion. Given a descending chain $(F_{i})_{i \in I} \subseteq \mathcal{F}$, compactness of $X$ yields that the intersection $\bigcap_{i \in I}F_{i}$ is non-empty. It is also $G$-invariant and compact, hence belongs to $\mathcal{F}$. Thus, by Zorn's lemma, there is a minimal $G$-space $Y \subseteq X$.
+\end{proof}
+\end{remark}
+
+\begin{lemma} \label{extremepointProb}
+For a compact Hausdorff space $X$, $\delta_X$ is the set of extreme points of the weak$^*$ compact and convex set $\Prob(X)$.
+\begin{proof}
+By \cite[Theorem 6.2][35]{zhu} $X$ is homeomorphic to $\delta_X$, and $\delta_X$ is the space of multiplicative linear functionals on $C(X)$. Since $C(X)$ is a commutative $C^*$-algebra, the set of multiplicative linear functionals are precisely the pure states on $C(X)$ cf. \cite[Exercise 13.3 and 13.4][83]{zhu}.
+\end{proof}
+\end{lemma}
+
+\begin{proposition}\label{equiv g bound}
+For a compact $G$-space $X$, the following are equivalent:
+\begin{enumerate}
+\item $X$ is a $G$-boundary,
+\item For every $\nu \in \Prob(X)$ we have $\delta_X\subseteq \overline{G.\nu}^{w^*}$,
+\item There are no proper non-empty closed convex subsets of $\Prob(X)$ which are invariant under the induced affine action $G \acts \Prob(X)$.
+\end{enumerate}
+\begin{proof}
+\noindent (1)$\Rightarrow$(2): Let $\nu \in \Prob(X)$ and $\delta_{x}\in \overline{G.\nu}^{w^*}$. Then there is some net $(g_{\alpha})_{\alpha \in A} \subset G$ such that $g_{\alpha}.\nu(f) \to \delta_{x}(f)$ for every $f \in C(X)$, hence $g.(g_{\alpha}.\nu)(f) \to g.\delta_{x}(f)$, for every $g \in G$. So $G.\delta_{x} \subseteq \overline{G.\nu}^{w^*}$, but then $\overline{G.\delta_{x}}^{w^*}\subseteq \overline{G.\nu}^{w^*}$. Since the map $X \to \delta_X$, $x \mapsto \delta_{x}$, is a homeomorphism between $X$ and $\delta_X$, minimality of $X$ give us
+\begin{align*}
+\delta_X=\overline{\delta_{G.x}}^{w^*} \subseteq \overline{G.\nu}^{w^*}.
+\end{align*} 
+
+\noindent (2)$\Rightarrow$(1): Let $x \in X$. Since $\delta_{x}\in \pp(X)$, we have $\delta_{y} \in \overline{G.\delta_{x}}^{w^*}$ for all $y \in X$, so there is a net $(g_{i})_{i \in I} \subset G$ such that $g_{i}. \delta_{x} \to \delta_{y}$ in the weak$^*$ topology. Since the map $x \mapsto \delta_x$ is a homeomorphism, it follows that $g_i.x \to y$, so $X$ is minimal, and our original assumption ensures that $X$ is also strongly proximal. So $X$ is a $G$-boundary.
+
+\noindent (2)$\Rightarrow$(3): Let $V \subseteq \Prob(X)$ be a non-empty closed convex $G$-invariant subset, and let $\mu \in V$. Since $V$ is closed, the closure of the orbit $G.\mu$ belongs to $V$, and by assumption we have $\delta_X \subseteq \overline{G.\mu}^{w^*} \subseteq V$. Since $V$ is closed and convex, we have $\overline{\conv}(\delta_X) \subseteq V$. But by the Krein-Milman theorem, $\overline{\conv}(\delta_X)=\Prob(X)$, so $V= \Prob(X)$.
+
+\noindent (3)$\Rightarrow$(2): Assume that the action $G \acts \Prob(X)$ admits no $G$-invariant proper non-empty closed convex subsets. Let $\mu \in \Prob(X)$. Since the action of $G$ on $\Prob(X)$ is affine, the convex set $\conv(G.\mu) \subseteq \Prob(X)$ is $G$-invariant, and by continuity of the action, the closure $\overline{\conv}^{w^*}(G.\mu)$ is also $G$-invariant. By assumption, we now have a subset which is non-empty, for it contains $\mu$, closed, convex and $G$-invariant, so it must equal all of $\Prob(X)$. By a Theorem of Milman cf. \cite[Theorem 3.25][76]{rudin1991functional}, we then have $\Ext(\Prob(X)) \subseteq \overline{G.\mu}^{w^*}$, but $\Ext(\Prob(X))=\delta_X$.
+\end{proof}
+\end{proposition}
+
+\begin{example}
+Let $\gamma \colon [0,1) \to [0,1)$ be the function $\gamma(t)=t^2$ with inverse $\gamma^{-1}(t)=t^{\frac12}$, and let $\theta$ be irrational. Consider the compact space $S^1:= \{e^{2 i \pi t} \colon t \in [0,1)\}$, and let $\alpha \colon S^1 \to S^1$ be the homeomorphism $\alpha(e^{2i \pi t})=e^{2i\pi \gamma(t)},\ t \in [0,1)$, and $\beta \colon S^1 \to S^1$ be the rotation by $\theta$, i.e., $\beta\left(e^{2i \pi t}\right)= e^{2 i \pi (t+\theta)}$. The orbit $\{ \beta^n x \colon n \in \Z\}$, $x \in S^1$, is dense and given any $t \in [0,1)$, we have
+\begin{align*}
+\alpha^n(e^{2i\pi t})=e^{2 i \pi t^{2n}} \to 1, \tag{$\dagger$}
+\end{align*}
+as $n$ tends to $\pm \infty$. Let $\mathbb{F}_{2}=\langle \alpha, \beta\rangle$, then $\mathbb{F}_2 \acts S^1$ by $\beta.x= \beta(x), \ \alpha.x=\alpha(x)$. Given any $\mu \in \Prob(S^1)$, using abstract change-of-variable, we then see that for all $f \in C(S^1)$
+\begin{align*}
+\alpha^n.\mu(f)= \int_{S^1} f(x) \diff (\alpha^n.\mu)(x) =\int_{S^1} f\circ \alpha^{n}(x) \diff \mu(x)  \stackrel{(\dagger)}{\to} \int_{S^1} f(1) \diff \mu(x) = f(1),
+\end{align*}
+so $\alpha^n . \mu$ converges to $\delta_1$ in the weak$^*$ topology. So the action is strongly proximal and by \Cref{irat} also minimal, hence a boundary action.
+\end{example}
+
+\begin{definition}
+If $X,X'$ are compact $G$-spaces, we say that a map $p \colon X \to X'$ is a $G$-map or $G$-equivariant if the diagram
+\begin{center}
+\begin{tikzcd}
+X \ar{d}[swap]{p} \ar{r}{x \mapsto g.x} & X \ar{d}{p}\\
+X' \ar{r}[swap]{x' \mapsto g.x'}& X'
+\end{tikzcd}
+\end{center} 
+commutes, i.e, $p(g.x)=g.p(x)$ for every $g \in G$ and $x \in X$.
+\end{definition}
+
+\begin{definition}
+If $X, Y$ are $G$-spaces and $p \colon X \to Y$ is a continuous surjective $G$-map, we say that $Y$ is a quotient of $X$.
+\end{definition}
+
+\begin{lemma}
+If $Y$ is a quotient of a compact $G$-space $X$ with respect to a $G$-equivariant quotient map $q$, then the induced map $q_* \colon C(Y) \to C(X)$ given by
+\begin{align*}
+q_*(f)=f \circ q,
+\end{align*}
+is an injective $G$-equivariant $^*$-homomorphism.
+\begin{proof}
+Let $f \in C(Y)$. Then
+\begin{align*}
+q_*(f^*)(x)=\overline{f}(q(x))=\overline{f(q(x))}=\overline{q_*(f)(x)}=(q_*(f))^*(x),
+\end{align*}
+where $\overline{f}$ denotes the complex conjugate of $f$. Let $f,h \in C(Y)$ and assume that $q_*(f)=q_*(h)$. Then
+\begin{align*}
+f(q(x))=h(q(x)), \quad x \in X,
+\end{align*}
+and since $q$ is surjective this implies $f=h$. Now, let $g \in G$ and $f \in C(Y)$ and $x \in X$. Then
+\begin{align*}
+q_*(g.f)(x)=f(g^{-1}.q(x))=f(q(g^{-1}.x))=g.q_*(f)(x).
+\end{align*} 
+Clearly, $q_*$ is linear and mulitplicative, so the lemma is shown.
+\end{proof}
+\end{lemma}
+
+\begin{lemma}\label{pushforward equiv}
+Let $X$ be a compact $G$-space and $Y$ a quotient of $X$ with respect to a $G$-map $q \colon X \to Y$. Then the push-forward map $\varphi_q \colon \Prob(X) \to \Prob(Y)$ defined by 
+\begin{align*}
+\varphi_q (\mu)(E):=\mu(q^{-1} (E)), \ E \subseteq Y \ \text{Borel},
+\end{align*}
+is affine and $G$-equivariant. Moreover, by identifying $\Prob(X)$ and $\Prob(Y)$ with the state space of $C(X)$, respectively, $C(Y)$, it is also weak$^*$ continuous. When we identify $\Prob(X)$ with the state space of $C(X)$, then for $\mu \in \Prob(X)$ and $f \in C(X)$, we have
+\begin{align*}
+\varphi_q (\mu) (f)=\int_{Y} f \diff \varphi_q \mu =\int_X q_* f \diff \mu =\int_X f \circ q \diff \mu .
+\end{align*}
+Moreover, $\delta_Y \subset \varphi_q(\Prob(X))$.
+\begin{proof}
+Let $(\mu_{\alpha}) \subseteq \Prob(X)$ be a net converging in the weak$^*$ topology to some $\mu \in \Prob(X)$. Then for all $f \in C(Y)$ we have
+\begin{align*}
+\varphi_q (\mu_{\alpha})(f) = \int_X \underbrace{f \circ q}_{\in C(X)} \diff \mu_{\alpha} \to \int_X f \circ q \diff \mu = \varphi_q (\mu)(f).
+\end{align*}
+For $f \in C(Y)$ and $x \in X$ we have
+\begin{align*}
+\varphi_q (\delta_{x})(f)&=\int_X f \circ q \diff \delta_x\\
+&=(f \circ q)(x)\\
+&=f(q(x))\\
+&= \delta_{q(x)}(f),
+\end{align*}
+and by surjectivity of $q$, we have $ \delta_{Y} = \varphi_q (\delta_{X}) = \delta_{q(X)}$. The affinity of $\varphi_q$ is clear.
+\end{proof}
+\end{lemma}
+
+\begin{corollary}\label{induce cor}
+Let $X$ be a compact $G$-space and $Y$ a quotient of $X$ with respect to a map $q \colon X \to Y$. Then the map $\varphi_q \colon \Prob(X) \to \Prob(Y)$ defined above is surjective.
+\begin{proof}
+To see this, note that since $\Ext(\Prob(X))=\delta_X$ and that $\Prob(X)$ is a weak$^*$ compact and convex space, the Krein-Milman theorem states that 
+\begin{align*}
+\Prob(X)=\overline{\text{conv}(\Ext(\Prob(X)))}.
+\end{align*}
+By \Cref{pushforward equiv}, the push-forward map $\varphi_q$ is affine and weak$^*$ continuous with $\varphi_q(\delta_X)=\delta_Y$. Hence
+\begin{align*}
+\Prob(Y)&=\overline{\conv(\delta_{Y})}\\
+&=\overline{\conv(\varphi_{q}(\delta_{X}))}\\
+&=\overline{\varphi_{q} \conv(\delta_{X})}\\
+&\subseteq \overline{\varphi_{q}(\Prob(X))}.
+\end{align*}
+Now, since the state space is weak$^*$ closed and $\varphi_{q}(\Prob(X))\subseteq \Prob(Y)$, it follows that
+\begin{align*}
+\varphi_{q}(\Prob(X))=\Prob(Y).
+\end{align*}
+\end{proof}
+\end{corollary}
+
+\begin{proposition}
+Every quotient of a $G$-boundary is a $G$-boundary.
+\begin{proof}
+Let $q \colon X \to Y$ be a continuous surjective $G$-map. If $y \in Y$, then by surjectivity of $q$ there is $x \in X$ such that $q(x)=y$. If $y' \in Y$ with $y' \neq y$, then again by surjectivity there is $x' \in X$ such that $q(x')=y'$. Since every $G$ orbit is dense in $X$, there is a net $(g_{i})_{i \in I} \subseteq G$ such that $g_{i}.x\to x'$. But then
+\begin{align*}
+g_{i}.y=g_{i}.q(x)=q(g_{i}.x)\to q(x')=y'.
+\end{align*}
+Thus we conclude that $Y$ is a minimal $G$-space. Now, let $\varphi_{q} \colon \Prob(X) \to \Prob(Y)$, be the induced weak$^*$ continuous, affine and $G$-equivariant map defined in \Cref{pushforward equiv}. Let $\mu \in \Prob(Y)$. By surjectivity of the map $\varphi_{q} \colon \Prob(X) \to \Prob(Y)$ there is $\nu \in \Prob(X)$ such that $\varphi_{q}(\nu)=\mu$. Since $X$ is a $G$-boundary, there is a net $(g_{i})_{i \in I} \subset G$ such that $(g_{i}.\mu)_{i \in I} $ converges in the weak$^*$-topology to $\delta_{x}$ for some $x \in X$. By the continuity and $G$-equivariance of $\varphi_{q}$ we see that
+\begin{align*}
+g_{i}. \mu = g_{i}.\varphi_{q}(\nu)=\varphi_{q}(g_{i}. \nu) \to \varphi_{q}(\delta_{x}) = \delta_{q(x)} \in \delta_{Y}.
+\end{align*}
+So $Y$ is both minimal and strongly proximal, i.e., a $G$-boundary.
+\end{proof}
+\end{proposition}
+
+
+If $G \acts X$ and $G \acts Y$, then $G \times G \acts X \times Y$ via the map 
+\begin{align*}
+(g,h).(x,y):= (g.x,h.y).
+\end{align*}
+\begin{definition}
+If $G \acts X$ and $G \acts Y$, then identifying $G$ with the diagonal of $G \times G$, i.e., by
+\begin{align*}
+G \cong \{ (g,g) \colon g \in G \} \subseteq G \times G,
+\end{align*}
+defines an action $G \acts X \times Y$ by $g.(x,y):= (g.x,g.y)$ called the \emph{diagonal action}.
+\end{definition}
+The above action is defined for an arbitrary family $X_{i}$ of topological spaces such that $G \acts X_{i}$ for every $i \in I$.
+%
+%
+We now embark on the task of defining and proving the uniquenuess and existence of a $G$-boundary satisfying a universal property of $G$-boundaries, the property that all other $G$-boundaries are quotients of it. For this, we need to show that arbitrary products of $G$-boundaries are again $G$-boundaries with respect to the diagonal action. First, however, we restrict us to the case of finite products.
+\begin{lemma}\label{product finite strongly proximal}
+If $X$ and $Y$ are compact and strongly proximal $G$-spaces, then $X \times Y$ is strongly proximal $G$-space with respect to the diagonal action of $G$ on $X \times Y$.
+\begin{proof}
+Let $\pi_{X}$ denote the projection of $X \times Y$ onto $X$. Let $\pi_{X,*}$ denote the push forward map $\Prob(X \times Y) \to \Prob(X)$ and let $\nu \in \Prob(X,Y)$, then the push forward measure $\pi_{X,*}(\nu)$ is defined by 
+\begin{align*}
+\pi_{X,*}(\nu)(f)=\nu(f \circ \pi_X),\ f \in C(X).
+\end{align*} 
+By \Cref{pushforward equiv} this map is $G$-equivariant. Since $X$ and $Y$ are compact and $X$ is strongly proximal we have
+\begin{align*}
+\delta_{x} \in \overline{G.\pi_{X,*}(\nu)}^{w^*}=\overline{\pi_{X,*}(G.\nu)}^{w^*}=\pi_{X,*}\left(\overline{G.\nu}^{w^*}\right)
+\end{align*}
+for some $x \in X$. By Lemma A.4, there is some $\nu_0 \in \Prob(Y)$ such that $\delta_{x} \otimes \nu_0 \in \overline{G.\nu}^{w^*}$. Since $Y$ is strongly proximal, there is a net $(g_{i})_{i \in I} \subseteq G$ such that $g_{i}.\nu_0 \to \delta_{y}$ for some $y \in Y$. Again by compactness of $X$, the net $(g_{i}.x)_{i \in I} \subseteq X$ has a subnet $(g_j.x)_{j \in J}$ converging to some $x' \in X$. Then, by the Fubini-Tonelli theorem for Radon measures, we have
+\begin{align*}
+\delta_{(x',y)}=\delta_{x'} \otimes \delta_{y}= \lim_{j \in J} g_j.(\delta_x \otimes \nu_0)=\lim_{j \in J} (\delta_{g_{j}.x} \otimes g_{j} .\nu_0)\in \overline{G.\nu}^{w^*}.
+\end{align*}
+\end{proof}
+\end{lemma}. 
+%
+%
+\begin{proposition}\label{product of stronlgy proximal}
+If $(X_{i})_{i \in I}$ is a family of compact and strongly proximal $G$-spaces, then the product space $X=\prod_{i \in I} X_i$ is strongly proximal with respect to the diagonal action.
+\begin{proof}
+Let $\nu \in \Prob(X)$, and let $\mathcal{F}$ be the directed set of finite subsets of $I$ ordered by inclusion. For $F \in \mathcal{F}$, let $\pi_{F,*} \colon \Prob(X) \to \Prob(\prod_{i \in F}X_{i})$ denote the pushforward map with respect to the $G$-equivariant projection from $X$ onto the the finite product $\prod_{i\in F }X_{i}$, and let $\nu_{F}:=\pi_{F,*}(\nu)$ denote the push forward measure with respect to this map. Define subsets of $\overline{G.\nu}^{w^*}$ by
+\begin{align*}
+P(F) := \{ \mu \in \overline{G.\nu}^{w^*} \colon \pi_{F,*}(\mu) \text{ is a point mass} \}, \ F \in \mathcal{F}.
+\end{align*}
+By \Cref{product finite strongly proximal}, $P(F)$ is nonempty for every $F \in \mathcal{F}$. Moreover, if $F, F' \in \mathcal{F}$ and $\mu \in P(F \cup F')$, then $\pi_{F,*}(\mu)$ is a point-mass and $\pi_{F',*} (\mu)$ is a point mass, so $P(F \cup F') \subseteq P(F) \cap P(F')$. Thus the family $\{P(F)\}_{F \in \mathcal{F}}$ has the finite intersection property. Let $F \in \mathcal{F}$ and let $(\mu _{\alpha})_{\alpha \in A} \subseteq P(F)$ be a net converging to some $\mu$ in the weak$^*$ topology. By \Cref{pushforward equiv}, the map $\pi_{F,*}$ is weak$^*$ continuous, so $\pi_{F,*}(\mu_{\alpha}) \to \pi_{F,*}(\mu)$. But $\pi_{F,*}(\mu_{\alpha}) \subseteq \delta_{\prod_{i \in F} X_i}$, which is weak$*$ closed, so $\pi_{F,*}(\mu)$ is a point-mass, and thus in $P(F)$. The family $\{P(F)\}_{F \in \mathcal{F}}$ is a family of closed subsets of a compact space with the finite intersection property, so there is $\mu \in \bigcap_{F \in \mathcal{F}} P(F)$. By Lemma A.5, $\mu$ is a point mass, concluding the proof.
+%Then by \Cref{product finite strongly proximal}, $\prod_{i \in F} X_{i}$ is strongly proximal, and hence there is $\delta_{\pi_{F}(x_{F})}\in \overline{G.\nu_{F}}^{w^*}=\pi_{F,*}\left( \overline{G.\nu}^{w^*}\right)$ for some $x_{F} \in X$. Let $\mu_{F} \in \overline{G.\nu}^{w^*}$ be the measure such that $\pi_{F,*}(\mu_F)=\delta_{\pi_{F}(x_{F})}$. Since $\Prob(X)$ is weak$^*$ compact, the net $(\mu_F)_{F \in \mathcal{F}} \subseteq \overline{G.\nu}^{w^*}\subseteq \Prob(X)$ has a convergent subnet $(\mu_\lambda)_{\lambda \in \Lambda}$ with limit $\mu \in \overline{G.\nu}^{w^*}$. To every $A\leq B \in \mathcal{F}$, let $\pi_{(A,B)} \colon \prod_{i \in B} X_{i} \to \prod_{i \in A} X_{i}$ be the projection. Then $\pi_{(A,B)} \circ \pi_{B}=\pi_{A}$. Fix $F \in \mathcal{F}$. Then there is $\lambda_{0} \in \Lambda$ such that $\lambda_{0} \geq F$. And for all $\lambda \geq \lambda_{0}$ we have
+%\begin{align*}
+%\pi_{F,*}(\mu_{\lambda})&=\pi_{(F,\lambda),*}(\pi_{\lambda}(\mu_{\lambda})\\
+%&=\pi_{(F,\lambda),*} ( \delta_{\pi_{\lambda}(x_{\lambda})}\\
+%&=\delta_{\pi_F(x_{\lambda}} \in \delta_{\prod_{i \in F}X_{i}}.
+%\end{align*}
+%Since the set $\delta_{X}$ is weak$^*$-closed in $\Prob(X)$, and that every pushforward map $\pi_{F,*}$ is continuous, it follows that 
+%\begin{align*}
+%\lim_{\lambda \in \Lambda}\pi_{F,*}(\mu_{\lambda})=\pi_{F,*}(\mu)
+%\end{align*} holds for every $F \in I$, Lemma A.5 gives us that $\mu$ itself is a point mass.
+%
+\end{proof}
+\end{proposition}
+%
+%
+
+\begin{proposition}\label{unique surjective x' x}
+Let $Y$ be a minimal compact $G$-space and $X$ a $G$-boundary. Any continuous $G$-equivariant map $\varphi \colon Y \to \Prob(X)$, has image $\delta_{X}$. Moreover, if there is such a map, then there is at most one continuous $G$-equivariant map $Y \to X$, and it is surjective.
+\begin{proof}
+Since $Y$ is compact, the image under $\varphi$ is compact. This together with the $G$-equivariance of $\varphi$ yields
+\begin{align*}
+\varphi(Y)=\overline{\varphi(Y)}^{w^*}=\overline{\varphi(G.Y)}^{w^*}=\varphi(G.Y)=G.\varphi(Y).
+\end{align*}
+Since $X$ is strongly proximal, there is some $x \in X$ such that $\delta_{x} \in \varphi(Y)$, i.e., $\varphi^{-1}(\delta_{X}) \neq \emptyset$. If $y \in Y$ is such that $\varphi(y)y\delta_{x}$ we get that $\varphi(G.y)= G.\delta_{x} \subseteq \delta_{X}$. So $G.y \subseteq \varphi^{-1}(\delta_{X})$. But $\delta_{X}$ is weak$^*$-closed, thus $\varphi^{-1}(\delta_{X})=Y$. 
+
+\noindent If  $\psi_1,\psi_2 \colon Y \to X$ are continuous $G$-equivariant maps, then the map $\alpha \colon Y \to \Prob(X) $, $y \mapsto \frac{1}{2}(\delta_{\psi_1(y)}+\delta_{\psi_2(y)})$, is a continuous equivariant map, and by the above argument, it has image $\delta_{X}$. So if $y \in Y$ then there exists $x \in X$ such that $\alpha(y)= \delta_x$. Then
+\begin{align*}
+\delta_x=\alpha(y)=\frac12 \delta_{\psi_1(y)}+ \frac12 \delta_{\psi_2(y)},
+\end{align*}
+and since $\delta_X$ is the set of pure states on $C(X)$, we have that $\psi_2(y)=\psi_1(y)=x$, implying that $\psi_1=\psi_2$. Identifying $X$ with $\delta_X$ by the homeomorphism $\iota \colon \delta_X \to X$, $\iota(\delta_x)=x$, then $\iota \circ \varphi \colon Y \to X$ must be the only continuous $G$-equivariant map from $X$ to $Y$, and it is surjective.
+\end{proof}
+\end{proposition}
+
+\begin{definition}
+A compact $G$-space $Z$ is a \emph{universal boundary} for $G$ if $Z$ itself is a $G$-boundary satisfying that to every $G$-boundary $X$ there is a surjective continuous $G$-equivariant map $\rho \colon Z \to X$.
+\end{definition}
+\begin{remark}\label{remark unique}
+We can easen the requirement that $\rho$ must be surjective, for \Cref{unique surjective x' x} ensures surjectivity of $\rho$.
+\end{remark}
+
+\noindent Recall that the Stone-Céch compactification of $G$, $\beta G$, has the universal property that any continuous function from $G$ with compact Hausdorff codomain extends to a continuous function from $\beta G$.
+
+Before proving existence and uniqueness of the universal boundary of $G$, note that for a compact $G$-boundary $X$, there is a bound on the cardinality of $X$. Let $x \in X$, define a function $\alpha \colon G \to X$ by $\alpha(g)=g.x$.  This is a continuous function with compact Hausdorff codomain, so it extends to a continuous function $\tilde{\alpha} \colon \beta G \to X$. By compactness of $\beta G$ we have $\tilde{\alpha}(\beta G)= \overline{G.x}=X$, so $\tilde{\alpha}$ is surjective, and we get the following bound 
+\begin{align*}
+|X|\leq |\beta G|
+\end{align*}
+
+\begin{theorem}\label{existence fursten}
+There exists a universal boundary of $G$. We denote it by $\dd_F G$ and it is called the Furstenburg boundary.
+\begin{proof}
+By the above note, we can index the family of all the $G$-boundaries up to isomorphism, i.e., $G$-equivariant homeomorphism. Let $\{X_i\}_{i \in I}$ be this family, by \ref{product of stronlgy proximal}, the product
+\begin{align*}
+Z=\prod_{i \in I} X_i,
+\end{align*}
+is strongly proximal. By \Cref{zorn} there is a minimal compact $G$-space $\dd_F G \subseteq Z$. The inclusion map $i_{\dd_F G} \colon \dd_F G \to Z$ is continuous and $G$-equivariant. For a $G$-boundary $X$, let $\pi_X$ denote the projection from $Z$ to $X$. Then the map $\pi_{\dd_F G,X}:=\pi_X \circ i_{\dd_F G} \colon \dd_F G \to X$ is continuous and $G$-equivariant, hence by \Cref{remark unique} it has image $X$, so it is surjective. Thus $\dd_F G$ is a universal boundary for $G$.
+\end{proof}
+\end{theorem}
+
+\begin{proposition}\label{uniqueness of fursten}
+The Furstenberg boundary is unique up to isomorphism.
+\begin{proof}
+Assume that $X,Y$ are universal boundaries for $G$. By universitality, there are maps $\varphi_1 \colon X \to Y$ and $\varphi_2 \colon Y \to X$ which are both continuous surjective and $G$-equivariant, and thus by \Cref{unique surjective x' x} we see that $\varphi_2 \circ \varphi_1 \colon X \to X$ is the identity on $X$ and likewise $\varphi_1 \circ \varphi_2$ is the identity on $Y$. Thus $X \cong Y$. Therefore the Furstenberg boundary $\dd_F G$ is unique up to isomorphism.
+\end{proof}
+\end{proposition}
+
+\begin{proposition}
+An amenable subgroup $N$ of a discrete group $G$ acts trivially on every compact $G$-boundary $X$.
+\begin{proof}
+Let $N$ be an amenable subgroup of $G$. Let $X$ be a compact $G$-boundary. Since $N$ is amenable, the induced action $N \acts C(X)$ is amenable, hence the action $N \acts X$ is amenable and there is an $N$-invariant probability measure $\mu_0 \in \Prob(X)$. Let $\mathcal{P}_N \subseteq \Prob(X)$ denote the set of $N$-invariant measures on $X$. This set is closed, by continuity of the action $N \acts \Prob(X)$, and it is convex, since $N \acts \Prob(X)$ is affine. We now \textbf{claim} that the set $\mathcal{P}_N$ is $G$-invariant. Indeed, let $\mu \in \mathcal{P}_N$ and $g \in G$. Since $N$ is normal, if $n \in N$, there is $n' \in N$ such that $ng=gn'$. We then have
+\begin{align*}
+(ng).\mu=(gn').\mu=g.(n'.\mu)=g.\mu.
+\end{align*}
+So $\mathcal{P}_N$ is a non-empty closed convex $G$-invariant subset of $\Prob(X)$, and since $X$ is a $G$-boundary, \Cref{equiv g bound} tells us $\mathcal{P}_N=\Prob(X)$. Identifying $X$ with $\delta_{X}\subseteq \Prob(X)$, we get that $N$ acts trivially on $X$.
+\end{proof}
+\end{proposition}
+
+\begin{proposition}\label{furman}
+Let $G$ be a discrete group and $t \in G$. Then $t \in \AR_G$ if and only if $t \in \ker(G \acts X)$ for all compact $G$-boundaries $X$.
+\begin{proof}
+By the above proposition, if $t \in \AR_G$, then $t \in \ker(G \acts X)$ for all compact $G$-boundaries. For the converse, see \cite[Proposition 7][179]{furman2003minimal}.
+\end{proof}
+\end{proposition}
+
+%\begin{remark}\label{remark furman}
+%The above proposition is equivalent to saying that for a group $G$, and $t \in G$, then $t \not \in \mathrm{AR}_G$ if and only if $G$ admits a boundary action on a non-trivial compact %Hausdorff space $X$ such that $t$ acts non-trivially on $X$. It was originally shown by Furman as a Corollary to a proposition about equivalent definitions of the amenable radical for a %locally compact group $G$
+%\end{remark}

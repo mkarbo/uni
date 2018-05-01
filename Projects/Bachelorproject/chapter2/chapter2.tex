@@ -1,0 +1,244 @@
+\chapter{$C^*$-simplicity and uniqueness of trace}
+\section{Dixmier Property}
+\begin{definition}
+A discrete group $G$ is \emph{$C^*$-simple} if the reduced group $C^*$-algebra $C^*_r(G)$ is simple, i.e., contains no non-trivial closed two-sided ideals. We say that $G$ has the unique trace property if the canonical faithful tracial state $\tau_0$ on $C^*_r(G)$, $x \mapsto \langle x \delta_e,\delta_e\rangle$, is the only tracial state on $C^*_r(G)$.
+\end{definition}
+
+\noindent For a  $C^*$-algebra $\mathcal{A}$, we define for each $a \in \mathcal{A}$ the set $D(a) \subseteq \mathcal{A}$ by
+\begin{align*}
+D(a)=\conv\{ uau^* : u \in \mathcal{U}(\mathcal{A})\}.
+\end{align*}
+If we need to make clear what $C^*$-algebra we work in, we will denote the above set by $D_{\A}(a)$
+
+\begin{definition}\label{Dixmier}
+Let $\mathcal{A}$ be a unital $C^*$-algebra. Let $a \in \mathcal{A}$, we say that $\mathcal{A}$ has the \emph{Dixmier property} at $a$ if
+\begin{align*}
+\overline{D(a)} \cap \C 1_{\mathcal{A}} \neq \emptyset.
+\end{align*}
+We say that $\mathcal{A}$ has the \emph{Dixmier property} if it has the Dixmier property at every point.
+\end{definition}
+
+\begin{lemma} \label{tau img}
+Let $\A$ be a unital $C^*$-algebra with a tracial state $\tau$. Then $\tau\left(\overline{D(a)}\right)=\{\tau(a)\}$ for every $a \in \A$.
+\begin{proof}
+For $a \in \A$, it holds that $\tau(x)=\tau(a)$ for every $x \in D(a)$. If $(b_{i})_{i \in I} \subseteq D(a)$ is any net converging to some $b \in \A$, then $\tau(a)=\tau(b_{i})$ for every $i \in I$ and hence $\tau(a)=\tau(b)$, by continuity of $\tau$. Thus $\tau(b)=\tau(a)$ for every $b \in \overline{D(a)}$.
+\end{proof}
+\end{lemma}
+
+\begin{lemma}
+Let $\A$ be a unital $C^*$-algebra with a tracial state $\tau$. Assume that $\A$ has the Dixmier property. Then $\tau$ is unique.
+\begin{proof}
+Let $a \in \A$. Let $\tau'$ be another tracial state on $\A$, the assumption that $\A$ has the Dixmier property yields $\lambda \in \C$ such that $\lambda 1_{\mathcal{A}} \in \overline{D(a)}$
+\begin{align*}
+\tau'(a)=\tau'(\lambda 1_{\A})=\lambda = \tau(\lambda 1_{\A})=\tau(a).
+\end{align*}
+Since $a $ was arbitrary, $\tau=\tau'$.
+\end{proof}
+\end{lemma}
+
+\begin{proposition}\label{dixmier simple}
+Let $\A$ be a unital $C^*$-algebra with a faithful tracial state $\tau$. If $\A$ has the Dixmier property, then $\A$ is simple.
+\begin{proof}
+Assume that $\mathcal{I}\subseteq A$ is a non-trivial two-sided closed ideal, i.e. $\mathcal{I} \neq \{0\}$. Then there is $x \in \mathcal{I}$ such that $a:=x^*x >0$, so $\tau(a)>0$. Since $\mathcal{I}$ is a two sided closed ideal, $a \in \mathcal{I}$. And so $D(a) \subseteq \mathcal{I}$, and since $\mathcal{I}$ is closed, $\overline{D(a)} \subseteq \mathcal{I}$.  We have $0 \not\in \overline{D(a)}$, since else $0 = \tau(0)\in \tau\left(\overline{D(a)}\right)=\{\tau(a)\}$, a contradiction. Since $\A$ has the Dixmier property, there is $0 \neq \beta \in \C$ such that $\beta 1_{\A} \in \overline{D(a)} \subseteq \mathcal{I}$. Therefore $\mathcal{I}=\A$.
+\end{proof}
+\end{proposition}
+
+\begin{definition}
+For a unital $C^*$-algebra $\A$ we denote by $\F(\A)$ the set of functions $f \colon \A \to \A$, where
+\begin{align*}
+f(a)=\sum_{i=1}^n \alpha_i u_i a u_i^*,
+\end{align*}
+where $\alpha_i \geq 0$ with $\sum_{i=1}^n \alpha_i=1$ and $u_i \in \mathcal{U}(\A)$. Such a function $f$ is called an \emph{averaging process}.
+\end{definition}
+
+\noindent Clearly, for a unital $C^*$-algebra $\A$ and $a \in A$, we see that
+\begin{align*}
+D(a)=\{f(a) \colon f \in \F(\A)\}.
+\end{align*}
+Moreover, each $f$ is u.c.p (unital c.c.p), since they are convex combinations of positive unital $*$-homomorphisms. If $f,g \in \mathcal{F}(\A)$, then $(f \circ g)(a)=\sum_{i=1}^k \sum_{j=1}^n \beta_i \alpha_j u_i' u_j a  {u_j}^* {u_i'}^* $. Defining
+\begin{align*}
+\lambda_{s}:=\sum_{i=1}^n \beta_{s}\alpha_{i} \in [0,1]
+\end{align*} for $1 \leq s \leq k$ and $\tilde{u}_s:= \sum_{i=1}^n u_s' u_i$. Then $(f \circ g) (a)=\sum_{s=1}^k \lambda_{s} \tilde{u}_s a \tilde{u}_s^*$, and $\sum_{s=1}^k \lambda_{s}=1$, $\tilde{u}_s \in \mathcal{U}(\A)$, for $1 \leq s \leq k$, so $f \circ g \in \F(\A)$.
+
+\begin{lemma}\label{dixmier s-a}
+Let $\A$ be a unital $C^*$-algebra. If $\A$ has the Dixmier property at every self-adjoint $a \in \A_{sa}$, then $\A$ has the Dixmier property.
+\begin{proof}
+Let $a \in \A$. And let $a_1,a_2 \in \A_{sa}$ be the self-adjoint elements such that $a=a_1+i a_2$, i.e. $a_1$ is the real part of $a$ and $a_2$ is the imaginary part. Let $\varepsilon>0$ be given. Since $a_1$ is self-adjoint, $\overline{D(a_1)} \cap \C 1_{\A}\neq \emptyset$, so there is $f \in \F(\A)$ and $\lambda_1 \in \C$ such that
+\begin{align*}
+\lv f(a_1) - \lambda_1 1_{\A} \rv < \frac{\varepsilon}{2}.
+\end{align*}
+And since $f$ is a $*$-homomorphism, $f(a_2) \in \A_{sa}$. So there is $g \in \F(\A)$ and $\lambda_2 \in \C$ such that
+\begin{align*}
+\lv g(f(a_2))-\lambda_2 1_{\A} \rv < \frac{\varepsilon}{2}.
+\end{align*}
+Note that $g(a+b)=g(a)+g(b)$, and $g(\beta 1_{\A})=\beta 1_{\A}$ for every $\beta \in \C$. Now, set $\lambda:=\lambda_1+i \lambda_2$. Then
+\begin{align*}
+\lv g(f(a))-\lambda 1_{\A}\rv &= \lv g(f(a_1+ia_2))-\lambda_1 1_{\A}-i\lambda_2 1_{\A}\rv\\
+&=\lv g(f(a_1))-\lambda_1 1_{\A} + i(g(f(a_2))-\lambda_2 1_{\A})\rv\\
+&\leq \lv g(f(a_1)-\lambda_1 1_{\A})\rv + \lv g(f(a_2))-\lambda_2 1_{\A}\rv\\
+&\leq \lv f(a_2)-\lambda_1 1_{\A}\rv + \lv g(f(a_2))-\lambda_2 1_{\A}\rv\\
+&< \frac{\varepsilon}{2}+\frac{\varepsilon}{2}= \varepsilon.
+\end{align*}
+Thus we conclude that $\A$ has the Dixmier property at $a \in \A$, and since $a \in \A$ was arbitrary, $\A$ has the Dixmier property.
+\end{proof}
+\end{lemma}
+Using this lemma, we now show that it is enough to check for Dixmier property of a unital $C^*$-algebra $\A$ on a unital dense $*$-subalgebra $\A_0 \subseteq \A$ satisfying certain properties, i.e., we have the following lemma
+
+\begin{lemma}\label{dixmier dense}
+Let $\A$ be a unital $C^*$-algebra with tracial state $\tau$. If $\A_0 \subseteq \A$ is a unital dense $*$-subalgebra and $\overline{D(a)} \cap \C 1_{\A} \neq \emptyset$ for all $a \in (\A_0)_{sa}$ with $\tau(a)=0$, then $\A$ has the Dixmier property.
+\begin{proof}
+Let $a \in \A$ be self-adjoint and $\varepsilon>0$ be arbitrary. Since $\A_0 $ is dense in $\A$, pick $a_0 \in \A_0$ such that $\lv a- a_0\rv < \frac{\varepsilon}{3}$. The element $b_0:= \frac{a_0+a_0^*}{2}$ is a self-adjoint element of $\A_0$ such that
+\begin{align*}
+\lv a-b_0\rv= \lv \frac{a-a_0}{2}+\frac{a^*-a_0^*}{2}\rv\leq \frac12 (\lv a-a_0\rv + \lv a-a_0^*\rv) < \frac{\varepsilon}{3}.
+\end{align*}
+Now, if we define $x_0:= \tau(b_0) 1_{\A}-b_0$, then $x_0 \in \A_0$ is self-adjoint. Moreover, $\tau(x_0)=0$, so by assumption there is $\beta \in \C$ such that $\beta 1_{\A} \in \overline{D(x_0)}$. By \Cref{tau img}, we have that $\beta=\tau(\beta 1_{\A}) \in \tau(\overline{D(x_0)}=\{\tau(x_0)\}$. Therefore $0 = \tau(x_0) 1_{\A}=\beta 1_{\A} \in \overline{D(x_0)}$. Thus, there is $f \in \F(\A)$ such that
+\begin{align*}
+\lv \tau(b_0) 1_{\A}-f(b_0) \rv = \lv f(x_0)-0\rv < \frac{\varepsilon}{3}.
+\end{align*}
+Now, $|\tau(x-y)| \leq \lv x-y\rv$, since $\tau$ is a state, and $f \in \F(\A)$ means that it is unital and contractive, thus we have
+\begin{align*}
+\lv (f(a)-\tau(a)1_{\A}\rv &= \lv f(a)-f(b_0)+f(b_0)-\tau(b_0)1_{\A}+\tau(b_0)1_{\A}-\tau(a)1_{\A}\rv \\
+&\leq \lv f(a)-f(b_0) \rv + \lv f(b_0)-\tau(b_0)1_{\A}\rv + \lv \tau(b_0)1_{\A}-\tau(a)1_{\A}\rv\\
+&= \lv f(a-b_0) \rv + \lv f(b_0)-\tau(b_0)1_{\A}\rv + \lv(\tau(b_0-a))1_{\A}\rv\\
+&\leq \lv a-b_0\rv + \lv f(b_0)-\tau(b_0)1_{\A}\rv + \lv b_0-a\rv\\
+&< \varepsilon,
+\end{align*}
+hence $\tau(a) 1_{\A} \in \overline{D(a)}$. Since $a \in \A$ was any arbitrary self-adjoint element, \Cref{dixmier s-a} tells us that $\A$ has the Dixmier property.
+\end{proof} 
+\end{lemma}
+
+\section{Powers groups}
+\begin{definition}
+A discrete group $G$ is a \emph{Powers group} if to every non-empty finite subset $F \subseteq G\backslash\{e\}$ and any $n \in \N$, there are disjoint subsets $C,D \subseteq G$ satisfying $G = C \cupdot D$ and a finite set of elements $s_1,\dots,s_n \in G$ such that
+\begin{enumerate}
+\item $fC \cap C = \emptyset$ for all $f \in F$ and
+\item $s_i D \cap s_j D = \emptyset$ for all $1 \leq j \neq i \leq n$.
+\end{enumerate}
+\end{definition}
+
+In the following, let $\mathbb{F}_2$ be the free group on two generators $a,b$. 
+\begin{lemma}\label{F2 start end}
+Suppose $X \subseteq \mathbb{F}_{2}$ is any finite set, then there is $k \in \Z$ such that for all $g \in X$ we have that $b^k g b^{-k}$ in reduced form begins and ends with a non-zero power of b.
+\begin{proof}
+Let $X=\{g_1,\dots,g_n\}$ be any finite subset of $\mathbb{F}_{2}$. Define $n_{b} \colon \mathbb{F}_{2} \to \Z$ by $n_{b}(g)$ as the power of $b$ at the beginning of the reduced form of $g$, e.g., $n_{b}(b^2 a b)=2$, $n_{b}(ab^2)=0$ and $n_{b}(b^{-3}a)=-3$. Define $m_{b} \colon \mathbb{F}_{2} \to \Z$ by $m_{b}(g)$ is the power of $b$ at the end of $g$. If $g \in \mathbb{F}_{2}$ and $j \in \Z$ then $n_{b}(b^j g)=j+n_{b}(g)$ and $m_{b}(g b^{-j})=m_{b}(g)-j$. Since the sets $\{n_{b}(g_1),\dots,n_{b}(g_{n}\}$ and $\{m_{b}(g_1),\dots,m_{b}(g_n)\}$ are finite, we can choose $k_{1}, k_{2} \in \Z$ such that
+\begin{align*}
+k_{1} > -n_{b}(g_{i}) \ \text{ and } \ k_{2} > m_{b}(g_{i})
+\end{align*}
+for $1 \leq i \leq n$. Set $k=max\{k_{1},k_{2}\}$, then
+\begin{align*}
+b^kg_{i}b^{-k}
+\end{align*}
+in reduced form begins and ends with a non-zero power of $b$ for $1 \leq i \leq n$.
+\end{proof}
+\end{lemma}
+
+\begin{example}
+The free group on two generators $\mathbb{F}_2$ is a Powers group
+\begin{proof}
+Let $F \subseteq \mathbb{F}_2 \backslash \{e\}$ and $n \in \N$. Let $k \in \Z$ satisfy the conditions of \Cref{F2 start end} and let $n_b, m_b$ be functions as in the same lemma. Setting $C:= \{s \in \mathbb{F}_2 \colon n_b(s)=-k\}$ results in $n_b(b^k s)=0$ for all $s \in C$, by construction. Let $f \in F$, then $k \in \Z$ was chosen such that $n_b(b^k f)\neq 0$ and $m_b(fb^{-k}) \neq 0$, and we see that for all $s \in C$
+\begin{align*}
+n_b(b^kfs)=n_b(b^k f b^{-k}b^k s) \neq 0.
+\end{align*} 
+Thus $fs \not \in C$, i.e., so $f C \cap C = \emptyset$. Let $D=\mathbb{F}_2 \backslash C$. For each $1 \leq j \leq n$, set $s_j:=a^jb^k$, then $n_b(s_j s)=0$ and $n_a(s_j s)=j$ for all $s \in D$. And we see that for all $1 \leq i \neq j \leq n$
+\begin{align*}
+n_a(s_j s) = j \neq i =n_a(s_i s),
+\end{align*}
+so $s_j D \cap s_i D = \emptyset$. And from this we conclude that $\mathbb{F}_2$ is a Powers group.
+\end{proof}
+\end{example}
+
+In the following, we let $\lambda \colon \C G \to B(\ell^2(G))$ be the left-regular representation and $C^*_r(G)$ denote the reduced group $C^*$-algebra of $G$ as in chapter 2. We denote by $\tau_0$ the canonical faithful tracial state on $C^*_r(G)$, $\tau_0(x)=\langle x \delta_e,\delta_e\rangle$. For $D \subset G$, we denote by $\ell^2(D)$ the closed subspace
+\begin{align*}
+\ell^2(D):=\{ \xi \in \ell^2(G)\ \colon\ \xi(s) = 0 \ \text{for} \ s \not\in D\} \subseteq \ell^2(G)
+\end{align*}
+Then $\ell^2(D)^{\perp} = \ell^2(G \backslash D)$, indeed, if $\xi \in \ell^2(G\backslash D)$ and $\eta \in \ell^2 (D)$ then their support is disjoint, hence
+\begin{align*}
+\langle \xi, \eta \rangle&=\sum_{g \in G} \xi(g) \overline{\eta(g)}\\
+&=\sum_{g \in D} \xi(g) \overline{\eta(g)} + \sum_{g \in G \backslash D} \xi(g) \overline{\eta(g)}\\
+&= 0,
+\end{align*}
+so $\xi \perp \eta$.
+%
+%
+%
+\begin{proposition}\label{power group estimate}
+Let $G$ be a Powers group, if $a \in \C G$ is a self-adjoint element with $\tau_0(a)=0$, then for $n \geq 1$ there are $s_1,\dots,s_n \in G$ such that
+\begin{align*}
+\left\lv \frac{1}{n} \sum_{j=1}^n \lambda_{s_j} a \lambda_{s_j}^*\right\rv \leq \frac{2}{\sqrt{n}} \lv a \rv.
+\end{align*}
+\begin{proof}
+Identify $\C G$ with as a dense subset of $C_r^*(G)$, i.e., as $\lambda(\C G)$. Let $a \in \C G$ be self-adjoint, and let $z_1,\dots, z_n \in \C$ and $f_1, \dots ,f_n \in G$ be such that $a=\sum_{i=1}^n z_i \lambda_{f_i}$. Then 
+\begin{align*}
+\tau_0(a)&=\langle \sum_{j=1}^n z_j \lambda_{f_{j}} \delta_e,\delta_e\rangle\\
+&=\sum_{j=1}^n z_j \langle \delta_{f_{j} e}, \delta_{e}\rangle\\
+&=\begin{cases}
+z_k & \text{if} \ f_k = e \ \text{for some} \ 1 \leq k \leq n\\
+0 & \text{else}
+\end{cases}
+\end{align*}
+Assuming that $\tau_0(a)=0$, we may assume that $f_1, \dots, f_k \in G \backslash \{e\}$. Since $G$ is a Powers group and the set $F:=\{f_1,\dots,f_n\}$ is finite, there is a partition $G=C \cupdot D$ and elements $s_1,\dots,s_n \in G$ such that for $1 \leq j \leq n$ and $s_j D \cap s_i D = \emptyset$ for $1 \leq i \neq j \leq n$ and $C \cap f_jC=\emptyset$. Then, for $f_j \in \F$, we have
+\begin{align*}
+f_j^{-1}(C \cap f_jC)=f_j^{-1}C \cap C=\emptyset,
+\end{align*}
+which implies that $f_j^{-1}C \subseteq D$. Let $1 \leq j \leq n$ and $g \in s_j C$, then $g=s_jc$ for some $c \in C$ 
+\begin{align*}
+s_j f_i^{-1} s_j^{-1}g=s_j f_i^{-1} c \in s_j f_i^{-1} C \subseteq s_jD. 
+\end{align*}
+Thus, if $\xi \in \ell^2(s_j C)$, defined in the passage above, then for $g \in s_jC$ we have $s_j f_i^{-1} s_j^{-1}g \in s_jD$. And since $s_jD \cap s_j C = \emptyset$, we have
+\begin{align*}
+0=\xi(s_j f_i^{-1} s_j^{-1}g)=\lambda_{s_j f_i s_j^{-1}}\xi(g).
+\end{align*}
+So $\lambda_{s_j f_i s_j^{-1}}$ maps $\ell^2(s_j C)$ into $\ell^2(s_j D)$ for all $1 \leq j \leq n$. Define
+\begin{align*}
+b_j:= \lambda_{s_j} a \lambda_{s_j}^* = \sum_{k=1}^n z_k \lambda_{s_jf_k s_j^{-1}},
+\end{align*}
+then $b_j$ maps $\ell^2(s_j C )$ into $\ell^2(s_j D)$ for all $j$. For each $1 \leq j \leq n$, let $p_j$ denote the projection of $\ell^2(G)$ onto $\ell^2(s_jD)$. By assumption $G = C \cupdot D$, so $G \backslash s_jD=s_jC$. Since $p_j$ is a projection, we have that
+\begin{align*}
+\Ran(p_j)=\ker(1-p_j)=\ell^2(s_j D)\\
+\Ran(1-p_j)=\ker(p_j)=\ell^2(s_j C).
+\end{align*}
+Thus, since $b_j$ maps $\ell^2(s_j C)$ into $\ell^2(s_j D)=\ker(1-p_j)$, we have 
+\begin{align*}
+(1-p_j)b_j(1-p_j)=0.
+\end{align*} Using this fact, if $\xi \in \ell^2(G)$ with $\lv \xi \rv = 1$, we get for $1 \leq j \leq n$:
+\begin{align*}
+|\langle b_j \xi, \xi \rangle| &= | \langle b_j p_j \xi + b_j(1-p_j)\xi, p_j \xi + (1-p_j)\xi\rangle|\\
+&=|\langle b_j p_j \xi, p_j \xi \rangle + \langle b_j p_j \xi, (1-p_j) \xi \rangle+\langle b_j(1-p_j)\xi,p_j \xi \rangle + \langle b_j (1-p_j)\xi, (1-p_j)\xi \rangle|\\
+&=| \langle b_j \xi p_j \xi \rangle + \langle b_j p_j \xi, (1-p_j)\xi \rangle + \langle b_j(1-p_j)\xi,(1-p_j) \xi \rangle| \\
+&\leq | \langle b_j \xi, p_j \xi\rangle | + | \langle b_j p_j \xi, (1-p_j)\xi\rangle + \langle (1-p_j)b_j(1-p_j)\xi ,\xi\rangle|\\
+&=|\langle b_j \xi , p_j \xi \rangle| + |\langle b_j p_j \xi , (1-p_j) \xi \rangle|\\
+&\leq 2\lv b_j \rv \lv p_j \xi \rv \leq 2 \lv a \rv \lv p_j \xi \rv,
+\end{align*}
+since $\lv b_j \rv = \lv \lambda_{s_j} a \lambda_{s_j}^*\rv$ and $\lambda_{s_j}$ is a unitary operator and that both $p_j, (1-p_j)$ are projections and such have norm one. If we define
+\begin{align*}
+b:= \frac{1}{n} \sum_{k=1}^n b_j=\sum_{k=1}^n \lambda_{s_j} a \lambda_{s_j}^*,
+\end{align*} then we get
+\begin{align*}
+|\langle b \xi , \xi \rangle| &=  \left| \frac{1}{n} \sum_{k=1}^n \langle b_j \xi , \xi \rangle \right|\\
+&\leq \frac{1}{n} \sum_{k=1}^n | \langle b_j \xi, \xi \rangle|\\
+&\leq \frac{2}{n} \lv a \rv \sum_{k=1}^n \lv p_j \xi \rv.
+\end{align*}
+Viewing the vectors $x:=(\lv p_1 \xi \rv, \lv p_2 \xi \rv, \dots, \lv p_n \xi \rv)$ and $y=(1,1,\dots,1)$ in $\R^n$ we get
+\begin{align*}
+\sum_{k=1}^n \lv p_j \xi \rv= |\langle x , y \rangle_{\R^n}| \leq \left( \sum_{k=1}^n \lv p_j \xi \rv^2\right)^{\frac{1}{2}} \sqrt{n}.
+\end{align*}
+Since the projections $p_j$ are orthogonal, the Pythagorean theorem for inner product spaces and the above gives us
+\begin{align*}
+\frac{2}{n} \lv a \rv \sum_{k=1}^n \lv p_j \xi \rv & \leq \frac{2}{\sqrt{n}} \lv a \rv \left( \sum_{k=1}^n \lv p_j \xi \rv^2\right)^{\frac{1}{2}} \\
+&\leq \frac{2}{\sqrt{n}} \lv a \rv \left\lv \left(\sum_{k=1}^n p_j\right) \xi \right\rv \leq \frac{2}{\sqrt{n}} \lv a \rv.
+\end{align*}
+Since $b_j$ is self-adjoint for $1 \leq j \leq n$, so is $b$. For self-adjoint elements in $B(\H)$, the norm of $b$ is given by $\lv b \rv= \sup\{|\langle b \xi , \xi \rangle| \colon \lv \xi \rv = 1\}$, and since $\xi$ was chosen with $\lv \xi \rv = 1$, this concludes the proof.
+\end{proof}
+\end{proposition}
+
+\begin{theorem}\label{powers group dixmier}
+Let $G$ be a discrete Powers group, then $C_r^*(G)$ has the Dixmier property and hence is simple with unique tracial state.
+\begin{proof}
+Since $\tau_0$ is a faithful tracial state on $C_r^*(G)$, it is by \Cref{dixmier simple} enough to check if it has the Dixmier property. Identifying $\C G$ with $\lambda(\C G) \subseteq C_r^*G$ as a dense $*$-subalgebra, it is by \Cref{dixmier dense} enough to check if it has the Dixmier property at all $a \in \C G$ self-adjoint element with $\tau_0(a)=0$. So let $a \in \C G$ satisfy these conditions. For each $n \geq 1$, apply \Cref{power group estimate} to achieve elements $s_1, \dots, s_n \in G$ such that if $a_n:= \frac{1}{n} \sum_{j=1}^n \lambda_{s_j} a \lambda_{s_j}^*$ we have
+\begin{align*}
+\lv a_n \rv \leq \frac{2}{\sqrt{n}} \lv a \rv.
+\end{align*}
+Then $a_n \in D_{C_r^*(G)}(a)$ for all $n \geq 1$. and $a_n \to 0$ as $n$ tends to infinity, so $0 \in \overline{D_{C_r^*(G)}(a)}$. So $C_r^*(G)$ has the Dixmier property at $a$, implying that $C_r^*(G)$ is simple with unique tracial state.
+\end{proof}
+\end{theorem}
+ 

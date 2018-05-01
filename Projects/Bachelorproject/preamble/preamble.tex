@@ -1,0 +1,281 @@
+\documentclass[10pt,twoside,openany,final]{memoir}
+\usepackage[utf8]{inputenc}
+\usepackage[pass]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{flexisym}
+\usepackage{hyperref}
+\usepackage{xr}
+\usepackage[all]{xy}
+\usepackage{tikz-cd}
+\usepackage{hyperref}
+\usepackage[style=alphabetic,backend=bibtex]{biblatex}
+\usepackage{filecontents}
+\usepackage[english, status=draft]{fixme}
+\fxusetheme{color}
+\usepackage{cleveref} 
+\usepackage[backgroundcolor=cyan]{todonotes}
+\usepackage{wallpaper}
+\usepackage{faktor}
+
+
+\checkandfixthelayout
+
+\begin{filecontents}{bibtest.bib}
+@article{bko,
+  title={C*-simplicity and the unique trace property for discrete groups},
+  author={Breuillard, Emmanuel and Kalantar, Mehrdad and Kennedy, Matthew and Ozawa, Narutaka},
+  journal={arXiv preprint arXiv:1410.2518},
+  year={2014}
+}
+
+@book{blackadar,
+  title={Operator algebras: theory of C*-algebras and von Neumann algebras},
+  author={Blackadar, Bruce},
+  volume={122},
+  year={2006},
+  publisher={Springer Science \& Business Media}
+}
+
+@article{powers1975simplicity,
+  title={Simplicity of the C*-algebra associated with the free group on two generators},
+  author={Powers, Robert T and others},
+  journal={Duke Math. J},
+  volume={42},
+  number={1},
+  pages={151--156},
+  year={1975}
+}
+
+
+@book{zhu,
+  title={An introduction to operator algebras},
+  author={Zhu, Kehe},
+  volume={9},
+  year={1993},
+  publisher={CRC press}
+}
+
+@article{de2007simplicity,
+  title={On simplicity of reduced C*-algebras of groups},
+  author={De La Harpe, Pierre},
+  journal={Bulletin of the London Mathematical Society},
+  volume={39},
+  number={1},
+  pages={1--26},
+  year={2007},
+  publisher={Oxford University Press}
+}
+
+@misc{rudin1991functional,
+  title={Functional analysis. International series in pure and applied mathematics},
+  author={Rudin, Walter},
+  year={1991},
+  publisher={McGraw-Hill, Inc., New York}
+}
+
+@book{brown2008c,
+  title={C*-algebras and finite-dimensional approximations},
+  author={Brown, Nathanial Patrick and Ozawa, Narutaka},
+  volume={88},
+  year={2008},
+  publisher={American Mathematical Soc.}
+}
+
+@book{folland2013real,
+  title={Real analysis: modern techniques and their applications},
+  author={Folland, Gerald B},
+  year={2013},
+  publisher={John Wiley \& Sons}
+}
+
+@article{furman2003minimal,
+  title={On minimal, strongly proximal actions of locally compact groups},
+  author={Furman, Alex},
+  journal={Israel Journal of Mathematics},
+  volume={136},
+  number={1},
+  pages={173--187},
+  year={2003},
+  publisher={Springer}
+}
+
+@article{le2015c,
+  title={C*-simplicity and the amenable radical},
+  author={Le Boudec, ADRIEN},
+  journal={arXiv preprint arXiv:1507.03452},
+  year={2015}
+}
+@book{MI,
+  title={Measure theory},
+  author={Hansen, Ernst},
+  year={2006},
+  publisher={University of Copenhagen}
+}
+
+@article{haagerup2015new,
+  title={A new look at C*-simplicity and the unique trace property of a group},
+  author={Haagerup, Uffe},
+  journal={arXiv preprint arXiv:1509.05880},
+  year={2015}
+}
+
+
+\end{filecontents}
+
+\addbibresource{bibtest.bib}
+
+
+\chapterstyle{verville}
+
+\newcommand{\restr}[2]{\ensuremath{\left.#1\right|_{#2}}}
+
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{1}
+
+\makeatletter
+\def\bign#1{\mathclose{\hbox{$\left#1\vbox to8.5\p@{}\right.\n@space$}}\mathopen{}}
+\def\Bign#1{\mathclose{\hbox{$\left#1\vbox to11.5\p@{}\right.\n@space$}}\mathopen{}}
+\def\biggn#1{\mathclose{\hbox{$\left#1\vbox to14.5\p@{}\right.\n@space$}}\mathopen{}}
+\def\Biggn#1{\mathclose{\hbox{$\left#1\vbox to17.5\p@{}\right.\n@space$}}\mathopen{}}
+\makeatother
+
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Ran}{Ran}
+\DeclareMathOperator{\Prob}{Prob}
+\DeclareMathOperator{\conv}{conv}
+\DeclareMathOperator{\AR}{AR}
+\DeclareMathOperator{\Homeo}{Homeo}
+
+\makepagestyle{abs}
+    \makeevenhead{abs}{}{}{}
+    \makeoddhead{abs}{}{}{}
+    \makeevenfoot{abs}{}{\scshape I }{}
+    \makeoddfoot{abs}{}{\scshape  I }{}
+    %\makeheadrule{abs}{\textwidth}{\normalrulethickness}
+    %\makefootrule{abs}{\textwidth}{\normalrulethickness}{\footruleskip}
+\pagestyle{abs}
+
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+\makepagestyle{cont}
+    \makeevenhead{cont}{}{}{}
+    \makeoddhead{cont}{}{}{}
+    \makeevenfoot{cont}{}{\scshape II }{}
+    \makeoddfoot{cont}{}{\scshape  II }{}
+    %\makeheadrule{abs}{\textwidth}{\normalrulethickness}
+    %\makefootrule{abs}{\textwidth}{\normalrulethickness}{\footruleskip}
+\pagestyle{cont}
+
+\newcommand{\lv}{\lVert}
+\newcommand{\rv}{\rVert}
+
+
+\renewcommand\chaptermarksn[1]{}
+\nouppercaseheads
+\createmark{chapter}{left}{shownumber}{}{.\space}
+\makepagestyle{dut}
+    \makeevenhead{dut}{\scshape\rightmark}{}{Malthe Karbo}
+    \makeoddhead{dut}{\scshape\leftmark}{}{Malthe Karbo}
+    \makeevenfoot{dut}{}{\scshape $-$ \thepage\ $-$}{}
+    \makeoddfoot{dut}{}{\scshape $-$ \thepage\ $-$}{}
+    \makeheadrule{dut}{\textwidth}{\normalrulethickness}
+    \makefootrule{dut}{\textwidth}{\normalrulethickness}{\footruleskip}
+\pagestyle{dut}
+
+\makepagestyle{chap}
+    \makeevenhead{chap}{}{}{}
+    \makeoddhead{chap}{}{}{}
+    \makeevenfoot{chap}{}{\scshape $-$ \thepage\ $-$}{}
+    \makeoddfoot{chap}{}{\scshape $-$ \thepage\ $-$}{}
+    \makefootrule{chap}{\textwidth}{\normalrulethickness}{\footruleskip}
+\copypagestyle{plain}{chap}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\mbr}{(X,\mathcal{A})}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\cc}{C_c}
+\newcommand{\PP}{\mathcal{P}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\dd}{\partial}
+\newcommand{\ee}{\epsilon}
+\newcommand{\la}{\lambda}
+\renewcommand{\H}{\mathcal{H}}
+\newcommand{\pp}{\text{Prob}}
+\newcommand{\U}{\mathcal{U}}
+
+\makeatletter
+\newcommand{\Spvek}[2][r]{%
+  \gdef\@VORNE{1}
+  \left(\hskip-\arraycolsep%
+    \begin{array}{#1}\vekSp@lten{#2}\end{array}%
+  \hskip-\arraycolsep\right)}
+
+\def\vekSp@lten#1{\xvekSp@lten#1;vekL@stLine;}
+\def\vekL@stLine{vekL@stLine}
+\def\xvekSp@lten#1;{\def\temp{#1}%
+  \ifx\temp\vekL@stLine
+  \else
+    \ifnum\@VORNE=1\gdef\@VORNE{0}
+    \else\@arraycr\fi%
+    #1%
+    \expandafter\xvekSp@lten
+  \fi}
+\makeatother
+
+\def\acts{\curvearrowright}
+
+\newcommand{\K}{\mathbb{K}}
+
+\newtheoremstyle{break}
+	{\topsep}{\topsep}
+	{\bfseries}{}
+	{\newline}{}
+\theoremstyle{break}
+\newtheorem{theorem}[section]{Theorem}
+\newtheorem{lemma}[section]{Lemma}
+\newtheorem{proposition}[section]{Proposition}
+\newtheorem{corollary}[section]{Corollary}
+\newtheorem{definition}[section]{Definition}
+\newtheoremstyle{Break}
+	{\topsep}{\topsep}
+	{}{}
+	{\bfseries}{}
+	{\newline}{}
+\theoremstyle{Break}
+\newtheorem{example}[section]{Example}
+\newtheorem{remark}[section]{Remark}
+\newtheorem{note}[section]{Note}
+\setcounter{secnumdepth}{0}
+\usepackage{xpatch}
+\xpatchcmd{\proof}{\ignorespaces}{\mbox{}\\\ignorespaces}{}{}
+
+\newcommand*{\diff}{\mathop{}\!\mathrm{d}}

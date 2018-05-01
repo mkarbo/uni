@@ -1,0 +1,574 @@
+\documentclass[9pt,notheorems,xcolor=pdftex,dvipsnames,table]{beamer}
+\usepackage[utf8]{inputenc}
+\usefonttheme{serif}
+\usetheme{Madrid}
+\definecolor{light-gray}{gray}{0.95}
+\setbeamercolor{background canvas}{bg=light-gray}
+\linespread{1.2}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{graphicx}
+\usepackage{soul}
+\usepackage{ulem}
+%\setbeamertemplate{sidebar right}{}
+\setbeamertemplate{navigation symbols}{}
+\makeatletter
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertauthor
+  \end{beamercolorbox}%
+   \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
+\newcommand{\dd}{\partial}
+
+%\setbeamertemplate{footline}{%
+%\hfill\usebeamertemplate***{navigation symbols}
+%\hspace{1cm}\insertframenumber{}/\inserttotalframenumber}
+
+\usepackage{calligra}
+
+\usepackage{tikz}
+\usepackage{tikz-cd}
+
+\newcommand{\lv}{\lVert}
+\newcommand{\rv}{\rVert}
+
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Ran}{Ran}
+\DeclareMathOperator{\Prob}{Prob}
+\DeclareMathOperator{\conv}{conv}
+\DeclareMathOperator{\AR}{AR}
+\DeclareMathOperator{\Homeo}{Homeo}
+\def\acts{\curvearrowright}
+\newcommand{\cc}{C_c}
+\renewcommand{\emph}[1]{{\textit{#1}}}
+\renewcommand{\{}{\left\lbrace}
+\renewcommand{\}}{\right\rbrace}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\Q}{\mathbb{Q}}
+\renewcommand{\H}{\mathcal{H}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Gal}{\mathrm{Gal}}
+\newcommand{\IN}{\mathrm{in}_{\leq}}
+\newcommand{\lex}{\leq_{\mathrm{lex}}}
+\newcommand{\lcm}{\mathrm{lcm}}
+\newcommand{\wdots}[2]{ #1, \ldots ,#2 }
+\renewcommand{\P}{\{ \wdots{p_1}{p_m} \}}
+\newcommand{\K}{K[ \wdots{x_1}{x_n} ]}
+\newcommand{\I}{\langle \wdots{p_1}{p_m}  \rangle}
+
+
+\newtheorem{theorem}{Sætning}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+
+
+\usepackage{array}
+\usepackage{amsthm,amsmath,amssymb}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{url}
+
+\title{Simplicty and uniqueness of trace of group $C^*$-algebras}
+\subtitle{Bachelor thesis defense}
+\author{Malthe Munk Karbo}
+\institute{Advisor: Mikael Rørdam}
+\date{February 3, 2017}
+
+
+\newcommand{\divides}{\bigm|}
+\newcommand{\ndivides}{%
+  \mathrel{\mkern.5mu % small adjustment
+    % superimpose \nmid to \big|
+    \ooalign{\hidewidth$\big|$\hidewidth\cr$\nmid$\cr}%
+  }%
+}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Table of Contents}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{Table of Contents}
+\tableofcontents
+\end{frame}
+
+\section{Introduction, history and motivation}
+\begin{frame}[t]
+\frametitle{Motivation and background}
+\begin{itemize}
+\item<2->In 1975, Robert T. Powers proved that $\mathbb{F}_2$ was $C^*$-simple and that this implied the unique trace property of $\mathbb{F}_2$.
+\visible<3->{\item The proof Powers gave was generalised to a larger class of groups - Powers groups.}
+\end{itemize}	
+\visible<4->{We want to study a group $G$ by studying group $C^*$-algebras, for an example by studying $C_r^*(G)$.}
+\\~\\
+\visible<5->{Was open question if $C_r^*(G)$ simple $\iff$ $C_r^*(G)$ unique trace $\iff$ trivial amenable radical of $G$.}
+\\~\\
+\visible<6->{Today we see for discrete countable group $G:$ \begin{center}
+$C_r^*(G)$ simple $\implies$ $C_r^*(G)$ unique trace $\iff$ trivial amenable radical of $G$.
+\end{center}}
+\end{frame}
+\section{An introduction to various topics}
+\subsection{Group $C^*$-algebras}
+\begin{frame}[t]
+	\frametitle{A three minute crash-course on group $C^*$-algebras}
+\visible<1->{We are interested in describing discrete groups $G$ using theory of $C^*$-algebras. How do we do this?}
+\visible<2-3>{
+\begin{block}{Unitary representations}
+A \emph{unitary representation} of a discrete group $G$ is a pair $(u,\H)$, where $\H$ is a Hilbert space and $u \colon G \to \mathcal{U}(\H)$ is a group homomorphism into the group of unitary operators on $\H$. We use the following notation for unitary representations: $u(g):=u_g, \ g \in G$.
+\end{block}
+}
+\visible<3-3>{
+\begin{block}{Group $C^*$-algebra}
+Given a unitary representation $(u,\H)$ of a discrete group $G$, we define the \emph{group $C^*$-algebra} associated to $u$ by $C_u^*(G):=C^*(\{u_g \colon g \in G\})\subseteq B(\H)$, the $C^*$-subalgebra of $B(\H)$ generated by the unitaries $\{u_g\}_{g \in G}$.
+\end{block}
+}
+\end{frame}
+
+
+\begin{frame}[t]
+\frametitle{A three minute crash-course on group $C^*$-algebras}
+\begin{block}{An important example}
+\visible<2->{The pair $(\lambda,\ell^2(G))$, where $\lambda \colon G \to \mathcal{U}(\ell^2(G)$ is defined by
+\begin{align*}
+\left(\lambda_g \xi \right)(s)=\xi(g^{-1}s), \quad s,g \in G, \ \xi \in \ell^2(G),
+\end{align*}
+is called the \emph{left-regular representation} of $G$,}
+\visible<3->{and the associated group $C^*$-algebra,
+\begin{align*}
+C_r^*(G):=C_{\lambda}^*(G) \subseteq B(\ell^2(G)),
+\end{align*} called the \emph{reduced group $C^*$-algebra} of $G$.}
+\end{block}
+\end{frame}	
+
+\begin{frame}[t]
+\frametitle{A three minute crash-course on group $C^*$-algebras}
+\visible<1->{The set $\{\delta_g\}_{g \in G} \subseteq \ell^2(G)$, where for $s,g \in G$ we define
+\begin{align*}
+\delta_s(g)=\begin{cases} 
+1 & \text{if } s = g\\
+0 & \text{else}
+\end{cases},
+\end{align*} is an orthonormal basis for $\ell^2(G)$.}
+
+\visible<2->{
+\begin{block}{Lemma}
+For discrete group $G$, the map $\tau_0 \colon C_r^*(G) \to \C$ defined by $\tau_0(x)=\langle x \delta_e , \delta_e\rangle$ is a faithful tracial state on $C_r^*(G)$.
+\end{block}
+}
+\visible<3->{
+\begin{block}{Definition}
+For a discrete group $G$, we say that $G$ is \textbf{\emph{$C^*$-simple}} if the reduced group $C^*$-algebra, $C_r^*(G)$, is simple. We say that $G$ has the \textbf{\emph{unique trace property}} if $\tau_0$, defined as above, is the only tracial state on $C_r^*(G)$.
+\end{block}
+}
+\end{frame}
+\subsection{Amenability}
+\begin{frame}[t]
+\frametitle{Amenability}
+Let $G$ be a countable discrete group. 
+\visible<2->{\begin{block}{Definition}
+A group $G$ is \emph{amenable} if there exists a finitely additive left-invariant probability measure $\mu$ on $G$.
+\end{block}}
+\visible<3->{Amenability is stable under usual group operations such as passing to subgroups and quotients.}
+\visible<4->{\begin{block}{Proposition}
+Any group $G$ has a largest amenable normal subgroup, $\AR_G$, called the \emph{amenable radical} of $G$.
+\end{block}}
+\visible<5->{Amenability is a strong property to satisfy, and has many consequences.}
+\end{frame}
+
+\subsection{Group actions and the Reduced crossed product}
+\begin{frame}[t]
+\frametitle{Group actions and the Reduced crossed product}
+Let $G$ be a countable discrete group and $\A$ a unital $C^*$-algebra.
+\visible<2-> {\begin{block}{Definition}
+An \emph{action} of $G$ on $\A$ is a group homomorphism $\alpha \colon G \to \Aut(\A)$ from $G$ to the group of $*$-automorphism on $\A$. Abbreviated $G \stackrel{\alpha}{\acts}\A$.
+\end{block}} 
+\visible<3->{Whenever $G\stackrel{\alpha}{\acts}\A \rightsquigarrow $ we make a $C^*$-algebra $\A \rtimes_{\alpha,r} G$ which contains $\A$ and $C_r^*(G)$ in a nice way. This $C^*$-algebra is called the reduced crossed product.}
+\end{frame}
+
+\subsection{Dixmier property}
+\begin{frame}[t]
+\frametitle{Dixmier property}
+Let $\A$ be a unital $C^*$-algebra. \visible<2->{For $a \in \A$ define $D(a):= \conv\{ u a u^* \colon u \in \mathcal{U}(\A)\}.$}
+\visible<3->{\begin{block}{Definition}
+We say that $\A$ has the \emph{Dixmier property} if
+\begin{align*}
+\overline{D(a)} \cap \C 1_{\A} \neq \emptyset \quad \forall a \in \A.
+\end{align*}
+\end{block}
+}
+\visible<4->{\begin{block}{Lemma}
+Let $\A$ be a unital $C^*$-algebra with a tracial state $\tau$. If $\A$ has the Dixmier property, then $\tau$ is unique.
+\end{block}}
+\visible<5->{\begin{block}{Proposition}
+Let $\A$ be a unital $C^*$-algebra with a faithful tracial state $\tau$. If $\A$ has the Dixmier property, then $\A$ is simple.
+\end{block}}
+\end{frame}
+
+\section{Boundary actions}
+\begin{frame}[t]
+\frametitle{Boundary actions: $G$-spaces}
+In the following, let $G$ be a second countable locally compact group and $X$ a compact Hausdorff space.
+\visible<2->{\begin{block}{Definition}
+A $G$-action of $G$ on $X$ is a continuous group homomorphism $\alpha \colon G \to \mathrm{Homeo}(X)$. We write $G \acts X$ to mean that $G$ acts on $X$, and as before, we write $\alpha(g) (x) :=g.x$ for $x \in X$ and $g \in G$. \visible<3->{A space equipped with a $G$-action is called a $G$-space.}
+\end{block}}
+\visible<4->{$\Prob(X) = \mathcal{S}(C(X))$ with weak$^*$ topology.}
+\begin{enumerate}
+\item<5->{$G \acts X \rightsquigarrow G \acts C(X)$ by equipping $G$ with discrete topology and defining \begin{align*}
+g.f(x):=f(g^{-1}.x), \quad g \in G, \ x \in X \ \text{and} \ f \in C(X).
+\end{align*}}
+\item<6->{$G \acts X \rightsquigarrow G \acts \Prob(X)$ by equipping $G$ with discrete toplogy and defining \begin{align*}
+g.\mu(E):=\mu(g^{-1}.E), \ \mu \in \Prob(X), \ g \in G \text{ and } E\subseteq X \text{ Borel},
+\end{align*}}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[t]
+\frametitle{Boundary actions: Minimal actions}
+\begin{block}{Definition}
+A $G$-space $X$ is said to be minimal if every $G$-orbit is dense in $X$.
+\end{block}
+\visible<2->{\begin{block}{Definition}
+A subset $Y \subseteq X$ of a $G$-space $X$ is \emph{minimal} if it is non-empty, closed and $G$-invariant and a minimal element in the set of non-empty, closed and $G$-invariant subsets of $X$.
+\end{block}}
+\visible<3->{An application of Zorn's lemma yields that every compact $G$-space $X$ has a minimal subspace. Moreover a subset $Y$ is minimal if and only if the action $G \acts Y$ is minimal}
+\end{frame}
+\begin{frame}[t]
+\frametitle{Boundary actions}
+\begin{block}{Definition}
+For a $G$-space $X$, the action of $G$ is \emph{strongly proximal} if for each $\mu \in \Prob(X)$ we have
+\begin{align*}
+\overline{G.\mu}^{w^*} \cap \{\delta_x \colon x \in X \} \neq \emptyset.
+\end{align*}
+\end{block}
+\visible<2->{\begin{block}{Definition}
+If $X$ is a compact $G$-space, we say that the action $G \acts X$ is a \emph{boundary action} if it is minimal and strongly proximal. A compact $G$-space $X$ for which the action is a boundary action is called a \emph{$G$-boundary}
+\end{block}}
+\end{frame}
+
+\begin{frame}[t]
+\frametitle{Boundary actions}
+There are quite a few different equivalent conditions for a compact $G$-space $X$ to be a $G$-boundary.
+\visible<2->{\begin{block}{Proposition}
+For a compact $G$-space $X$, TFAE:
+\begin{enumerate}
+\item $X$ is a $G$-boundary,
+\item For every $\nu \in \Prob(X)$ we have $\{\delta_x \colon x \in X \} \subseteq \overline{G.\nu}^{w^*}$ and
+\item $\Prob(X)$ admits no non-trivial closed convex subsets which are $G$-invariant under the induced action $G \acts \Prob(X)$.
+\end{enumerate}
+\end{block}}
+\visible<3->{In laymans terms, a $G$-boundary is a space such that every $G$-orbit in $\Prob(X)$ becomes a black hole for all the point masses when going to weak$^*$ closure.}
+\end{frame}
+
+\begin{frame}[fragile,t]
+\frametitle{Properties of different actions}
+It turns out that some of the properties we've seen behave nicely and have certain properties:
+\begin{itemize}
+\item<2-> The $G$-boundary property is preserved under quotients,
+\item<3-> Strongly proximality is preserved under taking products,
+\item<4-> If $G \acts Y$ is minimal and $X$ is a $G$-boundary, then any continuous $G$-map $\varphi \colon Y \to X$ will be unique and surjective.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[t]
+\frametitle{Large $G$-boundaries}
+We now proceed to construct a largest $G$-boundary, in the sense that it has the universal property that every other $G$-boundary is a quotient of it.
+\visible<2->{\begin{block}{Definition}
+A compact $G$-boundary $Z$ is a \emph{universal boundary} for $G$ if every other $G$-boundary is a quotient of it.
+\end{block}}
+\visible<3->{\textbf{remark:} Will be unique up to isomorphism.}
+\visible<4->{\begin{block}{Proposition}
+There exists a universal boundary of $G$, called the Furstenburg boundary of $G$, denoted by $\dd_F G$.
+\end{block}}
+\visible<5->{The proof is roughly:}
+\begin{enumerate}
+\item<6-> There is a bound on the cardinality of every compact $G$-boundary. 
+\item<7-> Index them up to isomorphism by their cardinality and form their product. It will be strongly proximal and compact.
+\item<8-> Use Zorn's lemma to pick a minimal subset.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[t]
+\frametitle{Amenable normal subgroups and boundary actions}
+It turns out that amenability plays a role in how groups act on boundary spaces.
+\visible<2->{\begin{block}{Proposition}
+\only<2>{A closed amenable normal subgroup $N \trianglelefteq G$ of a second countable locally compact group $G$}\only<3->{\sout{A closed amenable normal subgroup $N \trianglelefteq G$ of a second countable locally compact group $G$}} \only<4->{An amenable normal subgroup $N \trianglelefteq G$ of a countable discrete group $G$} acts trivially on every compact $G$-boundary $X$.
+\end{block}}
+\visible<5->{And more generally we have:}
+\visible<6->{\begin{block}{Proposition (Furman)}
+For any countable discrete group $G$ with $t \in G$, it holds that $t \in \AR_G$ if and only if $t \in \ker(G \acts X)$ for all compact $G$-boundaries $X$.
+\end{block}}
+\end{frame}
+
+
+
+\section{$C^*$-simplicity using boundary actions}
+\begin{frame}[t]
+\frametitle{Some remarks and notation}
+From now $G$ will be a discrete and countable group and $X$ a compact Hausdorff space. \visible<2->{Before continuing onward, we recall:}
+\begin{enumerate}
+\item<3->{$G \acts X \rightsquigarrow G \acts C(X)$}
+\item<4-> $G \acts X \rightsquigarrow G \acts \Prob(X)$.
+\item<5-> If $G \stackrel{\alpha}{\acts} C(X)$ we form $C(X) \rtimes_{\alpha,r} G$.
+\item<6-> $G \acts \mathcal{S}(C_r^*(G))$ by $t.\varphi(a)=\varphi(\lambda_t a \lambda_t^*)$, $\varphi \in \mathcal{S}(C_r^*(G))$, $a \in C_r^*(G)$ and $t \in G$
+\item<7-> $G \acts X \rightsquigarrow G \acts \mathcal{S}(C(X) \rtimes_{r} G)$: for $t \in G$ and any state $\varphi$ define $t.\varphi$ by
+\begin{align*}
+t.\varphi(a)=\varphi( \lambda_t a \lambda_{t}^*),\ a \in C(X) \rtimes_{r} G.
+\end{align*}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[t]
+\frametitle{$C^*$-simplicity using boundary actions}
+We now start to show some of results mentioned in the beginning.
+\visible<2->{\begin{block}{Theorem}
+Let $G$ be a group and $t \in G$. Then $\tau(\lambda_t)= 0$ for all tracial states $\tau$ on $C_r^*(G)$ if and only if $t \not \in \AR_G$.
+\end{block}}
+\visible<3->{\begin{block}{Corollary}
+A group $G$ has the unique trace property if and only if it has trivial amenable radical.
+\end{block}}
+\only<5-6>{The proof of this relies on the fact that given a normal amenable subgroup $N \trianglelefteq G$, there is a $*$-homomorphism $\pi \colon C_r^*(G) \to C_r^*(G/N)$ such that
+\begin{align*}
+\pi(\lambda_G(t))=\lambda_{G/N}([t]), \quad \text{for all } t \in G.
+\end{align*}}
+\only<6-6>{Using this, one creates a trace $\tau$ on $C_r^*(G)$ which is $0$ on $\lambda_t$ for all $t \not \in \AR_G$.}
+\visible<8->{\begin{block}{Theorem}
+Let $G$ be a group and $t \in G$. Then $t \not\in \AR_G$ if and only if
+\begin{align*}
+0 \in \overline{\conv} \{\lambda_{sts^{-1}} \colon s \in G\}.
+\end{align*}
+\end{block}}
+\end{frame}
+
+
+\begin{frame}[t]
+\frametitle{$C^*$-simplicity and uniqueness of trace using boundary actions}
+\visible<1->{\begin{block}{Proposition [Matthew Kennedy, Emmanuel Breuillard, Merhdad Kalatar and Narutaka Ozawa, 2014]}
+A discrete group $G$ is $C^*$-simple if and only if there is a compact $G$-boundary $X$ such that the action is free.
+\end{block}}
+\visible<2->{What is this? Why is this interesting?}
+\end{frame}
+\begin{frame}[t]
+\frametitle{$C^*$-simplicity and uniqueness of trace using boundary actions}
+\visible<1->{Using this, we may prove the following:}
+\visible<2->{\begin{block}{Theorem}
+For a group $G$ TFAE:
+\begin{enumerate}
+\item<3-> $C_r^*(G)$ is simple,
+\item<4-> $\tau_0 \in \overline{\{ s. \varphi \colon s \in G\}}^{w^*}$ for all states $\varphi$ on $C_r^*(G)$,
+\item<4-> $\tau_0 \in \overline{\conv}^{w^*}\{s.\varphi \colon s \in G\}$ for all states $\varphi$ on $C_r^*(G)$,
+\item<4-> $\omega(1) \tau_0 \in \overline{\conv}\{s.\omega \colon s \in G\}$ for all $\omega \in \left(C_r^*(G)\right)^*$,
+\item<4-> For all $t_1,t_2,\dots,t_m \in G \backslash \{e\}$, we have
+\begin{align*}
+0 \in \overline{\conv}^{w^*} \{ \lambda_s ( \lambda_{t_1}+\lambda_{t_2}+\cdots+\lambda_{t_m}) \lambda_s^* \colon s \in G\},
+\end{align*}
+\item<4-> For all $t_1,t_2,\dots,t_m \in G \backslash \{e\}$ and $\varepsilon>0$, there exists $s_1, s_2 , \dots , s_n \in G$ such that
+\begin{align*}
+\left\lv \sum_{k = 1 }^n \frac{1}{n} \lambda_{s_k t_j s_k^{-1}} \right\rv < \varepsilon,
+\end{align*}
+for all $1 \leq j \leq m$.
+\end{enumerate}
+\end{block}}
+\end{frame}
+
+\begin{frame}[t]
+To summarize everything, we have
+\visible<2->{\begin{block}{Theorem}
+Let $G$ be a discrete group and $t \in G$. TFAE:
+\begin{enumerate}
+\item $t \not\in \AR_G$;
+\item there is a boundary action $G \acts X$ such that $t$ acts non-trivially on $X$;
+\item $\lambda_t \in \ker(\tau)$ for all tracial states $\tau$ on $C_r^*(G)$;
+\item $0 \in \overline{\conv}\{\lambda_{sts^{-1}} \colon s \in G \}$.
+\end{enumerate}
+\end{block}}
+\visible<3->{\begin{block}{Theorem}
+Let $G$ be a discrete group. TFAE:
+\begin{enumerate}
+\item $C_r^*(G)$ has unique tracial state;
+\item $G$ admits a faithful boundary action;
+\item $\AR_G = \{ e \}$;
+\item for all $t \in G \backslash \{e\}$ and all $\varepsilon>0$, there is $s_1,s_2,\dots,s_n \in G$ such that
+\begin{align*}
+\left\lv \sum_{j=1}^n \frac{1}{n} \lambda_{s_k t s_k ^{-1}} \right\rv < \varepsilon.
+\end{align*}
+\end{enumerate}
+\end{block}}
+\end{frame}
+
+\begin{frame}[t]
+To summarize everything, we have
+\visible<2->{\begin{block}{Theorem}
+Let $G$ be a discrete group. TFAE:
+\begin{enumerate}
+\item $C_r^*(G)$ is simple;
+\item $G$ admits a free boundary action;
+\item $\tau_0 \in \overline{\{ s. \varphi \colon g \in G \}}^{w^*}$, for all states $\varphi$ on $C_r^*(G)$;
+\item $\tau_0 \in \overline{\conv}^{w^*} \{ s. \varphi \colon s \in G \}$, for all states $\varphi$ on $C_r^*(G)$;
+\item for all $t_1,t_2,\dots,t_m \in G \backslash \{e \}$ and all $\varepsilon>0$, there exist $s_1,s_2,\dots,s_n \in G$ such that 
+\begin{align*}
+\left\lv \frac{1}{n} \sum_{j=1}^n \lambda_{s_j t_k s_j^{-1}} \right\rv <\varepsilon,
+\end{align*}
+for all $k=1,2,\dots,m$;
+\item $C_r^*(G)$ has the Dixmier property.
+\end{enumerate}
+\end{block}}
+\end{frame}
+
+\begin{frame}
+From these we have
+\visible<2->{\begin{block}{Theorem}
+$\AR_G = \{e_G\}$ $\iff$ $G$ has unique trace property $\iff$ for all $t \in G \backslash \{e\}$ and all $\varepsilon>0$, there is $s_1,s_2,\dots,s_n \in G$ such that
+\begin{align*}
+\left\lv \sum_{j=1}^n \frac{1}{n} \lambda_{s_k t s_k ^{-1}} \right\rv < \varepsilon.
+\end{align*}
+\end{block}
+}
+\visible<3->{\begin{block}{Theorem}
+$G$ is $C^*$-simple $\iff$ for all $t_1,t_2,\dots,t_m \in G \backslash \{e \}$ and all $\varepsilon>0$, there exist $s_1,s_2,\dots,s_n \in G$ such that 
+\begin{align*}
+\left\lv \frac{1}{n} \sum_{j=1}^n \lambda_{s_j t_k s_j^{-1}} \right\rv <\varepsilon,
+\end{align*}
+for all $k=1,2,\dots,m$
+\end{block}
+}
+\visible<4->{Thus \begin{center}
+$C_r^*(G)$ simple $\implies$ $C_r^*(G)$ unique trace $\iff$ trivial amenable radical of $G$.
+\end{center}}
+\end{frame}
+\begin{frame}
+\begin{center}
+\Huge The end.\\
+\huge thanks for listening
+\end{center}
+\end{frame}
+\end{document}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+\section{reduced crossed products}
+\begin{frame}[t]
+\frametitle{Reduced crossed products}
+\visible<1-> {\begin{block}{Definition}
+An action of a discrete group $G$ on a unital $C^*$-algebra $\A$ is a group homomorphism $\alpha \colon G \to \Aut(\A)$ from $G$ to the group of $*$-automorphism on $\A$.
+\end{block}} 
+\visible<2->{ We write $G \stackrel{\alpha}{\acts} \A$ to say that $G$ acts on $\A$ by an action $\alpha$, and if there is no fear of confusion simply $G \acts \A$}
+
+\visible<3-> {Given a triple $(\A,\alpha,G)$, we may turn the space 
+\begin{align*}
+\cc(G,\A):=\{ \sum_{g \in F} a_g \delta_g \colon\ F \subseteq G \text{ finite}, a_g \in \A \},
+\end{align*} into a $*$-algebra by using $\alpha$-twisted convolution and involution, such that $\cc(G,\A)$ contains a copy of $\A$ and a unitary copy of $G$.}
+\end{frame}
+\begin{frame}[t]
+\frametitle{Reduced crossed products}
+\visible<1->{Whenever we have such a triple $(\A,\alpha,G)$, take any faithful representation $\pi \colon \A \to B(\H)$ of $\A$ on a Hilbert space $\H$. }\visible<2->{Then, the map $\pi_{\alpha} \times (I \otimes \lambda) \colon \cc(G,\A) \to B(\H \otimes \ell^2(G))$ given by
+\begin{align*}
+\pi_{\alpha} \times (I \otimes \lambda) \left( \sum_{g \in F} a_g \delta_g \right) := \sum_{g \in G } \underbrace{\pi(\alpha_g((a_g))}_{\in \pi(\A)} \otimes \underbrace{\lambda_g}_{\in C_r^*(G)}
+\end{align*} is a well defined faithful representation of $\cc(G,\A)$ on $B(\H \otimes \ell^2(G))$, called a regular representation.}
+\visible<3->{ \begin{block}{Definition}
+Given a triple $(\A, \alpha,G)$, we define the \emph{reduced crossed product}, $A \rtimes_{\alpha,r} G$, to be the closure of the image of $\cc(G,\A)$ under a faithful regular representation $\pi_{\alpha} \times (I \otimes \lambda) \colon \cc(G,\A) \to B(\H \otimes \ell^2(G))$, i.e.,
+\begin{align*}
+\A \rtimes_{\alpha,r}G := \overline{(\pi_{\alpha} \times (I \otimes \lambda))(\cc(G,\A))}^{\lv \cdot \rv} \subseteq B(\H \otimes \ell^2(G)).
+\end{align*}
+\end{block}}
+\end{frame}
+
+\begin{frame}[t]
+\frametitle{Reduced crossed products}
+For a triple $(\A,\alpha,G)$, the reduced crossed product $\A \rtimes_{\alpha,r} G$ contains both an isometric isomorphic copy of $C_r^*(G)$ and $\A$
+\end{frame} 
+
+
+
+
+\section{The Amenable Radical}
+
+\begin{frame}[t]
+\frametitle{Amenability and the Amenable Radical}
+Let $G$ be some countable discrete group. There are different ways of describing the group using analytical theories. 
+\visible<2->{One of them is using the notion of amenability}
+
+\visible<3->{
+\begin{block}{Definition}
+A group $G$ is \emph{amenable} if there exists a finitely additive left-invariant probability measure $\mu$ on $G$.
+\end{block}
+}
+\visible<3->{This definition of amenability is but one of many equivalent definitions.}
+\end{frame}
+
+
+\begin{frame}[t]
+\frametitle{Amenability and the Amenable Radical}
+\visible<1->{Almost all the usual operations regarding normal subgroups of a group preserves amenability.}
+
+\visible<2->{
+\begin{block}{Proposition}
+If $G$ is a discrete group, then the following holds:
+\begin{enumerate}
+\item<2-2>{ If $G$ is amenable, then any subgroup $H \leq G$ is amenable.}
+\item<2-2>{ If $N \trianglelefteq G$ is amenable and $G / N$ is amenable, then $G$ is amenable.}
+\item<2-3>{ If $\{ H_i\} i \in I$ is a family of upward directed normal amenable subgroups of $G$, then their union $H := \bigcup_{i \in I} H_i$ is an amenable normal subgroup of $G$.}
+\end{enumerate}
+\end{block}
+\begin{block}{Lemma}
+\visible<2-3>{If $H_1, H_2$ are normal amenable subgroups of a discrete group $G$, then their subgroup product $H_1 H_2$ is a normal amenable subgroup of $G$.}
+\end{block}
+}
+\end{frame}
+
+\begin{frame}[t]
+\frametitle{Amenability and the Amenable Radical}
+\visible<1->{A consequence of the lemma and proposition we have}
+\visible<2->{\begin{block}{Proposition}
+Every countable discrete group $G$ has an amenable normal subgroup which contains all other amenable normal subgroups of $G$, i.e., it is the largest amenable subgroup of $G$.
+\end{block}
+}
+\visible<3->{\textbf{Proof:} Apply the lemma to make the family of all amenable normal subgroups $\{ H_i\}_{i \in I}$ of $G$ upward directed, and then apply the proposition to see that $H := \bigcup_{i \in I} H_i$ is an amenable normal subgroup of $G$}
+\visible<4->{\begin{block}{Definition (The Amenable Radical)}
+For a countable discrete group $G$, we define by $\AR_G$ to be the largest amenable normal subgroup of $G$, called the \emph{amenable radical} of $G$.
+\end{block}
+}
+\visible<5->{We see that $G$ is amenable if and only if $\AR_G=G$, and we say that $G$ has trivial amenable radical if and only if $\AR_G=\{e_G\}$}
+\end{frame} 

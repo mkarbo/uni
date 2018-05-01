@@ -1,0 +1,32 @@
+\thispagestyle {empty}
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {1}Basis and dimension}{2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {2}Dual space, dual basis}{6}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {3}Tensor products}{8}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {4}Alternating forms}{11}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {5}Invariance, reducibility and projections}{15}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {6}Combination of projections}{17}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {7}Range, null-space, rank and nullity}{19}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {8}Triangular form}{22}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {9}Nilpotence}{25}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {10}Jordan Normal Form}{28}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {11}Perpendicular projections}{31}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {12}Spectral theorem}{33}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {13}Polar decomposition}{35}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {14}Norms of linear transformations}{37}

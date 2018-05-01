@@ -1,0 +1,417 @@
+\chapter{$C^*$-simplicity and boundary actions}
+\section{Uniqueness of trace, a new way}
+The reader may have asked themselves, what does $C^*$-simplicity and boundary actions of a discrete group $G$ have to do with each other? It turns out that they relate very much. In this chapter, we will show results which define exactly when a discrete group is $C^*$-simple using boundary actions, and exactly when it has the unique trace property using boundary actions. The result is thus a more complete toolkit for characterizing $C^*$-simplicity and uniqueness of trace of discrete groups.
+
+Recall that when a discrete group $G$ admits an action $\alpha$ on a compact Hausdorff space $X$, we can form the reduced crossed product $C(X) \rtimes_{\alpha,r} G$ defined as in Chapter 2 which contains both $C_r^*(G)$ and $C(X)$, and that they are related in the following way:  $\lambda_t f \lambda_t^*=\alpha_t(f):=t.f$ for $t \in G$ and $f \in C(X)$, where $t.f(x)=f(t^{-1}.x)$ for $x \in X$. If the action $\alpha$ is understood, we will omit it from the notation $C(X) \rtimes_r G$. Throughout the rest of this chapter, $G$ will denote a countable discrete group and $X$ will denote a compact Hausdorff space.
+
+
+\begin{lemma}\label{state restrict point eval 0}
+Let $G$ be a discrete group admitting an action on a compact Hausdorff space $X$ and let $x \in X$. If $\varphi$ is a state on $C(X) \rtimes_r G$ such that $\varphi_{|C(X)}= \delta_x$, then $\varphi(\lambda(t))=0$ for all $t \in G$ such that $t$ does not act trivially on $x$, i.e., $t.x \neq x$.
+\begin{proof}
+Let $x \in X$ and $\varphi$ be a state on $C(X) \rtimes_r G$ satisfying the conditions in the statement. Since $\C$ and $C(X)$ are commutative, we see that for $f \in C(X)$,
+\begin{align*}
+\varphi(ff^*)=\varphi(f^*f)=\delta_x(f^*f)=\delta_x(f)^* \delta_x(f) =\varphi(f)^* \varphi(f).
+\end{align*}
+Since states are unital completely positive maps \textit{(u.c.p)} on $C(X)$, the above shows that $\varphi$ satisfies the bimodule propery of \cite[Proposition 1.5.7][12]{brown2008c} on every $f \in C(X)$. Thus $\varphi(af)=\varphi(a)\varphi(f)$ for all $a \in C(X) \rtimes_r G$. So for $t \in G$ and $f \in C(X)$ we get
+\begin{align*}
+\varphi(\lambda_t)f(x)=\varphi(\lambda_t f)=\varphi((t.f) \lambda_t) =\varphi(t.f) \varphi(\lambda_t)= t.f(x) \varphi(\lambda_t)=f(t^{-1}.x) \varphi(\lambda_t)
+\end{align*}
+By Urysohn's lemma, there is an $f \in C(X)$ such that $f(t^{-1}. x) \neq f(x)$, and since the above holds for all $f \in C(X)$, this implies $\varphi(\lambda_t)=0$ for $t^{-1} .x \neq x$, or equivalently when $t.x \neq x$.
+\end{proof}
+\end{lemma}
+
+Given a state on either $C_r^*(G)$ or $C(X) \rtimes_r G$ and $t \in G$, we define a new linear functional $t.\varphi$ by 
+\begin{align*}
+(t.\varphi)(a)=\varphi(\lambda_t a \lambda_t^*), \quad a \in C_r^*(G) \text{ or } C(X) \rtimes_r G.
+\end{align*}
+Then $t.\varphi$ is again a state, since $t.\varphi(1)=\varphi(\lambda_{t t^{-1}})=\varphi(1)=1$ and the fact that the positive elements are stable under conjugation.
+
+\begin{lemma}\label{trace extend point restrict}
+Let $\tau$ be a tracial state on $C_r^*(G)$, and assume that $X$ is a $G$-boundary, i.e, $G \acts X$ is a boundary action. Then for all  $x \in X$ there is a state $\varphi$ on $C(X) \rtimes_r G$ extending $\tau$ such that the restriction of $\varphi$ to $C(X)$ is $\delta_x$.
+\begin{proof}
+$C_r^*(G)$ sits naturally inside $C(X) \rtimes_r G$, and $\tau$ is a state and thus a u.c.p map. Using Hahn-Banach we may extend $\tau$ to a state $\psi$ on $C(X) \rtimes_r G$. Let $\rho$ denote the restriction of $\psi$ to $C(X)$. Then $\rho$ is a state on $C(X)$. Since $X$ is a $G$-boundary, for all $x \in X$ we have $\delta_x \in \overline{G. \rho}^{w^*}$, i.e., there is a net $(g_i)_{i \in I} \subseteq G$ such that $g_i. \rho$ converges to $\delta_x$ in the weak$^*$-topology. Since the state space of $C(X) \rtimes_r G$ is weak$^*$-compact, the net $(g_i.\psi)_{i \in I}$ has a subnet $(g_j.\psi)_{j \in J}$ converging to some state $\varphi$ in the weak$^*$-topology. Then, for $f \in C(X)$, we see that
+\begin{align*}
+\varphi(f)=\lim_{j \in J} g_j . \rho(f)=\delta_x (f)= f(x),
+\end{align*}
+so the restriction of $\varphi$ to $C(X)$ is $\delta_x \in \mathcal{S}(C(X))$. Since $\tau$ is tracial, we get for $s,t \in G$
+\begin{align*}
+(s.\psi)(\lambda_t)=\psi(\lambda_{sts^{-1}})=\tau(\lambda_{sts^{-1}})=\tau(\lambda_t).
+\end{align*}
+Thus $\varphi(\lambda_t)=\lim_{j \in J} g_j.\psi(\lambda_t)=\tau(\lambda_t)$ for all $t \in G$. So $\varphi$ is an extension of $\tau$ satisfying the desired properties.
+\end{proof}
+\end{lemma}
+
+\noindent Given a normal amenable subgroup $N$ of a discrete group $G$, denote by $\lambda_G$ and $\lambda_{G/N}$ the left-regular representations of $G$, respectively, $G/N$ on $B(\ell^2(G))$, respectively, $B(\ell^2(G/N))$. By \cite[Proposition 3][3]{de2007simplicity} there is $*$-homomorphism $\pi \colon C_r^*(G) \to C_r^*\left(G/N\right)$ extending the canonical quotient map $q \colon \C G \to \C \left(G/N\right)$ such that the following diagram commutes
+\begin{center}
+\begin{tikzcd}
+\C G \ar{d}[swap]{\lambda_G} \ar{rr}{q}&& \C \left(G/N \right) \ar{d}{\lambda_{G/N}} \\
+C_r^*(G) \ar{rr}[swap]{\pi}  && C_r^*\left(G/N\right)
+\end{tikzcd} ($\star$)
+\end{center}
+With this in mind, we now are now ready to prove the following theorem
+
+\begin{theorem}\label{tau 0 iff t not in ARg}
+Let $G$ be a discrete group, and $t \in G$. Then $\tau(\lambda_t)=0$ for all tracial states $\tau$ on $C_r^*(G)$ if and only if $t \not\in \mathrm{AR}_G$. 
+\begin{proof}
+"$\Leftarrow$": Suppose that $t \not\in \AR_G$. By \Cref{furman}, there is a compact Hausdorff space $X$ such that $G \acts X$ is a boundary action with $t \not \in \ker(G \acts X)$, so let $x \in X$ witness this, i.e., such that $t.x \neq x$. Let $\tau$ denote any tracial state on $C_r^*(G)$. By \Cref{trace extend point restrict}, there is a state $\psi$ extending $\tau$ to $C(X) \rtimes_r G$ such that the restriction of $\psi$ to $C(X)$ is $\delta_x$. By \Cref{state restrict point eval 0}, since $t.x \neq x$, we have $\tau(\lambda_t)=\psi(\lambda_t)=0$. 
+
+\noindent "$\Rightarrow$": Assume $t \in G$ and that $\tau(\lambda_G(t))=0$ for every tracial state $\tau$ on $C_r^*(G)$. Let $\pi$ denote the induced $*$-homomorphism $C_r^*(G) \to C_r^*\left( G/\AR_G\right)$, which exists since $\AR_G$ is an amenable normal subgroup of $G$, and let $\tau'_0$ denote the canonical faithful tracial state on $C_r^*\left(G/ \AR_G\right)$. Define a new tracial state $\tau:= \tau_0' \circ \pi \colon C_r^*(G) \to \C$. Then for $s \in G$ we have
+\begin{align*}
+\tau(\lambda_G(s))=\tau_0'(\pi (\lambda_G(s))=\tau_0'(\lambda_{G/AR_G}([s]))=\begin{cases}
+1 & \text{if } s \in AR_G\\
+0 & \text{else}
+\end{cases},
+\end{align*}
+by ($\star$). And, since we assumed that $\tau(\lambda_G(t))=0$, we conclude that $t \not \in AR_G$.
+\end{proof}
+\end{theorem}
+
+\begin{corollary}\label{trace unique AR triv}
+The reduced group $C^*$-algebra of a discrete group $G$ has the unique trace property if and only if the amenable radical is trivial.
+\begin{proof}
+By the above theorem, if $\AR_G$ is non-trivial, and if $t \in \AR_G$ with $t \neq e$, the trace $\tau$ obtained by composition of the canonical trace on $C_r^*(G/\AR_G)$ and the $*$-homomorphism $\pi \colon C_r^*(G) \to C_r^*(G / \AR_G)$ satisfies $\tau(\lambda_t)=1$ where $\tau_0(\lambda_t)=0$, so $\tau \neq \tau_0$.
+
+\noindent If $\AR_G$ is trivial, then every tracial state $\tau$ on $C_r^*(G)$ satisfies $\tau(\lambda_t)=0$ for every $t \in G \backslash \{e\}$ by the above theoreom. Since $\tau_0$ is the unique trace such that $\tau_0(\lambda_t)=0$ for all $t \neq e$, it follows that $\tau=\tau_0$.
+\end{proof}
+\end{corollary}
+
+\section{$C^*$-simplicity and the unique trace property}
+In the following, we let $\ell^2(G)_+$ denote the subset of $\ell^2(G)$ of positively valued functions, i.e., the set of $\xi\in \ell^2(G)$ such that $\xi(G) \subseteq [0,\infty)$.
+\begin{lemma}\label{4.1 x+y geq x}
+If $x,y \in C_r^*(G)$ are finite positive linear combinations of elements of $\{ \lambda_t \colon t \in G \}$, then $\lv x+y\rv \geq \lv x \rv$.
+\begin{proof}
+If $n \in \N$, $\alpha_1,\dots, \alpha_n \geq 0$, $g_1 , \dots , g_n \in G$ and $z=\sum_{i=1}^n \alpha_{i} \lambda_{g_i} \in C_r^*(G)$, then $z$ maps $\ell^2(G)_+$ to $\ell^2(G)_+$, since $z \xi(t)=\sum_{i=1}^n \alpha_i \xi(g_{i}^{-1} t) \geq 0$ for all $\xi \in \ell^2(G)_+$ and $t \in G$. Moreover, for all $\xi, \eta \in \ell^2(G)$ we have
+%&\leq \sum_{i=1}^n \alpha_i |\langle \lambda_{s_{i}} \xi , \eta \rangle|\\
+\begin{align*}
+\left| \left\langle z \xi , \eta \right\rangle \right| &= \left| \left\langle \sum_{i = 1}^n \alpha_i (\lambda_{s_i} \xi) , \eta \right\rangle \right|\\
+&\leq \sum_{i=1}^n \alpha_i \left| \sum_{g \in G} \xi(s_{i}^{-1}g) \overline{\eta(g)} \right|\\
+&\leq \sum_{i=1}^n \alpha_i  \sum_{g \in G} |\xi(s_{i}^{-1}g)| |\overline{\eta(g)}| \\
+&= \sum_{g \in G} \sum_{i=1}^n \alpha_i |(\lambda_{s_i}\xi)(g)| |\eta(g)|\\
+&= \sum_{g \in G} z |\xi(g)| |\eta(g)|\\
+&=\langle z |\xi|, |\eta|\rangle.
+\end{align*}
+If $\xi \in \ell^2(G)$ with $\lv \xi \rv = 1$ then $\lv z \xi \rv = \sup_{\lv \eta \rv = 1} |\langle \eta , z \xi\rangle|$, by the Riesz' representation theorem for Hilbert spaces. Thus, we see that 
+\begin{align*}
+\lv z \rv = \sup \{ | \langle z \xi , \eta \rangle| \colon \lv \xi \rv \leq 1, \ \lv \eta \rv \leq 1 \}.
+\end{align*} 
+Combining the above we get that
+\begin{align*}
+\lv z \rv = \sup \{ \langle z \xi , \eta \rangle  \colon \xi, \eta \in \ell^2(G)_+, \ \lv \xi \rv \leq 1  , \ \lv \eta \rv \leq 1 \}.
+\end{align*} 
+If $x,y$ are finite positive linear combination of elements of $\{ \lambda_t \colon t \in G \}$, then  
+\begin{align*}
+\lv x \rv &= \sup \{ \langle x \xi , \eta \rangle  \colon \xi, \eta \in \ell^2(G)_+, \ \lv \xi \rv \leq 1  , \ \lv \eta \rv \leq 1 \} \\
+&\leq \sup \{ \langle x \xi , \eta \rangle + \langle y \xi, \eta \rangle \colon \xi, \eta \in \ell^2(G)_+, \ \lv \xi \rv \leq 1  , \ \lv \eta \rv \leq 1 \}\\
+&=\lv x + y \rv.
+\end{align*}
+\end{proof}
+\end{lemma}
+
+\begin{lemma}\label{s-a functional > 0}
+Let $G$ be a group and $t \in G$. Then the following are equivalent:
+\begin{enumerate}
+\item $0 \not\in \overline{\conv}\{ \lambda_{sts^{-1}} : s \in G \}$,
+\item $0 \not\in \overline{\conv} \{ \lambda_{sts^{-1}}+\lambda_{sts^{-1}}^* : s \in G \}$,
+\item There exists a self-adjoint linear functional $\omega$ on $C_r^*(G)$ of norm 1 and a constant $c >0$ such that $\mathrm{Re}\omega( \lambda_{sts^{-1}}) \geq c$ for all $s \in G$.
+\end{enumerate}
+\begin{proof}
+\textbf{(1)$\Rightarrow$(2)}: Assume $t \in G$ such that $0 \not\in \overline{\conv}\{ \lambda_{sts^{-1}} : s \in G \}$. Given $c_1,\dots,c_n \geq 0$ such that $\sum_{j=1}^n c_j = 1$ and $s_1,\dots, s_n \in G$ then the element $z = \sum_{j = 1}^n c_j \lambda_{s_j t}$ is non-zero and satisfies the conditions of \Cref{4.1 x+y geq x}, so 
+\begin{align*}
+ \lv z \rv \leq \lv z + z^* \rv
+\end{align*}
+Since  every element of $\overline{\conv} \{ \lambda_{s t s^{-1}} + \lambda_{sts^{-1}}^* \}$ is a limit of elements of the form $z+z^*$, continuity yields that 1 implies 2.
+
+\textbf{\noindent (2)$\Rightarrow$(1)}: This is trivial.
+
+\textbf{\noindent (2)$\Rightarrow$(3)}: The space $(C_r^*(G))_{\text{sa}}= \{a \in C_r^*(G) \colon a = a^*\}$ is a real vector space, with $\{ 0 \}$ as a compact subset disjoint from the closed subset $\overline{\conv}(\lambda_{sts^{-1}}+\lambda_{sts^{-1}}^* : s \in G \}$. By The Hahn-Banach separation theorem (\cite[Theorem 3.4][59]{rudin1991functional}), there is a real linear functional $\omega$ on $\left(C_r^*(G)\right)_{\text{sa}}$ and $c > 0$ such that 
+\begin{align*}
+\omega \left( \lambda_{sts^{-1}} + \left(\lambda_{sts^{-1}}\right)^*\right)\geq c, \tag{$\star$}
+\end{align*}
+for all $s \in G$. Setting $\omega' := \frac{\omega}{\lv \omega \rv}$, and $c' := c \lv \omega \rv$, we see that $\omega'$ is a real linear functional of norm 1 satisfying ($\star$). 
+
+\noindent Defining a linear functional $\omega_0$ on $C_r^*(G)$ by 
+\begin{align*}
+\omega_0(a) = \omega'\left(\frac{a+a^*}{2}\right) + i \omega' \left( \frac{a-a^*}{2i}\right), \quad a \in C_r^*(G),
+\end{align*}
+we see that $\omega_0$ is a self-adjoint linear functional of norm 1 on $C_r^*(G)$ satisfying
+\begin{align*}
+\mathrm{Re}{\omega_0} \left((\lambda_{sts^{-1}}\right) &= \frac{1}{2} \omega' \left( \lambda_{sts^{-1}}+ \left(\lambda_{sts^{-1}}\right)^*\right)\\
+&\geq \frac12 c'>0
+\end{align*}
+for all $s \in G$. 
+
+\noindent \textbf{(3)$\Rightarrow$(1)}: By the linearity of linear functionals, $0 \in \ker(\omega)$ for all linear functionals $\omega$ on $C_r^*(G)$. Thus $0$ cannot be in $\overline{\conv}\{ \lambda_{sts^{-1}} : s \in G \}$ assuming (3).
+\end{proof}
+\end{lemma}
+
+
+\begin{theorem}\label{trivial AR_g 0 in conv}
+Let $G$ be a group and $t \in G$. Then $t \not\in \AR_G$ if and only if 
+\begin{align*}
+0 \in \overline{\conv}\{\lambda_{sts^{-1}} : s \in G\}.
+\end{align*}
+\begin{proof}
+\textbf{"$\Rightarrow$"}: Suppose $0 \not\in \overline{\conv}(\lambda_{sts^{-1}} : s \in G)$, and assume towards contradiction that $t \not \in \AR_G$. By \Cref{furman}, there is a compact $G$-boundary $X$ and $x \in X$ such that $t.x \neq x$. By \Cref{s-a functional > 0}, there is a self-adjoint functional $f$ on $C_r^*(G)$ of norm 1 and a $c > 0$ such that 
+\begin{align*}
+\mathrm{Re}f( \lambda_{sts^{-1}}) \geq c, \quad \text{for all } s \in G.
+\end{align*}
+Since $f$ is a self-adjoint linear functional, it has a Jordan decomposition (c.f. \cite[Theorem II.6.3.4][106]{blackadar}), i.e., there are positive linear functionals $f_{\pm}$ such that $f= f_+ - f_-$ and $\lv f \rv = \lv f_+ \rv + \lv f_- \rv$. The functional $f_+ + f_-$ is a positive functional, so its norm is given by
+\begin{align*}
+\lv f_+ + f_- \rv = (f_+ + f_-)(1_{C_r^*(G)})&=f_+(1_{C_r^*(G)})+f_-(1_{C_r^*(G)})\\&=\lv f_+ \rv + \lv f_- \rv \\&= 1.
+\end{align*}
+Thus, $f_+ + f_-$ is a state on $C_r^*(G)$. The crossed product, $C(X) \rtimes_r G$, contains $C_r^*(G)$ as a $C^*$-subalgebra. Using Hahn-Banach and \cite[Lemma 1.5.15][16]{brown2008c}, the positive linear functionals $f_{\pm}$ extend to positive linear functionals $\psi_{\pm}$ on $C(X) \rtimes_r G$ with $\lv \psi_{\pm} \rv = \lv f_{\pm} \rv$. Then $\psi:= \psi_+ + \psi_-$ is a state which extends the state $f_+ + f_-$ to $C(X) \rtimes_r G$. Let $p_{\pm}$ be the restrictions of $\psi_{\pm}$ to $C(X)$, and set $p:= p_+ + p_-$. Since $X$ is a $G$-boundary, there is a net $(g_i)_{i \in I} \subseteq G$ such that $g_i.p$ converges to $\delta_x$ in the weak$^*$-topology. Since $\lv \psi_{\pm} \rv \leq 1$, Alaoglu's theorem ensures the existence of a subnet $(g_j)_{j \in J}$ such that $g_j . \psi_{\pm}$ converges to positive functionals $\varphi_{\pm}$ in the weak$*$-topology. Then $\varphi_{\pm}$ has the same norm as $\psi_{\pm}$, indeed, since they are positive functionals their norm are given by
+\begin{align*}
+\lv \varphi_{\pm} \rv = \varphi_{\pm}( 1_{C(X) \rtimes_r G}) &=\lim_{j \in J} g_j \psi_{\pm}(1_{C(X) \rtimes_r G})\\
+&=\lim_{j \in J} \psi_{\pm}(\lambda_j 1_{C(X) \rtimes_r G} \lambda_j^*)\\
+&=\lim_{j \in J} \lv \psi_{\pm} \rv\\
+&= \lv \psi_{\pm} \rv.
+\end{align*}
+Recall that $(g_j)_{j \in J} \subseteq G$ is a subnet of a net $(g_{i})_{i \in I} \subseteq G$ such that $g_j.p$ converges in the weak$^*$ topology to $\delta_x$. Thus if $\rho_{\pm}$ denotes the restrictions of $\varphi_{\pm}$ to $C(X)$, then $\rho:=\rho_+ + \rho_- = \delta_x$. Setting $\mu_{\pm}:= \frac{\rho_{\pm}}{\lv \rho_{\pm}\rv}$, we get that 
+\begin{align*}
+\delta_x= \mu_+ \lv \rho_+ \rv + \mu_- \lv \rho_-\rv.
+\end{align*} 
+And since $\delta_x$ is a pure state, and $1= \lv \rho_+\rv + \lv \rho_{-} \rv$, we have that $\mu_{\pm}= \delta_x$. So $\rho_{\pm}= \delta_x \lv \rho_{\pm} \rv$. By assumption, $t .x \neq x$, so $\varphi_{\pm} (\lambda_t)=0$: By \Cref{state restrict point eval 0}, we see that$\restr{\frac{\varphi_{\pm}}{\lv \varphi_{\pm} \rv}}{C_r^*(G)}( \lambda_t)=0$. Hence we get the following
+%
+%&= \lim_{j \in J} g_j .\psi_{|C_r^*(G)} (\lambda_t)\\ 
+%
+\begin{align*}
+0 &= \restr{\varphi_+}{C_r^*(G)} ( \lambda_t) - \restr{\varphi_-}{C_r^*(G)} ( \lambda_t) \\
+&= \restr{\varphi}{C_r^*(G)} (\lambda_t)\\
+&=\lim_{j \in J} g_j . f(\lambda_t)\\
+&= \lim_{j \in J}  f\left(\lambda_{g_j t g_j^{-1}}\right),
+\end{align*}
+contradicting our assumption that $f(\lambda_{sts^{-1}}) >0$ for all $s \in G$, so we conclude that $t \in \AR_G$.
+\end{proof}
+\end{theorem}
+
+\begin{corollary}\label{unique trace iff 0 in conv}
+A discrete group $G$ has the unique trace property if and only if for all $t \in G\backslash \{e \}$ we have
+\begin{align*}
+0 \in \overline{\conv}\{\lambda_{sts^{-1}} : s \in G\}.
+\end{align*}
+\begin{proof}
+Assume that for all $t \neq e$ we have $0 \in \overline{\conv}\{\lambda_{sts^{-1}} : s \in G\}$. By \Cref{trivial AR_g 0 in conv}, this happens if and only if $t \not \in \AR_G$ for all $t \neq e$. So $\AR_G= \{ e \}$. By \Cref{trace unique AR triv} this happens if and only if $C_r^*(G)$ has unique trace $\tau_0$.
+\end{proof}
+\end{corollary}
+
+\begin{definition}
+Let $G$ be a discrete group, and $X$ a compact $G$-space. We say that the action $G \acts X$ is \emph{topologically free} if for all $s \in G\backslash \{e\}$ the set of $s$-fixed points $X^s:=\{x \in X : s.x=x\}$ has empty interior. We say that the action $G \acts X$ is \emph{free} if $X^s = \emptyset$ for all $s \neq e$.
+\end{definition}
+
+The following result is \cite[Proposition 3.1][11]{bko}, a result in a recent article by Emmanuel Breuillard, Merhdad Kalantar, Matthew Kennedy and Narutaka Ozawa, expanding a result of Kennedy and Kalantar. It will be useful later on
+
+\begin{theorem}\label{BKKO}
+Let $G$ be a discrete group. The $G$ is $C^*$-simple if and only if there is a compact Hausdorff space $X$ such that $G \acts X$ is a free boundary action.
+\end{theorem}
+
+\noindent Recall that for $s \in G$ and $\varphi \in \mathcal{S}(C_r^*(G))$ we define a new state $s.\varphi \colon C_r^*(G) \to \C$ by
+\begin{align*}
+(s.\varphi)(a) = \varphi(\lambda_s a \lambda_s^*), \quad a \in C_r^*(G).
+\end{align*} Using the above proposition, we get the following.
+
+\begin{theorem}\label{c*simple chp 4}
+Let $G$ be a discrete group. If $\tau_0$ denotes the canonical tracial state on $C_r^*(G)$, then the following are equivalent:
+\begin{enumerate}
+\item $C_r^*(G)$ is simple,
+\item $\tau_0 \in \overline{\{ s. \varphi : s \in G\}}^{w^*}$ for all states $\varphi$ on $C_r^*(G)$,
+\item $\tau_0 \in \overline{\conv}^{w^*}\{s.\varphi : s \in G\}$ for all states $\varphi$ on $C_r^*(G)$,
+\item $\omega(1) \tau_0 \in \overline{\conv}\{s.\omega : s \in G\}$ for all $\omega \in \left(C_r^*(G)\right)^*$,
+\item For all $t_1,t_2,\dots,t_m \in G \backslash \{e\}$, we have
+\begin{align*}
+0 \in \overline{\conv} \{ \lambda_s ( \lambda_{t_1}+\lambda_{t_2}+\cdots+\lambda_{t_m}) \lambda_s^* : s \in G\},
+\end{align*}
+\item For all $t_1,t_2,\dots,t_m \in G \backslash \{e\}$ and $\varepsilon>0$, there exists $s_1, s_2 , \dots , s_n \in G$ such that
+\begin{align*}
+\left\lv \sum_{k = 1 }^n \frac{1}{n} \lambda_{s_k t_j s_k^{-1}} \right\rv < \varepsilon,
+\end{align*}
+for all $1 \leq j \leq m$.
+\end{enumerate}
+\begin{proof}
+\textbf{(1)$\Rightarrow$(2)}:  By \Cref{BKKO}, there is a compact $G$-space $X$ such that the action $G \acts X$ is a free boundary action. Let $\varphi$ be any state on $C_r^*(G)$. Extend $\varphi$ to a state $\psi$ on $C(X) \rtimes_r G$, and let $\rho$ denote its restriction to $C(X)$. Since $X$ is a boundary action, there is an $x \in X$ and a net $(g_{i}. \rho)_{i \in I} \subseteq \Prob(X)$ such that $g_i . \rho $ converges to $\delta_x$ in the weak$^*$ topology. By Alaoglu's theorem, the net $(g_i . \psi)_{i \in I}$ in the state space of $C(X) \rtimes_{r} G$ has a weak$^*$ convergent subnet $(g_{j}.\psi)_{j \in J}$ with limit $\Psi$, and the restriction of $\Psi$ to $C(X)$ is $\delta_x$. By assumption the action $G \acts X$ is free, so for all $t \in G\backslash \{e\}$ the set of $t$-fixed points $\{x \in X : t.x = x \}$ is empty, so by \Cref{state restrict point eval 0}, $\Psi_{|C_r^*(G)}(\lambda_t)=0$. And since the restriction of $\Psi$ to $C_r^*(G)$ is a state, we see that $\Psi_{|C_r^*(G)}(\lambda_e)=1$. Since $\tau_0$ is the unique tracial state which vanishes on $\lambda_t$ for $t \neq e$, we conclude that
+\begin{align*}
+\lim_{j \in J} g_j.\varphi =\Psi_{|C_r^*(G)}=\tau_0.
+\end{align*}
+
+\noindent \textbf{(2)$\Rightarrow$(3):} Is trivially true.
+
+\noindent \textbf{(3)$\Rightarrow$(4):} Suppose $\varphi_{1}, \dots, \varphi_{m}$ are states on $C_r^*(G)$. Then the set 
+\begin{align*}
+\overline{\conv}^{w^*}\{(s. \varphi_1,\dots, s. \varphi_m) : s \in G \}\subseteq \mathcal{S}(C_r^*(G)))^m
+\end{align*} 
+is a weak$^*$ closed, convex and $G$-invariant subset with respect to the diagonal action. Define the set $\mathcal{M}$ to be the set of functions $\Phi \colon \mathcal{S}(C_r^*(G)) \to \mathcal{S}(C_r^*(G))$ of the form $\Phi(\gamma)= \sum_{i =1}^n \alpha_i s_i.\gamma$ for $\gamma \in \mathcal{S}(C_r^*(G))$, for some $n \geq 1$, $\alpha_{1},\dots, \alpha_n \geq 0$, $\sum_{i =1}^n \alpha_i=1$ and $s_1,\dots,s_n \in G$. If $\rho \in \mathcal{S}(C_r^*(G))$, we see that 
+\begin{align*}
+\conv (G.\rho)= \{ \Phi(\rho) : \Phi \in \mathcal{M} \}.
+\end{align*}
+
+\noindent If $\Phi \in \mathcal{M}$,  then for all $a \in C_r^*(G)$ we have
+\begin{align*}
+\Phi(\tau_0)(a)= \sum_{i=1}^n \alpha_i (s_i . \tau_0) (a)=\sum_{i=1}^n \alpha_i \tau_0(\lambda_{s_i} a \lambda_{s_i}^*) = \tau_0(a),
+\end{align*}
+by traciality of $\tau_0$, hence $\Phi(\tau_0)=\tau_0$ for all $\Phi \in \mathcal{M}$. By assumption, there is a net $(\Phi_{i})_{i \in I} \subseteq \mathcal{M}$ such that $\Phi_i(\varphi_1)$ converges to $\tau_0$ in the weak$^*$ topology. Since $(\Phi_i(\varphi_{j}))_{i \in I}$ is a net in $\mathcal{S}(C_r^*(G))$, which is weak$^*$ compact, taking convergent subnets $m-1$ times yields a subnet $(\Phi_k)_{k \in K}$ such that $\Phi_{k}(\varphi_j)$ converges to $\psi_j\in \mathcal{S}(C_r^* (G))$ in the weak$^*$ topology for $2 \leq j \leq m$. So we have that
+\begin{align*}
+(\tau_0,\psi_2,\psi_3,\dots,\psi_m) \in \overline{\conv}^{w^*}\{(s. \varphi_1,s.\varphi_2,\dots,s.\varphi_m) : s \in G\} \subseteq \mathcal{S}(C_r^*(G))^m.
+\end{align*}
+Since the set $\overline{\conv}^{w^*}\{(s. \varphi_1,s.\varphi_2,\dots,s.\varphi_m) : s \in G\}$ is weak$^*$ closed, convex and $G$-invariant, minimality of the convex hull gives that
+\begin{align*}
+\overline{\conv}^{w^*} \{ (s.\tau_0, s. \psi_2, \dots , s. \psi_m) : s \in G\} \subseteq \overline{\conv}^{w^*}\{ (s. \varphi_1,\dots,s.\varphi_m) : s \in G\}.
+\end{align*}
+Once again, our intial assumption ensures the existence of a net $(\Phi_{i})_{i \in I} \subseteq \mathcal{M}$ such that $\Phi_i(\psi_2)$ converges to $\tau_0$ in the weak$^*$ topology. Again, taking subnets $m-2$ times we obtain a subnet $(\Phi_{k})_{k \in K} \subseteq \mathcal{M}$ such that for $3 \leq j \leq m$ the net $(\Phi_k(\psi_j))_{k \in K}$ converges to some $\psi_j' \in \mathcal{S}(C_r^*(G))$ in the weak$^*$ topology. So we now have
+\begin{align*}
+(\tau_0, \tau_0, \psi_3 ', \dots ,\psi_m ') \in \overline{\conv}^{w^*}\{(\tau_0, s.\psi_2, s.\psi_3 , \dots , s.\psi_m) : s \in G\}  \subseteq \mathcal{S}(C_r^*(G))^m.
+\end{align*}
+Continuing this process recursively, we see that
+\begin{align*}
+(\tau_0,\tau_0,\dots,\tau_0) \in \overline{\conv}^{w^*}\{(s. \varphi_1, s. \varphi_2, \dots , s. \varphi_m) : s \in G\}.
+\end{align*}
+
+\noindent If $\omega$ is a bounded linear functional on $C_r^*(G)$, it can be decomposed into a linear combination of four states $\varphi_1, \varphi_2, \varphi_3$ and $\varphi_4$ such that
+\begin{align*}
+\omega= \alpha_1 \varphi_1 + \alpha_2 \varphi_2 + \alpha_3 \varphi_3 + \alpha_4 \varphi_4,
+\end{align*}
+for some $\alpha_i \in \C$. We may assume without loss of generality that $\omega \neq 0$, so that $\alpha_i \neq 0$ for some $1 \leq i \leq 4$. Since $\varphi_1, \dots , \varphi_4$ are states, we see that 
+\begin{align*}
+\omega(1_{C_r^*(G)})= \alpha_1 + \alpha_2 + \alpha_3 + \alpha_4.
+\end{align*}
+By the above argument, we have
+\begin{align*}
+(\tau_0,\tau_0,\tau_0,\tau_0) \in \overline{\conv}^{w^*}\{ (s.\varphi_1,\dots,s.\varphi_4) : s \in G \}.
+\end{align*}
+So given a finite subset $F \subseteq C_r^*(G)$ and $\varepsilon>0$, there are $s_1,\dots s_n \in G$, $\beta_1,\dots,\beta_n \geq 0$ with $\sum_{i=1}^n \beta_i=1$ such that
+\begin{align*}
+\left| \sum_{i=1} \beta_i s_i. \varphi_j(a) - \tau_0(a) \right| < \frac{\varepsilon}{\sum_{i=1}^4|\alpha_i|},
+\end{align*}
+for all $a \in F$ and $j=1,2,3,4$. Therefore,
+\begin{align*}
+\left| \sum_{j=1}^n \beta_j s_j. \omega(a)-\omega(1) \tau_0(a)\right|& = \left| \sum_{j=1}^n \beta_j s_j. \left( \sum_{i=1}^4 \alpha_i \varphi_i(a) \right) - \sum_{i=1}^4 \alpha_i \tau_0(a) \right|\\
+ &= \left| \sum_{i=1}^4 \alpha_i \left( \sum_{j=1}^n \beta_j s_j .\varphi_i(a) - \tau_0(a)\right) \right|\\
+&\leq \sum_{i=1}^4 |\alpha_i| \left| \sum_{j=1}^n \beta_j s_j.\varphi_i(a)-\tau_0(a)\right| \\
+&< \sum_{i=1}^4 |\alpha_i|\frac{\varepsilon}{\sum_{i=1}^4|\alpha_i|}=\varepsilon,
+\end{align*}
+so that $\omega(1)\tau_0 \in \overline{\conv}^{w^*}\{s.\omega : s \in G \}$.
+
+\noindent \textbf{(4)$\Rightarrow$(5):} Assume that (5) does not hold. Let $t_1,\dots,t_m \in G$ be such that 
+\begin{align*}
+0 \not\in \overline{\conv} \left\{ \lambda_s \left( \sum_{j=1}^m \lambda_{t_j} \right)\lambda_{s^{-1}} : s \in G \right\}.
+\end{align*}
+Let $z \in \conv \left\{ \lambda_s \left( \sum_{j=1}^m \lambda_{t_j} \right)\lambda_{s^{-1}} : s \in G \right\}$.
+%Let $s_1,\dots,s_n \in G$ and $\alpha_1,\dots,\alpha_n \geq 0$ with $\sum_{i=1}^n \alpha_i = 1$ and let
+%\begin{align*}
+%z:= \sum_{i=1}^n \alpha_i \lambda_{s_i} \left(\sum_{j=1}^m \lambda_{t_j}\right) \lambda_{s_i^{-1}}.
+%\end{align*} 
+Then $z,z^*$ satisfies the conditions of \Cref{4.1 x+y geq x}, so $0 < \lv z \rv \leq \lv z+z^*\rv$. If $y \in \conv\left\{ \lambda_s \left( \sum_{j=1}^m \lambda_{t_j} \right)\lambda_{s^{-1}} : s \in G \right\}$, then $y = z + z^*$ for some $z \in \conv \left\{ \lambda_s \left( \sum_{j=1}^m \lambda_{t_j} \right)\lambda_{s^{-1}} : s \in G \right\} $, so $0 < \lv y \rv$. By continuity, \Cref{4.1 x+y geq x} and the assumption that $0 \not\in \overline{\conv} \left\{ \lambda_s \left( \sum_{j=1}^m \lambda_{t_j} \right)\lambda_{s^{-1}} : s \in G \right\}$ we conclude that
+\begin{align*}
+0 \not \in \overline{\conv}\left\{\lambda_s \left(\sum_{j=1}^m \lambda_{t_j}+ \lambda_{t_j^{-1}}\right) \lambda_{s^{-1}} : s \in G\right\}.
+\end{align*}
+ 
+\noindent By the Hahn-Banach separation theorem, there is a self-adjoint linear functional $\omega$ on $C_r^*(G)$ of norm 1 and a $c>0$ such that for all $s \in G$ we have
+\begin{align*}
+\omega \left( \sum_{j=1}^m \lambda_{st_js^{-1}}+\left(\lambda_{st_j s^{-1}}\right)^*  \right) \geq c.
+\end{align*}
+And so we see that, since $\omega$ is self-adjoint,
+\begin{align*}
+\omega\left(\sum_{j = 1}^m \lambda_{s t_j s^{-1}}+ {\lambda_{s t_j s^{-1}}}^*\right)&=\omega\left( \sum_{j=1}^m \lambda_{st_js^{-1}}\right) + \omega\left( \sum_{j=1}^m  \left(\lambda_{s t_j s^{-1}}\right)^*\right)\\
+&=\omega\left( \sum_{j=1}^m \lambda_{st_js^{-1}}\right) +  \overline{\omega\left( \sum_{j=1}^m \lambda_{s t_j s^{-1}} \right)}\\
+&=2 \mathrm{Re} \omega\left( \sum_{j=1}^m \lambda_{st_js^{-1}}\right).
+\end{align*}
+So we have $2 \mathrm{Re} \omega \left(\sum_{j=1}^m \lambda_{st_js^{-1}}\right) \geq c$. Let $\rho \in \conv\{ s. \omega : s \in G\}$ be defined by $\rho=\sum_{k=1}^n \alpha_{i}s_{i}.\omega$ for some $\alpha_k \geq 0$, $s_i \in G$ and $\sum_{k=1}^n \alpha_k = 1$. We then see that
+\begin{align*}
+2\mathrm{Re}\rho\left(\sum_{j=1}^n \lambda_{t_j}\right) &= 2 \sum_{k=1}^n \alpha_{i}s_{i}. \mathrm{Re}\omega\left(\sum_{j=1}^m \lambda_{t_j}\right)\\
+&= 2 \sum_{k=1}^n \alpha_i \mathrm{Re} \omega \left( \sum_{j=1}^m \lambda_{s_i t_j s_i^{-1}} \right)\\
+&\geq 2 \sum_{k=1}^n \alpha_i c=c.
+\end{align*}
+By continuity this also holds for all $\rho \in \overline{\conv}^{w^*}\{ s.\omega : s \in G \}$. But, since $t_1,\dots,t_m \in G \backslash \{e\}$, we have $\tau_0\left(\sum_{j=1}^m \lambda_{t_j} \right) = 0$. Thus $\tau_0$ cannot be in $\overline{\conv}^{w^*}\{s. \omega : s \in G\}$.
+
+\textbf{(5)$\Rightarrow$(6):} Assuming (5), given $t_1,\dots,t_m \in G \backslash \{e \}$ and $\varepsilon>0$, by \Cref{ez rat co} there are $s_1,\dots,s_n \in G$ (where $s_j=s_i$ is allowed for $1 \leq i \neq j \leq n$) such that 
+\begin{align*}
+\left\lv {\sum_{k=1}^n \frac{1}{n} \lambda_{s_k} \left( \sum_{j=1}^m \lambda_{t_j} \right) \lambda_{s_k^{-1}}} \right\rv < \varepsilon.
+\end{align*}
+By \Cref{4.1 x+y geq x}, we see that 
+\begin{align*}
+\left\lv \sum_{k=1}^n \frac{1}{n} \lambda_{s_kt_js_k^{-1}} \right\rv < \varepsilon, 
+\end{align*}
+for all $j = 1 , 2 , \dots , m$.
+
+\textbf{(6)$\Rightarrow$(1)}:
+Identifying $\C G$ with its image under the left-regular representation as a dense unital $*$-subalgebra of $C_r^*(G)$, we may use Lemma 3.9 to check for Dixmier property on self-adjoint elements $a \in \C G$ such that $\tau_0 (a) = 0$. So let $a=\sum_{j=1}^n \alpha_j \lambda_{t_j} \in \C G$ be such an element. Assuming $\tau_0 (a) = 0$, we may assume that $t_1,\dots,t_n \neq e$. To each $m \geq 1$, there is, by assumption, a function $f_m \colon C_r^*(G) \to C_r^*(G)$ of the form
+\begin{align*}
+f_m(x)=\sum_{k=1}^{M_m} \frac{1}{M_m} \lambda_{s_k} x \lambda_{s_k^{-1}}, \quad x \in C_r^*(G),
+\end{align*}
+for some  $s_1,s_2,\dots s_{M_m} \in G$, such that 
+\begin{align*}
+\lv f_m (\lambda_{t_j}) \rv < \frac{1}{m}, \quad \text{for } j =1,2,\dots n.
+\end{align*}
+Letting $D(a)\subseteq C_r^*(G)$ being defined as in chapter 3, we see that $f_m(a) \in D(a)$ for each $m \geq 1$, and by the triangle inequality we have
+\begin{align*}
+\lv f_m (a) \rv &= \left\lv \sum_{k=1}^{M_m} \frac{1}{M_m} \lambda_{s_k} \left(\sum_{j=1}^n \alpha_j \lambda_{t_j} \right)\lambda_{s_k^{-1}}\right\rv\\
+&\leq \sum_{j=1}^n |\alpha_j| \lv f_m(\lambda_{t_j})\rv\\
+&< \sum_{j=1}^n |\alpha_j| \frac{1}{m},
+\end{align*}
+So $f_m(a) \to 0$ as $m \to \infty$. So $0 \in \overline{D(a)}$. By Lemma 3.9, $C_r^* (G)$ has the Dixmier property, and since $\tau_0$ is a faithful trace, $C_r^*(G)$ is simple.
+\end{proof}
+\end{theorem}
+
+\section{Summary}
+We have throughout this thesis shown quite a few different conditions for discrete groups having the unique trace property and the $C^*$-simplicity property. We will in this section give a summary of the shown results.
+
+\begin{theorem}
+Let $G$ be a discrete group and $t \in G$. Then the following are equivalent:
+\begin{enumerate}
+\item $t \not\in \AR_G$;
+\item there is a boundary action $G \acts X$ such that $t$ acts non-trivially on $X$;
+\item $\lambda_t \in \ker(\tau)$ for all tracial states $\tau$ on $C_r^*(G)$;
+\item $0 \in \overline{\conv}\{\lambda_{sts^{-1}} : s \in G \}$.
+\end{enumerate}
+\begin{proof}
+The implication (1)$\Leftrightarrow$(2) follows from \Cref{furman}, (1)$\Leftrightarrow$(3) follows from \Cref{tau 0 iff t not in ARg} and (1)$\Leftrightarrow$(4) follows from \Cref{trivial AR_g 0 in conv}.
+\end{proof}
+\end{theorem}
+
+\begin{theorem}\label{trace unique arg triv}
+Let $G$ be a discrete group. Then the following are equivalent:
+\begin{enumerate}
+\item $C_r^*(G)$ has unique tracial state;
+\item $G$ admits a faithful boundary action;
+\item $\AR_G = \{ e \}$;
+\item for all $t \in G \backslash \{e\}$ and all $\varepsilon>0$, there is $s_1,s_2,\dots,s_n \in G$ such that
+\begin{align*}
+\left\lv \sum_{j=1}^n \frac{1}{n} \lambda_{s_k t s_k ^{-1}} \right\rv < \varepsilon.
+\end{align*}
+\end{enumerate}
+\begin{proof}
+We first show (2)$\Leftrightarrow$(3): Assume that $\AR_G$ is trivial. By \Cref{furman}, given $t \in G\backslash \{e\}$ there is is $G$-boundary $X$ such that $t.x \neq x$ for some $x \in X$. By the universitality of the Furstenberg boundary $\dd_F G$, there is $x' \in \dd_F G$ so that if $\pi_X \colon \dd_F G \to X$ is the $G$-equivariant projection onto $X$, then $\pi_X(x')=x$. By the $G$-equivariance of $\pi_X$, we see that
+\begin{align*}
+\pi_X(t.x')=t.\pi_X(x') =t. x \neq x = \pi_X (x'),
+\end{align*}
+so $t.x' \neq x'$. Since there is such $x'$ for each $t \in G \backslash\{e \}$, we see that the action $G \acts \dd_F G$ is a faithful boundary action.
+
+\noindent (1)$\Leftrightarrow$(3) follows from \Cref{trace unique AR triv}, while (3)$\Leftrightarrow$(4) follows from \Cref{unique trace iff 0 in conv}.
+\end{proof}
+\end{theorem}
+
+\begin{theorem}\label{c*r simple 5}
+Let $G$ be a discrete group, and let $\tau_0$ be the canonical tracial state on $C_r^*(G)$. Then the following are equivalent:
+\begin{enumerate}
+\item $C_r^*(G)$ is simple;
+\item $G$ admits a free boundary action;
+\item $\tau_0 \in \overline{\{ s. \varphi \colon g \in G \}}^{w^*}$, for all states $\varphi$ on $C_r^*(G)$;
+\item $\tau_0 \in \overline{\conv}^{w^*} \{ s. \varphi : s \in G \}$, for all states $\varphi$ on $C_r^*(G)$;
+\item for all $t_1,t_2,\dots,t_m \in G \backslash \{e \}$ and all $\varepsilon>0$, there exist $s_1,s_2,\dots,s_n \in G$ such that 
+\begin{align*}
+\left\lv \frac{1}{n} \sum_{j=1}^n \lambda_{s_j t_k s_j^{-1}} \right\rv <\varepsilon,
+\end{align*}
+for all $k=1,2,\dots,m$;
+\item $C_r^*(G)$ has the Dixmier property.
+\end{enumerate}
+\begin{proof}
+(1)$\Leftrightarrow$(2) follows from \Cref{BKKO} and the implications (1)$\Leftrightarrow$(3)$\Leftrightarrow$(4)$\Leftrightarrow$(5) follows from \Cref{c*simple chp 4}.
+\end{proof}
+\end{theorem}
+
+\begin{corollary}
+If $G$ is a $C^*$-simple discrete group, then $G$ has the unique trace property.
+\begin{proof}
+Assuming $G$ is $C^*$-simple, then $G$ has property (5) of \Cref{c*r simple 5}, which implies property (4) of \Cref{trace unique arg triv}, so $C_r^*(G)$ has unique tracial state $\tau_0$. In 
+\end{proof}
+\end{corollary}
+
+It is worth noting that the converse does not hold, i.e., the unique trace property does not imply $C^*$-simplicty of discrete groups, as seen in \cite[Theorem A][2]{le2015c}.

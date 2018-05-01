@@ -1,0 +1,38 @@
+\select@language {danish}
+\contentsline {chapter}{Indhold}{1}
+\contentsline {chapter}{\chapternumberline {1}Dispositioner}{2}
+\contentsline {section}{\numberline {}1) Freml\IeC {\ae }g og diskuter forskellige teorier for videnskabens udvikling.}{2}
+\contentsline {subsection}{Positivisme og empirisme}{2}
+\contentsline {subsection}{Poppers falsikationisme}{2}
+\contentsline {subsubsection}{Kritik af popper}{2}
+\contentsline {subsection}{Kuhn's paradigmer}{2}
+\contentsline {subsection}{Case: Kogalskab}{3}
+\contentsline {section}{\numberline {}2) Beskriv f\IeC {\ae }nomenet 'experimenters regress' og diskuter f\IeC {\ae }nomenets betydning for videnskabens udvikling.}{4}
+\contentsline {subsection}{Experimenters regress f\IeC {\ae }nomenet}{4}
+\contentsline {subsection}{Eksempel: Tyngdeb\IeC {\o }lger}{4}
+\contentsline {subsection}{Modspil til Poppers metode}{4}
+\contentsline {subsection}{Kuhn og experimenters regress}{4}
+\contentsline {subsection}{Eksempel: Kogalskab}{4}
+\contentsline {section}{\numberline {}3) Beskriv forskellige opfattelser af, hvor vores erkendelse af matematikken stammer fra, og diskut\IeC {\'e}r disse.}{5}
+\contentsline {subsection}{Hvor lever matematik?}{5}
+\contentsline {subsection}{Platon:}{5}
+\contentsline {subsection}{Empirismen:}{5}
+\contentsline {subsubsection}{Hume:}{5}
+\contentsline {subsubsection}{Mill:}{5}
+\contentsline {subsection}{Kant:}{5}
+\contentsline {section}{\numberline {}4) Beskriv og diskuter en eller flere af de tre grundlagsskoler (intuitionisme, logicisme og formalisme) samt nogle af de ideer, der l\IeC {\r a} bag udviklingen af ZFC.}{6}
+\contentsline {subsection}{Grundlagskrisen:}{6}
+\contentsline {subsection}{Logicismen:}{6}
+\contentsline {subsection}{Intuitionismen (brouwer):}{6}
+\contentsline {subsection}{Formalismen (Hilbert):}{6}
+\contentsline {subsubsection}{kritik:}{6}
+\contentsline {subsection}{ZFC (pragmatisk formalisme):}{7}
+\contentsline {section}{\numberline {}6) Beskriv og diskuter forskellige opfattelser af, hvordan matematikken udvikler sig.}{8}
+\contentsline {subsection}{Kuhnske paradigmer.}{8}
+\contentsline {subsection}{Lakatos}{8}
+\contentsline {section}{\numberline {}7) Forklar, hvad man forst\IeC {\r a}r ved en matematisk model, og diskuter hvorvidt modeller kan give p\IeC {\r a}lidelig viden om omverdenen.}{9}
+\contentsline {subsection}{Oreskos kritik af modelbrug i praksis:}{9}
+\contentsline {subsection}{AAA og redelighed}{9}
+\contentsline {section}{\numberline {}8) Redeg\IeC {\o }r for hovedsynspunkterne i den platonistiske opfattelse af matematikken og diskuter, om matematikkens objekter eksisterer.}{10}
+\contentsline {section}{\numberline {}9) Beskriv og diskuter udvalgte etiske teorier og diskuter matematikerens sociale og etiske ansvar.}{11}
+\contentsline {subsection}{Kants pligtetik:}{11}

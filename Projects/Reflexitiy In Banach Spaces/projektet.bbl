@@ -1,0 +1,131 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{conway2013course}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Conway}{C.}%
+     {John~B}{J.~B.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer Science \& Business Media}%
+  }
+  \strng{namehash}{CJB1}
+  \strng{fullhash}{CJB1}
+  \field{labelyear}{2013}
+  \field{sortinit}{C}
+  \field{title}{A course in functional analysis}
+  \field{volume}{96}
+  \field{year}{2013}
+\endentry
+
+\entry{dunford1971linear}{book}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Dunford}{D.}%
+     {Nelson}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Schwartz}{S.}%
+     {Jacob~T}{J.~T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Bade}{B.}%
+     {William~G}{W.~G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Bartle}{B.}%
+     {Robert~G}{R.~G.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Wiley-interscience New York}%
+  }
+  \strng{namehash}{DN+1}
+  \strng{fullhash}{DNSJTBWGBRG1}
+  \field{labelyear}{1971}
+  \field{sortinit}{D}
+  \field{title}{Linear operators}
+  \field{year}{1971}
+\endentry
+
+\entry{folland2013real}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Folland}{F.}%
+     {Gerald~B}{G.~B.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {John Wiley \& Sons}%
+  }
+  \strng{namehash}{FGB1}
+  \strng{fullhash}{FGB1}
+  \field{labelyear}{2013}
+  \field{sortinit}{F}
+  \field{title}{Real analysis: modern techniques and their applications}
+  \field{year}{2013}
+\endentry
+
+\entry{funkannotes}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Musat}{M.}%
+     {Magdalena~E.}{M.~E.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{MME1}
+  \strng{fullhash}{MME1}
+  \field{labelyear}{2015}
+  \field{sortinit}{M}
+  \field{title}{Notes for Functional Analysis 2015}
+  \field{year}{2015}
+\endentry
+
+\entry{rudin1991functional}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Rudin}{R.}%
+     {Walter}{W.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {McGraw-Hill, Inc., New York}%
+  }
+  \strng{namehash}{RW1}
+  \strng{fullhash}{RW1}
+  \field{labelyear}{1991}
+  \field{sortinit}{R}
+  \field{title}{Functional analysis. International series in pure and applied
+  mathematics}
+  \field{year}{1991}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput

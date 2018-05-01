@@ -1,0 +1,127 @@
+\appendix
+\chapter{Measure theory}
+Throughout this appendix we denote by $X$ a locally compact Hausdorff space. 
+
+\begin{definition}
+For a Borel measure $\mu$ on $X$ and a Borel subset $E \subset X$, we say that $\mu$ is \emph{outer regular} on $E$ if
+\begin{align*}
+\mu(E)=\inf\{\mu(U) \colon E \subseteq U, \ U \text{ open}\}
+\end{align*}
+and \emph{inner regular} on $E$ if 
+\begin{align*}
+\mu(E)=\sup\{ \mu(K) \colon K \subseteq E, K \text{ compact}\}.
+\end{align*}
+If $\mu$ is both inner and outer regular on all Borel subsets of $X$, we say that $\mu$ is a \emph{regular measure}.
+\end{definition}
+
+\begin{definition}
+A measure $\mu$ on $X$ is a \emph{Radon measure} if it is finite on compact sets, outer regular on Borel sets and inner regular on open sets. 
+\end{definition}
+
+\noindent By the Riesz Representation theorem \cite[Theorem 7.2][212]{folland2013real}, which ensures that to every positive linear functional $\varphi$ on $C(X)$, there is a unique Radon measure $\mu$ on $X$ such that $\varphi(f)=\int_X f \diff \mu$, we have a bijective affine correspondance between the set of Radon probability mesures on $X$ and the state space of $C(X)$. We endow $\Prob(X)$ with the weak$^*$ topology inherited from the state space of $C(X)$, so that a net $(\mu_{\alpha})_{\alpha \in A} \subseteq \Prob(X)$ converges to $\mu$ if and only if $\int_X f \diff \mu_{\alpha} \to \int_X f \diff \mu$ for every $f \in C(X)$. 
+
+\noindent If $X,Y$ are locally compact Hausdorff spaces, we define for $f \in \cc(X)$ and $g \in \cc(Y)$ the function $f \otimes g \in \cc(X \times Y)$ by $(x,y) \mapsto f(x)g(y)$. Similarly for Radon measures $\mu$ and $\nu$ og $X$ and $Y$, we define the Radon product $\mu \otimes \nu$ by $\mu \otimes \nu (E \times B)=\mu(E) \nu(B)$ for measurable $E \subseteq X$ and $B \subseteq Y$.
+
+The space $\cc(X \times Y)$ is the closure of the linear span of functions $f \otimes g$ for $f \in \cc(X)$ and $\cc(Y)$ cf. \cite[Proposition 7.21][226]{folland2013real}.
+
+\begin{lemma}\label{A}
+Let $X,Y$ be compact Hausdorff spaces and $\mu \in \Prob(X\times Y)$ and $\pi_1, \pi_2$ be the projection on to the first and respectively second coordinate. If $\pi_1(\mu)=\delta_{x}$ for some $x \in X$, then $\mu= \delta_{x} \otimes \mu_2$. for some $\mu_2 \in \Prob(Y)$.
+\begin{proof}
+Let $\mu_2=\pi_{Y}(\mu)$. For each Borel subset $E \subseteq X \times Y$, if $E \cap \pi_X^{-1}(\{x\})= \emptyset$ then
+\begin{align*}
+0 \leq \mu(E) &\leq \mu(E)+\mu(\pi_X^{-1}(\{x\}))\\
+&=\mu(E)+\delta_{x}(x)\\
+&=\mu(E)+1.
+\end{align*}
+But by assumption $E \cap \pi_X^{-1}(\{x\})$ is empty, so
+\begin{align*}
+0 \leq \mu(E) \leq \mu(E)+\mu(\pi_X^{-1}(\{x\})) &= \mu(E \cup \pi_X^{-1}(\{x\})) \leq \mu(X \times Y)=1\\
+\implies \mu(E)&=0
+\end{align*}
+If $E \subseteq X$ and $B\subseteq Y$ are Borel sets such that $x \in E$. Then
+\begin{align*}
+\mu(E \times B)=\mu(E \times B)+ \underbrace{\mu(E^c \times B)}_{=0} =\mu(X \times B)=\mu(\pi_2^{-1}(B))&=\mu_2(B)\\&=\mu_1(E)\mu_2(B).
+\end{align*}
+The paving $\{A \times B \colon A \subseteq X \text{ Borel } \colon B \subseteq Y \text{ Borel }\}$  is stable under intersections and generates the Borel sigma-algebra on $X \times Y$ cf. \cite[Theorem 4.22][85]{MI}. And since $\mu$ and $\delta_x \otimes \mu_2$ agrees on this paving, \cite[Theorem 3.8][63]{MI} ensures that $\mu=\delta_{x} \otimes \mu_2$, since Radon measures by definition are finite on compact sets.
+\end{proof}
+\end{lemma}
+%If $f$ and $g$ are simple functions on respectively $X$ and $Y$, then
+%\begin{align*}
+%\int f \otimes g \diff \mu &= \int (f \circ \pi_X)(g \circ \pi_Y) \diff \mu\\
+%&= \int \int (f \circ \pi_X)(g \circ \pi_Y) \diff (\pi_X(\mu)) \diff (\pi_Y(\mu))\\
+%&=\int f \diff \mu_1 \int g \diff \mu_2\\
+%&=\int f \otimes g \diff (\mu_1 \otimes \mu_2)
+%\end{align*}.
+%And by dominated convergence theorem this also holds for any continuous functions $f,g$ on $X$ and $Y$. And since the linear space of $C(X)$ and $C(Y)$ is norm dense in $C(X \times Y)$, the %above together with finiteness of $\mu$ shows that
+%\begin{align*}
+%\int h \diff \mu = \int h \diff (\mu_1 \otimes \mu_2), \ h \in C(X \otimes Y).
+%\end{align*}
+
+\noindent For a family of compact Hausdorff spaces $\{X_{i}\}_{i \in I}$, the product space $\displaystyle X$ is a compact Hausdorff space, by Tychonoff's theorem. Then the unital $*$-subalgebra
+\begin{align*}
+B=\{f \in C(X)\ |\ \exists F\subseteq I \text{ finite, such that } f=\prod_{i \in F}f_{i} \circ \pi_{i}\}
+\end{align*}
+of $C(X)$ is dense by the Stone-Weistrass theorem. 
+
+\begin{lemma}
+Let $\{X_{i}\}_{i \in I}$ is a family of compact Hausdorff spaces and $X=\prod_{i \in I} X_{i}$ and let $\nu \in \Prob(X)$. If $\nu_F=\pi_F(\nu)$ is a point-mass every finite $F \subseteq I$ with $\pi_F \colon X \to \prod_{i \in F} X_{i}$ being the projection, then $\nu$ is a point mass.
+\begin{proof}
+Let $\mathcal{F}=\{F \subseteq I \colon F \text{ finite}\}$. For every $F \in I$ let $x_{F} \in X$ be such that $\nu_F=\delta_{\pi_F(x_F)}$. Since $X$ is compact, there is a subnet $(x_{\alpha})_{\alpha \in A} \subseteq X$ such that $x_{\alpha} \to x$ for some $x \in X$. Let $h \colon A \to \mathcal{F}$ be the monotone and final function defining this subnet. Let $f \in B$, where $B$ is the $*$-subalgebra of $C(X)$ as above. Then 
+\begin{align*}
+f=\prod_{j \in F} f_{j} \circ \pi_{j}
+\end{align*}
+for some $F \in \mathcal{F}$. Since $h$ is a final function, there is $\alpha_0 \in A$ such that $F \subseteq h(\alpha_0)$. For any $\alpha \geq \alpha_0$, we have $F \in h(\alpha)$. Define for every $j \in h(\alpha)$ function $g_j \in C(X_{j})$ by
+\begin{align*}
+g_j=\begin{cases}
+f_j & j \in F\\
+1 & j \not\in F
+\end{cases}
+\end{align*}
+Define the function $f_{\alpha} \colon \prod_{j \in h(\alpha)} X_j \to \C$ by $f_{\alpha} = \prod_{j \in h(\alpha)} g_{j} \circ \pi_{\alpha,j}$, where $\pi_{\alpha,j}$ for $j \in h(\alpha)$ is the projection from $\prod_{i \in h(\alpha)} \to X_{j}$. Then for $x \in \prod_{j \in h(\alpha)} X_{j}$ we have
+\begin{align*}
+f_{\alpha}(x) = \prod_{j \in h(\alpha)} (g_{j} \circ \pi_{\alpha,j})(x)= \prod_{i \in F} f_{i}(x_{i}),\ 
+\end{align*} 
+But then $f_{\alpha} \circ \pi_{h(\alpha)}=f$. And we see that
+\begin{align*}
+\int f \diff \nu = \int f_{\alpha} \circ \pi_{h(\alpha)} \diff \nu &= \int f_{\alpha} \diff \pi_{h(\alpha)}(\nu)\\
+&=\int f_{\alpha} \diff \delta_{\pi_{h(\alpha)}(x_{\alpha})}\\
+&=f_{\alpha}( \pi_{h(\alpha)}(x_{\alpha}))\\
+&=f(x_{\alpha}).
+\end{align*}
+And since this holds for every $\alpha \geq \alpha_0$, we see that
+\begin{align*}
+\int f \diff \nu = f(x).
+\end{align*}
+And since $B$ was dense in $C(X)$, it holds that $\int g \diff \nu=g(x)$ for every $g \in C(X)$. So $\nu = \delta_{x}$. 
+\end{proof}
+\end{lemma}
+
+\chapter{A result on convex hulls}
+\begin{lemma}\label{ez rat co}
+Let $X$ be a topological vector space over $\C$, $C \subseteq X$ a convex subset and $M \subseteq C$ any subset. Define subsets $A(M), \conv_{\Q}(M) \subseteq C$ by
+\begin{align*}
+A(M)&:=\left\{ \frac{1}{n} \sum_{j=1}^n c_j \colon n \in \N, \ c_j \in M\right\}\\
+\conv_{\Q}(M) &:=\left\{ \sum_{j=1}^n \alpha_j c_j \colon n \in \N, \ \forall 1 \leq j \leq n \ \alpha_j \in [0,1] \cap \Q, \ \sum_{j=1}^n \alpha_j = 1, \ c_j \in M\right\}.
+\end{align*}
+Then $A(M)=\conv_{\Q}(M)$.
+\begin{proof}
+Let $\sum_{j=1}^n \alpha_i c_i \in \conv_{\Q}(M)$. Then every $\alpha_i= \frac{p_i}{q_i}$ for some positive integers $p_i,q_i $, with $q_i \neq 0$. Define for $1 \leq i \leq n$
+\begin{align*}
+b_i := p_i \prod_{j=1, j \neq i}^n q_j,
+N:= \prod_{i=1}^n q_i.
+\end{align*}
+Then we see that
+\begin{align*}
+\sum_{j=1}^n \alpha_i c_i = \frac{1}{N} \sum_{i=1}^n b_i c_i = \frac{1}{N} \sum_{i=1}^n \sum_{j=1}^{b_i} c_i.
+\end{align*}
+Define $\tilde{c}_1,\dots, \tilde{c}_N \in M$ by 
+\begin{align*}
+\tilde{c}_j := c_i, \quad j=b_{i-1}, (b_{i-1}+1),\dots,(b_{i-1}+b_i)
+\end{align*}
+where $1 \leq i \leq n$ and $b_0=1$. Then
+\begin{align*}
+\frac{1}{N} \sum_{i=1}^n \sum_{j=1}^{b_i} c_i= \frac{1}{N} \sum_{i=1}^N \tilde{c}_i.
+\end{align*}
+\end{proof}
+\end{lemma}
+Since the set $\conv_Q(M)$ is dense in $\conv(M)$, every point in $\conv(M)$ can be approximated by averages from $M$, by the above result.

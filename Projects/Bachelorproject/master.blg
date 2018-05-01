@@ -1,0 +1,65 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: master.aux
+The style file: biblatex.bst
+A level-1 auxiliary file: frontpage/frontpage.aux
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: master-blx.bib
+Database file #2: bibtest.bib
+Warning--I didn't find a database entry for "folland2003real"
+Warning--I didn't find a database entry for "1"
+Biblatex version: 3.3
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+You've used 12 entries,
+            6047 wiz_defined-function locations,
+            1193 strings with 9458 characters,
+and the built_in function-call counts, 37996 in all, are:
+= -- 1750
+> -- 1190
+< -- 506
++ -- 401
+- -- 348
+* -- 2293
+:= -- 2213
+add.period$ -- 0
+call.type$ -- 12
+change.case$ -- 311
+chr.to.int$ -- 36
+cite$ -- 22
+duplicate$ -- 4270
+empty$ -- 3975
+format.name$ -- 635
+if$ -- 8918
+int.to.chr$ -- 0
+int.to.str$ -- 30
+missing$ -- 0
+newline$ -- 256
+num.names$ -- 680
+pop$ -- 3595
+preamble$ -- 1
+purify$ -- 305
+quote$ -- 0
+skip$ -- 2405
+stack$ -- 0
+substring$ -- 1210
+swap$ -- 1334
+text.length$ -- 342
+text.prefix$ -- 19
+top$ -- 1
+type$ -- 444
+warning$ -- 0
+while$ -- 251
+width$ -- 0
+write$ -- 243
+(There were 2 warnings)

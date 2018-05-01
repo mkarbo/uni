@@ -1,0 +1,1446 @@
+\documentclass[10pt,twoside,openany,final]{memoir}
+\usepackage[utf8]{inputenc}
+\usepackage[pass]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[style=authoryear,backend=bibtex]{biblatex}
+\usepackage{filecontents}
+\usepackage[english, status=draft]{fixme}
+\fxusetheme{color}
+\usepackage{cleveref} 
+\usepackage[backgroundcolor=cyan]{todonotes}
+\usepackage{wallpaper}
+
+\begin{filecontents}{bibtest.bib}
+@misc{rudin1991functional,
+  title={Functional analysis. International series in pure and applied mathematics},
+  author={Rudin, Walter},
+  year={1991},
+  publisher={McGraw-Hill, Inc., New York}
+}
+
+@book{conway2013course,
+  title={A course in functional analysis},
+  author={Conway, John B},
+  volume={96},
+  year={2013},
+  publisher={Springer Science \& Business Media}
+}
+@article{pryce1966weak,
+  title={Weak compactness in locally convex spaces},
+  author={Pryce, JD},
+  journal={Proceedings of the American Mathematical Society},
+  volume={17},
+  number={1},
+  pages={148--155},
+  year={1966},
+  publisher={JSTOR}
+}
+@book{dunford1971linear,
+  title={Linear operators},
+  author={Dunford, Nelson and Schwartz, Jacob T and Bade, William G and Bartle, Robert G},
+  year={1971},
+  publisher={Wiley-interscience New York}
+}
+
+@article{Franklin1999,
+        author = {Allen Franklin and Karjalainen Risto},
+         title = {Using genetic algorithms to find technical trading rules},
+          year = 1999,
+        volume = 51,
+         pages = {245--271},
+  journaltitle = {Journal of Financial Economics}
+}
+
+@book{funkannotes,
+  title={Notes for Functional Analysis 2015},
+  author={Magdalena E. Musat},
+  year={2015}
+}
+@book{folland2013real,
+  title={Real analysis: modern techniques and their applications},
+  author={Folland, Gerald B},
+  year={2013},
+  publisher={John Wiley \& Sons}
+}
+
+\end{filecontents}
+
+\addbibresource{bibtest.bib}
+
+\addtolength{\textwidth}{30pt}
+\addtolength{\foremargin}{-30pt}
+\checkandfixthelayout
+
+\title{Reflexivity in Banach spaces}
+\author{Malthe Munk Karbo & Magnus Kristensen}
+
+\setlength{\parindent}{2em}
+\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{1}
+
+
+\newtheoremstyle{break}
+	{\topsep}{\topsep}
+	{\itshape}{}
+	{\bfseries}{}
+	{\newline}{}
+\theoremstyle{break}
+\newtheorem{theorem}[section]{Theorem}
+\newtheorem{lemma}[section]{Lemma}
+\newtheorem{proposition}[section]{Proposition}
+\newtheorem{corollary}[section]{Corollary}
+\newtheorem{definition}[section]{Definition}
+\newtheoremstyle{Break}
+	{\topsep}{\topsep}
+	{}{}
+	{\bfseries}{}
+	{\newline}{}
+\theoremstyle{Break}
+\newtheorem{example}[section]{Example}
+\newtheorem{remark}[section]{Remark}
+\newtheorem{note}[section]{Note}
+\setcounter{secnumdepth}{0}
+\usepackage{xpatch}
+\xpatchcmd{\proof}{\ignorespaces}{\mbox{}\\\ignorespaces}{}{}
+%\newenvironment{Proof}{\proof \mbox{} \\ \\ *}{\endproof}
+
+\chapterstyle{thatcher}
+
+
+\makepagestyle{abs}
+    \makeevenhead{abs}{}{}{}
+    \makeoddhead{abs}{}{}{}
+    \makeevenfoot{abs}{}{\scshape I }{}
+    \makeoddfoot{abs}{}{\scshape  I }{}
+    %\makeheadrule{abs}{\textwidth}{\normalrulethickness}
+    %\makefootrule{abs}{\textwidth}{\normalrulethickness}{\footruleskip}
+\pagestyle{abs}
+
+
+\makepagestyle{cont}
+    \makeevenhead{cont}{}{}{}
+    \makeoddhead{cont}{}{}{}
+    \makeevenfoot{cont}{}{\scshape II }{}
+    \makeoddfoot{cont}{}{\scshape  II }{}
+    %\makeheadrule{abs}{\textwidth}{\normalrulethickness}
+    %\makefootrule{abs}{\textwidth}{\normalrulethickness}{\footruleskip}
+\pagestyle{cont}
+
+\newcommand{\lv}{\lVert}
+\newcommand{\rv}{\rVert}
+
+
+\renewcommand\chaptermarksn[1]{}
+\nouppercaseheads
+\createmark{chapter}{left}{shownumber}{}{.\space}
+\makepagestyle{dut}
+    \makeevenhead{dut}{M. Karbo, M. Kristensen\scshape\rightmark}{}{ \scshape\leftmark}
+    \makeoddhead{dut}{\scshape\leftmark}{}{M. Karbo, M. Kristensen \scshape\rightmark}
+    \makeevenfoot{dut}{}{\scshape $-$ \thepage\ $-$}{}
+    \makeoddfoot{dut}{}{\scshape $-$ \thepage\ $-$}{}
+    \makeheadrule{dut}{\textwidth}{\normalrulethickness}
+    \makefootrule{dut}{\textwidth}{\normalrulethickness}{\footruleskip}
+\pagestyle{dut}
+
+\makepagestyle{chap}
+    \makeevenhead{chap}{}{}{}
+    \makeoddhead{chap}{}{}{}
+    \makeevenfoot{chap}{}{\scshape $-$ \thepage\ $-$}{}
+    \makeoddfoot{chap}{}{\scshape $-$ \thepage\ $-$}{}
+    \makefootrule{chap}{\textwidth}{\normalrulethickness}{\footruleskip}
+\copypagestyle{plain}{chap}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\mbr}{(X,\mathcal{A})}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\PP}{\mathcal{P}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\dd}{\partial}
+\newcommand{\ee}{\epsilon}
+\newcommand{\la}{\lambda}
+
+\makeatletter
+\newcommand{\Spvek}[2][r]{%
+  \gdef\@VORNE{1}
+  \left(\hskip-\arraycolsep%
+    \begin{array}{#1}\vekSp@lten{#2}\end{array}%
+  \hskip-\arraycolsep\right)}
+
+\def\vekSp@lten#1{\xvekSp@lten#1;vekL@stLine;}
+\def\vekL@stLine{vekL@stLine}
+\def\xvekSp@lten#1;{\def\temp{#1}%
+  \ifx\temp\vekL@stLine
+  \else
+    \ifnum\@VORNE=1\gdef\@VORNE{0}
+    \else\@arraycr\fi%
+    #1%
+    \expandafter\xvekSp@lten
+  \fi}
+\makeatother
+
+\newcommand{\K}{\mathbb{K}}
+\addtocontents{toc}{\protect\thispagestyle{empty}} 
+
+
+\begin{document}
+\begin{titlingpage}
+	\ThisLRCornerWallPaper{1}{1.pdf}	
+	\vspace*{5.5cm}
+	\noindent
+	{\large\textsc{Malthe Munk Karbo, Magnus Kristensen}}\\[0.5cm]
+	{\Large\textsc{Reflexivity in Banach spaces}}\\[0.5cm]
+	\vfill\noindent
+	{\large\textsc{Project in Mathematics}}\\[0.2cm]
+	\noindent
+	{\large\textsc{Department of Mathematical Sciences}}\\[0.2cm]
+	\noindent
+	{\large\textsc{University of Copenhagen}}\\[1cm]
+	{\large\textsc{Advisors \\[0.2cm] {\Large Magdalena Musat, Rasmus Sylvester Bryder }}}\\[1cm]
+	{\large\textsc{June 24, 2016}}
+	\let\cleardoublepage\clearpage
+\end{titlingpage}
+\setcounter{page}{0}
+\tableofcontents*
+\pagenumbering{arabic}
+
+\chapter*{Introduction}
+The purpose of this project is to illuminate a classic result due to Robert C. James, assuming only a basic understanding of functional analysis. The result is that a Banach space $X$ is reflexive if and only if every bounded linear functional on $X$ attains its supremum on the unit sphere of $X$.
+We follow a proof due to Pryce -- one that is essentially the same as the James original proof -- but it is generalised to the case of locally convex topological vector spaces, rather than Banach spaces.
+
+In the first chapter we state basic definitions from topology and functional analysis, so that the reader, regardless of familiarity with functional analysis or not, may be able to follow the constructions of the project. In the second chapter we recall various results of functional analysis; some proofs are left out and referred to instead. In the third chapter, a classic result of Eberlein and Smulian is proven. This result allows us to view compactness in the weak topology as the same as sequential and limit point compactness in the weak topology. In chapter 4 we finally prove the James theorem, allowing us to classify weakly compact sets in Banach spaces, yielding a strong result for classifying reflexive Banach spaces. In chapter 5, we show some properties of uniformly convex Banach spaces, one of which is that every uniformly convex Banach space is reflexive, where we use the James theorem of chapter 4.
+
+\chapter{Basic definitions}
+Throughout the following let $X$ be a vector space over $\mathbb{K}= \C$ or $\R$. We will be working over $\C$, unless otherwise stated.
+\begin{definition}
+A \textbf{Banach space} is a normed space $X$ which is complete with respect to the metric induced by the norm.
+\end{definition}
+\begin{definition}
+A \textbf{linear functional} $f$ on $X$ is a linear map $f\colon X \to \mathbb{K}$.
+\end{definition}
+\begin{definition} 
+A \emph{directed set} $(A,\leq)$ is a set $A$ equipped with a reflexive and transitive binary relation $'\leq'$ such that every pair of elements has an upper bound, i.e., that
+\begin{enumerate}
+\item $a \leq a$, for all $a \in A$.
+\item $a \leq b$ and $b \leq c$ implies that $a \leq c$ for all $a,b,c \in A$.
+\item If $a,b \in A$ then there is some $y \in A$ such that $a\leq y$ and $b \leq y$.
+\end{enumerate}
+\textit{Note: It may be the case that neither $a\leq b$ nor $b\leq a$ for $a,b \in A$, i.e., the ordering need not be total.}
+\end{definition}
+\begin{definition}
+A \emph{net} $(x_{\alpha})_{\alpha \in A}$ in $X$ is a map $\alpha \mapsto x_{\alpha}$ from a directed set $(A,\leq)$ into $X$.
+\end{definition}
+
+If we let $X$ be a topological space, and $E \subset X$, we use the following terminology for a net $(x_{\alpha})_{\alpha \in A}$ having certain properties
+\begin{enumerate}
+\item \textbf{Eventually in:} A net $(x_{\alpha})_{\alpha \in A}$ is said to be \textbf{eventually in} $E$ if there exists a $\alpha_{0} \in A$ such that $x_{\alpha} \in E$ for all $\alpha \geq \alpha_{0}$.
+\item \textbf{Frequently in:}  A net $(x_{\alpha})_{\alpha \in A}$ is said to be \textbf{frequently in} $E$ if for every $\alpha \in A$, there exists $\beta \geq \alpha$ such that $x_{\beta} \in E$.
+\item \textbf{Converges to:}  A net $(x_{\alpha})_{\alpha \in A}$ is said to be \textbf{converging} to a point $x \in E$ if for all open neighborhoods $U_{x} \in E$ around $x$, $(x_{\alpha})_{\alpha \in A}$ is \textbf{eventually} in $U_{x}$. 
+\item \textbf{Cluster point:} We say that $x$ is a \textbf{cluster point} of $(x_{\alpha})_{\alpha \in A}$ if for every neighborhood $U_{x}$ of $x$, $(x_{\alpha})_{\alpha \in A}$ is \textbf{frequently in} $U$.
+\end{enumerate}
+\begin{definition}
+For a linear topological space $X$, we denote the space of all continuous linear functionals on $X$ by $X^*$ (the \textbf{dual space} of $X$). Whenever $X$ is a normed space, then $X^*$ is a normed linear space with respect to the operator norm defined by
+\begin{align*}
+\lv f \rv = \sup\{ \lv f(x) \rv \ \big| \ \lv x \rv = 1 \}, \quad f \in X^*.
+\end{align*}
+\end{definition}
+\begin{remark}
+The dual space of a vector space $X$ is a Banach space if $X$ is a normed space. This is due to a result which states that the space of continuous linear maps $f\colon X \to Y$ is complete whenever $Y$ is a complete normed space.
+\end{remark}
+
+	\noindent In this paper, we will be working with a very special and important topology on linear spaces, the \textbf{weak} topology, defined in the following way:
+\begin{definition}
+The \textbf{weak-topology} is the Hausdorff topology on $X$ induced by $X^*$, and it has a neighborhood basis at $0$ given by
+\begin{align*}
+V(0,f_{1},\dots,f_{n},\varepsilon)=\{ x \in X \big|\ |f_{i}(x)| < \varepsilon, 1 \leq i \leq n\}
+\end{align*}
+where $n \in \N$ and $f_{1}, \dots f_{n} \in X^*$ and $\varepsilon >0$. This topology is the coarsest topology on $X$ for which all the semi-norms $p_{f} \colon X \to \R$, defined by $p_{f}(x)=|f(x)|$, are continuous for $f \in X^*$.  
+\noindent An equivalent notion to a net $(x_{\alpha})_{\alpha \in A} \subset X$ converging weakly $x \in X$ if and only if $x_{\alpha} \to x$ with respect to the basis is the following: A net $(x_{\alpha})_{\alpha \in A}$ is converging weakly to $X$ if and only if $f(x_{\alpha}) \stackrel{|\cdot|}{\to} f(x)$ in $\mathbb{K}$ for all $f \in X^*$
+\end{definition}
+	\noindent Since $X^*$ is also a normed vector space, it has a dual space, denoted by $(X^*)^*$ or simply $X^{**}$. This space is called the \emph{bi-dual} of $X$. This space induces the weak-topology on $X^*$.
+	
+\noindent For each $x \in X$ we may define a semi-norm $p_{x}:X^* \to \R$ by $p_{x}(f)=|f(x)|$. This gives rise to the weak$^*$-topology on $X^*$.
+\begin{definition}
+The \textbf{weak}$^*$\textbf{-topology} on $X^*$ is the Hausdorff topology on $X^*$ induced by the family of semi-norms $(p_{x})_{x \in X}$ and it has a neighborhood base at $0$, given by
+\begin{align*}
+V^*(0,x_{1},\dots,x_{n},\varepsilon)=\{ f \in X^*\ \big|\ |f(x_{i})| < \varepsilon, 1 \leq i \leq n\}
+\end{align*}
+where $n \in \N$ and $x_{1}, \dots x_{n} \in X$ and $\varepsilon >0$. This topology is the coarsest topology on $X$ for which all the semi-norms $p_{x}$ are continuous.
+
+\noindent Equivalently, a net $(f_{\alpha})_{\alpha \in A} \subset X^*$ is said to be weak$^*$ convergent to $f \in X^*$ if it converges pointwise for all $x \in X$, i.e., that we have $f_{\alpha}(x) \to f(x)$ for all $x \in X$.
+\end{definition}
+\noindent Now, a Banach space $X$ can be embedded into it's bi-dual by a linear isometric map, $\Lambda:X \to X^{**}$ defined by $\Lambda(x)(f) = \hat{x}(f) =f(x)$ for $f \in X^*$. We denote the embedding of $X$ in $X^{**}$ by $\hat{X}$. If this map is an isomorphism, we say that $X=X^{**}$, and we say that $X$ is a \emph{reflexive} Banach space.
+
+\begin{definition}
+Let $X,Y$ be topological vector spaces, and let $\Gamma$ be a family of functions $\gamma:X \to Y$. We say that $\Gamma$ is \emph{equicontinuous} at $x \in X$ if for every neighborhood $W$ of $0\in Y$ there is a neighborhood $V$ of $x$ such that for all $y \in V$ and all $\gamma \in \Gamma$ we have that
+\begin{align*}
+\gamma(y) - \gamma(x) \in W.
+\end{align*}
+$\Gamma$ is said to be equicontinuous if it is equicontinuous at all $x \in X$.
+\end{definition}
+
+\begin{remark} \label{equicont linear func}
+If it happens that $X$ is a Banach space and $Y=\K$ then a family of linear functionals $\Gamma \subset X^*$ is equicontinuous if for all $\varepsilon>0$ there is some $\delta > 0$ such that for all $x,y \in X$ and all $f \in \Gamma$, if $\lv x - y \rv < \delta$ implies $|f(x)-f(y)|<\varepsilon$.
+\end{remark}
+
+\begin{definition}
+A topological space $X$ is called \emph{separable}, if there is some countable dense subset $X_{0}\subset X$. 
+\end{definition}
+
+\noindent In a general topological space $X$, there are different notions of compactness; we will be dealing with three different forms; limit point compactness, sequential compactness and regular compactness. For general topological spaces, these forms of compactness are not equivalent, however in some cases they are - a prime example is in metric spaces. we recall the definitions of limit point compactness and sequential compactness:
+
+\begin{definition}[Limit point compactness]
+Let X be a topological space. A subset $A \subset X$ is said to be \textbf{limit point compact} if every countably infinite subset of $A$ has a limit point in $X$, that is if every sequence $(x_{n})_{n\geq 1}$ in $A$ has a limit point $x_{0}$ in $A$. This means that there is a point $x_{0}\in A$ such that for all neighborhoods $V_{x_{0}}$ of $x_{0}$ there is some $j \in \N$ such that $x_{j} \in V_{x_{0}}$ and $x_{j} \neq x_{0}$. 
+\end{definition}
+
+\begin{definition}[Sequential compactness]
+Let X be a topological space. A subset $A \subset X$ is said to be \textbf{sequentially compact} if every sequence $(x_{n})_{n\geq 1} \subset A$ has a convergent subsequence.
+\end{definition}
+
+\chapter{Various results from Functional Analysis}
+\begin{lemma}\label{lma:span separable}
+Let $X$ be a normed linear space over $\mathbb{K}$. Then the closed span of a countable set in $X$ is separable. 
+\begin{proof}
+Let $(x_{n})_{n\geq1}\subset X$ be any countable set. Now pick some countable dense subset $\mathbb{W} \subset \mathbb{K}$, and let $X_{0}:={\text{span}}(x_{n})$. Concretely we can choose $\mathbb{W} = \mathbb{Q} \subset \mathbb{R}$ if $X$ is real and $\mathbb{W} = \mathbb{Q} + i\mathbb{Q}\subset \mathbb{C}$ if it is complex. Now, the set 
+\begin{align*}
+Y_{0}:=\left\{ \sum_{j=1}^\infty q_{j} x_{j} :  q_{j} \in \mathbb{W}, x_{j} \in (x_{n})_{n\geq 1} \right\},
+\end{align*}
+is countable, as the elements can be identified with sequences in $\mathbb{W}$.
+For some $x\in X_0$ we can write $x= \sum_{j=1}^\infty a_{j} x_{j}$ with $a_j\in \mathbb{K}$, and hence we can pick $q_j$ for each $j$ such that $\sum_{j=1}^\infty (a_{j} - q_{j})\lv x_{j} \rv < \varepsilon$ as $\mathbb{W}$ was dense.
+Since this is possible $Y_0$ is dense in $X_0$, and $X_{0}$ is dense in $\overline{X_{0}}$ and hence $Y_{0}$ is dense in  $\overline{X_0}$ and so $\overline{X_0}$ is separable.
+
+\end{proof}
+\end{lemma}
+\begin{lemma}\label{lma: compact metric implies sep}
+Let $X$ be a compact metric space. Then $X$ is separable.
+\begin{proof}
+    For each $n\in \N$ consider the set of all open balls of radius $\frac{1}{n}$ , i.e., of the form $\{B(x,\frac{1}{n})|x\in X\}$.
+    This is an open covering of the space, and hence we can choose a finite subcover, $C_n$, for each $n$.
+    To each such finite subcover we associate the set of centers of these finitely many balls, $L_n$, and the union of these, $L:=\bigcup^\infty_{i=1}L_n$.
+    The union of all such sets is a countable union of finite sets, and hence countable itself, and we claim that it is furthermore dense in $X$.
+    Each point $x$ of the space is contained in a ball in each $C_n$, i.e., for each $x \in X$ and each $n \in \N$ there exists an $B(x_0,\frac{1}{n})$ such that $x\in B(x_0, \frac{1}{n})$.
+    We now have that for each $\varepsilon$ there exists an $x_0\in L$ at most $\varepsilon$ away from $x$, and so $L$ is dense in $X$.
+\end{proof}
+\end{lemma}
+
+\noindent We now recall some classic results, which are usually covered in any introductory course in functional analysis. We will omit some proofs, as most are readily available in the literature.
+\begin{theorem}\label{balanced neigh}
+If $X$ is a topological vector space over $\mathbb{K}$ then
+\begin{enumerate}
+\item every neighborhood of $0$ contains a balanced neighborhood of $0$\\
+\item every convex neighborhood of $0$ contains a balanced convex neighborhood of $0$
+\end{enumerate}
+\end{theorem}
+For a proof of this see \cite[1.14][12]{rudin1991functional}.
+\begin{theorem}[Alaoglu's theorem]\label{Alaoglu}
+	Let $X$ be a normed vector space over $\mathbb{K}$. Then the closed unit ball of $X^*$ is compact in the $w^*$-topology. 
+\end{theorem}
+\noindent Proof found in \cite[][169]{folland2013real}.
+
+\begin{theorem}[The Uniformed Boundedness Principle.] \label{UBP}
+Let $X$ and $Y$ be normed vector spaces over $\mathbb{K}$ and let $A$ be a set of continuous linear maps $T\colon X \to Y$. 
+\begin{enumerate}
+\item If $\sup_{T \in A} \lv T(x) \rv < \infty$ for all $x$ in some nonmeager subset of $X$, then 
+\begin{align*}
+\sup_{T \in A} \lv T \rv < \infty
+\end{align*}.
+\item If $X$ is a Banach space and $\sup_{T \in A} \lv T(x) \rv < \infty$ for all $x \in X$ then 
+\begin{align*}
+\sup_{T \in A} \lv T \rv < \infty
+\end{align*}.
+\end{enumerate}
+\end{theorem}
+\noindent For a proof of this see \cite[163]{folland2013real}.
+
+\begin{theorem}[The Open Mapping Theorem] \label{OMPT}
+If $X$ and $Y$ are Banach spaces over $\mathbb{K}$ and $T \colon X \to Y$ is continuous linear and surjective, then $T$ is open (i.e., $T$ maps open sets to open sets).
+\end{theorem}
+\noindent For a proof of this see \cite[5.10][162]{folland2013real}.
+
+\begin{corollary} \label{cor OMPT}
+If $X$ and $Y$ are Banach spaces over $\mathbb{K}$ and $T \colon X \to Y$ is continuous, linear and bijective, then $T$ is an isomorphism, that is, $T^{-1}$ is a continuous linear map $T^{-1} \colon Y \to X$.
+\end{corollary}
+\noindent For proof see \cite[5.11][162]{folland2013real}.
+
+\begin{theorem} \label{reflexive ball compact}
+If $X$ is a Banach space over $\mathbb{K}$, then the following are equivalent:
+\begin{enumerate}
+\item $X$ is reflexive.
+\item $X^*$ is reflexive.
+\item The weak- and weak$^*$-topologies coincide on $X^*$.
+\item The unit ball $S_{X}$ of $X$ is weakly compact.
+\end{enumerate}
+\end{theorem}
+\noindent For proof see \cite[Theorem 4.2][136]{conway2013course}.
+
+\begin{definition}
+If $X$ is a Banach space over $\mathbb{K}$, then a subset $A \subset X$ is said to be weakly bounded if $f(A)$ is bounded in $\mathbb{K}$ for all $f \in X^*$.
+\end{definition}
+
+\begin{theorem}\label{weak bounded iff norm}
+Let $X$ be a Banach space, a subset $A \subset X$ is weakly bounded if and only if it is norm bounded.
+\end{theorem}
+\noindent For proof see \cite[Theorem 1.10][130]{conway2013course}.
+
+\begin{lemma}\label{lma:1.5}
+If $X$ is a Banach space over $\mathbb{K}$ and $X^*$ its dual space, and $(x_{n})_{n\geq 1}$ a sequence in $X$.
+Assume that $x_{0}$ is a weak limit point of $(x_{n})_{n\geq 1}$ and that $\lim_{n \to \infty} g(x_{n})$ exists for some $g \in X^*$. Let $y_0:=\lim_{n \to \infty} g(x_{n})$. Then $y_0 = g(x_{0})$.
+\begin{proof}
+By the definition of a limit point we can assume that $x_0$ does not occur in the sequence.
+Furthermore we can assume that no element occurs twice.
+This assumption is due to the definition of limit points in combination with the topology being Hausdorff.
+So we assume without loss of generality that $x_n \neq x_m$ whenever $n\neq m$, and that $x_n\neq x_0$ for all $n\geq 1$.
+Let $\varepsilon>0$ be given and choose $N_{\varepsilon} \in \N$ such that for all $n \geq N_{\varepsilon}$ we have that $ x_{n} \in g^{-1} (\{ y \in \C \big|\ |y - y_0| < \frac{\varepsilon}{3}\})$.
+For each $i \in \N$, let $V_{i}$ be a weak neighborhood of $x_{0}$ with $x_{i} \not\in V_{i}$.
+Then $V:=V\left(x_{0},g,\frac{\varepsilon}{3}\right) \cap \left(\bigcap_{i=1}^{N_{\varepsilon}} V_{i}\right)$ is a neighborhood of $x_{0}$. Since $x_{0}$ is a weak limit point of $(x_{n})_{n \geq 1}$, the intersection $(x_{n})_{n \geq 1} \cap V$ is non-empty, but by construction, for $k \leq N_{\varepsilon}$ we have
+\begin{align*}
+x_{k} \not\in V\left(x_{0},g,\frac{\varepsilon}{3}\right) \cap \left(\bigcap_{i=1}^{N_{\varepsilon}} V_{i}\right)
+\end{align*}
+Thus there is some $r > N_{\varepsilon}$ such that $x_{r}$ is an element of it. Now, if we look at 
+\begin{align*}
+V\left(x_{0},g,\frac{\varepsilon}{3}\right) \cap \left(\bigcap_{i=1}^{N_{\varepsilon}} V_{i}\right) \cap g^{-1} \left(\left\{ y \in \C \big|\ |y - y_0| < \frac{\varepsilon}{3}\right\}\right),
+\end{align*}
+since $r \geq N_{\varepsilon}$ $x_{r}$ is an element of each of the sets we are intersecting, it is in the intersection.
+Thus we get for all $n \geq N_{\varepsilon}$ that
+\begin{align*}
+|g(x_{0}-x_{n})| \leq |g(x_{0} - x_{r})| + |g(x_{r})-y_{0}| + |y_{0}-g(y_{n})| < \varepsilon,
+\end{align*}
+as wanted.
+\end{proof}
+\end{lemma}
+
+\begin{theorem}\label{thm:metriciffsep}
+If $X$ is a Banach space over $\mathbb{K}$, then the weak$^*$-topology of the closed unit sphere of $X^*$ is a metric topology if and only if $X$ is separable.
+\end{theorem}
+\noindent For proof see \cite[Theorem 5.1][138]{conway2013course}.
+
+\begin{corollary}\label{V.4.3}
+If $X$ is a Banach space, a subset $A\subseteq X^*$ is weak$^*$-compact if and only if it is closed in the weak$^*$-topology and bounded in the metric topology.
+\end{corollary}
+\noindent See \cite[Corollary 3][424]{dunford1971linear}.
+
+\begin{theorem}\label{complex real functionals} \label{hahnbanach real}
+Let $X$ be any complex vector space. If $f$ is a complex linear functional on $X$, and $u:=\text{Re}(f)$, then $u$ is a real linear functional on $X$, and $f(x)=u(x)-iu(ix)$ for all $x \in X$. Conversely, if $u$ is a real linear functional on $X$ and $f\colon X \to \C$ is defined by $f(x)=u(x)-iu(ix)$ for all $x \in X$, then $f$ is a complex linear functional on $X$. If $X$ is normed, we have $\lv u \rv = \lv f \rv$.
+\end{theorem}
+\noindent See \cite[Proposition 5.5][157]{folland2013real}.
+
+\begin{theorem}[Hahn-Banach extension theorem]
+Let $X$ be a real vector space, $p$ be a sublinear functional on $X$, and $M$ some subspace of $X$. If $f$ is a linear functional on $M$ such that for all $x \in M$ we have
+\begin{align*}
+f(x) \leq p(x).
+\end{align*}
+Then there exists a functional $F$ on $X$ such that for all $x \in X$,
+\begin{align*}
+F(x) \leq p(x)
+\end{align*}
+And $F_{|M}=f$.
+\end{theorem}
+\noindent For proof see \cite[Theorem 5.6][157]{folland2013real}.
+
+\begin{theorem}[Complex Hahn-Banach]
+Let $X$ be a complex vector space, $p$ a sublinear functional on $X$ and $M$ a subspace of $X$. Given a complex linear functional $f$ on $M$ such that for all $x \in M$,
+\begin{align*}
+|f(x)| \leq p(x).
+\end{align*}
+Then there exists a complex linear functional $F$ on $X$ such that for all $x \in X$
+\begin{align*}
+|F(x)| \leq p(x).
+\end{align*}
+and $F|_{M}=f$.
+\end{theorem}
+\noindent For proof see \cite[Theorem 5.7][158]{folland2013real}.
+
+\begin{theorem}\label{rudin 1.18}
+Let $Y$ be a topological vector space over $\C$, and let $\varphi$ be any non-zero linear functional on $Y$. Then the following are equivalent.
+\begin{enumerate}[(a)]
+\item $\varphi$ is continuous with respect to the topology on $Y$.
+\item $\ker(\varphi)$ is closed is closed in the topology on $Y$.
+\item $\ker(\varphi)$ is not dense in $Y$.
+\item $\varphi$ is bounded in some neighborhood $V \subset Y$ of $0$.
+\end{enumerate}
+\begin{proof}
+\indent \textbf{(a) implies (b)} If $\varphi$ is continuous, then, since $\{0\}$ is a closed set, $\varphi^{-1}(\{0\})=\ker(\varphi)$ is also closed. 
+
+\textbf{(b) implies (c)} if $\ker(\varphi)$ is closed, we have that $\overline{\ker(\varphi)}=\ker(\varphi)$. Since $\varphi\neq 0$ we have $\ker(\varphi)\neq X$, so $\ker(\varphi)$ is not dense in $Y$.
+
+\textbf{(c) implies (d)} if $\ker(\varphi)$ is not dense in $Y$, then its complement has non-empty interior, and therefore contains some interior point $y$. Being an interior point, there is by \Cref{balanced neigh} some balanced neighborhood $V$ of $y$ such that $\ker(\varphi) \cap V=\emptyset$. Now we have that $V-y$ is a balanced neighborhood of $0$. If $\varphi(V)$ is bounded on this, the result follows. Assume it is not, then by linearity of $\varphi$, the image of $V$ is a balanced subset of $\C$, since the only balanced subsets of $\C$ are the empty set, the closed and open balls and $\C$ itself, thus $\varphi(V)=\C$. Then there is some $x \in V$ such that $\varphi(y)=-\varphi(x)$, and we see that $y+x \in V$ but $\varphi(y)+\varphi(x)=0$, contradicting our assumption that $\ker(\varphi) \cap V=\emptyset$.
+
+\textbf{(d) implies (a)} if $\varphi$ is bounded in some neighborhood $V$ of $0$, then there is some $N > 0$ such that for all $y$ in $V$ we have
+\begin{align*}
+|\varphi(y)|<N.
+\end{align*}
+Now, let $\varepsilon>0$ be arbitrary, and set $W_{\varepsilon}=\frac{\varepsilon}{N} V$. Then $W_{\varepsilon}$ is a neighborhood of $0$, and all $x\in W_{\varepsilon}$ are of the form $x=\frac{\varepsilon}{N}y$ for some $y \in V$, and thus we have for all $x \in W_{\varepsilon}$,
+\begin{align*}
+|\varphi(x)|=\frac{\varepsilon}{N}|\varphi(y)|< \varepsilon.
+\end{align*}
+So $\varphi$ is continuous at $0$, and thus everywhere by linearity.
+\end{proof}
+\end{theorem}
+
+\begin{theorem}\label{eval wstar cts}
+Let $X$ be a Banach space over $\mathbb{K}$. A linear functional $\varphi\colon X^*\to \K$ is weak$^*$-continuous if and only if there is $x \in X$ such that $\varphi(f)=f(x)$ for all $f \in X^*$. 
+\end{theorem}
+\noindent For proof, see \cite[Proposition 11][29]{funkannotes}.
+
+\begin{corollary}\label{V.3.11}
+Let $X$ be a Banach space over $\mathbb{K}$, and let $\varphi \in X^{**}$.
+Let $\hat{X}$ denote the image of $X$ under the canonical embedding in $X^{**}$.
+Then the following statements are equivalent.
+\begin{enumerate}
+\item $\varphi$ belongs to $\hat{X}$ .
+\item $\varphi$ is weak$^*$-continuous.
+\item $\ker(\varphi)$ is closed in the weak$^*$-topology.
+\end{enumerate}
+\begin{proof}
+In \Cref{rudin 1.18} let $Y:=X^*$ equipped with the weak$^*$-topology. Then we have that $\varphi$ is weak$^*$-continuous if and only if $\ker(\varphi)$ is closed in the weak$^*$-topology. By \Cref{eval wstar cts} we have that $\varphi$ is weak$^*$-continuous if and only if $\varphi$ is given by evaluation, i.e., that $\varphi \in \hat{X}$.
+\end{proof}
+\end{corollary}
+
+\begin{corollary}
+If $X$ is a Banach space over $\mathbb{K}$, a subset of $X^*$ is compact in the weak$^*$-topology if and only if it is closed in the weak$^*$-topology and bounded in the norm topology.
+\end{corollary}
+\noindent See \cite[Corollary V.4.3][424]{dunford1971linear} for a proof.
+
+\begin{definition}
+Let $X$ be a vector space over $\mathbb{K}$, and $A\subset X$ non-empty. The \textbf{convex hull} of $A$, denoted by $\text{co}(A)$ is the smallest convex set in $X$ containing $A$. It is given by
+\begin{align*}
+\text{co}(A):=\left\{ \sum_{i=1}^n \alpha_{i} x_{i} \ : n \geq 1, \ \ x_{i} \in A,\ \alpha_{i}>0, \ \sum_{i=1}^n \alpha_{i}=1 \right\}.
+\end{align*}
+\end{definition}
+
+\begin{corollary}\label{cor: weak => seq converging in norm to x}
+If $X$ is a Banach space, and $(x_{n})_{n\geq 1}$ is a sequence in $X$ converging weakly to some $x$ in $X$, there is a sequence $(u_{n})_{n\geq 1}$ of convex combinations of $(x_{n})_{n\geq 1}$ such that $u_{n} \stackrel{\lv \cdot \rv}{\to} x$, i.e., for all $j \geq 1$ we have that $u_{j}=\sum_{i=1} a_{i} x_{i}$ with $\sum_{i=1}^k a_{i}= 1$.
+\end{corollary}
+\noindent For proof see \cite[Corollary v.3.14][422]{dunford1971linear}.
+
+\begin{theorem}[Krein-Smulian]\label{thm:krein-smulian}
+A convex set in $X^*$ is weak$^*$-closed if and only if its intersection with every positive multiple of the closed unit sphere of $X^*$ is weak$^*$-closed. 
+\end{theorem}
+\noindent For a proof of this see \cite[429]{dunford1971linear}.
+
+\chapter{The Eberlein-Smulian Theorem}
+We are now almost ready to prove the Eberlein-Smulian Theorem, which ensures equivalence of three forms of compactness in the weak topology of a Banach space. We first prove some lemmas:
+
+\begin{lemma}\label{lemma:compactbounded}
+Let $X$ be a Banach space over $\mathbb{K}$. If $A \subset X$ is either
+\begin{enumerate}
+\item weakly sequentially compact,
+\item weakly limit point compact,
+\item weakly compact,
+\end{enumerate}
+then $A$ is bounded.
+\begin{proof}
+Recall that by \Cref{weak bounded iff norm}, $A$ is bounded if and only if $f(A)$ is bounded in $\mathbb{K}$ for all $f \in X^*$. We will show that under the conditions \textit{(1),(2),(3)}, the conclusion is true.
+
+\noindent \textbf{(1)}
+Let $f \in X^*$ and let $A \subset X$ be weakly sequentially compact. Let $(x_{n})_{n \geq 1}\subset f(A)$ be any sequence such that $x_{n} \neq x_{m}$ for  $n \neq m$. Then, since $f:A \to f(A)$ is surjective, there is a sequence $(a_{n})_{n \geq 1} \subset A$ such that $f(a_{n})=x_{n},\ n \geq 1$. By assumption, there is a weakly convergent subsequence $(a_{n_{k}})_{k \geq 1}$ of $(a_{n})_{n\geq 1}$, thus $(f(a_{n_{k}}))_{k \geq 1}=(x_{n_{k}})_{k \geq 1}$ converges to some point. So $\overline{f(A)}$ is sequentially compact, hence compact since $\mathbb{K}$ is a metric space, and so $f(A)$ is bounded and thus $A$ is bounded. \\ 
+
+
+\textbf{(2)}
+Let $f \in X^*$ and let $A \subset X$ be weakly limit point compact. Now, let $(z_{n})_{n \geq 1} \subset f(A)$ be any sequence such that $z_{j}\neq z_{k}$ for $j \neq k$. Now, as above, let $(a_{n})_{n \geq 1} \subset A$ be a sequence such that $f(a_{n})=z_{n}$ for $n \geq 1$. By hypothesis the sequence has a weak limit point, i.e., there exists $x_{0} \in A$ such that whenever $U \subset X$ is a weak neighborhood of $x_{0}$, then $U$ contains some $a_{n} \neq x_{0}$. Now we claim that there is a subsequence of $(a_{n})_{n \geq 1}$ such that $(f(a_{n_{k}})) \to f(x_{0}) $. To see this, let $n_{1} \geq 1$ be such that $a_{n_{1}} \neq x_{0}$ and $|f(a_{n_{1}})-f(x_{0})|<1$. 
+
+Suppose that $1 < n_{1} < n_{2} < \dots < n_{k}$ are chosen such that 
+\begin{align*}
+|f(a_{n_{i}})-f(x_{0})| < \frac1i \quad \text{for} \ 1 \leq i \leq k
+\end{align*}
+Let $F:=\{n\geq 1 | a_{n} \neq x_{0}\}$ and pick $U$ a weak neighbourhood of $x_{0}$ such that 
+\begin{align*}
+a_{n} \not\in U, \ \forall n \leq n_{k}, n \in F
+\end{align*} 
+with a construction similar to the one used in the proof of \Cref{lma:1.5}.
+Now there is some $p \geq 1$ such that $a_{p} \in V\left(x_{0},f,\frac{1}{k+1}\right)\cap U$ with $a_{p} \neq x_{0}$. Furthermore, we must have that $p > n_{k}$, for if $p \leq n_{k}$ with $p \in F$ then $a_{p} \not\in U$ and if $p \not\in F$ then $a_{p}=x_{0}$. So $p > n_{k}$, and setting $n_{k+1}=p$ we get 
+\begin{align*}
+|f(a_{n_{k+1}})-f(x_{0})| < \frac{1}{k+1}
+\end{align*}
+thus $f(a_{n_{k}})=z_{n_{k}} \to f(x_{0})$, giving us that $\overline{f(A)}$ is compact and thus bounded, and so $f(A)$ is bounded, giving us that $A$ is bounded. \\
+
+\textbf{(3)}
+    If $\bar{A}$ is weakly compact, then the image $f(\bar{A})$ is compact, and hence bounded, for each $f\in X^*$. This gives us that $f(A)$ is bounded since $f(A)\subset f(\bar{A})$, resulting in $A$ being bounded.
+\end{proof}
+\end{lemma}
+
+\begin{lemma} \label{equicont w* compact}
+If $X$ is a Banach space, any equicontinuous family $\Gamma$ of linear functionals is contained in a weak$^*$-compact set in $X^*$.
+\begin{proof}
+If $\Gamma$ is equicontinuous, then by \Cref{equicont linear func} it is also pointwise bounded, and thus \Cref{UBP} implies that $\sup_{f \in \Gamma} \lv f \rv < \infty$, and hence $\displaystyle \Gamma \subset  \overline{B_{X*}(0,\sup_{f \in \Gamma}(\lv f \rv))} $ which by Alaoglu is a weak$^*$-compact set.
+%
+%If $\Gamma$ is equicontinuous, then by \Cref{equicont linear func} there is $\delta>0$ such that $|f(x)|\leq 1$ for all $f \in \Gamma$ and $x\in X$ with $\lv x \rv \leq \delta$, and clearly $\Gamma \subset \{f \in X^* \big|\ |f(x)| \leq 1, \ x \in \text{B}(0,\delta) \}$, thus is $f \in X^*$ and $x \in X$ with $\lv x \rv \leq 1$ we have $|f(x)| \leq \frac{1} {\delta}$, and thus $\lv f \rv \leq \frac{1}{\delta}$, so $\Gamma \subset \overline{B_{*}(0,\frac{1}{\delta})}^{w^*}$, %which is a weak$^*$-compact set by Alaoglu
+\end{proof}
+\end{lemma}
+
+\begin{theorem}[\bfseries{Eberlein-Smulian}]\label{thm:eberleinsmulian}
+
+Let $X$ be a Banach space, and let $A\subset X$. The following statements are equivalent:
+\begin{enumerate}[(a)]
+    \item $A$ is weakly sequentially compact,
+    \item $A$ is limit point compact in the weak topology,
+    \item the closure of $A$ in the weak topology is compact in the weak topology.
+\end{enumerate}
+\begin{proof}
+First of all, note that due to \Cref{lemma:compactbounded}, $A$ is a bounded subset of $X$.
+    We split the proof of the theorem up into three bits.
+
+\textbf{(c) implies (b)}. Let $B=(b_n)_{n\geq 1}$ be any sequence in $A$.
+    Since $B$ is a sequence it has an accumulation point $b_0$ in the closure of $A$ by compactness.
+    Since some subsequence of $B$ is eventually in every neighbourhood of $b_0$, the intersection $U\cap B$ is nonempty for every open $U$ containing $b_0$.
+    This means that $b_0$ is also a limit point for $B$ and since $B$ was arbitrary, we are done. 
+    
+\textbf{(b) implies (a)}.
+Let $(x_n)_{n \geq 1}$ be any sequence in $A$, and define $X_0=\overline{\text{span}}(x_n)$. Being a closed subspace of a Banach space, it is also a Banach space, and by Lemma \Cref{lma:span separable}, we have that $X_{0}$ is a separable Banach space. Being a Banach space, \Cref{Alaoglu}\textbf{(Alaoglu)} tells us that the closed unit ball of the dual space, $\overline{B_{X_{0}^*}(0,1)}$ is compact in the weak$^*$-topology, and since $X_{0}$ is separable, we have by \Cref{thm:metriciffsep} that the weak$^*$-topology on the closed unit ball of $X^*$ is metrizable. This means that the closed unit ball is a metric space with the metric of \Cref{thm:metriciffsep} which is also compact in the weak$^*$-topology, combining this with \Cref{lma: compact metric implies sep}, we get that $\overline{B_{X_{0}^*}(0,1)}$ is separable. For each $n \geq 1$ we have that $n \cdot \overline{B(0,1)}=\overline{B(0,n)}$ is separable.
+
+Now since $X_{0}^*= \bigcup_{n \in \N} \overline{B_{X_{0}^*}(0,n)} $ we have that the entire dual space of $X_0$ is separable. Now pick a countable dense set $H_0 \subset X_0^*$. $H_{0}$ is separating on $X_{0}$, for let $x,y \in X_{0}, \ x \neq y$ and let $f \in X_{0}^*$ be such that
+\begin{align*}
+f(x)\neq f(y) \quad \text{and} \quad |f(x)-f(y)|=1
+\end{align*}
+Since $H_{0}$ is countably dense in $X_{0}^*$, there is a sequence $(g_{n})_{n \geq 1} \subset H_{0}$ such that $\displaystyle f = \lim_{n \to \infty} g_{n}$. And thus we see that
+\begin{align*}
+f(x)=\lim_{n \to \infty} g_{n}(x) \neq \lim_{n \to \infty} g_{n}(y) = f(y).
+\end{align*}
+Let $0 < \varepsilon < \frac12$ be given and pick $N \geq 1$ such that $|g_{N}(x)-f(x)|< \varepsilon$ and $|g_{N}(y)-f(y)| < \varepsilon$, then by reverse triangle inequality we see that
+\begin{align*}
+|g_{N}(x)-f(y)| &\geq \Big| |g_{N}(x)-f(x)|-|f(x)-f(y)| \Big| \\
+&> 1-\varepsilon
+\end{align*}
+And thus
+\begin{align*}
+|g_{N}(x)-g_{N}(y)| &\geq \Big |g_{N}(x)-f(y)|-|f(y)-g_{N}(y)|\Big|\\
+&>1-2\varepsilon >0.
+\end{align*} Using Hahn-Banach we can uniquely extend every element of $H_0$ to a linear functional on all of $X$. Let $H$ denote the countable set of all the extension of $H_0$ to all of $X$, ie. $H \subset X^*$, clearly $H$ is separating on $X_{0}$. First we write $H=(g_k)_{k\geq 1}$.
+    By \Cref{lemma:compactbounded} we have that $A$ is bounded, so the sequence $(g_{1}(x_{n}))_{n\geq 1}$ is bounded in $\C$, and thus has a convergent subsequence. Denote by $(1_{n})_{n\geq 1}$ any subsequence of $(n)_{n\geq 1}$ for which $(g_{1}(x_{1_{n}})_{n \geq 1}$ is convergent for $n \to \infty$ and with the property that $n > k \geq 1$ implies $1_{n} > 1_{k}$. Now $(g_{2}(x_{1_{n}}))_{n \geq 1}$ is also bounded, and thus has a convergent subsequence. Define again a subsequence $(2_{n})_{n \geq 1} \subset (1_{n})_{n \geq 1}$ such that $(g_{2}(x_{2_{n}}))_{n \geq 1}$ converges in $\C$, and with the same property as above, i.e., $n > k$ implies $2_{n} > 2_{k}$. Inductively we get subsequences $(m_n)$ of $(m_{n-1})$ such that $g_{m}(x_{m_{n}})$ converges in $\C$ as $n \to \infty$ for all $m \geq 1$. Moreover we also have that for any $n \geq 1$ and $m \geq 2$ that $m_{n}$ must be an element of $((m-1)_{n})_{n\geq 1}$, i.e., that it has the property $(\star)$: $m_{n}=(m-1)_{n'}$ for some unique $n' \geq n$, and that $m_{n} \geq (m-1)_{n}$. 
+    
+	Define a function $q: \N \to \N$ by $q(n)=n_{n}$. Then $(x_{q(n)})_{n \geq 1}$ is a subsequence of $(x_{n})$. Note that for $n \geq 1$ we have
+\begin{align*}
+q(n+1)=(n+1)_{n+1}>n_{n+1}\geq n_{n}=q(n)
+\end{align*}
+And for fixed $k \geq 1$ we have by construction that 
+\begin{align*}
+q(n+k) =(n+k)_{n+k}=\dots =k_{a_{k}(n)}
+\end{align*}
+for some function $a_{k} \colon \N_{0} \to \N$. doing the property $(\star)$ k times. Since $q$ is strictly increasing, $a_{k}$ is increasing as well, and we see that the sequence with elements
+\begin{align*}
+g_{k}(x_{q(k)})&=g_{k}(x_{k_{a_{k}(0)}}), 
+\\ \ g_{k}(x_{q(k+1)})&=g_{k}(x_{k_{a_{k}(1)}}), 
+\\ \ g_{k}(x_{q(k+2)})&=g_{k}(x_{k_{a_{k}(2)}}), 
+\\ &\vdots
+\end{align*}
+is a subsequence of $(g_{k}(x_{k_{n}}))_{n \geq 1}$, i.e, $(g_{k}(x_{q(k+n)}))_{n \geq 1}$ converges as $n$ tends to infinity. Let $y_{j}:= x_{q(j)}$ for $j \geq 1$, then $(y_{j})_{j \geq 1}$ has the desired property, that
+    %$A$ is bounded, so in particular the sequence $(g_k(x_n))_{n\geq 1}$ is bounded in $\mathbb{C}$ for all $n$, and thus we can pick subsequence $(x'_n)_{n\geq 1}\subset (x_n)_{n\geq 1}$ such that $g_k(x_n')$ converges.
+    %Clearly this process can then be applied to the sequence $(x_n')_{n\geq 1}$ together with the functional $g_{k+1}$.
+   % Starting at $k=1$ we can define a subsequence of the original sequence, $(y_m)_{m\geq 1}\subset (x_n)_{n\geq 1}$, by defining $y_k$ to be the $k$'th element of the $k$'th subsequence.
+    %Since $(y_m)_{m\geq k}$ is a subsequence of a sequence, $(x_n')_{n\geq 1}$ such that $g_k(x_n')$ converges, we conclude that
+    \begin{align*}
+        \lim_{m \to \infty} g_k(y_m)
+    \end{align*}
+    is well-defined for each $k$.
+%    By \Cref{lemma:compactbounded} we have that $A$ is bounded, and thus we can pick a subsequence $(y_m)_{m \geq 1}$ of $(x_n)_{n \geq 1}$ such that for any element $g \in H$
+%    \begin{align*}
+%        \lim_{m \to \infty} g(y_m)
+%    \end{align*}
+%    is well-defined.
+    
+\noindent Since $A$ is limit point compact in the weak topology, by assumption there is a point $y_0 \in X$ such that every weak neighborhood of $y_0$ has nonempty intersection with $(y_m)_{m \geq 1}$. Since this sequence is in $X_0$, which is weakly closed, we have that $y_0 \in X_0$.
+    By \Cref{lma:1.5}, $\lim_{m \to \infty} g(y_m) = g(y_0)$ for all $g\in H$, and it remains to be shown that $\lim_{m \to \infty} f(y_m) = f(y_0)$ for all $f \in X^*$, for then $A$ is weakly sequentially compact.
+    
+    Assume for contradiction that this is not the case.
+    Then there exists $f_0\in X^*$ and $\varepsilon >0$ and some subsequence $(y_{m_k})_{k\geq 1}\subset (y_m)_{m\geq 1}$ such that
+    \begin{align*}
+        |f_0(y_{m_k})-f_{0}(y_0)|>\varepsilon, \ k\geq 1. \tag{$\star$}
+    \end{align*}
+    Since this new subsequence is also a countably infinite subset of $A$, it has a weak limit point $y_0'$.
+    As before this limit point lies in $X_0$, and $\lim_{k \to \infty} g(y_{m_k}) = g(y_0')$, and since $H$ is separating on $X_{0}$, we have that $y_{0}=y_{0}'$.
+    Since $y_0'$ is a weak limit point of $(y_{m_k})_{k\geq 1}$, the intersection $V(y_0',f_0,\varepsilon)\cap (y_{m_k})_{k\geq 1}$ is non-empty.
+    This means that there exists $y\in (y_{m_k})_{k\geq 1}$ such that 
+    \begin{align*}
+    |f_{0}(y-y_{0})|=|f_{0}(y-y_0')|<\varepsilon
+	\end{align*}     
+	which is a contradiction to $(\star)$, and thus any sequence of $A$ contains a weakly convergent subsequence, and thus $\bar{A}$ is weakly sequentially compact.
+    
+\textbf{(a) implies (c)}
+Let $\bar{A}$ denote that weak closure of $A$, and let $\Lambda$ denote the natural embedding map $\Lambda:X \to X^{**}$. Since $\Lambda:X \to \Lambda(X):=\hat{X}$ is both continuous, isometric and one-to-one, by \Cref{cor OMPT}, it is an isometric homeomorphism between $(X,\tau_{w})$ and $(\Lambda(X),\tau_{w^*})$, and so we have that $\bar{A}$ is weakly compact if and only if $\hat{\bar{A}}$ is weak$^*$ compact. By \Cref{lemma:compactbounded} we have that $\bar{A}$ is bounded, and thus by \Cref{V.4.3}, we have that $\Lambda(\bar{A})$ is weak$^*$ compact if and only if it's a weak$^*$ closed subset of $X^{**}$. We will show this by showing that $\Lambda(\bar{A})=\overline{\Lambda(A)}^{w^*}$.
+    
+\noindent
+We will get that $\Lambda(\bar{A})=\overline{\Lambda(A)}^{w^*}$ by proving a useful lemma and that $\overline{\Lambda(A)}^{w^*} \subset \Lambda(X)$.
+The lemma in question states that $\Lambda(\bar{A})=\overline{\Lambda(A)}^{w^*} \cap \Lambda(X)$.
+
+We get $\Lambda(\bar{A})\subset \overline{\Lambda(A)}^{w^*} \cap \Lambda(X)$ by the continuity and isometry of $\Lambda$.
+To get the reverse inclusion let $\varphi \in \overline{\Lambda(A)}^{w^*} \cap \Lambda(X)$.
+By definition this means that $\varphi=\Lambda(x)$ for some $x\in X$ and that there exists a net $(x_{\alpha})_{\alpha \in I}\subset A$ such that $\Lambda(x_{\alpha})(f) \to \varphi(f)$ for all $f\in X^*$.
+But since $\Lambda(y)(f)=f(y)$ by definition this is equivalent to $f(x_{\alpha})\to f(x)$ for all $f\in X^*$, which is just weak convergence of $(x_{\alpha})_{\alpha \in I}$ to $x$.
+This means that $x\in \bar{A}$, and therefore that $\Lambda(x)\in \Lambda(\bar{A})$.
+
+
+So let $x^{**} \in \overline{\Lambda(A)}^{w^*}$ be arbitrary, we wish to show that there is $x \in X$ such that 
+    \begin{align*}
+    x^{**}(x^*)=x^*(x), \ x^* \in X^*
+    \end{align*}
+
+\noindent By \Cref{V.3.11}, we get that $x^{**} \in \Lambda(X)$ if and only if $\ker(x^{**})$ is a weak$^*$ closed subset of $X^*$, and by \Cref{thm:krein-smulian} we get that this happens if its intersection with the closed unit sphere of the dual is closed in the weak$^*$ topology. So our claim is that if $\psi_{0}^* \in \overline{D \cap S^*}^{w^*} $ then $\psi_{0}^* \in D \cap S^*$.
+In the following, let $D:=\ker(x^{**}) \subset X^*$ and $S^*:=\overline{B_{X^*}(0,1)}$.
+
+Now first we \textbf{claim} ($\dagger$) the following:\\
+Let $\{\varphi_{1}^*,\dots,\varphi_{n}^* \} \subset X^*$ be a finite subset of $X^*$, then there exists $z \in \bar{A}$ such that 
+\begin{align*}
+x^{**} \varphi_{i}^*=\varphi_{i}^* z, \ i=1,\dots,n
+\end{align*}
+\textbf{proof of claim}
+Let $\{ \varphi_{1},\dots,\varphi_{n}\} \subset X^*$ and let $m\geq 1$ be given. Since $x^{**} \in \overline{\Lambda(A)}^{w^*}$, we have, for each basis element for the weak$^*$ topology on $X^{**}$, $V^*\left(x^{**},\varphi_{1},\dots,\varphi_{n},\frac1m\right)$, that the intersection
+\begin{align*}
+V_{m}^*:=V^*\left(x^{**},\varphi_{1},\dots,\varphi_{n},\frac1m\right) \cap \Lambda(A)
+\end{align*}
+is nonempty. For each $m$, pick $\widehat{z_{m}} \in V_{m}^*$, and let $z_{m} \in A$ be the corresponding evaluation element. Then we have that $(z_{m})_{m\geq 1} \subset A$. Since $A$ is weakly sequentially compact, there is a weakly convergent subsequence $(z_{m_{j}})_{j\geq 1}$ converging to some $z \in \overline{A}$. This $z$ has the property that for all $\varepsilon>0$ we have
+\begin{align*}
+|x^{**}(\varphi_{i})-\varphi_{i}(z)|< \varepsilon, \ \ i=1,\dots,n
+\end{align*}
+Hence $x^{**}(\varphi_{i})=\varphi_{i}(z)$ for $i=1,\dots,n$, as required.
+
+%Let $m \in \N$ be any integer. Since $x \in \overline{\Lambda(A)}^{w^*}$, there is some element $z_{m} \in A$ such that 
+%\begin{align*}
+%|x_{i}^*(z_{m})-x^{**}(x_{i}^*)| < \frac{1}{m} \ \ i=1,\dots,n
+%\end{align*}
+%Do this for each $m \in \N$ and obtain a sequence $(z_{j})_{j \in \N}$ in A. By hypothesis this sequence contains a subsequence $(z_{j_{k}})_{k \in \N}$ converging weakly to some $z \in \bar{A}$. Giving us $x_{i}^*(z)=x^{**}(x_{i}^*), \ i=1,\dots,n$\\ \\
+
+
+Now we consider $\psi_{0} \in \overline{D\cap S^*}^{w^*}$. Recall that the goal is to show that $\psi_{0} \in D\cap S^*$.
+
+Let $\varepsilon>0$ be arbitrary. The set $\{ \psi_{0} \}$ is finite, and thus has the property required for $(\dagger)$ to apply, so there is $z_{1} \in \overline{A}$ such that 
+\begin{align*}
+x^{**}(\psi_{0})=\psi_{0}(z_{1})
+\end{align*}
+Now, since $z_{1} \in \overline{A}$, the intersection 
+\begin{align*}
+V_{(x,1)}:=V\left(z_{1},\psi_{0},\frac{\varepsilon}{4}\right) \cap A
+\end{align*}
+is non-empty, so pick $x_{1} \in V_{(x,1)}$. Then $x_{1}\in A$ and it has the property
+\begin{align*}
+|\psi_{0}(x_{1})-\psi_{0}(z_{1})|<\frac{\varepsilon}{4}
+\end{align*}
+If we let $V^*\left(\psi_{0},x_{1},\frac{\varepsilon}{4} \right)$ be a weak$^*$ neighborhood of $\psi_{0}$ in $X^{*}$, then, since $\psi_{0} \in \overline{D \cap S^*}^{w^*}$, we have that the intersection
+\begin{align*}
+V_{(\psi_0,1)}:=V^*\left(\psi_{0},x_{1},\frac{\varepsilon}{4} \right) \cap {D \cap S^*} \subset X^*
+\end{align*}
+is non-empty. So pick some $\psi_{1} \in V_{(\psi,1)}$.
+Then $\psi_{1} \in D\cap S^*$, so $x^{**}(\psi_{1})=0$, $\lv \psi_{1} \rv \leq 1$. Furthermore $\psi_{1} \in V^*\left(\psi_{0},x_{1},\frac{\varepsilon}{4} \right)$ we have
+\begin{align*}
+|\psi_{0}(x_{1})-\psi_{1}(x_{1})|< \frac{\varepsilon}{4}
+\end{align*}
+Now, let $n \in \N$ and assume that we have three sets
+\begin{align*}
+\{z_{1},\dots,z_{n}\} \subset \overline{A}^w, \quad \{ x_{1},\dots,x_{n}\} \subset A, \quad \text{and }\{\psi_{1},\dots,\psi_{n}\} \subset D\cap S^*
+\end{align*}
+with the following properties:
+\begin{enumerate}
+\item $\psi_{i}(z_{n})=x^{**}(\psi_{i})=0$ for $1 \leq i \leq n-1$,
+\item $|\psi_{m}(z_{n})-\psi_{m}(x_{n})| < \frac{\varepsilon}{4}$ for $0 \leq m \leq n-1$,
+\item $|\psi_{n}(x_{i})-\psi_{0}(x_{i})| < \frac{\varepsilon}{4}$ for $1 \leq i \leq n$,
+\item $\psi_{0}(z_{i})=x^{**}(\psi_{0})$ for $1 \leq i \leq n$,
+\item $\lv \psi_{m}\rv \leq 1$.
+\end{enumerate}
+Now, since the set $\{\psi_{0},\dots,\psi_{n} \}\subset X^{*}$ is finite, $(\dagger)$ produces $z_{n+1} \in \overline{A}$ such that 
+\begin{align*}
+x^{**}(\psi_{i})=\psi_{i}(z_{n+1}), \ \ i=0,\dots,n.
+\end{align*}
+Since $z_{n+1} \in \overline{A}$, the intersection $V_{x,n+1}:= V\left(z_{n+1},\psi_{0},\dots,\psi_{n},\frac{\varepsilon}{4}\right) \cap A$ is non-empty. Pick $x_{n+1}$ in this intersection.
+Then $x_{n+1} \in A$ and satisfies that $|\psi_{m}(z_{n+1})-\psi_{m}(x_{n+1})|< \frac{\varepsilon}{4}$ for $0\leq m \leq n$.
+
+\noindent Now, since the intersection $V^*\left(\psi_{0},x_{1},\dots,x_{n+1},\frac{\varepsilon}{4}\right) \cap \left( D \cap S^*\right)=V_{\psi,n+1} \cap \left( D \cap S^*\right) $ is nonempty, we can pick some $\psi_{n+1} \in V_{\psi,n+1}$.
+This $\psi_{n+1}$ is an element of $\left( D \cap S^*\right)$, so $x^{**}(\psi_{n+1})=0$ and $\lv \psi_{n+1} \rv \leq 1$. Furthermore we have $|\psi_{n}(x_{i})-\psi_{0}(x_{i})| < \frac{\varepsilon}{4}$ for $1 \leq i \leq n+1$.
+We have now shown that the sets 
+\begin{align*}
+\{z_{1},\dots,z_{n+1}\} \subset \overline{A}, \quad \{ x_{1},\dots,x_{n+1}\} \subset A, \quad \{\psi_{1},\dots,\psi_{n+1}\} \subset D\cap S^*
+\end{align*}
+have properties 1-5 above. By this recursive process we obtain sequences
+\begin{align*}
+(z_{n})_{n \geq 1} \subset \bar{A} \quad (x_{n})_{n \geq 1} \subset A, \quad (\psi_{m})_{m\geq 1} \subset D \cap S^*
+\end{align*}
+with the following properties:
+\begin{enumerate}
+\item $\psi_{i}(z_{n})=x^{**}(\psi_{i})=0$ for $1 \leq i \leq n-1$;
+\item $|\psi_{m}(z_{n})-\psi_{m}(x_{n})| < \frac{\varepsilon}{4}$ for $0 \leq m \leq n-1$;
+\item $|\psi_{n}(x_{i})-\psi_{0}(x_{i})| < \frac{\varepsilon}{4}$ for $1 \leq i \leq n$;
+\item $\psi_{0}(z_{i})=x^{**}(\psi_{0})$ for $1 \leq i \leq n$;
+\item $\lv \psi_{m}\rv \leq 1$.
+\end{enumerate}
+
+%let $y_{0}^* \in \overline{D \cap S^*}^{w^*}$ and let $\varepsilon>0$ be arbitrary. Now, by earlier argument there exists $z_{1} \in \bar{A}$ such that
+%\begin{align*}
+%y_{0}^*(z_{1})=x^{**}(y_{0}^*)
+%\end{align*}
+%Since $z_{1} \in \bar{A}$, there is some $x_{1} \in A$ such that 
+%\begin{align*}
+%|y_{0}^*(z_{1})-y_{0}^*(x_{1})| < \frac{\varepsilon}{4}
+%\end{align*}
+%And since $y_{0}^* \in \overline{D \cap S^*}^{w^*}$ there is some $y_{1}^* \in D\cap S^*$ such that
+%\begin{align*}
+%|y_{0}^*(x_{1})-y_{1}^*(x_{1})| < \frac{\varepsilon}{4}
+%\end{align*}
+%Continuing this process in an inductional way produces three sequences
+%\begin{align*}
+%(z_{n})_{n \geq 1} \subset \bar{A} \quad (x_{n})_{n \geq 1} \subset A, \quad (y_{m}^*)_{m\geq 1} \subset D \cap S^*
+%\end{align*}
+%with the following properties
+%\begin{enumerate}
+%\item $y_{i}^*(z_{n})=x^{**}(y_{i}^*)=0$ for $1 \leq i \leq n-1$
+%\item $|y_{m}^*(z_{n})-y_{m}^*(x_{n})| < \frac{\varepsilon}{4}$ for $0 \leq m \leq n-1$
+%\item $|y_{n}^*(x_{i})-y_{0}^*(x_{i})| < \frac{\varepsilon}{4}$ for $1 \leq i \leq n$
+%\item $y_{0}^*(z_{i})=x^{**}(y_{0})$ for $1 \leq i \leq n$
+%\item $\lv y_{m}^*\rv \leq 1$ 
+%\end{enumerate}
+
+
+If we set $m=0$ and combine 2,3 and 4, we get for $1\leq i \leq n$
+\begin{align*}\label{eq:1} 
+|x^{**}(\psi_{0})-\psi_{n}(x_{i})|&\stackrel{4}{=}|\psi_{0}(z_{i})-\psi_{0}(x_{i}) +\psi_{0}(x_{i}) -\psi_{n}(x_{i})|\tag{$\dagger$}\\
+&\leq |\psi_{0}(z_{i})-\psi_{0}(x_{i})|+|\psi_{0}(x_{i}) -\psi_{n}(x_{i})|\\
+&\stackrel{2,3}{\leq} \frac{\varepsilon}{2}
+\end{align*}
+Since $(x_{n})_{n \geq 1}$ is a sequence in $A$, we get by hypothesis that there is a subsequence converging weakly to some $x \in \bar{A}$. Assume without loss of generality that the entire sequence converges weakly to this limit. Combining 1 and 2 we get
+\begin{align*}
+|\psi_{i}(x_{n})| < \frac{\varepsilon}{4}, \ i=1,\dots,n-1
+\end{align*}
+So in the limit this gives us the following:
+\begin{align*}
+    |\psi_{m}(x)| \leq \frac{\varepsilon}{4}
+\end{align*}
+By \Cref{cor: weak => seq converging in norm to x} there is some sequence $(u_{j})_{j \geq 1}$ of convex combinations of $(x_{n})_{n\geq 1}$ with $u_{j} \stackrel{\lv \cdot \rv}{\to} x$ for $j \to \infty$. Thus, for the fixed $\varepsilon>0$ from earlier, there is $u \in (u_n)_{n \geq 1} $, $u=\sum_{j=1}^n a_{j}x_{j}$ with $\sum_{i=1}^n a_{i}=1$ and $ x_{j} \in (x_{n})_{n\geq 1}$ for all $j \geq 1$ such that $\lv x-u \rv < \frac{\varepsilon}{4}$. Hence we have that
+\begin{align*}
+|x^{**}(\psi_0)-\psi_{n}(u)|&=|\underbrace{\sum_{j=1}^n a_{j}}_{=1}x^{**}(\psi_{0})-\sum_{j=1}^n a_{j} \psi_{n}(x_{j})|\\
+&\leq \sum_{j=1}^n a_{j} | x^{**}(\psi_{0}) - \psi_{n}(x_{j})|\tag{by $\dagger$}\\
+&\leq \sum_{j=1}^n a_{j} \frac{\varepsilon}{2}=\frac{\varepsilon}{2}
+\end{align*}
+And thus we see that
+\begin{align*}
+|x^{**}(\psi_{0})|&\leq |x^{**}(\psi_{0})-\psi_{n}(u)|+|\psi_{n}(u)-\psi_{n}(x)| + |\psi_{n}(x)|\\
+&< \frac{\varepsilon}{2} + \lv \psi_{n} \rv \lv x-u \rv + \frac{\varepsilon}{4} \\
+&< \varepsilon
+\end{align*}
+Since $\varepsilon$ was arbitrary, we have that $x^{**}(\psi_0)=0$, hence $\psi_0 \in D$. Since $S^*$ is weak$^*$-closed, $\psi_0 \in D \cap S^*$.
+\end{proof}
+\end{theorem}
+
+\begin{corollary} \label{corollary of eberlein-smulian}
+Let $X$ be a Banach space and $A\subset X$ a (weakly) bounded subset, then the following are equivalent
+\begin{enumerate}
+\item $A$ is weakly sequentially compact
+\item Let $(f_{n})_{n\geq 1}$ be an equicontinuous sequence of linear functionals on $X$ and $(x_{m})_{m\geq 1}$ a sequence in $A$. Then if $\lim_{m} \lim_{n} f_{m} (x_{n})$ and $\lim_{n} \lim_{m} f_{m} (x_{n})$ both exist they are equal.
+\end{enumerate}
+\begin{proof}
+\textbf{"$1 \implies 2$"}
+Since $A$ is weakly sequentially compact, $(x_{n})_{n\geq 1}$ has a weak clusterpoint $x_{0}$, and since $(f_{m})_{m\geq1}$ is contained in a weak$^*$-compact set by \Cref{equicont w* compact}, it has a weak$^*$-clusterpoint $f_{0}$, so if $\lim_{m} \lim_{n} f_{m} (x_{n})$ and $\lim_{n} \lim_{m} f_{m} (x_{n})$ both exists, it must be true that
+\begin{align*}
+\lim_{m\to \infty} \lim_{n\to \infty} f_{m}(x_{n})= \lim_{n\to \infty} \lim_{m \to \infty} f_{m}(x_{n})=f_{0}(x_{0}),
+\end{align*}
+as wanted.
+
+\noindent \textbf{"$2 \implies 1$"} Let $(x_{n})_{n\geq 1} \subset A$. Since $A$ is weakly bounded it is also norm bounded, so $\Lambda(A)\subset X^{**}$ is bounded, and thus the sequence $(\Lambda(x_{n}))_{n\geq 1}$ has a weak$^*$-clusterpoint $x^{**}\in X^{**}$. The \textbf{claim} is that $x^{**} \in \Lambda(X)$. Assume not. Then, by Krein-Smulian, the restriction of $x^{**}$ to the closed unit ball of $X^*$, $S_{*}$ is not weak$^*$-continuous at 0. For each $n\geq 1$ define $V_{n}:=\left\{ f \in X^* \big| |f(x_{i})|<\frac{1}{n}, \ 1 \leq i \leq n \right\}$, then $S_{*} \cap V_{n}$ is a weak$^*$-neighborhood of $0$, and by assumption, there is $\varepsilon>0$ such that for all $n \geq 1$ and $f_{n} \in V_{n} \cap S_{*}$ we have
+\begin{align*}
+|x^{**} (f_{n})| > \varepsilon
+\end{align*}
+Now, for $m \geq 1$ define $U_{m}:= \left\{ \varphi \in X^{**} \big| \ |\varphi(f_{k})| < \frac{1}{m}, \ 1 \leq k \leq m  \right\}$, for each $m \geq 1$ we have that $U_{m}$ is a weak$^*$-neighborhood of $0 \in X^{**}$. Since $(\Lambda(x_{n}))_{n\geq 1}$ has $x^{**}$ as a weak$^*$-clusterpoint, there is an increasing function $\phi:\N \to \N$ such that $\Lambda(x_{\phi(n)}) \in x^{**}+U_{n}$ for $n \geq 1$, and similarly by the boundedness of $(x^{**}(f_{m}))_{m \geq 1}$ there is an increasing function $\psi:\N \to \N$ such that $x^{**}(f_{\psi(m)})$ converges in $\C$.
+
+\noindent Now, fix $n \geq 1$, for $m \geq \psi(n)$ we have that 
+\begin{align*}
+\Lambda(x_{\phi(m)})-x^{**} \in U_{m} 
+\end{align*}
+resulting in $|f_{\psi(n)}(x_{\phi(m)})-x^{**}(f_{\psi(n)})| < \frac{1}{m}$, and hence 
+\begin{align*}
+\lim_{m} f_{\psi(n)} (x_{\phi(m)})=\lim_{m} \Lambda(x_{\phi(m)})(f_{\psi(n)})=x^{**}(f_{\psi(n)}).
+\end{align*} 
+And we see that
+\begin{align*}
+\lim_{n}\big| \lim_{m} f_{\psi(n)} (x_{\phi(m)}) \big|=\lim_{n}\big| \lim_{m} \Lambda(x_{\phi(m)})(f_{\psi(n)})\big| =\lim_{n}\big| x^{**}(f_{\psi(n)})\big| \geq \varepsilon
+\end{align*}
+since $|x^{**}(f_{\psi(j)})|> \varepsilon$ for all $j\geq 1$ by assumption. But, if we fix $m \geq 1$ with $\psi(n) \geq \phi(m)$ we have $f_{\psi(n)} \in V_{\psi(n)} \subset V_{\phi(m)}$, giving us that $|f_{\psi(n)}(x_{\phi(m)})| < \frac{1}{n}$, so $\lim_{n} f_{\psi(n)}(x_{\phi(m)})=0$, and we have 
+\begin{align*}
+\lim_{m} \lim_{n} f_{\psi(n)} (x_{\phi(m)})=0 \neq \varepsilon \leq \lim_{n} \big| \lim_{m} f_{\psi(n)} (x_{\phi(m)}) \big|
+\end{align*}
+Hence we have a contradiction, and thus $x \in \Lambda(X)$
+\end{proof}
+\end{corollary}
+
+\chapter{The James Theorem}
+We are now ready to tackle The James theorem, published in 1966, which states that if $X$ is a complete locally convex linear topological space and $A\subset X$, then $A$ is weakly compact if and only if all elements $f \in X^*$ attains their supremum on $A$. We will not be dealing with the theorem in the general setting of $X$ being any complete locally convex linear topological space. Instead, we will assume that $X$ is a Banach space and prove his theorem in this setting using our variant of the Eberlein-Smulian Theorem of the preceding chapter. Doing this will give us a criterion to determine when a Banach space $X$ is reflexive.
+
+\noindent To prove the James theorem, we need a series of lemmas which prove that if $X$ is a real Banach space, and $C \subset X$ is a weakly closed bounded subset which is not weakly compact, then there is a bounded linear functional not attaining its supremum on $C$. 
+
+\noindent So for the rest of this chapter, assume that $X$ is a real Banach space and $C \subset X$ is a weakly closed and bounded subset of $X$, which is \textbf{not} weakly compact unless otherwise is stated.
+\begin{lemma}\label{pryce 1}
+There is some sequence $(x_{n})_{n\geq1} \subset C$ and some equicontinuous sequence $(f_{m})_{m\geq 1} \subset X^*$ such that the limits $\lim_{m} \lim_{n} f_{m} (x_{n})$ and $\lim_{n} \lim_{m} f_{m} (x_{n})$ both exist, but differ.
+\begin{proof}
+This is a direct consequence of \Cref{corollary of eberlein-smulian}.
+\end{proof}
+\end{lemma}
+\noindent In the following, let $\mathcal{F}$ be the set of all continuous real-valued positive-homogenous functions, that is the set of continuous $f\colon X\to \R$ and for which 
+\begin{align*}
+f(ax)=af(x)
+\end{align*}
+for $a\geq 0$.
+
+All functions $f \in \mathcal{F}$ are bounded on bounded sets, for if $f \in \mathcal{F}$, then by the continuity of $f$ we have that if $I\subset \R$ is a neighborhood of $0$ there is some neighborhood $U$ of $0$ in $X$ such that $f(U) \subset I$. Setting $I=[-1,1]$, we get that there is a neighborhood $U'$ of $0$ in $X$ such that 
+\begin{align*}
+|f(x)|=|f(x)-f(0)|\leq 1, \quad \text{for all } x \in U'
+\end{align*}
+And all bounded sets $V \subset X$ are absorbed by the neighborhood $U'$. Thus for all $v \in V$ we have 
+\begin{align*}
+|f(v)|=|f(\alpha x)|=|\alpha  f(x)| \leq \alpha < \infty
+\end{align*}
+for some $x \in U'$ with $v=\alpha x$ for some $\alpha \geq 0$ for which $V \subset \alpha U'$.
+
+We equip $\mathcal{F}$ with the topology of pointwise convergence on $X$.
+Note that $X^* \subset \mathcal{F}$ and it is furthermore a closed subspace in this topology.
+The subspace topology on  $X^*$ coincides with the weak$-^*$ topology on $X^*$. 
+%the dual of $X$ is a weak$^*$-closed subspace of $\mathcal{F}$.
+
+Now, define a functional $p\colon \mathcal{F} \to \R$ by 
+\begin{align*}
+p(f)=\sup\{f(x): x \in C \}, \ f \in \mathcal{F}.
+\end{align*}
+This functional has the following properties:
+\begin{enumerate}
+\item $p$ is finite valued for all $f \in \mathcal{F}$, since $C$ is a weakly bounded set, it is also bounded in norm by \Cref{weak bounded iff norm}.
+\item The functional $p$ is sublinear, that is, $p(\lambda f)=\lambda p(f)$ for $\lambda\geq 0$ and $p(f+g) \leq p(f)+ p(g)$. This is due to the properties of the supremum and the positive homogenity of $f,g \in \mathcal{F}$.
+\item We also have, by subadditivity of $p$, that
+\begin{align*} 
+-p(g-f) \leq p(f)-p(g) \leq p(f-g)
+\end{align*}
+for all $f,g \in \mathcal{F}$.
+\item If $A \subset \mathcal{F}$ is an equicontinuous family of functions, then $p$ is bounded on $A$, for there is a neighborhood basis element $U_{A}$ of $0\in X$ such that $|f(x)| \leq 1$ for all $x\in U_{A}$ and $f \in A$, and $U_{A}$ being a neighborhood basis element of $0$ in a locally convex space, $C$ is absorbed by $U_{A}$.
+\end{enumerate}
+We will also consider the topology on $\mathcal{F}$ induced by the functional $P:\mathcal{F} \to \R$ defined by $P(f)=\sup\{|f(x)|:x \in C\}$. This topology is the topology of \textit{uniform convergence} on $C$. We will write $f_{n} \stackrel{uc}{\to}f$ if we mean convergence in this topology.
+
+Now, let $(f_{i})_{i\geq 1} \subset \mathcal{F}$ be any equicontinuous sequence. We then define functions $\displaystyle G_{-}=\liminf_{i}f_{i}$ and $\displaystyle G_{+}=\limsup_{i}f_{i}$ by
+\begin{align*}
+G_{-}(x)=\liminf_{i}f_{i}(x)\quad \text{and} \quad G_{+}(x)=\limsup_{i}f_{i}(x)
+\end{align*} 
+for $x \in X$.
+
+\noindent $G_{-}$ and $G_{+}$ are everywhere finite and continuous. To prove this, let $x_{0} \in X$ and $\varepsilon>0$ be given. There is, by the equicontinuity of $(f_{i})_{i\geq1}$, a neighborhood $U_{x_{0}}$ of $x_{0}$ such that
+\begin{align*}
+\sup_{x \in U_{x_{0}}} \{ |f_{i}(x)-f_{i}(x_{0})| \ : \ i=1,2,\dots \} \leq \varepsilon.
+\end{align*} 
+Note, for fixed $i \geq 1$ we have
+\begin{align*}
+| \inf_{k \geq i} f_{k}(x)-\inf_{k \geq i} f_{k}(x_{0})| \leq \sup_{k \geq i} |f_{k}(x)-f_{k}(x_{0})|  \tag{$\dagger$}
+\end{align*} 
+To see this, let $(a_{k})_{k\geq 1},(b_{k})_{k\geq 1}$ be defined by $a_k:=-f_k(x), b_k:=-f_k(x_0)$. Thux
+\begin{align*}
+\sup_{k \geq i} b_k &= \sup_{k \geq i} \left( b_k-a_k+a_k \right)\\
+&\leq \sup_{k \geq i} \left(b_k-a_k\right)+\sup_{k \geq i} a_k \\
+&\leq \sup_{k \geq i}\left|b_k-a_k \right| +\sup_{k \geq i} a_k,
+\end{align*}
+implying that
+\begin{align*}
+    \sup_{k \geq i} b_k - \sup_{k \geq i} a_k \leq \sup_{k \geq i}\left|b_k -a_k \right|.
+\end{align*}
+Replacing $b_k$ with $a_k$ in the above we obtain that
+\begin{align*}
+    \left| \sup_{k \geq i} b_k - \sup_{k \geq i} a_k \right| \leq \sup_{k \geq i} \left| b_k - a_k \right|
+\end{align*}
+But we know that
+\begin{align*}
+    \left| \sup_{k \geq i} b_k - \sup_{k \geq i} a_k \right| &= \left| \inf_{k \geq i} -a_k - \inf_{k \geq i} -b_k \right| \\
+    &=\left| \inf_{k \geq i} f_k(x) - \inf_{k \geq i} f_k(x_0) \right|\\
+    &\leq \sup_{k \geq i} \left| f_k(x) - f_k(x_0) \right|,
+\end{align*}
+Thus achieving the desired result. Now, let $U_{x_{0}}, \varepsilon>0$ be as above, then for fixed $x \in U_{x_{0}}$ we have
+\begin{align*}
+|G_{-}(x)-G_{-}(x_{0})|&=|\liminf_{i}f_{i}(x)-\liminf_{i}f_{i}(x_{0})|\\
+&=|\lim_{i} (\inf_{k \geq i} f_{k}(x)) - \lim_{i} (\inf_{k \geq i} f_{k}(x_{0}))|\\
+&=\lim_{i} | \inf_{k \geq i} f_{k}(x)-\inf_{k \geq i} f_{k}(x_{0})|\\
+&\leq \lim_{i} \sup_{k\geq i} |f_{k}(x)-f_{k}(x_{0})| \tag{by $\dagger$}\\
+&\leq \sup_{k \geq 1} | f_{k}(x)-f_{k}(x_{0})| \leq \varepsilon,
+\end{align*}
+and analogously for $G_{+}$. By the properties of $\liminf,\limsup$ they are also positive-homogeneous, so $G_{-},G_{+}$ are elements of $\mathcal{F}$. \\
+We are now ready to prove another result
+\begin{lemma}\label{pryce 2}
+Let $(f_{i})_{i\geq 1}$ be any equicontinous sequence of $\mathcal{F}$ and let the topology on $\mathcal{F}$ be that of the seminorm $P$, that is the topology of uniform convergence on $C$. Let $H$ be a subset of $\mathcal{F}$, which is separable in the subspace-topology. Then there is a subsequence $(g_{j})_{j\geq 1}$ of $(f_{i})_{i\geq 1}$ such that if $G_{-}=\liminf_{j}g_{j}$ and $G_{+}=\limsup_{j}g_{j}$  then 
+\begin{align*}
+p(f-G_{-})=p(f-G_{+})
+\end{align*}
+for all $f \in H$, with $\displaystyle p(f)=\sup_{x \in C}\{ f(x) \}$ as earlier.
+\begin{proof}
+By assumption, $H$ has a countable dense subset $(\omega_{k})_{k \geq 1}$. Let $(\varphi_{j})_{j\geq 1}\subset H$ be defined by
+\begin{align*}
+(\varphi_{j})_{j\geq 1}:=(\omega_{1},\ \omega_{1},\omega_{2},\ \omega_{1},\omega_{2},\omega_{3},\ \dots)
+\end{align*} 
+This new sequence has every point of $H$ as a clusterpoint. Now, we build a sequence $(x_{n})_{n \geq 1} \subset C$ and sequences $\left((f_{i}^n)_{i\geq 1}\right)_{n\geq 1}$ recursively. First note that since 
+\begin{align*}
+p(f)=\sup_{x \in C} \{ f(x) \},
+\end{align*}
+we have that there is $y \in C$ such that
+\begin{align*}
+|\varphi_{1}(y)-\liminf_{i} f_{i}(y)-p(\varphi_{1}-\liminf_{i} f_{i})| < \frac12.
+\end{align*}
+
+\noindent For $n=1$ choose $x_{1} \in C$ such that 
+\begin{align*}
+\varphi_{1}(x_{1})-\liminf_{i}f_{i}(x_{1}) &> p(\varphi_{1}-\liminf_{i}f_{i})-\frac{1}{2}\\
+&=\sup_{x \in C} \{\varphi_{1}(x)-\liminf_{i}f_{i}(x) \}-\frac12.
+\end{align*}
+For $x_1$ in particular we can pick a subsequence $(f^1_i)_{i\geq1}\subset (f_i)_{i\geq2}$ such that $(f^1_i(x_1))_{i\geq 1}$ converges to $\liminf_{i}f_{i}(x_{1})$. Similarly for $n > 1$ choose $x_{n} \in C$ and a subsequence $(f_{i}^n)_{i  \geq 1}$, with
+\begin{align*}
+(f_{i}^n)_{i  \geq 1} \subset (f_{i}^{n-1})_{i  \geq 2} \subset \dots \subset (f_{i}^1)_{i \geq n},
+\end{align*}
+in such a way that 
+\begin{align*}
+\varphi_{n}(x_{n})-\liminf_{i}f_{i}^{n-1}(x_{n}) > p(\varphi_{n}-\liminf_{i}f_{i}^{n-1})-\frac{1}{2^n}
+\end{align*}
+and 
+\begin{align*}
+f_{i}^n(x_{n}) \stackrel{i \to \infty}{\to} \liminf_{i}f_{i}^{n-1}(x_{n}).
+\end{align*}
+Define a new sequence $(g_{i})_{i \geq 1}$ by $g_{k}:=f_{1}^k$. Note that for every $n\geq 1$ we have $(g_{k})_{k \geq n}$ is a subsequence of $(f_{i}^n)_{i \geq 1}$ and thus if we define $G_{-},G_{+}$ by $G_{-}=\liminf_{j}g_{j}$ and $G_{+}=\limsup_{j}g_{j}$ , we have 
+\begin{enumerate}[(i)]
+\item $\displaystyle \lim_{k} g_{k}(x_{n}) \text{ is well defined and equals } \lim_{i}f_{i}^n(x_{n})$ for each $n \geq 1$
+\item Since $(g_{k})_{k\geq 1} \subset (f_{i}^n)_{i\geq 1}$ for all n,  we have \noindent \begin{align*}
+\varphi_{n}(x_{n})-G_{-}(x_{n})&=\varphi_{n}(x_{n})-\liminf_{i}g_{i}(x_{n})\\
+&= \varphi_{n}(x_{n})-\lim_{k} g_{k}(x_{n}) \\
+&= \varphi_{n}(x_{n})-\liminf_{i}f_{i}^{n-1}(x_{n}) \\
+&> p(\varphi_{n} - \liminf_{i} f_{i}^{n-1}) -\frac{1}{2^n} \\
+&\geq p(\varphi_{n}-G_{-})-\frac{1}{2^n}.
+\end{align*}
+The last step comes from $G_{-}=\liminf_{i}g_{i}\geq \liminf_{i}f_{i}^n$ for all $n$. 
+\end{enumerate}
+Now, let $f \in H$ be arbitrary. Since $(\varphi_{k})_{k \geq 1}$ has every point as a clusterpoint, given any $\varepsilon>0$ there is an $n \in \N$ such that (a): $\displaystyle \frac{1}{2^n} < \varepsilon$ and (b): For all $x \in C$ we have $|f(x)-\varphi_{n}(x)| < \varepsilon$ .
+%\begin{enumerate}[(a)]
+%\item $\displaystyle \frac{1}{2^n} < \varepsilon$
+%\item For all $x \in C$ we have \begin{align*}
+%|f(x)-\varphi_{n}(x)| < \varepsilon
+%\end{align*}
+%\end{enumerate}
+Combining everything we get that
+\begin{align*}
+p(f-G_{-})&=\sup_{x \in C} \{ f(x) - \liminf_{i} g_{i}(x) \} \\
+&\leq \varepsilon + \sup_{x \in C} \{\varphi_{n}(x) - \liminf_{i} g_{i}(x) \} \tag{by (b)}\\
+&< 2 \varepsilon + \varphi_{n}(x_{n})- \liminf_{i} g_{i}(x_{n}) \tag{by (a) and (ii)}\\
+&=2 \varepsilon + \varphi_{n}(x_{n})- \limsup_{i} g_{i}(x_{n}).
+\end{align*}
+Now, since $\displaystyle \limsup_{i} g_{i}(x_{n})=G_{+}$, we have that
+\begin{align*}
+&2 \varepsilon + \varphi_{n}(x_{n})- \limsup_{i} g_{i}(x_{n}) \\
+&< 3\varepsilon + f(x_{n}) - \limsup_{i}g_{i} (x_{n}) \tag{by (b)}\\
+&\leq 3 \varepsilon + \sup_{x \in C} \{ f(x)-G_{+}(x)\}\\
+&= 3 \varepsilon + p(f-G_{+}).
+\end{align*}
+Since $\varepsilon$ was arbitrary, we have that $p(f-G_{-}) \leq p(f-G_{+})$. The other inequality follows from $G_{-} \leq G_{+}$, proving that $p(f-G_{-})=p(f-G_{+})$ for $f \in H$.
+\end{proof}
+\end{lemma}
+Now, if we let $(f_{i})_{i \geq 1} \subset X^* \subset \mathcal{F}$ be the equicontinuous sequence of \Cref{pryce 1}, and let $H=\text{span}(f_{i})$, then $H$ is separable in the $P$-topology of $\mathcal{F}$. To see this, note that if $f \in H$, then $f$ is on the form $f=\sum_{i \geq 1} \lambda_{i} f_{i}$ with $\lambda_{i} \in \R$, for each $i\geq 1$. Also note that, by the equicontinuity of $(f_{i})_{i\geq 1}$ we have
+\begin{align*}
+\sup_{k\geq 1}P(f_{k})=\sup_{k}\sup_{x\in C} \{|f_{k}(x)|\}<\infty.
+\end{align*}
+Let $f \in H$, $\varepsilon>0$ be given and pick $(q_{i})_{i\geq 1} \in \Q$ with $q_i=0$ whenever $\lambda_i=0$ and such that 
+\begin{align*}
+0< \sum_{i \geq 1}^\infty (\lambda_{i}-q_{i}) < \varepsilon
+\end{align*}
+and $g=\sum_{i=1}^\infty q_{i}f_{i} \in H$.
+Then we see that
+\begin{align*}
+P(f-g)&=\sup_{x\in C}\left\{ f(x)-g(x) \right\}\\
+&= \sup_{x \in C} \left\{\left|\sum_{i=1}^\infty \lambda_{i} f_{i}(x) - \sum_{i=1}^\infty q_{i} f_{i}(x)\right| \right\}\\
+&=\sup_{x \in C} \left\{ \left| \sum_{i=1}^\infty(\lambda_{i} -q_{i}) f_{i}(x) \right| \right\}\\
+&\leq \sum_{i=1}^\infty (\lambda_{i} - q_{i}) \sup_{x \in C} \{|f_{i}(x)|\}\\
+&\leq \sum_{i=1}^\infty (\lambda_{i} - q_{i})\sup_{k}\sup_{x\in C} \{|f_{k}(x)|\}\\
+&< \varepsilon \sup_{k}P(f_{k})
+\end{align*}
+And since $\varepsilon>0$ was arbitrary, the set of finite linear combinations of $f_{i}$ with rational coefficients are $P$-dense in $H$. So \Cref{pryce 2} ensures a subsequence $(f_{i_{k}})_{k\geq 1}$ of $(f_{i})_{i \geq 1}$ such that 
+\begin{align*}
+p(f-G_{-})=p(f-G_{+})
+\end{align*}
+for $f \in H$, and such the hypothesis of $\Cref{pryce 1}$ holds, i.e., that
+\begin{align*}
+\lim_{k}\lim_{i}f_{k}(x_{i}) \neq \lim_{i} \lim_{k}f_{k}(x_{i}).
+\end{align*}
+Assume without loss of generality that 
+\begin{align*}
+\lim_{k}\lim_{i}f_{k}(x_{i}) > \lim_{i} \lim_{k}f_{k}(x_{i}).
+\end{align*}
+This means that there exist $r>0$ such that for some fixed $J \geq 1$ we have for all $j\geq J$
+\begin{align*}
+\lim_{i}f_{j}(x_{i}) - \lim_{i} \lim_{k}f_{k}(x_{i})>2r.
+\end{align*}
+And equivalently we get $\displaystyle \lim_{i}\left(f_{j}(x_{i}) - \lim_{k}f_{k}(x_{i})\right)>2r$.
+Hence, for some $I\geq 1$ we have $\displaystyle f_{j}(x_{i}) - \lim_{k}f_{k}(x_{i})>r$ for all $i\geq I$.
+Using this, we can, without loss of generality, assume that for every $j\geq 1$ and sufficiently large $k$  we have
+\begin{align*}
+f_{j}(x_{k})-\lim_{i} f_{i}(x_{k}) \geq r
+\end{align*} 
+for some $r>0$. Now, let $m \in \N$ and define $K_{m}:=\text{co}\left((f_{i)})_{i \geq m} \right)$. Note that then we have that $\mathcal{F} \supseteq X^*\supseteq H \supseteq K_{1} \supseteq K_{2} \supseteq \dots $
+\begin{lemma}\label{pryce 3}
+For all $f \in K_{1}$ we have that $p(f-G_{-}) \geq r$
+\begin{proof}
+Let $f \in K_{1}$ be given and let $(x_{j})_{j \geq 1} \subset C$ be that of \Cref{pryce 1}, then we have that $f=\sum_{i=1}^k \lambda_{i} f_{n_{i}}$ with $\lambda_{i} \geq 0$ and $\sum_{i=1}^k \lambda_{i}= 1$. And we see for sufficiently large $j \geq 1$ that
+\begin{align*}
+p(f-G_{-})=\sup_{x \in C} \{f(x)-G_{-}(x) \}&\geq f(x_{j})-G_{-}(x_{j})\\
+&=\sum_{i=1}^k \lambda_{i} (f_{n_{i}}(x_{j}) - G_{-}(x_{j}) \\
+&=\sum_{i=1}^k \lambda_{i} (f_{n_{i}}(x_{j}) - \liminf_{m}f_{m}(x_{j})\\
+&=\sum_{i=1}^k \lambda_{i} \underbrace{(f_{n_{i}}(x_{j}) - \lim_{m}f_{m}(x_{j})}_{\geq r}\\
+&\geq \sum_{i=1}^k \lambda_{i} r\\
+&=r,
+\end{align*}
+as wanted. 
+\end{proof}
+\end{lemma}
+\begin{lemma} \label{pryce 4}
+Let $X$ be a Banach space, and $\alpha, \beta, \xi >0$. Let $A\subset X$ be any convex subset, and let $u \in A$. Let $p\colon X \to \mathbb{K}$ be any sublinear functional. Suppose that 
+\begin{align*}
+\inf_{a \in A} p(u+\beta a) > \beta \alpha + p(u).
+\end{align*}
+Then there is some point $a_{0}\in A$ such that
+\begin{align*}
+\inf_{b \in A} p(u+\beta a_{0}+\xi b) > \xi \alpha + p(u+\beta a_{0}).
+\end{align*}
+\begin{proof}
+Let $x,y \in A$ and define $c(x,y):=\frac{\beta x+ \xi y}{\beta+\xi}=\frac{\beta}{\beta+\xi} x + \frac{\xi}{\beta+\xi}y \in A$ since $\frac{\beta}{\beta+\xi} + \frac{\xi}{\beta+\xi}=1$. Moreover, we also have that for $u \in A$,
+\begin{align*}
+u+\beta x + \xi y &= u+c(x,y)\\ &= (1 + \frac{\xi}{\beta})(u+\beta c(x,y))- \frac{\xi}{\beta}u.
+\end{align*}
+Now, let $u \in A$, and assume that we have $\inf_{a \in A}p(u+a\beta) > p(u)+\beta \alpha$, then there is some $\delta > 0$ such that
+\begin{align*}
+-p(u)=\beta \alpha -\inf_{a \in A} p(u+\beta a)+\delta, \tag{$\star$}
+\end{align*}
+yielding the following 
+\begin{align*} 
+p(u+\beta x + \xi y) &=p ( u + c(x,y)(\beta + \xi))\\ &= p\left(\left(1 + \frac{\xi}{\beta} \right)(u+\beta c(x,y))-\frac{\xi}{\beta} u\right) \\ &\geq \left(1 + \frac{\xi}{\beta} \right) p(u+\beta c(x,y)) - \frac{\xi}{\beta} p(u). \tag{$\dagger$ }
+\end{align*}
+Now, for fixed $a_{0} \in A$ we combine the above to achieve, where $c(a_{0},b)= \frac{\beta a_{0}+\xi b}{\beta+\xi} \in A $
+\begin{align*}
+\inf_{b \in A} p(u+\beta a_{0}+\xi b) & \stackrel{\text{by} (\dagger)}{\geq} \left(1+\frac{\xi}{\beta} \right) \inf_{b \in A}p(u+\beta c(a_{0},b))-\frac{\xi}{\beta} p(u) \\ &\geq \left(1+\frac{\xi}{\beta} \right)  \inf_{a \in A} p(u+\beta a)- \frac{\xi}{\beta}p(u)\\
+&\stackrel{\text{by} \star}{=} \left(1+\frac{\xi}{\beta} \right) \inf_{a \in A} p(u+\beta a) + \frac{\xi}{\beta} (\beta \alpha - \inf_{a \in A} p(u+a\beta)+\delta)\\
+&= \inf_{a \in A} p(u+\beta a) + \frac{\xi}{\beta} \inf_{a \in A} p(u+\beta a) + \xi \alpha + \frac{\xi \delta}{\beta} - \frac{\xi}{\beta} \inf_{a \in A} p(u+\beta a)\\
+&=  \inf_{a \in A} p(u + \beta a) + \xi \alpha + \frac{\xi \delta}{\beta}.
+\end{align*}
+Now, it is possible to pick $a_{0} \in A$ such that
+\begin{align*}
+p(u+a_{0} \beta) < \inf_{a \in A} p(u+\beta a) + \frac{\xi \delta}{\beta}, \tag{$\heartsuit$}
+\end{align*}
+since $\frac{\xi \delta}{\beta}$ is just some fixed positive constant at this point.
+And thus, picking $a_{0} \in A$ such that $(\heartsuit)$ holds, we get that
+\begin{align*}
+\inf_{b \in A} p(u+\beta a_{0}+\xi b) &\geq  \inf_{a \in A} p(u + \beta a) + \xi \alpha + \frac{\xi \delta}{\beta}\\
+&\stackrel{(\text{by} \heartsuit)}{>} p(u+a_{0} \beta)+ \xi \alpha,
+\end{align*}
+as wanted
+\end{proof}
+\end{lemma}
+Recall that we previously defined $p\colon \mathcal{F} \to \R$ as $\displaystyle p(f)=\sup_{x \in C} f(x), \ f \in \mathcal{F}$.
+Another definition we will need is that of $K_n$.
+We defined $K_{n}=\text{co}(f_{n},f_{n+1},\dots)$, with $(f_{n})_{n\geq 1} \subset \mathcal{F}$ being the sequence of \Cref{pryce 1}, with the additional properties obtained after \Cref{pryce 2}.
+\begin{lemma} \label{pryce 5}
+If $(\beta_{n})_{n\geq 1} \subset \R_{+} \backslash \{0\}$ is an arbitrary sequence of positive real numbers, then there is a sequence $(g_{n})_{n \geq 1} \subset \mathcal{F}$ such that for all $n \geq 1$ one has $g_{n} \in K_{n}$ and
+\begin{align*}
+p\left( \sum_{i=1}^n \beta_{i} (g_{i} - G_{-}) \right) > \frac12 \beta_{n} r + p\left(\sum_{i=1}^{n-1} \beta_{i}(g_{i}-G_{-}) \right)
+\end{align*}
+with $r >0$ as in \Cref{pryce 3} and $G_{-}$ as before. 
+\begin{proof}
+This will be proven using induction. As in \Cref{pryce 4}, let now $u=0 \in \mathcal{F}$, and set $\beta_{1}=\beta$ and $\beta_{2}=\xi$ and let $A:=K_{1}-G_{-}=\{ f-G_{-}: f \in K_{1}\}$. We have that
+\begin{align*}
+\inf_{f \in A} p(u+\beta_{1} f) &= \inf_{f \in K_{1}} p(\beta_{1}(f-G_{-}))\\
+&\geq \beta_{1} r > \frac{1}{2} \beta_{1} r + \underbrace{p(u)}_{=0},
+\end{align*}
+by \Cref{pryce 3}. Thus by \Cref{pryce 4} we have that there is $g_{1} \in K_{1}$ such that
+\begin{align*}
+\inf_{g \in K_{1}} p(\beta_{1}(g_{1}-G_{-})+\beta_{2}(g-G_{-})) > \frac12 \beta_{2} r + p(\beta_{1}(g_{1}-G_{-}))
+\end{align*}  
+For $n \geq 2$, in order to use \Cref{pryce 4}, let $u:= \sum_{i=1}^{n-1} \beta_{i}(g_{i}-G_{-})$,  $\beta=\beta_{n}$, $\xi=\beta_{n+1}$ and let $A:= K_{n}-G_{-}$. Recall that $\mathcal{F} \supseteq X^*\supseteq H \supseteq K_{1} \supseteq K_{2} \supseteq \dots $, so in particular we get, by our inductive hypothesis and the fact that $K_{n-1} \supseteq K_{n}$ that
+\begin{align*}
+\inf_{f \in A} p(u+\beta_{n} f) \geq \inf_{f \in K_{n-1}-G_{-}} p(u+\beta_{n} f) > \frac{1}{2} \beta_{n} r + p(u).
+\end{align*}
+Thus \Cref{pryce 4} gives the existence of $g_{n} \in K_{n}$ such that if we define 
+\begin{align*}
+v:=u+\beta_{n}(g_{n}-G_{-})=\sum_{j=1}^{n-1} \beta_{j}(g_{j}-G_{-})+\beta_{n}(g_{n}-G_{-})=\sum_{j=1}^n \beta_{j}(g_{j}-G_{-}),
+\end{align*}
+we get that
+\begin{align*}
+\inf_{f \in A} p(v+\beta_{n+1} f) > \frac12 \beta_{n+1} r+ p(v).
+\end{align*}
+Which means that there is $g_{n+1} \in K_{n+1}\subset K_{n}$ such that $p(v+\beta_{n+1}(g_{n+1}-G_{-})) > \inf_{f \in  A} p(v+\beta_{n+1} f)$. This gives us that
+\begin{align*}
+p\left(v+\beta_{n+1}(g_{n+1}-G_{-})\right)&=p\left(\sum_{j=1}^{n+1} \beta_{j}(g_{j}-G_{-})\right) > \frac12 \beta_{n+1} r+p\left(\sum_{j=1}^n \beta_{j}(g_{j}-G_{-})\right),
+\end{align*}
+as wanted.
+\end{proof}
+\end{lemma}
+\begin{lemma} \label{pryce 6}
+There is a linear functional on $X$, $G_{0}\in X^*$, for which
+\begin{enumerate}
+\item $\liminf g_n(x) \leq G_{0}(x) \qquad (x\in X)$.
+\item $p(h-G_{0})=p(h-G_{-}) \quad \; (h\in H)$.
+\end{enumerate}
+\begin{proof}
+Since $K_1$ is the convex hull of the equicontinuous sequence $(f_i)_{i\geq1}$, it is by \Cref{equicont w* compact} contained in a weak$^*$ compact set. So the weak$^*$-closure of $K_1$ in $X^*$ is weak$^*$-compact.
+Hence the sequence $(g_n)_{n\geq 1}$ is contained in a weak$^*$-compact set and has a weak$^*$ clusterpoint.
+The \textbf{claim} is that this clusterpoint has the properties listed in the lemma, and we call it $G_0$ from here onward.
+
+\textbf{Proof of claim:} For $x\in X$, we have that $G_0(x)$ is a clusterpoint of the sequence $(g_n(x))_{n\geq1}$; in particular $\displaystyle \liminf g_n(x) \leq G_0(x) \leq \limsup g_n(x)$, which is exactly the first property $G_0$ should have.
+
+\noindent As $g_n\in K_n = \text{co}(\{f_n, f_{n+1}...\})$ we can write $\displaystyle g_n(x)=\sum \lambda_i f_{m_{i}}(x)$, with all $m_i\geq n$.
+Since this is a convex combination it must be true that for some $i$ we have $f_{m_{i}}(x)\leq g_n(x)$ for each $x\in C$.
+For fixed $x \in C$ this process can be repeated for any given $n$, i.e., for all $n$ we can choose $m\geq n$ such that $f_{m}(x)\leq g_n(x)$, so we conclude that $\displaystyle G_{-}=\liminf f_n(x) \leq \liminf g_n(x)$.
+Similarly we can, for all $n$, choose $m$ such that $f_m(x) \geq g_n(x)$, yielding the conclusion that $\displaystyle G_{+} = \limsup f_n(x) \geq \limsup g_n(x)$.
+Collecting these inequalities we get that $G_{-}\leq G_0 \leq G_{+}$. Consequently we have $p(h-G_{-}) \geq p(h-G_{0}) \geq p(h-G_{+})$ for all $h\in H$.
+Recall now that $p(h-G_{-})=p(h-G_{+})$, and so $p(h-G_{-}) =p(h-G_{0}) = p(h-G_{+})$, which was the second property we wished for.
+
+\end{proof}
+\end{lemma}
+
+\begin{corollary} \label{pryce corollary 2}
+If we let $(\beta_{n})_{n\geq 1} \subset \R_{+} \backslash \{0\}$ be any arbitrary sequence of positive real numbers, then there is a sequence $(g_{n})_{n \geq 1} \subset \mathcal{F}$ such that for all $n \geq 1$ one has $g_{n} \in K_{n}$ and
+\begin{align*}
+p\left( \sum_{i=1}^n \beta_{i} (g_{i} - G_{0}) \right) > \frac12 \beta_{n} r + p\left(\sum_{i=1}^{n-1} \beta_{i}(g_{i}-G_{0}) \right)
+\end{align*}
+with the $r >0$ as in \Cref{pryce 3}, i.e., the conclusion of \Cref{pryce 5}  holds with $G_{-}$ replaced by $G_{0}$
+\begin{proof}
+Fix $n \geq 1$, then we see that
+\begin{align*}
+p\left( \sum_{j=1}^n \beta_{j}(g_{j}-G_{0}) \right)
+&= \sum_{j=1}^n \beta_{j} p\left(\frac{1}{\sum_{j=1}^n \beta_{j}} \left(\sum_{j=1}^n \beta_{j}g_{j}-\sum_{j=1}^n \beta_{j} G_{0}\right)  \right)\\
+&= \sum_{j=1}^n \beta_{j} p\left( \left(\frac{1}{\sum_{j=1}^n \beta_{j}} \sum_{j=1}^n \beta_{j} g_{j}\right) - G_{0}  \right)\\
+\text{(By \Cref{pryce 6} part (ii))}&= \sum_{j=1}^n \beta_{j} p\left(\left( \frac{1}{\sum_{j=1}^n \beta_{j}} \sum_{j=1}^n \beta_{j} g_{j}\right)-G_{-}\right)\\
+&=p\left( \sum_{j= 1}^n \beta_{j} (g_{j}-G_{-}) \right),
+\end{align*}
+as wanted.
+\end{proof}
+\end{corollary}
+
+\begin{lemma}\label{pryce 7}
+If the sequence $(\beta_{n})_{n\geq 1}$ of strictly positive numbers decreases sufficiently fast, i.e., if 
+\begin{align*}
+\lim_{n \to \infty} \frac{\sum_{j=n+1}^{\infty} \beta_{j}}{\beta_{n}}=0,
+\end{align*} 
+then the series
+\begin{align*}
+\sum_{i=1}^\infty \beta_{i} (g_{i} - G_{0})
+\end{align*}
+with $(g_n)_{n \geq 1}$ as in \Cref{pryce corollary 2} defines a functional $g \in X^*$ which does not attain its supremum on $C$.
+\begin{proof}
+To start with, assume that $\sum_{j=1}^\infty \beta_{j} < \infty$. By construction, we have that $K_{1}$ is equicontinuous, and thus $K_{1}-G_{0}$ is equicontinuous, as it is just a translation of $K_{1}$. This gives a neighborhood $U$ of $0 \in X$ such that for $x \in U$ and for $f \in K_{1}-G_{0}$ we have
+\begin{align*}
+|f(x)| \leq 1.
+\end{align*}
+For all $j \geq 1$ we have that $g_{j} \in K_{j}$ by construction, and thus $g_{j}-G_{0} \in K_{j}-G_{0}$, so for $x \in U$ we have
+\begin{align*}
+|g_{j}(x)-G_{0}(x)| \leq 1.
+\end{align*}
+Thus, for $x \in U$ we have
+\begin{align*}
+\sum_{j=1}^\infty \beta_{j} \left( g_{j}(x)-G_{0}(x) \right) \leq \sum_{j=1}^\infty \beta_{j}.
+\end{align*}
+So $g:=\sum_{i=1}^\infty \beta_{i} \left(g_{i} - G_{0}\right)$ is well defined and continuous on $X$, since $X^*$ is weak$^*$-closed, i.e., we have that $g \in X^*$. Now, since $K_{1}-G_{0}$ is equicontinuous, there is $M\geq 0$ such that if $x\in C$ and $f \in K_{1}-G_{0}$ then
+\begin{align}
+|f(x)| \leq M.
+\end{align}
+When we defined $p$ we saw that $-p(f-g) \leq p(g)-p(f)$ and as a consequence $p(f) -p(f-g) \leq p(g)$, which yields, with $g$ defined as above and $f:=\sum_{i=1}^n \beta_{i}(g_{i}-G_{0})$, that
+\begin{align*}
+p(g) \geq p\left(\sum_{i=1}^n \beta_{i} (g_{i}-G_{0}) \right) -p\left(\sum_{i=1}^n \beta_{i}(g_{i}-G_{0})-\sum_{i=1}^\infty \beta_{i}(g_{i}-G_{0})  \right). \tag{$\star$}\\
+\end{align*} 
+Now, suppose towards a contradiction that $g$ attains its supremum on $C$ at some point $u \in C$. Then, for all $n \geq 1$ we have that
+\begin{align*}
+\sum_{i=1}^n \beta_{i}(g_{i}-G_{0})(u)
+&= \sum_{i=1}^\infty \beta_{i}(g_{i}-G_{0})(u)-\sum_{i=n+1}^\infty \beta_{i}(\underbrace{g_{i}-G_{0}}_{\in K_{1}-G_{0}})(u) \\
+(\text{By } (4.1))\quad &\geqslant g(u)-M \sum_{i=n+1}^\infty \beta_{i} \\
+&=p(g)-M \sum_{i=n+1}^\infty \beta_{i}\\
+(\text{By } \star)\quad &\geq p\left(  \sum_{i=1}^n \beta_{i}(g_{i}-G_{0})\right)-p\left( \sum_{i=1}^n \beta_{i}(g_{i}-G_{0})-g \right) - M \sum_{i=n+1}^\infty \beta_{i} \\
+&\geq p\left(  \sum_{i=1}^n \beta_{i}(g_{i}-G_{0})\right)-p\left(- \sum_{i=n+1}^\infty \beta_{i}(g_{i}-G_{0}) \right) - M \sum_{i=n+1}^\infty \beta_{i} \\
+(\text{By } (4.1))\quad &\geq p\left( \sum_{i=1}^n \beta_{i}(g_{i}-G_{0}) \right) -2M \sum_{i=n+1}^\infty \beta_{i}\\
+(\text{By \Cref{pryce corollary 2}})\quad &> \frac{1}{2} \beta_{n} r + p\left( \sum_{i=1}^{n-1} \beta_{i}(g_{i}-G_{0}) \right)-2M \sum_{i=n+1}^\infty \beta_{i}\\
+&\geq \frac{1}{2} \beta_{n} r + \sum_{i=1}^{n-1} \beta_{i}(g_{i}-G_{0})(u)-2M \sum_{i=n+1}^\infty \beta_{i}.
+\end{align*}
+And thus, we have that
+\begin{align*}
+\beta_{n} (g_{n}-G_{0})(u)=\sum_{i=1}^n \beta_{i}(g_{i}-G_{0})(u)-\sum_{i=1}^{n-1} \beta_{i}(g_{i}-G_{0})(u)&> \frac{1}{2} \beta_{n} r -2M \sum_{i=n+1}^\infty \beta_{i}.\\
+\end{align*}
+Dividing both sides by $\beta_{n}$ yields
+\begin{align*}
+(g_{n}-G_{0})(u) > \frac{1}{2}r - \frac{2M \sum_{i=n+1}^\infty \beta _{i}}{\beta _{n}}
+\end{align*}
+If we choose $(\beta_{n})_{n\geq 1}$ such that $\frac{\sum_{i=n+1}^\infty \beta _{i}}{\beta _{n}}\to 0, \ n \to \infty$, for an example $\beta_{n}=\frac{1}{n!}$, we see that
+\begin{align*}
+\liminf_{n} (g_{n}-G_{0})(u) \geq \frac12 r
+\end{align*}
+But this is a contradiction, since $\liminf_{n} g_{n}(u) \leq G_{0}(u)$ by \Cref{pryce 6}. Thus $g$ cannot attain its supremum on $C$.
+\end{proof}
+\end{lemma}
+
+\begin{theorem}\label{realweakcompact}
+Let $X$ be Banach space over $\R$ and $C \subset X$ a weakly closed bounded subset. Then $C$ is \textbf{weakly compact} if and only if given any element $f$ of the dual $X^*$, there is $x \in C$ such that $f(x)=\sup\{f(y): y \in C\}$. \textit{(Or that all elements of the dual attain their supremum on $C$)}
+\begin{proof}
+\textbf{"$\Rightarrow$"} This implication is trivial, for if $f \in X^*$ then $f$ is weakly continuous, and if $C$ is weakly compact, $f$ will attain its supremum on $C$.
+
+\noindent \textbf{"$\Leftarrow$"} Assuming that $C$ is not weakly compact, \Cref{pryce 7} gives us a linear functional $g\in X^*$ which does not attain its supremum on the closed unit ball of $X$. This gives us the desired implication, and the theorem is proved.
+\end{proof}
+\end{theorem} 
+The following proposition allows us to generalize the above theorem to Banach spaces over $\C$
+\begin{proposition}\label{realcomplex}
+Let $X$ be a complex locally convex topological vector space over $\C$. Let $X_{\R}$ be the space viewed as a vector space over $\R$ rather than $\C$. Then the weak topology on $X$ induced by $X^*$ and the weak topology on $X_{\R}$ induced by $X_{\R}^*$ coincide.
+\begin{proof}
+We show that given any weak basis element for $X$, there is a weak basis element of $X_{\R}$ which is a subset of it and vice versa. So let $n \in \N$ be given, and $f_{1},\dots, f_{n} \in X^*$, and $\varepsilon>0$ be given. Then $V(0,f_{1},\dots,f_{n},\varepsilon)=\{ x \in X \big| |f_{i}(x)|<\varepsilon, \ 1 \leq i \leq n \}$ is a basis element for the weak topology on $X$, and we see that 
+\begin{align*}
+\left\{x \in X \big| | \text{Re}f_{i}(x)| < \sqrt{\frac{\varepsilon}{2}} \text{ and } |\text{Re}f_{i}(ix) | < \sqrt{\frac{\varepsilon}{2}}, \ 1 \leq i \leq n \right\} \subset V(0,f_{1},\dots,f_{n},\varepsilon).
+\end{align*}
+Now, if $g_{1},\dots,g_{n} \in X_{\R}^*$, $\varepsilon>0$ are given, then $U(0,g_{1},\dots,g_{n},\varepsilon)$ is a weak basis element for the weak topology on $X_{\R}$. Let $f_{i}$ be defined by $\text{Re}f_{i}=u_{i}$ as in \Cref{complex real functionals}, then 
+\begin{align*}
+\left\{ x \in X \big| |f_{i}(x)|<\varepsilon, \ 1 \leq i \leq n\right\} \subset U(0,g_{1},\dots,g_{n},\varepsilon),
+\end{align*}
+finishing the proof.
+\end{proof}
+\end{proposition}
+
+\begin{theorem}[The James theorem]\label{PRYCE}
+Let $X$ be Banach space and $C \subset X$ a weakly closed bounded subset. Then $C$ is \textbf{weakly compact} if and only if given any element $f$ of the dual $X^*$, there is $x \in C$ such that $|f(x)|=\sup\{|f(y)|: y \in C\}$. \textit{(Or that all elements of the dual attain their absolute supremum on $C$)}
+\begin{proof}
+In the following we will by $X_{\R}$ denote $X$ viewed as a real Banach space. If $C$ is weakly compact, then every bounded linear functional $f \in X^*$ attain their absolute supremum on $C$. Conversely, assume that $f \in X^*$ and that $f$ attain its absolute supremum on $C$. Since $C$ is bounded by \Cref{weak bounded iff norm}, it may be assumed that $C$ is contained in the closed unit ball of $X$. Now, let
+\begin{align*}
+B:=\bigcap_{f \in X^*} \{ x\ : \ x \in X,\ |f(x)| \leq \sup\{ |f(y)|, \ y \in C \} \}
+\end{align*}
+then $B$ is balanced, for given $\alpha \in \C$ with $|\alpha| \leq 1$ we have that $|f(\alpha x)| = |\alpha| |f(x)| \leq |f(x)|$ for $f \in X^*, \ x \in B$. Furthermore, we also have that $B$ is weakly closed, for let $(x_{\lambda})_{\lambda \in \Lambda} \subset B$ be a net with weak limit $x$, we then have that for every $f \in X^*$
+\begin{align*}
+|f(x)| &= |\lim_{\lambda \in \Lambda} f(x_{\lambda})| \\
+&= \lim_{\lambda \in \Lambda} |f(x_{\lambda})| \\
+&\leq \sup \{ |f(y)|, \ y \in C \},
+\end{align*}
+so $x \in B$. We also have that $C \subset B$, and that $B$ is a subset of the closed unit ball of $X$. Now, if $x \in B$, then $\displaystyle |f(x)| \leq \sup_{y \in C} \{ |f(y)| \}$, so $\displaystyle \sup_{x \in B} \{ |f(x)|\} \leq \sup_{y \in C} \{|f(y)|\}$. But since $C \in B$, we have that whenever $f \in X^*$, $|f|$ attains its supremum on $B$, infact on $C$. Now, if $X$ is a Banach space over $\C$, then we have that $f(x)=u(x)-iu(ix)$, with $u:=\text{Re}(f)$, by \Cref{complex real functionals} . We obviously have $|u(x)| \leq |f(x)|$. So 
+\begin{align*}
+\sup_{x \in B} \{ |u(x)| \} \leq \sup_{x \in B} \{ |f(x)| \}.
+\end{align*}
+Now, there is some $\alpha \in \C$ with $|\alpha| =1$ such that $|f(x)|=\alpha f(x)=u(\alpha x)$. Since $B$ is balanced, we have for $x \in B$ that $\alpha x \in B$. This show that
+\begin{align*}
+|f(x)| &= u(\alpha x) \\
+&\leq |u(\alpha x)| \\
+&\leq \sup \{ |u(y)|, \ y \in B\},
+\end{align*}
+resulting in
+\begin{align*}
+\sup\{ |f(x)| , \ x \in B \} = \sup \{ | \text{Re}f (x)|,\ x \in B\}.
+\end{align*}
+Thus we have that whenever $u \in X_{\R}^*$, then $|u|$ attains its supremum on $B$. So by \Cref{realweakcompact} $B$ is a weakly compact subset of $X_{\R}$, and thus by \Cref{realweakcompact} a weakly compact subset of $X$. Since $C$ is a weakly closed subset of $B$, it is also weakly compact. 
+\end{proof}
+\end{theorem}
+
+\noindent We now have a useful tool for telling when a Banach space $X$ is reflexive:
+\begin{theorem}\label{James'}
+Let $X$ be a Banach space, then $X$ is reflexive if and only if all elements of the dual $f$ attain their supremum on the closed unit ball of $X$.
+\begin{proof}
+From \Cref{PRYCE}, we have that the closed unit ball of $X$ is weakly compact if and only if every linear functional $f \in X^*$ attain their supremum on the closed unit ball of $X$. \Cref{reflexive ball compact} tells us that a Banach space $X$ is reflexive if and only if the closed unit ball is weakly compact. Hence the theorem is proved.
+\end{proof}
+\end{theorem}
+\chapter{Various applications of the James theorem}
+In this chapter we'll prove, using \Cref{James'}, that certain spaces are reflexive.
+\begin{definition}
+A Banach space $X$ is said to be \emph{strictly convex} if to every $x,y \in X$ with $x\neq y$ and $\lv x \rv= \lv y \rv = 1$ it holds that $\left \lv \frac{x+y}{2} \right \rv <1$
+\end{definition}
+
+\begin{definition}
+A Banach space $X$ is said to be \emph{uniformly convex} if to every $\varepsilon>0$ there is some $\delta >0$ such that for $x,y \in X$ with $\lv x \rv = \lv y \rv = 1$ and $\lv x-y \rv \geq \varepsilon$ we have that
+\begin{align*}
+\left\lv \frac{x+y}{2} \right\rv \leq 1-\delta
+\end{align*}
+\textit{Note that every uniformly convex Banach space $X$ is also strictly convex.}
+\end{definition}
+
+\noindent The above definition of Uniform Convexity in Banach spaces is equivalent to the following
+\begin{remark}
+A Banach space $X$ is uniformly convex if for every $\varepsilon>0$ there is some $2 \geq \delta >0$ such that for every $x,y \in X$ with $\lv x \rv \leq 1, \ \lv y \rv \leq 1$  with $\left \lv \frac{x+y}{2} \right\rv \geq 1 - \delta $ it holds that $\lv x-y \rv \leq \varepsilon$
+
+\noindent Which means that if $\lv x+y \rv \to 2$ then $\lv x-y \rv \to 0$
+\end{remark}
+
+\begin{lemma} \label{rudin a}
+Let $X$ be a uniformly convex Banach space, and $B \subset X$ a closed convex subset. Then there is a unique $y \in B$ such that
+\begin{align*}
+\lv y \rv = \inf_{x \in B} \{ \lv x \rv \}
+\end{align*}
+\begin{proof}
+We first show existence. Let $\xi:= \inf_{x \in B} \{ \lv x \rv \}$, and let $(x_{n})_{n \geq 1} \subset B$ be a sequence such that $\lv x_{n} \rv \to \xi$. We wish to show that $(x_{n})_{n\geq 1}$ is Cauchy. For this, note that
+\begin{align*}
+x_{n}-x_{m}= \lv x_{n} \rv \left(\frac{x_{n}}{\lv x_{n} \rv} - \frac{x_{m}}{\lv x_{m}\rv} \right)+\frac{x_{m}}{\lv x_{m} \rv} (\lv x_{n} \rv - \lv x_{m} \rv)
+\end{align*}
+So it will be enough to show that $\frac{x_{n}}{\lv x_{n} \rv}$ is Cauchy. Since $X$ is uniformly convex and $\left\lv \frac{x_{n}}{\lv x_{n} \rv} \right \rv = 1$, it will be enough to show that 
+\begin{align*}
+ \left \lv \frac{x_{n}}{\lv x_{n} \rv} + \frac{x_{m}}{\lv x_{m}\rv} \right\rv \to 2
+\end{align*}
+By convexity of $B$, we have $\frac12 (x_{n}+x_{m}) \in B$, and the definition of $\xi$ and $(x_{n})_{n\geq 1}$, we have
+\begin{align*}
+\xi \leq \left\lv \frac12 (x_{n}+x_{m})\right\rv \leq \frac12 (\lv x_{n} \rv + \lv x_{m} \rv) \to \xi
+\end{align*}
+so $\lv \frac12 (x_{n}+x_{m})\rv \to \xi$. We also have that
+\begin{align*}
+\frac{x_{n}}{\lv x_{n}\rv} + \frac{x_{m}}{\lv x_{m}\rv}&= \frac{\lv x_{m}\rv x_{n}+ x_{m} \lv x_{n} \rv }{\lv x_{n}\rv \lv x_{m}\rv}\\
+&=\frac{1}{\lv x_{n}\rv \lv x_{m}\rv} ( (x_{n}+x_{m})\lv x_{m} \rv + x_{m}(\lv x_{n} \rv - \lv x_{m}\rv)),
+\end{align*}
+so
+\begin{align*}
+2 &\geq \left\lv \frac{x_{n}}{\lv x_{n}\rv}+\frac{x_{m}}{\lv x_{m}\rv} \right\lv\\
+&= \frac{1}{\lv x_{n} \rv \lv x_{m} \rv} \left\lv (x_{n}+x_{m}) \lv x_{m} \rv + x_{m}(\lv x_{n} \rv - \lv x_{m} \rv ) \right\lv \\
+& \geq \frac{1}{\lv x_{n}\rv \lv x_{m}\rv} \left( \lv x_{n}+x_{m} \rv \lv x_{m} \rv -  \lv x_{m} \rv (\big| \lv x_{n} \rv - \lv x_{m}\rv\big|)\right) \\
+&= \frac{1}{\lv x_{n}\rv} ( \lv x_{n}+x_{m} \rv) - \big|\lv x_{n} \rv - \lv x_{m} \rv\big|)\\
+&\stackrel{n,m\to \infty}{\to} \frac{1}{\xi}(2\xi-|\xi-\xi|)=2.
+\end{align*}
+Since we are in a uniformely convex space, this means that
+\begin{align*}
+\left\lv \frac{x_{n}}{\lv x_{n} \rv} - \frac{x_{m}}{\lv x_{m}\rv} \right\rv \to 0
+\end{align*}
+This proves the existence of some element $y \in B$ with $\lv y \rv =\xi$. The uniqueness comes from the following: assume there are $x,y \in B$ with $x \neq y$ and $\lv x\rv = \lv y \rv = \xi$. Since $X$ is strictly convex and $B$ is convex, we have that 
+\begin{align*}
+ \xi \leq \left \lv \frac{x+y}{2} \right \rv\leq \frac12(\lv x \rv + \lv y \rv) = \xi
+\end{align*}
+But we must have that $\frac12 (\lv x  +  y \rv) < \xi$ by the definition of strict convexity of $X$, a contradiction.
+\end{proof}
+\end{lemma}
+
+\begin{lemma}\label{rudin 2}
+Let $X$ be a uniformly convex Banach space and assume $(x_{n})_{n\geq 1} \subset X$ with $\lv x_{n}\rv =1$ for all $n \geq 1$, $\varphi \in X^*$ with $\lv \varphi \rv =1$ and $\varphi(x_{n}) \to 1$ for $n \to \infty$. Then $(x_{n})_{n\geq 1}$ is a Cauchy sequence in the norm topology.
+\begin{proof}
+To see this, note that
+\begin{align*}
+\varphi(x_{n}+x_{m})=\varphi(x_{n})+\varphi(x_{m}) \to 2
+\end{align*}
+And so we have
+\begin{align*}
+| \varphi (x_{n})+\varphi(x_{m}) | \leq   \underbrace{\lv\varphi\rv}_{=1}  \lv x_{n}+x_{m}\rv \leq \lv x_{n} \rv + \lv x_{m} \rv =2
+\end{align*}
+and by the above we have that $\lv x_{n}+x_{m}\rv \to 2$ for $n,m \to \infty$. By the definition of uniform convexity, $\lv x_{n}-x_{m}\rv \to 0$ and thus $(x_n)_{n\geq 1}$ is Cauchy.
+\end{proof}
+\end{lemma}
+
+\begin{lemma}\label{rudin 3}
+If $X$ is a uniformly convex Banach space, then every $\varphi \in X^*$ attain its maximum on the closed unit ball, $\overline{B_{x}}$, of $X$.
+\begin{proof}
+Let $X$ be a uniformly convex Banach space, So, just as in \Cref{rudin 2}, let $\varphi \in X^*$, and assume that $\lv \varphi\rv =1$. For each $n \geq 1$ pick $x_{n}$ with $\lv x_{n} \rv = 1$ such that
+\begin{align*}
+|\varphi(x_{n}) - \underbrace{1}_{=\lv \varphi \rv} | < \frac1n
+\end{align*}
+Then $|\varphi (x_{n}) | \to 1$ as $n \to \infty$. By \Cref{rudin 2} we have that $(x_{n})_{n \geq 1}$ is a Cauchy sequence. Let $x:= \lim_{n} x_{n}$. Then we have that 
+\begin{align*}
+0&\leq \big| |\varphi (x_{n})| - | \varphi(x)| \big| \\&\leq |\varphi(x_{n})-\varphi(x)|\\
+&= |\varphi(x_{n}-x)|\\
+&\leq \lv \varphi\rv \lv x_{n}-x\rv \to 0, \ n \to \infty
+\end{align*}
+Hence $\big| |\varphi(x_{n})| - |\varphi(x)| \big| \to 0$ and therefore $|\varphi(x)|=\lim_{n} |\varphi (x_{n})|=1$ and $\lv x \rv =1$. All of this results in
+\begin{align*}
+\lv \varphi \rv =1 \quad \text{and} \ |\varphi(x)|=1
+\end{align*}
+It was assumed that $\lv \varphi \rv =1$, if this is not the case, one can observe $\frac{\varphi}{\lv \varphi\rv}$ and use the same argument.
+\end{proof}
+\end{lemma}
+
+\begin{theorem}
+Let $X$ be a uniformly convex Banach space. Then $X$ is reflexive.
+\begin{proof}
+By \Cref{rudin 3}, if $X$ is a uniformly convex Banach space, then all functionals $f \in X^*$ attain their supremum on the closed unit ball of $X$ and by \Cref{James'}, $X$ is reflexive.
+\end{proof}
+\end{theorem}
+\printbibliography
+\end{document}

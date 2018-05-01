@@ -1,0 +1,2564 @@
+\documentclass[10pt,twoside,openany,final]{memoir}
+\usepackage[utf8]{inputenc}
+\usepackage[pass]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb} 
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[all]{xy}
+\usepackage{tikz-cd}
+\usepackage[citestyle=authoryear,backend=bibtex]{biblatex}
+\usepackage{filecontents}
+\usepackage[english, status=draft]{fixme}
+\fxusetheme{color}
+\usepackage{cleveref} 
+\usepackage{tensor}
+\usepackage[backgroundcolor=cyan]{todonotes}
+\usepackage{wallpaper}
+\usepackage{titlesec}
+
+\bibliography{bib}
+\titleformat{\chapter}[display]
+{\center\normalfont\bfseries}{}{0pt}{\Large}
+
+\renewcommand\chaptermarksn[1]{}
+\newcommand{\ssection}[1]{%
+\newpage%
+\section[#1]{\centering\normalfont\scshape \textbf{#1}}}
+
+\newcommand{\sssection}[1]{%
+\section[#1]{\centering\normalfont\scshape \textbf{#1}}}
+\addtolength{\textwidth}{30pt}
+\addtolength{\foremargin}{-30pt}
+\checkandfixthelayout
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{1}
+
+\usepackage{scalerel,stackengine}
+\stackMath
+\newcommand\reallywidehat[1]{%
+\savestack{\tmpbox}{\stretchto{%
+  \scaleto{%
+    \scalerel*[\widthof{\ensuremath{#1}}]{\kern-.6pt\bigwedge\kern-.6pt}%
+    {\rule[-\textheight/2]{1ex}{\textheight}}%WIDTH-LIMITED BIG WEDGE
+  }{\textheight}% 
+}{0.5ex}}%
+\stackon[1pt]{#1}{\tmpbox}%
+}
+\parskip 1ex
+
+\newtheoremstyle{break}
+{\topsep}{\topsep}
+{\itshape}{}
+{\bfseries}{}
+{\newline}{}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheoremstyle{Break}
+{\topsep}{\topsep}
+{}{}
+{\bfseries}{}
+{\newline}{}
+\theoremstyle{Break}
+\newtheorem{example}[theorem]{Example}
+\newtheorem*{remark}{Remark}
+\newtheorem*{note}{Note}
+\setcounter{secnumdepth}{0}
+\usepackage{xpatch}
+\xpatchcmd{\proof}{\ignorespaces}{\mbox{}\\\ignorespaces}{}{}
+%\newenvironment{Proof}{\proof \mbox{} \\ \\ *}{\endproof}
+
+\chapterstyle{thatcher}
+
+\newenvironment{abst}{\rightskip1in\itshape}{}
+
+\makepagestyle{abs}
+\makeevenhead{abs}{}{}{}
+\makeoddhead{abs}{}{}{}
+\makeevenfoot{abs}{}{\scshape I }{}
+\makeoddfoot{abs}{}{\scshape  I }{}
+%\makeheadrule{abs}{\textwidth}{\normalrulethickness}
+%\makefootrule{abs}{\textwidth}{\normalrulethickness}{\footruleskip}
+\pagestyle{abs}
+
+
+\makepagestyle{cont}
+\makeevenhead{cont}{}{}{}
+\makeoddhead{cont}{}{}{}
+\makeevenfoot{cont}{}{\scshape II }{}
+\makeoddfoot{cont}{}{\scshape  II }{}
+%\makeheadrule{abs}{\textwidth}{\normalrulethickness}
+%\makefootrule{abs}{\textwidth}{\normalrulethickness}{\footruleskip}
+\pagestyle{cont}
+
+\newcommand{\lv}{\left\lVert}
+\newcommand{\rv}{\right\rVert}
+
+
+\renewcommand\chaptermarksn[1]{}
+\nouppercaseheads
+\createmark{section}{left}{shownumber}{}{.\space}
+\makepagestyle{dut}
+\makeevenhead{dut}{Malthe karbo\scshape\rightmark}{}{\scshape\leftmark}
+\makeoddhead{dut}{\scshape\leftmark}{}{Malthe Karbo\scshape\rightmark}
+\makeevenfoot{dut}{}{\scshape $-$ \thepage\ $-$}{}
+\makeoddfoot{dut}{}{\scshape $-$ \thepage\ $-$}{}
+\makeheadrule{dut}{\textwidth}{\normalrulethickness}
+\makefootrule{dut}{\textwidth}{\normalrulethickness}{\footruleskip}
+\pagestyle{dut}
+
+\makepagestyle{chap}
+\makeevenhead{chap}{}{}{}
+\makeoddhead{chap}{}{}{}
+\makeevenfoot{chap}{}{\scshape $-$ \thepage\ $-$}{}
+\makeoddfoot{chap}{}{\scshape $-$ \thepage\ $-$}{}
+\makefootrule{chap}{\textwidth}{\normalrulethickness}{\footruleskip}
+\copypagestyle{plain}{chap}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\mbr}{(X,\mathcal{A})}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\G}{\widehat{G}}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\B}{\mathbb{B}}
+\newcommand{\dd}{\partial}
+\newcommand{\ee}{\epsilon}
+\newcommand{\la}{\lambda}
+\newcommand{\U}{\mathcal{U}}
+\newcommand{\cc}{\text{C}_{\text{c}}}
+\renewcommand{\H}{\mathcal{H}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\S}{\mathcal{S}}
+\newcommand{\Prob}{\mathrm{Prob}}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\supp}{supp}
+\newcommand{\PM}{\mathrm{PM}}
+\renewcommand{\d}{\mathrm{d}}
+\renewcommand{\Re}{\mathrm{Re}}
+\renewcommand{\Im}{\mathrm{Im}}
+\DeclareMathOperator{\tr}{Tr}
+\DeclareMathOperator{\Tr}{Tr}
+
+
+\makeatletter
+\newcommand{\Spvek}[2][r]{%
+\gdef\@VORNE{1}
+\left(\hskip-\arraycolsep%
+\begin{array}{#1}\vekSp@lten{#2}\end{array}%
+\hskip-\arraycolsep\right)}
+
+\def\vekSp@lten#1{\xvekSp@lten#1;vekL@stLine;}
+\def\vekL@stLine{vekL@stLine}
+\def\xvekSp@lten#1;{\def\temp{#1}%
+\ifx\temp\vekL@stLine
+\else
+\ifnum\@VORNE=1\gdef\@VORNE{0}
+\else\@arraycr\fi%
+#1%
+\expandafter\xvekSp@lten
+\fi}
+\makeatother
+
+\newcommand{\K}{\mathbb{K}}
+\addtocontents{toc}{\protect\thispagestyle{empty}} 
+\def\acts{\curvearrowright}
+
+
+\pagenumbering{arabic}
+\begin{document}
+%\tableofcontents
+\include{frontpage}
+%\include{abstract{abs}}
+\newpage
+
+\begin{KeepFromToc}
+\chapter*{Introduction}
+The goal of this thesis is to establish a foundation for doing analysis in topological groups and expand on it. The first chapter establishes a common ground for the reader, recalling various basic results from the theory of Banach- and $C^*$-algebras required further in the thesis.
+
+In Chapter two, we develop a rigorous theory for doing analysis on topological groups, for instance by examining properties of Haar measures and their applications. In particular, the spaces $L^1(G,\mu)$ and $L^\infty(G,\mu)$, for some Haar measure $\mu$ on $G$, is examined thoroughly.
+
+In Chapter three we develop a theory of representations of locally compact groups, where we show a correspondance between certain $*$-representations of $L^1(G,\mu)$ and certain unitary representations of $G$. We also show the famed \textit{Schur's Lemma} and various other results.
+
+In Chapter four we shift our focus towards the setting of Locally Compact Abelian Hausdorff groups, and show an array of various important results. We also develop the Fourier Transformation in this setting, and show a range of results regarding it, and in the devopment of the Fourier Transformation we examine the set of characters, which is called the Dual Group of $G$, denoted by $\G$. We also show the Pontrjagin Duality Theorem, which ensures a sort of reflexivity relation between $G$ and $\widehat \G$, and consequences thereof.
+
+Finally, in Chapter five, we change our setting the the case of general Compact Hausdorff groups, where we develop yet again a theory of characters and representations of groups, and use it to develop the Fourier Transformation again, generalising the compact abelian case. We also show the Peter-Weyl Theorem, which uses the dual group to classify a wide range of important functionspaces related to the group $G$.
+
+	  \tableofcontents
+\end{KeepFromToc}
+
+
+\chapter{Prologue: Spectral- and Gelfand theory in Banach algebras and $C^*$-algebras.}
+We begin this thesis by reminding the reader of some basic results from the theory of Banach Algebras. These will provide some of the motivation for the main topic of this thesis.
+
+\sssection{Banach Algebras and Gelfand Theory}
+\begin{definition}
+	A \emph{Banach algebra} is an associative complex algebra $A$ equipped with a complete norm $\lv \cdot \rv$ such that for all $a,b \in A$ the identity
+	\begin{align*}
+		\lv ab \rv \leq \lv a \rv \lv b \rv,
+	\end{align*}
+	holds. If furthermore $A$ is equipped with an involution $* \colon A \to A$, $a \mapsto a^*$, we say that $A$ is a \emph{Banach $*$-algebra}. If $A$ has a multiplicative unit, we say that $A$ is \emph{unital}, and we denote that unit by either $1_A$ or $1$, depending on the danger of confusion.
+\end{definition}
+\begin{definition}
+	A \emph{$C^*$-algebra} is a Banach $*$-algebra satisfying
+	\begin{align*}
+		\lv a^*a\rv = \lv a \rv^2 \text{ for all } a \in A.
+	\end{align*}
+\end{definition}
+\begin{example}[The $\ell^1$-algebra]
+For a discrete group $G$ we let $\ell^1(G)$ be the space of summable complex valued functions, i.e., the set
+\begin{align*}
+	\ell^1(G)=\left\{ f \colon G \to \C \ \Bigg| \ \sum_{g \in G}|f(g)| < \infty \right\}.
+\end{align*}
+This is a unital Banach space with the usual $1$-norm, and we turn it into a Banach $^*$-algebra by setting multiplication to be given by convolution:
+\begin{align*}
+	(f \ast h)(n)=\sum_{k \in G}f(k)h(nk^{-1}) \text{ for } f,h \in \ell^1(G) \text{ and } n \in G,
+\end{align*}
+and involution:
+\begin{align*}
+	f(g)^*=\overline{f(g^{-1})}, \text{ for } f \in \ell^1(G) \text{ and } g \in G.
+\end{align*}
+\end{example}
+\begin{definition}
+	Let $A$ be a unital Banach Algebra. The \emph{spectrum} of $x \in A$ is the set	
+\begin{align*}
+	\sigma(x)=\left\{ \lambda \in \C \ \big| \ \lambda 1_A - x \text{ is not invertible} \right\}.
+\end{align*}
+\end{definition}
+We also have a notion of a spectrum of a commutative and unital Banach Algebra:
+\begin{definition}
+	A \emph{character} on $A$ is a multiplicative non-zero linear functional on $A$, i.e., a non-zero homomorphism from $A$ to $\C$.
+\end{definition}
+\begin{definition}
+	If $A$ is a unital commutative Banach Algebra, we define the spectrum of $A$ to be the set characters on $A$, i.e., the set
+	\begin{align*}
+		\sigma(A)=\left\{ f \colon A \to \C \ \big| \ f \text{ is non-zero, linear and } f(ab)=f(a)f(b) \text{ for all } a,b \in A \right\}.
+	\end{align*}
+\end{definition}
+The theory around the spectrum is rich, and we will include to a degree the most fundamental results here, but we keep the scope narrow and less general than possible. For a more rich and rigorous walkthrough with every proof, the reader should consult litterature on this subject (e.g. \cite{blackadar2006operator} or \cite{zhu1993introduction} or other an introductionary text on the subject).
+
+\begin{proposition}
+	For a unital and commutative Banach Algebra $A$ and $h \in \sigma(A)$:
+	\begin{enumerate}
+		\item $h(1_A)=1$.
+		\item For all invertible $x \in A$ it holds that $h(x) \neq 0$.
+		\item $|h(x)| \leq \lv x \rv$ for all $x \in A$.
+	\end{enumerate}
+\end{proposition}
+The last assertion above says that $\sigma(A)$ is a closed subspace of the unit ball in $A^*$ in the weak$^*$-topology, hence it is itself weak$^*$-compact.
+
+For a unital Banach algebra $A$, there is a correspondance between maximal ideals of $A$, but before formulating this result, we include some results about ideals of $A$:
+\begin{proposition}
+	if $I \subseteq A$ is a proper ideal of a commutative unital Banach algebra, then:
+	\begin{enumerate}
+		\item $\overline{I}$ is a proper ideal (the closure of $I$).
+		\item If $I$ is maximal, then $I$ is closed.
+		\item $I$ is contained in a maximal ideal.
+	\end{enumerate}
+\end{proposition}
+which leads us to the following correspondance between $\sigma(A)$ and maximal ideals of $A$:
+\begin{theorem}
+	For a commuative unital Banach algebra $A$, the map $h \mapsto \ker(h)$ is a one-to-one correspondance between $\sigma(A)$ and the set of maximal ideals of $A$
+	\label{1.12}
+\end{theorem}
+
+For $x \in A$, we define $\hat{x} \colon \sigma(A) \to \C$ to be the evaluation at $x$, i.e., by
+\begin{align*}
+	\hat{x}(\varphi):=\varphi(x), \ \varphi \in \sigma(A),
+\end{align*}
+which is continuous with respect to the weak$^*$-topology on $\sigma(A)$. This leads us to the definition of the Gelfand transformation of $A$:
+\begin{definition}
+	The map $\Gamma_A \colon A \to C(\sigma(A))$, $x \mapsto \hat{x}$ is called the \emph{Gelfand transform} on $A$. We will sometimes omit the subscript when no confusion can arrise.
+\end{definition}
+The Gelfand transform satisfies a lot of interesting properties, and is the core of a lot of essential results in the theory of Operator Algebra. One result is the following:
+\begin{theorem}
+	Is $A$ is a commutative unital Banach Algebra and $x \in A$, then
+	\begin{enumerate}
+		\item The Gelfand transform is a homomorphism $A \to C(\sigma(A))$ (not necessarily a $*$-homomorphism even if $A$ is a $*$-algebra)
+		\item $\hat{1_A}=1$.
+		\item $x$ is invertible if and only if $\hat{x}$ never vanishes.
+		\item The image of $\hat{x}$ is equal to $\sigma_A(x)$.
+		\item $\lv \hat{x}\rv_{sup}= \rho(x)\leq \lv x \rv$, where $\rho(x)=\sup\{|\lambda| \ \big| \ \lambda \in \sigma_A(x)\}$ is the spectral radius of $x$.
+	\end{enumerate}
+	\label{1.13}
+\end{theorem}
+In the case that $A$ is generated by an element $x_0 \in A$, then we can characterize the spectrum of $A$ in terms of $\sigma_A(x_0)$ via the following proposition:
+\begin{proposition}
+	Suppose that $A$ is a unital commutative Banach $^*$-algebra and $x_0 \in A$. Then $\hat{x}$ is a homeomorphism from $\sigma(A)$ to $\sigma_A(x_0)$ if either of the following holds:
+	\begin{enumerate}
+		\item $A$ is generated by $x_0$ and $1_A$, or
+		\item $x_0$ is invertible and $A$ is generated by $x_0$ and $x_0^{-1}$, or
+		\item $A$ is symmetric (meaning that the Gelfand transform is a $*$-homomorphism) and $A$ is generated by $x_0,x_0^*$ and $1_A$.
+	\end{enumerate}
+\end{proposition}
+
+If $A$ is a non-unital Banach Algebra, then we still define $\sigma(A)$ to be the set of multiplicative non-zero homomorphisms $A \to \C$, but they are no longer the set of maximal ideals. There is however a 1-1 correspondance between $\sigma(\tilde{A})$ and $\sigma(A) \cup \{0\}$, where $\tilde{A}$ denotes the unitalization of $A$ and $0$ is the zero-functional on $A$. 
+
+We define the Gelfand transform of a non-unital Banach Algebra $A$ to be the map 
+\begin{align*}
+	\Gamma_A x := \Gamma_{\tilde{A}}(x,0)|_{\sigma(A)}, \ x \in A.
+\end{align*}
+And we then have the following
+\begin{theorem}
+	Let $A$ be a non-unital commutative Banach Algebra. Then $\sigma(A)$ is a locally compact subset in $A^*$ with respect to the weak$^*$-topology. If $\sigma(A)$ is non-compact, then it's closure in the weak$^*$ topology is $\sigma(A) \cup \left\{ 0 \right\}$. The Gelfand transform on $A$ is an algebra homomorphism $A \to C_0(\sigma(A))$.
+	\label{1.30}
+\end{theorem}
+One of the purposes of this paper is to discuss a special kind of $*$-homomorphisms of certain Banach $^*$-algebras called $*$-representation. We can infer a large amount of information from knowing how these behave, as we shall see later on.
+\begin{definition}
+	A \emph{$*$-representation} of a Banach $^*$-algebra $A$ on a Hilbert space $\H$ is a $*$-homomorphism $\pi \colon A \to \mathbb{B}(\H)$. We say that a $*$-representation $\pi$ is \emph{non-degenerate} if there is no non-zero vector $\xi \in \H$ such that $\pi(x)\xi=0$ for all $x \in A$, i.e., if 
+	\begin{align*}
+		\bigcap_{a \in A} \ker\pi(a)=\left\{ 0 \right\}.
+	\end{align*}
+\end{definition}
+The most fundamental result of Gelfand theory is the Gelfand-Naimark theorems:
+\begin{theorem}
+	If $A$ is a commutative unital $C^*$-algebra, then $\Gamma_A$ is an isometric $*$-isomorphism from $A$ to $C(\sigma(A))$. If $A$ is a non-unital commutative $C^*$-algebra, then $\Gamma_A$ is an isometric $*$-isomorphism from $A$ to $C_0(\sigma(A))$
+\end{theorem}
+
+
+ 
+\chapter{Setting the scene: Analysis on Topological Groups}
+In this chapter, we will go over an assortment of results regarding topological groups and we will develop a theory of analysis over locally compact groups, using the existence of Haar measures. We will define and describe certain Banach algebras associated to a locally compact group $G$, for instance we examine the generalised $L^\infty$ space.
+
+\sssection{Analysis on Topological Groups}
+\begin{definition}
+	A \emph{topological group} is a group $G$, whose unit we denote by $e$, which is also a topological space such that the group operations are continuous, i.e., such that the multiplication map
+	\begin{align*}
+		G \times G \to G,\ (a,b) \mapsto ab
+	\end{align*}
+	and the inversion map
+	\begin{align*}
+		G \to G, \ a \mapsto a^{-1}
+	\end{align*}
+	are continuous.
+\end{definition}
+For $x \in G$ and $A,B \subseteq G$ we will use the conventions
+\begin{align*}
+	xA&= \left\{ xy \ | \ y \in A \right\}\\
+	Ax&= \left\{ yx \ | \ y \in A \right\}\\
+	AB&= \{ab \ | \ a \in A , \ b \in B\}\\
+	A^{-1} &= \left\{ a^{-1} \ | \ a \in A \right\},
+\end{align*}
+And we say that $A$ is \emph{symmetric} if $A^{-1}=A$.
+We will use $G$ to denote a topological group, and unless specifically stating otherwise, we will assume that the topology on $G$ is locally compact and Hausdorff. These groups satisfy a lot of interesting properties, for instance we have the following:
+\begin{lemma}
+	Given a neighborhood $V$ of $e$, it holds that $\overline{V} \subseteq V^2$, where $\overline{V}$ is the topological closure of $V$ in $G$.
+	\label{V sub VV}
+\end{lemma}
+\begin{proof}
+	Let $s \in \bar{V}$. Then as $sV^{-1}$ is a neighborhood of $s$ ($V$ contains $e$), it holds that there is $t \in V$ such that $t\in sV^{-1}$, i.e., that $t=sr^{-1}$ for some $r \in V$. Then $tr=s$, so $s \in V^{2}$.
+\end{proof}
+
+\begin{proposition}
+	Every locally compact Hausdorff group $G$ has a $\sigma$-compact subgroup $H$, implying that $G$ is the disjoint union of $\sigma$-compact spaces.
+	\label{Topg:Disjoint}
+\end{proposition}
+\begin{proof}
+	First of all, given any neighborhood $U$ of $e$ with compact closure, setting $V=U \cap U^{ -1}$ we obtain a symmetric neighborhood $V \subseteq U$ of $e$ with compact closure. Let $H=\bigcup_{n \in \N}V^n$. Then clearly $H$ will be an open subgroup of $G$. 
+
+	By \Cref{V sub VV} it holds that $V^n \subseteq \bar{V}^n \subseteq V^{2n}$ for all $n \in \N$, so $H=\bigcup_{n \in \N}\bar{V}^n$, so $H$ is $\sigma$-compact. This implies that for all $s \in G$ the coset $sH$ is a clopen $\sigma$-compact subspace of $G$, since multiplication is a homeomorphism. If $R \subseteq G$ is a set containing one representant of each of the cosets $sH$,  then
+	\begin{align*}
+		G=\bigcup_{s \in R}sH.
+	\end{align*}
+\end{proof}
+
+
+\begin{definition}
+	A \emph{left Haar measure} (respectively right Haar measure) on $G$ is a nonzero Radon measure $\mu$ on $G$ satisfying 
+	\begin{align*}
+		\mu(gE)=\mu(E)\ (\text{respectively } \mu(Eg)=\mu(E)) \text{ for all Borel } E \subseteq G \text{ and } g \in G.
+	\end{align*}
+\end{definition}
+If $\mu_l$ is a left Haar measure on $G$, then the measure 
+\begin{align*}
+	\mu_r(E):=\mu_l(E^{-1}) \text{ for } E \subseteq G \text{ Borel},
+\end{align*}
+is a right Haar measure on $G$, and it is easy to see that $\mu_l$ is a left Haar measure if and only if $\mu_r$ is a right Haar measure. 
+\begin{definition}
+	Given $y \in G$, we denote by $L_y$ and $R_y$ the \emph{left- and right translation operators} with respect to $y$, i.e., given any function $f \colon G \to \C$ we have
+\begin{align*}
+	L_yf(x)=f(y^{-1}x) \text{  and  } R_yf(x)=f(xy) \text{ for } x \in G.
+\end{align*}
+The maps $y \mapsto L_y$ and $y \mapsto R_y$ are multiplicative, i.e., for all $x,y \in G$ we have $L_y L_x = _{yx}$ and $R_y R_x = R_{yx}$, and it is easy to see that $L_xR_y=R_yL_x$.
+\end{definition}
+And we have a notion of left and right continuity of functions $f \colon G \to \C$:
+\begin{definition}
+	A function $f \colon G \to \C$ is said to be \emph{left (or right) uniformly continuous} if
+	\begin{align*}
+		\lv L_yf -f \rv_{\sup}\to 0, (\textrm{respectively } \lv R_y f- f\rv_{\sup} \to 0 )\quad \text{as } y \to e. 
+	\end{align*}
+	\label{defuniflr}
+\end{definition}
+If a function $f \colon G \to \C$ is both left and right uniformly continuous, the invariance of the the topology of $G$ under translation implies that the map $y \mapsto R_yf$ is continuous. And one of the nicest class of functions happens to have this property, namely:
+\begin{proposition}[\mbox{\cite[340]{folland2013real}}]
+	If $f \in C_c(G)$, then $f$ is left and right uniformly continuous.
+	\label{Cc lr uni cont}
+\end{proposition}
+It is a standard result that every locally compact Hausdorff group $G$ has a left Haar measure:
+\begin{theorem}[\mbox{\cite[344]{folland2013real}}]
+	Every locally compact Hausdorff group $G$ possesses a left Haar measure.
+\end{theorem}
+The Haar measure is unique in a sense, for it satisfies
+\begin{proposition}[\cite{folland2013real}]
+	Let $\mu$ be a left Haar measure on $G$. If $\nu$ is another left Haar measure on $G$, then there is a constant $c > 0$ such that $\nu=c \mu$.
+\end{proposition}
+Hence for any $G$  we will always fix a left Haar measure $\mu$, and by $L^1$ we will refer to $L^1(\mu)=L^1(G,\mu)$ for this fixed left Haar measure. It will satisfy the following
+\begin{proposition}
+	For all non-empty open sets $U \subseteq G$ it holds that $\mu(U)>0$ and if $f$ is a non-zero continuous positive function with compact support, then $\int f \d \mu>0$.
+\end{proposition}
+\begin{proof}
+	We will show that if $U$ is an open and non-empty set of measure $0$, then every compact set has measure $0$, yielding a contradiction by inner-regularity of $\mu$.
+
+	Let $U$ be any non-empty open set such that $\mu(U)=0$ and fix $u \in U$. Given $K$ compact set, it follows by left-invariance of $\mu$ that $\mu(k(u^{-1}U))=0$ for all $k \in K$. The sets $k(u^{-1}U)$ for $k \in K$ covers $K$, since $e =u^{-1}u \in u^{-1}U$. By compactness we may choose finitely many translations of $U$ to cover $K$, implying that $\mu(K)=0$. This implies that $\mu(G)=0$, a contradiction to the assumption that $\mu \neq 0$.
+
+For the last part, given $f>0$ continuous with compact support, then the set 
+	\begin{align*}
+		U:=\left\{ x \in G \ | \ f(x) > \frac{1}{2}\lv f \rv_{\sup} \right\},
+	\end{align*}
+is open, and $\int_G f \d \mu \geq \int_U f \d \mu > \frac{1}{2}\lv f \rv_{\sup} \mu(U)>0$. 
+\end{proof}
+
+For a topological space $X$, the $\sigma$-algebra generated by the topology on $X$ is called the \emph{Borel $\sigma$-algebra} on $X$. We will need to control the dual space of $L^1(\mu)$ throughout this thesis, for it may happen that $\mu$ is not $\sigma$-finite. For this, we introduce the concept of locally null sets:
+\begin{definition}
+	Let $(X,\mu)$ be a measure space where $\mu$ is any Radon measure. A subset $E \subseteq X$ is \emph{locally Borel} if $E \cap F$ is Borel for all Borel sets $F$ with $\mu(F) < \infty$. A locally Borel set $E$ is \emph{locally null} if $\mu(E\cap F) =0$ for all Borel sets $F \subseteq X$ with $\mu(F) < \infty$.
+\end{definition}
+And we will use the notation \textit{locally a.e.} about a statement to mean that the statement holds except for a locally null set. We also have
+\begin{definition}
+	a function $f \colon X \to \C$ is \emph{locally measurable} if $f^{-1}(A)$ is locally Borel for all Borel sets $A \subseteq \C$, and $f$ is \emph{locally bounded} if $f$ is bounded outside of a locally null set.
+\end{definition}
+\begin{remark}
+	A set $E$ is locally null if and only if $\mu(E\cap K)=0$ for all compact sets $K$, since $\mu$ is a Radon measure.
+\end{remark}
+
+Now, let $\mathcal{L}^{\infty}(\mu)$ denote the space of bounded measurable functions on $G$.
+This is a closed subspace of $\ell^\infty(G)$ of bounded functions on $G$, hence it is a Banach space. If we let 
+\begin{align*}
+	S&=\left\{ f \in \mathcal{L}^{\infty}(\mu) \ | \ f=0 \text{ locally a.e.} \right\}\\
+	&=\left\{ f \in \mathcal{L}^{\infty}(\mu) \ | \ \text{ such that } \left\{ g \in G \ |  \ f(x) \neq 0 \right\} \text{ is locally null} \right\},
+\end{align*}
+then $S$ is a closed subspace of $\mathcal{L}^{\infty}(\mu)$, hence a Banach space. 
+
+\begin{definition}
+	We define $L^{\infty}(\mu):= \mathcal{L}^{\infty}(\mu) / S$ be the quotient space, equipped with the quotient norm 
+	\begin{align*}
+		\lv f+S\rv_{\infty}:=\inf_{h \in S}\left( \lv f+h\rv_{\mathrm{esssup}} \right).
+	\end{align*}
+\end{definition}
+We will also equip $\mathcal{L}^{\infty}(\mu)$ with the semi-norm $\lv \cdot \rv_\infty$ given by
+\begin{align*}
+	\lv f \rv_{\infty}:=\inf_{h \in S}(\lv f+h\rv_{\mathrm{esssup}}), \text{ for } f \in \mathcal{L}^{\infty}(\mu),
+\end{align*}
+for then we have the following:
+\begin{proposition}
+	Suppose that $f\in \mathcal{L}^\infty(\mu)$. Then the following holds:
+	\begin{enumerate}
+		\item $\lv f \rv_{\infty}=\inf\left\{ M\geq 0 \ | \ \text{the set } \left\{ s \in G \ | \ |f(x)|>M \right\} \text{ is locally null}\right\}$,
+		\item $\lv f \rv_{\infty}=\inf\left\{ M\geq 0 \ | \ K \subseteq G  \text{ implies that } \left\{ s \in K \ | \ |f(x)|>M \right\} \text{ is locally null}\right\}$,
+		\item the set $\left\{ s \in G \ | \ |f(s)| > \lv f \rv_{\infty} \right\}$ is locally null.
+	\end{enumerate}
+	\label{lvinfty}
+\end{proposition}
+The proof is the same as in the case where we have the more common essential supremum norm.
+
+Given $g \in L^\infty(\mu)$, we define $\varphi_g \colon C_c(G)\to \C$ by
+\begin{align*}
+	\varphi_g(f)=\int_{G} g(s)f(s) \d \mu(s), \text{ for } f \in C_c(G).
+\end{align*}
+It is not clear that this is well-defined yet. However, if it is, then this is a bounded (with respect to $L^1(G)$ norm on $C_c(G)$) linear functional of norm 
+\begin{align*}
+	\lv \varphi_g \rv = \sup_{\lv f \rv=1} \lv \varphi_g(f)\rv=\sup_{\lv f \rv = 1} \left| \int_G f(s) g(s) \d \mu(s)\right|&=\sup_{\lv f \rv = 1} \left| \int_{\textrm{supp} f}f(s)g(s) \d \mu(s)\right|\\
+	&\leq \sup_{\lv f \rv = 1}  \int_{\textrm{supp}f} \left|f(s) \right| \lv g \rv_{\infty} \d \mu(s)\\
+	&=\lv g \rv_{\infty},
+\end{align*}
+for $f \in C_c(G)\subseteq L^1(G)$, since the set  $\{s \in G \ \big| \ |g(s)|>\lv g \rv_{\infty}\}$ is locally null and $f$ has compact support. In particular, this means that if well-defined, we may extend it from $C_c(G)$ to $L^1(G)$ . 
+
+While still working under the assumption that it is well-defined, to see that $\lv g \rv_{\infty} \leq \lv \varphi_g \rv$, note that if $\varepsilon>0$, then the set $A_\varepsilon=\left\{ x \in G \ \big|  |g(x)|> \lv g \rv_{\infty}-\varepsilon \right\}$ is measurable, non-empty set, and by \Cref{lvinfty} there is $F \subseteq G$ measurable such that $\mu(A_\varepsilon \cap F)>0$. Define now $f:=\mu(A_\varepsilon \cap F)^{-1} \overline{\mathrm{sgn}} 1_{A_\varepsilon \cap F}$. Then $\lv f \rv_1 =1$ and
+\begin{align*}
+	\lv \varphi_g \rv \geq |\varphi_g(f)| = \left|\int_{A_\varepsilon \cap F}|g(x)| \d \mu(x) \right| \geq \lv g \rv_\infty - \varepsilon,
+\end{align*}
+so $\lv \varphi_g\rv=\lv g \rv_{\infty}$ for $g \in L^\infty(G)$.
+
+To see that $\varphi_g$ is indeed well-defined, note that if $g,g' \in \mathcal{L}^\infty(G)$ with $\varphi_g=\varphi_{g'}$, then $g|_K=g'|_K$ almost everywhere for all compact sets $K \subseteq G$, hence $g=g'$ locally almost everywhere. Since $C_c(G) \subseteq L^1(G)$ is dense, we may extend it uniquely to all of $L^1(G)$ using Hahn-Banach.
+
+On the other hand, suppose that we have $\varphi \in L^1(G)^*$. Using \Cref{Topg:Disjoint} we write 
+\begin{align*}
+	G=\bigcup_{i \in I} G_i
+\end{align*}
+for some a family of disjoint clopen $\sigma$-compact subsets $G_I$ of $G$. Let $\varphi_i$ denote the restriction of $\varphi$ to $L^1(G_i)$, then clearly $\lv \varphi_i \rv \leq \lv \varphi \rv$ for all $i \in I$. Since $G_i$ is $\sigma$-compact, the Haar measure $\mu$ restricts to a $\sigma$-finite measure on $G_i$, so  $L^1(G_i)^* \cong L^\infty(G_i)$ via the map $g \mapsto \varphi_g$ as above. So for each $i \in I$ let $g_i \in L^\infty(G_i)$ such that $\varphi_i=\varphi_{g_i}$, and define $g \colon G \to \C$ by
+\begin{align*}
+	g(s) = g_i(s) \text{ for } s \in G_i,
+\end{align*}
+which is well-defined since $G_i$ and $G_j$ are disjoint for $i \neq j$. To see that this is measurable, note that 
+\begin{align*}
+	g=\sum_{i \in I} g_i1_{G_i},
+\end{align*}
+so that for every measurable set $E \subseteq C$ it holds that
+\begin{align*}
+	g^{-1}(E)=\bigcup_{i \in I}g_i^{-1}(E).
+\end{align*}
+By \cite[126]{hewitt2012abstract}, since $\mu$ is a Radon measure, it suffices to check if $g^{-1}(E)\cap K$ is measurable for every compact $K$. But this is measurable, since the $G_i$ are open and disjoint and each $g_i$ is measurable, for we can cover any compact $K$ with finitely many disjoint members $G_{i_1},\dots,G_{i_n}$. We also note that $g$ is bounded by $\lv \varphi \rv$.
+
+Hence if $f \in C_{c}(G)$, then the support of $f$ is covered by finitely many $G_{i_1},\dots,G_{i_n}$, so $f=\sum_{i=1}^n f_i$ with $f_k$ supported on $G_{i_k}$. Hence
+\begin{align*}
+	\varphi(f)=\sum_{k=1}^n \int_{G_{i_k}} f_k(s)g_k(s) \d \mu(s)=\int_{G}f(s)g(s)\d \mu(s).
+\end{align*}
+Since $C_c(G)$ is dense in $L^1(\mu)$, this shows that there is a $1-1$ correspondance between $L^1(\mu)^*$ and $L^\infty(\mu)$, which we summarize in the following:
+\begin{proposition}
+	If $L^\infty(\mu)$ is defined as above, then $L^1(\mu)^* \cong L^\infty(\mu)$ via the map above.
+\end{proposition}
+We will from now on always use $L^\infty(\mu)$ to denote the space of locally essentially bounded functions defined above.
+
+An interesting thing to investigate is how far away the left Haar measure $\mu$ on $G$ is from being right-invariant. For this, let $x \in G$ and define the measure $\mu_x(E):=\mu(Ex)$. This is clearly a Haar measure, so there is some positive constant $c>0$ so that $\mu_x=c\mu$, and it measures how far away the measure $\mu$ is from being right invariant with respect to $x$. This leads to the following definition:
+\begin{definition}
+	For $x \in X$, let $\Delta(x)>0$ denote the positive number such that $\mu_x=\Delta(x) \mu$. The function $\Delta \colon G \to (0,\infty)$, $x \mapsto \Delta(s)$, is called the \emph{modular function} of $G$.
+\end{definition}
+We see that $\Delta$ is a continuous homomorphism from $G$ to the multiplicate group of positive real numbers clearly, since multiplication is associative. In fact, we have the following:
+
+\begin{proposition}
+The map $\Delta \colon G \to (0,\infty)$ is a continuous homomorphism such that	
+\begin{align*}
+	\int R_y f \d \mu = \Delta(y^{-1}) \int f \d \mu
+\end{align*}
+for every $f \in L^1(\mu)$.
+\end{proposition}
+\begin{proof}
+	We first show the integral identity: If $E \subseteq G$ and $x,y \in G$, then
+\begin{align*}
+	1_{E}(xy)=1_{Ey^{-1}}(x),
+\end{align*}
+which implies that 
+\begin{align*}
+	\int \underbrace{1_{E}(xy)}_{=R_y 1_{E}(x)} \d \mu(x) = \mu(Ey^{-1})=\Delta(y^{-1})\mu(E)=\Delta(y^{-1}) \int 1_{E}(x) \d \mu(x).
+\end{align*}
+Since the span of simple functions are dense in $L^1(\mu)$, the identity holds.
+
+Recall that the map $y \mapsto R_y f$ is continuous for all $f \in C_c(G)$ by uniform left and right continuity. This implies that the map $G \to \C$, $y \mapsto \int R_y f(x) \d \mu(x)$, is continuous, which combined with the shown identity implies that $\Delta$ is continuous.
+\end{proof}
+In the notation of Radon-Nikodym, the above proposition shows that $\d \mu(xy)=\Delta(y) \d \mu(x)$ for all $x,y \in G$.
+
+It is clear that a left Haar measure $\mu$ is also a right Haar measure (and hence all left Haar measures, by uniqueness) if and only if the associated modular function is the constant function $1$:
+\begin{definition}
+	$G$ is called \emph{unimodular} if $\Delta=1$	
+\end{definition}
+
+If we only considered $\sigma$-finite measures, we could simply invoke the Radon-Nikodym theorem (for purposes yet defined) throughout the rest. However, we are not this lucky every time. For this reason, we need to introduce a few relatations on Radon measures:
+\begin{definition}
+	If $\mu,\nu$ are Radon measures on a locally compact Hausdorff space $X$. We say that $\nu$ is \emph{absolutely continuous} with respect to $\mu$ if $\mu(E)=0$ implies that $\nu(E)=0$ for  Borel sets $E \subseteq X$, and we write $\nu \ll \mu$. If $\nu \ll \mu$ and $\mu \ll \nu$, we say that $\mu$ and $\nu$ are equivalent.
+\end{definition}
+And, to counter the fact that we might not simply invoke the ordinary Radon-Nikodym theorem for $\sigma$-finite measures, we introduce a stronger equivalence:
+\begin{definition}
+	If $\mu,\nu$ are Radon measures on $X$ and there is $f \in C(X)$ with $f>0$ (i.e., $f(x)>0$ for all $x \in X$) such that 
+	\begin{align*}
+		\int_X \varphi(x) \d \nu(x) = \int_X \varphi(x) f(x) \d \mu(x), \text{ for all } \varphi \in C_c(X),
+	\end{align*}
+	then we say that $\nu$ is \emph{strongly absolutely continuous} with respect to $\mu$, and we write $\nu \ll_s \mu$. If $\nu \ll_s \mu$ and $\mu \ll_s \nu$, we say that $\mu$ and $\nu$ are \emph{strongly equivalent}.
+\end{definition}
+A quick consequence of the above is the following:
+\begin{proposition}
+	If $\mu,\nu$ are Radon measures on $X$ and $\nu \ll_s \mu$ with respect to some continuous $f>0$, then 
+	\begin{align*}
+		\nu(E)=\int_E f(x) \d \mu(x), \text{ for all Borel sets } E \subseteq X.
+	\end{align*}
+\end{proposition}
+\begin{proof}
+	Define a measure $\tilde{\nu}(E):=\int_{E}f \d \mu$ so that $\tilde{\nu}$ is a Borel measure on $X$. If $\nu(U)=\tilde{\nu}(U)$ for all open sets $U\subseteq X$, it will suffice to show that $\tilde{\nu}$ is outer regular, i.e., that for all Borel sets $E \subseteq X$ we have
+	\begin{align*}
+		\tilde{\nu}(E)=\inf\left\{ \tilde{\nu}(U) \ | \ E \subseteq U \text{ and } U \subseteq X \text{ open} \right\}.
+	\end{align*}
+	We begin by showing that it is outer regular: Suppose that $\varepsilon>0$ and let $E\subseteq X$ be a Borel set such that $\tilde{\nu}(E) < \infty$. For each $k \in \Z$, let
+	\begin{align*}
+		V_k=f^{-1}\left( \left( 2^{k-2},2^k \right) \right)=\left\{ x \in X \ | \ 2^{k-2} < f(x) < 2^{k} \right\}.
+	\end{align*}
+	Since $f$ is continuous, each $V_k$ is open, and moreover, since $f>0$ and $\bigcup_{k \in \Z} (2^{j-2},2^j)=(0,\infty)$, we see that $\bigcup_{k \in \Z}V_j=X$. Let $E_k:=E\cap V_k \subseteq V_k$, so that
+	\begin{align*}
+		E = \bigcup_{k \in \Z}E_k.
+	\end{align*}
+	For each $k \in \Z$, by construction, we have $f|_{E_k}>2^{k-2}>0$, so we see that 
+	\begin{align*}
+		\mu(E_k)=\int_{E_k} \frac{f}{f} \d \mu < \int_{E_k} f 2^{-(j-2)} \d \mu = 2^{2-j}\int_{E_k}f \d \mu = 2^{2-j}\tilde{\nu}(E_k).
+	\end{align*}
+	$\mu$ being an outer measure, we may (up to intersection with with the open set $V_k$) pick open sets $U_k\subseteq V_k$ with $E_k \subseteq U_k$ and $\mu(U_k\setminus E_k)<\varepsilon2^{-2|k|}$. Then, again using that $0<f|_{U_k\setminus E_k}<2^{k}$, we have $\tilde{\nu}(U_k\setminus E_k)<2^k \mu(U_k \setminus E_k) < \varepsilon 2^{-|k|}$. The union $ U:=\bigcup_{k \in \Z}U_k$ is an open set containing $E$, and
+	\begin{align*}
+		\tilde{\nu}(U\setminus E) \leq \sum_{k \in \Z} \tilde{\nu}(U_k \setminus E_k) < \sum_{k \in \Z}	\varepsilon 2^{-|k|}=3\varepsilon.
+	\end{align*}
+	hence taking the infimum we achieve the wanted, since $\varepsilon>0$ was arbitrary. All that is left to show is that $\tilde{\nu}$ and $\nu$ agree on open subsets $U$ of $X$, so let $U \subseteq X$ be any open set and let $B_U:=\left\{ \varphi \in C_c(X) \ | \ 0 \leq \varphi \leq 1, \ \textrm{supp}\varphi \subseteq U \right\}$. Then, by monotone convergence, we have
+	\begin{align*}
+		\nu(U) = \sup_{\varphi \in B_U} \int \varphi f \d \mu = \int \sup_{\varphi \in B_U} \varphi f \d \mu = \int 1_{U} f \d \mu = \tilde{\nu}(U),
+	\end{align*}
+	finishing the proof.
+\end{proof}
+
+Recall that when $\mu$ was a left Haar measure on $G$, the measure $\rho(E):=\mu(E^{-1})$ was a right Haar measure on $G$. Using the above, we relate them as following:
+\begin{proposition}
+	The measures $\mu$ and $\rho$ are strongly equivalent, and 
+	\begin{align*}
+		\d \rho(x)=  \Delta(x^{-1}) \d \mu(x).
+	\end{align*}
+\end{proposition}
+The crucial detail of the proof of this proposition is that if $f \in C_c(G)$ and $y \in G$, then
+\begin{align*}
+	\int_G R_y f(x) \Delta(x^{-1}) \d \mu(x) &= \Delta(y) \int_G f(xy) \Delta\left( \left( xy \right)^{-1} \right)\d \mu(x)\\
+	&= \int_G f(xy) \Delta\left( \left( xy \right)^{-1} \right)\d \mu(xy)\\
+	&= \int_G f(x) \Delta(x^{-1}) \d \mu(x),
+\end{align*}
+and using that the functional $f \mapsto \int_G f(x) \Delta(x^{-1}) \d \mu(x)$ is right-invariant, hence given by some right Haar measure, which is subsequently of the form $c \rho$ for some $c>0$. 
+
+Note that the above proposition implies that the following identities hold:
+\begin{align}
+	\d \mu(x^{-1}) = \Delta(x^{-1}) \d \mu(x) \text{  and  } \d \rho(x^{-1}) = \Delta(x)\d \rho(x).
+	\label{muxinv}
+\end{align}
+
+Let $M(G)$ denote the space of Radon measures on $G$. We wish to show that $M(G)$ is an algebra. Clearly it is closed under addition, and for multiplication we will use the convolution of two measures; for Radon measures $\mu,\nu \in M(G)$ we define the functional $I$ on $C_0(G)$
+\begin{align*}
+	I(\varphi):= \int \int \varphi(xy) \d \mu(x) \d \nu(y) \text { for } \varphi \in C_0(G).
+\end{align*}
+Then $I$ is a bounded linear functional on $C_0(G)$ satisfying $|I(\varphi)| \leq \lv \varphi\rv_{\sup} \lv \mu \rv \lv \nu \rv$, where we view $\nu,\mu$ as bounded linear functionals on $C_0(G)$ through the Riesz Representation theorem. Again, by the Riesz Representation theorem, the functional $I$ is given by some Radon measure, which we denote by $\mu \ast \nu \in M(G)$. 
+
+The measure $\mu \ast \nu$ satisfies $\lv \mu \ast \nu \rv \leq \lv \mu \rv \lv \nu \rv$, so that in fact $M(G)$ is a Banach Algebra (where the norm on $M(G)$ is induced by the norm from the Banach space dual of $C_0(G)$ by the Riesz Representation theorem).
+
+The point mass $\delta_e$ is a multiplicative identity of $M(G)$, for 
+\begin{align*}
+	\int\int \varphi(xy) \d \delta_e(x) \d \nu(y)= \int \varphi(y) \d \nu(y) \text{ for all } \varphi \in C_0(G) \text{ and } \nu \in M(G).
+\end{align*}
+We define the involution of $\mu \in M(G)$ by $\mu^*(E):=\overline{\mu(E^{-1})}$ for $E\subseteq G$ Borel, and it is not hard to see that this is in fact an involution:
+\begin{align*}
+	\int_G \varphi(x)(x) \d (\mu \ast \nu)^*(x) = \int_G \varphi(x^{-1}) \d \overline{\mu \ast \nu} &= \int_{G} \int_G \varphi(y^{-1}x^{-1}) \d \overline{\mu}(x) \d \overline{\nu}(y)\\
+	&= \int_G\int_G \varphi(yx) \d \mu^*(x) \d \nu^*(y)\\
+	&= \int_G \varphi(x) \d (\nu^* \ast \mu^*)(x),
+\end{align*}
+for all $\varphi \in C_0(G)$. 
+
+From now on, we again fix a left Haar measure $\mu$ on $G$, and we will write $\d x$ to mean $\d \mu(x)$. We will use the identification $f \mapsto \mu_f$ where $\d \mu_f(x)= f(x)\d \mu(x)=f(x) \d x$ to identify $L^1(G)(:=L^1(G,\mu))$ as a subspace of $M(G)$. The convolution of $f,g \in L^1(\mu)$ defined by
+\begin{align*}
+	f \ast g (x) = \int_G f(y) g(y^{-1}x) \d y, \ \text{ for } g \in G,
+\end{align*}
+and it coincides with the convolution of the corresponding measures $\mu_f \ast \mu_g$ in $M(G)$, since translation invariance gives that 
+\begin{align*}
+	\int_G \int_G \varphi(yx) f(y) g(x) \d x \d y &= \int_G \int_G \varphi(x) f(y) g(y^{-1}x) \d x \d y\\
+	&= \int_G \varphi(x) \int f(y) g (y^{-1}x) \d x \d y \\
+	&= \int_G \varphi(x) (f \ast g)(x) \d x,
+\end{align*}
+for all $\varphi \in C_0(G)$. Another useful way to formulate the convolution of $f,g \in L^1(G)$ is as the integrable function
+\begin{align}
+	x \mapsto \int_G f(y) L_y g(x) \d y=\int_G g(y^{-1}) R_yf(x) \d y, \label{2.38}
+\end{align}
+for this will allow us to obtain the identity
+\begin{align}
+	L_z(f \ast g)=(L_z f) \ast g \text {  and  } R_z (f \ast g) = f \ast(R_zg),
+	\label{id:leftconv}
+\end{align}
+due to commutativity of the left translation $L_z$ and right translation $R_y$ for $z,y \in G$.
+
+Applying the involution of $M(G)$ to the measure corresponding to $f \in L^1(G)$, we get by abstract change of variable that
+\begin{align*}
+	f(x)^* \d x = \overline{f(x^{-1})} \d (x^{-1})=\overline{f(x^{-1})} \Delta(x^{-1}) \d x,
+\end{align*}
+so we obtain an involution of $L^1(G)$ given by $f^*(x)=\Delta(x^{-1}) \overline{f(x^{-1})}$. In $L^1(G)$ we know that $\lv f \ast g \rv_1 \leq \lv f \rv_1 \lv g \rv_1$, so that it becomes a Banach Algebra with the above defined involution:
+\begin{definition}
+	The Banach $^*$-algebra $L^1(G)$ is called the \emph{Group Algebra} of $G$. The algebra $M(G)$ is called the \emph{Measure Algebra} of $G$, and is isomorphic to $C_0(G)^*$.
+	\label{MGdef}
+\end{definition}
+We examine a last set of identities regarding the convolution of $f,g \in L^1(G)$:
+\begin{align}
+	f \ast g(x) &= \int_G f(y) g(y^{-1}x) \d y \\
+	&= \int_G f(xy) g(y^{-1}) \d y \\
+	&= \int_G f(y^{-1}) g(yx) \Delta(y^{-1}) \d y\\
+	&= \int_G f(xy^{-1}) g(y) \Delta(y^{-1} ) \d y,
+	\label{integralid}
+\end{align}
+by repeatedly substituting via $x \mapsto xy$ and $x \mapsto x^{-1}$ and using the identity from \Cref{muxinv}.
+
+It is possible to extend this construction to other $L^p$ spaces in the following way:
+\begin{proposition}
+For $1 \leq p \leq \infty$, if $f \in L^1(G)$ and $g \in L^p(G)$, then
+\begin{itemize}
+	\item The integral identities from \Cref{integralid} converge absolutely for almost every $x \in G$, and $f \ast g \in L^p(G)$ satisfies $\lv f \ast g \rv_p \leq \lv f \rv_1 \lv g \rv_p$.
+	\item If $G$ is unimodular, then the above is true for $g \ast f$ as well.
+	\item If $G$ is not unimodular, then the above holds if $f \in C_c(G)$.
+	\item If $p = \infty$, then $f \ast g$ is continuous, and if either $G$ is unimodular or $f\in C_c(G)$ so is $g \ast f$.
+\end{itemize}
+\end{proposition}
+The first condition is known as Young's inequality in the case when $G=\R^n$, and similarly to the proof in that case, it can be proven using Minkowski's inequality and using the the $L^p$ norm is left-invariant.
+
+We have already seen that the continuous functions with compact support behave very nicely with respect to left- and right-translation. We may also extend some of these nice properties to the larger class of $L^p(G)$ functions for $1 \leq p < \infty$, namely:
+\begin{lemma}
+	If $1 \leq p < \infty$ and $f \in L^p(G)$, then $f$ is left- and right-continuous in the $p$-norm, in the sense defined in \Cref{defuniflr}
+	\label{Lp unif conv}
+\end{lemma}
+\begin{proof}
+	Let $V$ be any compact neighborhood of $e$. If $g \in C_c(G)$, setting $K= \left( \left(\supp g \right)V \right) \cup \left( V \left(\supp g \right)\right)$, we see that the functions $L_y g$ and $R_y g$ are supported in $K$ for $y \in V$, and since the topology of $G$ is translation invariant, $K$ itself is compact. Then \Cref{Cc lr uni cont} implies that 
+	\begin{align*}
+		\lv L_y g-g \rv_p^p = \int_G |L_y g(x)-g(x)|^p \d x \leq \int_G \lv L_y g - g\rv_\infty^p \d x = \mu(K)^p \lv L_y g-g \rv_\infty^p \to 0,
+	\end{align*}
+	and the same holds for $R_y g-g$. For $f \in L^p(G)$, note that 
+\begin{align*}
+	\lv R_y f \rv_p^p = \int_G |R_y f(x)|^p \d x  = \int_G R_y^p |f(x)|^p \d x = \int_G \Delta(y^{-1})^p \lv f \rv_p^p,
+\end{align*}
+using the identities from before. Given $\varepsilon>0$ choose, using density of $C_c(G)$ in $L^p(G)$, some $g \in C_c(G)$ such that $\lv f-g \rv_p < \varepsilon$ and define $\displaystyle C:=\sup_{y \in \supp g} \Delta(y)^{\frac{1}{p}}$. Then by repeated use of the triangle inequality, we have
+\begin{align*}
+	\lv R_y f - f \rv_p &\leq \lv R_y (f-g) \rv_p + \lv R_yg -g\rv_p + \lv g-f \rv_p \\
+	&\leq C \varepsilon+\varepsilon+\lv R_y g-g\rv_p \to (C+1)\varepsilon, \text{ as } y \to e.
+\end{align*}
+Finishing the proof in the case of $R_y$. The proof for $L_y$ follows analogously.
+\end{proof}
+
+Now, for $G$ discrete, the algebra $\ell^1(G)$ has a multiplicative identity, $\delta_e$. But for $G$ not-discrete, there is no multiplicative identity. However, we may construct a net of functions which act as an approximate multiplicative identity:
+\begin{theorem}
+	Let $\mathcal{U}$ be a neighborhood base of $e$ in $G$, and pick for each $U \in \mathcal{U}$ a $\psi_U \colon G \to [0,\infty)$ with $\psi_U(x)=\psi_U(x^{-1})$, $\supp \psi_U$ compact and $\lv \psi_U\rv_1=1$. Then whenever $1 \leq p < \infty$ and $f L^p(G)$, it holds that
+		\begin{align*}
+			\lv f \ast \psi_U - f \rv_p \to 0 \text{ and } \lv \psi_U \ast f - f \rv_p \to 0 \text{ as } U &\to \left\{ e \right\}.
+		\end{align*}
+	For $p=\infty$, if $f \in L^\infty(G)$ is right uniformly continous then
+	\begin{align*}
+		\lv f \ast \psi_U - f \rv_\infty \to 0 \text{ as } U \to \left\{ e \right\},
+	\end{align*}
+	and similarly, if $f \in L^\infty(G)$ is left unformly continuous then
+	\begin{align*}
+		\lv \psi_U \ast f - f \rv_\infty \to 0 \text{ as } U \to \left\{ e \right\}.
+	\end{align*}
+		\label{L1approxid}
+\end{theorem}
+\begin{proof}
+	Let $1 \leq p \leq \infty$ and $f \in L^p(G)$. The claims follows quite immediately from two observations; first, note that our assumptions about $\psi_U$ implies that	
+	\begin{align*}
+		f \ast \psi_U(y) - f(y) &= \int_G \underbrace{f(yx)}_{R_x f(y)} \underbrace{\psi_U(x^{-1})}_{=\psi_U(x)} \d x - f(y) \underbrace{\int_G \psi_U(x) \d x}_{=1}\\
+		=\int_G \left( R_x f(y)-f(y) \right)\psi_U(x) \d x,
+	\end{align*}
+	And the Minkowsky inequality for integrals then gives us the estimate:
+	\begin{align*}
+		\lv f \ast \psi_U - f \rv_p &= \left( \int_G \left|\int_G (R_x f(y) -f(y))\psi_U(x) \d x \right|^p \d y \right)^{\frac{1}{p}} \\
+		&\leq \int_G \left( \int_G |(R_x f(y)-f(y))\psi_U(x)|^p \d y \right)^{\frac{1}{p}} \d x\\
+		&= \int_G \lv R_x f(y) - f(y) \rv_p \psi_U(x) \d x \\
+		&\leq \sup_{x \in U} \lv R_x f-f\rv_p.
+	\end{align*}
+	If $p \neq \infty$, then $\displaystyle\sup_{x \in U} \lv R_x f-f\rv_p \to 0$ as $U \to \left\{ e \right\}$ by \Cref{Lp unif conv}. If $p = \infty$ and $f$ is right uniform continuous then the same holds, by definition of right uniform continuity. The second part follows from the same arguments and the identity
+	\begin{align*}
+		\psi_U \ast f(y) - f(y) = \int_{G}(L_x f(y)-f(y))\psi_U(x) \d x, \text{ for } y \in G.
+	\end{align*}
+\end{proof}
+
+\begin{theorem}
+	Let $J$ be a closed subspace of $L^1(G)$ then $J$ is a left ideal if and only if it is closed under left translation, and $J$ is a right-ideal if and only if it is closed under right translation.	
+	\label{2.43}
+\end{theorem}
+\begin{proof}
+We show the first assertion, the theorem follows from symmetry. Suppose that $J$ is a closed left ideal of $L^1(G)$. Let $f \in L^1(G)$ and $x \in G$, and let $\{\psi_U\}$ be an approximate identity for $L^1(G)$. Then
+\begin{align*}
+	L_x(\psi_U \ast f) = (L_x \psi_U) \ast f \in J,
+\end{align*}
+and hence $\lim L_x (\psi_U \ast f) = L_x f \in J$. 
+
+For the converse, suppose that $J$ is closed under left translation. If $f \in J$ and $g \in L^1(G)$, then $g \ast f = \int_{G} g(y) L_y f \d y$ per \Cref{2.38}, so $g \ast f \in \overline{\mathrm{span}}\{L_y f\}\subseteq I$.
+\end{proof}
+\sssection{G-spaces}
+Throughout the following we let $G$ be a locally compact group and $X$ any locally compact Hausdorff space. We will be interested in examining actions of $G$ on $X$ and derive properties of $G$ and $X$ from them. Often we will be in the case that $X=G/H$ for some normal subgroup $H \leq G$. A natural starting point of this will of course be to define an action:
+\begin{definition}
+	An \emph{action} of $G$ on $X$, abbreviated $G \acts X$ is a jointly continuous map
+	\begin{align*}
+		G \times X \to X,\quad (g,x) \mapsto g.x,
+	\end{align*}
+	such that for fixed $x \in X$ the map $x \mapsto g.x\in X$ is a homeomorphism and such that $g.(h.x)=(gh).x$ for all $g,h \in G$ and $x \in X$. A space $X$ equipped with an action of $G$ is called a \emph{$G$-space}.
+
+	A $G$-space $X$ such that every orbit $G_x:=\left\{ g.x \ | \ g \in G \right\}=X$ is called \emph{transitive}. 
+\end{definition}
+
+If $H$ is a closed subgroup of $G$, then the quotient group $G/H$ is a transitive $G$-space with respect to left-translation $g.[h]=[gh]$ for $g \in G$ and $[h] \in G/H$, and they are the proto example of a transitive $G$-space. If $X$ is any other transitive $G$-space, then fixing a point $x_0 \in X$ we may define the map $\varphi \colon G \to X$ by $g \mapsto g.x_0$. If we denote by $H$ the set of fix-points of $\varphi$, i.e., the set of $g \in G$ such that $g.x_0=x_0$, then $H$ is a closed subgroup of $G$ to which the restriction of $\varphi$ is constant. The universal property of the quotient topology ensures that we obtain a commutative diagram
+\begin{center}
+	\begin{tikzcd}
+		G \ar[d,"q"'] \ar[rrd,"\varphi"]&&\\
+		G/H \ar[rr,"\exists \Phi \text{ continuous}"']&& X
+	\end{tikzcd}
+\end{center}
+where $q$ is the quotient map. Since $X$ was a transitive $G$-space, the induced map $\Phi\colon G/H \to X$ is a continuous bijection. It is not always true that a transitive $G$-space is homeomorphic to $G/H$ for some closed subgroup $G$. One can consider the discrete group $\R$ acting on locally compact group $\R$ by left translation to find a counter-example. 
+\begin{definition}
+	A transitive $G$-space $X$ is said to be a \emph{homogeneous space} if it is homeomorphic to $G/H$ via $\Phi$ as above.
+\end{definition}
+An application of the Baire Category Theorem implies that if $G$ is $\sigma$-compact, then every transitive $G$-space $X$ is a homogeneous space.
+
+The goal of this section is to find nice conditions for the existence of $G$-invariant Radon measures on homogeneous spaces $G/H$, i.e., a Radon measure such that $\mu(x.E)=\mu(E)$ for all $x \in G$ and Borel subsets $E \subseteq G/H$. So as previously we will assume that $G$ is locally compact with a fixed left Haar measure whose integrand we denote by $\d x$, and we will let $H$ denote a closed subgroup of $G$ with a fixed left Haar measure to which we denote the integrand of by $\d \xi$ and $q \colon G \to G/H$ will denote the quotient map. We will switch between $xH$ and $[x]$ to denote the element $q(x)$.
+
+Suppose that $f \in C_c(G)$ and $y=x \eta\in G$ for some $\eta \in H$ and $g \in G$. Then we see that
+\begin{align*}
+	\int_H f(y \xi) \d \xi = \int_H f(x \xi) \d \xi,
+\end{align*}
+since $\d \xi$ is left-invariant, so we may define a map $P \colon C_c(G) \to C_c(G/H)$ by
+\begin{align*}
+	(Pf)(xH):= \int_{H}f(x \xi) \d \xi.
+\end{align*}
+It is immediate that this map is continuous, since the map $G \to \C$, $x \mapsto \int_H  f(x \xi) \d \xi$ is continuous, and moreover, we see that
+\begin{align*}
+	P\left( (\varphi \circ q) f \right)=\varphi\cdot Pf, \text{ for } \varphi \in C_c(G/H) \text{ and } f \in C_c(G).
+\end{align*}
+Before continuing our search, we need the following little collection of lemmae:
+\begin{lemma}
+	If $E \subseteq G/H$ is compact, then it is the image under $q$ of a compact set $K \subseteq G$, i.e., $q$ is a proper map.
+	\label{2.45}
+\end{lemma}
+\begin{proof}
+	Let $V$ be a pre-compact open neighborhood of $e_G$, here $e_G$ denotes the unit of $G$. The quotient map is an open map, which follows from translation invariance of the topology on $G$. Hence the sets $q(xV)$ are open for $x \in G$, and they cover the compact subset $E$ of $G/H$. Let $x_1,\dots,x_n \in G$ be such that the sets $q(x_jV)$ for $j=1,\dots,n$ cover $E$, and define
+	\begin{align*}
+		K:= q^{-1}(E) \cap \bigcup_{1 \leq j \leq}x_j \overline{V}.
+	\end{align*}
+	The set $q^{-1}(E)$ is closed due to continuity of $q$, so $K$ is a closed subset of a compact Hausdorff space hence compact with $q(K)=E$.	
+\end{proof}
+
+\begin{lemma}
+	If $F \subseteq G/H$ is compact, then there exists $f \in C_c(G)$ with $f \geq 0$ such that $Pf=1$ on $F$.
+	\label{2.47}
+\end{lemma}
+\begin{proof}
+	Pick compact neighborhood $E \subseteq G/H$ of $F$ and use \Cref{2.45} to pick $K \subseteq G$ compact with $q(K)=E$. Let $h \in C_c(G)$, $h \geq 0$, such that $h|_K>0$, and let $\varphi \in C_c(G/H)$ such that $\supp \varphi \subseteq E$ and $\varphi|_F=1$. This can be done using Urysohn's lemma, see e.g (\cite[131]{folland2013real}). Define now $f \colon G \to [0,\infty)$ by
+		\begin{align*}
+			f(x):=
+			\begin{cases}
+				\frac{(\varphi \circ q)(x)}{(Ph\circ q)(x)} h(x) &\text{ if } (Ph \circ q)(x) \neq 0\\
+				0 & \text{else}
+			\end{cases}
+		\end{align*}
+		Now we've chosen $h$ such that $Ph|_{\supp \varphi}>0$, so $f$ is continuous with $\supp f \subseteq \supp h$ and $Pf=\frac{\varphi}{Ph}Ph= \varphi$.
+\end{proof}
+And finally
+\begin{lemma}
+	If $\varphi \in C_c(G/H)$, then there is $f \in C_c(G)$ with $Pf=\varphi$ and $q(\supp f) = \supp \varphi$. If $\varphi\geq 0$ then $f \geq 0$.
+	\label{liftGH}
+\end{lemma}
+\begin{proof}
+	If $\varphi \in C_c(G/H)$, pick some $h \in C_c(G)$ as above such that $Ph|_{\supp \varphi}=1$. Let $f = (\varphi \circ q)h$, then $Pf = (Pg) \varphi=\varphi$. The proof follows immediately.
+\end{proof}
+With this in mind, we may now continue to answer the question imposed earlier: What are sufficient and necessary conditions for the existence of a $G$-invariant Radon measure $\mu$ on $G/H$:
+\begin{theorem}
+	If $G$ is a locally compact group and $H$ is a closed subgroup of $G$, then there is a $G$-invariant Radon measure $\mu$ on $G/H$ if and only if their modular functions satisfy $\Delta_G|_H=\Delta_H$. If this holds, then $\mu$ is unique up to multiplication some constant. In the case of a 'nicely' chosen constant, then it holds that
+	\begin{align*}
+		\int_G f(x) \d x = \int_{G/H}Pf(xH) \d \mu(xH)=\int_{G/H} \int_H f(x \xi) \d \xi \d \mu(xH), \text{ for } f \in C_c(G).
+	\end{align*}
+	\label{GH_inv_Radon}
+\end{theorem}
+\begin{proof}
+	Let $\mu$ be a $G$-invariant Radon measure on $G/H$. Let $\psi \colon C_c(G) \to \C$ be the positive linear functional on $C_c(G)$ given by $f \mapsto \int_{G/H} Pf(xH) \d \mu(xH)$. Since $\mu$ is left-invariant, so will the measure comming from $\psi$ be. By uniquenuess of the Haar measure, that there is a positive constant $c>0$ such that
+	\begin{align*}
+		\int_{G/H} Pf \d \mu = c \int_G f(x) \d x, \text{ for all } f \in C_c(G).
+	\end{align*}
+	By \Cref{liftGH}, each element of $C_c(G/H)$ is of the form $Pf$ for some $f \in C_c(G)$,  hence the above identity shows that $\mu$ is unique up to a constant $c >0$. We will assume that $c=1$, since else we would just use $c^{-1}\mu$ instead.
+
+	Let $\eta \in H$ and $f \in C_c(G)$, then
+	\begin{align*}
+		\Delta_G(\eta) \int_G f(x) \d x = \int_{G} f(x \eta^{-1}) \d x&= \int_G R_{\eta^{-1}}f(x) \d x \\
+		&= \int_{G/H}P(R_{\eta^{-1}} f)(xH) \d \mu(xH)\\
+		&= \int_{G/H}\int_{H}R_{\eta^{-1}}f(x \xi) \d \xi \d \mu(xH)\\
+		&= \int_{G/H} \int_H \Delta_H(\eta) f(x \xi) \d \xi \d \mu(xH)\\
+		&= \Delta_H(\xi) \int_G f(x) \d x,
+	\end{align*}
+	so that $\Delta_G|_H=\Delta_H$.
+
+	Assume that $\Delta_G|_H=\Delta_H$. If $f \in C_c(G)$ with $Pf=0$ we must show that $\int_G f(x) \d x=0$, for then the map $Pf \mapsto \int_G f(x) \d x$ will be a $G$-invariant positive linear functional on $C_c(G/H)$ giving rise to the desired Radon measure, by linearity of $P$.
+	Using \Cref{2.47}, pick $\varphi \in C_c(G)$ with $P\varphi|_{q(\supp f)}=1$. Then
+	\begin{align*}
+		0=Pf(xH)=\int_{H} f(x\xi) \d \xi = \int_{H} f(x \xi^{-1}) \Delta_H(\xi^{-1}) \d \xi = \int_{H} f(x \xi^{-1}) \Delta_G(\xi^{-1}) \d \xi,
+	\end{align*}
+	implying, since both $\varphi$ and $P\varphi$ vanish outside compact sets, that
+	\begin{align*}
+		0&= \int_G \int_H \varphi(x) f(x \xi^{-1}) \Delta_G(\xi^{-1}) \d \xi \d x\\
+		&=\int_H \int_G \varphi(x) f(x \xi^{-1}) \Delta_G\xi^{-1}) \d x \d \xi\\
+		&=\int_H\int_G \varphi(x \xi) f(x) \d x \d \xi\\
+		&=\int_G \int_H \varphi(x \xi) f(x) \d \xi \d x\\
+		&= \int_G \underbrace{P\varphi(xH)}_{=1} f(x) \d x\\
+		&= \int_G f(x) \d x,
+	\end{align*}
+	since $\varphi$ was chosen such that $P\varphi|_{q(\supp f)}=1$. We conclude, using \Cref{liftGH}, that the map $Pf \mapsto \int_G f(x) \d x$ is well-defined and it is clearly a positive linear functional on $C_c(G/H)$ and left-invariance of $\d x$ implies that it is left-invariant. The corresponding Radon measure on $G/H$ is the the desired $G$-invariant Radon measure.
+\end{proof}
+An immediate consequence of this is that
+\begin{corollary}
+	If $H$ is a compact subgroup of $G$, then $G/H$ admits a $G$-invariant Radon measure.
+\end{corollary}
+\begin{proof}
+	The modular function is continuous, so it has compact image in $(0,\infty)$, and by multiplicativity, it must be the constant function $1$, i.e., So $\Delta_G|_{H}=\Delta_H=1$
+\end{proof}
+
+\chapter{Representation theory of topological groups}
+In the following section, we will always use $G$ to denote a locally compact Hausdorff group with a fixed left-Haar measure with integrand denoted by $\d x$, and we will denote by $L^p(G)$ the corresponding space of $p$-integrable functions (up to null-equivalence). the main goal of this chapter is to both formulate and prove Schur's lemma and describe a correspondance of unitary representations of $G$ and $*$-representations of the Banach algebra $L^1(G)$.
+
+\sssection{Unitary Representations}
+\begin{definition}
+A \emph{unitary representation} of $G$ on a Hilbert space $\H_\pi$ is a strongly continuous group homomorphism $\pi \colon G \to \mathcal{U}(\H)$. We define $\pi_{s}:=\pi(s) \in \U(\H)$ for all $s \in G$ and we note that $\pi_{e}=I$ and that
+\begin{align*}
+\pi_s^*=\pi_s^{-1}=\pi_{s^{-1}}, \text{ for all } s \in G.
+\end{align*} 
+The space $\H_\pi$ is called the \emph{representation space} of $\pi$ and the dimension of $\H_\pi$ is called the \emph{degree} of $\pi$. We will switch between the notation $\pi_x$ and $\pi(x)$
+ depending on which is more convenient.
+\end{definition}
+And, we have in fact already seen, to some extent, the two most important such representations: The ones corresponding to the left and right translation operators:
+\begin{definition}
+Define $\lambda \colon G \to \U(L^2(G))$ to be the representation given by
+\begin{align*}
+	\lambda_x f(y):=L_xf(y)=f(x^{-1}y), 
+\end{align*}
+for $x,y \in G$. To see that is is even a representation, note that since the inner product of the Hilbert space $L^2(G)$ is given by
+\begin{align*}
+	\langle f,g \rangle=\int_G f(x) \overline{g(x)} \d x, \text{ for } f,g \in L^2(G),
+\end{align*}
+the left invariance of $\d x$ gives us that
+\begin{align*}
+	\langle \lambda_x f, \lambda_x g \rangle = \langle f,g \rangle.
+\end{align*}	
+The representation $\lambda$ is called the \emph{left-regular representation} of $G$. Similarly, if $\mu$ is the corresponding right Haar measure on $G$, we define the unitary representation $\rho$ on $L^2(G,\mu)$ by
+\begin{align*}
+	\rho_x f(y)=f(yx),
+\end{align*}
+for $y,x \in G$ and $f \in L^2(G,\rho)$. Then $\rho$ is called the \emph{right-regular representation} of $G$.
+\end{definition}
+Note that we may also view $\rho$ as a unitary representation of $L^2(G)$, abbreviated by $\tilde{\rho}$, via
+\begin{align*}
+\tilde{\rho}_xf(y):=\Delta(x)^{\frac{1}{2}} f(yx),
+\end{align*}
+for $x,y \in G$ and $f \in L^2(G)$. We will interchange between the two, and refer to both as the right-regular representation seamlessly.
+
+It will be important to have some way of describing whether unitary representations of $G$ are "equal" in a sense, and luckily there is a natural way of doing so:
+\begin{definition}
+	Given unitary representations $\pi_1$ and $\pi_2$ of $G$, an \emph{intertwining operator}  of $\pi_1$ and $\pi_2$ is a bounded linear operator $T \colon \H_{\pi_1} \to \H_{\pi_2}$ such that $T\pi_{1}(x) = \pi_2(x) T$ for all $x \in G$. We say that $\pi_1$ and $\pi_2$ are \emph{unitarily equivalent} if there there is a unitary operator which intertwines them. We denote by $\mathcal{C}(\pi_1,\pi_2)$ the set of all intertwining operators of $\pi_1$ and $\pi_2$.
+\end{definition}
+It is of particular interest to examine $\mathcal{C}(\pi):=\mathcal{C}(\pi,\pi)$, which is the set of operators on $\H_\pi$ which commute with the image:
+\begin{definition}
+The \emph{commutant} of a unitary representation $\pi$ og $G$ is the set 
+\begin{align*}
+	\mathcal{C}(\pi)=\left\{ T \in \mathbb{B}(\H_\pi) \ | \ T\pi_x=\pi_xT \text{ for all } x \in G \right\}.
+\end{align*}
+\end{definition}
+This turns out to be a weakly closed $C^*$-algebra, hence a von Neumann-algebra. The following lemma provides a sufficient condition for two representations to be equivalent:
+\begin{lemma}
+	If $\pi,\pi'$ are cyclic unitary representations of $G$ with cyclic vectors $v \in \H$ and $u\in\H'$ such that $\langle \pi(x) v , v \rangle_\H=\langle \pi'(x)u,u\rangle_{\H'}$ for all $x \in G$, then $\pi,\pi'$ are unitarily equivalent.
+	\label{3.23}
+\end{lemma}
+\begin{proof}
+	Start by noting that for all $x,y \in G$ 
+	\begin{align*}
+		\langle \pi(x) v , \pi(y) v \rangle= \langle \pi(y^{-1}x) v , v \rangle = \langle \pi'(y^{-1}x) u,u\rangle=\langle \pi'(x) u,\pi'(y) u \rangle,
+	\end{align*}
+	so that we may define a linear operator $T \colon \mathrm{span} \left\{ \pi(x) v  \ | \ x \in G \right\} \to \mathrm{span}\left\{ \pi'(x) u  \ | \ x \in G \right\}$ by $T\pi(x)v:=\pi'(x)u$, and by the above $T$ will be a continuous isometry, so it defines a unitary on the closure satisfying $T\pi(x)=\pi'(x)T$ for all $x \in G$. Since $\pi,\pi'$ are cyclic, the closure of the spans equals everything, finishing the proof.
+\end{proof}
+We wish to examine how we can decompose unitary representations. A natural thing to examine is when we may restrict a representation to a new representation.
+\begin{definition}
+If $\mathcal{M} \subseteq \H_\pi$ is a subspace such that $\pi_x \mathcal{M} \subseteq \mathcal{M}$ for all $x \in G$, we say that $\mathcal{M}$ is an \emph{invariant subspace} for $\pi$. If $\mathcal{M}$ is a non-zero invariant subspace, then the composition with the restriction map gives rise to a new representation of $G$ on $\mathcal{M}$ given by
+\begin{align*}
+	\pi_x^{\mathcal{M}}:=\pi_x|_{\mathcal{M}}, \ x \in G,
+\end{align*}
+and we say that $\pi^{\mathcal{M}}$ is a \emph{subrepresentation} of $\pi$. Whenever $\pi$ admits a non-trivial subrepresentation, we say that $\pi$ is \emph{reducible}, and otherwise \emph{irreducible}.
+\end{definition}
+If we have more than one unitary representation of $G$, then we may create new unitary representations from them: Given some a family $\{\pi_i\}_{i \in I}$ of unitary representations, then the representation given by their direct sum 
+\begin{align*}
+\pi:=\bigoplus_i \pi_i \colon G \to  \mathcal{U}\left(\bigoplus_i \H_{\pi_i}\right), \quad \pi\left(\sum_{i \in I}\xi_i\right)=\sum_{i \in I}\pi_i(x)\xi_i,
+\end{align*}
+is also a unitary representation of $G$, and in this case each $\H_{\pi_i}$ is an invariant subspace of $\pi$.
+
+More generally, whenever we have a unitary representation $\pi$ of $G$ on $\H_\pi$, if $\mathcal{M}$ is an invariant subspace for $\pi$, then so is $\mathcal{M}^\perp$ since $\pi_x^*=\pi_{x^{-1}}$. From this we obtain the following:
+\begin{lemma}
+If $\mathcal{M}$ is a non-zero invariant subspace for a representation $\pi$, then 
+\begin{align*}
+	\pi=\pi^{\mathcal{M}}\oplus \pi^{\mathcal{M}^\perp}.
+\end{align*}
+\label{3.1}
+\end{lemma}
+It is not hard to imagine that the orthogonal projection onto a closed subspace of $\pi$ has a role in determining when the space is invariant under $\pi$. We have the following
+\begin{lemma}
+Let $\mathcal{M}$ be a closed subspace of $\H_\pi$ with corresponding orthogonal projection $P$. Then $\mathcal{M}$ is invariant under $\pi$ if and only if $P \in \mathcal{C}(\pi)$.	
+\label{3.4}
+\end{lemma}
+\begin{proof}
+If $P \in \mathcal{C}(\pi)$ and $\xi \in \mathcal{M}$, then $\pi_x \xi = \pi_x P \xi = P \pi_x \xi \in \mathcal{M}$. The converse follows as well from simple calculations.
+\end{proof}
+
+The following will describe a way to completely characterize unitary representations of $G$ as a sum of certain subrepresentations. First we need the following:
+\begin{definition}
+Let $\pi$ be any unitary representation of $G$. For $\xi \in \H_\pi$, the subspace $\mathcal{M}_\xi:=\left\{ \pi_x \xi \ | \ x \in G \right\}$ is called the \emph{cyclic subspace} for $\pi$ generated by $\xi$. It is clearly an invariant subspace for $\pi$.
+
+If $\mathcal{M}_\xi=\H_\pi$, we say that $\xi$ is a \emph{cyclic vector} for $\pi$ and we then say that $\pi$ is a \emph{cyclic representation}.
+\end{definition}
+This allows us to obtain the following characterization:
+\begin{proposition}
+Every unitary representation $\pi$ of $G$ is a direct sum of cyclic representations.
+\label{3.10}
+\end{proposition}
+\begin{proof}
+We will prove this using Zorn's lemma: Let $\mathcal{S}$ be the set 
+\begin{align*}
+	\mathcal{S}=\left\{ E \subseteq \H_\pi \ | \ \xi\in E \iff \mathcal{M}_\xi \perp \mathcal{M}_{\eta} \text{ for all } \xi\neq \eta\in E \right\},
+\end{align*}
+ordered by inclusion. Suppose that $(E_\alpha)_{\alpha \in A}$ is any chain in $\mathcal{S}$. For each $\alpha \in A$ let
+\begin{align*}
+	F_\alpha:= E_\alpha \setminus\left( \bigcup_{\beta < \alpha} E_\beta \right),	
+\end{align*}
+and set $F = \bigcup_{\alpha \in A} F_\alpha$. Then clearly $F \in \mathcal{S}$ is an upper bound for the chain $\left( E_\alpha \right)_{\alpha \in A}$, so by Zorn's lemma there is some maximal element $\left( \xi_\alpha \right)_{\alpha \in A} \in \mathcal{S}$ and let $\left( \mathcal{M}_\alpha \right)_{\alpha \in A}$ denote the corresponding set of mutually orthogonal cyclic subspaces for this family.
+
+We then claim that $\pi=\bigoplus_{\alpha \in A}\pi^{\mathcal{M}_\alpha}$. Suppose towards a contradiction that there is some non-zero $ \xi \in \H_\pi$ such that $\xi \perp \mathcal{M}_\alpha$ for all $\alpha \in A$. This would contradict the maximality assumption, for then adding $\xi$ to our maximal set would be a greater element of $\mathcal{S}$. Hence
+\begin{align*}
+\H_\pi=\bigoplus_{\alpha \in A} \mathcal{M}_\alpha, \text{ and } \pi=\bigoplus_{\alpha \in A} \pi^{\mathcal{M}_\alpha}.
+\end{align*}
+\end{proof}
+
+With this in mind, we may prove a 'lemma' of Issai Schur, which completely classifies irreducible representations in terms of their commutants, and describes the intertwining operators between them.
+\begin{theorem}[Schur's Lemma]
+	\mbox{}
+\begin{itemize}
+\item A unitary representation $\pi$ of $G$ is irreducible if and only if $\mathcal{C}(\pi)\cong \C$.
+\item If $\pi_1$ and $\pi_2$ are irreducible unitary representations of $G$, then unitary equivalence of $\pi_1$ and $\pi_2$ implies that $\mathcal{C}(\pi_1,\pi_2)$ is one-dimensional. If $\pi_1$ and $\pi_2$ are not unitarily equivalent, then $\mathcal{C}(\pi_1,\pi_2)=\left\{ 0 \right\}$.
+\end{itemize}
+\label{Schurs}
+\end{theorem}
+\begin{proof}
+\textbf{(a):} Suppose that $\pi$ is reducible, then by \Cref{3.4} there is a non-trivial projection $P \in \mathcal{C}(\pi)$. For the converse, suppose that $T \in \mathcal{C}(\pi)$ with $T \not\in \C I$. Then $\Re T = \frac{T+T^*}{2}$ and $\Im T = \frac{T-T^*}{2i}$ are elements of $\mathcal{C}(\pi)$ and one of them is not in $\C I$. Suppose that $\Re T \neq c I$ for some $c \in I$. Since $\Re T$ is a self-adjoint operator which commutes with $\pi_x$ for all $x \in G$, the Borel functional calculus ensures that the non-zero projection $1_{E}(\Re T)$ for $E \subseteq \R$ commutes with $\pi_x$ as well. By invoking \Cref{3.4} we conclude that $\pi$ is reducible.
+
+\textbf{(b):} Suppose that $T \in \mathcal{C}(\pi_1,\pi_2)$, so that $T^*\in \mathcal{C}(\pi_2,\pi_1)$ which implies that $T^*T \in \mathcal{C}(\pi_1)$ and $TT^*\in \mathcal{C}(\pi_2)$. It follows that $T^*T=cI=TT^*$ for some $c \in \C$, and hence either $c^{-\frac{1}{2}}T$ is unitary or $T=0$, showing that last assertion of part (b), and that every intertwining operator is up to a constant some unitary. If $T_1,T_2 \in \mathcal{C}(\pi_1,\pi_2)$ are non-zero unitary operators, then $T_2^*T_1 \in \mathcal{C}(\pi_1)$ so $T_2^*T_1 = c I$ for some $c \in \C$ implying that $ T_1=cT_2$ Hence $\dim(\mathcal{C}(\pi_1,\pi_2))=1$.
+\end{proof}
+
+\sssection{Connections with $L^1(G)$}
+Recall that we have fixed a left Haar measure $\mu$ on $G$, and that we use $\d x$ to denote the integrand with respect to $\mu$. The goal is for each unitary representation $\pi$ of $G$ on $\H_\pi$ to associate a $*$-representation of $L^1(G)$ on $\H_\pi$. We will do this by observing the following: If $f \in L^1(G)$ and $\xi,\eta \in \H_\pi$, then we get the following estimate:
+\begin{align*}
+	\left| \int_G  f(x)\langle \pi(x) \xi,\eta \rangle \d x\right| \leq \int_G |f(x) \langle \pi_x \xi, \eta \rangle| \d x \leq \int_G |f(x)| \lv \xi \rv \lv \eta \rv \d x =\lv f \rv_1 \lv \xi \rv \lv \eta \rv,
+\end{align*}
+since $\pi_x$ is a unitary operator for all $x \in G$. Define now an operator $\pi(f)$ on $\H_\pi$, which is point-wise given by
+\begin{align}
+	\langle \pi(f) \xi,\eta\rangle= \int_G f(x) \langle \pi_x \xi, \eta \rangle \d x.
+	\label{indrep}
+\end{align}
+This is a linear operator, since the above is linear in $\xi$ and anti-linear in $\eta$, and the above estimate tells us that it is bounded as well. We will denote this operator by
+\begin{align*}
+	\pi(f)= \int_G f(x) \pi_x \d x,
+\end{align*}
+which takes value as described above. We then have the following:
+\begin{theorem}
+	Let $\pi$ be a unitary representation of $G$ on $\H_\pi$. Then the map $f \mapsto \pi_f:=\pi(f)$ is a non-degenerate $*$-representation of $L^1(G)$ on $\H_\pi$, and for $x \in G$ and $f \in L^1(G)$ it holds that
+	\begin{align*}
+		\pi(x) \pi(f) = \pi(\lambda_x f) \text{ and } \pi(f) \pi(x) = \Delta(x^{-1}) \pi(\rho_{x^{-1}} f)
+	\end{align*}
+	\label{thm3.9}
+\end{theorem}
+\begin{proof}
+First of all, we begin by noting that if $\pi=\lambda$, i.e., the left regular representation, then for $f,g \in L^1(G)$ and $x \in G$, we have
+\begin{align*}
+	(\lambda_f g)(x) = \int_G f(y) \lambda_y g(x) \d y=f \ast g(x)
+\end{align*}
+so that $\lambda_f$ is the operator $g \mapsto f \ast g$. Now, let $\pi$ be any unitary representation of $G$. The map $f \mapsto \pi_f$ is clearly linear, by linearity of the integral. If $f,g \in L^1(G)$, then using the substitution $z=y^{-1}x$ and changing the integration order, we get
+\begin{align*}
+	\pi_{f \ast g}= \int_G \int_G f(y) g(y^{-1}x) \pi_{x} \d y \d x &= \int_G \int_G f(y) g(y^{-1}x) \pi_{y(y^{-1}x)} \d y \d x\\ 
+	&= \int_G \int_G f(y) g(z) \pi_{yz} \underbrace{\d yz \d y}_{=\d z \d y}\\
+	&= \int_{G}\int_G f(y) g(x) \pi_{yx} \d x \d y\\
+	&= \int_G \int_G f(y) g(x) \pi_y \pi_x \d x \d y\\
+	&= \pi_f \pi_g,
+\end{align*}
+where we used Fubini's theorem to reverse the order of integration. Also, for $f \in L^1(G)$ we compute
+\begin{align*}
+	\pi_{f^*}= \int_G \Delta(x^{-1}) \overline{f(x^{-1})} \pi_x \d x = \int_{G }\overline{f(x^{-1})}\pi_x \d x x &= \int_G \overline{f(x)} \pi(x^{-1}) \d x,
+\end{align*}
+so that if $u,v \in \H_\pi$ we have
+\begin{align*}
+	\langle \pi(f)^* u,v \rangle =\int_G  \overline{f(x)\langle \pi(x) v,u\rangle} &= \int_G \overline{f(x) \langle \pi(x) v,u \rangle} \d x \\
+	&= \int_G \overline{f(x)} \langle \pi(x^{-1}) u,v \rangle \d x\\
+	&= \langle \pi(f^*) u,v\rangle,
+\end{align*}
+showing that $\pi(f)^*=\pi(f^*)$ for all $f \in L^1(G)$. 
+
+Note that we may commute a bounded linear operator into and out of a weak integral, for this see \Cref{intcom}. Using this, we see for $x \in G$ and $f \in L^1(G)$ that
+\begin{align*}
+	\pi(x) \pi(f) = \pi(x) \int_G f(y)\pi(y) \d y =\int_G \pi(x) f(y) \pi(y) \d y &= \int_G f(y) \pi(xy) \d y \\
+	&= \int \lambda_x f(y) \pi(y) \d y \\
+	&= \pi(\lambda_x f)
+\end{align*}
+and similarly, by substituting $x \mapsto yx$, we get
+\begin{align*}
+	\pi(f) \pi(x) = \int_G f(y) \pi(y) \pi(x) \d x = \int_G f(y) \pi(yx) \d y & = \int_G f(yx^ -1)\pi(y) \d yx^{-1}\\
+	&= \int_G \rho_{x^{-1}}f(y) \pi(y) \Delta(x^{-1}) \d y\\
+	&= \Delta(x^{-1}) \pi\left( \rho_{x^{-1}}f \right).
+\end{align*}
+This shows that $\pi$ is a $*$-homomorphism. To see that $\pi$ is non-degenerate, let $\xi \in \H_\pi$ be any non-zero element, and pick a compact neighborhood $V$ of $e$ in $G$ with
+\begin{align*}
+	\lv \pi(x) \xi - \xi \rv < \lv \xi \rv, \ x \in V.
+\end{align*}
+Since $\pi(x)$ is unitary for each $x \in V$, if we define $f: = \frac{1_{V}}{\mu(V)} \in L^1(G)$, it holds that $\pi(f)\xi \neq 0$.
+\end{proof}
+Using the above, we may classify the class of non-degenerate $*$-representations of $L^1(G)$, for we have the following:
+\begin{theorem}
+	Every non-degenerate $*$-representation $\pi$ of $L^1(G)$ on a Hilbert space $\H$ comes from a unique unitary representation $\pi$ of $G$ on $\H$.
+	\label{3.11}
+\end{theorem}
+\begin{proof}
+	Let $\{\psi_U\}$ denote an approxmiate unit of $L^1(G)$. The identity \Cref{id:leftconv} gives us that $(L_x \psi_U) \ast f \to L_x f$ for all $x \in G$ and $f \in L^1(G)$, hence for all $x \in G$, $f \in L^1(G)$ it holds that
+	\begin{align*}
+		\pi(L_x \psi_U \ast f)\xi = \pi(L_x \psi_U)\pi(f) \xi \to \pi(L_x f) \xi  \text{ for all } \xi \in \H.
+	\end{align*}
+	Thus, if we let $D:=\textrm{span}\left\{  \pi(f) \xi \ \big| \ f \in L^1(G), \ \xi \in \H \right\}$, then non-degenerancy of $\pi$ implies that $D^\perp=\{0\}$ so that $D$ is a dense subspace of $\H$. 
+	
+	For each $x \in G$ the restriction $\pi(L_x \psi_U)|D$ converges strongly to an operator $\tilde{\pi}(x)$ such that $\tilde{\pi}(x)\pi(f) \xi = \pi(L_x f ) \xi$ for $f \in L^1(G)$ and $\xi \in \H$, which is well-defined because of the following: Suppose that $x \in G$ and 
+	\begin{align*}
+		0=\sum_{i=1}^n \pi(f_i) \xi_i \in D,
+	\end{align*}
+	Then for all $g \in L^1(G)$ and $\eta \in \H$ we see that
+	\begin{align*}
+		\left\langle \sum_{i=1}^n \pi(L_x f_i) \xi_i, \pi(g) \eta \right\rangle&=\left\langle \tilde{\pi}(x) \sum_{i=1}^n \pi(f_i)\xi_i, \pi(g)\eta\right\rangle\\
+		&=\lim_{U}\left\langle \underbrace{\sum_{i=1}^n \pi(f_i) \xi_i}_{=0}, \pi(L_x \psi_U)^* \pi(g) \eta\right\rangle\\
+		&=0.
+	\end{align*}
+	Being a $*$-homomorphism, we know that $\lv \pi(L_x \psi_U)\rv \leq \lv L_x \psi_U \rv_1=1$, so we may extend $\tilde{\pi}(x)$ to all of $\H$ such that $\lv \tilde{\pi}(x) \rv \leq 1$ and $\tilde{\pi}(x) \pi(f) = \pi(L_x f)$ for all $x \in G$ and $f \in L^1(G)$. Clearly $\tilde{\pi}(xy)=\tilde{\pi}(x)\tilde{\pi}(y)$ and $\tilde{\pi}(e)=I$ on $D$, hence on all of $\H_\pi$. Moreover, if $x \in G$, then
+	\begin{align*}
+		\lv \xi \rv = \lv \tilde{\pi}(x^{-1}x)\xi \rv \leq \lv \tilde{\pi}(x) \xi \rv \leq \lv \xi \rv, \ \xi \in \H_\pi,
+	\end{align*}
+	so $\tilde{\pi}(x)$ is a unitary operator. It remains to show that $\tilde{\pi}$ is strongly continuous, which we first show for the restriction to $D$:
+	Suppose that $x_{\alpha} \to x \in G$, then for all $f \in L^1(G)$, since $L_{x_{\alpha}}f \to L_x f$, continuity of $\pi$ shows that
+	\begin{align*}
+		\tilde{\pi}(x_{\alpha}) \pi(f) = \pi(L_{x_{\alpha}}f) \to \pi(L_x f) = \tilde{\pi}(x) \pi(f).
+	\end{align*}
+This and the uniform boundedness of the family $\tilde{\pi}(x_{\alpha})$ implies $\tilde{\pi}(x_{\alpha}) \xi \to \tilde{\pi}(x)\xi$ for all $\xi \in \H_\pi$, see e.g. \cite[262]{conway2013course}. 
+
+We proceed to show that in fact $\tilde{\pi}(f)=\pi(f)$ for all $f \in L^1(G)$, where $\tilde{\pi}(f)$ is defined point-wise by \Cref{indrep}. It holds for $D$, for if $f,g \in L^1(G)$, then, viewing the integral as a weak integral, using \Cref{intcom} we see that
+\begin{align*}
+	\pi(f) \pi(g) = \pi(f \ast g ) = \int_G f(y) \pi(L_y g) \d y = \int_G f(y) \tilde{\pi}(y) \pi(g) \d y &= \int_G f(y) \tilde{\pi}(y) \d y \pi(g) \\
+	&=\tilde{\pi}(f) \pi(g),
+\end{align*}
+so $\tilde{\pi}(f)|_D = \pi(f)|_D$ hence all of $\H_\pi$. If $\pi'$ is another unitary representation of $G$ such that $\pi'(f)=\pi(f)$ for all $f \in L^1(G)$, then using \Cref{thm3.9} we see that $\tilde{\pi}(x)=\tilde{\pi}'(x)$ when restricted to $D$ and hence all of $\H_\pi$.
+\end{proof}
+
+If $\pi$ is a unitary representation of a discrete group $G$, then the induced representation of $\ell^1(G)$ will contain the representation of $G$, for we may identify $G$ in $L^1(G)$ by $x \mapsto \delta_x$, $x \in G$, and use \Cref{indrep}, however, for non-discrete groups this is not always true. However, if we let 
+\begin{align*}
+	\pi(G):=\left\{ \pi(x) \ \big| \ x \in G \right\} \text{  and  } \pi(L^1(G)):=\left\{ \pi(f) \ \big| \ f \in L^1(G) \right\},
+\end{align*}
+then we do have the following way of relating the representations:
+\begin{theorem}
+	Let $\pi$ be a unitary representation of a group $G$. Then
+	\begin{itemize}
+		\item the $C^*$-algebras $C^*(\pi(G))$ and $C^*(\pi(L^1(G)))$ have the same closure in the weak/strong operator topology, i.e., the von-Neumann algebras generated by $\pi(G)$ and $\pi(L^1(G))$ are the same.
+		\item The commutant of $\pi(G)$ equals the commutant of $\pi(L^1(G))$, i.e., if $T \in \mathbb{B}(\H)$ then $T\pi(x)=\pi(x)T$ for all $x \in G$ if and only if $T\pi(f)=\pi(f) T$ for all $f \in L^1(G)$.
+		\item A closed subspace $\mathcal{M}$ of $\H_\pi$ is invariant under $\pi(G)$ if and only if it is invariant under $\pi(L^1(G))$.
+	\end{itemize}
+	\label{3.12}
+\end{theorem}
+\begin{proof}
+	\textbf{(a):} Suppose that $\varepsilon>0$ and $g \in C_c(G)$. Let $u_1,\dots,u_m \in \H_\pi$ correspond to a strong $\varepsilon$-neighborhood $U$ of $\pi(g)$. We wish to show that $U$ contains operators from $C^*(\pi(G))$, so $g \in C^*(\pi(G))''$. For $x \in \supp(g)$, let
+	\begin{align*}
+		V_x:=\left\{ y \in \supp(g) \ | \ |g(x)-g(y)|<\varepsilon \text { and } \lv (\pi(x)-\pi(y))u_j\rv < \varepsilon \text { for } j=1,\dots,m \right\}.
+	\end{align*}
+	The family $\left\{ V_x \right\}_{x \in \supp (g)}$ covers $\supp(g)$, so using compactness we pick a finite cover $V=\{V_1,\dots,V_n\}$ of $\supp(g)$. Then if $x,y \in V_i$, then $\lv (g(x) \pi(x)-g(y)\pi(y))u_j\rv < \varepsilon$ for $j=1,\dots,m$. Let 
+	\begin{align*}
+		T_V=\sum_{1 \leq j \leq m} g(x_j) \pi(x_j) \mu(V_j),
+	\end{align*}
+	where $x_j \in V_j$ so that $T_V \in C^*(\pi(G))$. Then, for all $\xi \in \H_\pi$, we see that
+	\begin{align*}
+		\langle T_V u_m-\pi(g) u_m,\xi \rangle &= \sum_{1 \leq j \leq n} \int_{V_j} \langle g(x_j) \pi(x_j)u_m,\xi\rangle \d x- \int_{\supp g} g(x) \langle \pi(x) u_m,\xi\rangle \d x \\
+		&=\sum_{1 \leq j \leq n} \int_{V_j} \langle \left( g(x_j)\pi(x_j)-g(x)\pi(x) \right)u_m, \xi\rangle \d x,
+	\end{align*}
+	so by the Cauchy-schwartz and the triangle inequality, we see that
+	\begin{align*}
+		\lv T_V	u_m - \pi(g)u_m\rv &\leq \sum_{1 \leq j \leq n} \int_{V_j}\underbrace{\lv (g(x_j)\pi(x_j)-g(x)\pi(x))u_m \rv}_{< \varepsilon} \d x \\
+		&<\mu(\supp(g))\varepsilon,
+	\end{align*}
+	so $T_v \in U$. 
+	
+	We conclude by continuity of $\pi$ and density of $C_c(G) \subseteq L^1(G)$, that $C^*(\pi(L^1(G))'' \subseteq C^*(\pi(G))''$. In the proof of \Cref{3.11}, we established that $\pi(x)$ is the limit of a net of elements of $\pi(L^1(G))$, hence $C^*(\pi(G))'' \subseteq C^*(\pi(L^1(G))''$, as wanted. both \textbf{(b)} and \textbf{(c)} follows quite immediately, hence we will omit their proofs.
+\end{proof}
+
+\sssection{Relating representations to $L^\infty(G)$}
+In the following, we will show a correspondance between irreducible representations of $G$ and a certain class of functions in $L^\infty(G)$. As always, we will let $G$ denote a locally compact Hausdorff group with fixed Haar measure, whose integrand is denoted by $\d x$. 
+
+\begin{definition}
+	A function of \emph{positive type} on $G$ is a 'positive' (in the $C^*$-algebraic sense) functional $\varphi \in L^\infty(G)=L^1(G)^*$, i.e., a function on $G$ such that for all $f \in L^1(G)$ 
+	\begin{align*}
+	\int_G (f^*\ast f)(x)\varphi(x) \d x \geq 0.
+	\end{align*}
+	We denote the set of functions of positive type by $L^\infty(G)_+$
+\end{definition}
+Note that using substition $y \mapsto y^{-1}$, $x \mapsto y^{-1}x$ and Fubini's implies that
+\begin{align*}
+	\int_G (f^* \ast f)(x) \varphi(x)\d x &= \int_G \int_G \Delta(y^{-1}) \overline{f(y^{-1})} f(y^{-1}x) \varphi(x) \d y \d x \\
+	&=\int_G \int_G \overline{f(y)} f(yx) \varphi(x) \d y \d x\\
+	&= \int_G \int_G f(x) \overline{f(y)} \varphi(y^{-1}x) \d y \d x, \ f \in L^1(G),
+\end{align*}
+So $\varphi$ is of positive type if and only if 
+\begin{align}
+	\int_G \int_G f(x) \overline{f(y)} \varphi(y^{-1}x) \d y \d x \geq 0, \text{ for all } f \in L^1(G),
+	\label{3.13}
+\end{align}
+and this clearly implies that $\varphi$ is of positive type if and only if $\overline{\varphi}$ is. We now show how one can create positive functions on $G$ from unitary representation, which is a quite pleasing result. For this, we define
+\begin{align*}
+	\mathcal{P}=\mathcal{P}(G):=\left\{\varphi\in L^\infty(G)_+ \cap C(G)\right\},
+\end{align*}
+i.e., it is the set of continuous functions of positive type.
+\begin{proposition}
+	Given any unitary representation $\pi$ of $G$ and any $\xi \in \H_\pi$, if we define a function $\varphi$ on $G$ by
+	\begin{align*}
+		\varphi(x):=\langle \pi(x) \xi,\xi\rangle, \ x \in G,
+	\end{align*}
+	then $\varphi \in \mathcal{P}$.
+	\label{3.15}
+\end{proposition}
+\begin{proof}
+	Continuity of $\varphi$ is clear, and for $y,x \in G$ we see that $\varphi(y^{ -1}x)=\langle \pi(x) \xi , \pi(y) \xi\rangle$ since $\pi$ is a unitary representation. Hence
+	\begin{align*}
+		\int_G \int_G f(x) \overline{f(y)} \varphi(y^{-1}x) \d y \d x&=\int_G \int_G f(x) \overline{f(y)} \langle \pi(x) \xi,\pi(y) \xi \rangle \d y \d x\\
+		&= \langle \pi(f) \xi, \pi(f) \xi \rangle=\lv \pi(f) \xi \rv^2 \geq 0, \ f \in L^1(G),
+	\end{align*}
+	so that $\varphi \in \mathcal{P}$.
+\end{proof}
+If $f \in L^2(G)$, define $\tilde{f}(x):=\overline{f(x^{-1})}$. Then the above gives the following:
+\begin{corollary}
+	For all $f \in L^2(G)$ it holds that $f \ast \tilde{f} \in \mathcal{P}$.
+	\label{3.16}
+\end{corollary}
+\begin{proof}
+	If $\pi=\lambda$ is the left-regular representation, then 
+	\begin{align*}
+		\overline{f \ast \tilde{f}(x)}=\int_{G}f(x^{-1}y) \overline{f(y)} \d y =  \int_G (\lambda(x) f)(y) \overline{f(y)} \d y = \langle \lambda(x)f,f\rangle.
+	\end{align*}
+\end{proof}
+The following section is devoted to showing that in fact \textit{every} non-zero function of positive type on $G$ comes from a unitary representation in the way specified in the above proposition. To this, we do a standard construction where we will build a Hilbert space to each function of positive type.
+
+Let $\varphi$ be any non-zero function of positive type on $G$. Define the semi-inner product $\langle \cdot , \cdot \rangle_\varphi$ on $L^1(G)$ by
+\begin{align}
+	\langle f,g \rangle_\varphi:= \int_G (g^* \ast f)(x) \varphi(x) \d x, \ f,g \in L^1(G).
+	\label{3.17}
+\end{align}
+Let $\mathcal{N}$ be the kernel of $f \mapsto \langle f,f \rangle_\varphi$, then a standard computation using the Schwarz inequality shows that $f \in \mathcal{N}$ if and only if $\langle f,g \rangle_\varphi=0$ for all $g \in L^1(G)$. Let $\H_\varphi$ denote the Hilbert space completion of $L^1(G)/\mathcal{N}$ with respect to the induced inner product, still denoted by $\langle \cdot,\cdot\rangle_\varphi$.
+
+An easy computation shows that
+\begin{align}
+	| \langle f,g\rangle_\varphi| \leq \lv \varphi \rv_{\infty} \lv f\rv_1 \lv g \rv_1,
+	\label{3.18}
+\end{align}
+for all $f,g \in L^1(G)$, and hence that
+\begin{align*}
+	\lv [f] \rv_{\H_\varphi} \leq \lv \varphi \rv_{\infty}^{\frac{1}{2}}\lv f \rv_1.
+\end{align*}
+If $f, g \in L^1(G)$ and $x \in G$ then through substitution we see that
+\begin{align*}
+	\langle \lambda(x) f, \lambda(x) g \rangle_\varphi &= \int_G \int_G f(y) \overline{g(x^{-1}z)} \varphi(y^{-1}z) \d y \d z
+	\\&=\int_G \int_G f(y) \overline{g(z)} \varphi\left( (xy)^{-1}(xz) \right) \d y \d z\\
+	&= \langle f,g \rangle_\varphi,
+\end{align*}
+which in particular implies that $\mathcal{N}$ is invariant to $\lambda(x)$, so that $\lambda$ induces a unitary representation $\pi_\varphi$ of $G$ on $\H_\pi$ defined by
+\begin{align}
+	\pi_\varphi(x) [f]:=[\lambda(x) f], \ f \in L^1(G),
+	\label{3.19}
+\end{align}
+which implies that the induced representation of $L^1(G)$ is given by
+\begin{align*}
+	\pi_\varphi(f)[g]=[\lambda(f)g ]=[f \ast g], \ f,g \in L^1(G),
+\end{align*}
+this is an easy consequence of \Cref{indrep}. It turns out that this construction has a wide range of uses, we will use it to show the earlier mentioned correspondance between irreducible representations and a certain subset of $L^\infty(G)_+$. 
+\begin{theorem}
+	Let $\varphi\in L^\infty(G)_+$ and let $\pi_\varphi$ denote the induced representation of $G$ on $\H_\pi$. Then there exists a cyclic vector $\eta\in \H_\pi$ such that $\pi_\varphi(f) \eta = [f]$ for all $f \in L^1(G)$ and $\varphi=\phi$ locally a.e., where $\phi(x):=\langle \pi_\varphi(x) \eta,\eta\rangle_ \varphi$ for $x \in G$.
+	\label{3.20}
+\end{theorem}
+\begin{proof}
+	Let $\left\{ \psi_U \right\}$ be an approximate identity of $L^1(G)$, which implies that $\{\psi_U^*\}$ is also an approximate unit for $L^1(G)$ satisfying $\lv [\psi_U]\rv_{\H_\varphi}\leq \lv \varphi \rv_\infty$ since $\lv \psi\rv_1 \leq 1$. Then for $f \in L^1(G)$:
+	\begin{align*}
+		\langle [f] , [\psi_U]\rangle_\varphi=\int_G (\psi_U^* \ast f)(x) \varphi(x) \d x \to \int_G f(x) \varphi(x) \d x.
+	\end{align*}
+	Since the set $\{[f] \ | \ f \in L^1(G)\}$ is dense in $\H_\varphi$, we see that the limit $\lim \langle \xi , \psi_U\rangle_\varphi$ exists for all $\xi \in \H_\varphi$, i.e., there is $\eta \in \H_\varphi$ such that $[\psi_U]\to \eta$ weakly and
+	\begin{align*}
+		\langle [f], \eta \rangle_\varphi=\int_G f(x) \varphi(x) \d x \text{ for all } f \in L^1(G).
+	\end{align*}
+	Then for $g \in L^1(G)$ and $y \in G$ we then see that
+\begin{align*}
+	\langle [g] , \pi_\varphi(y) \eta \rangle_ \varphi = \langle \pi_\varphi(y^{-1}) [g], \eta \rangle_\varphi &= \langle [\lambda(y^{-1})[g] , \eta \rangle_\varphi\\
+	&= \int_G g(x) \varphi(y^{-1}x) \d x,
+\end{align*}
+and hence for any $f \in L^1(G)$ that
+\begin{align*}
+	\langle [g],[f] \rangle_\varphi =\int_G \int_G g(x) \overline{f(y)} \varphi(y^{-1}x) \d x \d y = \int_G \langle [g], \pi_\varphi(y) \eta \rangle_\varphi \overline{f(y)} \d y = \langle [g] ,\pi_\varphi(f)\eta \rangle_\varphi,
+\end{align*}
+so that $[f]=\pi_\varphi(f) \eta$ for all $f \in L^1(G)$. It remains to show that $\eta$ is cyclic and that $\varphi(y)=\langle \pi_\varphi (y) \eta,\eta\rangle_\varphi$ locally almost everywhere: The span of $\{ \pi_\varphi(y) \eta \ | \ y \in G\}$ is dense, since if $g \in L^1(G)$ and $\langle [g] , \pi_\varphi(y) \eta \rangle_\varphi=0$ for all $y \in G$, then $\langle [g] , [f] \rangle_\varphi=0$ for all $f \in L^1(G)$ which in turn implies that $[g]=0$, so $\eta$ is indeed a cyclic vector for $\pi_\varphi$.
+
+Moreover, for all $f \in L^1(G)$ we see that
+\begin{align*}
+	\int_G \langle \eta , \pi_\varphi(y) \eta \rangle_\varphi \overline{f(y)} \d y =\lim_U \int_G \langle [\psi_U] , \pi_\varphi(y) \eta \rangle_\varphi \overline{f(y)} \d y &= \lim_U  \langle [\psi_U] , [f] \rangle_\varphi\\
+	&= \langle \eta,[f] \rangle_\varphi 
+	\\&= \int_G \overline{f(y) \varphi(y) } \d y,
+\end{align*}
+implying that $\varphi=\phi$ locally a.e., with $\phi=x \mapsto \langle \pi_\varphi(x) \eta, \eta \rangle_\varphi$ and by \Cref{3.15}, $\phi \in \mathcal{P}(G)$.
+\end{proof}
+\begin{corollary}
+	Every $\varphi \in L^\infty(G)_+$ satisfies $\varphi=\phi$ locally a.e. for some $\phi \in \mathcal{P}(G)$.
+\end{corollary}
+A nice consequence of this is that when combined with \Cref{3.23}, we obtain the following:
+\begin{corollary}
+If $\pi$ is a cyclic representation of $G$ with cyclic vector $u \in \H_\pi$ and $\varphi(x):=\langle \pi(x) u,u\rangle$ for all $x \in G$, then $\pi$ is unitarily equivalent to the representation $\pi_\varphi$.	
+\end{corollary}
+
+We now return to examine the set $\mathcal{P}(G)$; and we note that an immediate consequence of \Cref{3.20} is the following:
+\begin{corollary}
+	If $\varphi \in \mathcal{P}(G)$, then $\lv \varphi \rv_\infty = \varphi(e)$ and $\varphi(x^{-1})=\overline{\varphi(x)}$ for all $x \in G$.
+	\label{3.22}
+\end{corollary}
+This follows from continuity will transform locally a.e to everywhere. Now, consider the following subsets of $\mathcal{P}(G)$:
+\begin{align*}
+	\mathcal{P}_1(G):&=\left\{ \varphi \in \mathcal{P}(G) \ \big| \ \lv \varphi \rv_\infty =1 \right\},\\
+	\mathcal{P}_0(G):&=\left\{ \varphi \in \mathcal{P}(G) \ \big| \ \lv\varphi \rv_\infty \leq 1 \right\}
+\end{align*}
+both of which are convex sets. It turns out that the extremal points of $\mathcal{P}_1(G)$, which we denote by $\mathrm{Ext}(\mathcal{P}_1(G))$, completely characterizes irreducble representations induced by $\mathcal{P}_1(G)$ in the following way:
+\begin{theorem}
+	If $\varphi \in \mathcal{P}_1(G)$, then $\varphi \in \mathrm{Ext}(\mathcal{P}_1(G))$ if and only if the associated representation $\pi_\varphi$ is irreducble
+	\label{3.25}
+\end{theorem}
+\begin{proof}
+	One way is clear: If $\pi_\varphi$ is reducible with $\H_\pi=\mathcal{M}\oplus \mathcal{M}^\perp$, and $\xi \in \H_\pi$ is the cyclic vector from \Cref{3.20}, then $\xi$ is of the form $u+v$ for non-zero vectors $u \in \mathcal{M}$ and $v \in \mathcal{M}^\perp$. Then if $\psi_1(x):=\frac{\langle \pi_\varphi(x) u,u\rangle_\varphi}{\lv u\rv^2}$ and $\psi_2(x) := \frac{ \langle \pi_\varphi (x) v,v\rangle_\varphi}{\lv v \rv^2}$ are the associated sub-representations of $\pi_\varphi$ on $\mathcal{M}$ and $\mathcal{M}^\perp$, we see that 
+	\begin{align*}
+		\varphi=\lv u \rv^2 \psi_1+\lv v\rv^2 \psi_2,
+	\end{align*}
+	with  $\psi_1,\psi_2\in \mathcal{P}(G)_1$ and $\lv u \rv^2+ \lv v \rv^2 = \varphi(e)=1$ since $u \perp v$, so $\varphi $ is not an extreme point.
+
+	For the converse, suppose that $\pi_\varphi$ is irreducible with $\varphi=\psi_1+\psi_2$ for some $\psi_1,\psi_2 \in \mathcal{P}(G)_1$. Recall that we use $\langle \cdot, \cdot \rangle_\varphi$ to also denote the sesquilinear form as in \Cref{3.17}, then linearity of the integral shows that for $f,g \in L^1(G)$ we see that
+	\begin{align*}
+		\langle f,f \rangle_{\psi_1} = \langle f,f \rangle_{\varphi}- \underbrace{\langle f,f \rangle_{\psi_2}}_{\geq 0} \leq \langle f, f \rangle_{\varphi},
+	\end{align*}
+	and hence by \Cref{3.18}
+	\begin{align*}
+		|\langle f,g \rangle_{\psi_1}\rangle| \leq \langle f,f \rangle_{\psi_1}^{\frac{1}{2}} \langle g,g \rangle_{\psi_1}^{\frac{1}{2}}\leq \langle f,f \rangle_\varphi ^{\frac{1}{2}} \langle g,g \rangle_\varphi^{\frac{1}{2}}.
+	\end{align*}
+	Recall that $\H_\varphi$ was defined to be $L^1(G)$ modulo the kernel of the semi-positive definite form induced by $\langle \cdot , \cdot \rangle_\varphi$, then the above shows that the map $(f,g) \mapsto \langle f,g \rangle_{\psi_1}$ induces a bounded Hermitian form on $\H_\varphi$. Then an application of Riesz-Frechets theorem (see e.g. \cite[5-6]{blackadar2006operator}) provides a self-adjoint bounded operator $T \colon \H_\varphi \to \H_\varphi$ such that 
+	\begin{align*}
+		\langle f,g \rangle_{\psi_1} = \langle T [f],[g]\rangle_{\varphi},
+	\end{align*}
+	where $[f],[g]$ are the associated elements in $\H_\varphi$. Then, for $x \in G$ and $f,g \in L^1(G)$, using the definition of $\pi_\varphi$ we see that
+	\begin{align*}
+		\langle T \pi_\varphi (x) [f],[g] \rangle_\varphi = \langle T [\lambda(x) f] , [g] \rangle_\varphi &= \langle \lambda(x) f,g \rangle_{\psi_1} \\
+		&= \langle f , \lambda(x^{-1}) g \rangle_{\psi_1}\\
+		&= \langle T [f] , \pi_\varphi(x^{-1}) [g] \rangle_{\varphi} = \langle \pi_{\varphi}(x)T [f],[g] \rangle_\varphi,
+	\end{align*}
+	so $T \in \mathcal{C}(\pi_\varphi)$, and by \Cref{Schurs}, this means that $T=\alpha I$ for some non-zero $\alpha \in \C$, so for all $f,g \in L^1(G)$ we have
+	\begin{align*}
+		\langle f,g \rangle_{\psi_1}= \alpha \langle f,g \rangle_\varphi,
+	\end{align*}
+	implying that $\psi_1 = \alpha \varphi$, and hence $\psi_2 = (1-\alpha) \varphi$, so indeed $\varphi \in \mathrm{Ext}(\mathcal{P}(G)_1)$.
+\end{proof}	
+
+With this result in mind, we embark to show our last theorem in this chapter on basic representation theory, namely that the irreducible unitary representations 'see' all of $G$ when $G$ is locally compact and Hausdorff. Here 'see' is in the sense that to each distinct points $x,y \in G$, we may find a representation with induced function of positive type separating them. For this purpose, we introduce a new topology:
+\begin{definition}
+	If $X$ is a topological space and $S \subseteq \C^X$ is any non-empty set of functions, for $\varepsilon > 0$ and $K \subseteq X$ compact and $\varphi_0 \in S$, define the set	
+	\begin{align*}
+		N(\varphi_0,\varepsilon,K) := \left\{ \varphi \in S \ \big| \ |\varphi(x)-\varphi_0(x)| < \varepsilon \text{ for all } x \in K \right\}.
+	\end{align*}
+	The topology on $S$ generated by the neighborhood basis at $\varphi_0$ given by the sets $N(\varphi_0,\varepsilon,K)$ is called \emph{the topology of compact convergence} on $X$.
+\end{definition}
+We wish to examine how this topology behaves on $\mathcal{P}_1(G)$ when compared to the weak$^*$-topology inherited from $L^\infty(G)$ (as a dual space of $L^1(G)$). For this, we begin by showing that the conclusion of the Krein-Millman theorem (see e.g. \cite[75]{rudin1991functional}) holds for $\mathcal{P}_1(G)$ even though it is not always true that $\mathcal{P}_1(G)$ is weak$^*$-closed (which is a requirement for Krein-Millman). First we have the following lemma:
+\begin{lemma}
+	It holds that $\Ext(\mathcal{P}_0(G))=\Ext(\mathcal{P}_1(G))\cup\left\{ 0 \right\}$.
+	\label{3.26}
+\end{lemma}
+\begin{proof}
+	We show both inclusions: We begin by showing that $0$ is extreme. Suppose that $0=\alpha_1 \varphi_1+\alpha_2 \varphi_2$ for some $\varphi_1,\varphi_2 \in \mathcal{P}_0(G)$ and $\alpha_1,\alpha_2 > 0$ with $\alpha_1+\alpha_2=1$. Then
+	\begin{align*}
+		0=\underbrace{\alpha_1 \varphi_1(e)}_{\geq 0}+\underbrace{\alpha_2 \varphi_{2}(e)}_{\geq 0},
+	\end{align*}
+	which implies that $\varphi_1(e)=\varphi_2(e)=0$, and by \Cref{3.22} this show that $\varphi_1=\varphi_2=0$, so $0 \in \Ext(\P_0(G))$.
+
+	Now suppose that $\varphi \in \P_1(G)$ with $\varphi = \alpha_1 \varphi_1+\alpha_2\varphi_2$ for some $\varphi_1,\varphi_2 \in \P_0(G)$ and $\alpha_1,\alpha_2 \geq 0$ with $\alpha_1+\alpha_2=1$, then $1=\alpha_1 \underbrace{\varphi_1(e)}_{\in [0,1]}+\alpha_2 \underbrace{\varphi_2(e)}_{\in [0,1]}$ implying that $\varphi_1(e)=\varphi_2(e)=1$ so $\varphi_1, \varphi_2 \in \P_1(G)$. Hence $\Ext(\P_1(G)) \subseteq \Ext(\P_0(G))$.
+	
+	If $\varphi \in \P_0\backslash(\P_1 \cup \left\{ 0 \right\})$, so that $0 <\varphi(e)<1$, then
+	\begin{align*}
+	\varphi=\varphi(e) \frac{\varphi}{\varphi(e)}+(1-\varphi(e))0, 	
+	\end{align*}
+	so $\varphi \not \in \Ext(\P_0(G))$.
+\end{proof}
+While it is not true that $\P_1(G)$ is weak$^*$ closed, it is clear that $\P_0(G)$ is a weak$^*$-closed subset of the closed unit ball in $L^\infty(G)$, since the condition $\int_G (f^* \ast f)(x) \varphi(x) \d x\geq 0$ is closed under point-wise limits. By Alaoglu's theorem (see e.g. \cite[68]{rudin1991functional}), it is weak$^*$ compact, therefore by by Krein-Millman $\P_0(G)=\overline{\mathrm{conv}(\Ext(\P_0(G)))}^{w^*}$, where $\mathrm{conv}$ denotes the convex hull, i.e., the set of finite convex combinations. With this in mind, we obtain the following:
+\begin{proposition}
+	The convex hull of $\Ext(\P_1(G))$ is dense in $\P_1(G)$ with respect to the weak$^*$ topology.
+	\label{3.27}
+\end{proposition}
+\begin{proof}
+	Let $\varphi_0 \in \P_0(G)$. By \Cref{3.26}, there is a net $\{\psi_j\}_{j \in J}$ converging to $\varphi_0$ in the weak$^*$ topology, where each $\psi_j$ is of the form
+	\begin{align*}
+		\varphi_j=\alpha_1 \psi_1+\dots+\alpha_n \psi_n + \alpha_{n+1}0=\sum_{1 \leq i \leq n}\alpha_i \psi_i, 
+	\end{align*}
+	with $\psi_1,\dots,\psi_n \in \Ext(\P_1(G))$, $\alpha_1,\dots,\alpha_{n+1}\geq 0$ and $\sum_{i=1}^{n+1}\alpha_i = 1$. For each $\varepsilon>0$, the set $\left\{ \varphi \in L^\infty(G) \ \big| \ \lv f \rv_\infty \leq 1-\varepsilon \right\}$ is weak$^*$ closed, so $\lim_j \varphi_j(e)=\lim_j \lv \varphi_j \rv_{\infty}=1$, since $\lv \varphi_0 \rv_\infty= \varphi_0(e)=1$ and $\lv \varphi_j \rv_\infty=\varphi_j(e)\leq 1$.
+
+	The conclusion follows from observating that if $\varphi_j':=\frac{\varphi_j}{\lv \varphi_j\rv_\infty}$, then $\varphi_j'(e)=1$ and 
+	\begin{align*}
+		\varphi_j'=\frac{\sum_{1 \leq 1 \leq n}\alpha_i \psi_i}{\varphi_j(e)} \in \mathrm{conv}(\Ext(\P_1(G)),
+	\end{align*}
+	and clearly $\varphi'_j \to \varphi_0$ in the weak$^*$ topology.
+\end{proof}
+We will need the following basic functional analysis result, which we include without proof, namely:
+\begin{lemma}
+	If $X$ is a Banach space and $B \subseteq X^*$ is bounded in norm, then on $B$ the topology of compact convergence on $X$ and the weak$^*$ topology coincide.
+	\label{3.28}
+\end{lemma}
+We are almost ready to prove that the weak$^*$-topology on $\P_1(G)$ and the topology of compact convergence on $G$ coincides, but first, we need the following two results:
+\begin{lemma}
+	If $\varphi_0 \in \P_1(G)$ and $f \in L^1(G)$, then to every $\varepsilon>0$ and compact $K \subseteq G$ there is a weak$^*$ neighborhood $V$ of $\varphi_0$ in $\P_1(G)$ such that
+	\begin{align*}
+		| f \ast \varphi(x) - f \ast \varphi_0(x)| < \varepsilon \text{ for all } \varphi \in V \text{ and } x \in K.	
+	\end{align*}
+	\label{3.29}
+\end{lemma}
+\begin{proof}
+	For all $f \in L^1(G)$ and $\varphi \in \P_1(G)$, it follows from \Cref{3.22} that
+	\begin{align*}
+		f \ast \varphi(x) = \int_G f(xy) \varphi(y^{-1}) \d y = \int_G (\lambda(x^{-1}) f) \overline{\varphi}(y) \d y.
+	\end{align*}
+	In \Cref{Lp unif conv} we saw that the map $x \mapsto \lambda(x^{-1}) f$ is a continuous map $G \to L^1(G)$, so the image of any compact $K \subseteq G$ will be compact in $L^1(G)$, i.e., the set $\left\{ \lambda(x^{ 1-}) f \ \big| \ x \in K \right\}$. The conclusion follows by applying \Cref{3.28} together with the continuity of multipication in $L^1(G)$.
+\end{proof}
+Finally, we combine all the above to achieve
+\begin{theorem}
+	On $\P_1(G)$, the weak$^*$ topology coincides with the topology of compact convergence on $G$.	
+	\label{3.31}
+\end{theorem}
+
+\begin{proof}
+	Let $\varphi,\varphi' \in \P_1(G)$, and assume that $f \in L^1(G)$ and $\varepsilon>0$. Since we may approximate $f$ with functions of compact support, choose compact $K \subset G$ such that 
+	\begin{align*}
+		\int_{K^c} |f(x)| \d x < \frac{1}{4}\varepsilon,
+	\end{align*}
+	and observe that if $\varphi,\varphi_0$ are close on $K$, i.e., say $|\varphi(x)-\varphi_0(x)|< \frac{\varepsilon  }{2\lv f \rv_1}$ for $x \in K$, then
+	\begin{align*}
+		\left| \int_G f(x)(\varphi(x)-\varphi_0(x)) \d x \right| \leq \int_K |f(x)| | \varphi(x) - \varphi_0(x)| \d x + \int_{K^c}|f(x)| \underbrace{|\varphi(x)-\varphi_0(x)|}_{\leq 2} \d x <\varepsilon.
+	\end{align*}
+	This shows that compact convergence implies weak$^*$-convergence. 
+
+	For the converse, suppose that $\varphi_{0}\in \P_1(G)$, $\varepsilon >0$ and $K \subset G$ is compact. Pick a compact neighborhood of $V$ such that $|\varphi_0(x)-1|<c$ for $x \in V$, where $c +4\sqrt{c}<\varepsilon$. Let $U \subseteq \P_1(G)$ be the set
+	\begin{align*}
+		U_1=\left\{ \varphi \in \mathcal{P}_1(G) \ \big| \ \left|\int_V (\varphi-\varphi_0)(x) \d x \right| < c \mu(V) \right\},
+	\end{align*}
+	which is a weak$^*$-neighborhood of $\varphi_0$. If $\varphi \in U_1$, then by the triangle inequality we see that $\left|\int_V (1-\varphi(x)) \d x\right| < 2 c \mu(V)$, and for all $x \in G$:
+	\begin{align*}
+		| 1_V \ast \varphi(x) - \mu(V) \varphi(x) | = \left| \int_V (\varphi(y^{-1}x) - \varphi(x)) \d y\right| \leq \int _V |\varphi(y^{-1}x)-\varphi(x)) \d y.
+	\end{align*}
+	By \Cref{3.20}, using the Cauchy-Schwarz inequality, it holds for all $x,y \in G$ that $|\varphi(y^{-1}x) - \varphi(x)|^2\leq 2-2 \mathrm{Re} \varphi(y)$, which combined with the Schwarz inequality gives the following bound:
+	\begin{align*}
+		\left| 1_V \ast \varphi(x) - \mu(V) \varphi(x) \right| \leq \int_V (2-2 \mathrm{Re}\varphi(y))^{\frac{1}{2}} \d y &\leq  \left( \int_V  2\left( 1-\Re \varphi(y) \right) \d y \right)^{\frac{1}{2}} \mu(V)^{\frac{1}{2}} \\
+		&< 2 \mu(V) \sqrt{c}.
+	\end{align*}
+	Apply \Cref{3.29} to obtain a weak$^*$ neighborhood $U_2 \subseteq \P_{1}(G)$ of $\varphi_0$ such that 
+\begin{align*}
+	|1_V \ast \varphi(x)- 1_V \ast \varphi_0(x) | < c \mu(V), \text{ for all } \varphi \in U_2 \text{ and } x \in K.
+\end{align*}
+Finally, we combine the above estimates for $\varphi \in U_1 \cap U_2$ to see that for $x \in K$ it holds that
+\begin{align*}
+	&|\varphi(x)-\varphi_0(x)|\\&=\mu(V)^{-1} \big| \mu(V)\varphi(x)-1_V \ast\varphi(x)+1_V \ast(\varphi(x)-\varphi_0(x))+1_V\ast \varphi_0(x)-\mu(V)\varphi_0(x) \big|\\
+	&\leq \mu(V)^{-1} (2 \mu(V) \sqrt{c}+\mu(V) c + 2 \mu(V) \sqrt{c})\\
+	&=c+4\sqrt{c}<\varepsilon,
+\end{align*}
+as wanted, since now $U:=U_1 \cap U_2$ is a weak$^*$-neighborhood containing functions which are $\varepsilon$-close to $\varphi_0$ on $K$, and $K$ was any arbtirary compact set in $G$.
+\end{proof}
+Not surprising, the space $\P(G)$ contains a lot of information about $G$ and various function spaces, just as in the case when we consider discrete groups. Before we show the last theorem, we include a final lemma about just how much information $\P(G)$ captures
+\begin{lemma}
+	The span of $C_c(G) \cap \P(G)$ contains the set $\left\{ f \ast g \ \big| \ f,g \in C_c(G) \right\}$, and it is a dense subset of $C_c(G)$ in the uniform norm and in $L^p(G)$ in the $p$-norm (for $1 \leq p < \infty$.)
+	\label{3.33}
+\end{lemma}
+\begin{proof}
+	By \Cref{3.16}, $f \ast\tilde{f} \in C_c(G) \cap \P(G) $ for all $f \in C_c(G)$, and hence the span contains all functions of the form $f \ast g$ for $f,g \in C_c(G)$. The span is dense in $C_c(G)$ in the uniform norm, and since it contains all functions $f \ast \psi_\alpha$, where $(\psi_\alpha)\subseteq C_c(G)$ is an approximate unit for $L^p(G)$, it is also dense in $L^p(G)$ itself.
+\end{proof}
+
+With this in mind, we are ready to conclude this chapter with the following theorem of Raikov and Gelfand
+\begin{theorem}[The Gelfand-Raikov Theorem for Locally Compact Groups]
+	For any locally compact group $G$, the irreducible unitary representations of $G$ separate points.
+	\label{3.34}
+\end{theorem}
+\begin{proof}
+	Let $x\neq y \in G$. Choose $f \in C_c(G)$ such that $f(x)\neq f(y)$. By \Cref{3.33}, we may approximate $f$ by functions of positive type, so we may assume without loss of generality that $f$ is normalised and of positive type, i.e., that $f \in \P_1(G)$. Using \Cref{3.27} choose a net $(f_\alpha)_{\alpha \in A} \subseteq \mathrm{conv}(\mathrm{Ext}(\P_1(G)))$ such that $f_\alpha \to f$ weakly. By \Cref{3.31}, this means that there is $f_{\alpha_0} \in \mathrm{Ext}(\P_1(G))$ approximating $f$ on the compact set $\left\{ x,y \right\}\subseteq G$, so that $f_{\alpha_0}(x) \neq f_{\alpha_0}(y)$. Being an element from the convex hull, there must be a summand $g$ of $f_{\alpha_0}$ such that $g(x) \neq g(y)$ and $g \in \Ext(\P_1(G))$. We conclude that the associated irreducible representation $\pi_{g}$ from \Cref{3.20} is irreducible by \Cref{3.25}, and satisfies for some $\xi \in \H_\pi$ that
+	\begin{align*}
+		\langle \pi_g(x) \xi , \xi \rangle =g(x) \neq g(y) = \langle \pi_g(y) \xi,\xi\rangle,
+	\end{align*}
+	so that $\pi_g(x)\neq \pi_g(y)$.
+\end{proof}
+\chapter{Analysis on Locally Compact Abelian Groups}
+In this chapter we will go through fundamental results in the theory of analysis on locally compact Abelian groups, which include both Pontrygian duality, dual groups, Fourier analysis and such topics. We will begin doing so by examining the dual group and setting the scene for Fourier analysis.
+\sssection{The Dual Group}
+As usual, we will use $G$ to denote a locally compact group, and throughout the rest of the chapter we will require additionally that $G$ is Abelian (and therefore also unimodular) and will assume so unless stating otherwise. And as previously, we will assume that $G$ is equipped with a fixed left and right Haar measure, whose integrand we will denote by $\d x$.
+
+Since we are in the setting of Abelian groups, it holds that $\mathrm{span}\{\pi(g) \ \big| \ g \in G\} \subseteq \mathcal{C}(\pi)$ for every unitary representation $\pi$, so by \ref{Schurs}, it is one dimensional for every irreducible representation, and hence we may assume that for all irreducible representations it holds that $\H_\pi =\C$, so that
+\begin{align}
+	\pi(x) (z)=\xi(x) z,
+	\label{irredab}
+\end{align}
+for $z \in \C$ and $\xi \colon G \to S^1$ is a continuous group homomorphism.
+
+Homomorphisms of this type is called \emph{characters} of $G$, and we denote the set of characters on $G$ by $\widehat{G}$. It turns out we have built quite a bit of theory in the last chapter describing the space $\widehat{G}$ already, which we will now go through.
+
+Note that if $\pi$ is an irreducible unitary representation of $G$ with associated character $\xi \in \widehat{G}$, then $\xi(x)=\langle \pi(x) 1,1\rangle$, so that $\widehat{G}\subseteq \P_1(G)$ by \Cref{3.15}. Given a character $\xi \in \widehat{G}$, we use the notation $\langle x,\xi\rangle=\xi(x)$ for $x \in G$. This will make future notation nice and consistent with the work from Chapter 3. By \Cref{thm3.9} each irreducible unitary representation $\pi$ of $G$ induces a $^*$-representation of $L^1(G)$ on $\C$, to each character $\xi \in \widehat{G}$, we will use $\xi(f)$ to denote this induced non-degenerate representation on $\mathbb{B}(\C)$, i.e., 
+\begin{align*}
+	\xi(f)=\int_G \xi(x) f(x) \d x = \int_G \langle x,\xi\rangle f(x) \d x,
+\end{align*}
+and this will in fact be a multiplicative linear functional on $L^1(G)$ after we identify $\mathbb{B}(\C)\cong \C$. To see this, note that since $G$ is Abelian, $R_x=L_{x^{-1}}$, so for $f,g \in L^1(G)$ we see that
+\begin{align*}
+	\xi(f \ast g)=\int_G \int_G \xi(x) f(y) L_y g(x) \d y \d x &= \int_G \int_G L_{y^{-1}} \xi(xy) f(y) R_{y^{-1}} g(x) \d x \d y\\
+	&= \int_G\int_G \Delta(y^{-1}) \xi(x)\xi(y) f(y) \Delta(y) g(x) \d x \d y\\
+	&=\xi(f) \xi(g),
+\end{align*}
+so that irreducible unitary representations induces a function $\xi \in \sigma(L^1(G))$, where $\sigma(L^1(G))$ is the spectrum of $L^1(G)$. In fact every bounded multiplicative linear functional on $L^1(G)$ is given as integration against some character:
+\begin{theorem}
+	We can identify $\widehat{G}$ with $\sigma(L^1(G))$ via the identification
+	\begin{align*}
+		\xi(f)=\int_G \langle x,\xi \rangle f(x) \d x \text{ for } f \in L^1(G), \ \xi \in \widehat{G}.
+	\end{align*}
+	\label{4.1}
+\end{theorem}
+\begin{proof}
+	As we saw above, each character $\xi \in \widehat{G}$ induces a multiplicative linear functional on $L^1(G)$ given by integration against it. For the converse, suppose that $\Phi \in L^1(G)^*$ is a non-zero multiplicative linear functional on $L^1(G)$, which is then given by integration against some non-zero $\varphi \in L^\infty(G)$. Let $f \in L^1(G)$ with $\Phi(f)\neq 0$. Then, for all $g \in L^1(G)$, we see that
+\begin{align*}
+		\int_G \Phi(L_y f) g(y) \d y = \int_G \int_G \varphi(x) L_y f(x) g(y) \d y \d x&= \int_G \varphi(x) \int_G  R_{y^{-1}}f(x) g(y) \d y \d x \\
+	&= \int_G \varphi(x) (f \ast g)(x) \d x \\
+	&= \Phi(f \ast g)\\
+	&=\Phi(f) \int_G \varphi(y) g(y) \d y,
+\end{align*}
+so $\varphi(y)=\frac{\Phi(L_y f)}{\Phi(f)}$ for locally almost all $y \in G$. So without loss of generality, we may assume that $\varphi(y)=\frac{\Phi(L_y f)}{\Phi(f)}$ everywhere, which is a continuous map satisfying for all $x,y \in G$
+\begin{align*}
+	\varphi(xy)\Phi(f)=\Phi(L_{xy}f)=\varphi(x)\varphi(y)\Phi(f),
+\end{align*}
+so dividing each side of the above by $\Phi(f)$, we conclude that $\varphi(xy)=\varphi(x)\varphi(y)$, with $|\varphi(x^n)|=|\varphi(x)^n|$ so $\varphi(x) \in S^1$.
+\end{proof}
+We give $\widehat{G}$ the topology of compact convergence on $G$, turning it into a topological group (as defined in Chapter 3), and by \Cref{3.31}, the topology coincided with the weak$^*$-topology on $\widehat{G}$ inherited from the inclusion $\widehat{G} \subseteq L^\infty(G)$. 
+
+If $L^1(G)$ is non-unital, then every multiplicative continuous linear functional will either be a character or the zero functional, so that the closure of $\sigma(L^1(G))$ will be the set $\{0\} \cup \sigma(L^1(G))$, as discussed in Chapter 1. Following this and the notes of Chapter 1, we arrive at the definition:
+\begin{definition}[Dual group]
+	The group $\widehat{G}$ is a locally compact Abelian group called the \emph{dual group of $G$}, it has the constant function $1$ as a unit under the group action given by pointwise multiplication, and it holds that for $x \in G$ and $\xi \in \widehat{G}$ we have
+	\begin{align*}
+		\langle x,\xi^{-1}\rangle = \langle x^{-1}, \xi \rangle = \overline{\langle x, \xi \rangle}.	
+	\end{align*}
+\end{definition}
+\begin{lemma}
+	If $G$ is discrete, then $\widehat{G}$ is compact
+	\label{lemma4.4}
+\end{lemma}
+\begin{proof}
+	$L^1(G)$ is unital if and only if $G$ is discrete. If it is unital, then every $\xi \in \G$ must satisfy $\xi(1_{L^1(G)})=1$, and by continuity, this means that $0 \not \in \overline{\G}$. By the arguments given in Chapter 1, this means that $\overline{\G}\cong\G$, from which we conclude that is weak$^*$-compact, by Alaoglu's theorem.
+\end{proof}
+If $G$ is compact, then $\widehat{G} \subseteq L^\infty(G) \subseteq L^p(G)$ for all $p \geq 1$, and we obtain the following:
+\begin{proposition}
+	If $G$ is a compact group with normalized Haar measure, then $\widehat{G}$ is an orthonormal set in $L^2(G)$.
+	\label{4.3}
+\end{proposition}
+\begin{proof}
+	Let $\xi \in \G$, then clearly since $\xi(x) \in S^1$, we see that $\lv \xi \rv_2=1$, since the norm is taken with respect to a probability measure. If $\xi\neq \eta \in \widehat{G}$, then there is $x_0 \in G$ such that $\xi(x_0)\overline{\eta(x_0)}=\langle x_0,\xi \eta^{-1}\rangle \neq 1$, so
+	\begin{align*}
+		\langle \xi,\eta\rangle_2=\int_G \xi(x) \overline{\eta}(x) \d x &= \int_G \langle x,\xi \eta^{-1}\rangle \ d x \\
+		&=\int_G \langle x_0 \xi \eta^{-1} \rangle \langle x_0^{-1}x, \xi \eta^{-1}\rangle \d x \\
+		&= \langle x_0 , \xi \eta^{-1}\rangle \int_G \Delta(x_0)\langle x , \xi \eta^{-1}\rangle \d x \\
+		&= \langle x_0 \xi \eta^{-1}\rangle \int_G \xi(x) \overline{\eta(x)} \d x,
+	\end{align*}
+	which implies that $\langle \xi, \eta \rangle_2 = 0$.
+\end{proof}
+This leads us to a very nice duality theory already, the compact-discreteness duality of $G$ and $\widehat{G}$:
+\begin{theorem}[compact-discrete duality of $G$ and $\widehat{G}$]
+	If $G$ is discrete, then $\widehat{G}$ is compact. If $G$ is compact, then $\widehat{G}$ is discrete.	
+	\label{4.4}
+\end{theorem}
+\begin{proof}
+	The first assertion follows directly from \Cref{lemma4.4}, for then $L^1(G)$ is unital with unit $\delta_e$.
+
+	If $G$ is compact, then the set $U=\left\{ f \in L^\infty(G) \ \big| \ \left| \int_G f(x) \d x \right| > \frac{1}{2} \right\}$ is a weak$^*$-open neighborhood in $L^\infty$, since then the constant function $1$ is an element of $L^1(G)$, and in fact $1 \in U$. By \Cref{4.3}, the only element of $U$ is $1$, for if $\xi\in \widehat{G}\backslash\{1\}$, then 
+	\begin{align*}
+		\langle \xi , 1 \rangle_{L^1}=\int_G \langle x , \xi \rangle \d x = 0.
+	\end{align*}
+	We see that the set $\{1\}$ is open in $\widehat{G}$, and being a topological group, the topology of $\G$ is translation invariant, so the group is discrete.
+\end{proof}
+We now calculate the dual groups of some of the most familiar groups:
+\begin{example}
+	\mbox{}
+	\begin{enumerate}
+		\item $\widehat{\R} \cong \R$, and the corresponding identification is $\langle x,\xi\rangle=e^{2\pi i \xi x}$.
+		\item $\widehat{S^1} \cong \Z$ via the identification $\langle z,n\rangle = z^n$ for $n \in \Z$ and $z \in S^1$,
+		\item $\widehat{\Z} \cong S^1$ via the identification $\langle n,z\rangle = z^n$ for $n \in \Z$ and $z \in S^1$,
+		\item $\widehat{\Z_k}\cong \Z_k$ via $\langle m,n \rangle= e^{2 \pi i m n (k^{-1})}$.
+	\end{enumerate}
+\end{example}
+\begin{proof}
+	\textbf{We begin by showing (1):} Let $\Phi \colon \R \to \widehat{\R}$ be the map $\xi \mapsto \varphi_\xi$, with $\varphi_\xi(x)=e^{2 \pi i \xi x}$ for $ x \in \R$. This is clearly a group homomorphisms, and $\varphi_0(x)=1$ for all $x \in \R$, hence it is an injection as groups. For surjectivity, suppose that $\varphi \in \widehat{\R}$. There must exist $t>0$ such that $\int_0^t \varphi(x)\d x \neq 0$, since $\varphi(0)=1$. Then, if we let $T=\int_0^t \varphi(x) \d x$, we see that
+\begin{align*}
+	T\varphi(x) = \int_0^t \varphi(x+y) \d y = \int_0^{t+x}\varphi(y) \d y \iff \varphi(x) = \frac{\int_x^{t+x}\varphi(y) \d y}{\int_0^t \varphi(y) \d y}.
+\end{align*}
+Let $c:=T^{-1}(\varphi(t)-1)$, and note that by the fundamental theorem of calculus the above expression is differentiable with
+\begin{align*}
+	\varphi'(x)=\frac{\varphi(x+t)-\varphi(x)}{\int_0^t \varphi(y) \d y}= \frac{(\varphi(t)-1)\varphi(x)}{\int_0^t \varphi(y) \d y}= \varphi(x) c,
+\end{align*}
+where multiplicativity of $\varphi$ was used. It follows that $\varphi$ is a solution to an ordinary differential equation, hence of the form $\varphi(x)=Ce^{cx}$ for a constant $C$, which the requirement that $\varphi(0)=1$ forces to equal $1$. The requirement that $|\varphi(x)|=1$ forces $c=2 \pi i \xi$ for some $\xi \in \R$, i.e., $\varphi=\varphi_\xi$. So $\Phi$ is an isomorphism of groups. It is easy to see that it is in fact a homeomorphism of topological spaces as well.
+
+\textbf{We now show 2):} Let $\Phi$ denote the map $\Z \to \widehat{S^1}$, $\Phi(n)(z)=z^n$. This is clearly an injective group homomorphism. To see that it is surjective, note that if $\varphi \in \widehat{S^1}=\widehat{\R/\Z}$, then composition with the quotient map $q \colon \R \to \R/\Z$ yields a character $\varphi \circ q \in \widehat{\R}$, hence it is of the form $\varphi_\xi$ for some $\xi \in \R$, from which we infer that $\varphi([x]_\Z)=e^{2 \pi i \xi x}$. The requirement that $\varphi([0])=1$ forces $\xi \in \Z$, so after the identification of $\R/\Z$ with $S^1$, we see that $\varphi(z)=z^n$ for some $n \in \Z$. The fact that $\Phi$ is a homeomorphism as well is easy to see.
+
+\textbf{We now show 3):} If $\varphi \in \widehat{Z}$, then for $n \in \Z$, we see that $\varphi(n)=\varphi(1)^n=z^n$ with $z = \varphi(1)$, hence the map $\varphi \mapsto \varphi(1)$ is the desired homemorphism of topological groups.
+
+\textbf{We now show 4):} In the same fashion as above, the characters of $\Z_k$ are the characters of $\Z$ which send $k\Z$ to $1$, hence they are of the form $\varphi(n)=w_k^n$, where $w_k$ is a $k'th$ root of unity. The group generated by any $w_k$'s is a cyclic Abelian group of order $k$, hence isomorphism to $\Z_k$.
+\end{proof}
+
+We also have a few nice permanence properties for duality of locally compact groups and compact groups:
+
+\begin{proposition}
+	If $G_1,\dots,G_n$ are locally compact Abelian groups, then 
+	\begin{align*}
+		\reallywidehat{\left(\bigoplus_{1 \leq i \leq n}G_i\right)} = \bigoplus_{1 \leq i \leq n}\widehat{G_i}.
+	\end{align*}
+\end{proposition}
+\begin{proof}
+	For $j =1,\dots,n$, let $\iota_j$ be the inclusion $x \mapsto (\underbrace{1,\dots,x}_{j},\dots,1)$. Every character on the product, $\xi \in \reallywidehat{\bigoplus_{1 \leq i \leq n } G_i}$, then generates a character $\xi_j \in \widehat{G_j}$ by $\xi_j = \xi \circ \iota_j$, and it is easy to see by multipliciativity of $\xi$ that $\xi\left( (x_i)_{i=1}^n \right)=\xi_1(x_1)\xi_2(x_2)\cdots\xi_n(x_n)$. Also, clearly every $(\xi_i)_{i=1}^n \in \bigoplus_{i \leq i \leq n} \widehat{G_i}$ generates a character on $\reallywidehat{\bigoplus_{1 \leq i \leq n}G_i}$ by 
+	\begin{align*}
+		(\xi_i)_{i=1}^n\left((x_i)_{i=1}^n\right)=\xi_1(x_1)\cdots \xi_n(x_n), \ (x_i) \in \bigoplus_{1 \leq i \leq n}G_i,
+	\end{align*}
+	so that all characters are of this form. The fact that the correspondance is a homeomorphisms is not difficult to see.
+\end{proof}
+Applying this to the examples above, we achieve a nice small corollary, allowing us to describe some of the most important examples of this theory:
+\begin{corollary}
+	It holds that $\widehat{\R^n}\cong \R^n$, $\widehat{\mathbb{T}^n} \cong \Z^n$, $\widehat{\Z^n} \cong \mathbb{T}^n$, and $\widehat{G}\cong G$ for finite Abelian groups $G$.
+\end{corollary}
+We are now just about ready to describe the Fourier transformation in the pretty general setting of locally compact Abelian groups.
+\sssection{The Fourier Transformation of Abelian Groups}
+The map from $\widehat{G}$ to $\sigma(L^1(G))$, where a character $\xi$ is mapped to the functional given by
+\begin{align*}
+	\xi(f)=\int_G \langle x,\xi\rangle f(x) \d x,
+\end{align*}
+is almost the desired map for the setting of Fourier analysis, however, we want to construct a $^*$-homomorphism from $L^1(G)$ to $C_0(\widehat{G})$ based on this, and if we do not modify it slightly, it will not be $*$-linear. 
+
+Instead, we will to each $\xi$ associate the functional on $L^1(G)$ given by 
+\begin{align}
+	\xi^{-1}(f)=\overline{\xi}(f)=\int_G \overline{\langle x , \xi \rangle} f(x) \d x
+	\label{modified}
+\end{align}
+and to each $f \in L^1(G)$ we define a map $\widehat{f} \colon \widehat{G} \to \C$ by
+\begin{align*}
+	\widehat{f}(\xi)=\xi^{-1}(f).
+\end{align*}
+And we are finally ready to define the Fourier transformation:
+\begin{definition}
+	The \emph{Fourier transformation} on $G$ is the map $\mathcal{F} \colon L^1(G) \to C_0(\widehat{G})$ given by
+	\begin{align*}
+		\mathcal{F}(f)(\xi)=\widehat{f}(\xi)=\int_G \overline{\langle x, \xi \rangle} f(x) \d x, \text{ for } \xi \in \widehat{G}.
+	\end{align*}
+\end{definition}
+\begin{note}
+	In fact $\mathcal{F}$ is simply the Gelfand transform of $L^1(G)$ when the spectrum is identified with $\widehat{G}$ (via \Cref{modified}), so it does in fact have range in $C_0(\widehat{G})$ ($=C(\widehat{G})$ if $\widehat{G}$ is compact).
+\end{note}
+\begin{proposition}
+	The Fourier transformation is a contractive $*$-homomorphism from $L^1(G)$ to $C_0(\widehat{G})$ with dense range.
+	\label{4.13}
+\end{proposition}
+\begin{proof}
+	Let $\xi \in \widehat{G}$ and $f \in L^1(G)$. Then
+	\begin{align*}
+		\F(f^*)(\xi)=\int_{G} \overline{\langle x,\xi\rangle} \overline{f(x^{-1})} \d x &= \overline{\int_G \langle x,\xi \rangle f(x^{-1})\d x}= \overline{\int_G \langle x^{-1}, \xi \rangle f(x) \d x }= \overline{\F(f) (\xi)},
+	\end{align*}
+	and linearity of the integral gives linearity of the Fourier transformation. That it is a contraction follows readily from the fact that $|\langle x,\xi \rangle| =1$ for all $x \in G$ and $\xi \in \G$.
+The Gelfand transformation of $L^1(G)$ has dense range by the Stone-Weirstrass Theorem, since the following requirements are satisfied:
+	\begin{enumerate}
+		\item By construction, the space of characters $\xi$ separates $L^1(G)$, hence the set of $\widehat{f}$ separates the characters,
+		\item Each $\xi \in \G$ is non-zero everywhere, so there is $f \in L^1(G)$ with $\F(f)(\xi)\neq0$.
+		\item $\F$ is $*$-linear, so its range is closed under complex conjugation.
+	\end{enumerate}
+\end{proof}
+Moreover, the Fourier transformation has the following nice relations to translation and multiplication (remember that $\G \subseteq L^1(G)$), for if $\xi, \eta \in \G$, $y \in G$ and $f,g \in L^1(G)$ then
+\begin{align*}
+	\widehat{L_y f}(\xi)&=\int_G \overline{\langle x, \xi \rangle} f(y^{-1}x) \d x = \int_G \overline{\langle yx, \xi \rangle} f(x) \d x=\overline{\langle y, \xi \rangle} \widehat{f}(\xi),\label{4.14}\tag{4.14}
+	\\
+	\widehat{\eta\cdot f}(\xi) &= \int_G \overline{\langle x, \eta^{-1} \xi\rangle} f(x) \d x = \widehat{f}(\eta^{-1}\xi)=L_\eta \widehat{f}(\xi), \text{ and }\label{4.15}\tag{4.15}\\
+	\widehat{fg}(\xi)&=\xi^{-1}(fg)=\xi^{-1}(f)\xi^{-1}(g)=\widehat{f}(\xi)\widehat{g}(\xi)\label{4.16}\tag{4.16}
+\end{align*}
+Recall that $L^1(G)$ sits inside the algebra $M(G)$ of Radon measures on $G$. We can not hope to extend the Fourier transform to all of $M(G)$ and retaining its range, however, we can extend it by modifying its range to the space of bounded continuous functions og $\G$ instead:
+\begin{definition}
+	The Fourier transformation on the Banach Algebra $M(G)$ is the transformation which sends a Radon measure $\mu$ on $G$ to the bounded continuous function $\widehat{\mu}$ on $\G$, defined by
+	\begin{align*}
+		\widehat{\mu}(\xi):=\int_G \overline{\langle x, \xi \rangle} \d \mu(x), \ \xi \in \G.
+	\end{align*}
+\end{definition}
+\begin{note}
+	The identity $\widehat{\mu \ast \nu}=\widehat{\mu}\widehat{\nu}$ holds for for all of $M(G)$ and not just $L^1(G)$, since for all $\xi \in \G$ we have
+	\begin{align*}
+		\widehat{\mu \ast \nu}(\xi) = \int_G \overline{\langle x , \xi \rangle} \d (\mu \ast \nu) (x) &= \int_G \int_G \overline{\langle xy , \xi\rangle} \d \mu(x) \d \nu(y)\\
+		&= \int_G \int_G \overline{\langle x,\xi \rangle \langle y, \xi \rangle} \d \mu(x) \d \nu(y) \\
+		&= \widehat{\mu}(\xi) \widehat{\nu}(\xi),
+	\end{align*}
+by the definition of convolutions of measures (note that the identity is only defined for $C_0(G)$ functions, but we may extend it by continuity since up to approximatation may assume by continuity that $\mu,\nu$ are compactly supported).
+\end{note}
+
+In light of this, we may view $\G$ as a subset of the spectrum of $M(G)$, and then $\widehat{\mu}$ defined above is just $\Gamma_{M(G)}(\mu)\big|_{\G}$, where $\Gamma$ denotes the Gelfand transformation.
+
+As always, we introduce a sort of dual to this construction by taking $\mu \in M(\G)$ instead and constructing the bounded continuous map on $G$ given by
+\begin{align*}
+	\varphi_\mu(x):=\int_G \langle x,\xi \rangle \d \mu(\xi).
+\end{align*}
+Note how this is the same construction as above, but we have reduced the range to $G$ as a subset of $\G$. This is why the conjugation under the integral sign is omitted. It turns out that this construction is a better fit for our theory. First of all, we have the following nice proposition:
+\begin{proposition}
+	The map $M(\G)\to C_b(G)$, $\mu \mapsto \varphi_\mu$, is a norm decreasing linear injection (where $M(\G)$ is identified as the dual of $C_0(\G)$).
+	\label{4.17}
+\end{proposition}
+\begin{proof}
+	Linearity and contractivity is an immediate consequence of the construction, so we only show injectivity. If $\varphi_\mu=0$, then for $f \in L^1(G)$, we see by Fubini that
+	\begin{align*}
+		0 = \int_G f(x) \varphi_\mu(x) \d x = \int_G \int_G f(x) \langle x,\xi \rangle \d \mu(\xi) \d x=\int_G \widehat{f}(\xi^{-1}) \d \mu(\xi),
+	\end{align*}
+	but by \Cref{4.13}, this means that $\mu=0$ since the $\F(L^1(G))$ is dense in $C_0(\G)$.
+\end{proof}
+Recall that $\P(G)$ was the set of continuous functions in $L^\infty(G)$ of positive type, so that $\P(G) \subseteq C_b(G) \subset L^\infty(G)$. This leads us to the following lemma:
+\begin{lemma}
+	If $\mu \in M(\G)$ is positive, then $\varphi_\mu$ is of positive type, i.e., $\varphi_\mu \in \P(G)$.
+\end{lemma}
+\begin{proof}
+	Let $\mu \in M(\G)$ and $f \in L^1(G)$. Then
+	\begin{align*}
+		\int_G (f^*\ast f)(x) \varphi(x) \d x &= \int_G \int_G \overline{f(y)} f(yx) \varphi_\mu(x) \d y \d x\\
+		&= \int_G \int_G \overline{f(y)} f(x) \varphi_\mu(y^{-1}x) \d x \d y\\
+		&= \int_G \int_G \int_G  f(x) \overline{f(y) \langle y, \xi\rangle} \langle x, \xi\rangle \d \mu(\xi) \d x \d y\\
+		&= \int_G |\widehat{f}(\xi)|^2 \d \mu(\xi) \geq 0,
+	\end{align*}
+	so by the remark of \Cref{3.13}, the map $\varphi_\mu$ is of positive type.
+\end{proof}
+And due to Bochner, we have a converse as well:
+\begin{theorem}[Bochner's Theorem]
+	If $\varphi \in \P(G)$, then there exists a unique positive $\mu \in M(\G)$ such that $\varphi = \varphi_\mu$.	
+	\label{4.18}
+\end{theorem}
+There are two proof variants available, one based on Krein-Millman and one based on Gelfand Theory. We follow the one based on the Krein-Millman Theorem:
+\begin{proof}
+Without loss of generality, we may assume that that $\varphi \in \P_0(G)$, for else we could just normalise it (being bounded and continuous). Let $M_0$ be the set of $\mu \in M(\G)$ with $\mu(\G)\leq 1$. Then $M_0\subseteq M(\G)$ is closed in the weak$^*$ topology, hence compact.
+
+	The goal is to show that the map $\mu \to \varphi_\mu$ restricted to $M_0$ has range equal to all of $\P_0(G)$, since we already know that it is injective by the previous lemma. Assume that $(\mu_\alpha)$ is a net in $M_0$ converging to some $\mu \in M_0$ in the subspace topology $M_0$. Then, for all $f \in L^1(G)$, we have
+\begin{align*}
+	\int_G f(x) \varphi_{\mu_\alpha}(x) \d x = \int_G \int_G f(x) \langle x,\xi \rangle \d \mu_{\alpha}(\xi) \d x = \int_{G}\widehat{f}(\xi^{-1}) \d \mu_\alpha(x)
+\end{align*}
+and by the assumption that $\mu_\alpha \to \mu$, we see that
+\begin{align*}
+	\int_G \widehat{f}(\xi^{-1}) \d \mu_\alpha (\xi) \to \int_G \widehat{f} (\xi^{-1}) \d \mu(\xi) = \int_G f(x) \varphi_\mu(x) \d x.
+\end{align*}
+So the correspondance in continuous from $M_0$ to $\P_0(G)$, and therefore it has compact and convex range. 
+
+Before continuing, recall that we in the beginning of this chapter saw that a consequence of $G$ being Abelian and Schur's lemma was that each $\xi \in \G$ corresponded to an irreducible representation of $G$ on $\C$ given by \Cref{irredab}, so by \Cref{3.25} we have $\G=\P_1(G)$.  
+
+Then, from \Cref{3.26} we have $\varphi \in \Ext(\P_0(G))$ if and only if $\varphi$ is a character on $G$ or $0$. Then, if $\xi' \in \G$, let $\mu$ be the point mass at $\xi'$, so that 
+\begin{align*}
+	\varphi_\mu(x)=\langle x, \xi' \rangle.
+\end{align*}
+If we let $\mu$ be the $0$ measure, we see the range of our correspondance containts every character and $0$, which exactly are the extreme points of $\P_0(G)$, so by the Krein-Millmann theorem, the correspondance is surjective as well, hence bijective, and the theorem follows.
+\end{proof}
+For our own convenience, we will introduce a bit of notation; we define for a group $G$ the sets
+\begin{align*}
+	B(G):=\left\{ \varphi_\mu \ \big| \ \mu \in M(\G) \right\}\text{  and  }	B^p(G):=B(G) \cap L^p(G), \text{ for } p < \infty.
+\end{align*}
+By \Cref{4.18} (Bochner), we see that $B(G)=\mathrm{span}\left( \P(G) \right)$, and hence it is closed under convolution from pairs of functions $f,g \in C_c(G)$ by \Cref{3.33}, which also gives that $B^p(G)$ is dense in $L^p(G)$ for $p <\infty$.
+
+The next big theorem we wish to show is one of two \textit{Fourier Inverserion Theorems}, which provides a formula on how to calculate $f$ when $\widehat{f}$ is known for certain $f$. To do so, we need the following two lemmas:
+\begin{lemma}
+	For $K \subseteq \G$ compact, there is $f \in C_c(G) \cap \P(G)$ such that $\widehat{f}\geq 0$ on $\G$ and $\widehat{f}>0$ on $K$.
+	\label{4.19}
+\end{lemma}
+\begin{proof}
+	Let $h \in C_c(G)$ such that $h \d x$ is a probability measure (i.e., $\widehat{h}(e)=1$) and set $g:=h^* \ast h$. Then $\widehat{g}=\widehat{f}^*\widehat{f}=|f|^2$. Then, since $\widehat{g}\geq 0$ and $\widehat{g}(1)=1$, there is a neighborhood $V$ of $1$ in $\G$ such that $\widehat{g}|_V>0$. Since $\G$ is a topological group, $K$ can be covered by finitely many translates $\xi_1V,\dots,\xi_nV$, $\xi_1,\dots,\xi_n \in \G$, of $V$. Define $f \in C_c(G)$ by
+	\begin{align*}
+		f(x)=\sum_{i=1}^n \xi_i(x)g(x),
+	\end{align*}
+	so that $\widehat{f}(\xi)=\sum_{i=1}^nL_{\xi_i}\widehat{g}(\xi)$. Then $\widehat{f}>0$ on $K$, since some term is strictly positive on $K$ positive on all of $\G$. We need only show that $f \in C_c(G) \cap \P(G)$, but this follows from the fact that $g \in \P(G)$ by \Cref{3.16} and $\P(G)$ is closed under multiplication with characters, since they are elements of $\P_1(G)$.
+\end{proof}
+We already know that the map $M(\G) \to B(G)$, $\mu \mapsto \varphi_\mu$, is a bijection, and in the following we will denote the inverse of this correspondance by $\varphi \mapsto \mu_\varphi$, i.e., such that
+\begin{align*}
+	\varphi_{\mu_\varphi}(x)=\int_{\G} \langle x,\xi\rangle \d \mu_\varphi(\xi)=\varphi(x), \text{ for } x \in G.
+\end{align*}
+\begin{lemma}
+	for $f,g \in B^1(G)$, $\widehat{f} \d \mu_g=\widehat{g}\d \mu_f$.
+	\label{4.20}
+\end{lemma}
+\begin{proof}
+	If $h \in L^1(G)$, and $f \in B^1(G)$, we see that
+	\begin{align*}
+		\int_{\G} \widehat{h}(\xi) \d \mu_f(\xi) = \int_{\G} \int_G \langle x^{-1}, \xi \rangle h(x) \d x \d \mu_f(\xi)&= \int_{\G} \int_G \langle x^{-1},\xi \rangle \d \mu_f(\xi) h(x) \d x\\
+		&= \int_{\G} f(x^{-1}) h(x) \d x\\
+		&= h \ast f(e),
+	\end{align*}
+	and by commutativity of convolution, this gives that for $g,h \in L^1(G)$ we have
+	\begin{align*}
+		\int_{\G} \widehat{h}(\xi) \widehat{g}(\xi) \d \mu_{f}(\xi)= \int_{\G} \widehat{h}(\xi) \widehat{f}(\xi) \d \mu_{g}(\xi).
+	\end{align*}
+	This shows that $\widehat{f} \d \mu_g=\widehat{g}\d \mu_f$ for all $f,g \in \F(L^1(G)$, which is dense in $C_0(\G)$ by \Cref{4.13}, so the conclusion holds by continuity on all of $C_0(\G)$.
+\end{proof}
+We're finally ready to prove the first Fourier inversion Theorem:
+\begin{theorem}[Fourier Inversion Theorem I]
+	If $f \in B^1(G)$, the $\widehat{f} \in L^1(\G)$, and relative to the chosen Haar measure $\d x$ on $G$, it holds that for proper choice of Haar measure $\d \xi$ on $\G$ we have $\d \mu_f( \xi)=\widehat{f}(\xi) \d \xi$, so that
+	\begin{align*}
+		f(x) = \int_{\G} \langle x, \xi\rangle \widehat{f}(\xi) \d \xi.
+	\end{align*}
+	\label{4.21}
+\end{theorem}
+\begin{proof}
+	We will construct a bounded positive linear functional on $C_c(\G)$ and extend it to $C_0(\G)$ with the desired properties. Let $\psi \in C_c(\G)$, and choose $f \in L^1(G) \cap \P(G)$ such that $\widehat{f}>0$ on $\supp(\psi)$. Define now a linear functional on $C_c(\G)$ by
+	\begin{align*}
+		I(\rho)=\int_{\G} \frac{\rho(\xi)}{\widehat{f}(\xi)} \d \mu_f(\xi), \ \rho \in C_c(\G).
+	\end{align*}
+	To see that this is well-defined (that we don't divide by $0$ for $\rho \neq \psi$), we use \Cref{4.20} to see that for any $g \in C_c(\G)$ we have
+	\begin{align*}
+		\int_{\G}\frac{\rho(\xi)}{\widehat{f}(\xi)}\d \mu_f(\xi)=\int_{\G}\frac{\rho(\xi)}{\widehat{f}(\xi)\widehat{g}(\xi)} \widehat{g}(\xi)\d \mu_f(\xi)=\int_{\G}\frac{\rho(\xi)}{\widehat{f}(\xi)\widehat{g}(\xi)} \widehat{f}(\xi)\d \mu_g(\xi)=\int_{\G}\frac{\rho(\xi)}{\widehat{g}(\xi)}\d \mu_{g}(\xi),
+	\end{align*}
+	so $I$ is non-depending on $f$ and therefore is well-defined for all $\rho \in C_c(\G)$. Moreover, it is clear that $I(\psi)\geq 0$ for $\psi \geq 0$, since  $\mu_f$ and $\widehat{f}$ are both non-negative.
+
+	So, $I$ is a non-trivial positive linear functional on $C_c(\G)$, and for $\eta \in \G$ it holds that $\d \mu_f(\eta \xi)=\d\mu_{\overline{\eta}\xi}(\eta)$, since
+	\begin{align*}
+		\int_{\G}\langle x, \xi\rangle \d \mu_f(\eta \xi)= \int_{\G}\langle x,\eta^{-1}\rangle\langle x,\xi\rangle \d \mu_f(\xi) = (\overline{\eta}f)(x).
+	\end{align*}
+	We've seen that $\reallywidehat{(\overline{\eta}f)}(\xi)=\widehat{f}(\eta\xi)$, so if $f \in B^1(G)$ with $\widehat{f}>0$ on $\mathrm{supp}{\psi}\cup\supp{L_{\eta}\psi}$, then
+	\begin{align*}
+		I(L_\eta \psi) = \int_{\G}\frac{L_{\eta}\psi(\xi)}{\widehat{f}(\xi)}\d \mu_f(\xi) &= \int_{\G} \frac{\psi(\xi)}{\reallywidehat{(\overline{\eta}f)}(\xi)}\d \mu_{\overline{\eta}f}(\xi)= \int_{\G}\frac{\psi(\xi)}{\widehat{f}(\xi)}\d \mu_f(\xi)= I(\psi),
+	\end{align*}
+	so $I$ is a non-trivial translation invariant linear functional on $C_c(\G)$. Extending $I$ to $C_0(\G)$, we obtain a translation invariant bounded linear functional on $C_0(\G)$, and by the Riesz-Representation theorem, it $I$ is given by
+	\begin{align*}
+		I(\psi)=\int_{\G}\psi(\xi)\d \xi, \text{ for } \psi \in C_0(\G),
+	\end{align*}
+	where $\d \xi$ is a Haar measure on $\G$. If $f \in B^1(G)$ and $\psi \in C_c(\G)$, we see that
+	\begin{align*}
+		\int_{\G} \psi(\xi) \widehat{f}(\xi) \d \xi = I(\psi \widehat{f}) = \int_{\G} \psi(\xi) \frac{\widehat{f}(\xi)}{\widehat{f}(\xi)}\d \mu_f (\xi) = \int_{\G} \psi(\xi) \d \mu_f(\xi),
+	\end{align*}
+	and since $C_c(\G)$ is dense in $C_0(\G)$, we conclude that $\widehat{f}(\xi) \d \xi = \d \mu_f (\xi)$. By the Riesz-Representation theorem, it follows that $\mu_f$ is finite, so $\widehat{f} \in L^1(\G)$, and hence for all $f \in B^1(G)$ we have
+	\begin{align*}
+		f(x) = \int_{\G} \langle x, \xi \rangle \d \mu_f(\xi) = \int_{G} \langle x, \xi \rangle \widehat{f}(\xi) \d \xi, \ x \in G.
+	\end{align*}
+\end{proof}
+An immediate consequence of this is:
+\begin{corollary}
+	For all $f \in L^1(G) \cap \P(G)$, we have $\widehat{f}\geq 0$.
+\end{corollary}
+As we saw in the proof of \Cref{4.21}, the Haar measure on $\G$ making the theorem hold is relative to the inital fixed Haar measure on $G$. We have a name for this relation:
+\begin{definition}
+	For fixed Haar measure $\d x$ on $G$, the Haar measure making \Cref{4.21} true is called the \emph{dual measure} of $\d x$. If $\d x$ and $\d \xi$ are dual measures, then $c \d x$ and $c^{-1} \d \xi$ are dual measures.
+\end{definition}
+\begin{example}
+	It turns out that if we use the identification of $\R$ with $\widehat{\R}$ from earlier, then $\d x = \d \xi$, where $\d x$ is the Lebesgue measure, this can be seen from considering the even function $g(x)=e^{-2\pi x^2}$, with Fourier transform $\hat{g}$ given by
+\begin{align*}
+	\widehat{g}(\xi) = \int_{\R} e^{-2\pi i \xi x - \pi x^{2}} \d x.
+\end{align*}
+It is clear that $\widehat{g}(0)=1$, and moreover, by dominated convergence it holds that $\hat{g}'(\xi)=-2 \pi \xi \hat{g}(\xi)$. Solving the differential equation gives us that $\hat{g}=g$, implying that $\hat{g}$ is even, so $g(x)=\int_{\R}e^{2 \pi i \xi x - \pi \xi^{2}} \d \xi$, implying that the inversion formula is true for both $\d \xi$ and $\d x$ being the lebesgue measure. This means that for $f \in B^1(\R)$, we have
+\begin{align*}
+	\widehat{f}(\xi) = \int_{\R}f(x) e^{-2 \pi  i \xi x} \d x, \text{  and  } f(x) =\int_{\R}\widehat{f}(\xi) e^{2\pi i x \xi} \d \xi.
+\end{align*}
+Another frequent identification of $\R$ and $\widehat{\R}$ is $\langle x , \xi \rangle = e^{i \xi x}$, and in this case, the dual measure of $\d x$ is the measure normalised with respect to $g$ above, i.e., $ \frac{\d \xi }{2 \pi}$.
+\end{example}
+Whenever $G$ is compact, we saw that $\G$ was discrete. The probability Haar measure on $G$ is unique, and it turns out to relate to the non-scaled counting measure on $\G$, i.e., we have:
+\begin{proposition}
+If $G$ is compact and $\d x$ is the probability Haar measure on $G$, then the dual measure on $\G$ is the counting measure. If $G$ is discrete with the counting measure, then its dual measure is the probability Haar measure on $\G$.	
+\end{proposition}
+\begin{proof}
+	Let $G$ be a compact group. By \Cref{4.3}, the function $g=1$ is a continuous integrable function with $\widehat{g}=\delta_{1}$. Let $\mu$ denote the dual measure on $\G$, then by \Cref{4.21} we see that
+	\begin{align*}
+		1=g(x)=\sum_{\xi \in \G} \langle x, \xi \rangle \delta_1(\xi) \mu(\{ \xi \})=\mu(\{1\}), \ x \in G,	
+	\end{align*}
+	from which we conclude that $\mu$ is the counting measure. Conversely, suppose that $G$ is discrete and $g=\delta_{e}$, so that
+	\begin{align*}
+		\widehat{g}(\xi)=\sum_{x \in G}\langle x , \xi^{-1}\rangle g(x)=\overline{\langle e,\xi\rangle }= 1.
+	\end{align*}
+	If we denote the dual measure of the counting measure by $\mu$, then we see that
+	\begin{align*}
+		1=g(e) = \int_{\G} \langle 1 , \xi \rangle = \mu(\G).
+	\end{align*}
+\end{proof}
+\begin{example}
+	If we look at the example where $G=S^1$ or $G=\Z$, then the dual measure of the normalised lebesgue measure on $S^1$, $\frac{\d \theta}{2 \pi}$ will be the counting measure, and the dual measure of the counting measure on $\Z$ is the normalised lebesgue measure on $S^1$.
+	
+	We obtain some well-known identities when we apply \Cref{4.21} to functions on $S^1$:
+	\begin{align*}
+		\widehat{f}(n)= \frac{1}{2 \pi}\int_{0}^{2 \pi} f(\theta) e^{-i n \theta}  \d \theta, \text{ and } f(\theta)=\sum_{n \in \Z} \widehat{f}(n) e^{2n\theta}.
+	\end{align*}
+\end{example}
+As the reader might have suspected, there is a duality between $G$ and $\G$. If the reader is familiar with the concept of reflexivity, then the reader will smile when reading the statement of the famous Pontrjagin Duality Theorem, which we state later on. For now, we will discuss one of the most fundamental results in the theory of analysis on locally compact Abelian groups, namely, the Plancherel Theorem:
+\begin{theorem}[The Plancherel Theorem]
+	The Fourier Transform on $L^1(G) \cap L^2(G)$ extends uniquely to a unitary isomorphism from $L^2(G) \cong L^2(\G)$.
+	\label{4.25}
+\end{theorem}
+\begin{proof}
+	Suppose that $f \in L^1(G) \cap L^2(G)$, then $f \ast f^* \in L^1(G) \cap \P(G)$ by \Cref{3.16} with $\reallywidehat{(f \ast f^*)}=|\widehat{f}|^2$. By \Cref{4.21}, we see that
+	\begin{align*}
+		\lv f \rv_2^2 = f \ast f^*(e)= \int_{\G} \langle 1,\xi \rangle |\widehat{f}(\xi)|^2 \d \xi = \lv \widehat{f}\rv_2^2,
+	\end{align*}
+	so that $f \mapsto \widehat{f}$ is an isometry from $L^1(G) \cap L^2(G) \to L^2(\G)$, so it extends uniquely to an isometry $L^2(G) \to L^2(\G)$, since $L^1(G) \cap L^2(G)$ is dense in $L^2(G)$. For surjectivity, suppose that $\psi \in L^2(\G)$ is orthogonal to all $\widehat{f}$ for $f \in L^1(G) \cap L^2(G)$. Recall the identity $\reallywidehat{(L_x f)}(\xi)=\overline{\langle x, \xi \rangle} \widehat{f}(\xi)$ for $\xi \in \G$ and $x \in G$, from which we conclude that
+	\begin{align}
+		0 = \int_{\G} \langle x, \xi \rangle \psi(\xi) \overline{\widehat{f}(\xi)}\d \xi = \int_{\G}\psi(\xi) \overline{\reallywidehat{L_x f}(\xi)} \d \xi.
+		\label{4.25.1}
+	\end{align}
+	Since $\widehat{f}, \psi  \in L^2(\G)$, the product $\overline{\widehat{f}} \psi \in L^1(\G)$, and so we obtain a Radon measure with integrand $\psi(\xi) \overline{\widehat{f}(\xi)} \d \xi \in M(\widehat{G})$. By \Cref{4.17} and \ref{4.25.1} this implies that $\psi \overline{\widehat{f}}=0$ almost everywhere, and since $C_c(\G)$ is dense in $L^2(\G)$, we conclude using \Cref{4.19} that $\psi=0$ almost everywhere, since $C_c(G) \subseteq L^2(G) \cap L^1(G)$. Hence the map $f \mapsto \widehat f$ has dense image, and since it is an isometry, its image is closed.
+\end{proof}
+By combining the above, we can improve on the result of \Cref{4.3}, to obtain
+\begin{corollary}
+	If $G$ is compact with normalized Haar measure $\d x$, then $\G$ is an orthonormal basis for $L^2(G)$.
+\end{corollary}
+\begin{proof}
+	From \Cref{4.3} we know that $\G$ is an orthonormal set in $L^2(G)$. If $f \in L^2(G)$ is such that $f \perp \xi$ for every $\xi \in \G$, then $\widehat{f}=0$ since
+	\begin{align*}
+		0=\int_{G}\overline{\langle x , \xi \rangle}f(x) \d x =\widehat{f}(\xi).
+	\end{align*}
+	Since $\widehat{f}=0$ we conclude that $f=0$ by \Cref{4.25}.
+\end{proof}
+
+\sssection{The Pontrjagin Duality Theorem}
+We now embark on the task of proving the famous duality theorem of Pontrjagin, which ensures a sort of reflexivity in locally compact Abelian groups. First of all, recall that for a vector space $X$, we construct to each $x \in X$ a linear functional $\widehat{x} \in X^{**}$, $\widehat{x}(f)=f(x)$ for $f \in X^*$, and how this construction is one of the most essential constructions in the theory of Functional Analysis.
+
+It turns out that this construction also works in the setting of groups when we replace $X$ with $G$ and $X^*$ with $\G$, for whenever $x \in G$, we construct a character $\Phi(x)$ on $\G$, given by
+\begin{align*}
+	\langle \xi, \Phi(x)\rangle=\langle x, \xi\rangle, \ \xi \in \G.
+\end{align*}
+The map $\Phi \colon x \mapsto \Phi(x)$ is a group homomorphism $G \to \widehat \G$, and we will spend the rest of this section to prove that it is an isomorphism of topological groups, when we are in the setting of locally compact Abelian groups:
+
+\begin{lemma}	
+	If $\varphi, \psi \in C_c(\G)$, then $\varphi \ast \psi = \widehat{h}$ for some $h \in B^1(G)$. In particular the image of $B^1(G)$ under $\F$ is dense in $L^p(\G)$ for $p < \infty$.
+	\label{4.29}
+\end{lemma}
+\begin{proof}
+	Define functions $f,g,h \in B(G)$ by
+	\begin{align*}
+		f(x)=\int_{\G} \langle x, \xi \rangle \varphi( \xi ) \d \xi, \quad
+		g(x)= \int_{\G} \langle x , \xi \rangle \psi(\xi)\d \xi,\text{ and }
+		h(x)= \int_{\G}\langle x , \xi \rangle  \varphi \ast \psi(\xi) \d \xi.
+	\end{align*}
+	If $t \in L^1(G) \cap L^2(G)$, then by \Cref{4.25} we see that
+	\begin{align*}
+		\left| \int_G f(x) \overline{t(x)} \d x \right|=\left| \int_{\G} \overline{\int_{G} \langle x, \xi \rangle  t(x) \d x }\varphi(\xi)\d \xi \right|&= \left| \int_{\G} \varphi \overline{\widehat{t}} \d \xi \right| \leq \lv \varphi \rv_2 \lv t \rv_2.
+	\end{align*}
+	Since $L^1(G) \cap L^2(G)$ is dense in $L^1(G)$, $\varphi \in C_c(\G)$ and $\widehat{f}\in C_b(\G)$, we see that $f \in L^2(G)$ and similarly $g \in L^2(G)$. When expanding on $h(x)$ we see that 
+	\begin{align*}
+		h(x) = \int_{\G}\int_{\G} \langle x , \xi \rangle \varphi(\xi \eta^{-1}) \psi( \eta) \d \eta \d \xi&= \int_{\G} \int_{\G} \langle x , \xi \eta \rangle \varphi ( \xi ) \psi ( \eta) \d \xi \d \eta= f(x) g(x),	
+	\end{align*}
+	implying that $h \in L^1(G)$ and hence $h \in B^1(G)$. By \Cref{4.21}, it holds then that
+	\begin{align*}
+		h(x) = \int_{\G} \langle x , \xi \rangle \widehat{h}(\xi) \d \xi=\int_{\G} \langle x , \xi \rangle \varphi \ast \psi (\xi) \d \xi, \ x \in G,
+	\end{align*}
+	and combining this with \Cref{4.17}, we see that $\widehat{h}=\varphi \ast \psi$. Density then follows from the set of convolutions from $C_c(\G)$ being dense in $L^p(\G)$ for $p < \infty$.
+\end{proof}
+We need a short lemma on the theory of topology in locally compact groups before we continue:
+\begin{lemma}
+	If $H \leq G$ is a subgroup which is locally compact in the subspace topology, then $H$ is closed.	
+	\label{4.30}
+\end{lemma}
+We will not prove this, but it relies on the fact that you can pick a neighborhood of $e \in G$ whose closure is compact in both $H$ and $G$, and choosing a symmetric subneighborhood of this.
+
+We are now finally ready to do the main theorem of this section:
+\begin{theorem}[The Pontrjagin Duality Theorem]
+	\mbox{}\\
+	The map $\Phi \colon G \to \widehat{\G}$, $\langle \xi , \Phi(x)\rangle = \langle x , \xi \rangle$ for $x \in G$ and $\xi \in \G$, is an isomorphism of topological groups.
+	\label{4.31}
+\end{theorem}
+\begin{proof}
+	By \Cref{3.34}, the characters separate points in $G$, so $\Phi$ is an injection. To see surjectivity, suppose that $x \in G$. For a net $(x_\alpha)_{\alpha \in A} \subseteq G$, we then claim that the following are equivalent:
+	\begin{enumerate}
+		\item $x_\alpha \to x$ in $G$,
+		\item $f(x_\alpha) \to f(x)$ for all $f \in B^1(G)$,
+		\item $\int_{\G}\langle x_\alpha, \xi \rangle \widehat{f}(\xi) \d \xi \to \int_{\G}\langle x, \xi \rangle \widehat{f}(\xi)\d \xi$ for all $f \in B^1(G)$, and
+		\item $\Phi(x_\alpha) \to \Phi(x)$ in $\widehat{\G}$.
+	\end{enumerate}
+	\textit{1 implies 2:} Trivial, since $f \in B^1(G)$ are continuous.
+
+	\textit{2 implies 1:} Suppose that $x_\alpha \not\to x$. Let $U$ be a neighborhood of $x$ and $B \subseteq A$ cofinal set witnessing this, i.e.,  $x_{\beta} \not\in U$ for $\beta \in B$.
+	Using \Cref{3.33}, there is a function $f \in C_c(G) \cap \P(G) \subseteq B^1(G)$ such that $\supp f \subseteq U$ and $f(x) \neq 0$, so $f(x_\alpha) \not \to f(x)$.
+
+	\textit{3 if and only if 2:} Follows from \Cref{4.21}.
+
+	\textit{3 if and only if 4:} This follows from $\F(B^1(G))$ being dense in $L^1(\G)$ by \Cref{4.29} and that the topology on $\widehat{\G}$ is the weak$^*$-topology as a subset of $L^\infty(\G)$. 
+
+	From this we conclude that $\Phi(G)$ is locally compact, and therefore closed in $\widehat{\G}$ by \Cref{4.30}. Assume that $\Phi$ is not surjective onto $\widehat{\G}$. and pick $x \in \Phi(G)^c$. Let $V \subseteq \widehat{\G}$ be a symmetric neighborhood of $e\in \widehat{\G}$ with $xVV \cap \Phi(G) = \emptyset$, which is doable since we assumed that $\Phi(G)$ is closed. Pick $\psi,\varphi \in C_c(\widehat{\G})$ such that satisfying
+	\begin{align*}
+		\supp \varphi \subseteq xV, \ \ \supp \psi \subseteq V, \ \ \supp (\varphi \ast \psi) \cap \Phi(G) = \emptyset\ \text{and} \ \varphi \ast \psi \neq 0,
+	\end{align*}
+	where he last two requirements are possible due to the first two. Let $h \in B^1(\G)$ be the function from \Cref{4.29} such that $\widehat{h}=\varphi \ast \psi$. Then
+	\begin{align*}
+		0 = \widehat{h}(\Phi(x^{-1}))=\int_{\G} \langle \xi , \Phi(x)\rangle h(\xi) \d \xi=\int_{\G} \langle x , \xi \rangle h(\xi) \d \xi, x \in G.
+	\end{align*}
+	By \Cref{4.17}, this means that the measure $h \d \xi$ is $0$, hence $h$ is $0$, so $\widehat{h}=\varphi \ast \psi=0$, a contradiction, implying that $\Phi(G)=\widehat{\G}$.
+\end{proof}
+From this point on we will write $x$ in the place of both $x \in G$ and $\Phi(x) \in \widehat{\G}$, and we will also write $G$ for both $\widehat{\G}$ and $G$. We will also shift between $\langle x , \xi\rangle$ and $\langle \xi , x \rangle$ for $x \in G$ and $\xi \in \G$ whenever this is convenient.
+\sssection{Consequences of the Pontrjagin Duality Theorem}
+The Pontrjagin Duality Theorem has a lot of fantastic consequences, and is a truly crucial piece of theory for us. One of the many consequences is another Fourier Inversion Theorem and the generalized Poisson summation formula for Abelian groups.
+\begin{theorem}[Fourier Inversion Theorem II]
+	If $f \in L^1(G)$ and $\widehat{f} \in L^1(\G)$, then $f(x)= \widehat{\widehat{f}}(x^{-1})$ for almost every $x \in G$, i.e., we have
+	\begin{align*}
+		f(x) = \int _{\G} \langle x, \xi \rangle \widehat{f}(\xi) \d \xi, \text{ for almost every } x \in G.
+	\end{align*}
+	If $f$ is continuous, then it holds for every $x \in G$.
+	\label{4.32}
+\end{theorem}
+\begin{proof}
+	The statement follows from \Cref{4.21}, since $\widehat{f}\in B^1(\G)$ and
+	\begin{align*}
+		\widehat{f}(\xi)=\int_{G} \langle x^{-1} , \xi \rangle f(x) \d x = \int_{G} \langle x , \xi \rangle f(x^{-1}) \d x,
+	\end{align*}
+	which gives $\d \mu_{\widehat{f}}(x) = f(x^{-1}) \d x$, so that $f(x^{-1}) = \widehat{\widehat{f}}(x)$ for almost all $x \in G$. If $f$ is continuous, then clearly the relation holds for every $x \in G$, since $\widehat{\widehat{f}}$ is continuous by default.
+\end{proof}
+Another application of the pontrjagin duality theorem is that now we may consider the map $M(G) \to C_b(\G)$ from \Cref{4.17} to obtain
+\begin{corollary}
+	If $\mu,\nu \in M(G)$ with $\widehat{\mu}=\widehat{\nu}$, then $\mu=\nu$. In particular, since $L^1(G) \subseteq M(G)$, for $f,g \in L^1(G)$ we have $f=g$ when $\widehat{f}=\widehat{g}$.
+\end{corollary}
+\begin{proof}
+	This follows directly from \Cref{4.17} when $\G$ and $G$ is swapped.
+\end{proof}
+And we obtain the final piece of the duality theory between compactness and discretness in $G,\G$.
+\begin{proposition}
+	$\G$ is compact if and only if $G$ is discrete. $\G$ is discrete if and only if $G$ is compact.
+\end{proposition}
+\begin{proof}
+	Follows from \Cref{4.31} (Pontrjagin duality) and \Cref{4.4}.	
+\end{proof}
+And we also obtain the converse of the identity $\reallywidehat{(f \ast g)} = \widehat{f}\widehat{g}$, namely:
+\begin{proposition}
+	If $f,g \in L^2(G)$, then $\reallywidehat{(fg)}=\widehat{f}\ast\widehat{g}$.
+\end{proposition}
+\begin{proof}
+	It suffices to check for $f,g \in L^2(G) \cap \F(B^1(\G))$, since the Fourier transformation is a linear contraction and $fg \in L^1(G)$ for $f,g \in L^2(G)$. Let $f(x)=\widehat{\varphi}(x^{-1})$ and $g(x)=\widehat{\psi}(x^{-1})$, where $\varphi,\psi \in L^2(\G)\cap B^1(\G)$, which is possible by \Cref{4.32} and \Cref{4.25} (Fourier Inversion and the Plancherel Theorem) combined with Pontrjagin Duality. With the reasoning from \Cref{4.29}, we have
+	\begin{align*}
+		\reallywidehat{(\varphi \ast \psi)}(x^{-1})=f(x)g(x),\ x \in G.
+	\end{align*}
+	By \Cref{4.32} and \Cref{4.21}, it holds that $\varphi = \widehat{f}$ and $\psi = \widehat{g}$. We apply \Cref{4.32} at last to see that
+	\begin{align*}
+		\widehat{f}\ast \widehat{g}(\xi) = \varphi \ast \psi (\xi) = \widehat{\reallywidehat{(\varphi \ast \psi)}}(\xi^{-1}) = \reallywidehat{fg}(\xi),
+	\end{align*}
+	for all $\xi \in \G$, and it holds since $\varphi \ast \psi \in L^1(G)$ and $fg \in L^1(G)$. Finally, by lemma \Cref{4.29}, we can conclude that it holds for all of $L^2(G)$.
+\end{proof}
+
+We now proceed to show the classic Poisson summation formula, which turns out to be a special case of a more general theory.
+
+The more general theory is a sort of duality theory of the Pontrjagin Duality Theorem between certain subgroups and quotients of locally compact Abelian groups. 
+\begin{definition}
+	If $H\leq G$ is a closed subgroup of $G$, we define
+	\begin{align*}
+		H^\perp := \left\{ \xi \in \G \ \big| \ \langle x, \xi \rangle = 1 \text{ for all } x \in H \right\}.
+	\end{align*}
+	It is easy to see that $H^\perp$ is a closed subgroup of $\G$.
+\end{definition}
+The classic result will follow from this theory when we apply it to $G=\R$ and $H=\Z$, but we show a few results first.
+\begin{proposition}
+	$(H^\perp)^\perp=H$ for any closed subgroup $H \leq G$.
+	\label{4.38}
+\end{proposition}
+\begin{proof}
+	One inclusion is easy: $H \subseteq (H^\perp)^\perp$. For the converse, let $q \colon G \to G/H$ be the quotient map. For $x_0 \not \in H$ use \Cref{3.34} to pick $\eta \in \widehat{G/H}$ with $\eta(q(x_0))\neq 1$, so $\eta \circ q \in H^\perp$ which means $x_0 \not \in (H^\perp)^\perp$.
+\end{proof}
+\begin{theorem}
+	If $H \leq G$ is a closed subgroup, define maps $\Phi \colon \reallywidehat{G/H} \to H^\perp$ and $\Psi \colon \G/H^\perp \to \widehat H$ by
+	\begin{align*}
+	\Phi(\eta)=\eta \circ q, \quad \Psi(\xi H^\perp) \xi|_H,
+	\end{align*}
+	where $q$ is the quotient map $G \mapsto G/H$. Then $\Phi$ and $\Psi$ are isomorphisms of topological groups.
+	\label{4.39}
+\end{theorem}
+\begin{proof}
+	It is easy to see that the map $\Phi$ is a group isomorphism, so we begin by showing that $\Phi$ is a homeomorphism from $\reallywidehat{G/H}$ to $H^\perp$: Let $(\xi_\alpha)_{\alpha \in A}\subseteq \reallywidehat{G/H}$ be a net converging to some $\xi \in \reallywidehat{G/H}$, and let $K\subseteq G$ be compact. Then, $\xi_\alpha \circ q \to \xi \circ q$ uniformly on $K$, since the topology on $\G$ is the topology of compact convergence, and the topology on the quotient is the quotient topology.
+
+	If conversely we have $\eta_{\alpha} \circ q \to \ \eta \circ q$ in $\G$ and $F\subseteq G/H$ is compact, we can lift $F$ by \Cref{2.45} to a compact $K\subseteq G$ such that $q(K)=F$.
+	Then $\eta_{\alpha} \circ q \to \eta \circ q$ uniformly on $K$ and hence $\eta_\alpha \to \eta$ uniformly on $q(K)=F$, so $\eta_\alpha \to \eta$ in $\reallywidehat{G/H}$, showing that $\Phi$ is a homeomorphism.
+
+	Combining the above with \ref{4.38} we get, since $H^\perp$ is a closed subgroup of $\G$, that $\reallywidehat{\G/H^\perp}\cong H$, from which we conclude using The Pontrjagin Duality that $\G/H^\perp \cong \widehat H$. In light of the above, the correspondance is that $x \in H$ is mapped to the element $\xi \in \reallywidehat{\G/H^\perp}$ given by
+	\begin{align*}
+		\langle \xi , [\eta]\rangle = \langle x, \xi\rangle.
+	\end{align*}
+	It is easy to see that the implemented isomorphism is then $\Psi$.
+\end{proof}
+And, both suprisingly and unsuprisingly at the same time, we immediately get a sort of 'Hahn-Banach Extension Theorem' for locally compact Abelian groups:
+\begin{corollary}
+	If $H$ is a closed subgroup of $G$, then every character on $H$ extends to a character on $G$.
+\end{corollary}
+\begin{proof}
+	Compose $\Psi$ of \Cref{4.39} with the quotient map $\G \to \G/H^\perp$.
+\end{proof}
+We are finally ready to formulate the generalised Poisson summation formula:
+\begin{theorem}[Generalised Poisson Summation Formula]
+	Let $H \leq G$ be a closed subgroup of $G$. If $f \in C_c(G)$, define $F \in C_c(G/H)$ by 
+	\begin{align*}
+		F([x])=\int_H f(xy) \d y,\ x \in G.
+	\end{align*}
+	Then $\widehat F =\widehat{f}|_{H^\perp}p $ after $\reallywidehat{G/H}$ has been identified with $H$. If moreover $\widehat{f}|_{H^\perp} \in L^1(H^\perp)$, then for suitably normalised Haar measures on $H$ and $H^\perp$ we have
+	\begin{align*}
+		\int_H f(xy) \d y = \int_{H^\perp}\widehat{f}(\xi) \langle x, \xi \rangle \d \xi, \ \text{for all } x \in G
+	\end{align*}
+	\label{4.42}
+\end{theorem}
+\begin{proof}
+	Let $\xi \in H^\perp$, so that $\langle xy, \xi \rangle = \langle x,\xi\rangle$ for all $x \in G$ and $y \in H$. Then, we compute that
+	\begin{align*}
+		\widehat{F}(\xi)=\int_{G/H}\overline{\langle [x], \xi \rangle } F([x]\d [x]=\int_{G/H}\int_H f(xy) \overline{\langle xy,\xi \rangle} \d y \d [x]=\int_G f(x) \overline{\langle x, \xi \rangle} \d x = \widehat{f}(\xi),
+	\end{align*}
+	proving the first claim. If moreover we have $\widehat{f}|_{H^\perp} \in L^1(H^\perp)$, then by \Cref{4.32} we see that 
+	\begin{align*}
+		F([x])=\int_H f(xy) \d y = \int_{H^\perp}\widehat{f}(\xi) \langle x, \xi \rangle \d \xi, \ x \in G.
+	\end{align*}
+\end{proof}
+And, as promised, we immediately obtain the classic Poisson summation formula:
+\begin{corollary}
+	If $G=\R$ and $H=\Z$ and we identify $\widehat \R$ with $\R$ via $\langle x , \xi \rangle = e^{2 \pi i \xi x}$ and $f \in C_c(\R)$, then 
+	\begin{align*}
+		\sum_{n \in \Z}f(x+n)=\sum_{n \in \Z}\widehat{f}(n) \langle x,n\rangle= \sum_{n \in \Z} \widehat{f}(n) e^{2 \pi i n x}.
+	\end{align*}
+\end{corollary}
+\sssection{Representation Theory of Abelian Groups}
+In the previous chapter we developped a rigorous theory for representations of groups. It turns out that in the case of locally compact Abelian groups, we can go a bit further in relating that theory to the theory of the dual group.
+
+Recall that we can identify $\G$ with $L^1(G)$ as seen earlier. We will now return to the notation of \Cref{4.1}, i.e., where we send $\xi \in \G$ to the element of $\sigma(L^1(G))$ given by $f \mapsto \widehat{f}(\xi^{-1})$, $f \in L^1(G)$ and $\xi \in \G$, rather than $f \mapsto \widehat{f}(\xi)$. Before we show our main theorem of this section, which will give a new identity for representations of $G$ and $L^1(G)$, we need a little lemma so that we don't encounter problems in the case when $G$ is not first-countable.
+\begin{lemma}
+	If $\left\{ \psi_U\right\}_{U \in \mathcal{U}}$ is an approximate identity for $L^1(G)$, then $\widehat{\psi_u}\to 1$ uniformly on compact subsets of $\G$ as $U \to \left\{ 1 \right\}$. 
+	\label{4.46}
+\end{lemma}
+\begin{proof}
+	Let $K \subseteq \G$ compact. By Pontrjagin Duality, the topology of $G=\widehat\G$ is the topology of compact uniform convergence of $\{\xi \mapsto \langle x,\xi\rangle\}$, $\xi \in \G$. Let $\varepsilon > 0$, and let
+\begin{align*}
+	V=\left\{ x \in G \ \big| \ | \langle x, \xi \rangle - 1 | < \varepsilon \text{ for } \xi \in K \right\},
+\end{align*}
+so that $V$ is a neighborhood of $e \in G$. If $U \in \mathcal{U}$ such that $U \subseteq V$, then for $x \in K$ we have
+\begin{align*}
+	|\widehat{\psi_U}(\xi)-1|=\left| \int_V (\overline{\langle x, \xi\rangle}-1)\right| \psi_U(x) \d x < \varepsilon,
+\end{align*}
+since $\supp(\psi_U)\subseteq V$ and $\int_G \psi_U(x) \d x = 1$, and we the statement follows from translation invariance of the topology on $G$.
+\end{proof}
+
+\begin{theorem}
+Let $\pi$ be a unitary representation of a locally compact Abelian group $G$. There is a unique regular $\H_\pi$-projection valued measure $P$ on $\G$ such that
+\begin{align*}
+	\pi(x)&=\int_{\G}\langle x, \xi \rangle \d P(\xi) , \ x \in G\\
+	\pi(f)&= \int_{\G}\xi(f) \d P(\xi), \ f \in L^1(G),
+\end{align*}
+with $\xi(f)$ as in \Cref{4.1}. Also, for $T \in \mathbb{B}(\H_\pi)$ it holds that $T \in \mathcal{C}(\pi)$ if and only if $TP(E)=P(E)T$ for all $E \subseteq \G$ Borel.
+	\label{4.44}
+\end{theorem}
+\begin{proof}
+	It is a consequence of the spectral theorem for commutative Banach $^*$-algebras that we can write $f \in (L^1(G))$ as $f=\int_{\sigma(L^1(G))} \widehat{g}(\varphi) \d P(\varphi)$, for some unique regular projection-measure $P$ on $\sigma(L^1(G))$. By \Cref{4.1}, an after identification of $\sigma(L^1(G))$ with $\G$, we obtain the identity
+	\begin{align*}
+		\pi(f)=\int_{\G} \xi(f) \d P(\xi), \ f \in L^1(G).
+	\end{align*}
+	The assertion about commutativity follows from the spectral theorem and \Cref{3.12}.We thus only need to show the statement regarding $\pi(x)$: From the proof of \Cref{3.11}, we saw that $\pi(x)$ is the strong operator limit of $\pi(L_x\psi_U)$ for an approximate unit $\{\psi_U\}$ of $L^1(G)$. By the identity \Cref{4.15}, we see for $x \in G$ that
+	\begin{align*}
+		\pi(L_x \psi_U) = \int_{\G} \xi(L_x \psi_U) \d P(\xi) =\int_{\G}\widehat{L_x \psi_U}(\xi^{-1})\d P(\xi)&= \int_{\G}\langle x,\xi \rangle \xi(\psi_U)\d P(\xi),
+	\end{align*}
+	hence we must show that the integral on the right converge in the strong operator topology, which is the same as the weak operator topology, to $\int_{\G}\langle x , \xi \rangle \d P(\xi)$. So let $u,v \in \H_\pi$ and $\varepsilon > 0$. The measure $\mu_{u,v}$ on $\G$ given by
+	\begin{align*}
+		\mu_{u,v}(E):=\langle P(E) u,v \rangle, \ E \subseteq \G \text{ Borel},
+	\end{align*}
+	is easily seen to be a finite Radon measure on $\G$. Let $K\subseteq \G$ be a compact set witnessing the finiteness of $\mu_{u,v}$ with respect to $\varepsilon$, i.e., such that $|\mu_{u,v}(K^c)|<\varepsilon$. Then, by continuity, we see that
+	\begin{align*}
+		\left\langle \left( \pi(L_x \psi_U)) - \int_{\G} \langle x , \xi \rangle \d P(\xi) \right)u,v  \right\rangle &=\int_{\G}\langle x,\xi\rangle (\xi(\psi_U)-1) \d \mu_{u,v}(\xi)\\
+		&= \int_K \langle x , \xi \rangle (\widehat{\psi_U}(\xi^{-1}) - 1 ) \d \mu_{u,v}(\xi)\\
+		&+\int_{K^c} \langle x , \xi \rangle (\widehat{\psi_U}(\xi^{-1})-1) \d \mu_{u,v}(\xi).
+	\end{align*}
+	By \Cref{4.46}, for $U$ close enough to $\{1\}$, we see that
+	\begin{align*}
+	\left| \int_K \langle x , \xi \rangle (\widehat{\psi_U}(\xi^{-1}) - 1 ) \d \mu_{u,v}(\xi)\right| < \varepsilon,	
+	\end{align*}
+	and by the triangle inequality and the choice of $K$ we have
+	\begin{align*}
+		\left|\int_{K^c} \langle x , \xi \rangle (\widehat{\psi_U}(\xi^{-1})-1) \d \mu_{u,v}(\xi)\right|&\leq \int_{K^c}|(\widehat{\psi_U}(\xi^{-1})-1)| \d \mu_{u,v}(\xi)\\
+		&\leq\int_{K^c} 2 \d \mu_{u,v}\leq 2\varepsilon
+	\end{align*}
+	so that $\pi(L_x \psi_U) \to \int_{\G}\langle x, \xi\rangle \d P(\xi)$ in the weak operator topology, hence $\pi(x) = \int_{\G} \langle x , \xi \rangle \d P(\xi)$.
+\end{proof}
+We examine the case of the above when the measure $P$ is a discrete measure.
+\begin{example}
+	Suppose that $\pi$ is a unitary representation of $G$ and the measure $P$, associated to $\pi$ in \Cref{4.44} is discrete, i.e., $P(E)=\sum_{\xi \in E}P(\{\xi\})$ for $E\subseteq \G$ Borel. Let $A:=P^{-1}(\{0\})^c$, and for $\xi \in A$ define $\H_\xi=\mathrm{Range}(P(\{\xi\}))$. If $x \in G$, then $\pi(x)u \in \H_\xi$ for $u \in \H_\xi$, since 
+	\begin{align*}
+		\pi(x)=\sum_{\xi \in \G} \langle x , \xi \rangle P(\{\xi\}) = \sum_{\xi \in A}\langle x , \xi \rangle P(\left\{ \xi \right\}).
+	\end{align*}
+	And so we may write $\H_\pi=\bigoplus_{\xi \in A} \H_\xi$, and each of the sub representations $\pi^{\H_\xi}$ on $\H_\xi$ is of the form $\xi I=\oplus \xi$.
+\end{example}
+
+\chapter{Analysis on compact Hausdorff groups}
+In this chapter we will attempt to generalise the theory we've been through to the category of compact groups, which may or may not be Abelian. This theory has a broad range of uses, for instance in physics and geometry where one often comes across a compact non-Abelian Lie group such as $SU(2), \ SO(3)$ or $U(2)$.
+
+The goal is to establish the foundation to define the Fourier Transformation groups and show the Peter-Weyl Theorem, as well as a more general theory of representations of compact groups.
+
+We will throughout the chapter use $G$ to denote any compact group, with left-and right invariant Haar measure $\d x$, which we will assume to be normalised to be a probability measure.
+
+\sssection{Representations of Compact Groups}
+We will cover some basic theory of representations of compact group in this section. Recall that for two representations $\pi,\pi'$ of a group $G$, we defined the set $\mathcal{C}(\pi,\pi')$ to be the set of intertwining operators between $\pi,\pi'$.
+\begin{lemma}
+	If $\pi$ is a unitary representation of a compact group $G$, for a unit vector $v \in \H_\pi$, define the operator $T_v$ on $\H_\pi$ given by
+	\begin{align}
+		T_v u := \int_G \langle u,\pi(x)v \rangle \pi(x)v \d x, \ u \in \H_\pi. 
+		\label{Tdef}
+	\end{align}
+	Then $T$ is a positive, non-zero and compact operator with $T \in \mathcal{C}(\pi)$.
+	\label{5.1}
+\end{lemma}
+\begin{proof}
+For $u \in \H_\pi$ we see that
+\begin{align*}
+	\langle T_v u,u\rangle  \int |\langle u,\pi(x)v\rangle|^2 \d x \geq 0,
+\end{align*}
+so it is a positive operator, and for $u=v$, it holds that $\langle T_v u,u \rangle>0$, since the integrated function above is a continuous function which is strictly positive in a neighborhood around $e$, so $T\neq 0$. Being compact, $\pi$ is strongly continuous, the map $x \mapsto \pi(x)u$ is uniformly continuous. For $\varepsilon > 0$, let $G=E_1\cup E_2 \cup\dots \cup E_n$ be a finite disjoint partition chosen using compactness to ensure that we may use the uniform continuity of $x \mapsto \pi(x) v$ to pick $x_j \in E_j$ with $\lv \pi(x) v - \pi(x_j) v \rv < \frac{1}{2}\varepsilon$ for $x \in E_j$.
+
+If $x \in E_j$, it is then easy to see that for all $u \in \H_\pi$ we have
+\begin{align*}
+	\lv \langle u , \pi(x) v \rangle \pi(x) v - \langle u , \pi(x_j)v \rangle \pi(x_j) v\rangle \rv< \varepsilon  \lv u \rv.
+\end{align*}
+We now proceed to construct a finite rank operator $T_\varepsilon$, and show that $T_v$ and $T_\varepsilon$ agree up to an arbitrarily small error on all of $\H_\pi$. For $u \in \H_\pi$, define
+\begin{align*}
+	T_\varepsilon u = \sum_{i=1}^n \mu(E_j) \langle u, \pi(x_j) v \rangle \pi(x_j) v = \sum_{i=1}^n \int_{E_j}\langle u, \pi(x_j) v \rangle \pi(x_j) v \d x,
+\end{align*}
+where $\mu$ is our normalised Haar measure on $G$. Since $\mu(G)=1$ and $G=\bigcup_{i=1}^n E_i$, we see that
+\begin{align*}
+	\lv T_v u - T_\varepsilon u \rv = \lv \sum_{i=1}^n\int_{E_j} \left(\langle u, \pi(x) v \rangle \pi(x) v - \langle u , \pi(x_j)v \rangle \pi(x_j)v\right) \d x\rv
+	&< \sum_{i=1}^n \int_{E_j} \varepsilon \lv u \rv\\
+	&= \varepsilon \lv u \rv,
+\end{align*}
+by the triangle inequality, so that $T$ is the limit of finite-rank operators, hence compact. Multiplicativity of $\pi$ ensures that $\pi(y)T_v=T_v \pi(y)$ for all $y \in G$, easily seen from the definition of $T_v$.
+\end{proof}
+
+\begin{theorem}
+	If $G$ is compact, then every irreducible representation of $G$ is finite-dimensional, and every unitary representation of $G$ is a direct sum of irreducible representations.
+	\label{5.2}
+\end{theorem}
+\begin{proof}
+	Let $\pi$ be an irreducible representation, and let $T$ be the operator of \Cref{5.1}. By \Cref{Schurs}, $T=cI$ for some non-zero $c \in \C$, implying that $\dim \H_\pi< \infty$, since $T$ is compact.
+
+	If $\pi$ is any unitary representation of $G$ and $T=T_v$ for a unit vector $v$ as in \Cref{Tdef}. Let $\lambda$ be a non-zero eigenvalue of $T$ (which exists since $T$ is compact, self-adjoint, positive and most importantly non-zero), and let $\mathcal{M}_\lambda$ be its associated eigenspace, which must be finite-dimensional, since compactness of $T$ implies that the identity operator on $\mathcal{M}_\lambda$ is compact.
+
+	Let $P_\lambda$ be the orthogonal projection onto $\mathcal{M}_\lambda$. Since $T \in \mathcal{C}(\pi)$, it follows that $P_\lambda \in \mathcal{C}(\pi)$, so by \Cref{3.4} the eigenspace of $\lambda$ is invariant under $\pi$, so $\pi$ has a finite dimensional subrepresentation. By \Cref{3.1}, it follows that every finite-dimensional representation is the direct sum of irreducible representations. In particular, this means that $\pi$ has an irreducible subrepresentation.
+
+	As in the proof of  \Cref{3.10}, there is some maximal family $\left\{ \mathcal{M}_\alpha \right\}_{\alpha \in A}$ of mutually orthogonal irreducible invariant subspaces of $\pi$. If $\mathcal{N}$ is the orthogonal complement of $\bigoplus_{\alpha \in A }\mathcal{M}_\alpha$, then $\pi^{\mathcal{N}}$ must have some irreducible subspace, from what we've shown above, contradicting the maximality assumption. Hence $\H_\pi = \bigoplus_{\alpha \in A } \mathcal{M}_\alpha$.
+\end{proof}
+
+We recall the definition of unitary equivalence between representations $\pi,\pi'$ to be that there is a unitary operator intertwining them. 
+\begin{definition}
+	For a compact group $G$, we denote by $\G$ the set of unitary equivalence classes of irreducible unitary representations of $G$. We denote the equivalence classes of $\G$ by $[\pi]$. 
+\end{definition}
+This definition extends the definition in the Abelian case, since then the irreducible representations are just the characters.
+
+One might hope that the decomposition of a unitary representation from \Cref{5.2} into irreducible subrepresentations is unique, but it is not the case (e.g., if $\pi$ is the trivial representation on $\H$ with $\dim \H >1$). However, up to a nice relation, it is unique.
+
+If $\pi_0$ is a unitary representation of $G$, to each $[\pi]\in \G$, let $\mathcal{M}_\pi$ denote the closed span of all irreducible subspaces of $\H_{\pi_0}$ such that $\pi_0$ is equivalent to $\pi$ on them, i.e., the closed span of spaces $L \subseteq \H_{\pi_0}$ such that $\pi_0^{L}\cong \pi$. Then
+\begin{theorem}
+	If $[\pi] \neq [\pi']$ then $\mathcal{M}_\pi \perp \mathcal{M}_{\pi'}$ in $\H_{\pi_0}$. If $\mathcal{N}$ is an irreducible subspace of $\mathcal{M}_\pi$, then $\pi_0^{\mathcal{N}}$ is equivalent to $\pi$.
+	\label{5.3}
+\end{theorem}
+\begin{proof}
+	Suppose that $[\pi]\neq [\pi']$, and let $A_\pi$ and $A_{\pi'}$ be irreducible subspaces such that the restriction of $\pi_0$ to $A_\pi$ and $A_{\pi'}$ are equivalent to $\pi$ and $\pi'$, respectively. Then by \Cref{Schurs}, the orthogonal projection $P_\pi$, onto $A_\pi$ satisfies $P|_{A_\pi'} =0$, since it intertwines the subrepresentations $\pi_0^{A_\pi}$ and $\pi_0^{A_{\pi'}}$, so $A_\pi \perp A_{\pi'}$. Hence $\mathcal{M}_\pi\perp\mathcal{M}_{\pi'}$.
+
+	Suppose now that $\mathcal{N}\subseteq \mathcal{M}_\pi$ is irreducible. Then there is some irreducible space $L \subseteq \mathcal{M}_{\pi}$ with $\pi_0^{L}$ equivalent to $\pi$ such that $P(\mathcal{N})\neq \left\{ 0 \right\}$ where $P$ is the orthogonal projection onto $L$, this is due to the definition of $\mathcal{M}_\pi$. By \Cref{Schurs} it follows that $\pi_0^{\mathcal{N}}$ and $\pi_0^{L}$ are equivalent, since $P|_{\mathcal{N}} \in \mathcal{C}(\pi_0^{\mathcal{N}},\pi_{0}^{L}))$ and $P(\mathcal{N})\neq 0$. Hence $\pi_0^{\mathcal{N}} \cong \pi_0^L \cong \pi$.
+\end{proof}
+And we immediately obtain the corollary
+\begin{corollary}
+If $\pi_0$ is a unitary representation of $G$, then $\H_{\pi_0} = \bigoplus_{[\pi]\in \G} \mathcal{M}_\pi$.	
+\end{corollary}
+The decomposition above is unique. However, each of the spaces $\mathcal{M}_\pi$ can be decomposed as
+\begin{align}
+	\mathcal{M}_\pi = \bigoplus_{\alpha \in A} L_\alpha,
+	\label{multeq}
+\end{align}
+where $\pi_0^{L_\alpha}$ is equivalent to $\pi$ for each $\alpha$. This decomposition is not unique always. However, the size of $A$ is an invariant for all decomposition of $\mathcal{M}_\pi$. 
+\begin{definition}
+	The cardinality of the set $A$ from \Cref{multeq} is called the \emph{multplicity} of $[\pi]$ in $\pi_0$, denoted by $\mathrm{mult}(\pi,\pi_0)$.	
+\end{definition}
+\begin{proposition}
+	It holds that $\mathrm{mult}(\pi,\pi_0)=\dim (\mathcal{C}(\pi,\pi_0))$.	
+	\label{5.4}
+\end{proposition}
+\begin{proof}
+	Let $\pi_0,\pi$ be unitary representations and let $\mathcal{M}_\pi$ be the space from \Cref{5.3}. We may decompose $\mathcal{M}_\pi=\bigoplus_{\alpha \in A}L_\alpha$, where $\pi_0^{L_\alpha}\cong \pi$ for each $\alpha \in A$. For each $\alpha \in A$, let $T_\alpha \colon \H_\pi \to L_\alpha$ denote a unitary implementing the equivalence. 
+
+	The goal is now to construct a space $V$ of dimension $\mathrm{mult}(\pi,\pi_0)$ and a linear isomorphism $\mathcal{C}(\pi,\pi_0) \to V$. For the definition of $V$, fix a unit vector $u \in \H_\pi$ and define $v_\alpha:=T_\alpha u$ for each $\alpha \in A$. Since $T_\alpha$ is a unitary, $v_\alpha$ is a unit vector in $L_\alpha$. Since $\mathcal{M}_\pi= \bigoplus_{\alpha \in A} L_\alpha$, it follows that $v_\alpha  \perp v_{\alpha'}$ for $\alpha \neq \alpha' \in A$. Define $V$ to be the closed subspace spanned by the orthonormal set $\{v_\alpha\}_{\alpha \in A}$, i.e., as
+	\begin{align*}
+		V= \span \{v_\alpha\}_{\alpha \in A}.
+	\end{align*}
+	If $0\neq T \in\mathcal{C}(\pi,\pi_0)$, then by \Cref{Schurs} $T^*T$ and $TT^*$ are of the form $cI$ for some scalar $c$, hence injective. It follows that the map $T \mapsto Tu$ is injective, since $\mathcal{C}(\pi,\pi_0)$ is a linear space.
+
+	For surjectivity, note that for $T \in \mathcal{C}(\pi,\pi_0)$ it holds that $\mathrm{Range}T \subseteq \mathcal{M}_\pi$, since it is isomorphic to $\H_\pi$. So we may write
+	\begin{align*}
+		Tu=\sum_{\alpha \in A} u_\alpha,
+	\end{align*}
+	for some $u_\alpha \in L_\alpha$. Let $P_\alpha$ denote the orthogonal projection onto $L_\alpha$ for each $\alpha \in A$. Then, clearly $\pi_0^{L_\alpha}=P_\alpha \pi_0 P_\alpha$, so $P_\alpha T \in  \mathcal{C}(\pi,\pi_0^{L_\alpha})$, and by \Cref{Schurs}, we conclude that $P_\alpha T = c_\alpha T$ for some constant $ c_\alpha$. From this we conclude that
+	\begin{align*}
+		u_\alpha = P_\alpha T u = c_\alpha v_\alpha,
+	\end{align*}
+	which means that $Tu \in V$, and $Tu=\sum_{\alpha \in A} u_\alpha = \sum_{\alpha \in A}c_\alpha v_\alpha$, so $\sum_{\alpha \in A} | c_\alpha|^2 < \infty$, by Parseval's identity. For $v  = \sum_{\alpha \in A} c_\alpha v_\alpha \in V$, then $v=T u$, where $T=\sum_{\alpha \in A}c_\alpha T_\alpha \in \mathcal{C}(\pi,\pi_0)$.
+\end{proof}
+
+As a closing remark, we note that the theory of unitary representations of $G$ includes in a way the theory of finite-dimensional representations of $G$. A finite-dimensional representation $\rho$ of $G$ is a continuous homomorphism $G \to GL(V)$, the group of invertible operators on a finite-dimensional vector space $V$. Even if $\rho$ is a non-unitary representation, we may construct an inner product on $V$ such that $\rho$ is unitary in it: Define $\langle \cdot , \cdot \rangle$ on $V$ by
+\begin{align*}
+	\langle u,v \rangle := \int_{G} \langle \rho(x) u , \rho(x) v \rangle_0 \d x,
+\end{align*}
+where $\langle \cdot,\cdot \rangle_0$ is any inner-product on $V$. It is easy to see that $\langle \cdot,\cdot \rangle$ is invariant under $\rho$.
+
+\sssection{The Peter-Weyl Theorem}
+We now embark on the task of proving the famed Peter-Weyl Theorem, which allows us to identify $L^2(G)$ with another space which is easy to describe. 
+
+For Abelian groups, we have seen that $\G$ is a set of certain continuous functions on $G$. For non-Abelian groups, we instead consider the set of matrix elements of irreducible representations of $G$:
+\begin{definition}
+	If $\pi$ is a unitary representation of $G$, then the functions
+	\begin{align*}
+		\varphi_{u,v}(x) := \langle \pi(x) u,v \rangle,\ x \in G,
+	\end{align*}
+	for $u,v \in \H_\pi$, are called the \emph{matrix elements} of $\pi$. For members, $e_i , e_j$, of an orthonormal basis of $\H_\pi$ it holds that $ \varphi_{e_i,e_j}(x)$ are exactly the matrix entries of $\pi(x)$ in the basis given by $\left\{ e_i \right\}$, i.e., the matrix of $\pi(x)$ in the basis is the matrix with entries
+	\begin{align*}
+		\pi_{ij}(x) = \langle \pi(x) e_j , e_i \rangle = \varphi_{e_j,e_i}(x), \ x \in G.
+	\end{align*}
+\end{definition}
+\begin{definition}
+	The set of matrix elements of $\pi$ is denoted by $\mathcal{E}_\pi$. It is a subspace of $C(G)\subseteq L^p(G)$ for all $p$.
+\end{definition}
+Just as in the Abelian case, where we identified suitable subspaces of $C_0(G)$ to describe most of the relevant function spaces, we will use the matrix elements to generate a set of functions, from which we will be able to say quite a lot about $G$ and $L^2(G)$. Already we can obtain the following:
+\begin{proposition}
+	For a unitary representation $\pi$, the set $\mathcal{E}_\pi$ depends only on the unitary equivalence class of $\pi$. Moreover, $\mathcal{E}_\pi$ is invariant under left- and right-translation, and it is a two-sided ideal in $L^1(G)$. If $\dim \H_\pi = n < \infty$, then $\dim \mathcal{E}_\pi \leq n^2$.
+	\label{5.6}
+\end{proposition}
+\begin{proof}
+The first assertion follows immediately, since if $\pi \cong \pi'$ then for all $x \in G$
+\begin{align*}
+	\langle \pi(x) u,v \rangle = \langle \pi'(x) U u , Uv\rangle,
+\end{align*}
+for some unitary $U$ implementing the relation $\pi \cong \pi'$. Now, if $y,x \in G$, then multiplicativity of $\pi$ gives us that
+\begin{align*}
+	\varphi_{u,v}(y^{-1}x) = \varphi_{u,\pi(y)v}(x),
+\end{align*}
+and similarly, $\varphi_{u,v}(xy)=\varphi_{\pi(y)u,v}(x)$ for all $u,v \in \H_\pi$. The assertion about $\mathcal{E}_\pi$ being a two-sided ideal follows from \Cref{2.43}. If $\dim \H_\pi=n < \infty$, then there are $n^2$ different matrix elements $\pi_{ij}$ which span $\mathcal{E}_\pi$.
+\end{proof}
+
+\begin{proposition}
+	If $\pi=\pi_1 \oplus \pi_2 \oplus \dots \oplus \pi_n$, then 
+	\begin{align*}
+		\mathcal{E}_\pi = \mathcal{E}_{\pi_{1}}+\mathcal{E}_{\pi_{2}}+\dots+\mathcal{E}_{\pi_{n}},
+	\end{align*}
+	not necessarily a direct sum.
+	\label{5.7}
+\end{proposition}
+\begin{proof}
+	It is clear that $\mathcal{E}_{\pi_j}\subseteq \mathcal{E}_\pi$, since $\H_{\pi_j}\subseteq \H_\pi$. For the converse, if $u= \sum_{i=1}^n u_i$ and $v = \sum_{i=1}^n v_i$, for $u_j,v_j \in \H_{\pi_j}$, then as $\pi(x)u_j \perp v_k$ for $j\neq k$, we see that
+	\begin{align*}
+		\varphi_{u,v}=\sum_{i=1}^n \varphi_{u_j,v_j}\in \sum_{j=1}^n \mathcal{E}_{\pi_j}.
+	\end{align*}
+\end{proof}
+
+We will, to make our lives easier, use $d_\pi$ to denote the number
+\begin{align*}
+	\d_\pi:= \dim \H_\pi,
+\end{align*}
+and we will use $\tr A$ to denote the trace of a matrix $A$. The next theorem we show is a very important result which has a lot of applications in representation theory, and it is due to Schur.
+
+\begin{theorem}[The Schur Orthogonality Relations.]
+	Let $\pi, \pi'$ be irreducible unitary representations of $G$, with associated spaces $\mathcal{E}_\pi , \mathcal{E}_{\pi'} \subseteq L^2(G)$. Then
+	\begin{enumerate}
+		\item If $[\pi]\neq[\pi']$ then $\mathcal{E}_\pi \perp \mathcal{E}_{\pi'}$.
+		\item If $\{e_j\}$ is an orthonormal basis for $\pi$ and $\pi_{ij}$ is given as before in this basis, then the set $\left\{ \sqrt{d_\pi}\pi_{ij} : 1 \leq i,j \leq d_{\pi} \right\}$ is an orthonormal basis for $\mathcal{E}_{\pi}$.
+	\end{enumerate}
+	\label{5.8}
+\end{theorem}
+\begin{proof}
+	For $A \in \mathbb{B}(\H_\pi,\H_{\pi'})$, define an operator $\tilde{A}$ by
+	\begin{align*}
+		\tilde{A}=\int_G \pi'(x^{-1}) A \pi(x) \d x.
+	\end{align*}
+	Then $\tilde{A} \in \mathcal{C}(\pi,\pi')$, for if $y \in G$, we have
+	\begin{align*}
+		\tilde{A}\pi(y)=\int_G \pi'(x^{-1}) A \pi(xy) \d x = \int_G \pi'(yx^{-1})A \pi(x) \d x = \pi'(y) \tilde{A}.
+	\end{align*}
+	Now, let $v \in \H_\pi$ and $v' \in \H_{\pi'}$, and define $A \in \mathbb{B}(\H_\pi,\H_{\pi'})$ by $Au:=\langle u,v \rangle v'$. Then for all $u \in \H_\pi$ and $u' \in \H_{\pi'}$, if $\tilde{A}$ as above, we see that the inner product
+	\begin{align*}
+		\langle \tilde{A}u,u'\rangle = \int_G \langle A \pi(x) u \pi'(x) u'\rangle \d x&= \int_{G} \varphi_{u,v}(x) \overline{\varphi_{u',v'}(x)} \d x.	
+	\end{align*}
+	By \Cref{Schurs}, since $\tilde{A} \in \mathcal{C}(\pi,\pi')$, if $[\pi]\neq [\pi']$, ten $\tilde{A}=0$. If $\pi,\pi'$ are equiavlent, then there is a constant $c\in \C$ such that $\tilde{A}=cI$, by \Cref{Schurs} since $\pi,\pi'$ are irreducible. Let $u=e_i$ and $u'=e_{i'}$, $v=e_j$ and $v' =e_{j'}$. Then we calculate and see that 
+	\begin{align*}	
+	cd_\pi = \tr \tilde{A} = \int_{G } \tr\left( \pi(x^{-1}) A \pi(x) \right)\d x = \tr A,
+\end{align*}
+and 
+\begin{align*}
+	\int_{G}\pi_{ij}(x) \overline{\pi_{i'j'}(x)} \d x = c \delta_{ii'},
+\end{align*}
+where $\delta_{ii'}$ is the Kronicker delta at $i,i'$. We defined $A$ to be the operator $Au=\langle u,e_j\rangle e_{j'}$, so $\tr A = \delta_{jj'}$.  We conclude that
+\begin{align*}
+	\langle \pi_{ij}\pi_{i'j'}\rangle_{L^2(G)}= \int_{G}\pi_{ij}(x) \overline{\pi_{i'j'}(x)}\d x = \frac{\delta_{ii'}\delta_{jj'}}{\delta_{\pi}},
+\end{align*}
+so that the set $\left\{ \sqrt{d_{\pi}}\pi_{ij} \ \big| \ 1 \leq i ,j \leq d_\pi \right\}$ is an orthonormal set, and infact an orthonormal basis, since $\dim \mathcal{E}_\pi \leq d_\pi^2$.
+\end{proof}
+Whenever a matrix representation of $\pi$ is given, let $\overline{\pi}$ denote the matrix with complex conjugated entries. We now include a theorem regarding how the irreducible subrepresentations of the left- and right-regular representations, $\lambda, \rho$, of $G$ behave in $\mathcal{E}_\pi$. The proof is straight forward, one simply checks it on the matrix elements, hence we will omit it.
+\begin{theorem}
+	Let $\pi$ be an irreducible representation of $G$. For $1 \leq i \leq d_\pi$, define the space $\mathcal{C}_{i}:=\mathrm{span}\left\{ \pi_{i1},\dots,\pi_{id_{\pi}}\right\}$ with $\pi_{ij}$ as above, and similarly let $\mathcal{C}_i:= \mathrm{span}\left\{ \pi_{1i},\dots,\pi_{d_\pi i} \right\}$. Then $\mathcal{R}_i$ (respectively $\mathcal{C}_i$) is invariant under the right (respectively left) regular representation, and $\rho^{\mathcal{R}_i}$ (respectively $\lambda^{\mathcal{C}_i}$) are equivalent to $\pi$ (respectively $\overline{\pi}$). The equivalence is the following:
+	\begin{align*}
+		\sum_{1 \leq j \leq d_{\pi}}c_j e_j \mapsto \sum_{1 \leq j \leq d_\pi} c_j \pi_{ij} \quad \Big(\text{respectively }\sum_{1 \leq j \leq d_\pi }c_j e_j \mapsto \sum_{1 \leq j \leq d_\pi} c_j \pi_{ji}\Big).
+	\end{align*}
+	\label{5.9}
+\end{theorem}
+Now, we define a new and bigger space from all the $\mathcal{E}_\pi$, which will be very useful in describing the $L^p(G)$ spaces for $p<\infty$, we let $\mathcal{E}$ be the space
+\begin{align*}
+	\mathcal{E}:= \mathrm{span}\left( \bigcup_{[\pi] \in \G} \mathcal{E}_\pi \right).
+\end{align*}
+One might think of $\mathcal{E}$ as the linear span of finite dimensional representations of $G$, or more familiarly, the space of 'trigonometric polynomials' on $G$. It turns out to be an algebraic object, which will allow us to use Stone-Weirstrass when showing that it is dense in $L^p(G)$ for $p < \infty$:
+\begin{proposition}
+	$\mathcal{E}$ is an algebra.
+	\label{5.10}	
+\end{proposition}
+\begin{proof}
+	Given irreducible representations $[\pi],[\pi'] \in \G$, identify $\H_\pi \cong \C^{d_\pi}$ and $\H_{\pi'} \cong \C^{d_ {\pi'}}$. Define the representation $\pi \otimes \pi'$ on $\C^{\d_pi d_{\pi'}}$, where $C^{\d_\pi \d_{\pi'}}$ is identified with $M_{d_{\pi},d_{\pi'}}(\C)$, by
+	\begin{align*}
+		(\pi \otimes \pi')(x) T := \pi(x) T \overline{\pi}'(x^{-1}).
+	\end{align*}
+	If $(e_{ij})$ denotes the set of elementary matrix units of $\C^{d_\pi d_{\pi'}}$, then we see that
+	\begin{align*}
+		\langle (\pi \otimes \pi')(x) e_{jl},e_{ik}\rangle = \pi_{ij}(x) \pi'_{kl}(x),
+	\end{align*}
+	showing that we indeed can give meaning to a product on $\mathcal{E}$.
+\end{proof}
+Finally, we arrive nearly at our destination, which is the famed Peter-Weyl Theorem. For we now show that
+\begin{theorem}
+	$\mathcal{E}$ is dense in $C(G)$ in the uniform norm and dense in $L^p(G)$ in the $p$-norm for $p < \infty$	
+	\label{5.11}
+\end{theorem}
+\begin{proof}
+	The theorem follows from Stone-Weistrass: $\mathcal{E}$ is dense in $C(G)$ since it separates points by \Cref{3.34}, is closed under conjugation (since $\overline{\pi}$ is still an element of $\mathcal{E}$), and contains the constant function $1$ in means of the trivial representation on $\C$. The theorem then follows since $C(G)$ is dense in $L^p(G)$.
+\end{proof}
+From this we see that we may decompose $L^2(G)$ into a direct sumt of $\mathcal{E}_\pi$. The Peter-Weyl theorem is a summary of the results we've shown, and we are finally ready to formulate it:
+\begin{theorem}[The Peter-Weyl Theorem]
+	Let $G$ be a compact group. Then $\mathcal{E}$ is uniformly dense in $C(G)$ and dense in $L^p(G)$ in the $p$-norm for $p < \infty$. Also
+	\begin{align*}
+		L^2(G) = \bigoplus_{[\pi] \in \G}\mathcal{E}_\pi,
+	\end{align*}
+	and if $\pi_{ij}$ denotes the matrix element of $[\pi]\in \G$, then the set
+	\begin{align*}
+		\left\{ \sqrt{d_{\pi}}\pi_{ij} \ \big| \ 1 \leq i , j \leq d_\pi , [\pi] \in \G \right\},	
+	\end{align*}
+	is an orthonormal basis for $L^2(G)$. Each $[\pi] \in \G$ occurs in the left and right regular representations of $G$ with multiplicity $\d_\pi$.
+	\label{5.12}
+\end{theorem}
+\begin{proof}
+	The theorem is simply a collection of the propositions and theorems we've seen in the chapter.
+\end{proof}
+With this in mind, we can finally formulate the Fourier Transform of a compact group $G$ in the non-Abelian case.
+\sssection{The Fourier Transformation on Compact Groups}
+According to \Cref{5.12}, we can express $f \in L^2(G)$ by
+\begin{align}
+	f(x)=\sum_{[\pi] \in \G }\sum_{1\leq i,j \leq d_\pi}c_{ij}^\pi \pi_{ij}(x),
+	\label{L2fcomp}
+\end{align}
+where we define 
+\begin{align*}
+	c_{ij}^\pi := d_\pi \int_{G}f(x) \overline{\pi_{ij}(x)} \d x.
+\end{align*}
+This leads us a nice definition for a generalized Fourier Transformation:
+\begin{definition}
+	If $f \in L^1(G)$, then we define the \emph{Fourier Transformation} of $f$ at $\pi$ to be the operator on $\H_\pi$ given by
+	\begin{align*}
+		\widehat{f}(\pi):=\int_G f(x) \pi(x^{-1}) \d x = \int_{G}f(x) \pi(x)^* \d x.	
+	\end{align*}	
+\end{definition}
+In the Abelian case, this agrees with our previous formulation, since we just let $\H_\pi=\C$ since every $[\pi]\in \G$ is one-dimensional. And, if we pick an orthonormal basis for $\H_\pi$ and represent $\pi(x)$ in it by $(\pi_{ij}(x))$, then we can write $\widehat{f}(\pi)$ as a matrix given by
+\begin{align*}
+	\widehat{f}(\pi)_{ij}=\frac{\langle f,\pi_{ji}\rangle}{d_{\pi}}=\int_G f(x) \overline{\pi_{ji}(x)}\d x = \frac{c_{ji}^\pi}{d_{\pi}}.
+\end{align*}
+In certain cases, such as when $f \in L^2(G)$, this allows us to define a Fourier Inversion, based on the expression:
+\begin{align*}
+\sum_{ 1 \leq i,j\leq d_\pi}c_{ij}^\pi \pi_{ij}(x) = d_{\pi} \sum_{1 \leq i,j \leq d_\pi}\widehat{f}(\pi)_{ji}\pi_{ij}(x) = d_\pi \tr(\widehat{f}(\pi)\pi(x)).
+\end{align*}
+However, the above does not always converge pointwide to $f(x)$, but we do obtain:
+\begin{proposition}[Compact Fourier Inversion Formula I]
+	If $f \in L^2(G)$, then 
+	\begin{align*}
+		f(x) = \sum_{[\pi] \in \G} d_\pi \tr(\widehat{f}(\pi)\pi(x))
+	\end{align*}
+	\label{invcompI}
+\end{proposition}
+\begin{proof}
+	Follows from the identity in \Cref{L2fcomp} and the calculation above.
+\end{proof}
+This also gives us the Parseval equation:
+\begin{align*}
+	\lv f \rv_2^2 \sum_{[\pi]\in \G}\sum_{1 \leq i,j \leq d_\pi} \frac{|c_{ij}^\pi|^2}{d_\pi}=\sum_{[\pi]\in\G} d_\pi \tr(\widehat{f}(\pi)^* \widehat{f}(\pi)),
+\end{align*}
+for all $f \in L^2(G)$. In the Abelian case, the Fourier Transformation took values in the function space $C_0$, but in the non-Abelian case we're not so lucky, since it is pointwise an operator on some Hilbert space. However, it is easy to see that the map $\F_{\pi} \colon f \mapsto \widehat{f}(\pi)$, $[\pi] \in \G$, is linear for each $[\pi] \in \G$, $x \in G$ and $f,g \in L^1(G)$ satisfies 
+\begin{align*}
+	\F_\pi(f \ast g)&=\F_\pi(g) \F_\pi(f)\\
+	\F_\pi(f^*)&=\widehat{f}(\pi)^*\\
+	\F_\pi(L_x f) &= \F_\pi \pi(x^{-1})\\
+	\F_\pi(R_x f) &= \pi(x) \F_\pi(f),
+\end{align*}
+just as in the Abelian case.
+\begin{definition}
+	For $[\pi] \in \G$, we define the \emph{character} $\chi_{[\pi]}$ of $\pi$ to be the function
+	\begin{align*}
+		\chi_{[\pi(x)]}=\tr(\pi(x)).
+	\end{align*}
+	\label{chardef}
+\end{definition}
+This is well-defined since unitary equivalence does not change the trace of a matrix, and the trace does not depend on the basis. We may then reformulate our inversion theorem:
+\begin{proposition}[Compact Fourier Inversion Formula II]
+	For $f \in L^2(G)$, then 
+	\begin{align*}
+		f(x)=\sum_{[\pi]\in\G} d_\pi f \ast \chi_{[\pi]}(x), \ x \in G.
+	\end{align*}
+\end{proposition}
+\begin{proof}
+	It follows from \Cref{invcompI}, since
+	\begin{align*}
+		\tr(\widehat{f}(\pi)\pi(x))=\tr\left( \int_G f(y) \pi(y)^* \d y \pi(x) \right)&= \int_{G}f(y) \tr(\pi(y^{-1}) \pi(x) ) \d y\\
+		&= \int_G f(y) \tr(\pi(y^{-1}x) \d y = f \ast \chi_{[\pi]}(x),
+	\end{align*}
+	for all $f \in L^2(G)$, $[\pi] \in \G$ and $x \in G$.
+\end{proof}
+And this concludes this adventure into the theory of Fourier Analysis on compact groups.
+\chapter{Appendix A}
+\sssection{Weak integrals}
+In this appendix we will go through the construction of a so called \textit{weak} integral. For the following, we let $\mathcal{V}$ denote a locally convex topological vector space with dual space $\mathcal{V}^*$. And we will let $(X,\mu)$ denote an arbitrary measure space.
+f
+)\begin{definition}
+	A function $f \colon X \to \mathcal{X}$ is called \emph{weakly integrable} if $\varphi \circ f \in L^1(X,\mu)$ for all $ \varphi \in \mathcal{V}^*$. If there is a is a vector $v \in \mathcal{V}$ such that
+	\begin{align*}
+		\varphi(v) = \int_X  \varphi \circ f(x) \d \mu(x) \text{ for all } \varphi \in \mathcal{V}^*,	
+	\end{align*}
+	we say that $f$ is \emph{weakly integrable with integral $v$}, and we will write $v=\int f \d \mu$.
+\end{definition}
+Note that since $\mathcal{V}^*$ separates points, if $\int f \d \mu$ exists, it must be unique.
+\begin{lemma}
+	Let $f \colon X \to \mathcal{V}$ be weakly integrable with integral $\int f \d \mu$. Assume that $\mathcal{W}$ is a locally convex topological vector space and $T \colon  \mathcal{V} \to \mathcal{W}$ is a bounded linear map, then $T \circ f$ is weakly integrable with integral $\int T \circ f \d \mu$.
+	\label{intcom}
+\end{lemma}
+\begin{proof}
+	Note that being bounded and continuous, $\varphi \circ T \in \mathcal{V}^*$ for all $\varphi \in \mathcal{W}^*$, hence
+	\begin{align*}
+		(\varphi \circ T) \left( \int f \d \mu \right) = \int_X \varphi \circ (T \circ f)(x) \d \mu(x) \text{ for all } \varphi \in \mathcal{W}^*,
+	\end{align*}
+implying that the integral of $T \circ f$ exists and is in fact given by
+\begin{align*}
+	T\underbrace{\left( \int f \d \mu \right)}_{\in \mathcal{V}}= \int T \circ f \d \mu.
+\end{align*}
+\end{proof}
+The following theorem is a combination of Theorem 3.27 and 3.29 from Rudin. It is included for completeness, but we will not prove it - for we will need a slightly modified version of it.
+\begin{theorem}
+	Suppose that $\mathcal{V}$ is a Fŕechet space and $\mu$ is a Radon measure on a locally compact Hausdorff space $X$. If $f \colon X \to \mathcal{V}$ is continuous with compact support, then the $f$ is weakly integrable and its integral $\int f \d \mu$ exists with $\int f \d \mu \in \overline{\mathrm{span}F(X)}$. 
+
+\indent	Morever, if we assume that $\mathcal{V}$ is a Banach space, then we also have the estimate
+	\begin{align}
+		\lv \int f \d \mu \rv_\mathcal{V} \leq \int_X \lv f(x) \rv \d \mu(x).
+		\label{A3.2}
+	\end{align}
+	\label{A3.1}
+\end{theorem}
+We will instead, since we can't always rely on $f$ having being continuous with compact support, have the following:
+\begin{theorem}
+	Let $\mathcal{V}$ be a Banach space and $\mu$ a Radon measure on a locally compact Hausdorff space $X$. If $g \in L^1(X,\mu)$ and $T \colon X \to \mathcal{V}$ is bounded and continuous, then $gT\colon X \to \mathcal{V}$, $x \mapsto g(x) T(x)$, is weakly integrable and its integral, $\int gT \d \mu$, exists with $\int gT \d \mu \in \overline{\mathrm{span}T(X)}$, and
+	\begin{align}
+		\lv \int gT \d \mu \rv \leq \sup_{x \in X} \lv H(x) \rv \lv g \rv_1.
+		\label{A3.4}
+	\end{align}
+	\label{A3.3}
+\end{theorem}
+\begin{proof}
+	Note that $\varphi \circ T$ is bounded and continuous for each $\varphi \in \mathcal{V}^*$, hence an element of $L^\infty(X,\mu)$ which acts on $L^1(X,\mu)$ by pointwise multiplication. Hence we see that
+	\begin{align*}
+		\varphi( (gT)(x))=\varphi(g(x)T(x))=g(x)\varphi(T(x)), \ x \in X, 
+	\end{align*}
+	implies that $\varphi \circ (gT)=g(\varphi \circ T) \in L^1(X,\mu)$. Since $C_c(X)$ is dense in $L^1(X,\mu)$, let $(g_n)_{n \geq 1} \subseteq C_c(X)$ such that $g_n \to g$. Then we have
+	\begin{align*}
+		\int_X \lv g_n T (x) - g_m T(x) \rv \d \mu(x) \leq \lv T \rv_\infty \lv g_n-g_m\rv_1 \to 0, \text{ as } n,m \to \infty.
+	\end{align*}
+	By \Cref{A3.1}, we know that $g_n T$ is weakly integrable with integral $\int g_n T \d \mu \in \overline{\mathrm{span}T(X)}$, and using \Cref{A3.2} and the above, we see that the sequence 
+	\begin{align*}
+		(\int g_n T \d \mu)_{n \in \N} \subset V,
+	\end{align*}
+	is Cauchy, hence convergent. Denote by $v$ the limit of $\int g_n T \d \mu$, then for all $\varphi \in \mathcal{V}^*$, we have
+	\begin{align*}
+		\varphi(v) = \lim_{n \to \infty} \varphi\left(\int g_n T \d \mu\right) = \lim_{n \to \infty} \int_X (\varphi \circ g_nT)(x) \d \mu(x).
+	\end{align*}
+	We conclude, using the estimate
+	\begin{align*}
+		\int_X |(\varphi \circ g_nT-\varphi gT)(x)| \d \mu(x)&=\int_X |(g_n(x)-g(x))\varphi(T(x))|\d \mu(x) \\
+		&\leq  \lv \varphi \circ T\rv_\infty \lv g_n-g\rv_1 \to 0,
+	\end{align*}
+	that the integral $\int gT \d \mu$ exists with $v=\int gT \d \mu$, and the theorem follows. 
+\end{proof}
+
+
+\printbibliography
+
+
+\end{document}
+

@@ -1,0 +1,261 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.6 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{blackadar}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Blackadar}{B.}%
+     {Bruce}{B.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer Science \& Business Media}%
+  }
+  \strng{namehash}{BB1}
+  \strng{fullhash}{BB1}
+  \field{labelalpha}{Bla06}
+  \field{sortinit}{B}
+  \field{title}{Operator algebras: theory of C*-algebras and von Neumann
+  algebras}
+  \field{volume}{122}
+  \field{year}{2006}
+\endentry
+
+\entry{brown2008c}{book}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Brown}{B.}%
+     {Nathanial~Patrick}{N.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ozawa}{O.}%
+     {Narutaka}{N.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {American Mathematical Soc.}%
+  }
+  \strng{namehash}{BNPON1}
+  \strng{fullhash}{BNPON1}
+  \field{labelalpha}{BO08}
+  \field{sortinit}{B}
+  \field{title}{C*-algebras and finite-dimensional approximations}
+  \field{volume}{88}
+  \field{year}{2008}
+\endentry
+
+\entry{bko}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Breuillard}{B.}%
+     {Emmanuel}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kalantar}{K.}%
+     {Mehrdad}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kennedy}{K.}%
+     {Matthew}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ozawa}{O.}%
+     {Narutaka}{N.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{BE+1}
+  \strng{fullhash}{BEKMKMON1}
+  \field{labelalpha}{Bre+14}
+  \field{sortinit}{B}
+  \field{title}{C*-simplicity and the unique trace property for discrete
+  groups}
+  \field{journaltitle}{arXiv preprint arXiv:1410.2518}
+  \field{year}{2014}
+\endentry
+
+\entry{de2007simplicity}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {De~La~Harpe}{D.~L.~H.}%
+     {Pierre}{P.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Oxford University Press}%
+  }
+  \strng{namehash}{DLHP1}
+  \strng{fullhash}{DLHP1}
+  \field{labelalpha}{DLH07}
+  \field{sortinit}{D}
+  \field{number}{1}
+  \field{pages}{1\bibrangedash 26}
+  \field{title}{On simplicity of reduced C*-algebras of groups}
+  \field{volume}{39}
+  \field{journaltitle}{Bulletin of the London Mathematical Society}
+  \field{year}{2007}
+\endentry
+
+\entry{folland2013real}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Folland}{F.}%
+     {Gerald~B}{G.~B.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {John Wiley \& Sons}%
+  }
+  \strng{namehash}{FGB1}
+  \strng{fullhash}{FGB1}
+  \field{labelalpha}{Fol13}
+  \field{sortinit}{F}
+  \field{title}{Real analysis: modern techniques and their applications}
+  \field{year}{2013}
+\endentry
+
+\entry{furman2003minimal}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Furman}{F.}%
+     {Alex}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer}%
+  }
+  \strng{namehash}{FA1}
+  \strng{fullhash}{FA1}
+  \field{labelalpha}{Fur03}
+  \field{sortinit}{F}
+  \field{number}{1}
+  \field{pages}{173\bibrangedash 187}
+  \field{title}{On minimal, strongly proximal actions of locally compact
+  groups}
+  \field{volume}{136}
+  \field{journaltitle}{Israel Journal of Mathematics}
+  \field{year}{2003}
+\endentry
+
+\entry{haagerup2015new}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Haagerup}{H.}%
+     {Uffe}{U.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{HU1}
+  \strng{fullhash}{HU1}
+  \field{labelalpha}{Haa15}
+  \field{sortinit}{H}
+  \field{title}{A new look at C*-simplicity and the unique trace property of a
+  group}
+  \field{journaltitle}{arXiv preprint arXiv:1509.05880}
+  \field{year}{2015}
+\endentry
+
+\entry{MI}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Hansen}{H.}%
+     {Ernst}{E.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {University of Copenhagen}%
+  }
+  \strng{namehash}{HE1}
+  \strng{fullhash}{HE1}
+  \field{labelalpha}{Han06}
+  \field{sortinit}{H}
+  \field{title}{Measure theory}
+  \field{year}{2006}
+\endentry
+
+\entry{le2015c}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Le~Boudec}{L.~B.}%
+     {ADRIEN}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{LBA1}
+  \strng{fullhash}{LBA1}
+  \field{labelalpha}{LB15}
+  \field{sortinit}{L}
+  \field{title}{C*-simplicity and the amenable radical}
+  \field{journaltitle}{arXiv preprint arXiv:1507.03452}
+  \field{year}{2015}
+\endentry
+
+\entry{rudin1991functional}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Rudin}{R.}%
+     {Walter}{W.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {McGraw-Hill, Inc., New York}%
+  }
+  \strng{namehash}{RW1}
+  \strng{fullhash}{RW1}
+  \field{labelalpha}{Rud91}
+  \field{sortinit}{R}
+  \field{title}{Functional analysis. International series in pure and applied
+  mathematics}
+  \field{year}{1991}
+\endentry
+
+\entry{zhu}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Zhu}{Z.}%
+     {Kehe}{K.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {CRC press}%
+  }
+  \strng{namehash}{ZK1}
+  \strng{fullhash}{ZK1}
+  \field{labelalpha}{Zhu93}
+  \field{sortinit}{Z}
+  \field{title}{An introduction to operator algebras}
+  \field{volume}{9}
+  \field{year}{1993}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput

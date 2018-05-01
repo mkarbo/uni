@@ -1,0 +1,9 @@
+\beamer@endinputifotherversion {3.36pt}
+\beamer@sectionintoc {1}{Introduction, history and motivation}{3}{0}{1}
+\beamer@sectionintoc {2}{An introduction to various topics}{10}{0}{2}
+\beamer@subsectionintoc {2}{1}{Group $C^*$-algebras}{11}{0}{2}
+\beamer@subsectionintoc {2}{2}{Amenability}{20}{0}{2}
+\beamer@subsectionintoc {2}{3}{Group actions and the Reduced crossed product}{25}{0}{2}
+\beamer@subsectionintoc {2}{4}{Dixmier property}{28}{0}{2}
+\beamer@sectionintoc {3}{Boundary actions}{33}{0}{3}
+\beamer@sectionintoc {4}{$C^*$-simplicity using boundary actions}{66}{0}{4}

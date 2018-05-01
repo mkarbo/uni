@@ -1,0 +1,683 @@
+\documentclass[10pt,twoside,openany,final]{memoir}
+\usepackage[utf8]{inputenc}
+\usepackage[pass]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[danish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[style=authoryear,backend=bibtex]{biblatex}
+\usepackage{filecontents}
+\usepackage[english, status=draft]{fixme}
+\fxusetheme{color}
+\usepackage{cleveref} 
+\usepackage[backgroundcolor=cyan]{todonotes}
+\usepackage{wallpaper}
+
+\addtolength{\textwidth}{30pt}
+\addtolength{\foremargin}{-30pt}
+\checkandfixthelayout
+
+\title{Reflexivity in Banach spaces}
+\author{Malthe Munk Karbo & Magnus Kristensen}
+
+\setlength{\parindent}{2em}
+\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{1}
+
+
+\newtheoremstyle{break}
+	{\topsep}{\topsep}
+	{\itshape}{}
+	{\bfseries}{}
+	{\newline}{}
+\theoremstyle{break}
+\newtheorem{theorem}[section]{Theorem}
+\newtheorem{lemma}[section]{Lemma}
+\newtheorem{proposition}[section]{Proposition}
+\newtheorem{corollary}[section]{Corollary}
+\newtheorem{definition}[section]{Definition}
+\newtheoremstyle{Break}
+	{\topsep}{\topsep}
+	{}{}
+	{\bfseries}{}
+	{\newline}{}
+\theoremstyle{Break}
+\newtheorem{example}[section]{Example}
+\newtheorem{remark}[section]{Remark}
+\newtheorem{note}[section]{Note}
+\setcounter{secnumdepth}{0}
+\usepackage{xpatch}
+\xpatchcmd{\proof}{\ignorespaces}{\mbox{}\\\ignorespaces}{}{}
+%\newenvironment{Proof}{\proof \mbox{} \\ \\ *}{\endproof}
+
+\chapterstyle{thatcher}
+
+
+\makepagestyle{abs}
+    \makeevenhead{abs}{}{}{}
+    \makeoddhead{abs}{}{}{}
+    \makeevenfoot{abs}{}{\scshape I }{}
+    \makeoddfoot{abs}{}{\scshape  I }{}
+    %\makeheadrule{abs}{\textwidth}{\normalrulethickness}
+    %\makefootrule{abs}{\textwidth}{\normalrulethickness}{\footruleskip}
+\pagestyle{abs}
+
+
+\makepagestyle{cont}
+    \makeevenhead{cont}{}{}{}
+    \makeoddhead{cont}{}{}{}
+    \makeevenfoot{cont}{}{\scshape II }{}
+    \makeoddfoot{cont}{}{\scshape  II }{}
+    %\makeheadrule{abs}{\textwidth}{\normalrulethickness}
+    %\makefootrule{abs}{\textwidth}{\normalrulethickness}{\footruleskip}
+\pagestyle{cont}
+
+\newcommand{\lv}{\lVert}
+\newcommand{\rv}{\rVert}
+
+
+\renewcommand\chaptermarksn[1]{}
+\nouppercaseheads
+\createmark{chapter}{left}{shownumber}{}{.\space}
+\makepagestyle{dut}
+    \makeevenhead{dut}{\scshape\rightmark}{}{\scshape\leftmark}
+    \makeoddhead{dut}{\scshape\leftmark}{}{\scshape\rightmark}
+    \makeevenfoot{dut}{}{\scshape $-$ \thepage\ $-$}{}
+    \makeoddfoot{dut}{}{\scshape $-$ \thepage\ $-$}{}
+    \makeheadrule{dut}{\textwidth}{\normalrulethickness}
+    \makefootrule{dut}{\textwidth}{\normalrulethickness}{\footruleskip}
+\pagestyle{dut}
+
+\makepagestyle{chap}
+    \makeevenhead{chap}{}{}{}
+    \makeoddhead{chap}{}{}{}
+    \makeevenfoot{chap}{}{\scshape $-$ \thepage\ $-$}{}
+    \makeoddfoot{chap}{}{\scshape $-$ \thepage\ $-$}{}
+    \makefootrule{chap}{\textwidth}{\normalrulethickness}{\footruleskip}
+\copypagestyle{plain}{chap}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\mbr}{(X,\mathcal{A})}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\PP}{\mathcal{P}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\dd}{\partial}
+\newcommand{\ee}{\epsilon}
+\newcommand{\la}{\lambda}
+
+\makeatletter
+\newcommand{\Spvek}[2][r]{%
+  \gdef\@VORNE{1}
+  \left(\hskip-\arraycolsep%
+    \begin{array}{#1}\vekSp@lten{#2}\end{array}%
+  \hskip-\arraycolsep\right)}
+
+\def\vekSp@lten#1{\xvekSp@lten#1;vekL@stLine;}
+\def\vekL@stLine{vekL@stLine}
+\def\xvekSp@lten#1;{\def\temp{#1}%
+  \ifx\temp\vekL@stLine
+  \else
+    \ifnum\@VORNE=1\gdef\@VORNE{0}
+    \else\@arraycr\fi%
+    #1%
+    \expandafter\xvekSp@lten
+  \fi}
+\makeatother
+
+\newcommand{\K}{\mathbb{K}}
+\addtocontents{toc}{\protect\thispagestyle{empty}} 
+
+
+\title{Disposition til \\\textbf{Diskret Matematik}}
+\author{Malthe Munk Karbo '14}
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents*
+\pagenumbering{arabic}
+\chapter{Hele tal}
+\section*{Taleplan}
+\begin{enumerate}
+\item Definer de hele tal
+\item Definer en divisor
+\item DFP
+\item GDFP
+\item AFS
+\end{enumerate}
+\section*{Beviser}
+\begin{definition}[5]
+Et helt tal $d$ kaldes en \textbf{divisor} i et andet helt tal $a$, hvis det findes et helt tal $q$ så $dq=a$. Vi skriver $d|a$ og med det menes der at $d$ går op i $a$ og af er et \textbf{multiplum} af $d$.
+\end{definition}
+\begin{definition}[11]
+Et helt tal $a\geq 2$ kaldes et \textbf{primtal} såfremt det ikke har andre divisorer end de trvielle divisorer $\pm a$ og $\pm 1$.
+\end{definition}
+
+\begin{definition}[13]
+Hvis $d|a$ og $d|b$ siges $d$ at være en \textbf{fælles divisor} for $a,b$. Den største fælles divisor for $a,b \in \Z$ betegnes $(a,b)$. Hvis $(a,b)=1$ siges $a$ og $b$ at være \textbf{indbyrdes primiske}.
+\end{definition}
+
+\begin{proposition}[26, \textbf{Det fundamentale primtalslemma}]
+Hvis $a$ og $b$ er hele tal og $p$ er et primtal, da gælder
+\begin{align*}
+p|ab \iff p|a \ \text{eller} \ p|b.
+\end{align*}
+\begin{proof}
+Først vises $\Leftarrow$: Antag af $p|a$. Da findes $q \in \Z$ sådan at 
+\begin{align*}
+a=pq 
+\end{align*}
+Og vi ser at $ab=pqb \iff \frac{pqb}{p}=qb \in \Z$ 
+\end{proof}
+\end{proposition}
+
+\begin{proposition}[108, \textbf{Generelle fundamentale primtalslemma}]
+Hvis $a_{1},\dots,a_{n} \in Z$ og $p$ er et primtal, da gælder
+\begin{align*}
+p|a_{1}\cdots a_{n} \implies p|a_{i} \ \text{for et} 1 \leq i \leq n
+\end{align*}
+\begin{proof}
+For $n = 1$ gælder det. antag det gælder for $n$, altså hvis $a_{1},\dots,a_{n} \in \Z$ så gælder
+\begin{align*}
+p|a_{1}\cdots a_{n} \implies p|a_{i} \ \text{for et} 1 \leq i \leq n.
+\end{align*}
+Antag nu at $a_{1},\dots,a_{n+1} \in Z$ og $p|a_{1}\cdots a_{n+1}=(a_{1}\dots a_{n})a_{n+1}$. Pr. DFP har vi at 
+\begin{align*}
+p|(a_{1}\dots a_{n}) \ \text{eller} \ p|a_{n+1}
+\end{align*}
+Men per antagelse har vi 
+\begin{align*}
+p|a_{1} \ \text{eller}\ p|a_{2} \ \text{eller} \ \dots \ \text{eller}\ p|a_{n}
+\end{align*}
+og vi har da at 
+\begin{align*}
+p|a_{i}
+\end{align*}
+for eller andet $1\leq i \leq n+1$
+\end{proof}
+\end{proposition}
+\begin{proposition}[30, \textbf{Aritmetikkens fundamentalsætning}]
+Ethvert naturligt tal $n >1$ har en entydig primtalsopløsning, i.e. $\exists! p_{1} \dots p_{s}$ s.t.
+\begin{align*}
+n=p_{1}p_{2}\cdots p_{s}
+\end{align*}
+\end{proposition}
+\chapter{Induktion}
+\section*{Taleliste}
+\begin{enumerate}
+\item Peanos axiomsystem
+\item simpel induktion
+\item fuldstændig induktion
+\end{enumerate}
+
+\section*{Beviser}
+\begin{definition}[\textbf{Peanos axiomsystem}]
+De naturlige tal er en mængde $\N$ med en funktion $S \colon \N \to \N$ s.t.
+\begin{enumerate}
+\item $1 \in \N$.
+\item For $n \in \N$ gælder der $1 \neq S(n)$.
+\item For $m,n \in \N$ gælder der $m\neq n \implies S(n) \neq S(m)$.
+\item \textbf{INDUKTIONSAKSIOMET} Hvis $A \subseteq \N$ har egenskaberne $1 \in A$ og $m \in A \implies S(m) \in A$ så gælder $A=\N$.
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}[Simpel induktion]
+Lad $p(x)$ være et prædikat i $x$ som løber over $\N$. Hvis der gælder for $p(x)$ at
+\begin{enumerate}
+\item $p(1)$ er sand,
+\item for alle $m \in \N$ kan man af $p(m)$ slutte $p(m+1)$,
+\end{enumerate}
+da gælder $p(n)$ for alle $n \in \N$
+\begin{proof}
+Lad $p(x)$ være et prædikat i $x$ over $\N$. Antag $p(1)$ er sand samt $p(m) \implies p(m+1)$ for alle $m \in \N$. Hvis 
+\begin{align*}
+A= \{ n \in \N | p(n) \text{ er sand} \}
+\end{align*}
+opfylder $A \subseteq \N$ induktionsaksiomet:
+\begin{align*}
+1 \in A, \quad  m \in A \implies S(m)=m+1 \in A
+\end{align*} 
+så $A=\N$ og $p(n)$ er sand for alle $n \in \N$.
+\end{proof}
+\end{proposition}
+
+
+\begin{proposition}[\textbf{Fuldstændig induktion}]
+Hvis $p(x)$ er et prædikat i $x$ over $\N$ og
+\begin{enumerate}
+\item $p(1)$ er sand
+\item for alle $m \in \N$ kan man af $p(1), \dots , p(m)$ slutte $p(m+1)$.
+\end{enumerate}
+Da er $p(n)$ sand for alle $n \in \N$.
+\begin{proof}
+lad $p(x)$ være et prædikat i $x \in \N$ og antag at $p(1)$ er sand og at man af $p(1), \dots , p(m)$ kan slutte $p(m+1)$. Betragt
+\begin{align*}
+q(n) = (\forall k \in \N \colon k \leq n \implies p(k)).
+\end{align*}
+Hvis $q(n)$ er sand for $n \in \N$ har vi at $k \leq n$ medfører $p(k)$ er sand for alle $k \in \N$, og da $n \leq n$ er $p(n)$ da sand.
+$q(1)$ er sand da $\forall k \leq 1 \implies p(k)$ er sand da $k \leq 1 \implies k = 1$ og $p(1)$ er sand. Antag nu er $q(m)$ er sand for $m$. Da $k \leq m$ er sandt for $k = 1, 2 , \dots , m$ har vi $p(k)$ for $k = 1, 2 , \dots , m$. pr. antagelse kan vi nu slutte $p(m+1)$. Men så har vi
+\begin{align*}
+k \leq m+1 \implies p(k)
+\end{align*} 
+og så har vi $q(m+1)$
+\end{proof}
+\end{proposition}
+
+\chapter{Mængdelærer}
+\section*{Taleliste}
+\begin{enumerate}
+\item Definition af ens mængder
+\item Eksistens og entydighed af den tomme mængde $\emptyset$
+\item Distributive love
+\item De Morgan's love
+\end{enumerate}
+
+\section*{Beviser}
+\begin{definition}
+Lad $A,B$ være mængder. Da er $A=B$ hvis
+\begin{align*}
+x \in A \iff x \in B.
+\end{align*}
+\end{definition}
+
+\begin{proposition}[Eksistens og entydighed af den tomme mængde]
+Der eksisterer præcist én mængde uden nogen elementer
+\begin{proof}
+Lad $A,B$ være tomme mængder. Da er $A=B$ for udsagnene
+\begin{align*}
+x \in A, \quad x \in B
+\end{align*}
+er begge falske for alle $x$.
+\end{proof}
+\end{proposition}
+
+\begin{definition}
+For delmængder $A,B \subseteq X$ har vi følgende notationer
+\begin{align*}
+A \cap B &:= \{ x \in X \colon x \in A \ \text{and} \ x \in B\}\\
+A \cup B &:= \{ x \in X \colon x \in A \ \text{or} \ x \in B\}\\
+A \subseteq B \ &\text{hvis} \ x \in A \implies x \in B\\
+A \backslash B &:= \{ x \in X \colon x \in A \ \text{and} \ x \ni B\}\\
+A^c &:= X \backslash A
+\end{align*}
+\end{definition}
+
+\begin{proposition}[Distributive love]
+For $A,B,C$ mængder gælder
+\begin{align*}
+A \cap (B \cup C)&=(A \cap B) \cup (A \cap C)\\
+A \cup (B \cap C)&= (A \cup B) \cap (A \cup C)
+\end{align*}
+\end{proposition}
+
+\begin{proposition}[Distributive lovea]
+For en mængde $A$ og end familie af mængder $\{B_{i}\}_{i \in I}$ gælder
+\begin{align*}
+A \cap  \left(\bigcup_{i \in I}B_{i}\right)&= \bigcup_{i \in I}(A \cap B_{i})\\
+A \cup  \left(\bigcap_{i \in I}B_{i}\right)&= \bigcap_{i \in I}(A \cup B_{i})
+\end{align*}
+\begin{proof}
+Viser $\displaystyle A \cap  \left( \bigcup_{i \in I} B_{i} \right)= \bigcup_{i \in I}(A \cap B_{i})$:
+\begin{align*}
+x \in A \cap  \left(\bigcup_{i \in I}B_{i}\right)& \iff (x \in A) \ \text{and} \ (x \in \bigcup_{i \in I} B_{i}) \\
+&\iff (x \in A) \ \text{and} \ (\exists i \in I \colon x \in B_{i})\\
+&\iff \exists i \in I \colon (x \in A) \ \text{and} \ (x \in B_{i})\\
+&\iff \exists i \in I \colon x \in A \cap B_{i}\\
+& \iff x \in \bigcup_{i \in I}(A \cap B_{i}).
+\end{align*}
+Bevises for den anden identitet forløber analogt.
+\end{proof}
+\end{proposition}
+
+\begin{proposition}[De morgan's love]
+Lad $X$ være en mængde og $\{ B_{i}\}_{i \in I} \subseteq X$ være en familie af delmængder af $X$. da gælder:
+\begin{align*}
+X \backslash \left( \bigcup_{i \in I} B_{i} \right) &= \bigcap_{i \in I} (X \backslash B_{i})\\
+X \backslash \left( \bigcap_{i \in I} B_{i} \right) &= \bigcup_{i \in I} (X \backslash B_{i}).
+\end{align*}
+\begin{proof}
+For den første, lad $X$ og $\{ B_{i}\}_{i \in I} \subseteq X$ som antaget. og vi ser
+\begin{align*}
+x \in X \backslash \left( \bigcup_{i \in I} B_{i} \right) &\iff x \in X \ \text{and} \ x \not\in \bigcup_{i \in I} B_{i}\\
+& \iff x \in X \ \text{and} \ \forall i \in I \colon x \not\in B_{i} \\
+&\iff \forall i \in I \colon x \in X \ \text{and} \ x \not\in B_{I}\\
+&\iff \forall i \in I \colon x \in X \backslash B_{i} \\
+&\iff x\in \bigcap_{i \in I} (X \backslash B_{i})
+\end{align*}
+Beviset for den anden identitet forløber analogt.
+\end{proof}
+\end{proposition}
+
+\chapter{Ækvivalensreltationer}
+\section*{Taleliste}
+\begin{enumerate}
+\item En relation som delmængde
+\item Definition på ækvivalensreltation
+\item Definition på ækvivalensklasser
+\item Sætning om entydighed af ækvivalensklasser
+\item Definition på en klassedeling
+\item Sætning: $M /_{\sim}$ er en klassedeling for alle $\sim$ ækvivalensrelationer
+\end{enumerate}
+\section*{Beviser}
+\begin{definition}[Relation som delmængde af kartesisk produkt]
+For to mængde $A,B$ er en relation $R \subseteq A \times B$. Den kan have forskellige egenskaber.
+\end{definition}
+
+\begin{definition}[\textbf{Ækvivalensrelationer}]
+En relation $\sim \subseteq A \times A$ er en ækvivalensrelation hvis den er \textbf{refleksiv, symmestrisk og transitiv}, i.e. hvis:
+\begin{enumerate}
+\item Refleksiv: $\forall x \in A \colon x \sim x$.
+\item Symmetri: $x \sim y \implies y \sim x$.
+\item Transitivitet: $(x \sim y)$ og $(y \sim z)$ medfører $x \sim z$
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[\textbf{Ækvivalensklasser}]
+Hvis $\sim$ er en ækvivalensrelation på $A$. For $a \in A$ definerer vi mængden 
+\begin{align*}
+[a] = \{ x \in A \colon x \sim a\},
+\end{align*}
+som vi betegner med ækvivalensklassen for $a$. Dette giver mening, da $\forall a \in A$ gælder der $a \sim a$ så  $\forall a \in A \colon [a] \neq \emptyset$.
+\end{definition}
+
+\begin{proposition}
+Lad $\sim$ være en ækvivalensrelation på en mængde $A$. For $a,b \in A$ gælder der
+\begin{align*}
+[a]=[b] \iff a \sim b
+\end{align*}
+\begin{proof}
+$" \Rightarrow "$: Antag $[a]=[b]$. Da $a \in [b]$ gælder der $a \sim b$. $"\Leftarrow"$: Lad $a,b \in A$ med $a \sim b$. Da $a \in [a]$ samt $a \sim b$ gælder $a \in [b]$.    
+\end{proof}
+\end{proposition}
+
+\begin{definition}[Klassedeling (\textbf{Partitioning})]
+En familie $\Omega$ af ikke tomme delmængder af en mængde $M$ kaldes en \textbf{klassedeling} af $M$ hvis elementerne i $\Omega$ er parvist disjunkte og foreningen er lig $M$, i.e.
+\begin{enumerate}
+\item $\forall A \in \Omega \colon A \neq \emptyset$
+\item $\forall A,B \in \Omega \colon A=B$ eller $A \cap B = \emptyset$
+\item $\displaystyle \bigcup_{ A \in \Omega}A =M$ 
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}[Ækvivalensklasser udgør klassedeling]
+Lad $\sim$ være en ækvivalensrelation på $M$. Da udgør ækvivalensklasserne $(M/_{\sim})$ en klassedeling af $M$. 
+\begin{proof}
+For $a \in M$ gælder  der $a \in [a]$ ($a \sim a$), så elementerne i $(M/_{\sim})$ er ikke tomme. Pr. tidligere bevis har vi at $[a]=[b]$ eller $[a] \cap [b]=\emptyset$ for alle $a,b \in M$. For at vise $\displaystyle \bigcup_{a \in M} [a]=M$ viser vi inklusion to veje.
+\begin{align*}
+\forall a \in M \colon [a] \subset M \implies \bigcup_{a \in M} [a] \subset M.\\
+a \in M \implies a \in [a] \implies a \in \bigcup_{a \in M} [a]
+\end{align*}
+Som ønsket.
+\end{proof}
+\end{proposition}
+
+\chapter{Afbildninger}
+\section*{Taleliste}
+\begin{enumerate}
+\item Definition på en relation 
+\item surjektivitet og injektivitet
+\item billedmængde
+\item sætning om  billede af forening og billede af fællesmængde
+\item evt modbeviser til sætningen ovenover
+\end{enumerate}
+
+\section*{Beviser}
+\begin{definition}[Afbildning]
+Givet to mængder $A,B$ sige en relation $f \subseteq A \times B$ at være en afbildning hvis
+\begin{enumerate}
+\item Hvis $a \in A$ så eksisterer $b \in B$ sådan at $afb$.
+\item Hvis $a \in A$ og $b_{1},b_{2} \in B$ sådan at $afb_{1}$ og $afb_{2}$ må $b_{1}=b_{2}$. 
+\end{enumerate}
+En relation som opfylder disse skrives $f \colon A \to B$.
+\end{definition}
+
+\begin{definition}[Surjektivitet]
+En afbildning $f \colon A \to B$ siges at være \textbf{surjektiv} hvis givet $b \in B$ så eksisterer et $a \in A$ sådan at
+\begin{align*}
+f(a)=b.
+\end{align*}
+\end{definition}
+
+\begin{definition}[injektivitet]
+En afbildning $f \colon A \to B$ siges at være \textbf{injektiv} hvis givet der gælder for alle $x,y \in A$ at 
+\begin{align*}
+f(x)=f(y) \implies x=y
+\end{align*}
+\end{definition}
+
+\begin{definition}[Bijektivitet]
+En afbildning $f \colon A \to B$ siges at være bijektiv hvis den både er injektiv og surjektiv
+\end{definition}
+
+\begin{definition}[Billedmængde]
+For en afbildning $f \colon A \to B$ defineres billedmængden for $f$ af en delmængde $M \subseteq A$ ved
+\begin{align*}
+f(M):=\{ y \in B \colon \exists x \in M \ f(x)=y \}
+\end{align*}
+\end{definition}
+
+\begin{proposition}[Billedmængde inklusioner]
+For en funktion $f \colon X \to Y$ og en familie af delmængder $\{ T_{i}\}_{i \in I} \subseteq X$ gælder der
+\begin{enumerate}
+\item $\displaystyle f(\bigcup_{i \in I} T_{i}) = \bigcup_{i \in I} f(T_{i})$.
+\item $\displaystyle f(\bigcap_{i \in I} T_{i}) \subseteq \bigcap_{i \in I} f(T_{i})$.
+\end{enumerate}
+\begin{proof}
+\textbf{(1)}: \begin{align*}
+y \in f(\bigcup_{i \in I} T_{i}) &\iff \exists x \in X \colon x \in \bigcup_{i \in I} T_{i} \ \text{and} \ f(x)=y\\
+&\iff \exists x \in X \exists i \in I \colon x \in T_{i} \ \text{and} \ f(x)=y \\
+&\iff \exists i \in I \exists x \in X \colon x \in T_{i} \ \text{and} \ f(x)=y\\
+&\iff \exists i \in I \colon y \in f(T_{i})\\
+&\iff y \in \bigcup_{i \in I} f(T_{i}):
+\end{align*}
+\textbf{(2)}: 
+\begin{align*}
+y \in f(\bigcap_{i \in I} T_{i}) &\iff \exists x \in X \colon x \in \bigcap_{i \in I} T_{i} \ \text{and} \ f(x)=y\\
+&\iff \exists x \in X \forall i \in I \colon x \in T_{i} \ \text{and} \ f(x)=y\\
+&\implies \forall i \in I \exists x \in X \colon x \in T_{i} \ \text{and} \ f(x)=y\\
+&\iff \forall i \in I \colon y \in f(T_{i}) \\
+&\iff y \in \bigcap_{i \in I} f(T_{i}).
+\end{align*}
+\end{proof}
+\end{proposition}
+
++ evt. modbevis til (2)
+
+\chapter{Kombinatorik og tællemetoder}
+\section*{Taleliste}
+\begin{enumerate}
+\item Definer kardinalitet
+\item Sætning om kardinalitet af disjunkte mængder $A,B$
+\item Sætning om kardinalitet af $A \times B$ (modificeret bevis)
+\item Sætning ovenover for $A_{1} \times A_{2} \times \dots \times A_{n}$.
+\end{enumerate}
+
+\section*{Beviser}
+\begin{definition}[Kardinalitet]
+For en mængde $A$ skriver vi $|A|$ om $A's$ kardinalitet.
+\end{definition}
+
+\begin{proposition}[kardinalitet af disjunkte mængder]
+For to endelige mængder $A,B$ som er disjunkte gælder der
+\begin{align*}
+|A \cup B| = |A|+|B|.
+\end{align*}
+\begin{proof}
+For $A,B$ med $|A|=n, |B|=m$ er der bijektive afbildninger $f \colon A \to \{1,\dots,n\}$ og $g \colon B \to \{1,\dots,m\}$. Sæt
+\begin{align*}
+h(x)=\begin{cases}
+f(x) & x \in A \\
+m+g(x) & x \in B
+\end{cases}
+\end{align*}.
+$h \colon A \cup B \to \{1,\dots,n+m\}$ bijektivt.
+\end{proof}
+\end{proposition}
+
+\begin{proposition}
+For to endelige mængder $A \times B$ gælder der
+\begin{align*}
+|A \times B|=|A||B|
+\end{align*}
+\begin{proof}
+Lad $|A|=n$ og $|B|=m$. Vi ser at 
+\begin{align*}
+A \times B = \bigcup_{1 \leq i \leq n}\{ (a_{i},b_{k})\}_{1 \leq k \leq m} 
+\end{align*}
+Samt at for $k \neq s$ gælder der $\{(a_{k},b_{j} \}_{1 \leq j \leq m} \cap \{ (a_{s},b_{j})\}_{1 \leq j \leq m}=\emptyset$. Mængderne er oplagt ikke tomme, da $A,B$ har kardinalitet $>0$. Derfor har vi pr. den additive tællemetode for parvist disjunkte mængder, at
+\begin{align*}
+|A \times B| = \sum_{j=1}^n |\{(a_{j},b_{k})\}_{1 \leq k \leq m}|=\sum_{j=1}^nm=nm=|A| |B|
+\end{align*}
+\end{proof}
+\end{proposition}
+\chapter{Permutationer}
+\section*{Taleliste}
+\begin{enumerate}
+\item Definition på en permutation $\sigma \colon A \to A$
+\item Sætning injektiv iff surjektiv *
+\item Definition på flytpunkter og fixpunkter
+\item Definition på en cykel
+\item Definition på en Bane
+\item sætning 412 - klassedeling baner
+\item Cykelsætningen*
+\end{enumerate}
+
+\section*{Beviser}
+\begin{definition}[Definition på en permutation]
+En bijektiv afbildning $\sigma \colon A \to A$ kaldes en permutation af mængden $A$
+\end{definition}
+
+\begin{definition}[Fix- og flyttepunkter]
+For en permutation $\sigma \colon A \to A$ defineres mængderne 
+\begin{align*}
+\text{fix}(\sigma):=\{ a \in A \colon a = \sigma(a)\} \quad \text{flyt}(\sigma):=\{a \in A \colon a \neq \sigma(a)\}
+\end{align*}
+\end{definition}
+
+\begin{definition}[Definition på en cykel]
+En $p$-cykel er en permutation $\sigma$ af længde $p$ hvor 
+\begin{align*}
+\sigma(a_{1})&=a_{2}\\
+\sigma(a_{2})&=a_{3}\\
+&\vdots\\
+\sigma(a_{p})&=a_{1}
+\end{align*}
+og den noteres med cykelnotation $\sigma=(a_{1} \ a_{2} \dots a_{p})$. Hvis $|A|=n > p$ er $\sigma(a_{i})=a_{i}$ for $p < i \leq n$. (TEGNING) 
+\end{definition}
+
+\begin{definition}[bane]
+Lad $\sigma$ være en permutation på en endelig mængde $A$. Da defineres banen for $a$ under $\sigma$ ved
+\begin{align*}
+B_{a}=\{a,\sigma(a),\sigma^2(a),\dots \}
+\end{align*}
+dvs hvis vi sætter $a:=a_{1}$ så udgør $B_{a}$ en fælge af $p$, nemlig $a_{1},a_{2},a_{3},\dots,a_{p}$ elementer hvor $p$ er længden af banen. Dertil ses det at en bane $B$ svarer til en cykel $\gamma$, nemlig $(a_{1} \ a_{2} \ \dots \ a_{p})$ med
+\begin{align*}
+\gamma(a)=\sigma(a) \ hvis \ a \in B\\
+\gamma(b) = b \ ellers
+\end{align*}
+Og vi får ydermere at 
+\begin{align*}
+a \in B_{b} \iff B_{a}=B_{b}
+\end{align*}
+\end{definition}
+
+\begin{proposition}[banerne for en permutation udgør en klassedeling på en endelig mængde $A$]
+Lad $\sigma$ være en permutation på en endelig mængde $A$. Da udgør banerne for $\sigma$ en klassedeling af $A$. Med andre ord
+\begin{enumerate}
+\item Banerne er ikke tomme
+\item Hvis to baner har et element tilfælles er de ens
+\item foreningsmængden af alle banerne er hele $A$
+\end{enumerate}
+\begin{proof}
+(1) og (3) følger direkte fra definitionen af banerne, da $\forall a \in A \colon a \in B_{a}$. \textbf{(2)}: hvis $c \in B_{a}$ og $c \in B_{b}$ da findes $m, n \in \N$ s.t. $c=\sigma^n(a)$ og $c=\sigma^m(b)$. for $m=n$ er vi færdige (injektivitet). Antag uden tab af generelitet at $m > n$. Da er 
+\begin{align*}
+\sigma^n (a)=\sigma^m (a)=\sigma^{m-n+n}(a)=\sigma^n(\sigma^{m-n}(b))
+\end{align*}
+og per injektivitet fås $a=\sigma^{m-n}(b)$ så $a \in B_{b}$ så $B_{a}=B_{b}$
+\end{proof}
+\end{proposition}
+
+\chapter{Ordningsrelationer}
+\section*{Taleliste}
+\begin{enumerate}
+\item Definition på en ordningsrelation
+\item Definition på en total ordningsrelation
+\item Definition på en majorant
+\item definition på supremum
+\item Sætning om supremum
+\end{enumerate}
+
+\section*{Beviser}
+\begin{definition}[Partiel ordning]
+En reltation $\leq \subseteq M \times M$ siges at være en partiel ordningsrelation hvis den er refleksiv, antisymmetrisk og transitiv, i.e., 
+\begin{enumerate}
+\item $\forall a \in M$ gælder $a \leq a$
+\item $\forall a,b \in M$ gælder $a \leq b$ og $b \leq a$ medfører $a=b$
+\item $\forall a,b,c \in M$ gælder $a \leq b$ og $b \leq c$ medfører $a \leq c$
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[Totalordning]
+Hvis $\leq$ er en partiel ordningsrelation på $M$ som opfylder 
+\begin{align*}
+\forall a,b \in M \colon a \leq b \ \text{ eller } \ b \leq a
+\end{align*}
+siges $\leq$ at være en total ordning på $M$.
+\end{definition}
+
+\begin{definition}[Majorant]
+Lad $A \subseteq (M,\leq)$ være en delmængde, da er $x \in M$ en majorant for $A$ hvis
+\begin{align*}
+\forall a \in A \colon a \leq x
+\end{align*}
+\end{definition}
+
+\begin{definition}[Supremum]
+Lad $A \subseteq(M,\leq)$. Et element $b \in M$ er et supremum for $A$ hvis
+\begin{enumerate}
+\item $b$ er en majorant for $A$
+\item $b$ er den mindste majorant for $A$. ($x$ majorant for $A$ medfører $b \leq x$)
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}[tilstrækkelige betingelser for supremum]
+Lad $A \subseteq (M,\leq)$ hvor $(M,\leq)$ er totalordnet. Da er $b=\sup A$ hvis og kun hvis
+\begin{enumerate}
+\item $b$ er en majorant for $A$
+\item $\forall x < b \ \exists a \in A \colon a >x$
+\end{enumerate}
+\begin{proof}
+\textbf{(1)} følger af antagelse. \textbf{(2)}. Vi har
+\begin{align*}
+B = \sup A &\iff (x \text{ er en majorant for $A \implies b \leq x$})\\
+&\iff (x \text{ er en majorant for } A \implies \neg (x < b)\\
+&\iff (x < b) \implies x \text{ ikke en majorant for A}\\
+&\iff \forall x < b \exists a \in A \colon a >x
+\end{align*}
+som ønsket.
+\end{proof}
+hvor der er brugt totalordning samt kontraposition
+\end{proposition}
+
+\chapter{Grupper og modulær aritmetik}
+\section*{Taleliste}
+\begin{enumerate}
+\item Definer komposition
+\item Associativitet og kommutivitet for komposition
+\item Definition gruppe
+\item $a \equiv b \ (mod \ n)$ ækvivalens relation på $\Z$
+\item $\Z / {n\Z}$ er en gruppe
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,131 @@
+\chapter{Amenability and The Amenable Radical}
+For a countable discrete group $G$, we denote by $\Prob(G)$ the space of all probability measures on $G$, i.e., 
+\begin{align*}
+\Prob(G)=\{ \mu \in \ell^1(G) \colon \mu \geq 0 \ \text{and} \ \sum_{g \in G} \mu(g)=1\}.
+\end{align*}
+
+For a set $\Omega$, a map $\mu \colon \mathcal{P}(\Omega) \to [0,1]$ is a finitely additive probability measure on $\Omega$ if $\mu(\Omega)=1$ and for disjoint sets $A,B \in \mathcal{P}(\Omega)$ we have $\mu(A \cupdot B) = \mu(A) + \mu(B)$. We denote by $PM(\Omega)$ the set of finitely additive probability measures on $\Omega$.
+
+\begin{definition}
+The left-translation action of $G$ on $\Prob(G)$ is defined by 
+\begin{align*}
+s.\mu(E):=\mu(s^{-1}E), s \in G,\ \mu \in \Prob(G), \ E \subseteq G.
+\end{align*}
+If $s.\mu=\mu$, then $\mu$ is said to be a left-invariant probability measure.
+\end{definition}
+
+\begin{definition}
+A group $G$ is \emph{amenable} if there exists a finitely additive left-invariant (or right-invariant) measure $\mu \colon \mathcal{P}(G) \to [0,\infty]$ such that $\mu(G)=1$
+\end{definition}
+\begin{remark}
+This is equivalent to saying that $G$ is amenable if and only if there exists a left-invariant state on $\mu \in \ell^{\infty}(G)$, where left-invariance if with respect to the left translation action on $\ell^{\infty}(G)$. Such a state is called an invariant mean.
+\end{remark}
+
+\begin{definition}
+We say that a group $G$ has an \emph{approximate invariant mean} if for any finite $E \subseteq G$ and $\varepsilon>0$ there is $\mu \in \Prob(G)$ such that
+\begin{align*}
+\max_{s \in E} \lv s.\mu - \mu \rv_1 < \varepsilon
+\end{align*}
+\end{definition}
+
+The following proposition is just a small snippet of equivalent conditions for a discrete group $G$ to be amenable.
+\begin{proposition}[\mbox{\cite[Theorem 2.6.8][50]{brown2008c}}]\label{2.6.8 amenab}
+For a discrete group $G$, the following are equivalent:
+\begin{enumerate}
+\item $G$ is amenable,
+\item $G$ has an approximate invariant mean.
+\end{enumerate}
+\end{proposition}
+
+\begin{proposition}\label{?? lol}
+If $G$ is a discrete group, then the following statements hold:
+\begin{enumerate}
+\item If $G$ is amenable, then any subgroup $H \leq G$ is amenable.
+\item If $N \trianglelefteq G$ is amenable and $G\bign/N$ is amenable, then $G$ is amenable.
+\item If $\left\{H_{i} \right\}_{i \in I}$ is a family of upward directed normal amenable subgroups of $G$, where upward directed means that for every $i,j \in I$ there is $k \in I$ such that $H_{i}, H_{j} \subseteq H_{k}$, then $\displaystyle H = {\bigcup_{i \in I} H_{i}}$ is an amenable subgroup of $G$.
+\end{enumerate}
+\begin{proof}
+\indent \textbf{(1)}: Let $H \leq G$. Using the Axiom of Choice, choose a right transversal $R \subseteq G$ of $H$, i.e., a set $R$ containing a representant for each coset of $H$. Let $\varepsilon>0$ be arbitrary and $E \subseteq H$ be any finite subset. By \Cref{2.6.8 amenab}, there is an approximate invariant mean $\mu \in \Prob(G)$ such that $\lv s .\mu - \mu \rv_1 \leq \varepsilon$, for all $s \in E$. Define $\tilde{\mu} \in \Prob(H)$ by
+\begin{align*}
+\tilde{\mu}(g)=\sum_{r \in R}\mu(gr).
+\end{align*}
+Then, for every $s \in E$, we have
+\begin{align*}
+\lv s.\tilde{\mu} - \tilde{\mu} \rv_1 &= \sum_{h \in H} |  \sum_{r \in R} s.\mu(hr)-\mu(hr)|\\
+&\leq \sum_{h \in H} \sum_{r \in R} |s.\mu(hr)-\mu(hr)|\\
+&\leq \lv s .\mu-\mu\rv_1<\varepsilon,
+\end{align*}
+since $\bigcup_{r \in R} \bigcup_{h \in H}\{hr\} \subseteq G$. Hence $\tilde{\mu}$ is an approximate invariant mean for $H$, and again by \Cref{2.6.8 amenab} we see that $H$ is amenable.
+
+\textbf{(2)}: Assume that $ N \trianglelefteq G$ is amenable and $G \bign/ N$ is amenable. Then there are left-invariant finitely additive probability measures $\mu,\nu$ on $N$ and respectively $G \bign/ N$. For each $A \subset G$ define $f_{A} \colon G \to [0,1] $ by $f_{A}(g)=\mu(N \cap g^{-1}A)$ for $g \in G$. Let $A \subset G$ and $a \in G$. Let $g,h \in [a] \in G \bign/ N$ be any two elements belonging to the coset of $a$, i.e., $g=an_{1}$ and $h=an_{2}$ for some $n_{1},n_{2} \in N$. We then see that
+\begin{align*}
+f_{A}(g)&=\mu(N \cap g^{-1}A)\\
+&=\mu(N\cap n_{1}^{-1}a^{-1} A)\\
+&=\mu(n_{1}^{-1} a^{-1} a n_{1} N \cap n_{1}^{-1} a^{-1} A)\\
+&=\mu(n_{1}^{-1} a^{-1} (a n_{1} N \cap A))\\
+&=\mu(a n_1 N \cap A)\\
+&=\mu(n_{2}^{-1} n_{1} N \cap n_{2}^{-1} a^{-1} A)\\
+&=\mu(N \cap n_{2}^{-1}a^{-1}A)\\
+&=f_{A}(h).
+\end{align*}
+So $f_{A}$ is well defined on left cosets of $N$, so we define $\tilde{f}_{A} \colon G \bign/ N \to [0,1]$ by
+\begin{align*}
+\tilde{f_A}([g])=f_A(g), [g] \in G \bign/ N.
+\end{align*} 
+Clearly $\tilde{f}_{G}([g])=1$, and if $A,B \subset G$ are disjoint sets, then, for all $g \in G$,
+\begin{align*}
+\tilde{f}_{A \cup B}([g])=\mu(N \cap g^{-1}(A \cup B)=\mu(N \cap g^{-1}A) + \mu(N \cap g^{-1}B)=\tilde{f}_{A}([g])+\tilde{f}_{B}([g]).
+\end{align*}
+Now, define a measure $\tau \colon \mathcal{P}(G) \to [0,\infty]$ by
+\begin{align*}
+\tau(A)&:=\int_{G / N} \tilde{f}_{A}  \diff \nu, \quad A \subseteq G,
+\end{align*}
+and since $G$ is discrete this becomes
+\begin{align*}
+\tau(A)=\sum_{[g] \in G/ N} \nu(\{[g]\}) \tilde{f}_{A}([g]), \quad A \subseteq G.
+\end{align*}
+By the above arguments we have that $\tau$ is finitely additive and $\tau(G)=1$. Moreover, we see that $\tau$ is also left-invariant, since for $h \in G$ we have, by abstract change of variable, that
+\begin{align*}
+\tau(hA)&=\int_{G / N} \tilde{f}_{hA}([g]) \diff \nu([g])\\
+&=\int_{G / N} \tilde{f}_{A}([h^{-1}g]) \diff \nu([g])\\
+&=\int_{G / N} \tilde{f}_{A}([g]) \diff \nu([h g])\\
+&=\int_{G / N} \tilde{f}_{A}([g]) \diff \nu([g])\\
+&\tau(A).
+\end{align*} 
+Therefore $G$ is amenable.
+
+\textbf{(3)} Suppose now that $\left\{H_{i} \right\}_{i \in I}$ is a family of upward directed amenable subgroups of $G$. Then $\displaystyle H:=\bigcup_{i \in I}H_i$ is a group, and for each $i \in I$ define 
+\begin{align*} 
+\mathcal{M}_{i}:=\{ \mu \colon \mathcal{P}(H) \to [0,1] \colon \mu \text{ is finitely additive and left }H_{i} \text{ invariant}\}.
+\end{align*}
+We identify $[0,1]^{\mathcal{P}(H)}$ by the space of functions $f \colon \mathcal{P}(H) \to [0,1]$ equipped with the product topology. Then each $\mathcal{M}_{i}$ is a closed subset of $[0,1]^{\mathcal{P}(H)}$. Denote by $\mu_{i}$ a finitely additive left-invariant probability measure ensuring the amenability of $H_{i}$. Let $A \subseteq H$, define $\mu_{i}'(A):=\mu_{i}(A \cap H_{i})$, then $\mu_{i}' \in \mathcal{M}_{i}$. So they are non-empty as well. Now, by assumption of $\{H_i\}_{i \in I}$ being upward directed we have for $i,j \in I$ that there is $k \in I$ such that $H_{i},H_{j} \subseteq H_{k}$. But if $\mu \in \mathcal{M}_{k}$, then $\mu(gA)=\mu(A)$ for every $g \in H_{i},H_{j}$ aswell,	so $\mathcal{M}_{k} \subset \mathcal{M}_{i} \cap \mathcal{M}_{j}$. So the family $\{\mathcal{M}_{i}\}_{i \in I}$ of non-empty closed subsets has the finite intersection property. Since $[0,1]^{\mathcal{P}(H)}$ is compact by Tychonoff, we conclude that there is a measure $\mu \in \bigcap_{i \in I} \mathcal{M}_{i}$, which is a left $H$-invariant probability measure, so $H$ is amenable.
+\end{proof}
+\end{proposition}
+
+
+\begin{lemma}\label{product amenable}
+If $H_{1},H_{2}$ are normal amenable subgroups of a discrete group $G$, then ${H_{1}H_{2}}$ is a normal amenable subgroup of $G$.
+\begin{proof}
+If $H_{1},H_{2}$ are normal amenable subgroups of $G$, then by normality and the second isomorphism theorem for groups we have that $H_1 H_2$ is a group and that $h_{1} h_{2}h_{1}^{-1} \in H_{2}$ for every $h_{1} \in H_{1}, h_{2} \in H_{2}$. So $H_{1}$ acts on $H_{2}$ by conjugation, and we may define the semi-direct product $H_{1} \rtimes H_{2}$, with respect to the conjugation action $H_1 \acts H_2$, i.e., the group with $H_1 \times H_2$ as the underlying set and the following binary operation 
+\begin{align*}
+(h_1,h_2) (h_1',h_2') =(h_1 h_1' , h_2 (h_1 h_2' h_1^{-1})), \quad h_1,h_1' \in H_1, \ h_2, h_2' \in H_2.
+\end{align*} Then we have an isomorphism of $H_{1}$ into $H_{1} \rtimes H_{2}$, $h_{1} \mapsto (h_{1},e_{H_2})$. We write $\overline{H_1}$ for this identification. We then have that 
+\begin{align*}
+\left(H_{1} \rtimes H_{2}\right)\Bign/\overline{H}_{1} \simeq H_{2},
+\end{align*} 
+so by \Cref{?? lol} we have that $H_{1} \rtimes H_{2}$ is amenable. The map $H_{1} \rtimes H_{2} \to {H_{1}H_{2}}$, $(h_{1}, h_{2}) \mapsto h_{1} h_{2}$ is a surjective group homomorphism which shows that $H_{1}H_{2}$ is also amenable. It is also clearly normal.
+\end{proof}
+\end{lemma}
+
+\begin{proposition}
+Every countable discrete group $G$ has a largest normal amenable subgroup $H$, in the sense that it contains all other normal amenable subgroups.
+\begin{proof}
+Let $\{H_{i}\}_{i \in I}$ be the family of every normal amenable subgroups of $G$. Then for all $i,j \in I$ we have that $H_{i},H_{j} \subset H_{j}H_{i}$, so setting $H_{k}=H_{i}H_{j}$ we get that this family is upward directed. So by \Cref{product amenable} and \Cref{?? lol} We get that the subgroup $\displaystyle H=\bigcup_{i\in I} H_{i}$ is a normal amenable subgroup containing every other normal amenable subgroup of $G$.
+\end{proof}
+\end{proposition}
+
+\begin{definition}
+For a discrete group $G$ we denote the largest amenable subgroup of $G$ by $\text{AR}_{G}$, called the \emph{amenable radical} of $G$.
+\end{definition}
+
+We say that the amenable radical of a group $G$ is trivial if and only if $\AR_G=\{e\}$, and $G$ is amenable if and only if $\AR_G=G$.

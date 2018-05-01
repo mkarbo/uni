@@ -1,0 +1,41 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Introduction}{1}{chapter*.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Preliminaries}{2}{chapter*.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {1}Amenability and The Amenable Radical}{5}{chapter.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {2}Representations of groups}{10}{chapter.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}The reduced group $C^*$-algebra}{10}{section.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.9}Crossed products}{13}{section.2.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {3}$C^*$-simplicity and uniqueness of trace}{16}{chapter.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}Dixmier Property}{16}{section.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.10}Powers groups}{19}{section.3.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {4}Boundary actions}{24}{chapter.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}G-spaces}{24}{section.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.4}Boundary actions}{25}{section.4.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {5}$C^*$-simplicity and boundary actions}{35}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}Uniqueness of trace, a new way}{35}{section.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.6}$C^*$-simplicity and the unique trace property}{37}{section.5.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.14}Summary}{46}{section.5.14}
+\defcounter {refsection}{0}\relax 
+\contentsline {appendix}{\chapternumberline {A}Measure theory}{49}{appendix.A}
+\defcounter {refsection}{0}\relax 
+\contentsline {appendix}{\chapternumberline {B}A result on convex hulls}{52}{appendix.B}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{53}{section*.11}
