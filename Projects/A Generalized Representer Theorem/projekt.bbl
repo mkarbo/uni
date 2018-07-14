@@ -1,0 +1,168 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.6 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{abu}{book}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Abu-Mostafa}{A.-M.}%
+     {Yaser~S}{Y.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Magdon-Ismail}{M.-I.}%
+     {Malik}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lin}{L.}%
+     {Hsuan-Tien}{H.-T.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {AMLBook New York, NY, USA:}%
+  }
+  \strng{namehash}{AMYSMIMLHT1}
+  \strng{fullhash}{AMYSMIMLHT1}
+  \field{labelyear}{2012}
+  \field{sortinit}{A}
+  \field{title}{Learning from data}
+  \field{volume}{4}
+  \field{year}{2012}
+\endentry
+
+\entry{genbd}{inproceedings}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Bousquet}{B.}%
+     {Olivier}{O.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Elisseeff}{E.}%
+     {Andr{\'e}}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{BOEA1}
+  \strng{fullhash}{BOEA1}
+  \field{labelyear}{2001}
+  \field{sortinit}{B}
+  \field{booktitle}{Advances in Neural Information Processing Systems}
+  \field{pages}{196\bibrangedash 202}
+  \field{title}{Algorithmic stability and generalization performance}
+  \field{year}{2001}
+\endentry
+
+\entry{ACIAHA}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Folland}{F.}%
+     {Gerald~B}{G.~B.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {CRC press}%
+  }
+  \strng{namehash}{FGB1}
+  \strng{fullhash}{FGB1}
+  \field{labelyear}{2016}
+  \field{sortinit}{F}
+  \field{title}{A course in abstract harmonic analysis}
+  \field{volume}{29}
+  \field{year}{2016}
+\endentry
+
+\entry{no}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Kimeldorf}{K.}%
+     {George~S}{G.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Wahba}{W.}%
+     {Grace}{G.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {JSTOR}%
+  }
+  \strng{namehash}{KGSWG1}
+  \strng{fullhash}{KGSWG1}
+  \field{labelyear}{1970}
+  \field{sortinit}{K}
+  \field{number}{2}
+  \field{pages}{495\bibrangedash 502}
+  \field{title}{A correspondence between Bayesian estimation on stochastic
+  processes and smoothing by splines}
+  \field{volume}{41}
+  \field{journaltitle}{The Annals of Mathematical Statistics}
+  \field{year}{1970}
+\endentry
+
+\entry{smola}{book}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Sch{\"o}lkopf}{S.}%
+     {Bernhard}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Smola}{S.}%
+     {Alexander~J}{A.~J.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {MIT press}%
+  }
+  \strng{namehash}{SBSAJ1}
+  \strng{fullhash}{SBSAJ1}
+  \field{labelyear}{2002}
+  \field{sortinit}{S}
+  \field{title}{Learning with kernels: support vector machines, regularization,
+  optimization, and beyond}
+  \field{year}{2002}
+\endentry
+
+\entry{vapnik}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Vapnik}{V.}%
+     {Vladimir}{V.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Wiley, New York}%
+  }
+  \strng{namehash}{VV1}
+  \strng{fullhash}{VV1}
+  \field{labelyear}{1998}
+  \field{sortinit}{V}
+  \field{title}{Statistical learning theory. 1998}
+  \field{year}{1998}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput

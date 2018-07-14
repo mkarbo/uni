@@ -1,0 +1,24 @@
+\thispagestyle {empty}
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {1}Kernel theory}{2}{chapter.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Reproducing Kernels}{2}{section*.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Examples and constructions of RKHS and kernels}{5}{theorem.1.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {2}The Representer Theorem}{11}{chapter.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Generalized Representer Theorems}{11}{section*.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {3}Applications and consequences}{14}{chapter.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Kernel Ridge Regression}{14}{section*.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Bounding the expected loss}{15}{figure.caption.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Support Vector Machine formulation}{16}{theorem.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{18}{section*.7}
