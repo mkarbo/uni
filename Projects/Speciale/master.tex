@@ -3,8 +3,6 @@
 
 \begin{document}
 
-\binoppenalty=\maxdimen
-\relpenalty=\maxdimen
 %\emergencystretch=4em
 \input{frontpage/frontpage}
 \frontmatter
@@ -15,11 +13,13 @@ A discrete group is \textit{$C^*$-simple} if the reduced group $C^*$-algebra $C_
 \newpage
 
 \begin{KeepFromToc}
+\newpage
+\setcounter{page}{2}
 	  \tableofcontents
 \end{KeepFromToc}
 
 \mainmatter
-
+\input{chapter1/chap}
 \printbibliography
 	
 \backmatter
