@@ -110,7 +110,7 @@
 \nouppercaseheads
 \createmark{section}{left}{shownumber}{}{.\space}
 \makepagestyle{dut}
-\makeevenhead{dut}{Malthe karbo\scshape\rightmark}{}{\scshape\leftmark}
+\makeevenhead{dut}{Malthe Karbo\scshape\rightmark}{}{\scshape\leftmark}
 \makeoddhead{dut}{\scshape\leftmark}{}{Malthe Karbo\scshape\rightmark}
 \makeevenfoot{dut}{}{\scshape $-$ \thepage\ $-$}{}
 \makeoddfoot{dut}{}{\scshape $-$ \thepage\ $-$}{}
@@ -176,15 +176,12 @@
 \makeatother
 
 \newcommand{\K}{\mathbb{K}}
-\addtocontents{toc}{\protect\thispagestyle{empty}} 
+%\addtocontents{toc}{\protect\thispagestyle{empty}} 
 \def\acts{\curvearrowright}
 
-
-\pagenumbering{arabic}
+\pagenumbering{roman}
 \begin{document}
-%\tableofcontents
 \include{frontpage}
-%\include{abstract{abs}}
 \newpage
 
 \begin{KeepFromToc}
@@ -198,12 +195,14 @@ In Chapter three we develop a theory of representations of locally compact group
 In Chapter four we shift our focus towards the setting of Locally Compact Abelian Hausdorff groups, and show an array of various important results. We also develop the Fourier Transformation in this setting, and show a range of results regarding it, and in the devopment of the Fourier Transformation we examine the set of characters, which is called the Dual Group of $G$, denoted by $\G$. We also show the Pontrjagin Duality Theorem, which ensures a sort of reflexivity relation between $G$ and $\widehat \G$, and consequences thereof.
 
 Finally, in Chapter five, we change our setting the the case of general Compact Hausdorff groups, where we develop yet again a theory of characters and representations of groups, and use it to develop the Fourier Transformation again, generalising the compact abelian case. We also show the Peter-Weyl Theorem, which uses the dual group to classify a wide range of important functionspaces related to the group $G$.
-
+\newpage
+\setcounter{page}{2}
 	  \tableofcontents
 \end{KeepFromToc}
 
 
 \chapter{Prologue: Spectral- and Gelfand theory in Banach algebras and $C^*$-algebras.}
+\pagenumbering{arabic}
 We begin this thesis by reminding the reader of some basic results from the theory of Banach Algebras. These will provide some of the motivation for the main topic of this thesis.
 
 \sssection{Banach Algebras and Gelfand Theory}

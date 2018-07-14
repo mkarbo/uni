@@ -1,48 +1,47 @@
-\thispagestyle {empty}
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \defcounter {refsection}{0}\relax 
 \select@language {english}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {1}Prologue: Spectral- and Gelfand theory in Banach algebras and $C^*$-algebras.}{3}{chapter.1}
+\contentsline {chapter}{\chapternumberline {1}Prologue: Spectral- and Gelfand theory in Banach algebras and $C^*$-algebras.}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Banach Algebras and Gelfand Theory}{3}{section*.2}
+\contentsline {section}{Banach Algebras and Gelfand Theory}{1}{section*.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {2}Setting the scene: Analysis on Topological Groups}{7}{chapter.2}
+\contentsline {chapter}{\chapternumberline {2}Setting the scene: Analysis on Topological Groups}{5}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Analysis on Topological Groups}{7}{section*.3}
+\contentsline {section}{Analysis on Topological Groups}{5}{section*.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{G-spaces}{19}{theorem.2.27}
+\contentsline {section}{G-spaces}{17}{theorem.2.27}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {3}Representation theory of topological groups}{24}{chapter.3}
+\contentsline {chapter}{\chapternumberline {3}Representation theory of topological groups}{22}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Unitary Representations}{24}{section*.4}
+\contentsline {section}{Unitary Representations}{22}{section*.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Connections with $L^1(G)$}{28}{theorem.3.11}
+\contentsline {section}{Connections with $L^1(G)$}{26}{theorem.3.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Relating representations to $L^\infty (G)$}{32}{theorem.3.14}
+\contentsline {section}{Relating representations to $L^\infty (G)$}{30}{theorem.3.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {4}Analysis on Locally Compact Abelian Groups}{42}{chapter.4}
+\contentsline {chapter}{\chapternumberline {4}Analysis on Locally Compact Abelian Groups}{40}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{The Dual Group}{42}{section*.5}
+\contentsline {section}{The Dual Group}{40}{section*.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{The Fourier Transformation of Abelian Groups}{47}{theorem.4.8}
+\contentsline {section}{The Fourier Transformation of Abelian Groups}{45}{theorem.4.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{The Pontrjagin Duality Theorem}{55}{theorem.4.24}
+\contentsline {section}{The Pontrjagin Duality Theorem}{53}{theorem.4.24}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Consequences of the Pontrjagin Duality Theorem}{57}{Item.28}
+\contentsline {section}{Consequences of the Pontrjagin Duality Theorem}{55}{Item.28}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Representation Theory of Abelian Groups}{61}{theorem.4.37}
+\contentsline {section}{Representation Theory of Abelian Groups}{59}{theorem.4.37}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {5}Analysis on compact Hausdorff groups}{64}{chapter.5}
+\contentsline {chapter}{\chapternumberline {5}Analysis on compact Hausdorff groups}{62}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Representations of Compact Groups}{64}{section*.12}
+\contentsline {section}{Representations of Compact Groups}{62}{section*.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{The Peter-Weyl Theorem}{68}{theorem.5.7}
+\contentsline {section}{The Peter-Weyl Theorem}{66}{theorem.5.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{The Fourier Transformation on Compact Groups}{72}{theorem.5.16}
+\contentsline {section}{The Fourier Transformation on Compact Groups}{70}{theorem.5.16}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {6}Appendix A}{74}{chapter.6}
+\contentsline {chapter}{\chapternumberline {6}Appendix A}{72}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Weak integrals}{74}{section*.13}
+\contentsline {section}{Weak integrals}{72}{section*.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{77}{section*.15}
+\contentsline {chapter}{Bibliography}{75}{section*.15}
