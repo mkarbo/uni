@@ -1,9 +1,49 @@
-\chapter{asdf}
+\chapter{Setting The Stage - Constructions}
 \pagenumbering{arabic}
+In this chapter we will consider the constructions of certain important objects, e.g., \emph{the Crossed Product} of general locally compact groups acting on a $C^*$-algebra or the \emph{Dual Action} of an Abelian locally compact group, both of which are at the center of the topic of this thesis. Since the inception of the theory of some of the following constructions, there has been several modifications to the proofs and the generality of the theory covered, and we will cherry pick the most suitable results and variations thereof from both the old and new school of the subjects.
 
-asdfsad hold kæft
+\sssection{Crossed Products}
+Throughout this chapter, we let $G$ be a locally compact topological group and $A$ a $C^*$-algebra, with no added assumptions unless otherwise specified. We will write $G \acts_\alpha A$ to specify that $\alpha \colon G \to \Aut(A)$ is an action of $G$ on $A$, i.e., a strongly continuous group homomorphism. We will always fix a base left Haar measure $\mu$ on $G$, whose integrand we will denote by $\d t$, and with modular function $\Delta \colon G \to (0,\infty)$.
 
-\cite{bko}
+In analysis, an object of interest is the group algebra $L^1(G)$ for locally compact groups $G$. One can turn it into a $*$-algebra by showing that the convolution gives rise to a well-defined multiplication, and one can use the modular function to define an involution. Analogously to this, we do the same for $A$ valued functions:
+\begin{definition}
+	Suppose that $G \acts_\alpha A$. We let 
+	\begin{align*}
+		\cc(G,A):=\{ f \colon G \to A \mid f \text{ continuous and compactly supported}\}.
+	\end{align*}
+	For $f,g \in \cc(G,A)$, we define the $\alpha$-twisted convolution of $f$ and $g$ at $t \in G$ by
+	\begin{align*}
+		(f \ast_\alpha g)(t):= \int_G  f(s) \alpha_s(g(s^{-1}t)) \d t,
+	\end{align*}
+	and we define an $\alpha$-twisted convolution of $f \in \cc(G,A)$ at $t \in G$ by
+	\begin{align*}
+		f^*(t):=\Delta(t^{-1}) \alpha_t(f(t^{-1})^*).
+	\end{align*}
+	Straight forward calculations similar to the one classic ones show that $\cc(G,A)$ becomes a $*$-algebra with multiplication given by the $\alpha$-twisted convolution and involution given by the $\alpha$-twisted involution. We denote the associated $*$-algebra by $\cc(G,A,\alpha)$.
+	
+	To $f \in \cc(G,A,\alpha)$, we associate the number $\lv f \rv_1 \in [0, \infty)$ by
+		\begin{align*}
+			\lv f \rv_1 := \int_G \lv f(t) \rv \d t.
+		\end{align*}
+	Straightforward calculations show that $f \mapsto \lv f \rv_1$ is a norm, and we denote the completion of $\cc(G,A,\alpha)$ in $\lv \cdot \rv_1$ by $L^1(G,A,\alpha)$.
+\end{definition}
 
+For $G \stackrel{\alpha}{\acts} A$ and a covariant representation $(\pi,\H)$ on some Hilbert space $\H$, we define for $f \in \cc(G,A,\alpha)$ the operator $I_{f}$ on $\H$ point-wise, i.e., for $\xi, \eta \in \H$
+\begin{align*}
+	\langle I_f \xi ,\eta \rangle = \int_G \langle \pi(f(s)) U_s \xi, \eta \rangle \d s,
+\end{align*}
+and we will write $\int_G \pi(f(s)) U_s \d s := I_f$. We denote the map $f \mapsto I_f$ by $\pi \rtimes U$.
 
-asdf
+\begin{lemma}
+	The map $\pi \rtimes U$ is a $*$-representation of $\cc(G,A,\alpha)$ called \emph{the integrated form of $\pi$ and $U$}. It is $L^1$-norm decreasing, i.e., for $f \in \cc(G,A,\alpha)$ we have
+	\begin{align*}
+	\lv \pi \rtimes U(f)\rv \leq \lv f \rv_1.	
+	\end{align*}
+\end{lemma}
+\begin{proof}
+	Let $f \in \cc(G,A,\alpha)$ and $\xi , \eta \in \H$. Then
+	\begin{align*}
+		|\langle \pi \rtimes U(f) \xi, \eta \rangle | \leq \int_G | \langle \pi(f(s)) U_s \xi , \eta \rangle| \d s \leq \int_G \lv f(s)\rv  \lv \xi\rv \lv \eta \rv \d s,
+	\end{align*}
+	so that $\lv \pi \rtimes U(f)\rv \leq \lv f \rv_1$.Let $f,g \in \cc(G,A,\alpha)$ \todo{Dana 1.92 add to appendix}
+\end{proof}
