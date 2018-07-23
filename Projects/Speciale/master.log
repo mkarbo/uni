@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.28)  23 JUL 2018 16:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.28)  23 JUL 2018 17:17
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1656,6 +1656,26 @@ Sidefoothsep and sidefootwidth: 7pt and 128pt
 Sidefootvsep and sidefootheight: 12pt and 548.39996pt
 ******************************************************
 
+
+******************************************************
+Stock height and width: 794.96999pt by 614.295pt
+Top and edge trims: 0pt and 0pt
+Page height and width: 794.96999pt by 614.295pt
+Text height and width: 550pt by 401pt
+Spine and edge margins: 109.26999pt and 104.02501pt
+Upper and lower margins: 124.33748pt and 120.6325pt
+Headheight and headsep: 12pt and 18.06749pt
+Footskip: 25.29494pt
+Columnsep and columnseprule: 10pt and 0pt
+Marginparsep and marginparwidth: 7pt and 90.02501pt
+Sidecapsep and sidecapwidth: 7pt and 128pt
+Sidebarhsep and sidebarwidth: 7pt and 128pt
+Sidebarvsep and sidebartopsep: 12pt and 0pt
+Sidebarheight: 548.39996pt
+Sidefoothsep and sidefootwidth: 7pt and 128pt
+Sidefootvsep and sidefootheight: 12pt and 548.39996pt
+******************************************************
+
 (/usr/share/texlive/texmf-dist/tex/latex/scalerel/scalerel.sty
 Package: scalerel 2015/02/18 v1.7 Routines for constrained scaling and stretchi
 ng of objects, relative to a reference object or in absolute terms
@@ -2026,16 +2046,16 @@ LaTeX Font Info:    ... okay on input line 4.
 * pass: disregarded the geometry package!
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
-* \textwidth=371.0pt
+* \textwidth=401.0pt
 * \textheight=550.0pt
 * \oddsidemargin=37.0pt
-* \evensidemargin=61.0pt
+* \evensidemargin=31.0pt
 * \topmargin=22.0pt
 * \headheight=12.0pt
 * \headsep=18.06749pt
 * \topskip=10.0pt
 * \footskip=25.29494pt
-* \marginparwidth=120.02501pt
+* \marginparwidth=90.02501pt
 * \marginparsep=7.0pt
 * \columnsep=10.0pt
 * \skip\footins=12.0pt plus 4.0pt minus 4.0pt
@@ -2129,7 +2149,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--10
 
  []
 
-<frontpage/1.pdf, id=19, 597.48439pt x 844.93057pt>
+<frontpage/1.pdf, id=23, 597.48439pt x 844.93057pt>
 File: frontpage/1.pdf Graphic file (type pdf)
  <use frontpage/1.pdf>
 Package pdftex.def Info: frontpage/1.pdf used on input line 19.
@@ -2159,15 +2179,16 @@ pdfTeX warning (ext4): destination with the same identifier (name{theorem.1.1})
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.24 	T
-       o $f \in \cc(G,A,\alpha)$, we associate the number $\lv f \rv_1 \in [...
-]) [2pdfTeX warning (ext4): destination with the same identifier (name{theorem.
-1.2}) has been already used, duplicate ignored
+l.27 		\end{align*}
+                   ]) [2pdfTeX warning (ext4): destination with the same identi
+fier (name{theorem.1.2}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
 l.24 
-     ] [3
+     ] (./appendix/appendix.tex [3
+
+]) [4
 
 ]
 
@@ -2180,25 +2201,25 @@ FiXme Summary: Number of notes: 0,
 \tf@toc=\write8
 \openout8 = `master.toc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 26.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 26.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 28.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 28.
 (./master.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 26.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 26.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 28.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 28.
 Package rerunfilecheck Info: File `master.out' has not changed.
-(rerunfilecheck)             Checksum: 69DF194C1756E23230AB3F3E3BED6750;178.
+(rerunfilecheck)             Checksum: B9AB8EAC9418CC5E075F25942A8AB2AA;214.
 Package logreq Info: Writing requests to 'master.run.xml'.
 \openout1 = `master.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 26.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 28.
  )
 (\end occurred when \iftrue on line 4 was incomplete) 
 Here is how much of TeX's memory you used:
- 39365 strings out of 493029
- 711847 string characters out of 6136234
- 1073419 words of memory out of 5000000
- 42299 multiletter control sequences out of 15000+600000
- 22058 words of font info for 64 fonts, out of 8000000 for 9000
+ 39382 strings out of 493029
+ 712082 string characters out of 6136234
+ 1073451 words of memory out of 5000000
+ 42307 multiletter control sequences out of 15000+600000
+ 24967 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,14n,82p,10473b,1670s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/en
@@ -2218,11 +2239,11 @@ sr/share/texmf/fonts/type1/public/cm-super/sfcc1000.pfb></usr/share/texmf/fonts
 er/sfcc1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></us
 r/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/
 type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-supe
-r/sfxc1200.pfb>
-Output written on master.pdf (6 pages, 544291 bytes).
+r/sfxc1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfxc1728.pfb>
+Output written on master.pdf (7 pages, 554256 bytes).
 PDF statistics:
- 147 PDF objects out of 1000 (max. 8388607)
- 115 compressed objects within 2 object streams
- 16 named destinations out of 1000 (max. 500000)
- 42 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 162 PDF objects out of 1000 (max. 8388607)
+ 128 compressed objects within 2 object streams
+ 18 named destinations out of 1000 (max. 500000)
+ 50 words of extra memory for PDF output out of 10000 (max. 10000000)
 

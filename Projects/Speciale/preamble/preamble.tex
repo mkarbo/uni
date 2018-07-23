@@ -26,12 +26,19 @@
 \usepackage[backgroundcolor=cyan]{todonotes}
 \usepackage{wallpaper}
 \usepackage{titlesec}
+%\usepackage[titleloc]{appendix}
 \usepackage{faktor}
 
 \bibliography{bibtest}
 \titleformat{\chapter}[display]
 {\center\normalfont\bfseries}{}{0pt}{\Large}
+\renewcommand*\cftappendixname{Appendix  }
 
+\newcommand{\apptitle}{%
+\section*{\huge\centering\normalfont\scshape \textbf{Appendix \thechapter}}}
+\addtolength{\textwidth}{30pt}
+\addtolength{\foremargin}{-30pt}
+\checkandfixthelayout
 \renewcommand\chaptermarksn[1]{}
 \newcommand{\ssection}[1]{%
 \newpage%
