@@ -2,7 +2,133 @@
 \pagenumbering{arabic}
 In this chapter we will consider the constructions of certain important objects, e.g., \emph{the Crossed Product} of general locally compact groups acting on a $C^*$-algebra or the \emph{Dual Action} of an Abelian locally compact group, both of which are at the center of the topic of this thesis. Since the inception of the theory of some of the following constructions, there has been several modifications to the proofs and the generality of the theory covered, and we will cherry pick the most suitable results and variations thereof from both the old and new school of the subjects.
 
-\sssection{Crossed Products}
+\sssection{Hilbert $C^*$-modules and Multiplier Algebras}
+Given a non-unital $C^*$-algebra $A$, we can extend a lot of the theory of unital $C^*$-algebras to $A$ by considering the unitalization $A^\dagger = A + 1\C$ with the canonical operations. This is the 'smallest' unitalization in the sense that $A$ is an \todo{add to prelim} essential ideal of $A^\dagger$ and $A^\dagger/A \cong \C$. We can also consider a maximal unitalization, called the \emph{Multiplier Algebra} of $A$, denoted by $M(A)$. We will now construct it and some theory revolving it, in particular that of Hilbert-modules:
+\begin{definition}
+	Let $A$ be any $C^*$-algebra. An \emph{inner-product $A$-module} is a complex vector space $E$ which is also a right-$A$-module which is equipped with a map $\langle \cdot, \cdot\rangle_A \colon E \times A \to A$ such that for $x,y,z \in E, \ \alpha,\beta \in \C$ and $a \in A$ we have
+	\begin{align}
+		\langle a , \alpha y + \beta z \rangle_A &= \alpha \langle x,y\rangle_A+\beta x,z \rangle_A\\
+		\langle x , y \cdot a \rangle-A &= \langle x,y\rangle_A \cdot a\\
+		\langle y,x \rangle_A &= \langle x,y\rangle_A^*\\
+		\langle x,x \rangle_A &\geq 0\\
+		\langle x,x \rangle_A &= 0 \implies x = 0. 
+	\end{align}
+	If $\langle \cdot , \cdot \rangle$ satisfy (1.1)-(1.4) but not (1.5) above, we say that $E$ is a \emph{semi-inner-product $A$-module}. If there is no confusion, we simply write $\langle \cdot, \cdot \rangle$ to mean the $A$-valued inner-product on $E$. Similarly, we will often denote $x \cdot a$ by $xa$.
+\end{definition}
+It is easy to see that this generalizes the notion of Hilbert spaces, for if $A= \C$, then any Hilbert space (over $\C$) is a inner-product $\C$-module. Even when $E$ is only a semi-inner-product $A$-module, we still have a lot of the nice properties of regular inner-producte, e.g.:
+\begin{proposition}[Cauchy-Schwarz Inequality]
+Let $E$ be a semi-inner-product $A$-module. For $x,y \in E$, it holds that
+\begin{align*}
+	\langle x,y\rangle^* \langle x,y \rangle \leq \lv \langle x , x \rangle \rv_A \langle y , y \rangle.
+\end{align*}
+\end{proposition}
+\begin{proof}
+Let $x,y E$ and let $a = \langle x,y \rangle \in A$ and $t >0$. Then, since $(\langle x,y \rangle a)^* = a^*\langle y,x\rangle$, we have
+\begin{align*}
+	0 \leq \langle xa-ty,xa-ty\rangle =t^2\langle y,y \rangle + a^* \langle x,x \rangle a-2ta^*a.
+\end{align*}
+For $c \geq 0 $ in $A$, it holds that $a^*c a \leq \lv c \rv_A a^*a$: Let $A \subseteq \mathbb{B}(\H)$ faithfully. The regular Cauchy-Schwarz implies that $\langle a^*ca \xi,\xi\rangle_\H \leq \lv c \rv \langle a^*a \xi,\xi\rangle_\H$ for all $ \xi \in \H$. With this in mind, we then have
+\begin{align*}
+	0 \leq  a^*a \lv \langle x , x \rangle \rv_A -2t a^*a + t^2 \langle y, y \rangle.
+\end{align*}
+If $\langle x , x \rangle = 0$, then $0 \leq 2a^*a \leq t \langle y , y\rangle \to 0$, as $t \to 0$ so that $a^*a = 0$ as wanted. If $\langle x , x \rangle \neq 0$, then $t = \lv \langle x,x\rangle\rv_A$ gives the wanted inequality.
+\end{proof}
+Recall that for $0 \leq a \leq b \in A$, it holds that $\lv a \rv_A \leq \lv b \rv_A$. This and the above implies that $\lv \langle x,y \rangle\rv_A^2 \leq \lv \langle x, x \rangle \rv_A \lv \langle y,y\rangle \rv_A$. 
+\begin{definition}
+	If $E$ is an (semi-)inner-product $A$-module, we define a (semi-)norm on $E$ by
+	\begin{align*}
+		\lv x \rv := \lv \langle x , x \rangle\rv_A^{\frac12}, \text{ for } x \in E.
+	\end{align*}
+	If $E$ is an inner-product $A$-module such that this norm is complete, we say that $E$ is a \emph{Hilbert $C^*$-module over $A$} or just a \emph{Hilbert $A$-module}.
+\end{definition}
+If the above defined norm is but a semi-norm, then we may form the quotient space of $E$ with respect to $N=\left\{ x \in E \mid \langle x , x \rangle = 0 \right\}$ to obtain an inner-product $A$-module with the obvious operations. Moreover, the usual ways of passing from pre-Hilbert spaces extend naturally to pre-Hilbert $A$-modules. For $x \in E$ and $a \in A$, we see that
+\begin{align*}
+	\lv x a \rv^2 = \lv a^* \underbrace{\langle x, x \rangle}_{\geq 0} a \rv \leq \lv a \rv^2 \lv x \rv^2,
+\end{align*}
+so that $\lv x a \rv \leq \lv x \rv \lv a \rv$, which shows that $E$ is a normed $A$-module. For $a \in A$, let $R_a \colon x \mapsto xa \in E$. Then $R_a$ is a linear map on $E$ satisfying $\lv R_a\rv = \sup_{\lv x \rv = 1} \lv xa \rv \leq \lv a \rv$, and the map $R \colon a \mapsto R_a$ is a contractive anti-homomorphism of $A$ into the space of bounded linear maps on $E$ (anti in the sense that $R_{ab}=R_bR_a$ for $a,b \in A$).
+
+
+
+
+\begin{example}
+	The classic example of a Hilbert $A$-module is $A$ itself with $\langle a,b \rangle = a^*b$, for $a,b \in A$. We will write $A_A$ to specify that we consider $A$ as a Hilbert $A$-module.
+\end{example}
+
+In the following, we assume that $E$ is a Hilbert $A$-module.
+\begin{remark}
+	Let $I_0(E) = \left\{ \langle x,y \rangle \mid x,y \in E \right\}$, and let $I(E) := \overline{I_0(E)}$. Then $I(E)$ is a closed ideal in $A$. 
+\end{remark}
+And this gives us the following useful lemma:
+\begin{lemma}
+	The set $EI(E)$ is dense in $E$.
+\end{lemma}
+\begin{proof}
+	Let $(u_i)$ denote an approximate unit for $I(E)$. Then clearly $\langle x-x u_i , x-x u_i\rangle \to 0$ for $x \in E$ (seen by expanding the expression), which implies that $x u_i \to x$ in $E$
+\end{proof}
+\begin{definition}
+	If $I(E)$ is dense in $A$ we say that the Hilbert $A$-module is \emph{full}.
+\end{definition}
+
+\todo{closedness under direct sum and $\H_A= \H \otimes A$}
+\begin{note}
+	There are similarities and differences between Hilbert $A$-modules and regular Hilbert spaces. One major difference is that for closed submodules $F\subseteq E$, it does not hold that $F \oplus F^\perp=E$, where $F^\perp = \left\{ y \in E \mid \langle x,y\rangle = 0, \ x \in F \right\}$: Let $A=C([0,1])$ and consider $A_A$. Let $F\subseteq A$ be the set $F = \left\{f \in A_A \mid f(0)=f(1)=0  \right\}$. Then $F$ is clearly a closed sub $A$-module of $A_A$. Consider the element $f \in F$ given by
+	\begin{align*}
+		f(t) = \begin{cases}
+			t & t \in [0,\frac12]\\
+		1-t & t \in (\frac12,1]
+		\end{cases}
+	\end{align*}
+	For all $g \in F^\perp$ it holds that $\langle f,g\rangle = fg = 0$, so $g(t)=0$ for $t \in (0,1)$ and by uniform continuity on all of $[0,1]$, from which we deduce that $F^\perp = \{0\}$ showing that $A \neq F \oplus F^\perp$. The number of important results in the theory of Hilbert spaces relying on the fact that $\H =  F^\perp \oplus F$ for closed subspaces $F$ of $\H$ is enormous, and hence we do not have the entirety of our usual toolbox available. 
+
+	However, returning to the general case, we are pleased to see that it does hold for Hilbert $A$-modules $E$ that for $x \in E$ we have
+	\begin{align*}
+		\lv x \rv = \sup\left\{ \lv \langle x , y \rangle \rv \mid y \in E, \ \lv y \rv \leq 1 \right\}.
+	\end{align*}
+	This is an obvious consequence of the Cauchy-Schwarz theorem for Hilbert $A$-modules. 
+
+	Another huge difference is that adjoints don't automatically exist: Let $A = C([0,1])$ again and $F$ as before. Let $ \iota \colon F \to A$ be the inclusion map. Clearly $\iota$ is a linear map from $F$ to $A$, however, if it had an adjoint $\iota^* \colon A \to F$, then for any self-adjoint $f \in F$, we have
+	\begin{align*}
+		 f = \langle \iota(f) , 1 \rangle_A = \langle f , \iota^*(1)\rangle = f \iota^*(1),
+	\end{align*}
+	so $\iota^*(1)=1$, but $1 \not\in F$. Hence $\iota^*$ is not adjointable.
+\end{note}
+The set of adjointable maps between Hilbert $A$-modules is of great importance and has many nice properties.
+\begin{definition}
+	For Hilbert $A$-modules $E_i$ with $A$-valued inner-products $\langle \cdot , \cdot\rangle_i$, we define $\mathcal{L}_A(E_1,E_2)$ to be the set of all maps $t \colon E_1 \to E_2$ for which there exists a map $t^* \colon E_2 \to E_1$ such that
+	\begin{align*}
+		\langle tx, y \rangle_2 = \langle x , t^*y \rangle_1,
+	\end{align*}
+	for all $x \in E_1$ and $y \in E_2$, i.e., \emph{adjointable maps}. When no confusion may occur, we will write $\mathcal{L}(E_1,E_2)$ and ommit the subscript.
+\end{definition}
+\begin{proposition}
+	if $t \in \mathcal{L}(E_1,E_2)$, then
+\begin{enumerate}
+	\item $t$ is $A$-linear and\\
+	\item $t$ is a bounded map.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+	Linearity is clear. To see $A$-linearity, note that for $x_1,x_2 \in E_i$ and $a \in A$ we have $a^* \langle x_1,x_2\rangle_i = \langle x_1 a , x_2\rangle_i$, and hence for $x \in E_1$, $y \in E_2$ and $a \in A$ we have $\langle t(xa) , y \rangle_2 = a^* \langle x,t^*(y)\rangle_1 = \langle t(x)a,y\rangle_1$.
+
+	To see that $t$ is bounded, we note that $T$ has closed graph: Let $x_n \to x$ in $E_1$ and assume that $tx_n \to z \in E_2$. Then
+	\begin{align*}
+		\langle tx_n , y\rangle_2  = \langle x_n, t^*y\rangle_1 \to \langle x, t^*y \rangle_1 = \langle tx,y\rangle_2
+	\end{align*}
+	so $tx = z$, and hence $t$ is bounded, by the Closed Graph Theorem (CGT hereonforth).
+\end{proof}
+
+
+
+
+
+
+%\ssection{Vector-valued integration}
+
+
+
+
+
+\ssection{Crossed Products}
 Throughout this chapter, we let $G$ be a locally compact topological group and $A$ a $C^*$-algebra, with no added assumptions unless otherwise specified. We will write $G \acts_\alpha A$ to specify that $\alpha \colon G \to \Aut(A)$ is an action of $G$ on $A$, i.e., a strongly continuous group homomorphism. We will always fix a base left Haar measure $\mu$ on $G$, whose integrand we will denote by $\d t$, and with modular function $\Delta \colon G \to (0,\infty)$.
 
 In analysis, an object of interest is the group algebra $L^1(G)$ for locally compact groups $G$. One can turn it into a $*$-algebra by showing that the convolution gives rise to a well-defined multiplication, and one can use the modular function to define an involution. Analogously to this, we do the same for $A$ valued functions:
@@ -13,7 +139,7 @@ In analysis, an object of interest is the group algebra $L^1(G)$ for locally com
 	\end{align*}
 	For $f,g \in \cc(G,A)$, we define the $\alpha$-twisted convolution of $f$ and $g$ at $t \in G$ by
 	\begin{align*}
-		(f \ast_\alpha g)(t):= \int_G  f(s) \alpha_s(g(s^{-1}t)) \d t,
+		(f \ast_\alpha g)(t):= \int_G  f(s) \alpha_s(g(s^{-1}t)) \d s,
 	\end{align*}
 	and we define an $\alpha$-twisted convolution of $f \in \cc(G,A)$ at $t \in G$ by
 	\begin{align*}
