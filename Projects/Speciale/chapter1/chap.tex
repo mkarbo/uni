@@ -94,7 +94,7 @@ And this gives us the following useful lemma:
 \end{note}
 The set of adjointable maps between Hilbert $A$-modules is of great importance and has many nice properties.
 \begin{definition}
-	For Hilbert $A$-modules $E_i$ with $A$-valued inner-products $\langle \cdot , \cdot\rangle_i$, we define $\mathcal{L}_A(E_1,E_2)$ to be the set of all maps $t \colon E_1 \to E_2$ for which there exists a map $t^* \colon E_2 \to E_1$ such that
+	For Hilbert $A$-modules $E_i$ with $A$-valued inner-products $\langle \cdot , \cdot\rangle_i$, $i=1,2$, we define $\mathcal{L}_A(E_1,E_2)$ to be the set of all maps $t \colon E_1 \to E_2$ for which there exists a map $t^* \colon E_2 \to E_1$ such that
 	\begin{align*}
 		\langle tx, y \rangle_2 = \langle x , t^*y \rangle_1,
 	\end{align*}
@@ -117,6 +117,36 @@ The set of adjointable maps between Hilbert $A$-modules is of great importance a
 	so $tx = z$, and hence $t$ is bounded, by the Closed Graph Theorem (CGT hereonforth).
 \end{proof}
 
+In particular, similar to the way that the algebra $\mathbb{B}(\H) = \mathcal{L}_\C(\H_\C,\H_\C)$ is of great importance, we examine the for a fixed Hilbert $A$-module $E$, the $*$-subalgebra $\mathcal{L}(E):=\mathcal{L}(E,E)$ of bounded operators on $E$:
+\begin{proposition}
+	The algebra $\mathcal{L}(E)$ is a closed $*$-subalgebra of $\mathbb{B}(E,E)$ such that for $t \in \mathcal{L}(E)$ we have
+	\begin{align*}
+		\lv t^*t\rv = \lv t \rv^2,
+	\end{align*}
+	hence is it a $C^*$-algebra.
+\end{proposition}
+\begin{proof}
+	Since $\mathbb{B}(E,E)$ is a Banach algebra, we have $\lv t^*t\rv \leq \lv t^*\rv \lv t\rv$ for all $t \in \mathcal{L}(E)$. Moreover, by Cauchy-Schwarz, we have
+	\begin{align*}
+		\lv t^* t \rv = \sup_{\lv x \rv \leq 1} \left\{ \lv t^*tx\rv \right\} = \sup_{\lv x\rv, \lv y \rv \leq 1} \left\{ \langle tx,ty\rangle \right\}\geq \sup_{\lv x \rv \leq 1} \left\{ \lv \langle tx, tx \rangle \rv \right\} = \lv t \rv^2,
+	\end{align*}
+	so $\lv t^*t\rv = \lv t\rv^2$. Assume that $t \neq 0$, then we see that $\lv t \rv = \lv t^* t\rv \lv t \rv ^{-1} \leq \lv t^*\rv$ and similarly $\lv t^*\rv \leq \lv t^{**}\rv=\lv t \rv$, so $\lv t \rv = \lv t^*\rv$, in particular $t \mapsto t^*$ is continuous. It is clear that $\mathcal{L}(E)$ is a $*$-subalgebra. To see that is is closed, suppose that $(t_\alpha)$ is a Cauchy-net, and denote its limit by $t \in \mathbb{B}(E,E)$. By the above, we see that $(t_\alpha^*)$ is Cauchy with limit $f \in \mathbb{B}(E,E)$, since  Then, we see that for all $x,y \in E$ 
+	\begin{align*}
+		\langle t x,y\rangle = \lim_{\alpha}\langle t_\alpha x , y \rangle = \lim_{_\alpha} x, t_\alpha^* y \rangle = \langle x,fy\rangle,
+	\end{align*}
+	so $t$ is adjointable, hence an element of $\mathcal{L}(E)$.
+\end{proof}
+If we for $x \in E$ denote the element $\langle x, x \rangle^{\frac12}\geq 0$ by $|x|_A$, then we obtain a variant of a classic and important inequality:
+\begin{lemma}
+	Let $t \in \mathcal{L}(E)$, then $|tx|^2 \leq \lv t \rv^2 |x|^2$ for all $x \in E$.
+\end{lemma}
+\begin{proof}
+	The operator $\lv t \rv ^2-t^*t\geq 0$, since $\mathcal{L}(E)$ is a $C^*$-algebra, and thus equal to $s^*s$ for some $s \in \mathcal{L}(E)$. Hence
+	\begin{align*}
+	\lv t \rv^2 \langle x, x \rangle - \langle t^*t x,x\rangle =\langle (\lv t \rv^2 - t^*t)x,x\rangle=	\langle sx , sx \rangle  \geq 0,
+	\end{align*}
+	for all $x \in E$, as wanted.
+\end{proof}
 
 
 
