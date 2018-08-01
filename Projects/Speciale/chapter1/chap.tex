@@ -119,18 +119,18 @@ The set of adjointable maps between Hilbert $A$-modules is of great importance a
 
 In particular, similar to the way that the algebra $\mathbb{B}(\H) = \mathcal{L}_\C(\H_\C,\H_\C)$ is of great importance, we examine the for a fixed Hilbert $A$-module $E$, the $*$-subalgebra $\mathcal{L}(E):=\mathcal{L}(E,E)$ of bounded operators on $E$:
 \begin{proposition}
-	The algebra $\mathcal{L}(E)$ is a closed $*$-subalgebra of $\mathbb{B}(E,E)$ such that for $t \in \mathcal{L}(E)$ we have
+	The algebra $\mathcal{L}(E)$ is a closed $*$-subalgebra of $\mathbb{B}(E)$ such that for $t \in \mathcal{L}(E)$ we have
 	\begin{align*}
 		\lv t^*t\rv = \lv t \rv^2,
 	\end{align*}
 	hence is it a $C^*$-algebra.
 \end{proposition}
 \begin{proof}
-	Since $\mathbb{B}(E,E)$ is a Banach algebra, we have $\lv t^*t\rv \leq \lv t^*\rv \lv t\rv$ for all $t \in \mathcal{L}(E)$. Moreover, by Cauchy-Schwarz, we have
+	Since $\mathbb{B}(E)$ is a Banach algebra, we have $\lv t^*t\rv \leq \lv t^*\rv \lv t\rv$ for all $t \in \mathcal{L}(E)$. Moreover, by Cauchy-Schwarz, we have
 	\begin{align*}
 		\lv t^* t \rv = \sup_{\lv x \rv \leq 1} \left\{ \lv t^*tx\rv \right\} = \sup_{\lv x\rv, \lv y \rv \leq 1} \left\{ \langle tx,ty\rangle \right\}\geq \sup_{\lv x \rv \leq 1} \left\{ \lv \langle tx, tx \rangle \rv \right\} = \lv t \rv^2,
 	\end{align*}
-	so $\lv t^*t\rv = \lv t\rv^2$. Assume that $t \neq 0$, then we see that $\lv t \rv = \lv t^* t\rv \lv t \rv ^{-1} \leq \lv t^*\rv$ and similarly $\lv t^*\rv \leq \lv t^{**}\rv=\lv t \rv$, so $\lv t \rv = \lv t^*\rv$, in particular $t \mapsto t^*$ is continuous. It is clear that $\mathcal{L}(E)$ is a $*$-subalgebra. To see that is is closed, suppose that $(t_\alpha)$ is a Cauchy-net, and denote its limit by $t \in \mathbb{B}(E,E)$. By the above, we see that $(t_\alpha^*)$ is Cauchy with limit $f \in \mathbb{B}(E,E)$, since  Then, we see that for all $x,y \in E$ 
+	so $\lv t^*t\rv = \lv t\rv^2$. Assume that $t \neq 0$, then we see that $\lv t \rv = \lv t^* t\rv \lv t \rv ^{-1} \leq \lv t^*\rv$ and similarly $\lv t^*\rv \leq \lv t^{**}\rv=\lv t \rv$, so $\lv t \rv = \lv t^*\rv$, in particular $t \mapsto t^*$ is continuous. It is clear that $\mathcal{L}(E)$ is a $*$-subalgebra. To see that is is closed, suppose that $(t_\alpha)$ is a Cauchy-net, and denote its limit by $t \in \mathbb{B}(E)$. By the above, we see that $(t_\alpha^*)$ is Cauchy with limit $f \in \mathbb{B}(E)$, since  Then, we see that for all $x,y \in E$ 
 	\begin{align*}
 		\langle t x,y\rangle = \lim_{\alpha}\langle t_\alpha x , y \rangle = \lim_{_\alpha} x, t_\alpha^* y \rangle = \langle x,fy\rangle,
 	\end{align*}
@@ -147,11 +147,102 @@ If we for $x \in E$ denote the element $\langle x, x \rangle^{\frac12}\geq 0$ by
 	\end{align*}
 	for all $x \in E$, as wanted.
 \end{proof}
+A quite useful result about positive operators on a Hilbert space carries over to the case of Hilbert $C^*$-modules, for we have:
+\begin{lemma}
+	Let $E$ be a Hilbert $A$-module and let $T$ be a linear operator on $E$. Then $T$ is a positive operator in $\mathcal{L}_A(E)$ if and only if for all $x \in E$ it holds that $\langle Tx,x \rangle \geq 0$ in $A$.
+\end{lemma}
+\begin{proof}
+	If $T$ is adjointable and positive, then $T=S^*S$ for some $S \in \mathcal{L}(E)$ and $\langle Tx,x\rangle = \langle Sx,Sx\rangle\geq 0$. For the converse, we note first that the usual polarization identity applies to Hilbert $C^*$-modules as well:
+	\begin{align*}
+		4\langle x, y\rangle = \sum_{k=0}^3 i^{k} \langle u+i^kv,u+i^kv\rangle,
+	\end{align*}
+	for all $u,v \in E$, since $ \langle u,v \rangle = \langle v,u\rangle ^*$. Hence, if $\langle Tx , x \rangle \geq 0$ for all $x \in E$, we see that $\langle Tx,x\rangle = \langle x,Tx\rangle$, so
+	\begin{align*}
+		4 \langle Tx,y\rangle = \sum_{k=0}^3 i^k \underbrace{\langle T(x+i^ky),x+i^ky\rangle}_{=\langle x+i^ky,T(x+i^ky)\rangle} = 4 \langle x,Ty\rangle, \text{ for } x,y \in E.
+	\end{align*}
+	Thus $T=T^*$ is an adjoint of $T$ and $T \in \mathcal{L}_A(E)$. An application of the continuous functional calculus allows us to write $T=T^+-T^-$ for positive operators $T^+,T^- \in \mathcal{L}_A(E)$ with $T^+T^-=T^-T^+=0$, see e.g., \cite[Theorem 11.2]{zhu}. Then, for all $x \in E$ we have
+	\begin{align*}
+		0 \leq \langle T T^-x,x \rangle = \langle -(T^-)^2x,T^-x\rangle = -\underbrace{\langle (T^-)^3x,x\rangle}_{\geq 0 } \leq 0,
+	\end{align*}
+	so $<(T^-)^3 x,x \rangle = 0$ for all $x$. The polarization identity shows that $(T^-)^3=0$ and hence $(T^-)=0$, so $T=T^+\geq 0$.
+\end{proof}
+And, as in the Hilbert Space situation, we also have 
+\begin{lemma}
+	Let $E$ be a Hilbert $A$-module and $T \geq 0$ in $\mathcal{L}_A(E)$. Then
+	\begin{align*}
+		\lv T \rv = \sup_{\lv x \rv \leq 1}\left\{ \lv \langle Tx,x\rangle \rv \right\}
+	\end{align*}
+\end{lemma}
+\begin{proof}
+	Write $T=S^*S$ for $S \in \mathcal{L}_A(E)$ to obtain the identity.
+\end{proof}
 
 
+It is well-known that the only ideal of $\mathbb{B}(\H)$ is the set of compact operators, $\mathbb{K}(\H)$, which is the norm closure of the finite-rank operators. We now examine the Hilbert $C^*$-module analogue of these two subsets:
+\begin{definition}
+	Let $E,F$ be Hilbert $A$-modules. Given $x \in E$ and $y \in F$, we let $\Theta_{x,y} \colon F \to E$ be the map
+	\begin{align*}
+		\Theta_{x,y}(z):=x \langle y,z \rangle,
+	\end{align*}
+	for $z \in F$. It is easy to see that $\Theta_{x,y} \in \mathbb{B}(F,E)$. 
+\end{definition}
+\begin{proposition}
+	Let $E,F$ be Hilbert $A$-modules. Then for every $x \in E$ and $y \in F$, it holds that $\Theta_{x,y} \in \mathcal{L}(F,E)$. Moreover, if $H$ is another Hilbert $A$-module, then
+	\begin{enumerate}
+		\item $\Theta_{x,y}\Theta_{u,v}=\Theta_{x \langle y,u \rangle_F,v} = \Theta_{x,v \langle u,v\rangle_F}$, for $u \in F$ and $v \in G$,
+		\item $T \Theta_{x,y} = \Theta_{tx,y}$, for $T \in \mathcal{L}(E,G)$,
+		\item $\Theta_{x,y}S = \Theta_{x,S^* y}$ for $S \in \mathcal{L}(G,F)$.
+	\end{enumerate}
+\end{proposition}
+\begin{proof}
+Let $x,w \in E$ and $y,u \in F$ for Hilbert $A$-modules $E,F$ as above. Then, we see that
+\begin{align*}
+		\langle \theta_{x,y}(u),w\rangle_E = \langle x \langle y,u\rangle_{F}, w\rangle_{E} = \langle u,y \rangle_F \langle x,w\rangle_E = \langle u, y\langle x,w\rangle_E \rangle_F,
+\end{align*}
+so $\Theta_{x,y}^* = \Theta_{y,x} \in \mathcal{L}(E,F)$. Suppose that $G$ is another Hilbert $A$-module and $v \in G$ is arbitrary, then
+\begin{align*}
+	\Theta_{x,y}\Theta_{u,v}(g) = x \langle y, u \langle v,g \rangle_G \rangle_F = x \langle y, u \rangle_F \langle v,g \rangle=\Theta_{x \langle y,u \rangle_F, v}(g),
+\end{align*}
+for $g \in G$. The other identity in (1) follows analogously. Let $T \in \mathcal{L}(E,G)$, then
+\begin{align*}
+	T \Theta_{x,y}(u) = T x \langle y,u \rangle_F = \Theta_{Tx,y}(u),
+\end{align*}
+so (2) holds and (3) follows analogously.
+\end{proof}
+\begin{definition}
+	Let $E,F$ be Hilbert $A$-modules. We define the set of compact operators $F \to E$ to be the set
+	\begin{align*}
+		\mathbb{K}_A(F,E) := \overline{\Span\left\{ \Theta_{x,y} \mid x \in E, \ y \in F \right\}}\subseteq \mathcal{L}_A(F,E).
+	\end{align*}
+\end{definition}
+It follows that for $E=F$, the $*$-subalgebra of $\mathcal{L}_A(E)$ obtained by taking the span of $\left\{ \Theta_{x,y} \mid x,y \in E \right\}$ forms a two-sided algebraic ideal of $\mathcal{L}_A(E)$, and hence its closure is a $C^*$-algebra:
+\begin{definition}
+	For a Hilbert $A$-module $E$, we define the compact operators on $E$ to be the $C^*$-algebra
+	\begin{align*}
+		\mathbb{K}_A(E):= \overline{\Span}\left\{ \Theta_{x,y} \mid x,y \in E \right\} \subseteq \mathcal{L}_A(E).
+	\end{align*}
+\end{definition}
+\begin{note}
+	An operator $t \in \mathbb{K}_A(F,E)$ need not be a compact operator when $E,F$ are considered as Banach spaces, i.e., a limit of finite-rank operators. This is easy to see by assuming that $A$ is unital: The operator $\mathrm{id}_A =\Theta_{1,1}$ is in $\mathbb{K}_A(A_A)$, but the identity operator is not a compact operator on an infinite-dimensional Banach space.
+\end{note}
+\begin{lemma}
+	There is an isomorphism $A \cong \mathbb{K}_A(A_A)$. If $A$ is unital, then $\mathbb{K}_A(A_A) = \mathcal{L}_A(A_A)$.
+\end{lemma}
+\begin{proof}
+	Fix $a \in A$ and define $L_a \colon A \to A$ by $L_a(b)=ab$. Then $\langle L_a x,y \rangle = x^* a^*y = \langle x, L_{a^*}y\rangle$ for all $x,y \in A$, hence $L_a$ is adjointable with adjoint $L_{a^*}$. Note that $L_{ab^*}(x) = ab^*x = a\langle b,x \rangle = \Theta_{a,b}(x)$ for $a,b,x \in A$, hence if $L\colon a \mapsto L_a$, we have $\mathbb{K}_A(A_A) \subseteq \mathrm{Im}(L)$. It is clear that $L$ is a $*$-homomorphism of norm one, i.e., an isometric homomorphism, so it's image is a $C^*$-algebra. To see that it has image equal to $\mathbb{K}_A(A_A)$, let $(u_i)$ be an approximate identity of $A$. Then for any $a \in A$ $L_{u_i a} \to L_{a}$, and since $L_{u_ia} \in \mathbb{K}_{A}(A_A)$ for all $i$, we see that $L_a \in \mathbb{K}_A(A_A)$.
 
+	If $1 \in A$, then for $t \in \mathcal{L}_A(A_A)$ we see that $t(a)=t(1\cdot a)=t(1)\cdot a=L_{t(1)}a$, so $t \in \mathcal{K}_A(A_A)$, and $\mathcal{L}_A(A_A) \cong A$.
+\end{proof}
+We note that it does not hold in general that $A \cong \mathcal{L}_A(A_A)$.
 
-
+We empose quite an assortment of topologies on $\mathbb{B}(\H,\H')$ for Hilbert spaces $\H$ and $\H'$ - this is not the case when we study Hilbert $C^*$-modules: Given Hilbert $A$-module $E$ and $F$, we only consider two topologies - the norm topology and the \emph{strict topology}:
+\begin{definition}
+	The \emph{strict topology} on $\mathcal{L}_A(E,F)$ is the locally convex topology on $\mathcal{L}_A(E,F)$ generated by the family of semi-norms 
+	\begin{align*}
+		t \mapsto \lv tx\rv, \text{ for } x \in E \text{ and }		t \mapsto \lv t^*y \rv, \text{ for } y \in F.
+	\end{align*}
+\end{definition}
+This topology turns out to be very important, and there is many results of the classic theory which apply in this setting as well:
 %\ssection{Vector-valued integration}
 
 
