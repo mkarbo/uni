@@ -56,17 +56,18 @@ so that $\lv x a \rv \leq \lv x \rv \lv a \rv$, which shows that $E$ is a normed
 
 In the following, we assume that $E$ is a Hilbert $A$-module.
 \begin{remark}
-	Let $I_0(E) = \left\{ \langle x,y \rangle \mid x,y \in E \right\}$, and let $I(E) := \overline{I_0(E)}$. Then $I(E)$ is a closed ideal in $A$. 
+	Let $I_0(E) = \left\{ \langle x,y \rangle \mid x,y \in E \right\}$, and let $\langle E,E \rangle := \overline{I_0(E)}$. Then $\langle E,E \rangle$ is a closed ideal in $A$. 
 \end{remark}
 And this gives us the following useful lemma:
 \begin{lemma}
-	The set $EI(E)$ is dense in $E$.
+	The set $E\langle E,E\rangle$ is dense in $E$.
+	\label{EEEdense}
 \end{lemma}
 \begin{proof}
-	Let $(u_i)$ denote an approximate unit for $I(E)$. Then clearly $\langle x-x u_i , x-x u_i\rangle \to 0$ for $x \in E$ (seen by expanding the expression), which implies that $x u_i \to x$ in $E$
+	Let $(u_i)$ denote an approximate unit for $\langle E,E \rangle$. Then clearly $\langle x-x u_i , x-x u_i\rangle \to 0$ for $x \in E$ (seen by expanding the expression), which implies that $x u_i \to x$ in $E$
 \end{proof}
 \begin{definition}
-	If $I(E)$ is dense in $A$ we say that the Hilbert $A$-module is \emph{full}.
+	If $\langle E,E \rangle$ is dense in $A$ we say that the Hilbert $A$-module is \emph{full}.
 \end{definition}
 
 \todo{closedness under direct sum and $\H_A= \H \otimes A$}
@@ -164,7 +165,7 @@ A quite useful result about positive operators on a Hilbert space carries over t
 	\begin{align*}
 		0 \leq \langle T T^-x,x \rangle = \langle -(T^-)^2x,T^-x\rangle = -\underbrace{\langle (T^-)^3x,x\rangle}_{\geq 0 } \leq 0,
 	\end{align*}
-	so $<(T^-)^3 x,x \rangle = 0$ for all $x$. The polarization identity shows that $(T^-)^3=0$ and hence $(T^-)=0$, so $T=T^+\geq 0$.
+	so $\langle (T^-)^3 x,x \rangle = 0$ for all $x$. The polarization identity shows that $(T^-)^3=0$ and hence $(T^-)=0$, so $T=T^+\geq 0$.
 \end{proof}
 And, as in the Hilbert Space situation, we also have 
 \begin{lemma}
@@ -193,6 +194,7 @@ It is well-known that the only ideal of $\mathbb{B}(\H)$ is the set of compact o
 		\item $T \Theta_{x,y} = \Theta_{tx,y}$, for $T \in \mathcal{L}(E,G)$,
 		\item $\Theta_{x,y}S = \Theta_{x,S^* y}$ for $S \in \mathcal{L}(G,F)$.
 	\end{enumerate}
+	\label{frnkideal}
 \end{proposition}
 \begin{proof}
 Let $x,w \in E$ and $y,u \in F$ for Hilbert $A$-modules $E,F$ as above. Then, we see that
@@ -243,6 +245,23 @@ We empose quite an assortment of topologies on $\mathbb{B}(\H,\H')$ for Hilbert 
 	\end{align*}
 \end{definition}
 This topology turns out to be very important, and there is many results of the classic theory which apply in this setting as well:
+\begin{proposition}
+	Let $E$ be a Hilbert $A$-module. Then the unit ball of $\mathbb{K}_A(E,F)$, $(\mathbb{K}_A(E,F))_1$, is strictly dense in the unit ball, $(\mathcal{L}_A(E,F))_1$, of $\mathcal{L}_A(E,F)$.
+\end{proposition}
+\begin{proof}
+	Let $(e_i)$ be an approximate identity of the $C^*$-algebra $\mathbb{K}_A(E)$. Then, for all $w\langle x,y \rangle \in E\langle E,E \rangle$ we see that
+	\begin{align*}
+		e_i w\langle x,y \rangle = e_i \Theta_{w,x}(y) \to \Theta_{w,x}(y) = w \langle x,y\rangle,
+	\end{align*}
+	and hence $e_i x \to x$ for all $x \in E$, since $E\langle E,E\rangle \subseteq E$ is dense by \Cref{EEEdense}. Then we clearly have, for $t \in (\mathcal{L}_A(E,F))_1$ that
+	\begin{align*}
+		\lv t(e_ix-x)\rv \to 0 \text{  and  } \lv e_it^*y-t^*y\rv \to 0,
+	\end{align*}
+	for $x \in E$ and $y \in F$, so $te_i \to t$ strictly, and by \ref{frnkideal} we see that $te_i \in (\mathbb{K}_A(E,F))_1$, finishing the proof.
+\end{proof}
+
+
+
 %\ssection{Vector-valued integration}
 
 
