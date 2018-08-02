@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.28)  1 AUG 2018 19:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.28)  2 AUG 2018 18:38
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -2320,21 +2320,94 @@ l.255 	\end{align*}
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
 l.255 	\end{align*}
-                   ] [8] [9pdfTeX warning (ext4): destination with the same ide
-ntifier (name{theorem.1.20}) has been already used, duplicate ignored
+                   ] [8pdfTeX warning (ext4): destination with the same identif
+ier (name{theorem.1.20}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.313 	\end{align*}
+l.289 	L
+        et $A^1 := A \oplus \C$ as a $*$-algebra with $(x,\alpha)(y,\beta):=...
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.1.21}
+) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.289 	L
+        et $A^1 := A \oplus \C$ as a $*$-algebra with $(x,\alpha)(y,\beta):=...
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.1.22}
+) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.289 	L
+        et $A^1 := A \oplus \C$ as a $*$-algebra with $(x,\alpha)(y,\beta):=...
+] [9pdfTeX warning (ext4): destination with the same identifier (name{theorem.1
+.23}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.319 	\begin{align*}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{theorem.1.24}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.319 	\begin{align*}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{theorem.1.25}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.319 	\begin{align*}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{theorem.1.26}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.319 	\begin{align*}
+                     ]
+Overfull \hbox (12.03233pt too wide) in paragraph at lines 339--339
+[] 
+ []
+
+[10pdfTeX warning (ext4): destination with the same identifier (name{theorem.1.
+27}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.348 \ssection{Crossed Products}
+                                 pdfTeX warning (ext4): destination with the sa
+me identifier (name{theorem.1.28}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.348 \ssection{Crossed Products}
+                                 ] [11pdfTeX warning (ext4): destination with t
+he same identifier (name{theorem.1.29}) has been already used, duplicate ignore
+d
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.390 	\end{align*}
                    pdfTeX warning (ext4): destination with the same identifier 
-(name{theorem.1.21}) has been already used, duplicate ignored
+(name{theorem.1.30}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.313 	\end{align*}
-                   ]) [10] (./appendix/appendix.tex [11
+l.390 	\end{align*}
+                   ]) [12] (./appendix/appendix.tex [13
 
-]) [12
+])
+./master.tex:27: Undefined control sequence.
+l.27 \indexentry
+                {[titlecase]{title}{\par }[titlecase]{subtitle}|hyperpage}{12}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[14
 
 ]
 
@@ -2361,10 +2434,10 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 29.
  )
 (\end occurred when \iftrue on line 5 was incomplete) 
 Here is how much of TeX's memory you used:
- 39458 strings out of 493029
- 713072 string characters out of 6136234
- 1079459 words of memory out of 5000000
- 42341 multiletter control sequences out of 15000+600000
+ 39572 strings out of 493029
+ 715803 string characters out of 6136234
+ 1080470 words of memory out of 5000000
+ 42440 multiletter control sequences out of 15000+600000
  26512 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,16n,82p,10473b,1737s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2391,10 +2464,10 @@ xmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/publ
 ic/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000
 .pfb></usr/share/texmf/fonts/type1/public/cm-super/sfxc1200.pfb></usr/share/tex
 mf/fonts/type1/public/cm-super/sfxc1728.pfb>
-Output written on master.pdf (15 pages, 644172 bytes).
+Output written on master.pdf (17 pages, 665158 bytes).
 PDF statistics:
- 268 PDF objects out of 1000 (max. 8388607)
- 220 compressed objects within 3 object streams
- 58 named destinations out of 1000 (max. 500000)
+ 295 PDF objects out of 1000 (max. 8388607)
+ 245 compressed objects within 3 object streams
+ 73 named destinations out of 1000 (max. 500000)
  66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

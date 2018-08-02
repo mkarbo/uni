@@ -28,6 +28,7 @@
 \usepackage{titlesec}
 %\usepackage[titleloc]{appendix}
 \usepackage{faktor}
+\usepackage{makeidx} 
 
 \titleformat{\chapter}[display]
 {\center\normalfont\bfseries}{}{0pt}{\Large}
@@ -194,3 +195,6 @@
 \fi}
 \makeatother
 \pagenumbering{roman}
+
+\let\oldemph\emph
+\renewcommand{\emph}[1]{\index{#1}\oldemph{#1}}

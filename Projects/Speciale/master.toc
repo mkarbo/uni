@@ -6,10 +6,10 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.1}Hilbert $C^*$-modules and Multiplier Algebras}{1}{section.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.2}Crossed Products}{9}{section.1.2}
+\contentsline {section}{\numberline {1.2}Crossed Products}{11}{section.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{11}{section*.6}
+\contentsline {chapter}{Bibliography}{13}{section*.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {appendix}{\chapternumberline {A}}{12}{appendix.A}
+\contentsline {appendix}{\chapternumberline {A}}{14}{appendix.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Integration Theory In Groups}{12}{section.A.1}
+\contentsline {section}{\numberline {A.1}Integration Theory In Groups}{14}{section.A.1}
