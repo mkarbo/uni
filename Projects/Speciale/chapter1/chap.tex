@@ -1,11 +1,11 @@
 \chapter{Setting The Stage - Constructions}
 \pagenumbering{arabic}
-In this chapter we will consider the constructions of certain important objects, e.g., \emph{the Crossed Product} of general locally compact groups acting on a $C^*$-algebra or the \emph{Dual Action} of an Abelian locally compact group, both of which are at the center of the topic of this thesis. Since the inception of the theory of some of the following constructions, there has been several modifications to the proofs and the generality of the theory covered, and we will cherry pick the most suitable results and variations thereof from both the old and new school of the subjects.
+In this chapter we will consider the constructions of certain important objects, e.g., \myemph{the Crossed Product} of general locally compact groups acting on a $C^*$-algebra or the \myemph{Dual Action} of an Abelian locally compact group, both of which are at the center of the topic of this thesis. Since the inception of the theory of some of the following constructions, there has been several modifications to the proofs and the generality of the theory covered, and we will cherry pick the most suitable results and variations thereof from both the old and new school of the subjects.
 
 \sssection{Hilbert $C^*$-modules and Multiplier Algebras}
-Given a non-unital $C^*$-algebra $A$, we can extend a lot of the theory of unital $C^*$-algebras to $A$ by considering the unitalization $A^\dagger = A + 1\C$ with the canonical operations. This is the 'smallest' unitalization in the sense that $A$ is an \todo{add to prelim} essential ideal of $A^\dagger$ and $A^\dagger/A \cong \C$. We can also consider a maximal unitalization, called the \emph{Multiplier Algebra} of $A$, denoted by $M(A)$. We will now construct it and some theory revolving it, in particular that of Hilbert-modules:
+Given a non-unital $C^*$-algebra $A$, we can extend a lot of the theory of unital $C^*$-algebras to $A$ by considering the unitalization $A^\dagger = A + 1\C$ with the canonical operations. This is the 'smallest' unitalization in the sense that $A$ is an \todo{add to prelim} essential ideal of $A^\dagger$ and $A^\dagger/A \cong \C$. We can also consider a maximal unitalization, called the \myemph{Multiplier Algebra} of $A$, denoted by $M(A)$. We will now construct it and some theory revolving it, in particular that of Hilbert-modules:
 \begin{definition}
-	Let $A$ be any $C^*$-algebra. An \emph{inner-product $A$-module} is a complex vector space $E$ which is also a right-$A$-module which is equipped with a map $\langle \cdot, \cdot\rangle_A \colon E \times A \to A$ such that for $x,y,z \in E, \ \alpha,\beta \in \C$ and $a \in A$ we have
+	Let $A$ be any $C^*$-algebra. An \myemph{inner-product $A$-module} is a complex vector space $E$ which is also a right-$A$-module which is equipped with a map $\langle \cdot, \cdot\rangle_A \colon E \times A \to A$ such that for $x,y,z \in E, \ \alpha,\beta \in \C$ and $a \in A$ we have
 	\begin{align}
 		\langle a , \alpha y + \beta z \rangle_A &= \alpha \langle x,y\rangle_A+\beta x,z \rangle_A\\
 		\langle x , y \cdot a \rangle-A &= \langle x,y\rangle_A \cdot a\\
@@ -13,7 +13,7 @@ Given a non-unital $C^*$-algebra $A$, we can extend a lot of the theory of unita
 		\langle x,x \rangle_A &\geq 0\\
 		\langle x,x \rangle_A &= 0 \implies x = 0. 
 	\end{align}
-	If $\langle \cdot , \cdot \rangle$ satisfy (1.1)-(1.4) but not (1.5) above, we say that $E$ is a \emph{semi-inner-product $A$-module}. If there is no confusion, we simply write $\langle \cdot, \cdot \rangle$ to mean the $A$-valued inner-product on $E$. Similarly, we will often denote $x \cdot a$ by $xa$.
+	If $\langle \cdot , \cdot \rangle$ satisfy (1.1)-(1.4) but not (1.5) above, we say that $E$ is a \myemph{semi-inner-product $A$-module}. If there is no confusion, we simply write $\langle \cdot, \cdot \rangle$ to mean the $A$-valued inner-product on $E$. Similarly, we will often denote $x \cdot a$ by $xa$.
 \end{definition}
 It is easy to see that this generalizes the notion of Hilbert spaces, for if $A= \C$, then any Hilbert space (over $\C$) is a inner-product $\C$-module. Even when $E$ is only a semi-inner-product $A$-module, we still have a lot of the nice properties of regular inner-producte, e.g.:
 \begin{proposition}[Cauchy-Schwarz Inequality]
@@ -39,7 +39,7 @@ Recall that for $0 \leq a \leq b \in A$, it holds that $\lv a \rv_A \leq \lv b \
 	\begin{align*}
 		\lv x \rv := \lv \langle x , x \rangle\rv_A^{\frac12}, \text{ for } x \in E.
 	\end{align*}
-	If $E$ is an inner-product $A$-module such that this norm is complete, we say that $E$ is a \emph{Hilbert $C^*$-module over $A$} or just a \emph{Hilbert $A$-module}.
+	If $E$ is an inner-product $A$-module such that this norm is complete, we say that $E$ is a \myemph{Hilbert $C^*$-module over $A$} or just a \myemph{Hilbert $A$-module}.
 \end{definition}
 If the above defined norm is but a semi-norm, then we may form the quotient space of $E$ with respect to $N=\left\{ x \in E \mid \langle x , x \rangle = 0 \right\}$ to obtain an inner-product $A$-module with the obvious operations. Moreover, the usual ways of passing from pre-Hilbert spaces extend naturally to pre-Hilbert $A$-modules. For $x \in E$ and $a \in A$, we see that
 \begin{align*}
@@ -67,7 +67,7 @@ And this gives us the following useful lemma:
 	Let $(u_i)$ denote an approximate unit for $\langle E,E \rangle$. Then clearly $\langle x-x u_i , x-x u_i\rangle \to 0$ for $x \in E$ (seen by expanding the expression), which implies that $x u_i \to x$ in $E$
 \end{proof}
 \begin{definition}
-	If $\langle E,E \rangle$ is dense in $A$ we say that the Hilbert $A$-module is \emph{full}.
+	If $\langle E,E \rangle$ is dense in $A$ we say that the Hilbert $A$-module is \myemph{full}.
 \end{definition}
 
 \todo{closedness under direct sum and $\H_A= \H \otimes A$}
@@ -99,7 +99,7 @@ The set of adjointable maps between Hilbert $A$-modules is of great importance a
 	\begin{align*}
 		\langle tx, y \rangle_2 = \langle x , t^*y \rangle_1,
 	\end{align*}
-	for all $x \in E_1$ and $y \in E_2$, i.e., \emph{adjointable maps}. When no confusion may occur, we will write $\mathcal{L}(E_1,E_2)$ and ommit the subscript.
+	for all $x \in E_1$ and $y \in E_2$, i.e., \myemph{adjointable maps}. When no confusion may occur, we will write $\mathcal{L}(E_1,E_2)$ and ommit the subscript.
 \end{definition}
 \begin{proposition}
 	if $t \in \mathcal{L}(E_1,E_2)$, then
@@ -237,9 +237,9 @@ It follows that for $E=F$, the $*$-subalgebra of $\mathcal{L}_A(E)$ obtained by 
 \end{proof}
 We note that it does not hold in general that $A \cong \mathcal{L}_A(A_A)$.
 
-We empose quite an assortment of topologies on $\mathbb{B}(\H,\H')$ for Hilbert spaces $\H$ and $\H'$ -- this is not the case when we study Hilbert $C^*$-modules: Given Hilbert $A$-module $E$ and $F$, we only consider two topologies -- the norm topology and the \emph{strict topology}:
+We empose quite an assortment of topologies on $\mathbb{B}(\H,\H')$ for Hilbert spaces $\H$ and $\H'$ -- this is not the case when we study Hilbert $C^*$-modules: Given Hilbert $A$-module $E$ and $F$, we only consider two topologies -- the norm topology and the \myemph{strict topology}:
 \begin{definition}
-	The \emph{strict topology} on $\mathcal{L}_A(E,F)$ is the locally convex topology on $\mathcal{L}_A(E,F)$ generated by the family of semi-norms 
+	The \myemph{strict topology} on $\mathcal{L}_A(E,F)$ is the locally convex topology on $\mathcal{L}_A(E,F)$ generated by the family of semi-norms 
 	\begin{align*}
 		t \mapsto \lv tx\rv, \text{ for } x \in E \text{ and }		t \mapsto \lv t^*y \rv, \text{ for } y \in F.
 	\end{align*}
@@ -247,6 +247,7 @@ We empose quite an assortment of topologies on $\mathbb{B}(\H,\H')$ for Hilbert 
 This topology turns out to be very important, and there is many results of the classic theory which apply in this setting as well:
 \begin{proposition}
 	Let $E$ be a Hilbert $A$-module. Then the unit ball of $\mathbb{K}_A(E,F)$, $(\mathbb{K}_A(E,F))_1$, is strictly dense in the unit ball, $(\mathcal{L}_A(E,F))_1$, of $\mathcal{L}_A(E,F)$.
+	\label{mult:unitstrictdense}
 \end{proposition}
 \begin{proof}
 	Let $(e_i)$ be an approximate identity of the $C^*$-algebra $\mathbb{K}_A(E)$. Then, for all $w\langle x,y \rangle \in E\langle E,E \rangle$ we see that
@@ -262,7 +263,7 @@ This topology turns out to be very important, and there is many results of the c
 
 We are almost ready to introduce the Multiplier Algebra of a $C^*$-algebra $A$, however, we must introduce some new terminology first
 \begin{definition}
-	An ideal $I$ of a $C^*$-algebra $A$ is essential if it is non-zero and satisfies $I\cap J \neq 0$ for all non-zero ideals $J$ of $A$.
+	An ideal $I$ of a $C^*$-algebra $A$ is an \index{essential ideal} \emph{essential ideal} if it is non-zero and satisfies $I\cap J \neq 0$ for all non-zero ideals $J$ of $A$.
 \end{definition}
 And there is another commonly used equivalent formulation of the definition of essential ideals:
 \begin{lemma}
@@ -271,7 +272,8 @@ And there is another commonly used equivalent formulation of the definition of e
 		\item $I^2 = I$,
 		\item $I\cap J = IJ$,
 		\item $I$ is essential if and only if $aI=0$ implies $a = 0$ for all $ a \in A$.
-	\end{enumerate}
+	\end{enumerate}	
+	\label{mult:essentialequiv}
 \end{lemma}
 \begin{proof}
 	\textbf{(1):} It holds that $I^2 \subseteq I$, since $I$ is an ideal. For the other inclusion, note that if $a \geq 0 $ is an element of $I$, then $a=(a^{\frac12})^2 \in I^2$, so $I_+ \subseteq I^2$ hence $I=I^2$.
@@ -282,7 +284,7 @@ And there is another commonly used equivalent formulation of the definition of e
 \end{proof}
 As mentioned earlier, it is a useful tool to be able to adjoin units to a non-unital $C^*$-algebra $A$. We formalize this process in the following definition:
 \begin{definition}
-	A \emph{unitalization} of a $C^*$-algebra $A$ is a pair $(B,\iota)$ consisting of a unital $C^*$-algebra $B$ and an injective homomorphism $\iota \colon A \hookrightarrow B$ such that $\iota(A)$ is an essential ideal of $B$.	
+	A \myemph{unitalization} of a $C^*$-algebra $A$ is a pair $(B,\iota)$ consisting of a unital $C^*$-algebra $B$ and an injective homomorphism $\iota \colon A \hookrightarrow B$ such that $\iota(A)$ is an essential ideal of $B$.	
 \end{definition}
 The most common way of adjoining a unit to a non-unital $C^*$-algebra $A$ is to consider the vector space $A\oplus \C$ and endow it with a proper $*$-algebra structure and give it a certain $C^*$-norm, see e.g., \cite[Theorem 15.1]{zhu}. This can also be done via the use of compact operators on $A$:
 \begin{example}
@@ -297,10 +299,11 @@ The most common way of adjoining a unit to a non-unital $C^*$-algebra $A$ is to 
 
 \begin{example}
 	The pair $(\mathcal{L}_A(A_A),L)$, $L\colon a \mapsto L_a$, is a unitalization of $A$ - to see this we need only show that $\mathbb{K}_A(A_A)$ is essential in $\mathcal{L}_A(A_A)$: Suppose that $T \mathbb{K}_A(A_A)=0$, so $TK = 0$ for all compact $K$ on $A$, then with $\Theta_{x,y} \colon z \mapsto x\langle y,z\rangle = xy^*z$, we see by \ref{frnkideal} that $T \Theta_{x,y}=\Theta_{Tx,y}= 0$ for all $x, y \in A$, which shows that for $x,y \in A$ we have $\Theta_{Tx,y}(y) = (Tx)(y^*y)=L_{Tx}(y^*y)=0$, implying that $L_{Tx}=0 \iff Tx = 0$ so $T=0$. 
+	\label{mult:compess}
 \end{example}
 And, it makes sense to talk about a 'largest' unitalization, in the sense that it has a certain universal property:
 \begin{definition}
-	A unitalization $(B, \iota)$ of a $C^*$-algebra $A$ is said to be \emph{maximal} if to every other unitalization $(C,\iota')$, there is a $*$-homomorphism $\varphi \colon C \to B$ such that diagram:
+	A unitalization $(B, \iota)$ of a $C^*$-algebra $A$ is said to be \myemph{maximal} if to every other unitalization $(C,\iota')$, there is a $*$-homomorphism $\varphi \colon C \to B$ such that diagram:
 	\begin{equation}
 	\begin{tikzcd}
 		A\arrow[dr,"\iota'"', hook] \arrow[r, "\iota", hook] & B \\
@@ -308,21 +311,27 @@ And, it makes sense to talk about a 'largest' unitalization, in the sense that i
 	\end{tikzcd}
 	\end{equation}
 	commutes.
+	\label{mult:defmaxun}
 \end{definition}
 
 \begin{definition}
-	For a $C^*$-algebra $A$, we define the \emph{multiplier algebra} of $A$ to be $M(A):=\mathcal{L}_A(A_A)$.
+	For a $C^*$-algebra $A$, we define the \myemph{multiplier algebra} of $A$ to be $M(A):=\mathcal{L}_A(A_A)$.
 \end{definition}
 It turns out that this is a maximal unitalization of $A$, as we shall see in a moment -- but first we need a bit more work, for instance we need the notion of non-degenerate representations of a $C^*$-algebra on a Hilbert space to be extended to the case of Hilbert $C^*$-modules:
 \begin{definition}
-	Let $B$ be a $C^*$-algebra and $E$ a Hilbert $A$-module. A homomorphism $\varphi \colon B \to \mathcal{L}_A(E)$ is \emph{non-degenerate} if the set
+	Let $B$ be a $C^*$-algebra and $E$ a Hilbert $A$-module. A homomorphism $\varphi \colon B \to \mathcal{L}_A(E)$ is \myemph{non-degenerate} if the set
 	\begin{align*}
 		\varphi(B)X:= \Span\left\{ \varphi(b)x \mid b \in B  \text{ and } x \in E \right\},
 	\end{align*}
 	is dense in $E$. 
 \end{definition}
+\begin{example}
+	In the proof of \ref{mult:unitstrictdense} we saw that the inclusion $\mathbb{K}_A(A_A) \subseteq \mathcal{L}_A(A_A)$ is non-degenerate for all $C^*$-algebras $A$.
+	\label{mult:compnondeg}
+\end{example}
 \begin{proposition}
 	Let $A$ and $C$ be $C^*$-algebras, and let $E$ denote a Hilbert $A$-module and let $B$ be an ideal of $C$. If $\alpha \colon B \to \mathcal{L}_A(E)$ is a non-degenerate  $^*$-homomorphism, then it extends uniquely to a $^*$homomorphism $\overline \alpha \colon C \to \mathcal{L}_A(E)$. If further $\iota(B)$ is an essential ideal of $C$, then the extension is injective. 
+	\label{mult:uniqueext}
 \end{proposition}
 \begin{proof}
 	The last statement is clear, since $\ker \overline \alpha \cap B = \ker \alpha \cap B = 0$ which implies that $\ker \overline \alpha = 0$, since $B$ is essential. Let $(e_j)$ be an approximate identity of $B$. Define for $c \in C$ the operator $\overline \alpha(c)$ on $\alpha(B)X$ by
@@ -333,12 +342,74 @@ It turns out that this is a maximal unitalization of $A$, as we shall see in a m
 	\begin{align*}
 		\lv \sum_{i=1}^n \alpha(c b_i) (x_i) \rv = \lim_{j} \lv \sum_{i=1}^n \alpha(\underbrace{c e_j}_{\in B})\alpha(b_i) (x_i) \rv \leq \lv c \rv \lv \sum_{i=1}^n \alpha(b_i) (x_i)\rv.
 	\end{align*}
-	This extends to a bounded operator on all of $E$, since $\alpha(B)E$ is dense which also implies uniqueness of the extension. It is easy to see that $c \mapsto \overline \alpha(c)$ is a homomorphism. It remains to be shown that is is adjointable: Let $c \in C$ and $b,b' \in B$ and $x,y \in E$, then
+	This extends to a bounded operator on all of $E$, since $\alpha(B)E$ is dense which also implies uniqueness of the extension. It is easy to see that $c \mapsto \overline \alpha(c)$ is a homomorphism. It remains to be shown that is is adjointable: Let $c \in C$  and $x,y \in E$, then
 	\begin{align*}
-		\langle \overline \alpha(c) \alpha(b)x,\alpha(b')y \rangle = \langle \alpha(cb) x, \alpha(b')y \rangle = \langle x , \alpha(cb)^*\alpha(b') y\rangle =  \langle x , \alpha(b^*c^*b') y\rangle =  \langle \alpha b x, \overline \alpha(c) \alpha(b') y\rangle,
+		\langle \overline \alpha(c) x,y \rangle = \lim_{j} \langle \underbrace{\alpha(ce_j)}_{\in \mathcal{L}_A(E)} x, y \rangle = \lim_j \langle x , \alpha(ce_j)^* y\rangle = \lim_j  \langle x , \alpha(e_j^*c^*) y\rangle =  \langle  x, \overline \alpha(c) y\rangle,
 	\end{align*}
-	by linearity this shows that $\overline \alpha(c^*)$ is an adjoint of $\overline \alpha (c)$, hence it is a $^*$-homomorphism.
+	this shows that $\overline \alpha(c^*)$ is an adjoint of $\overline \alpha (c)$, hence it is a $^*$-homomorphism with values in $\mathcal{L}_A(E)$
 \end{proof}
+\begin{corollary}
+	The inclusion of $\mathbb{K}_A(A_A) \subseteq \mathcal{L}_A(A_A)$ is a maximal unitalization.	
+\end{corollary}
+\begin{proof}
+	In \Cref{mult:compess} we saw that $\mathbb{K}_A(A_A)$ is an essential ideal of $\mathcal{L}_A(A_A)$ and nondegeneracy was seen in \Cref{mult:compnondeg}. By \Cref{mult:uniqueext}, the corollary follows.
+\end{proof}
+In particular, if $X=A_A$ and $C = M(B)$, then the above proposition guarantees an extension from $B$ to $M(B)$.
+
+We shall now see that the homomorphism provided by the universal property of a maximal unitalization is unique, this is the final ingredient we shall need to show that $M(A)$ is a maximal unitalization of $A$:
+\begin{lemma}
+	If $\iota \colon A \hookrightarrow B$ is a maximal unitalization and $j \colon A \hookrightarrow C$ is an essential embedding, then the homomorphism $\varphi \colon C \to B$ of \Cref{mult:defmaxun} is unique and injective.
+	\label{mult:uniquemax}
+\end{lemma}
+\begin{proof}
+	Suppose that $\varphi, \psi \colon C \to B$ such that $\varphi \circ j = \psi \circ j = \iota$. Then, for $c \in C$, we see that
+	\begin{align*}
+		\varphi(c) \iota(a) - \psi(c) \iota(a) = \varphi(c) \varphi(c j(a)) - \psi(c) \psi(c j(a)) =  \varphi(cj(a))-\varphi(cj(a))=0,
+	\end{align*}
+	for all $a \in A$, so essentiality of $\iota(A)$ in $B$ and \Cref{mult:essentialequiv} implies that $\varphi = \psi$. For injectivity, note that $\ker \varphi \cap j(A) = 0$, hence $\ker \varphi = 0$, since $j(A)$ is essential in $C$.
+\end{proof}
+We may finally show that $(M(A),L)$ is a maximal unitalization for all $C^*$-algebras $A$:
+\begin{theorem}
+	For any $C^*$-algebra $A$, the unitalization $(M(A),L)$ is maximal, and unique up to isomorphism
+	\label{mult:multmax}
+\end{theorem}
+\begin{proof}
+	For maximality, suppose that $j \colon A \hookrightarrow C$ is an essential embedding of $A$ in a $C^*$-algebra $C$. We know that $L$ is nondegenerate, hence by \ref{mult:uniqueext} we obtain and extension $\overline{L} \colon C \hookrightarrow M(A)$ such that $\overline{L} \circ j = L$.
+	For uniqueness, suppose that $(B,\iota)$ is a maximal unitalization of $A$. By \Cref{mult:uniqueext} and maximality of $(B,\iota)$ we obtain the following commutative diagram
+	\begin{equation}
+		\begin{tikzcd}
+	 		& M(A)\\
+			A\arrow[rd, " L" ',hook] \arrow[r, "\iota"', hook] \arrow[ru, "L"', hook] & B \ar[u , "\exists !\overline L"', hook ]\\
+			& M(A) \arrow[u, "\exists ! \beta"', hook] \ar[uu, "\mathrm{id}_{M(A)}"', bend right  = 90]
+		\end{tikzcd}
+	\end{equation}
+	The identity operator on $M(A)$ is by \Cref{mult:uniqueext} the unique operator satisfying $L = \mathrm{id}_{M(A)} \circ L$, but $\overline L \circ \beta \circ L = L$, so they are inverses of eachother hence isomorphisms.
+\end{proof}
+
+Often we want to be able to 'touch' the Multiplier Algebra of a $C^*$-algebra -- and we can use the concretification as $\mathcal{L}_A(A_A)$, but there is (and other as well) another common way to decribe it:
+\begin{proposition}
+	Let $A,C$ be $C^*$-algebras and $E$ be a Hilbert $C$-module. Suppose that $\alpha \colon A \to \mathcal{L}_C(E)$ is an injective nondegenerate homomorphism. Then $\alpha$ extends to an isomorphism of $M(A)$ with the idealizer $\mathcal{I}(A)$ of $\alpha(A)$ in $\mathcal{L}_C(E)$:
+	\begin{align*}
+		\mathcal{I}(A)=\left\{ T \in \mathcal{L}_C(E) \mid T\alpha(A) \subseteq \alpha(A) \text{ and } \alpha(A)T \subseteq \alpha(T) \right\}.	
+	\end{align*}
+	\label{mult:idealizerismax}
+\end{proposition}
+\begin{proof}
+	It is clear that $\alpha(A)$ is an ideal of the idealizer $\mathcal{I}(A)$, which is in fact essential by nondegeneracy of $\alpha$: If $T\alpha(A) = 0$ then $T\alpha(A)E = 0$ hence $T =0$.
+
+By \ref{mult:multmax} it suffices to show that $(\mathcal{I}(A),\alpha)$ is a maximal unitalization of $A$. Let $\iota \colon A \hookrightarrow B$ be an essential embedding of $A$ into a $C^*$-algebra $B$. Let $\overline \alpha \colon B \hookrightarrow \mathcal{L}_C(E)$ denote the injective extension of $\alpha$ from \Cref{mult:uniqueext}. We must show that $\overline \alpha(B) \subseteq \mathcal{I}(A)$: Let $b \in B$ and $a \in A$. Then, as $b \varphi(a) \in \varphi(A)$, we see that $\overline \alpha(b) \underbrace{\alpha(a)}_{\overline \alpha (\iota(a))} = \overline \alpha(b \iota(a)) \in \alpha(A)$, as wanted.
+\end{proof}
+
+This allows us to, given any faithful nondegenerate representation of $A$ on a Hilbert space $\H$, to think of $M(A)$ as the idealizer of $A$ in $\mathbb{B}(\H)$, and it immediately allows us to describe the Multiplier algebra of $\mathbb{K}_A(E)$:
+\begin{corollary}
+	For all $C^*$-algebras $A$ and Hilbert $A$-modules, we have $M(\mathbb{K}_A(E))\cong \mathcal{L}_A(E)$.
+\end{corollary}
+\begin{proof}
+	This follows from \Cref{mult:idealizerismax}: As we have seen the inclusion $\mathbb{K}_A(E) \subseteq \mathcal{L}_A(E)$ is nondegenerate and $\mathcal{I}(\mathbb{K}_A(E))=\mathcal{L}_A(E)$ since the compacts is an ideal.
+\end{proof}
+
+
+
 %\ssection{Vector-valued integration}
 
 
@@ -378,7 +449,7 @@ For $G \stackrel{\alpha}{\acts} A$ and a covariant representation $(\pi,\H)$ on 
 and we will write $\int_G \pi(f(s)) U_s \d s := I_f$. We denote the map $f \mapsto I_f$ by $\pi \rtimes U$.
 
 \begin{lemma}
-	The map $\pi \rtimes U$ is a $*$-representation of $\cc(G,A,\alpha)$ called \emph{the integrated form of $\pi$ and $U$}. It is $L^1$-norm decreasing, i.e., for $f \in \cc(G,A,\alpha)$ we have
+	The map $\pi \rtimes U$ is a $*$-representation of $\cc(G,A,\alpha)$ called \myemph{the integrated form of $\pi$ and $U$}. It is $L^1$-norm decreasing, i.e., for $f \in \cc(G,A,\alpha)$ we have
 	\begin{align*}
 	\lv \pi \rtimes U(f)\rv \leq \lv f \rv_1.	
 	\end{align*}

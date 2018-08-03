@@ -30,12 +30,12 @@
 \usepackage{faktor}
 \usepackage{makeidx} 
 
+\makeindex
 \titleformat{\chapter}[display]
 {\center\normalfont\bfseries}{}{0pt}{\Large}
-\renewcommand*\cftappendixname{Appendix  }
+%\renewcommand*\cftappendixname{Appendix  }
 
-\newcommand{\apptitle}{%
-\section*{\huge\centering\normalfont\scshape \textbf{Appendix \thechapter}}}
+\newcommand{\apptitle}{\section*{\huge\centering\normalfont\scshape \textbf{Appendix \thechapter}}}
 \addtolength{\textwidth}{30pt}
 \addtolength{\foremargin}{-30pt}
 \checkandfixthelayout
@@ -196,5 +196,8 @@
 \makeatother
 \pagenumbering{roman}
 
-\let\oldemph\emph
-\renewcommand{\emph}[1]{\index{#1}\oldemph{#1}}
+%\let\oldemph\emph
+%\renewcommand{\emph}[1]{\index{#1}}
+
+
+\newcommand{\myemph}[1]{\index{#1}\emph{#1}}%
