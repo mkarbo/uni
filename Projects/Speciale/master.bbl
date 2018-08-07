@@ -16,6 +16,26 @@
   {}
 \endgroup
 
+\entry{annow}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Pedersen}{P.}%
+     {Gert~K}{G.~K.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer Science \& Business Media}%
+  }
+  \strng{namehash}{PGK1}
+  \strng{fullhash}{PGK1}
+  \field{labelyear}{2012}
+  \field{sortinit}{P}
+  \field{title}{Analysis now}
+  \field{volume}{118}
+  \field{year}{2012}
+\endentry
+
 \entry{zhu}{book}{}
   \name{author}{1}{}{%
     {{}%
