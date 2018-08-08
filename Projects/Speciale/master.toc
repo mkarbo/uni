@@ -2,16 +2,24 @@
 \defcounter {refsection}{0}\relax 
 \select@language {english}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {1}Setting The Stage - Constructions}{1}{chapter.1}
+\contentsline {chapter}{\chapternumberline {1}Hilbert $C^*$-modules and the Multiplier Algebra}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}Hilbert $C^*$-modules and Multiplier Algebras}{1}{section.1.1}
+\contentsline {section}{\numberline {1.1}Hilbert $C^*$-modules}{1}{section.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.2}Crossed Products}{18}{section.1.2}
+\contentsline {section}{\numberline {1.2}The $C^*$-algebra of adjointable operators}{4}{section.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{20}{section*.10}
+\contentsline {section}{\numberline {1.3}Unitalizations and the Multiplier Algebra}{11}{section.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Appendix}{21}{appendix*.11}
+\contentsline {chapter}{\chapternumberline {2}Integral Forms And Representation Theory}{18}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Integration Theory In Groups}{21}{section*.12}
+\contentsline {chapter}{\chapternumberline {3}Crossed Products with Topological Groups}{19}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Index}{22}{section*.13}
+\contentsline {section}{\numberline {3.1}Crossed Products}{20}{section.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{22}{section*.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Appendix}{23}{appendix*.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Integration Theory In Groups}{23}{section*.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Index}{24}{section*.12}

@@ -1,9 +1,11 @@
-\chapter{Setting The Stage - Constructions}
+\chapter{Hilbert $C^*$-modules and the Multiplier Algebra}
 \pagenumbering{arabic}
-In this chapter we will consider the constructions of certain important objects, e.g., \myemph{the Crossed Product} of general locally compact groups acting on a $C^*$-algebra or the \myemph{Dual Action} of an Abelian locally compact group, both of which are at the center of the topic of this thesis. Since the inception of the theory of some of the following constructions, there has been several modifications to the proofs and the generality of the theory covered, and we will cherry pick the most suitable results and variations thereof from both the old and new school of the subjects.
+In this chapter we introduce some of the fundamental theory of Hilbert $C^*$-modules, which may be thought of as a generalization of Hilbert spaces. The primary source of inspiration and techniques are the excellent books on the subject: \cite{williamsmorita}, \cite{lance1995hilbert} and \cite{murphy2014c}. After reviewing the basic definitions we will proceed to contruct and prove theorems regarding the Multiplier Algebra, which plays a crucial part in the development of the theory of the general crossed product, one of the basic constructions of this thesis.
 
-\sssection{Hilbert $C^*$-modules and Multiplier Algebras}
-Given a non-unital $C^*$-algebra $A$, we can extend a lot of the theory of unital $C^*$-algebras to $A$ by considering the unitalization $A^\dagger = A + 1\C$ with the canonical operations. This is the 'smallest' unitalization in the sense that $A$ is an \todo{add to prelim} essential ideal of $A^\dagger$ and $A^\dagger/A \cong \C$. We can also consider a maximal unitalization, called the \myemph{Multiplier Algebra} of $A$, denoted by $M(A)$. We will now construct it and some theory revolving it, in particular that of Hilbert-modules:
+
+
+\sssection{Hilbert $C^*$-modules}
+Given a non-unital $C^*$-algebra $A$, we can extend a lot of the theory of unital $C^*$-algebras to $A$ by considering the unitalization $A^\dagger = A + 1\C$ with the canonical operations. This is the 'smallest' unitalization in the sense that $A$ the inclusion map is non-degenerate and maps $A$ to an ideal of $A^\dagger$ such that $A^\dagger/A \cong \C$. We can also consider a maximal unitalization, called the \myemph{Multiplier Algebra} of $A$, denoted by $M(A)$. We will now construct it and some theory revolving it, in particular that of Hilbert-modules:
 \begin{definition}
 	Let $A$ be any $C^*$-algebra. An \myemph{inner-product $A$-module} is a complex vector space $E$ which is also a right-$A$-module which is equipped with a map $\langle \cdot, \cdot\rangle_A \colon E \times A \to A$ such that for $x,y,z \in E, \ \alpha,\beta \in \C$ and $a \in A$ we have
 	\begin{align}
@@ -93,9 +95,11 @@ In fact, the above proof also shows that $EA$ is dense in $E$ and that $x1=x$ wh
 	\begin{align*}
 		 f = \langle \iota(f) , 1 \rangle_A = \langle f , \iota^*(1)\rangle = f \iota^*(1),
 	\end{align*}
-	so $\iota^*(1)=1$, but $1 \not\in F$. Hence $\iota^*$ is not adjointable.
+	so $\iota^*(1)=1$, but $1 \not\in F$. Hence $\iota^*$ is not adjointable. We shall investigate properties of the adjointable operators in more detail further on.
 \end{note}
-The set of adjointable maps between Hilbert $A$-modules is of great importance and has many nice properties.
+
+\sssection{The $C^*$-algebra of adjointable operators}
+The set of adjointable maps between Hilbert $A$-modules is of great importance and has many nice properties, and while not all results carry over from the theory of bounded operators on a Hilbert space, many do, as we shall see.
 \begin{definition}
 	For Hilbert $A$-modules $E_i$ with $A$-valued inner-products $\langle \cdot , \cdot\rangle_i$, $i=1,2$, we define $\mathcal{L}_A(E_1,E_2)$ to be the set of all maps $t \colon E_1 \to E_2$ for which there exists a map $t^* \colon E_2 \to E_1$ such that
 	\begin{align*}
@@ -402,6 +406,8 @@ This topology turns out to be very important, and there is many results of the c
 	for $x \in E$ and $y \in F$, so $te_i \to t$ strictly, and by \ref{frnkideal} we see that $te_i \in (\mathbb{K}_A(E,F))_1$, finishing the proof.
 \end{proof}
 
+
+\sssection{Unitalizations and the Multiplier Algebra}
 We are almost ready to introduce the Multiplier Algebra of a $C^*$-algebra $A$, however, we must introduce some new terminology first
 \begin{definition}
 	An ideal $I$ of a $C^*$-algebra $A$ is an \index{essential ideal} \emph{essential ideal} if it is non-zero and satisfies $I\cap J \neq 0$ for all non-zero ideals $J$ of $A$.
@@ -598,59 +604,4 @@ We will use $M_s(A)$ to mean $M(A)$ equipped with the strict topology, and we wi
 	\end{align*}
 	and similarly $T_i^* \Theta_{x,y} \to T^* \Theta_{x,y}$. By approximating compact operators with finite linear combinations of $\Theta_{x,y}$'s, an easy $\frac{\varepsilon}{3N}>0$ argument shows that $T_i K \to T K$ and $KT_i \to KT$ for $K \in \mathbb{K}_A(E)$ and similarly $T_i^*K \to T_i^*K$ and $KT_i^* \to K T$.
 \end{proof}
-
-
-
-%\ssection{Vector-valued integration}
-
-
-
-
-
-\ssection{Crossed Products}
-Throughout this chapter, we let $G$ be a locally compact topological group and $A$ a $C^*$-algebra, with no added assumptions unless otherwise specified. We will write $G \acts_\alpha A$ to specify that $\alpha \colon G \to \Aut(A)$ is an action of $G$ on $A$, i.e., a strongly continuous group homomorphism. We will always fix a base left Haar measure $\mu$ on $G$, whose integrand we will denote by $\d t$, and with modular function $\Delta \colon G \to (0,\infty)$.
-
-In analysis, an object of interest is the group algebra $L^1(G)$ for locally compact groups $G$. One can turn it into a $*$-algebra by showing that the convolution gives rise to a well-defined multiplication, and one can use the modular function to define an involution. Analogously to this, we do the same for $A$ valued functions:
-\begin{definition}
-	Suppose that $G \acts_\alpha A$. We let 
-	\begin{align*}
-		\cc(G,A):=\{ f \colon G \to A \mid f \text{ continuous and compactly supported}\}.
-	\end{align*}
-	For $f,g \in \cc(G,A)$, we define the $\alpha$-twisted convolution of $f$ and $g$ at $t \in G$ by
-	\begin{align*}
-		(f \ast_\alpha g)(t):= \int_G  f(s) \alpha_s(g(s^{-1}t)) \d s,
-	\end{align*}
-	and we define an $\alpha$-twisted convolution of $f \in \cc(G,A)$ at $t \in G$ by
-	\begin{align*}
-		f^*(t):=\Delta(t^{-1}) \alpha_t(f(t^{-1})^*).
-	\end{align*}
-	Straight forward calculations similar to the one classic ones show that $\cc(G,A)$ becomes a $*$-algebra with multiplication given by the $\alpha$-twisted convolution and involution given by the $\alpha$-twisted involution. We denote the associated $*$-algebra by $\cc(G,A,\alpha)$.
-	
-	To $f \in \cc(G,A,\alpha)$, we associate the number $\lv f \rv_1 \in [0, \infty)$ by
-		\begin{align*}
-			\lv f \rv_1 := \int_G \lv f(t) \rv \d t.
-		\end{align*}
-	Straightforward calculations show that $f \mapsto \lv f \rv_1$ is a norm, and we denote the completion of $\cc(G,A,\alpha)$ in $\lv \cdot \rv_1$ by $L^1(G,A,\alpha)$.
-\end{definition}
-
-For $G \stackrel{\alpha}{\acts} A$ and a covariant representation $(\pi,\H)$ on some Hilbert space $\H$, we define for $f \in \cc(G,A,\alpha)$ the operator $I_{f}$ on $\H$ point-wise, i.e., for $\xi, \eta \in \H$
-\begin{align*}
-	\langle I_f \xi ,\eta \rangle = \int_G \langle \pi(f(s)) U_s \xi, \eta \rangle \d s,
-\end{align*}
-and we will write $\int_G \pi(f(s)) U_s \d s := I_f$. We denote the map $f \mapsto I_f$ by $\pi \rtimes U$.
-
-\begin{lemma}
-	The map $\pi \rtimes U$ is a $*$-representation of $\cc(G,A,\alpha)$ called \myemph{the integrated form of $\pi$ and $U$}. It is $L^1$-norm decreasing, i.e., for $f \in \cc(G,A,\alpha)$ we have
-	\begin{align*}
-	\lv \pi \rtimes U(f)\rv \leq \lv f \rv_1.	
-	\end{align*}
-\end{lemma}
-\begin{proof}
-	Let $f \in \cc(G,A,\alpha)$ and $\xi , \eta \in \H$. Then
-	\begin{align*}
-		|\langle \pi \rtimes U(f) \xi, \eta \rangle | \leq \int_G | \langle \pi(f(s)) U_s \xi , \eta \rangle| \d s \leq \int_G \lv f(s)\rv  \lv \xi\rv \lv \eta \rv \d s,
-	\end{align*}
-	so that $\lv \pi \rtimes U(f)\rv \leq \lv f \rv_1$.Let $f,g \in \cc(G,A,\alpha)$ \todo{Dana 1.92 add to appendix}
-\end{proof}
-
 
