@@ -247,7 +247,8 @@ It does not hold in general that $A \cong \mathcal{L}_A(A_A)$.
 In \ref{EEEdense} we saw that for a Hilbert $A$-module $E$, the set $E \langle E, E \rangle$ was dense in $E$. We are going to improve this to say that every $x \in E$ is of the form $y \langle y,y \rangle$ for some unique $y \in E$. To do this, we need to examine the compact operators a bit more: \todo{add source org [6] morita}
 
 \begin{proposition}
-	Given a right Hilbert $A$-module $E$, then $X$ is a full left Hilbert $\mathbb{K}_A(E)$-module with respect to the action $T\cdot x = T(x)$ for $x \in E$ and $T \in \mathbb{K}_A(E)$ and $\mathbb{K}_A(E)$-valued inner product $_{\mathbb{K}_A(E)} \langle x,y \rangle = \Theta_{x,y}$ for $x, y \in E$. Moreover, the corresponding norm $\lv \cdot \rv_{\mathbb{K}_A(E)} = \lv _{\mathbb{K}_A(E)} \langle \cdot, \cdot \rangle \rv^{\frac12}$ coincides with the norm $\lv \cdot \rv_{A}$ on $E$.
+	Given a right Hilbert $A$-module $E$, then $E$ is a full left Hilbert $\mathbb{K}_A(E)$-module with respect to the action $T\cdot x = T(x)$ for $x \in E$ and $T \in \mathbb{K}_A(E)$ and $\mathbb{K}_A(E)$-valued inner product $_{\mathbb{K}_A(E)} \langle x,y \rangle = \Theta_{x,y}$ for $x, y \in E$. Moreover, the corresponding norm $\lv \cdot \rv_{\mathbb{K}_A(E)} = \lv _{\mathbb{K}_A(E)} \langle \cdot, \cdot \rangle \rv^{\frac12}$ coincides with the norm $\lv \cdot \rv_{A}$ on $E$.
+	\label{mult:leftcompmod}
 \end{proposition}
 \begin{proof}
 	It is easy to see that the first, second and third condition of \ref{mult:defmod} are satisfied in light of \ref{frnkideal}. Note that
@@ -281,6 +282,7 @@ for $x,y \in E$ and $a \in A$ shows that $L_x$ and $D_x$ are mutual adjoints, so
 In fact, the maps $D \colon x \mapsto D_x$ and $L \colon x \mapsto L_x$ are interesting on their own, which extends the result from the case $E=A_A$ seen in \ref{mult:AisocompA}:
 \begin{lemma}
 	Let $E$ be a Hilbert $A$-module. Then $D$ is a conjugate linear isometric isomorphism of $E$ and $\mathbb{K}_A(X,A_A)$ and $L$ is a linear isometric isomorphism of $E$ and $\mathbb{K}_A(A_A,E)$.
+	\label{mult:isocompactgen}
 \end{lemma}
 \begin{proof}
 	By the conjugate linearity of $\langle \cdot , y \rangle_A$ for all $ y \in E$, it is easy to see that $D$ is conjugate linear.	By (\ref{eq:0}), we see that $\lv D_x \rv = \lv x \rv$ for all $x \in E$, which implies that the image of $D$ is closed. For $a \in A$ and $x \in E$, note that $ \mathbb{K}_A(E,A_A) \ni \Theta_{a,x}=D_{x\cdot a^*}$, which implies that $\mathbb{K}_A(E,A_A) = D(E)$, by continuity of $D$ and density of $E\langle E,E\rangle$ in $E$: Let $x \in E$ and $(e_i)$ be an approximate unit of $\langle E,E \rangle$. Then $D_x = \lim D_{x e_i} = \lim \Theta_{x, e_i}$.
@@ -288,11 +290,93 @@ In fact, the maps $D \colon x \mapsto D_x$ and $L \colon x \mapsto L_x$ are inte
 	The second statement follows since clearly $L \colon x \mapsto D_x^*$ is then a linear isometry and we saw in \ref{frnkideal} that $\Theta_{a,x}^* = \Theta_{x,a}$, so the argument above applies to $L$ as well.
 \end{proof}
 
-Abusing notation, we will in the following use $L_x$ to denote both the operator on $E$ and $A_A$ depending on the location of $x$. 
-
+Abusing notation, we will in the following use $L_x$ to denote both the operator on $E$ and $A_A$ depending on the location of $x$. We now show a generalization of a standard trick regarding operators on direct sums of Hilbert spaces: Recall that we may view $\mathbb{B}(\H \oplus \mathcal{K})$ as the set of matrices
+\begin{align*}
+	\begin{pmatrix}
+		\mathbb{B}(\H) & \mathbb{B}(\mathcal{K},\H)\\
+		\mathbb{B}(\H,\mathcal{K}) &   \mathbb{B}(\mathcal{K})
+	\end{pmatrix}
+\end{align*}
+by compression with the orthogonal projection onto e.g. $\H$. This also holds for the compact operators on $\H \oplus \mathcal{K}$, and more generally:
 \begin{lemma}
-	
+	Let $E$ be a Hilbert $A$-module. If $L_a \in \mathbb{K}_A(A_A)$, $S \in \mathbb{K}_A(A_A,E)$, $T \in \mathbb{K}_A(E,A_A)$ and $R \in \mathbb{K}_A(E)$, then
+	\begin{align*}
+		Q := \begin{pmatrix}
+			L_a & T \\
+			S & R
+		\end{pmatrix}\in \mathbb{K}_A(A_A \oplus E),
+	\end{align*}
+	and its adjoint is
+	\begin{align*}
+		Q^* = \begin{pmatrix}
+			L_a^* & S^* \\
+			T^* & R^*
+		\end{pmatrix}
+	\end{align*}
+	Moreover, every compact operator on $A_A \oplus E$ is of this form. If $Q \in \mathbb{K}_A(A_A \oplus E)$ is self-adjoint and anti-commutes with $1 \oplus -1$ then
+	\begin{align*}
+		Q = \begin{pmatrix}
+			0 & D_x \\
+			L_x  & 0
+		\end{pmatrix},
+	\end{align*}
+	for some $x \in E$ and $L_x, D_x$ as in \Cref{mult:isocompactgen}.
+	\label{mult:2x2trick}
 \end{lemma}
+\begin{proof}
+	It is clear that $Q$ is adjointable with adjoint
+	\begin{align*}
+		Q^* = \begin{pmatrix}
+			L_a^* & S^* \\ T^* & R^*
+		\end{pmatrix}
+	\end{align*}
+	To see that it is compact, note that each of the four corner embeddings 
+	\begin{align*}
+		L_a \mapsto 
+		\begin{pmatrix}
+			L_a & 0 \\ 0 & 0
+		\end{pmatrix}, 
+		\quad 
+		T \mapsto \begin{pmatrix}
+			0 & T \\ 0 & 0 
+		\end{pmatrix}, 
+		\quad 
+		S \mapsto \begin{pmatrix}
+			0 & 0 \\ S & 0 
+		\end{pmatrix}, 
+		\quad 
+		R \mapsto \begin{pmatrix}
+			0 & 0 \\ 0 & R
+		\end{pmatrix}
+	\end{align*}
+	are linear isometries and they map the module valued finite-rank maps to module valued finite-rank maps, e.g., we see that $\Theta_{a,x} \in \mathbb{K}_A(E,A)$ is mapped to $\Theta_{(a,0),(x,0)}$. By compressing with the orthogonal projection onto e.g., $A_A$, we see that we can decompose every finite rank operator in this way. Since compression by projections is continuous, this shows that every compact operator has this form.
+
+	The last statement follows readily from the isomorphism from \Cref{mult:isocompactgen}, the anti-commutativity forces $L_a = 0$ and $R = 0$ and self-adjointess forces $D_x^* = L_x$.
+	\todo{add as example projection module}
+\end{proof}
+
+We may finally prove the statement which we set out to show:
+\begin{proposition}
+	Let $E$ be a Hilbert $A$-module. Then for every $x \in E$ there is a unique $y \in E$ such that $x = y \langle y , y \rangle$.
+	\label{mult:EeqEEE}
+\end{proposition}
+\begin{proof}
+	Let $x \in E$, and consider the self-adjoint operator
+	\begin{align*}
+		t = \begin{pmatrix}
+			0 & D_x \\
+			L_x & 0
+		\end{pmatrix}
+	\end{align*}
+	on $A_A \oplus E$, which by \Cref{mult:2x2trick} is self-adjoint and anti-commutes with $1 \oplus -1$. With $t$ being self-adjoint, the function $f(x) = x^{\frac13}$ is continuous on the spectrum $\sigma(t)$, so it defines a compact operator $f(t)$ on $A_A \oplus E$. This operator anti-commutes with $1 \oplus -1$ by the functional calculus applied to the map $\psi \colon \mathbb{K}_A(A_A \oplus E) \to \mathbb{K}_A(A_A \oplus E)$, $s \mapsto (1 \oplus -1) s + s(1 \oplus -1)$, which is a $^*$-homomorphism, so there is $y \in E$ such that
+	\begin{align*}
+		f(t) = \begin{pmatrix}
+			0 & D_y \\
+			L_y & 0
+		\end{pmatrix}
+	\end{align*}
+	And so $f(t)^3 = t$ implies that $L_x = L_y D_y L_y = L_{y \langle y,y \rangle}$, so $x = y \langle y, y \rangle$.
+\end{proof}
 
 We empose quite an assortment of topologies on $\mathbb{B}(\H,\H')$ for Hilbert spaces $\H$ and $\H'$ -- this is not the case when we study Hilbert $C^*$-modules: Given Hilbert $A$-module $E$ and $F$, we only consider two topologies -- the norm topology and the \myemph{strict topology}:
 \begin{definition}
@@ -445,7 +529,7 @@ We may finally show that $(M(A),L)$ is a maximal unitalization for all $C^*$-alg
 
 Often we want to be able to 'touch' the Multiplier Algebra of a $C^*$-algebra -- and we can use the concretification as $\mathcal{L}_A(A_A)$, but there is (and other as well) another common way to decribe it:
 \begin{proposition}
-	Let $A,C$ be $C^*$-algebras and $E$ be a Hilbert $C$-module. Suppose that $\alpha \colon A \to \mathcal{L}_C(E)$ is an injective nondegenerate homomorphism. Then $\alpha$ extends to an isomorphism of $M(A)$ with the idealizer $\mathcal{I}(A)$ of $\alpha(A)$ in $\mathcal{L}_C(E)$:
+	Let $A,C$ be $C^*$-algebras and $E$ be a Hilbert $C^*$-module. Suppose that $\alpha \colon A \to \mathcal{L}_C(E)$ is an injective nondegenerate homomorphism. Then $\alpha$ extends to an isomorphism of $M(A)$ with the idealizer $\mathcal{I}(A)$ of $\alpha(A)$ in $\mathcal{L}_C(E)$:
 	\begin{align*}
 		\mathcal{I}(A)=\left\{ T \in \mathcal{L}_C(E) \mid T\alpha(A) \subseteq \alpha(A) \text{ and } \alpha(A)T \subseteq \alpha(T) \right\}.	
 	\end{align*}
@@ -466,8 +550,10 @@ This allows us to, given any faithful nondegenerate representation of $A$ on a H
 \end{proof}
 Using this, we can calculate both the adjointable operators and the Multiplier algebras in some settings:
 \begin{example}
-	For the Hilbert $C$-module $\H$, we obtain the identity that $M(\mathbb{K}(\H)) = \mathbb{B}(\H)$, as expected, since $\mathbb{B}(\H)$ is the prototype of a 'large' abstract $C^*$-algebra.
+	For the Hilbert $\C$-module $\H$, we obtain the identity that $M(\mathbb{K}(\H)) = \mathbb{B}(\H)$, as expected, since $\mathbb{B}(\H)$ is the prototype of a 'large' abstract $C^*$-algebra.
 \end{example}
+
+
 A lot of the theory in functional analysis and the study of $C^*$-algebras is motivated by the study of abelian $C^*$-algebras of the form $C_0(\Omega)$ for a locally compact Hausdorff space. This construction is no exception: Unitalizations come naturally from compactifications, e.g., adjoining a unit to $C_0(\Omega)$ corresponds to the one-point compactification of $\Omega$. It turns out that passing from $C_0(\Omega)$ to its multiplier algebra is connected to the largest compactification of $\Omega$, namely the Stone-$\mathrm{\check{C}}$ech compactification $\beta \Omega$ of $\Omega$, which in fact is the protoexample of the multiplier construction.
 \begin{example}
 If $\Omega$ is a locally compact Hausdorff space, then $M(C_0(\Omega))\cong C_b(\Omega) = C(\beta \Omega)$.
@@ -500,7 +586,17 @@ We will use $M_s(A)$ to mean $M(A)$ equipped with the strict topology, and we wi
 	If $E$ is a Hilbert $A$-module, if $T_i \to T \in \mathcal{L}_A(E)$ strictly, then $T_i \to T$ $*$-strongly. Moreover, on norm bounded subsets the topologies coincide.
 \end{proposition}
 \begin{proof}
-	\todo{do proof}	
+	Suppose that $T_i \to T$ strictly. For $x \in E$, write $x = y\langle y,y\rangle$ for some unique $y \in E$ using \Cref{mult:EeqEEE}. Let $_{\mathbb{K}_A(E)}\langle x,y \rangle = \Theta_{x,y} \in \mathbb{K}_A(E)$ be the associated $\mathbb{K}_A(E)$-valued inner-product on $E$ from \Cref{mult:leftcompmod}, so $x = _{\mathbb{K}_A(E)} \langle y, y \rangle (y)$. By definition of the strict topology on $\mathcal{L}_A(E) = M(\mathbb{K}_A(E))$, we see that 
+	\begin{align*}
+		T_i(x) = T_i \circ _{\mathbb{K}_A(E)}\langle y,y\rangle (y) \to T \circ _{\mathbb{K}_A(E)} \langle y,y \rangle = T(x).
+	\end{align*}
+	Continuity of adjunction shows that $T_i^* \to T^*$ as well, hence also $T_i^* \to T^*$ strongly, so $T_i \to T$ $*$-strongly.
+
+	Suppose now $(T_i)$ is bounded in norm by $K \geq 0$. For $x, y \in E$, if $T_i x \to Tx$ in norm, then $T_i \Theta_{x,y} \to T \Theta_{x,y}$ in norm:
+	\begin{align*}
+		\lv T_i \Theta_{x,y} - T \Theta_{x,y}\rv  \leq \sup_{\lv z \rv \leq 1} \lv T_i x - T x \rv \lv \langle y,z\rangle \rv \to 0,
+	\end{align*}
+	and similarly $T_i^* \Theta_{x,y} \to T^* \Theta_{x,y}$. By approximating compact operators with finite linear combinations of $\Theta_{x,y}$'s, an easy $\frac{\varepsilon}{3N}>0$ argument shows that $T_i K \to T K$ and $KT_i \to KT$ for $K \in \mathbb{K}_A(E)$ and similarly $T_i^*K \to T_i^*K$ and $KT_i^* \to K T$.
 \end{proof}
 
 
