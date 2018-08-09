@@ -73,7 +73,19 @@ In fact, the above proof also shows that $EA$ is dense in $E$ and that $x1=x$ wh
 	If $\langle E,E \rangle$ is dense in $A$ we say that the Hilbert $A$-module is \myemph{full}.
 \end{definition}
 
-\todo{closedness under direct sum and $\H_A= \H \otimes A$}
+Many classic constructions preserve Hilbert $C^*$-modules:
+\begin{example}
+	If $E_1,\dots,E_n$ are Hilbert $A$-modules, then $\bigoplus_{1 \leq i \leq n} E_i$ is a Hilbert $A$-module with the inner product $\langle (x_i),(y_i)\rangle = \sum_{1 \leq i \leq n} \langle x_i,y_i\rangle_{E_i}$. This is obvious.
+\end{example}
+
+\begin{example}
+	If $\left\{ E_i \right\}$ is a set of Hilbert $A$-modules, and let $\bigoplus_i E_i$ denote the set
+	\begin{align*}
+		\bigoplus_i E_i := \left\{ (x_i) \in \prod_i E_i \mid \sum_{i} \langle x_i,x_i\rangle \text{ converges in } A \right\}.
+	\end{align*}
+	Then $\bigoplus_i E_i$ is a Hilbert $A$-module. The details of the proof are nothing short of standard, so we refer to \cite[5]{lance1995hilbert}.
+\end{example}
+
 \begin{note}
 	There are similarities and differences between Hilbert $A$-modules and regular Hilbert spaces. One major difference is that for closed submodules $F\subseteq E$, it does not hold that $F \oplus F^\perp=E$, where $F^\perp = \left\{ y \in E \mid \langle x,y\rangle = 0, \ x \in F \right\}$: Let $A=C([0,1])$ and consider $A_A$. Let $F\subseteq A$ be the set $F = \left\{f \in A_A \mid f(0)=f(1)=0  \right\}$. Then $F$ is clearly a closed sub $A$-module of $A_A$. Consider the element $f \in F$ given by
 	\begin{align*}
@@ -248,7 +260,7 @@ It follows that for $E=F$, the $*$-subalgebra of $\mathcal{L}_A(E)$ obtained by 
 It does not hold in general that $A \cong \mathcal{L}_A(A_A)$.
 \end{note}
 
-In \ref{EEEdense} we saw that for a Hilbert $A$-module $E$, the set $E \langle E, E \rangle$ was dense in $E$. We are going to improve this to say that every $x \in E$ is of the form $y \langle y,y \rangle$ for some unique $y \in E$. To do this, we need to examine the compact operators a bit more: \todo{add source org [6] morita}
+In \ref{EEEdense} we saw that for a Hilbert $A$-module $E$, the set $E \langle E, E \rangle$ was dense in $E$. We are going to improve this to say that every $x \in E$ is of the form $y \langle y,y \rangle$ for some unique $y \in E$. To do this, we need to examine the compact operators a bit more: 
 
 \begin{proposition}
 	Given a right Hilbert $A$-module $E$, then $E$ is a full left Hilbert $\mathbb{K}_A(E)$-module with respect to the action $T\cdot x = T(x)$ for $x \in E$ and $T \in \mathbb{K}_A(E)$ and $\mathbb{K}_A(E)$-valued inner product $_{\mathbb{K}_A(E)} \langle x,y \rangle = \Theta_{x,y}$ for $x, y \in E$. Moreover, the corresponding norm $\lv \cdot \rv_{\mathbb{K}_A(E)} = \lv _{\mathbb{K}_A(E)} \langle \cdot, \cdot \rangle \rv^{\frac12}$ coincides with the norm $\lv \cdot \rv_{A}$ on $E$.
@@ -294,7 +306,7 @@ In fact, the maps $D \colon x \mapsto D_x$ and $L \colon x \mapsto L_x$ are inte
 	The second statement follows since clearly $L \colon x \mapsto D_x^*$ is then a linear isometry and we saw in \ref{frnkideal} that $\Theta_{a,x}^* = \Theta_{x,a}$, so the argument above applies to $L$ as well.
 \end{proof}
 
-Abusing notation, we will in the following use $L_x$ to denote both the operator on $E$ and $A_A$ depending on the location of $x$. We now show a generalization of a standard trick regarding operators on direct sums of Hilbert spaces: Recall that we may view $\mathbb{B}(\H \oplus \mathcal{K})$ as the set of matrices
+Abusing notation, we will in the following use $L_x$ to denote both the operator on $E$ and $A_A$ depending on the location of $x$. We now show a generalization of a standard trick regarding operators on direct sums of Hilbert spaces, the technique is from \cite{blanchard1996deformations}: Recall that we may view $\mathbb{B}(\H \oplus \mathcal{K})$ as the set of matrices
 \begin{align*}
 	\begin{pmatrix}
 		\mathbb{B}(\H) & \mathbb{B}(\mathcal{K},\H)\\
@@ -356,7 +368,6 @@ by compression with the orthogonal projection onto e.g. $\H$. This also holds fo
 	are linear isometries and they map the module valued finite-rank maps to module valued finite-rank maps, e.g., we see that $\Theta_{a,x} \in \mathbb{K}_A(E,A)$ is mapped to $\Theta_{(a,0),(x,0)}$. By compressing with the orthogonal projection onto e.g., $A_A$, we see that we can decompose every finite rank operator in this way. Since compression by projections is continuous, this shows that every compact operator has this form.
 
 	The last statement follows readily from the isomorphism from \Cref{mult:isocompactgen}, the anti-commutativity forces $L_a = 0$ and $R = 0$ and self-adjointess forces $D_x^* = L_x$.
-	\todo{add as example projection module}
 \end{proof}
 
 We may finally prove the statement which we set out to show:
@@ -602,6 +613,7 @@ We will use $M_s(A)$ to mean $M(A)$ equipped with the strict topology, and we wi
 	\begin{align*}
 		\lv T_i \Theta_{x,y} - T \Theta_{x,y}\rv  \leq \sup_{\lv z \rv \leq 1} \lv T_i x - T x \rv \lv \langle y,z\rangle \rv \to 0,
 	\end{align*}
-	and similarly $T_i^* \Theta_{x,y} \to T^* \Theta_{x,y}$. By approximating compact operators with finite linear combinations of $\Theta_{x,y}$'s, an easy $\frac{\varepsilon}{3N}>0$ argument shows that $T_i K \to T K$ and $KT_i \to KT$ for $K \in \mathbb{K}_A(E)$ and similarly $T_i^*K \to T_i^*K$ and $KT_i^* \to K T$.
+	and similarly $T_i^* \Theta_{x,y} \to T^* \Theta_{x,y}$. By approximating compact operators with finite linear combinations of $\Theta_{x,y}$'s, an easy $\frac{\varepsilon}{3K}>0$ argument shows that $T_i K \to T K$ and $KT_i \to KT$ for $K \in \mathbb{K}_A(E)$ and similarly $T_i^*K \to T_i^*K$ and $KT_i^* \to K T$.
 \end{proof}
 
+In particular, for a net of unitary operators on a Hilbert $A$-module, strict and $*$-strong convergence is the same. We shall utilize this fact repeatedly later on.

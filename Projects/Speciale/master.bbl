@@ -16,6 +16,59 @@
   {}
 \endgroup
 
+\entry{berg1984harmonic}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Berg}{B.}%
+     {Christian}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Christensen}{C.}%
+     {Jens Peter~Reus}{J.~P.~R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ressel}{R.}%
+     {Paul}{P.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer-Verlag}%
+  }
+  \strng{namehash}{BCCJPRRP1}
+  \strng{fullhash}{BCCJPRRP1}
+  \field{labelalpha}{BCR84}
+  \field{sortinit}{B}
+  \field{title}{Harmonic analysis on semigroups}
+  \field{year}{1984}
+\endentry
+
+\entry{blanchard1996deformations}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Blanchard}{B.}%
+     {{\'E}tienne}{{\'E}.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Paris: La Societe, 1873-}%
+  }
+  \strng{namehash}{BE1}
+  \strng{fullhash}{BE1}
+  \field{labelalpha}{Bla96}
+  \field{sortinit}{B}
+  \field{number}{1}
+  \field{pages}{141}
+  \field{title}{D{\'e}formations de C*-alg{\`e}bres de Hopf}
+  \field{volume}{124}
+  \field{journaltitle}{Bulletin de la Soci{\'e}t{\'e} math{\'e}matique de
+  France}
+  \field{year}{1996}
+\endentry
+
 \entry{brown2008c}{book}{}
   \name{author}{2}{}{%
     {{}%
@@ -39,6 +92,45 @@
   \field{title}{C*-algebras and finite-dimensional approximations}
   \field{volume}{88}
   \field{year}{2008}
+\endentry
+
+\entry{folland2013real}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Folland}{F.}%
+     {Gerald~B}{G.~B.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {John Wiley \& Sons}%
+  }
+  \strng{namehash}{FGB1}
+  \strng{fullhash}{FGB1}
+  \field{labelalpha}{Fol13}
+  \field{sortinit}{F}
+  \field{title}{Real analysis: modern techniques and their applications}
+  \field{year}{2013}
+\endentry
+
+\entry{folland2016fourier}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Folland}{F.}%
+     {Gerald~B}{G.~B.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{2}{%
+    {Chapman}%
+    {Hall/CRC}%
+  }
+  \strng{namehash}{FGB1}
+  \strng{fullhash}{FGB1}
+  \field{labelalpha}{Fol16}
+  \field{sortinit}{F}
+  \field{title}{A course in abstract harmonic analysis}
+  \field{year}{2016}
 \endentry
 
 \entry{lance1995hilbert}{book}{}
@@ -80,7 +172,7 @@
   \field{year}{2014}
 \endentry
 
-\entry{annow}{book}{}
+\entry{annow}{article}{}
   \name{author}{1}{}{%
     {{}%
      {Pedersen}{P.}%
@@ -88,16 +180,15 @@
      {}{}%
      {}{}}%
   }
-  \list{publisher}{1}{%
-    {Springer Science \& Business Media}%
-  }
   \strng{namehash}{PGK1}
   \strng{fullhash}{PGK1}
-  \field{labelalpha}{Ped12}
+  \field{labelalpha}{Ped89}
   \field{sortinit}{P}
-  \field{title}{Analysis now}
-  \field{volume}{118}
-  \field{year}{2012}
+  \field{pages}{23\bibrangedash 29}
+  \field{title}{Analysis now, volume 118 of Graduate Texts in Mathematics}
+  \field{volume}{7}
+  \field{journaltitle}{Springer}
+  \field{year}{1989}
 \endentry
 
 \entry{williamsmorita}{book}{}
