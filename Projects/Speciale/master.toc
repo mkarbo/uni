@@ -10,16 +10,16 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.3}Unitalizations and the Multiplier Algebra}{11}{section.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {2}Integral Forms And Representation Theory}{18}{chapter.2}
+\contentsline {chapter}{\chapternumberline {2}Crossed Products with Topological Groups}{18}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {3}Crossed Products with Topological Groups}{19}{chapter.3}
+\contentsline {section}{\numberline {2.1}Integral Forms And Representation Theory}{18}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Crossed Products}{20}{section.3.1}
+\contentsline {section}{\numberline {2.2}Crossed Products}{21}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{22}{section*.6}
+\contentsline {chapter}{Bibliography}{23}{section*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Appendix}{23}{appendix*.7}
+\contentsline {chapter}{Appendix}{24}{appendix*.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Integration Theory In Groups}{23}{section*.8}
+\contentsline {section}{Integration Theory In Groups}{24}{section*.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Index}{24}{section*.9}
+\contentsline {chapter}{Alphabetical Index}{25}{section*.11}

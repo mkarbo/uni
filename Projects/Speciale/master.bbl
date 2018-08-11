@@ -39,7 +39,6 @@
   }
   \strng{namehash}{BCCJPRRP1}
   \strng{fullhash}{BCCJPRRP1}
-  \field{labelalpha}{BCR84}
   \field{sortinit}{B}
   \field{title}{Harmonic analysis on semigroups}
   \field{year}{1984}
@@ -58,7 +57,6 @@
   }
   \strng{namehash}{BE1}
   \strng{fullhash}{BE1}
-  \field{labelalpha}{Bla96}
   \field{sortinit}{B}
   \field{number}{1}
   \field{pages}{141}
@@ -87,30 +85,10 @@
   }
   \strng{namehash}{BNPON1}
   \strng{fullhash}{BNPON1}
-  \field{labelalpha}{BO08}
   \field{sortinit}{B}
   \field{title}{C*-algebras and finite-dimensional approximations}
   \field{volume}{88}
   \field{year}{2008}
-\endentry
-
-\entry{folland2013real}{book}{}
-  \name{author}{1}{}{%
-    {{}%
-     {Folland}{F.}%
-     {Gerald~B}{G.~B.}%
-     {}{}%
-     {}{}}%
-  }
-  \list{publisher}{1}{%
-    {John Wiley \& Sons}%
-  }
-  \strng{namehash}{FGB1}
-  \strng{fullhash}{FGB1}
-  \field{labelalpha}{Fol13}
-  \field{sortinit}{F}
-  \field{title}{Real analysis: modern techniques and their applications}
-  \field{year}{2013}
 \endentry
 
 \entry{folland2016fourier}{book}{}
@@ -127,10 +105,27 @@
   }
   \strng{namehash}{FGB1}
   \strng{fullhash}{FGB1}
-  \field{labelalpha}{Fol16}
   \field{sortinit}{F}
   \field{title}{A course in abstract harmonic analysis}
   \field{year}{2016}
+\endentry
+
+\entry{folland2013real}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Folland}{F.}%
+     {Gerald~B}{G.~B.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {John Wiley \& Sons}%
+  }
+  \strng{namehash}{FGB1}
+  \strng{fullhash}{FGB1}
+  \field{sortinit}{F}
+  \field{title}{Real analysis: modern techniques and their applications}
+  \field{year}{2013}
 \endentry
 
 \entry{lance1995hilbert}{book}{}
@@ -146,7 +141,6 @@
   }
   \strng{namehash}{LEC1}
   \strng{fullhash}{LEC1}
-  \field{labelalpha}{Lan95}
   \field{sortinit}{L}
   \field{title}{Hilbert C*-modules: a toolkit for operator algebraists}
   \field{volume}{210}
@@ -166,7 +160,6 @@
   }
   \strng{namehash}{MGJ1}
   \strng{fullhash}{MGJ1}
-  \field{labelalpha}{Mur14}
   \field{sortinit}{M}
   \field{title}{C*-algebras and operator theory}
   \field{year}{2014}
@@ -182,7 +175,6 @@
   }
   \strng{namehash}{PGK1}
   \strng{fullhash}{PGK1}
-  \field{labelalpha}{Ped89}
   \field{sortinit}{P}
   \field{pages}{23\bibrangedash 29}
   \field{title}{Analysis now, volume 118 of Graduate Texts in Mathematics}
@@ -209,11 +201,48 @@
   }
   \strng{namehash}{RIWDP1}
   \strng{fullhash}{RIWDP1}
-  \field{labelalpha}{RW98}
   \field{sortinit}{R}
   \field{number}{60}
   \field{title}{Morita equivalence and continuous-trace C*-algebras}
   \field{year}{1998}
+\endentry
+
+\entry{rudin1991functional}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Rudin}{R.}%
+     {Walter}{W.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {McGraw-Hill, Inc., New York}%
+  }
+  \strng{namehash}{RW1}
+  \strng{fullhash}{RW1}
+  \field{sortinit}{R}
+  \field{title}{Functional analysis. International series in pure and applied
+  mathematics}
+  \field{year}{1991}
+\endentry
+
+\entry{williamscrossed}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Williams}{W.}%
+     {Dana~P}{D.~P.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {American Mathematical Soc.}%
+  }
+  \strng{namehash}{WDP1}
+  \strng{fullhash}{WDP1}
+  \field{sortinit}{W}
+  \field{number}{134}
+  \field{title}{Crossed products of C*-algebras}
+  \field{year}{2007}
 \endentry
 
 \entry{zhu}{book}{}
@@ -229,7 +258,6 @@
   }
   \strng{namehash}{ZK1}
   \strng{fullhash}{ZK1}
-  \field{labelalpha}{Zhu93}
   \field{sortinit}{Z}
   \field{title}{An introduction to operator algebras}
   \field{volume}{9}

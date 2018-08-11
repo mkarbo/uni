@@ -17,7 +17,7 @@
 \usepackage[all]{xy}
 \usepackage{tikz-cd}
 \usepackage{hyperref}
-\usepackage[style=alphabetic,backend=bibtex]{biblatex}
+\usepackage[style=numeric,backend=bibtex]{biblatex}
 \usepackage{filecontents}
 \usepackage[english, status=draft]{fixme}
 \fxusetheme{color}
@@ -28,14 +28,14 @@
 \usepackage{titlesec}
 %\usepackage[titleloc]{appendix}
 \usepackage{faktor}
-\usepackage{makeidx} 
+\usepackage{imakeidx} 
 
 
 \usepackage{mathabx} 
 
+\makeindex[columns=3, title=Alphabetical Index, intoc]
 
-
-\makeindex
+%\makeindex[columns=3, title=Alphabetical Index]
 
 \titleformat{\chapter}[display]
 {\center\normalfont\bfseries}{}{0pt}{\Large}

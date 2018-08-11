@@ -1,6 +1,171 @@
-\chapter{Integral Forms And Representation Theory}
-Suppose that you are given a discrete $C^*$-dynamical system $(A,G,\alpha)$, here descrete menas that $G$ is discrete. It is not hard to extend representations of $G$ and $A$ to the group ring $\C_C(G,A)$, and thus create new $C^*$-algebras through completion of it. However, when $G$ is not discrete, we run into issues since we can not assume that a unitary representation of $G$ is continuous in norm, which is required by classic constructions seen e.g., in \cite{brown2008c}. We will in this chapter develop the necessary theory to define the non-discrete analogues of these techniques.
+\chapter{Crossed Products with Topological Groups}
+Suppose that you are given a $C^*$-dynamical system $(A,G,\alpha)$ with $G$ discrete. It is not hard to extend representations of $G$ and $A$ to the $*$-algebra $\C_C(G,A)$, and thus create new $C^*$-algebras through completion of it, examples include the reduced- and full crossed product of $A$ and $G$, $A \rtimes_{\alpha,r} G$ and $A \rtimes_{\alpha} G$.
 
-We assume familiarity with basic theory of analysis in topological groups, basic representation theory of topological groups and Fourier analysis thereon and will not go lengths to explain results from this field, for a reference, we recommend the excellent books on the subject: \cite{folland2016fourier}, \cite{berg1984harmonic} and \cite{folland2013real}.
+However, when $G$ is not discrete, we run into issues since we can not assume that a unitary representation of $G$ is continuous in norm, which is required by classic constructions seen e.g., in \cite{brown2008c}. We will in this chapter develop the necessary theory to define the non-discrete analogues of these techniques, i.e., for when $G$ is a locally compact Hausdorff group.
+
+We assume familiarity with basic theory of analysis in topological groups, basic representation theory of topological groups and Fourier analysis thereon and will not go lengths to explain results from this field, for a reference, we recommend the excellent books on the subject: \cite{folland2016fourier}, \cite{berg1984harmonic} and \cite{folland2013real}. 
+\sssection{Integral Forms And Representation Theory}
+Throughout this chapter, we let $G$ be a locally compact topological group and $A$ a $C^*$-algebra, with no added assumptions unless otherwise specified. We will write $G \stackrel{\alpha}{\acts} A$ to specify that $\alpha \colon G \to \Aut(A)$ is an action of $G$ on $A$, i.e., a strongly continuous group homomorphism. We will always fix a base left Haar measure $\mu$ on $G$, whose integrand we will denote by $\d t$, and with modular function $\Delta \colon G \to (0,\infty)$. 
+
+The main motivation of the theory we are about to develop is this: Given a covariant representation $(\pi,u,\H)$ of $(A,G,\alpha)$, we wish to construct a representation $\pi \rtimes u$ of $\cc(G,\mathbb{B}(\H))$ satisfying 
+\begin{align*}
+	\pi \rtimes u (f) = \int \pi(f(t))u_t \d t.
+\end{align*}
+The problem at hand is, a priori $u_t$ is not norm continuous, and so we don't know if the integrand is integrable. We will however show that $u_t$ is strictly convergent and use this to define our integral using $M(\mathbb{B}(\H)) = \mathbb{K}_A(A_A)= \mathbb{B}(\H)$. 
+
+For $f \in \cc(G,A)$, the map $s \mapsto \lv f(s) \rv$ is in $\cc(G)$, and we define the number $\lv f \rv_1 \in [0,\infty)$ to be
+\begin{align*}
+	\lv f \rv_1 = \int_G \lv f(t) \rv \d t.
+\end{align*}
+For $A= \C$, it is well known that given $f \in \cc(G,A)$ and $\varepsilon > 0$, there is a neighborhood $V$ of $e \in G$ such that $sr^{-1} \in V$ or $s^{-1}r \in V$ implies $| f(s) - f(r)| < \varepsilon$, i.e., $f$ is left- and right uniformly continuous. The statement holds for general $A$, and the proof is identical, see e.g. \cite[Proposition 2.6]{folland2016fourier} or \cite[Lemma 1.88]{williamscrossed}
+\begin{lemma}
+	For $f \in \cc(G,A)$ and $\varepsilon>0$, there is a neighborhood $V$ of $e \in G$ such that either $sr^{-1} \in V$ or $s^{-1}r \in V$ implies
+	\begin{align*}
+		\lv f(s)  - f(r) \rv < \varepsilon.
+	\end{align*}
+	\label{cross:lrunicont}
+\end{lemma}
+
+We will use $\mathcal{D}$ to denote an arbitrary complex Banach space, and for $f \in \cc(G)$ and $x \in \mathcal{D}$, we denote by $f \otimes x$ the map $G \ni t \mapsto f(t)x \in \mathcal{D}$. It is clear that then $f \otimes x \in \cc(G,\mathcal{D})$. We introduce a 'topology' or a name for a special kind of convergence on $\cc(G,\mathcal{D})$, which will prove useful:
+\begin{definition}
+	We say that a net $\{f_i\}_{i \in I} \subseteq \cc(G,\mathcal{D})$ converges to a function $f$ on $\cc(G,\mathcal{D})$ in the \emph{inductive limit topology} if $f_i \to f$ uniformly and there is a compact set $K \subseteq G$ and $i_0 \in I$ such that for $i \geq i_0$ we have $f_i \big|_{K^c} = 0$, i.e., $\mathrm{supp} f_i \subseteq K$.
+\end{definition}
+
+\begin{lemma}
+Let $\mathcal{D}_0 \subseteq \mathcal{D}$ be any dense subset. Then the set
+\begin{align*}
+	\cc(G) \odot \mathcal{D}_0 := \Span\left\{ f \otimes x \mid f \in \cc(G) \text{ and } x \in \mathcal{D_0} \right\} 
+\end{align*}
+is dense in the inductive limit topology on $\cc(G,\mathcal{D})$.
+	\label{cross:indlmdense}
+\end{lemma}
+\begin{proof}	
+	Let $\varphi \in \cc(G,B)$ and $\varepsilon > 0$ be arbitrary. Let $K= \mathrm{supp} \varphi$ and let $W$ denote an arbitrary compact neighborhood of $e \in G$, and pick \todo{add ref} a symmetric neighborhood $e \in V_{\varepsilon} \subseteq W$ such that $sr^{-1} \in V$ implies $\lv f(s) - f(r) \rv < \frac{\varepsilon}{\mu(WK)}$. Since $K$ is compact, there is a finite set $\left\{ r_1,\dots,r_n \right\} \subseteq K$ such that $K \subseteq \bigcup_{1 \leq i \leq n} V r_i$. Recall that every locally compact Hausdorff group is the disjoint union of $\sigma$-compact subspaces, hence we can pick a partition of unity $\left\{ f_j \right\}_{j=0}^n$ of $K^c \cup \left( \bigcup_{1 \leq i \leq n} Vr_i\right)=G$ such that $\mathrm{supp}f_0 \subseteq K^c$ and $\mathrm{supp}f_i \subseteq V r_i$ for $i = 1 ,\dots,n$. Define
+	\begin{align*}
+		g_\varepsilon := \sum_{i=1}^n f_i \otimes x_i,
+	\end{align*}
+	where $x_i \in B_0$ such that $\lv x_i - \varphi(r_i)\rv < \frac{\varepsilon}{2\mu(WK)}$ for $i = 1,\dots,n$. Then $g_\varepsilon \in \cc(G) \odot \mathcal{B}_0$, and the partition of unity satisfies $\sum_{i=1}^n f_i(s) \leq 1$ for all $s \in G$ and is equal to $1$ for $s \in K$. Hence
+	\begin{align*}
+		\lv\varphi(s) - g_{\varepsilon}\rv = \lv \sum_{i=1}^n f_i(s)(\varphi(s) - \varphi(r_i)+\varphi(r_i)-x_i)\rv &\leq \sum_{i=1}^n f_i(s) (\lv \varphi(s) - \varphi(r_i)\rv+\lv \varphi(r_i)-x_i\rv) \\
+		&\leq \frac{\varepsilon}{\mu(WK)}.
+	\end{align*}
+	Since $\varepsilon$ was arbitrary and $W,K$ didn't depend on $\varepsilon$ and $ \mathrm{supp} g_\varepsilon \subseteq WK$, we see that $g_\varepsilon \to f$ in the inductive limit topology as $\varepsilon \to 0$.
+\end{proof}
+We will also need the following result, which can be found in \cite[Theorem 3.20, part (b, c)]{rudin1991functional}
+\begin{lemma}
+	If $K \subseteq B$ is compact, then the convex hull convex hull $\conv(K)$ is totally bounded and hence it has compact closure.
+	\label{cross:clconvcomp}
+\end{lemma}
 
 
+\begin{definition}
+	Let $f \in \cc(G,B)$ and $\varphi \in B^*$, the continuous dual of $B$. Then we can define a bounded linear functional $I_f$ on $B^*$ by
+	\begin{align*}
+		L_f(\varphi) := \int_G \varphi(f(s)) \d s,
+	\end{align*}
+	since $| L_f(\varphi)| \leq \int_G \lv \varphi \rv \lv f(s) \rv \d s = \lv f \rv_1 \lv \varphi\rv$.
+\end{definition}
+We will see that $L_f$ is equal to $\hat a \colon \varphi \to \varphi(a)$ for some unique $a \in B$. Let $\iota \colon B \to B^{**}$ denote the inclusion $\iota(a) = \hat a$, then we have
+\begin{lemma}
+	If $f \in \cc(G,B)$, then $L_f \in \iota(B)$.
+	\label{cross:defintegral}
+\end{lemma}
+\begin{proof}
+	Let $W$ be a compact neighborhood of $\mathrm{supp} f$, and let $K:= f(G) \cup \left\{ 0 \right\} \subseteq B$. Then $K$ is compact, so by \ref{cross:clconvcomp} the set $C := \overline \conv \left\{ K \right\}$ is compact.
+
+	Fix $\varepsilon > 0$, and pick a neighborhood $V$ of $e \in G$ such that $ \lv f(s) - f(r) \rv < \varepsilon$ for $s^{-1}r \in V$. Assume without loss of generality that $\mathrm{supp} f V \subseteq W$, since we can make $V$ arbitrarily small. Using compactness of $\supp f$, pick $s_1,\dots,s_n \in \supp f$ such that $\left\{ s_i V \right\}$ covers $\supp f$.
+	
+	Since $ \left\{ s_i V \right\} \subseteq W$, it has compact closure, so pick a partition of unity $\left\{ \varphi_i \right\}_{i=1}^n$ of $ K \subseteq \bigcup_{i=1}^n s_i V$. Define 
+	\begin{align*}
+		g_\varepsilon (s) := \sum_{i=1}^n f(s_i) \varphi(s),
+	\end{align*}
+	so $\supp g \subseteq W$. If $s \in \left( \bigcup_{i=1}^n s_i V \right)$ then $f(s) = g_{\varepsilon}(s) = 0$. Else, we see that if $s \in s_i V$, then $s_i^{-1}s \in V$ and $\lv f(s) - f(s_i) \rv < \varepsilon$, and hence
+	\begin{align*}
+		\lv f(s) - g_{\varepsilon} \rv  \leq \sum_{i=1}^n \varphi(s) \lv f(s)-f(s_i) \rv  < \varepsilon.
+	\end{align*}
+
+	Since $s \mapsto \sum_{i=1}^n \varphi(s) \leq 1$ and has compact support and $\bigcup_{i=1}^n \supp \varphi_i \subseteq W$, we have $\sum_{i=1}^n \int_G \varphi_i(s) \d s \leq \mu(W) < \infty$, so it is equal to some number $D$. For $\psi \in B^*$ we see that
+	\begin{align*}
+		L_{g_{\varepsilon}} ( \psi ) = \int_{G} \psi\left( \sum_{i=1}^n \varphi(s) f(s_i) \right) \d s = \sum_{i=1}^n \int_G \varphi(s) \d s \psi(f(s_i)) = \sum_{i=1}^n \int_G \varphi(s) \d s \underbrace{\iota(f(s_i))}_{ \in \iota(C)} (\psi) 
+	\end{align*}
+	so $L_{g_{\varepsilon}}  \in D \iota(C) \subseteq \mu(W) \iota(C)$, since $0 \in C$ so we can shrink scalar $\mu(W)$ to $D$. For $\varepsilon \to 0$, we see that $g_{\varepsilon} \to f$ in the inductive limit topology and $L_{g_\varepsilon} \in \mu(W) \iota(C)$. Hence $\varphi \circ g_\varepsilon \to \varphi \circ f$ in the inductive limit topology of $\cc(G, \C)$. \todo{revise with weak$^*$-topology argument}
+
+\end{proof}
+
+
+\sssection{Crossed Products}
+
+In analysis, an object of interest is the group algebra $L^1(G)$ for locally compact groups $G$. One can turn it into a $*$-algebra by showing that the convolution gives rise to a well-defined multiplication, and one can use the modular function to define an involution. Analogously to this, we do the same for $A$ valued functions:
+\begin{definition}
+	Suppose that $G \acts_\alpha A$. We let 
+	\begin{align*}
+		\cc(G,A):=\{ f \colon G \to A \mid f \text{ continuous and compactly supported}\}.
+	\end{align*}
+	For $f,g \in \cc(G,A)$, we define the $\alpha$-twisted convolution of $f$ and $g$ at $t \in G$ by
+	\begin{align*}
+		(f \ast_\alpha g)(t):= \int_G  f(s) \alpha_s(g(s^{-1}t)) \d s,
+	\end{align*}
+	and we define an $\alpha$-twisted convolution of $f \in \cc(G,A)$ at $t \in G$ by
+	\begin{align*}
+		f^*(t):=\Delta(t^{-1}) \alpha_t(f(t^{-1})^*).
+	\end{align*}
+	Straight forward calculations similar to the one classic ones show that $\cc(G,A)$ becomes a $*$-algebra with multiplication given by the $\alpha$-twisted convolution and involution given by the $\alpha$-twisted involution. We denote the associated $*$-algebra by $\cc(G,A,\alpha)$.
+	
+	To $f \in \cc(G,A,\alpha)$, we associate the number $\lv f \rv_1 \in [0, \infty)$ by
+		\begin{align*}
+			\lv f \rv_1 := \int_G \lv f(t) \rv \d t.
+		\end{align*}
+	Straightforward calculations show that $f \mapsto \lv f \rv_1$ is a norm, and we denote the completion of $\cc(G,A,\alpha)$ in $\lv \cdot \rv_1$ by $L^1(G,A,\alpha)$.
+\end{definition}
+
+For $G \stackrel{\alpha}{\acts} A$ and a covariant representation $(\pi,\H)$ on some Hilbert space $\H$, we define for $f \in \cc(G,A,\alpha)$ the operator $I_{f}$ on $\H$ point-wise, i.e., for $\xi, \eta \in \H$
+\begin{align*}
+	\langle I_f \xi ,\eta \rangle = \int_G \langle \pi(f(s)) U_s \xi, \eta \rangle \d s,
+\end{align*}
+and we will write $\int_G \pi(f(s)) U_s \d s := I_f$. We denote the map $f \mapsto I_f$ by $\pi \rtimes U$.
+
+\begin{lemma}
+	The map $\pi \rtimes U$ is a $*$-representation of $\cc(G,A,\alpha)$ called \myemph{the integrated form of $\pi$ and $U$}. It is $L^1$-norm decreasing, i.e., for $f \in \cc(G,A,\alpha)$ we have
+	\begin{align*}
+	\lv \pi \rtimes U(f)\rv \leq \lv f \rv_1.	
+	\end{align*}
+\end{lemma}
+\begin{proof}
+	Let $f \in \cc(G,A,\alpha)$ and $\xi , \eta \in \H$. Then
+	\begin{align*}
+		|\langle \pi \rtimes U(f) \xi, \eta \rangle | \leq \int_G | \langle \pi(f(s)) U_s \xi , \eta \rangle| \d s \leq \int_G \lv f(s)\rv  \lv \xi\rv \lv \eta \rv \d s,
+	\end{align*}
+	so that $\lv \pi \rtimes U(f)\rv \leq \lv f \rv_1$.Let $f,g \in \cc(G,A,\alpha)$ \todo{Dana 1.92 add to appendix}
+\end{proof}
+
+
+
+
+%With this, we may prove the following:
+%\begin{proposition}
+%	There exists a unique linear map $I \colon \cc(G,A) \to A$ satisfying
+%	\begin{align*}
+%		\langle \pi(I(f)) \xi, \eta \rangle_{\H_\pi} = \int_{G} \langle \pi(f(s))\xi , \eta \rangle_{\H_\pi} \d s,
+%	\end{align*}
+%	for all $f \in \cc(G,A)$ and representations $\pi \colon A \to \mathbb{B}(\H_\pi)$. We refer to the element $I(f)$ as the integral of $f$, and write $\int_G f(t) \d t := I(f)$. $I$ satisfies $\lv I(f)\rv \leq \lv f \rv_1$ and $I(f^*)=I(f)^*$, and for all $a \in M(A)$, we have
+%	\begin{align*}
+%		\int_G f(s)a \d s = \left( \int_G f(s) \d s\right)  a \text{ and } \int_G f(s)a \d s = a  \left ( \int_G f(s) \d s \right).
+%	\end{align*}
+%	Moreover, if $L \colon A \to B$ is a bounded linear map of $C^*$-algebras, then
+%	\begin{align*}
+%		\int_G L(f(s)) \d s = L\left( \int_G f(s) \d s \right).
+%	\end{align*}
+%\end{proposition}
+%\begin{proof}
+%	We are going to define to each $f \in \cc(G,A)$ an operator on a Hilbert space $\H$ where $A$ is represented faithfully on, and define $I(f)$ as the pre-image of this operator by the faithful representation of $A$ on $\H$, which will also prove uniqueness by faithfulness.
+%	
+%	To show the existence, let $\pi$ denote any representation of $A$ on $\H$. Note that for each $f \in \cc(G,A)$, the map
+%	\begin{align*}
+%		S_f \colon (\xi,\eta) \mapsto \int_{G} \langle \pi(f(s))\xi,\eta\rangle \d s
+%	\end{align*}
+%	is a bounded sesequilinear form. By the Riesz Representation theorem, there exists an operator $T_f \in \mathbb{B}(\H)$ such that $\langle T_f \xi, \eta \rangle = S_(\xi,\eta)$, and the assignment $f \mapsto T_f$ is linear by linearity of the integral. We wish to show that $T_f = \pi(b)$ for some $b \in A$. 
+%
+%	Let $\varepsilon>0$ and let $K$ denote $\mathrm{supp} f$. Pick any compact neighborhood $C$ of $K$, e.g., by selecting a finite covering of pre-compact sets of $K$ and taking the union of their closures. 
+%	
+%
+%\end{proof}
