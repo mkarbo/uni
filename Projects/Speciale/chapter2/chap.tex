@@ -65,6 +65,15 @@ We will also need the following result, which can be found in \cite[Theorem 3.20
 	\end{align*}
 	since $| L_f(\varphi)| \leq \int_G \lv \varphi \rv \lv f(s) \rv \d s = \lv f \rv_1 \lv \varphi\rv$.
 \end{definition}
+\begin{note}	
+If $(f_i) \subseteq  \cc(G,B)$ is a net which converges in the inductive limit topology to $f \in \cc(G,B)$, i.e., $f_i \to f$ uniformly on $G$ and for some $K \subseteq G$ compact we have $\supp f_i \subseteq K$ eventually (and hence also $\supp f \subseteq K$), then
+\begin{align*}
+	\lv f_i - f\rv_1 = \int_{G} \lv f_i(s) - f(s) \rv \d s 	\leq \lv f_i - f \rv \mu(K) \to 0,
+\end{align*}
+so $f_i \to f$ in the $L^1$-norm, and hence by the above we see that $|L_{f_i}(\varphi) - L_f(\varphi) | \leq \lv f_i-f\rv_1 \lv \varphi \rv \to 0$ for all $ \varphi \in B^*$, i.e.,  $L_{f_i}\to L_f$ in the weak$^*$ topology of $B^{**}$.
+\label{note:induct}
+\end{note}
+
 We will see that $L_f$ is equal to $\hat a \colon \varphi \to \varphi(a)$ for some unique $a \in B$. Let $\iota \colon B \to B^{**}$ denote the inclusion $\iota(a) = \hat a$, then we have
 \begin{lemma}
 	If $f \in \cc(G,B)$, then $L_f \in \iota(B)$.
@@ -79,7 +88,7 @@ We will see that $L_f$ is equal to $\hat a \colon \varphi \to \varphi(a)$ for so
 	\begin{align*}
 		g_\varepsilon (s) := \sum_{i=1}^n f(s_i) \varphi(s),
 	\end{align*}
-	so $\supp g \subseteq W$. If $s \in \left( \bigcup_{i=1}^n s_i V \right)$ then $f(s) = g_{\varepsilon}(s) = 0$. Else, we see that if $s \in s_i V$, then $s_i^{-1}s \in V$ and $\lv f(s) - f(s_i) \rv < \varepsilon$, and hence
+	so $\supp g \subseteq W$. If $s \in \left( \bigcup_{i=1}^n s_i V \right)^c$ then $f(s) = g_{\varepsilon}(s) = 0$, and otherwise we see that if $s \in s_i V$, then $s_i^{-1}s \in V$ and $\lv f(s) - f(s_i) \rv < \varepsilon$, and hence
 	\begin{align*}
 		\lv f(s) - g_{\varepsilon} \rv  \leq \sum_{i=1}^n \varphi(s) \lv f(s)-f(s_i) \rv  < \varepsilon.
 	\end{align*}
@@ -88,12 +97,178 @@ We will see that $L_f$ is equal to $\hat a \colon \varphi \to \varphi(a)$ for so
 	\begin{align*}
 		L_{g_{\varepsilon}} ( \psi ) = \int_{G} \psi\left( \sum_{i=1}^n \varphi(s) f(s_i) \right) \d s = \sum_{i=1}^n \int_G \varphi(s) \d s \psi(f(s_i)) = \sum_{i=1}^n \int_G \varphi(s) \d s \underbrace{\iota(f(s_i))}_{ \in \iota(C)} (\psi) 
 	\end{align*}
-	so $L_{g_{\varepsilon}}  \in D \iota(C) \subseteq \mu(W) \iota(C)$, since $0 \in C$ so we can shrink scalar $\mu(W)$ to $D$. For $\varepsilon \to 0$, we see that $g_{\varepsilon} \to f$ in the inductive limit topology and $L_{g_\varepsilon} \in \mu(W) \iota(C)$. Hence $\varphi \circ g_\varepsilon \to \varphi \circ f$ in the inductive limit topology of $\cc(G, \C)$. \todo{revise with weak$^*$-topology argument}
+	so $L_{g_{\varepsilon}}  \in D \iota(C) \subseteq \mu(W) \iota(C)$, since $0 \in C$ so we can shrink scalar $\mu(W)$ to $D$. For $\varepsilon \to 0$, we see that $g_{\varepsilon} \to f$ in the inductive limit topology and $L_{g_\varepsilon} \in \mu(W) \iota(C)$. 
 
+	Since $C$ is compact and convex, it is weakly compact which by definition is equivalent to $\iota(C)$ being compact in the weak$^*$-topology of $B^{**}$, and since $g_{\varepsilon} \to f$ in the inductive limit topology, we from \ref{note:induct} we see that $L_{g_\varepsilon } \to L_f$ in the weak $^*$-topology on $B^{**}$. In particular, since $\iota(C)$ is weak$^*$-compact, it is closed and hence $\mu(W) \iota(C)$ is closed in the weak$^*$-topology so $L_f \in \mu(W) \iota(C) \subseteq \iota(B)$.
+\end{proof}
+And we have a lemma emphasizing important properties of this integral:
+\begin{lemma}
+There exists a unique linear map $I \colon \cc(G,B) \to B$,
+\begin{align*}
+	f \mapsto \int_G f(s) \d s
+\end{align*}
+such that for all $f \in \cc(G,B)$ we have
+\begin{align}
+	\varphi(\int_g f(s) \d s ) &= \int_G \varphi(f(s)) \d s, \ \text{ for all } \varphi \in B^*,\\
+	\lv \int_G f(s) \d s \rv &\leq \lv f \rv_1 \\
+	\int_G g \otimes x (s) \d s &=x \int_G g(s) \d s, \text{ for all } g \otimes x \in \cc(G) \odot B,
+\end{align}
+and if $T \colon B \to D$ is a bounded linear operator, then
+\begin{align*}
+	T\left( \int_G f(s) \d s \right) = \int_G T(f(s)) \d s.
+\end{align*}
+	\label{cross:bochnerproperties}
+\end{lemma}
+\begin{proof}
+	Clearly letting $I(f) := \iota^{-1}(L_f)$, with $L_f$ as in \ref{cross:defintegral}, then $f \mapsto I(f)$ is which instantly satisfies all the properties but the last. Suppose that $T \colon B \to D$ is a bounded linear operator between Banach spaces. Then $T \circ f \in \cc(G,D)$ for all $f \in \cc(G,B)$, and $\varphi \circ T \in B^*$ for all $ \varphi \in D^*$. Hence 
+	\begin{align*}
+		\varphi \circ T \left( \int_G f(s) \d s  \right) = \int_G \varphi( T \circ f (s) ) \d s = \varphi \left( \int_G T (f(s)) \d s \right),
+	\end{align*}
+	for all $\varphi \in D^*$, which separates points points of $D$, finishing the proof.
+\end{proof}
+In light of the above, we may give the following definition:
+\begin{definition}
+	For $f \in \cc(G,B)$, define the integral of $f$ $I(f) := \iota^{-1}(L_f)$, which we denote by $\int_G f(s) \d s := I(f)$.
+\end{definition}
+
+In particular, if we let $A$ be a $C^*$-algebra, then we obtain the following useful result:
+\begin{proposition}
+	For $f \in \cc(G,A)$, if $\pi \colon A \to \mathbb{B}(\H)$ is a representation of $A$, then for all $\xi , \eta \in \H$ the integral of \ref{cross:bochnerproperties} satisfies
+	\begin{align*}
+		\langle \pi\left( \int_G f(s) \d s ) \right) \xi , \eta \rangle = \int_{G} \langle \pi(f(s)) \xi , \eta \rangle \d s,
+	\end{align*}
+	and 
+	\begin{align*}
+		\left( \int_G f(s) \d s  \right)^* = \int_G f(s)^* \d s
+	\end{align*}
+	and for $a , b \in M(A)$ we have
+	\begin{align*}
+	 a \int_G f(s) \d s b = \int_G a f(s) b \d s.		
+	\end{align*}
+	\label{mult:cstarint}
+\end{proposition}
+\begin{proof}
+	Define the vector-state $\varphi_\pi \colon a \mapsto \langle \pi(a) \xi , \eta \rangle$. Then, $\varphi_\pi \in A^*$, and the first statement follows. Suppose now that $\pi$ is a faithful representation, then since $\int_G \pi(f(s)) \d s = \pi \left( f(s) \d s \right)$, we see that the second statement holds as well when applied to $\varphi_\pi(I(f)^*)$. Finally if $a,b \in M(A)$ then
+	\begin{align*}
+		\langle \pi\left(a \int_G f(s) \d s b \right) \xi , \eta \rangle &= \langle \overline \pi(a) \pi\left( \int_G f(s) \d s \right) \overline \pi (b)  \xi , \eta \rangle \\
+		 &= \langle \pi \left( \int_G f(s) \d s \right) (\overline \pi (b) \xi ) , \overline \pi(a^*) \eta \rangle \\ 
+		 &= \int_G \langle \pi(f(s)) \overline \pi (b) \xi , \overline \pi(a ^* ) \eta \rangle \d s\\
+		 &= \int_G \langle \pi(af(s)b) \xi , \eta \rangle \d s\\
+		 &= \langle \pi \left(  \int_G a f(s) b \d s  \right) \xi , \eta \rangle.
+	\end{align*}
 \end{proof}
 
+As mentioned, we will need to consider maps of the form of the form $s \mapsto \pi(f(s)) U_s$ where $f \in \cc(G,A)$, $\pi A \to \mathbb{B}(\H)$ and $U \colon G \to \mathcal{U}(\H)$ is strongly continuous. In order to use the above theorem to give sense then, we will want to change $A$ out with $M_s(A)$, i.e., the multiplier algebra of $A$ equipped with the strict topology, and combine it with the following lemma:
+\begin{lemma}
+	Let $E$ be a Hilbert $A$-module, and let $u \colon G \to \mathcal{U}(E)$ be a group homomorphism from $G$ to the group of unitary operators on $E$, i.e., operators $T \in \mathcal{L}_A(E)$ such that $T^*T=TT^*=I_E$. Then $u$ is strictly continous if and only if $u$ is strongly continuous.
+	\label{cross:unistrictstrong}
+\end{lemma}
+\begin{proof}
+	We saw in \cref{mult:STARTSTRONG} that on bounded sets, the strict and the $*$-strong topology coincided. In particular, since $\mathcal{L}_A(E)$ is a $C^*$-algebra, the set of unitary operators is a subset of the unit circle. Thus, it suffices to show that if $s \mapsto u_s x$ is continuous for $x$ then $s \mapsto u_s^* x$ is continuous. Let $x \in E$, then
+	\begin{align*}
+		\lv u_s^* x - u_t^*x \rv_A^2 = \underbrace{\lv u_s^* x \rv_A^2}_{= \lv x \rv_A^2} + \underbrace{\lv u_t^*x \rv_A^2}_{= \lv x \rv_A^2} - \langle \underbrace{ \left( u_t u_s^* + u_s u_t^*  \right)}_{\stackrel{s \to t}{\longrightarrow} 2I_E} x ,x \rangle \stackrel{s \to t}{\longrightarrow} 0,
+	\end{align*}
+	showing the wanted, since $x \in E$ was arbitrary.
+\end{proof}
 
-\sssection{Crossed Products}
+We now generalize the result of \cref{mult:cstarint} to cover the class of functions which we shall deal with later on.
+\begin{theorem}
+	Given a $C^*$-algebra $A$, there is a unique linear map $I\colon \cc(G,M_s(A)) \to M(A)$, $f \mapsto \int_G f(s) \d s$, such that for any non-degenerate representation $\pi \colon A \to \mathbb{B}(\H)$ and all $\xi, \eta \in \H$ the identity
+	\begin{align}
+		\langle \overline \pi \left( \int_G f(s) \d s \right) \xi , \eta \rangle = \int_{G} \langle \overline \pi(f(s)) \xi , \eta \rangle \d s,
+		\label{mult:1.35}
+	\end{align}
+	and for all $f \in \cc(G,M_s(A))$
+	\begin{align}
+		\lv I(f) \d s \rv \leq \lv f \rv _{ \infty} \mu(\supp f ).
+	\end{align}
+	Also, the identities
+	\begin{align}
+		\int_G f(s) ^* \d s = \left( \int_G f(s) \d s \right)^*,
+	\end{align}
+	and
+	\begin{align}
+		\int_G a f(s) b \d s = a \left( \int_G f(s) \d s  \right) b
+	\end{align}
+	hold for all $f \in \cc(G,M_s(A))$ and $a,b \in M(A)$. If $T \colon A \to M(B)$ is a non-degenerate homomorphism of $C^*$-algebras, then
+	\begin{align}
+		\overline T \left( \int_G f(s) \d s\right) = \int_G \overline T (f(s)) \d s.
+	\end{align}
+
+	\label{mult:multstrictintegral}
+\end{theorem}
+\begin{proof}
+	If $I$ exists, then letting $\pi$ be a faithful representation of $A$ we see that $I$ must be unique by the first identity. For  $f \in \cc(G,M_s(A))$ and $a \in A$, it is easy to see that if $f_a \colon s \mapsto f(s) a$, then $f_a \in \cc(G,A)$. This allows us to use \cref{mult:cstarint} to define the integral $\int_G f(s) a \d s$ for all $f \in \cc(G,M_s(A))$ and $a \in A$. Define $L_f \colon A \to A$ by
+	\begin{align*}
+		L_f(a) = \int_G f(s) a \d s, \ \text{ for } a \in A.
+	\end{align*}
+	Then $L_f \in \mathcal{L}_A(A_A)$, for if $a,b \in A$ then \cref{mult:cstarint} implies that
+	\begin{align*}
+		\langle L_f a , b \rangle_{A_A} = (L_f a )^* b = \int_G (f(s) a)^* \d s b = \int_G a^* f(s)^* \d s = a^* \int_G f(s)^* b \d s = \langle a , L_{f^*} b\rangle_{A_A}.
+	\end{align*}
+	So $L_{f^*}$ is an adjoint of $L_f$. Let $\int_G f(s) \d s := L_f$ for all $f \in \cc(G,M_s(A)$, then $L_f \in \mathcal{L}_A(A_A) = M(A)$, and it is not hard to see that the assignment $f \mapsto L_f$ is linear.
+
+	Again, by \cref{mult:cstarint}, we see that a non-degenerate representation $\pi \colon A \to \mathbb{B}(\H)$ with $a \in A$ and $\xi, \eta \in \H$ that
+	\begin{align*}
+		\langle \overline \pi \left( \int_G f(s) \d s \right) \pi(a) \xi , \eta \rangle =\langle \pi \left(f(s) a \d s \right) \xi , \eta \rangle &= \int_G \langle \pi(f(s) a) \xi , \eta \rangle \d s\\
+		&= \int_G \langle \overline \pi (f(s)) \pi(a) \xi , \eta \rangle \d s,
+	\end{align*}
+	which shows \cref{mult:1.35}, since $\pi$ is non-degenerate. The analogues of \cref{mult:cstarint} follows similarly. Let $a \in A$ with $\lv a \rv \leq 1$, then by \cref{mult:cstarint} applied to $f_a \in \cc(G,A)$, we see that
+	\begin{align*}
+		\lv \int_G f(s) \d s a \rv  \leq \lv f_a \rv_1 = \int_G \lv f(s) a \rv \d s \leq \int_G 1_{\supp f} \lv f \rv_{\infty} \d s = \mu(\supp f) \lv f \rv_{\infty},
+	\end{align*}
+	Hence $\lv \int_G f(s) \d s \rv = \sup_{\lv a \rv \leq 1} \lv \int_G f(s) \d s a\rv \leq \lv f \rv_{\infty} \mu(\supp f)$. Let $T \colon A \to M(B)$ be a non-degenerate homomorphism, with unique extension $\overline T \colon M(A) \to M(B)$, and hence for all $ a \in A$ and $b \in B$ we have
+	\begin{align*}
+		\overline T\left(  \int_G f(s) \d s \right) T(a) b = T\left( \int_G f(s) a \d s  \right)b= \int_{G} T(f(s)a ) b \d s &= \int_G \overline T(f(s)) T(a)b \d s \\
+		&=\int_G \overline T(f(s)) \d s T(a)b,
+	\end{align*}
+	hence $\overline T \left( \int_G f(s) \d s \right) = \int_G \overline T(f(s)) \d s$ by non-degeneracy.
+\end{proof}
+And as a corollary, we obtain the following crucial ingredient in the construction of the crossed product:
+\begin{corollary}
+	Suppose $A$ is a $C^*$-algebra and $\pi \colon A \to \mathbb{B}(\H)$ is a $*$-representation, $u \colon G \to \mathcal{U}(\H)$ is a strongly continuous group homomorphism of a locally compact Hausdorff group on $\H$ and $f \in \cc(G,A)$, then the element
+	\begin{align*}
+		\pi \rtimes u(f) := \int_G \pi(f(s)) u_s \d s \in \mathbb{B}(\H)
+	\end{align*}
+	is well-defined and satisfies the properties of \cref{mult:multstrictintegral}.
+	\label{cross:integralformlemma}
+\end{corollary}
+\begin{definition}
+	The map $ \pi \rtimes u \colon \cc(G,A) \to \mathbb{B}(\H)$, $f \mapsto \pi \rtimes u(f)$, is called the \myemph{integral form}\emph{ of $\pi$ and $u$}.
+\end{definition}
+Later on, we shall see that $\pi \rtimes u$ is a very useful tool in the construction of new important $C^*$-algebras, and when $(A,G,\alpha)$ is a $C^*$-dynamical system, then it becomes a $*$-representation of the $*$-algebra $\cc(G,A,\alpha)$, which we will construct shortly. It also allows us to define the \emph{Group $C^*$-algebras} of $G$ in the setting of locally compact Hausdorff groups. However to do this properly, we will need a form of fubini's theorem.
+
+\begin{lemma}
+	For $f \in \cc(G \times G \, B)$, the function
+	\begin{align*}
+		s \mapsto \int_G f(s,t) \d t
+	\end{align*}
+	is an element of $\cc(G,B)$.
+	\label{cross:singleint}
+\end{lemma}
+\begin{proof}
+	\todo{Do proof}
+\end{proof}
+\begin{corollary}
+	Replacing the integral of \cref{cross:singleint} with $\int_G f(t,s) \d t$ the statement still holds.
+\end{corollary}
+\begin{theorem}[Fubini's for $C^*$-valued integrals]
+	Suppose that $f \in \cc(G \times G, M_s(A))$, then 
+	\begin{align*}
+		\int_G \int_G f(s,t) \d s \d t = \int_G \int_G f(s,t) \d t \d s.
+	\end{align*}
+	\label{cross:fubini}
+\end{theorem}
+
+
+%***************************************************************************************************************************************
+%***************************************************************************************************************************************
+%***************************************************************************************************************************************
+%***************************************************************************************************************************************
+%***************************************************************************************************************************************
+%***************************************************************************************************************************************
+
+\ssection{Crossed Products}
 
 In analysis, an object of interest is the group algebra $L^1(G)$ for locally compact groups $G$. One can turn it into a $*$-algebra by showing that the convolution gives rise to a well-defined multiplication, and one can use the modular function to define an involution. Analogously to this, we do the same for $A$ valued functions:
 \begin{definition}

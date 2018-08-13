@@ -8,7 +8,6 @@
 \usepackage{amsthm}
 \usepackage{amssymb} 
 \usepackage[usenames,dvipsnames]{xcolor}
-\usepackage{tikz}
 \usepackage{amssymb}
 \usepackage{graphicx}
 %\usepackage{flexisym}
@@ -29,9 +28,9 @@
 %\usepackage[titleloc]{appendix}
 \usepackage{faktor}
 \usepackage{imakeidx} 
+\usepackage{xfrac}
 
-
-\usepackage{mathabx} 
+%\usepackage{mathabx} 
 
 \makeindex[columns=3, title=Alphabetical Index, intoc]
 
@@ -91,8 +90,8 @@
 {\newline}{}
 \theoremstyle{Break}
 \newtheorem{example}[theorem]{Example}
-\newtheorem*{remark}{Remark}
-\newtheorem*{note}{Note}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{note}[theorem]{Note}
 \setcounter{secnumdepth}{0}
 \usepackage{xpatch}
 \xpatchcmd{\proof}{\ignorespaces}{\mbox{}\\\ignorespaces}{}{}
