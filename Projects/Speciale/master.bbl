@@ -226,6 +226,24 @@
   \field{year}{1991}
 \endentry
 
+\entry{schilling}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Schilling}{S.}%
+     {ren{\'e}~L}{r.~L.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Cambridge University Press}%
+  }
+  \strng{namehash}{SrL1}
+  \strng{fullhash}{SrL1}
+  \field{sortinit}{S}
+  \field{title}{Measures, Integrals and Martingales}
+  \field{year}{2017}
+\endentry
+
 \entry{williamscrossed}{book}{}
   \name{author}{1}{}{%
     {{}%

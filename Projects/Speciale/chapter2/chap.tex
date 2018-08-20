@@ -236,10 +236,10 @@ And as a corollary, we obtain the following crucial ingredient in the constructi
 \begin{definition}
 	The map $ \pi \rtimes u \colon \cc(G,A) \to \mathbb{B}(\H)$, $f \mapsto \pi \rtimes u(f)$, is called the \myemph{integral form}\emph{ of $\pi$ and $u$}.
 \end{definition}
-Later on, we shall see that $\pi \rtimes u$ is a very useful tool in the construction of new important $C^*$-algebras, and when $(A,G,\alpha)$ is a $C^*$-dynamical system, then it becomes a $*$-representation of the $*$-algebra $\cc(G,A,\alpha)$, which we will construct shortly. It also allows us to define the \emph{Group $C^*$-algebras} of $G$ in the setting of locally compact Hausdorff groups. However to do this properly, we will need a form of fubini's theorem.
+Later on, we shall see that $\pi \rtimes u$ is a very useful tool in the construction of new important $C^*$-algebras, and when $(A,G,\alpha)$ is a $C^*$-dynamical system, then it becomes a $*$-representation of the $*$-algebra $\cc(G,A,\alpha)$, which we will construct shortly. It also allows us to define the \emph{Group $C^*$-algebras} of $G$ in the setting of locally compact Hausdorff groups. However to do this properly, we will need a form of Fubini's theorem.
 
 \begin{lemma}
-	For $f \in \cc(G \times G \, B)$, the function
+For $f \in \cc(G \times G  , B)$, the function
 	\begin{align*}
 		s \mapsto \int_G f(s,t) \d t
 	\end{align*}
@@ -247,7 +247,15 @@ Later on, we shall see that $\pi \rtimes u$ is a very useful tool in the constru
 	\label{cross:singleint}
 \end{lemma}
 \begin{proof}
-	\todo{Do proof}
+	It is easy to see that if $F \colon G \to B$ is the map $s \mapsto \int_G f(s,t) \d t$, then $ \supp F$ is compact. We show continuity. Suppose that $x_i \to x \in G$ and let $ \varepsilon > 0$. Pick compact $K_1,K_2 \subseteq G$ covering the support of $f$, i.e., such that $ \supp f \subseteq K_1 \times K_2$. Note that $f(x_i,y) \to f(x,y)$ uniformly: If not, then we can find a net $(r_j)\subseteq G$ and $\varepsilon_0 > 0$ such that
+	\begin{align*}
+		\lv f(x_i,r_j) - f(x,r_j) \rv \geq \varepsilon_0,
+	\end{align*}
+	for all $i,j$. This shows that $r_j \in K_2$ for all $j$, hence we may assume that $r_j \to r \in K_2$ (up to passing to a subnet). But then for sufficiently large $i,j$ we would have $\lv f(x_i,r_j) - f(x,r_j) \rv < \varepsilon_0$. Hence we can assume that $\lv F(x_i) - F(x) \rv < \frac{\varepsilon}{ \mu(K_2)}$. Then, 
+	\begin{align*}
+		\lv \int_G f(x_i,s) \d s - \int_G f(x,s) \d s \rv \leq \int_{K_2} \lv f(x_i,s) - f(x,s) \rv \ d s + \int_{K_2^c} \lv f(x_i,s) - f(x,s) \rv \d s  \leq \varepsilon,
+	\end{align*}
+	as $\supp f \subseteq K_1 \times K_2$, so $F \in \cc(G,B)$.
 \end{proof}
 \begin{corollary}
 	Replacing the integral of \cref{cross:singleint} with $\int_G f(t,s) \d t$ the statement still holds.
@@ -255,11 +263,23 @@ Later on, we shall see that $\pi \rtimes u$ is a very useful tool in the constru
 \begin{theorem}[Fubini's for $C^*$-valued integrals]
 	Suppose that $f \in \cc(G \times G, M_s(A))$, then 
 	\begin{align*}
-		\int_G \int_G f(s,t) \d s \d t = \int_G \int_G f(s,t) \d t \d s.
+		s \mapsto \int_G^{M_s(A)} f(s,t) \d t \text{ and } s \mapsto \int_G^{M_s(A)} f(t,s) \d t
+	\end{align*}
+	are elements of $\cc(G,M_s(A))$ and moreover
+	\begin{align*}
+		\int_G^{M_s(A)} \int_G^{M_s(A)} f(s,t) \d s \d t = \int_G^{M_s(A)} \int_G^{M_s(A)} f(s,t) \d t \d s.
 	\end{align*}
 	\label{cross:fubini}
 \end{theorem}
+\begin{proof}
+Define for a fixed $s$, the map $t \mapsto f(s,t)$ is in $\cc(G,M_s(A)$, hence we can define $\int_G f(s,t) \d t$ and $\int_G f(t,s) \d t$ as in \Cref{mult:multstrictintegral}. Recall that $M(A) = M(\mathbb{K}_A(A_A))$, so the strict topology is induced by multiplication operators on $A$, so it suffices to show that $s \mapsto a \left(\int_Gf(s,t) \d t\right)$ and $s \mapsto \left(\int_G f(s,t) \d t\right) a $ are in $\cc(G,A)$ for all $ a \in A$ for the first claim. By \Cref{mult:multstrictintegral}, we have 
+\begin{align*}
+	a \left( \int_G f(s,t) \d t \right) = \int_G a f(s,t) \d t,
+\end{align*}
+for all $a \in A$ and $s \in G$, and similarly $\left( \int_G f(s,t) \d t \right)a = \int_G f(s,t) a \d t$. The maps $(s,t) \mapsto a f(s,t)$ and $(s,t) \mapsto f(s,t) a$ are in $\cc(G \times G , A)$, clearly, so \Cref{cross:singleint} ensures that $s \mapsto \int_G^{M_s(A)} f(s,t) \d t$ and $s \mapsto \int_G ^{M_s(A)} f(t,s) \d t$ are in $\cc(G,M_s(A)$.
 
+For the last claim, we now see that the double integrals are well-defined \Cref{mult:multstrictintegral}, so by letting $A$ be faithfully representted on $\mathbb{B}(\H)$, we may obtain the equality using the regular Fubini's theorem for scalar valued integrals (see e.g., \cite{schilling}) applied pointwise to an orthonormal basis through the inner-product.
+\end{proof}
 
 %***************************************************************************************************************************************
 %***************************************************************************************************************************************
