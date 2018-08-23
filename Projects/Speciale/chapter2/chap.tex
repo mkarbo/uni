@@ -5,7 +5,7 @@ However, when $G$ is not discrete, we run into issues since we can not assume th
 
 We assume familiarity with basic theory of analysis in topological groups, basic representation theory of topological groups and Fourier analysis thereon and will not go lengths to explain results from this field, for a reference, we recommend the excellent books on the subject: \cite{folland2016fourier}, \cite{berg1984harmonic} and \cite{folland2013real}. 
 \sssection{Integral Forms And Representation Theory}
-Throughout this chapter, we let $G$ be a locally compact topological group and $A$ a $C^*$-algebra, with no added assumptions unless otherwise specified. We will write $G \stackrel{\alpha}{\acts} A$ to specify that $\alpha \colon G \to \Aut(A)$ is an action of $G$ on $A$, i.e., a strongly continuous group homomorphism. We will always fix a base left Haar measure $\mu$ on $G$, whose integrand we will denote by $\d t$, and with modular function $\Delta \colon G \to (0,\infty)$. 
+Throughout this chapter, we let $G$ be a locally compact topological group and $A$ a $C^*$-algebra, with no added assumptions unless otherwise specified. We will write $G \acts \alpha A$ to specify that $\alpha \colon G \to \Aut(A)$ is an action of $G$ on $A$, i.e., a strongly continuous group homomorphism. We will always fix a base left Haar measure $\mu$ on $G$, whose integrand we will denote by $\d t$, and with modular function $\Delta \colon G \to (0,\infty)$. 
 
 The main motivation of the theory we are about to develop is this: Given a covariant representation $(\pi,u,\H)$ of $(A,G,\alpha)$, we wish to construct a representation $\pi \rtimes u$ of $\cc(G,\mathbb{B}(\H))$ satisfying 
 \begin{align*}
@@ -23,7 +23,7 @@ For $A= \C$, it is well known that given $f \in \cc(G,A)$ and $\varepsilon > 0$,
 	\begin{align*}
 		\lv f(s)  - f(r) \rv < \varepsilon.
 	\end{align*}
-	\label{cross:lrunicont}
+	\label{int:lrunicont}
 \end{lemma}
 
 We will use $\mathcal{D}$ to denote an arbitrary complex Banach space, and for $f \in \cc(G)$ and $x \in \mathcal{D}$, we denote by $f \otimes x$ the map $G \ni t \mapsto f(t)x \in \mathcal{D}$. It is clear that then $f \otimes x \in \cc(G,\mathcal{D})$. We introduce a 'topology' or a name for a special kind of convergence on $\cc(G,\mathcal{D})$, which will prove useful:
@@ -37,7 +37,7 @@ Let $\mathcal{D}_0 \subseteq \mathcal{D}$ be any dense subset. Then the set
 	\cc(G) \odot \mathcal{D}_0 := \Span\left\{ f \otimes x \mid f \in \cc(G) \text{ and } x \in \mathcal{D_0} \right\} 
 \end{align*}
 is dense in the inductive limit topology on $\cc(G,\mathcal{D})$.
-	\label{cross:indlmdense}
+	\label{int:indlmdense}
 \end{lemma}
 \begin{proof}	
 	Let $\varphi \in \cc(G,B)$ and $\varepsilon > 0$ be arbitrary. Let $K= \mathrm{supp} \varphi$ and let $W$ denote an arbitrary compact neighborhood of $e \in G$, and pick \todo{add ref} a symmetric neighborhood $e \in V_{\varepsilon} \subseteq W$ such that $sr^{-1} \in V$ implies $\lv f(s) - f(r) \rv < \frac{\varepsilon}{\mu(WK)}$. Since $K$ is compact, there is a finite set $\left\{ r_1,\dots,r_n \right\} \subseteq K$ such that $K \subseteq \bigcup_{1 \leq i \leq n} V r_i$. Recall that every locally compact Hausdorff group is the disjoint union of $\sigma$-compact subspaces, hence we can pick a partition of unity $\left\{ f_j \right\}_{j=0}^n$ of $K^c \cup \left( \bigcup_{1 \leq i \leq n} Vr_i\right)=G$ such that $\mathrm{supp}f_0 \subseteq K^c$ and $\mathrm{supp}f_i \subseteq V r_i$ for $i = 1 ,\dots,n$. Define
@@ -54,7 +54,7 @@ is dense in the inductive limit topology on $\cc(G,\mathcal{D})$.
 We will also need the following result, which can be found in \cite[Theorem 3.20, part (b, c)]{rudin1991functional}
 \begin{lemma}
 	If $K \subseteq B$ is compact, then the convex hull convex hull $\conv(K)$ is totally bounded and hence it has compact closure.
-	\label{cross:clconvcomp}
+	\label{int:clconvcomp}
 \end{lemma}
 
 
@@ -77,10 +77,10 @@ so $f_i \to f$ in the $L^1$-norm, and hence by the above we see that $|L_{f_i}(\
 We will see that $L_f$ is equal to $\hat a \colon \varphi \to \varphi(a)$ for some unique $a \in B$. Let $\iota \colon B \to B^{**}$ denote the inclusion $\iota(a) = \hat a$, then we have
 \begin{lemma}
 	If $f \in \cc(G,B)$, then $L_f \in \iota(B)$.
-	\label{cross:defintegral}
+	\label{int:defintegral}
 \end{lemma}
 \begin{proof}
-	Let $W$ be a compact neighborhood of $\mathrm{supp} f$, and let $K:= f(G) \cup \left\{ 0 \right\} \subseteq B$. Then $K$ is compact, so by \ref{cross:clconvcomp} the set $C := \overline \conv \left\{ K \right\}$ is compact.
+	Let $W$ be a compact neighborhood of $\mathrm{supp} f$, and let $K:= f(G) \cup \left\{ 0 \right\} \subseteq B$. Then $K$ is compact, so by \ref{int:clconvcomp} the set $C := \overline \conv \left\{ K \right\}$ is compact.
 
 	Fix $\varepsilon > 0$, and pick a neighborhood $V$ of $e \in G$ such that $ \lv f(s) - f(r) \rv < \varepsilon$ for $s^{-1}r \in V$. Assume without loss of generality that $\mathrm{supp} f V \subseteq W$, since we can make $V$ arbitrarily small. Using compactness of $\supp f$, pick $s_1,\dots,s_n \in \supp f$ such that $\left\{ s_i V \right\}$ covers $\supp f$.
 	
@@ -117,10 +117,10 @@ and if $T \colon B \to D$ is a bounded linear operator, then
 \begin{align*}
 	T\left( \int_G f(s) \d s \right) = \int_G T(f(s)) \d s.
 \end{align*}
-	\label{cross:bochnerproperties}
+	\label{int:bochnerproperties}
 \end{lemma}
 \begin{proof}
-	Clearly letting $I(f) := \iota^{-1}(L_f)$, with $L_f$ as in \ref{cross:defintegral}, then $f \mapsto I(f)$ is which instantly satisfies all the properties but the last. Suppose that $T \colon B \to D$ is a bounded linear operator between Banach spaces. Then $T \circ f \in \cc(G,D)$ for all $f \in \cc(G,B)$, and $\varphi \circ T \in B^*$ for all $ \varphi \in D^*$. Hence 
+	Clearly letting $I(f) := \iota^{-1}(L_f)$, with $L_f$ as in \ref{int:defintegral}, then $f \mapsto I(f)$ is which instantly satisfies all the properties but the last. Suppose that $T \colon B \to D$ is a bounded linear operator between Banach spaces. Then $T \circ f \in \cc(G,D)$ for all $f \in \cc(G,B)$, and $\varphi \circ T \in B^*$ for all $ \varphi \in D^*$. Hence 
 	\begin{align*}
 		\varphi \circ T \left( \int_G f(s) \d s  \right) = \int_G \varphi( T \circ f (s) ) \d s = \varphi \left( \int_G T (f(s)) \d s \right),
 	\end{align*}
@@ -133,7 +133,7 @@ In light of the above, we may give the following definition:
 
 In particular, if we let $A$ be a $C^*$-algebra, then we obtain the following useful result:
 \begin{proposition}
-	For $f \in \cc(G,A)$, if $\pi \colon A \to \mathbb{B}(\H)$ is a representation of $A$, then for all $\xi , \eta \in \H$ the integral of \ref{cross:bochnerproperties} satisfies
+	For $f \in \cc(G,A)$, if $\pi \colon A \to \mathbb{B}(\H)$ is a representation of $A$, then for all $\xi , \eta \in \H$ the integral of \ref{int:bochnerproperties} satisfies
 	\begin{align*}
 		\langle \pi\left( \int_G f(s) \d s ) \right) \xi , \eta \rangle = \int_{G} \langle \pi(f(s)) \xi , \eta \rangle \d s,
 	\end{align*}
@@ -145,7 +145,7 @@ In particular, if we let $A$ be a $C^*$-algebra, then we obtain the following us
 	\begin{align*}
 	 a \int_G f(s) \d s b = \int_G a f(s) b \d s.		
 	\end{align*}
-	\label{mult:cstarint}
+	\label{int:cstarint}
 \end{proposition}
 \begin{proof}
 	Define the vector-state $\varphi_\pi \colon a \mapsto \langle \pi(a) \xi , \eta \rangle$. Then, $\varphi_\pi \in A^*$, and the first statement follows. Suppose now that $\pi$ is a faithful representation, then since $\int_G \pi(f(s)) \d s = \pi \left( f(s) \d s \right)$, we see that the second statement holds as well when applied to $\varphi_\pi(I(f)^*)$. Finally if $a,b \in M(A)$ then
@@ -161,7 +161,7 @@ In particular, if we let $A$ be a $C^*$-algebra, then we obtain the following us
 As mentioned, we will need to consider maps of the form of the form $s \mapsto \pi(f(s)) U_s$ where $f \in \cc(G,A)$, $\pi A \to \mathbb{B}(\H)$ and $U \colon G \to \mathcal{U}(\H)$ is strongly continuous. In order to use the above theorem to give sense then, we will want to change $A$ out with $M_s(A)$, i.e., the multiplier algebra of $A$ equipped with the strict topology, and combine it with the following lemma:
 \begin{lemma}
 	Let $E$ be a Hilbert $A$-module, and let $u \colon G \to \mathcal{U}(E)$ be a group homomorphism from $G$ to the group of unitary operators on $E$, i.e., operators $T \in \mathcal{L}_A(E)$ such that $T^*T=TT^*=I_E$. Then $u$ is strictly continous if and only if $u$ is strongly continuous.
-	\label{cross:unistrictstrong}
+	\label{int:unistrictstrong}
 \end{lemma}
 \begin{proof}
 	We saw in \cref{mult:STARTSTRONG} that on bounded sets, the strict and the $*$-strong topology coincided. In particular, since $\mathcal{L}_A(E)$ is a $C^*$-algebra, the set of unitary operators is a subset of the unit circle. Thus, it suffices to show that if $s \mapsto u_s x$ is continuous for $x$ then $s \mapsto u_s^* x$ is continuous. Let $x \in E$, then
@@ -171,7 +171,7 @@ As mentioned, we will need to consider maps of the form of the form $s \mapsto \
 	showing the wanted, since $x \in E$ was arbitrary.
 \end{proof}
 
-We now generalize the result of \cref{mult:cstarint} to cover the class of functions which we shall deal with later on.
+We now generalize the result of \cref{int:cstarint} to cover the class of functions which we shall deal with later on.
 \begin{theorem}
 	Given a $C^*$-algebra $A$, there is a unique linear map $I\colon \cc(G,M_s(A)) \to M(A)$, $f \mapsto \int_G f(s) \d s$, such that for any non-degenerate representation $\pi \colon A \to \mathbb{B}(\H)$ and all $\xi, \eta \in \H$ the identity
 	\begin{align}
@@ -195,25 +195,25 @@ We now generalize the result of \cref{mult:cstarint} to cover the class of funct
 		\overline T \left( \int_G f(s) \d s\right) = \int_G \overline T (f(s)) \d s.
 	\end{align}
 
-	\label{mult:multstrictintegral}
+	\label{int:multstrictintegral}
 \end{theorem}
 \begin{proof}
-	If $I$ exists, then letting $\pi$ be a faithful representation of $A$ we see that $I$ must be unique by the first identity. For  $f \in \cc(G,M_s(A))$ and $a \in A$, it is easy to see that if $f_a \colon s \mapsto f(s) a$, then $f_a \in \cc(G,A)$. This allows us to use \cref{mult:cstarint} to define the integral $\int_G f(s) a \d s$ for all $f \in \cc(G,M_s(A))$ and $a \in A$. Define $L_f \colon A \to A$ by
+	If $I$ exists, then letting $\pi$ be a faithful representation of $A$ we see that $I$ must be unique by the first identity. For  $f \in \cc(G,M_s(A))$ and $a \in A$, it is easy to see that if $f_a \colon s \mapsto f(s) a$, then $f_a \in \cc(G,A)$. This allows us to use \cref{int:cstarint} to define the integral $\int_G f(s) a \d s$ for all $f \in \cc(G,M_s(A))$ and $a \in A$. Define $L_f \colon A \to A$ by
 	\begin{align*}
 		L_f(a) = \int_G f(s) a \d s, \ \text{ for } a \in A.
 	\end{align*}
-	Then $L_f \in \mathcal{L}_A(A_A)$, for if $a,b \in A$ then \cref{mult:cstarint} implies that
+	Then $L_f \in \mathcal{L}_A(A_A)$, for if $a,b \in A$ then \cref{int:cstarint} implies that
 	\begin{align*}
 		\langle L_f a , b \rangle_{A_A} = (L_f a )^* b = \int_G (f(s) a)^* \d s b = \int_G a^* f(s)^* \d s = a^* \int_G f(s)^* b \d s = \langle a , L_{f^*} b\rangle_{A_A}.
 	\end{align*}
 	So $L_{f^*}$ is an adjoint of $L_f$. Let $\int_G f(s) \d s := L_f$ for all $f \in \cc(G,M_s(A)$, then $L_f \in \mathcal{L}_A(A_A) = M(A)$, and it is not hard to see that the assignment $f \mapsto L_f$ is linear.
 
-	Again, by \cref{mult:cstarint}, we see that a non-degenerate representation $\pi \colon A \to \mathbb{B}(\H)$ with $a \in A$ and $\xi, \eta \in \H$ that
+	Again, by \cref{int:cstarint}, we see that a non-degenerate representation $\pi \colon A \to \mathbb{B}(\H)$ with $a \in A$ and $\xi, \eta \in \H$ that
 	\begin{align*}
 		\langle \overline \pi \left( \int_G f(s) \d s \right) \pi(a) \xi , \eta \rangle =\langle \pi \left(f(s) a \d s \right) \xi , \eta \rangle &= \int_G \langle \pi(f(s) a) \xi , \eta \rangle \d s\\
 		&= \int_G \langle \overline \pi (f(s)) \pi(a) \xi , \eta \rangle \d s,
 	\end{align*}
-	which shows \cref{mult:1.35}, since $\pi$ is non-degenerate. The analogues of \cref{mult:cstarint} follows similarly. Let $a \in A$ with $\lv a \rv \leq 1$, then by \cref{mult:cstarint} applied to $f_a \in \cc(G,A)$, we see that
+	which shows \cref{mult:1.35}, since $\pi$ is non-degenerate. The analogues of \cref{int:cstarint} follows similarly. Let $a \in A$ with $\lv a \rv \leq 1$, then by \cref{int:cstarint} applied to $f_a \in \cc(G,A)$, we see that
 	\begin{align*}
 		\lv \int_G f(s) \d s a \rv  \leq \lv f_a \rv_1 = \int_G \lv f(s) a \rv \d s \leq \int_G 1_{\supp f} \lv f \rv_{\infty} \d s = \mu(\supp f) \lv f \rv_{\infty},
 	\end{align*}
@@ -224,27 +224,14 @@ We now generalize the result of \cref{mult:cstarint} to cover the class of funct
 	\end{align*}
 	hence $\overline T \left( \int_G f(s) \d s \right) = \int_G \overline T(f(s)) \d s$ by non-degeneracy.
 \end{proof}
-And as a corollary, we obtain the following crucial ingredient in the construction of the crossed product:
-\begin{corollary}
-	Suppose $A$ is a $C^*$-algebra and $\pi \colon A \to \mathbb{B}(\H)$ is a $*$-representation, $u \colon G \to \mathcal{U}(\H)$ is a strongly continuous group homomorphism of a locally compact Hausdorff group on $\H$ and $f \in \cc(G,A)$, then the element
-	\begin{align*}
-		\pi \rtimes u(f) := \int_G \pi(f(s)) u_s \d s \in \mathbb{B}(\H)
-	\end{align*}
-	is well-defined and satisfies the properties of \cref{mult:multstrictintegral}.
-	\label{cross:integralformlemma}
-\end{corollary}
-\begin{definition}
-	The map $ \pi \rtimes u \colon \cc(G,A) \to \mathbb{B}(\H)$, $f \mapsto \pi \rtimes u(f)$, is called the \myemph{integral form}\emph{ of $\pi$ and $u$}.
-\end{definition}
-Later on, we shall see that $\pi \rtimes u$ is a very useful tool in the construction of new important $C^*$-algebras, and when $(A,G,\alpha)$ is a $C^*$-dynamical system, then it becomes a $*$-representation of the $*$-algebra $\cc(G,A,\alpha)$, which we will construct shortly. It also allows us to define the \emph{Group $C^*$-algebras} of $G$ in the setting of locally compact Hausdorff groups. However to do this properly, we will need a form of Fubini's theorem.
-
+In the construction of the general crossed product and other $C^*$-algebras associated to a $C^*$-dynamical system $(A,G,\alpha)$ we will need to deal with the algebra $\cc(G,A)$ quite a lot. We will want to develop a sort of twisted-convolution incorporating the action $\alpha$ of $G$. However, in order to do this properly, we will need a form of Fubini's theorem for the above:
 \begin{lemma}
 For $f \in \cc(G \times G  , B)$, the function
 	\begin{align*}
 		s \mapsto \int_G f(s,t) \d t
 	\end{align*}
 	is an element of $\cc(G,B)$.
-	\label{cross:singleint}
+	\label{int:singleint}
 \end{lemma}
 \begin{proof}
 	It is easy to see that if $F \colon G \to B$ is the map $s \mapsto \int_G f(s,t) \d t$, then $ \supp F$ is compact. We show continuity. Suppose that $x_i \to x \in G$ and let $ \varepsilon > 0$. Pick compact $K_1,K_2 \subseteq G$ covering the support of $f$, i.e., such that $ \supp f \subseteq K_1 \times K_2$. Note that $f(x_i,y) \to f(x,y)$ uniformly: If not, then we can find a net $(r_j)\subseteq G$ and $\varepsilon_0 > 0$ such that
@@ -258,7 +245,7 @@ For $f \in \cc(G \times G  , B)$, the function
 	as $\supp f \subseteq K_1 \times K_2$, so $F \in \cc(G,B)$.
 \end{proof}
 \begin{corollary}
-	Replacing the integral of \cref{cross:singleint} with $\int_G f(t,s) \d t$ the statement still holds.
+	Replacing the integral of \cref{int:singleint} with $\int_G f(t,s) \d t$ the statement still holds.
 \end{corollary}
 \begin{theorem}[Fubini's for $C^*$-valued integrals]
 	Suppose that $f \in \cc(G \times G, M_s(A))$, then 
@@ -269,16 +256,16 @@ For $f \in \cc(G \times G  , B)$, the function
 	\begin{align*}
 		\int_G^{M_s(A)} \int_G^{M_s(A)} f(s,t) \d s \d t = \int_G^{M_s(A)} \int_G^{M_s(A)} f(s,t) \d t \d s.
 	\end{align*}
-	\label{cross:fubini}
+	\label{int:fubini}
 \end{theorem}
 \begin{proof}
-Define for a fixed $s$, the map $t \mapsto f(s,t)$ is in $\cc(G,M_s(A)$, hence we can define $\int_G f(s,t) \d t$ and $\int_G f(t,s) \d t$ as in \Cref{mult:multstrictintegral}. Recall that $M(A) = M(\mathbb{K}_A(A_A))$, so the strict topology is induced by multiplication operators on $A$, so it suffices to show that $s \mapsto a \left(\int_Gf(s,t) \d t\right)$ and $s \mapsto \left(\int_G f(s,t) \d t\right) a $ are in $\cc(G,A)$ for all $ a \in A$ for the first claim. By \Cref{mult:multstrictintegral}, we have 
+Define for a fixed $s$, the map $t \mapsto f(s,t)$ is in $\cc(G,M_s(A)$, hence we can define $\int_G f(s,t) \d t$ and $\int_G f(t,s) \d t$ as in \Cref{int:multstrictintegral}. Recall that $M(A) = M(\mathbb{K}_A(A_A))$, so the strict topology is induced by multiplication operators on $A$, so it suffices to show that $s \mapsto a \left(\int_Gf(s,t) \d t\right)$ and $s \mapsto \left(\int_G f(s,t) \d t\right) a $ are in $\cc(G,A)$ for all $ a \in A$ for the first claim. By \Cref{int:multstrictintegral}, we have 
 \begin{align*}
 	a \left( \int_G f(s,t) \d t \right) = \int_G a f(s,t) \d t,
 \end{align*}
-for all $a \in A$ and $s \in G$, and similarly $\left( \int_G f(s,t) \d t \right)a = \int_G f(s,t) a \d t$. The maps $(s,t) \mapsto a f(s,t)$ and $(s,t) \mapsto f(s,t) a$ are in $\cc(G \times G , A)$, clearly, so \Cref{cross:singleint} ensures that $s \mapsto \int_G^{M_s(A)} f(s,t) \d t$ and $s \mapsto \int_G ^{M_s(A)} f(t,s) \d t$ are in $\cc(G,M_s(A)$.
+for all $a \in A$ and $s \in G$, and similarly $\left( \int_G f(s,t) \d t \right)a = \int_G f(s,t) a \d t$. The maps $(s,t) \mapsto a f(s,t)$ and $(s,t) \mapsto f(s,t) a$ are in $\cc(G \times G , A)$, clearly, so \Cref{int:singleint} ensures that $s \mapsto \int_G^{M_s(A)} f(s,t) \d t$ and $s \mapsto \int_G ^{M_s(A)} f(t,s) \d t$ are in $\cc(G,M_s(A)$.
 
-For the last claim, we now see that the double integrals are well-defined \Cref{mult:multstrictintegral}, so by letting $A$ be faithfully representted on $\mathbb{B}(\H)$, we may obtain the equality using the regular Fubini's theorem for scalar valued integrals (see e.g., \cite{schilling}) applied pointwise to an orthonormal basis through the inner-product.
+For the last claim, we now see that the double integrals are well-defined \Cref{int:multstrictintegral}, so by letting $A$ be faithfully representted on $\mathbb{B}(\H)$, we may obtain the equality using the regular Fubini's theorem for scalar valued integrals (see e.g., \cite{schilling}) applied pointwise to an orthonormal basis through the inner-product.
 \end{proof}
 
 %***************************************************************************************************************************************
@@ -289,10 +276,9 @@ For the last claim, we now see that the double integrals are well-defined \Cref{
 %***************************************************************************************************************************************
 
 \ssection{Crossed Products}
-
 In analysis, an object of interest is the group algebra $L^1(G)$ for locally compact groups $G$. One can turn it into a $*$-algebra by showing that the convolution gives rise to a well-defined multiplication, and one can use the modular function to define an involution. Analogously to this, we do the same for $A$ valued functions:
 \begin{definition}
-	Suppose that $G \acts_\alpha A$. We let 
+	Suppose that $G \acts\alpha A$. We let 
 	\begin{align*}
 		\cc(G,A):=\{ f \colon G \to A \mid f \text{ continuous and compactly supported}\}.
 	\end{align*}
@@ -300,7 +286,7 @@ In analysis, an object of interest is the group algebra $L^1(G)$ for locally com
 	\begin{align*}
 		(f \ast_\alpha g)(t):= \int_G  f(s) \alpha_s(g(s^{-1}t)) \d s,
 	\end{align*}
-	and we define an $\alpha$-twisted convolution of $f \in \cc(G,A)$ at $t \in G$ by
+	which is well defined since the map $(s,t) \mapsto f(s) \alpha_s g(s^{-1}t)$ is in $\cc(G \times G , A)$ and \cref{int:singleint} applies. Moreover, we define an $\alpha$-twisted involution of $f \in \cc(G,A)$ at $t \in G$ by
 	\begin{align*}
 		f^*(t):=\Delta(t^{-1}) \alpha_t(f(t^{-1})^*).
 	\end{align*}
@@ -313,54 +299,67 @@ In analysis, an object of interest is the group algebra $L^1(G)$ for locally com
 	Straightforward calculations show that $f \mapsto \lv f \rv_1$ is a norm, and we denote the completion of $\cc(G,A,\alpha)$ in $\lv \cdot \rv_1$ by $L^1(G,A,\alpha)$.
 \end{definition}
 
-For $G \stackrel{\alpha}{\acts} A$ and a covariant representation $(\pi,\H)$ on some Hilbert space $\H$, we define for $f \in \cc(G,A,\alpha)$ the operator $I_{f}$ on $\H$ point-wise, i.e., for $\xi, \eta \in \H$
+For discrete and second-countable groups $G$ acting on a $C^*$-algebra $A$ via an action $\alpha$, we may easily construct a $*$-representation of $\cc(G,\A)$ from a convariant representation $(\pi,u)$ by letting $\pi \rtimes u \colon \cc(A,G,\alpha) \to \mathbb{B}(\H)$ be the map
 \begin{align*}
-	\langle I_f \xi ,\eta \rangle = \int_G \langle \pi(f(s)) U_s \xi, \eta \rangle \d s,
+	\sum_{g \in G} a_g \delta_g \mapsto \pi(a_g) u_g,
 \end{align*}
-and we will write $\int_G \pi(f(s)) U_s \d s := I_f$. We denote the map $f \mapsto I_f$ by $\pi \rtimes U$.
-
+however as discussed previously, this is not enough when $G$ is locally compact, since we can't assume that $u$ was continuous with respect to the norm on $\mathbb{B}(\H)$. However, in the previous section we constructed the tools to construct the desired generalization:
 \begin{lemma}
-	The map $\pi \rtimes U$ is a $*$-representation of $\cc(G,A,\alpha)$ called \myemph{the integrated form of $\pi$ and $U$}. It is $L^1$-norm decreasing, i.e., for $f \in \cc(G,A,\alpha)$ we have
+	Suppose that $G \acts \alpha A$ with $G$ locally compact. If $(\pi,u)$ is a covariant representation of the associated $C^*$-dynamical system, then for all $f \in \cc(G,A)$, the map
 	\begin{align*}
-	\lv \pi \rtimes U(f)\rv \leq \lv f \rv_1.	
+		s \mapsto \pi(f(s)) u_s, \text{ for }s \in G
 	\end{align*}
+	is in $\cc(G,\mathbb{B}_s(\H))$, where $\mathbb{B}_s(\H)$ indicates that we endow $\mathbb{B}\left(\H \right)$ with the strict topology of $ \mathbb{K}(\H)$.
+	\label{cross:integrandcont}
 \end{lemma}
 \begin{proof}
-	Let $f \in \cc(G,A,\alpha)$ and $\xi , \eta \in \H$. Then
+	By assumption, $u$ is strongly continuous, which is equivalent to being strictly continuous by \Cref{int:unistrictstrong}. Since $f \in \cc(G,A)$, we see that $\pi \circ f \in \cc(G,\mathbb{B}(\H))$, and being norm continuous implies strict continuity, so $s \mapsto \pi(f(s)) u_s$ is an element of $\cc(G,\mathbb{B}_s(\H))$.
+\end{proof}
+The above and \ref{int:multstrictintegral} shows that given a covariant representation $(\pi,u)$ of $G \acts \alpha A$, there is a well-defined linear map $\pi \rtimes u \colon \cc(G,A) \to \mathbb{B}(\H)$ given by
+\begin{align*}
+	\pi \rtimes u (f) = \int_G^{\mathbb{B}(\H)} \pi(f(s)) u_s \d s,
+\end{align*}
+And we shall see that this representation has a lot of nice properties:
+
+\begin{proposition}
+	Suppose that $(\pi,u)$ is a covariant representation of a dynamical system $G \acts \alpha A$, with $G$ locally compact. Then the map $\pi \rtimes u$ is a $*$-representation of $\cc(G,A,\alpha)$ on $\mathbb{B}(\H)$ which is norm-decreasing. We call $\pi \rtimes u$ the \myemph{integrated form} \emph{of $\pi$ and $u$}. If $\pi$ is non-degenerate, then $\pi \rtimes u$ is as well.
+\end{proposition}
+\begin{proof}
+	Let $\xi , \eta \in \H$ and $f \in \cc(G,A)$, then
 	\begin{align*}
-		|\langle \pi \rtimes U(f) \xi, \eta \rangle | \leq \int_G | \langle \pi(f(s)) U_s \xi , \eta \rangle| \d s \leq \int_G \lv f(s)\rv  \lv \xi\rv \lv \eta \rv \d s,
+		 |\langle \pi \rtimes u (f) \xi , \eta \rangle| \leq \int_G | \langle \pi(f(s)) u_s \xi , \eta \rangle| \d s \leq \int_G \lv \pi(f(s)) \rv \lv \xi\rv \lv \eta \rv \d s \leq \lv f \rv_1 \lv \xi \rv \lv \eta \rv
 	\end{align*}
-	so that $\lv \pi \rtimes U(f)\rv \leq \lv f \rv_1$.Let $f,g \in \cc(G,A,\alpha)$ \todo{Dana 1.92 add to appendix}
+	Since $\xi, \eta$ can be any unit vector, we have $\lv \pi \rtimes u (f) \rv \leq \lv f \rv_1$ for all $f \in \cc(G,A)$.
+
+	Let $f \in \cc(G,A,\alpha)$, then
+	\begin{align*}
+		\pi \rtimes u(f)^* = \int_G^{\mathbb{B}(\H)}  u_s^* \pi(f(s))^* \d s &= \int_G^{\mathbb{B}(\H)} u_{s^{-1}} \pi(f(s)^*) \d s\\
+		&= \int_G^{\mathbb{B}(\H)} \Delta(s)^{-1} u_{s} \pi(f(s^{-1})^*) \d s \\
+		&= \int_G^{\mathbb{B}(\H)} \Delta(s)^{-1} \pi(\alpha_s(f(s^{-1})^*)) u_s \d s\\
+		&= \int_G^{\mathbb{B}(\H)} \pi\left( \underbrace{\alpha_s\left( \Delta(s)^{-1}f(s^{-1})^* \right)}_{=f^*(s)} \right) u_s \d s\\
+		&= \int_G^{\mathbb{B}(\H)} \pi(f^*(s)) u_s \d s\\
+		&= \pi \rtimes u(f^*)
+	\end{align*}
+	and if $f,g \in \cc(G,A,\alpha)$ then using left-invariance of $\d s$, \Cref{int:cstarint} and \Cref{int:fubini}, we see that
+	\begin{align*}
+		\pi \rtimes u(f\ast_{\alpha}g) &= \int_G^{\mathbb{B}(\H)} \pi \left( f \ast_\alpha g(s) \right)u_s \d s\\
+		&= \int_G^{\mathbb{B}(\H)} \pi\left( \int_G^A f(t) \alpha_t g(t^{-1}s) \d t \right)u_s \d s\\
+		&= \int_G^{\mathbb{B}(\H)}\int_G^{\mathbb{B}(\H)} \pi(f(t)) \pi(\alpha_t(g(t^{-1}s))u_{t t^{-1}s} \d t \d s\\
+		&= \int_G^{\mathbb{B}(\H)} \int_G ^{\mathbb{B}(\H)} \pi(f(t)) u_t \pi(g(t^{-1}s)) u_{t^{-1}s}\d s \d t\\
+		&= \int_G^{\mathbb{B}(\H)} \pi(f(t)) u_t \int_G^{\mathbb{B}(\H)} \pi(g(t^{-1}s )) u_{t^{-1}s} \d s \d t\\
+		&= \int_G ^{\mathbb{B}(\H)} \pi(f(t)) u_t \int_G ^{\mathbb{B}(\H)} \pi(g(s)) u_s \d s \d t\\
+		&= \int_G ^{\mathbb{B}(\H)} \pi(f(t)) u_t \d t \int_G ^{\mathbb{B}(\H)} \pi(g(s)) u_s \d s \\
+		&= \pi \rtimes u (f) \pi\rtimes u (g),
+	\end{align*}
+	as wanted. Assuming non-degeneracy of $\pi$, for $h \in \H$ and $\varepsilon>0$ we can pick $a \in A$, $\lv a \rv =1$ such that $\lv \pi(a) h - h \rv < \varepsilon$. Being a unitary representation, we may choose a neighborhood $e \in V \subseteq G$ such that $\lv u_s h - h\rv < \varepsilon$ for $s \in V$. Pick $0 \leq \varphi \in \cc(G)$ such that $\int_G \varphi(s) \d s = 1$ and $\supp \varphi \subseteq V$. Then, $f := \varphi \otimes a \in \cc(G,A)$ satisfies for $k \in \H$, $\lv k \rv = 1$, that
+	\begin{align*}
+	\left| \langle \pi \rtimes u(f)h-h,k\rangle \right| &= 	\left| \int_G \varphi(s) \langle \pi(a)u_s h-h,k \rangle\right|\\
+	& \leq \int_G \varphi(s) (|\langle \pi(a) (u_s h-h,k\rangle|+|\langle \pi(a)h-h,k\rangle| ) \d s \\
+	&< 2 \varepsilon,
+	\end{align*}
+	showing that $\lv \pi \rtimes u(f)h-h\rv \leq 2 \varepsilon$.
 \end{proof}
 
 
 
 
-%With this, we may prove the following:
-%\begin{proposition}
-%	There exists a unique linear map $I \colon \cc(G,A) \to A$ satisfying
-%	\begin{align*}
-%		\langle \pi(I(f)) \xi, \eta \rangle_{\H_\pi} = \int_{G} \langle \pi(f(s))\xi , \eta \rangle_{\H_\pi} \d s,
-%	\end{align*}
-%	for all $f \in \cc(G,A)$ and representations $\pi \colon A \to \mathbb{B}(\H_\pi)$. We refer to the element $I(f)$ as the integral of $f$, and write $\int_G f(t) \d t := I(f)$. $I$ satisfies $\lv I(f)\rv \leq \lv f \rv_1$ and $I(f^*)=I(f)^*$, and for all $a \in M(A)$, we have
-%	\begin{align*}
-%		\int_G f(s)a \d s = \left( \int_G f(s) \d s\right)  a \text{ and } \int_G f(s)a \d s = a  \left ( \int_G f(s) \d s \right).
-%	\end{align*}
-%	Moreover, if $L \colon A \to B$ is a bounded linear map of $C^*$-algebras, then
-%	\begin{align*}
-%		\int_G L(f(s)) \d s = L\left( \int_G f(s) \d s \right).
-%	\end{align*}
-%\end{proposition}
-%\begin{proof}
-%	We are going to define to each $f \in \cc(G,A)$ an operator on a Hilbert space $\H$ where $A$ is represented faithfully on, and define $I(f)$ as the pre-image of this operator by the faithful representation of $A$ on $\H$, which will also prove uniqueness by faithfulness.
-%	
-%	To show the existence, let $\pi$ denote any representation of $A$ on $\H$. Note that for each $f \in \cc(G,A)$, the map
-%	\begin{align*}
-%		S_f \colon (\xi,\eta) \mapsto \int_{G} \langle \pi(f(s))\xi,\eta\rangle \d s
-%	\end{align*}
-%	is a bounded sesequilinear form. By the Riesz Representation theorem, there exists an operator $T_f \in \mathbb{B}(\H)$ such that $\langle T_f \xi, \eta \rangle = S_(\xi,\eta)$, and the assignment $f \mapsto T_f$ is linear by linearity of the integral. We wish to show that $T_f = \pi(b)$ for some $b \in A$. 
-%
-%	Let $\varepsilon>0$ and let $K$ denote $\mathrm{supp} f$. Pick any compact neighborhood $C$ of $K$, e.g., by selecting a finite covering of pre-compact sets of $K$ and taking the union of their closures. 
-%	
-%
-%\end{proof}
