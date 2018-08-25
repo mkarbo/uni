@@ -323,6 +323,7 @@ And we shall see that this representation has a lot of nice properties:
 
 \begin{proposition}
 	Suppose that $(\pi,u)$ is a covariant representation of a dynamical system $G \acts \alpha A$, with $G$ locally compact. Then the map $\pi \rtimes u$ is a $*$-representation of $\cc(G,A,\alpha)$ on $\mathbb{B}(\H)$ which is norm-decreasing. We call $\pi \rtimes u$ the \myemph{integrated form} \emph{of $\pi$ and $u$}. If $\pi$ is non-degenerate, then $\pi \rtimes u$ is as well.
+	\label{cross:integform}
 \end{proposition}
 \begin{proof}
 	Let $\xi , \eta \in \H$ and $f \in \cc(G,A)$, then
@@ -359,6 +360,47 @@ And we shall see that this representation has a lot of nice properties:
 	\end{align*}
 	showing that $\lv \pi \rtimes u(f)h-h\rv \leq 2 \varepsilon$.
 \end{proof}
+
+Now, given a locally compact topological group $G$, let $\lambda \colon G \to \U(L^2(G))$ be the left-regular representation $\langle \lambda_g \xi, \eta\rangle = \int_G \xi(g^{-1}s)\overline{\eta(s)}\d s$ for $g \in G$ and $\xi, \eta \in L^2(G)$. Even though $L^2(G)$ consists of equivalence classes (unless e.g., $G$ is discrete), we will abbreviate $\lambda_g \xi(s) := \xi(g^{-1}s)$. Given a Hilbert space $\H$, we will use $\lambda_g$ to denote the operator $I \otimes \lambda_g$ on $\H \otimes L^2(G) \cong L^2(G,\H)$. With this, we have the following:
+\begin{lemma}
+	Suppose that $G \acts \alpha A$, and $\pi$ is a representation of $A$ on $\H$. Define $\tilde{\pi}(a) \colon L^2(G,H)$ by 
+	\begin{align*}
+		\tilde{\pi}(a)\xi(r) = \pi(\alpha_{r^{-1}}(a))\xi(r), \text{ for } a \in A, \ r \in G \text{ and } \xi \in L^2(G,H).
+	\end{align*}
+	Then $(\tilde{\pi},\lambda)$ is a covariant representation of $G \acts \alpha A$ on $L^2(G,\H)$.
+	\label{cross:regularrep}
+\end{lemma}
+\begin{proof}
+	Let $a \in A$ and $r \in G$. Then for all $\xi \in L^2(G,\H)$ and $s \in G$:
+	\begin{align*}
+		\lambda_g (\tilde{\pi}(a) \lambda_{g^{-1}} \xi)(s) = \pi(\alpha_{g^{-1}r}^{-1}(a))\lambda_g^* \xi(g^{-1}s) = \pi(\alpha_{r^{-1}}\alpha_g(a))\xi (g g^{-1} s) = \tilde{\pi}(\alpha_g(a))\xi(s),
+	\end{align*}
+	as wanted.
+\end{proof}
+In light of the above, we may define the following important class of covariant representations of a $C^*$-dynamical system:
+\begin{definition}
+	Given $G \acts \alpha A$, then for any representation $\pi$ of $A$ on $\H$, the above covariant representation is called the \myemph{induced regular representation}, and we will write $\mathrm{Ind}_e^G(\pi) := (\tilde{\pi}, \lambda)$. Any representation of the above form is called a \myemph{regular representation}.
+\end{definition}
+As we shall see, the integrated form of the above plays a crucial role in the theory regarded in this thesis, but first, we shall need the following lemma:
+\begin{lemma}
+	Suppose that $G \acts \alpha A$, and $\pi$ is a representation of $A$ on $\H$. Then $\mathrm{Ind}_e^G \pi$ is non-degenerate if $\pi$ is non-degenerate.
+	\label{cross:regrepnondeg}
+\end{lemma}
+\begin{proof}
+	The set $ f \otimes \eta \colon r \mapsto f(r) \eta$ with $f \in \cc(G)$ and $\eta \in \H$ is dense in $L^2(G,\H)$, and since $\pi$ is non-degenerate, the set $\{ f \otimes \pi(a) \eta \mid \eta \in \H, \ f \in \cc(G) \text{ and } a \in A \}$ is dense in $L^2(G, \H)$ as well. Let $\varepsilon > 0$ and let $(e_i)$ be an approximate identity of $A$. By the previous discussion and the fact that $\tilde{\pi}$ is norm-reducing, it suffices to see that 
+	\begin{align*}
+		\tilde{\pi}(e_i) (f \otimes \pi(a) \xi)(r)=f(r) \pi(\alpha_{r}^{-1}(e_i)a) \xi  \to f(r) \pi(a) \xi,
+	\end{align*}
+	for $f \in \cc(G)$, $\xi \in \H$ and $a \in A$ and $r \in \supp f$. The argument thus boils down to showing that $\alpha_r^{-1}(e_i) a \to a$, which an easy argument of contradiction using compactness of $\supp f$ and the approximate identity property passing to subnets shows that this is true.
+\end{proof}
+\begin{remark}
+	In particular, if $\pi$ is a non-degenerate representation of $A$, then the integrated form, $\tilde{\pi} \rtimes \lambda$, of $\mathrm{Ind}_e^G \pi$ is non-degenerate by \Cref{cross:integform}. This is not the only property which carries over from the map $\mathrm{Ind}_e^G \pi \mapsto \tilde{\pi} \rtimes \lambda$:
+\end{remark}
+\begin{lemma}
+	Suppose that $G \acts \alpha A$ and $\pi$ is a faitful representation of $A$ on $\H$. Then $\tilde{\pi} \rtimes \lambda$ is a faithful representation of $\cc(G,A,\alpha)$.
+	\label{}
+\end{lemma}
+
 
 
 

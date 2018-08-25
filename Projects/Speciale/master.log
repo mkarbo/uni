@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.28)  23 AUG 2018 13:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.28)  25 AUG 2018 11:21
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -2892,8 +2892,48 @@ er (name{theorem.2.18}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.353 	\end{align*}
-                   ]) [29] (./appendix/appendix.tex [30
+l.354 	\end{align*}
+                   ]
+Overfull \hbox (12.81267pt too wide) in paragraph at lines 366--367
+[][]\T1/cmr/bx/n/10 Lemma 2.19. []\T1/cmr/m/n/10 Sup-pose that $\OML/cmm/m/it/1
+0 G [] A$\T1/cmr/m/n/10 , and $\OML/cmm/m/it/10 ^^Y$ \T1/cmr/m/n/10 is a rep-re
+-sen-ta-tion of $\OML/cmm/m/it/10 A$ \T1/cmr/m/n/10 on $\OMS/cmsy/m/n/10 H$\T1/
+cmr/m/n/10 . De-fine $[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a\OT1/cmr/m/n/10 ) []
+ [] \OML/cmm/m/it/10 L[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 G; H\OT1/cmr/m/n/10 )
+$
+ []
+
+[29pdfTeX warning (ext4): destination with the same identifier (name{theorem.2.
+19}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.375 	\begin{align*}
+                     ]) [30pdfTeX warning (ext4): destination with the same ide
+ntifier (name{theorem.2.20}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.28 \backmatter
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{theorem.2.21}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.28 \backmatter
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{theorem.2.22}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.28 \backmatter
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{theorem.2.23}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.28 \backmatter
+                ] (./appendix/appendix.tex [31
 
 
 ]
@@ -2901,7 +2941,7 @@ l.353 	\end{align*}
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 2.
 
-) [31
+) [32
 
 ]
 runsystem(makeindex master.idx)...executed.
@@ -2914,7 +2954,7 @@ FiXme Summary: Number of notes: 0,
 (FiXme)        Number of fatal errors: 0,
 (FiXme)        Total: 0.
 
-[32
+[33
 
 
 ]
@@ -2928,6 +2968,10 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 33.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 33.
 Package rerunfilecheck Info: File `master.out' has not changed.
 (rerunfilecheck)             Checksum: 2B239F0A198D1065E01CEF44A9FA016D;763.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package logreq Info: Writing requests to 'master.run.xml'.
 \openout1 = `master.run.xml'.
 
@@ -2935,10 +2979,10 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 33.
  )
 (\end occurred when \iftrue on line 5 was incomplete) 
 Here is how much of TeX's memory you used:
- 40870 strings out of 493029
- 741353 string characters out of 6136234
+ 40886 strings out of 493029
+ 741571 string characters out of 6136234
  1106126 words of memory out of 5000000
- 43623 multiletter control sequences out of 15000+600000
+ 43633 multiletter control sequences out of 15000+600000
  23603 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,17n,82p,10480b,1805s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2964,10 +3008,10 @@ lic/cm-super/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc109
 xmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/publ
 ic/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000
 .pfb></usr/share/texmf/fonts/type1/public/cm-super/sfxc1200.pfb>
-Output written on master.pdf (35 pages, 755938 bytes).
+Output written on master.pdf (36 pages, 761142 bytes).
 PDF statistics:
- 531 PDF objects out of 1000 (max. 8388607)
- 462 compressed objects within 5 object streams
- 155 named destinations out of 1000 (max. 500000)
+ 542 PDF objects out of 1000 (max. 8388607)
+ 472 compressed objects within 5 object streams
+ 161 named destinations out of 1000 (max. 500000)
  106 words of extra memory for PDF output out of 10000 (max. 10000000)
 
