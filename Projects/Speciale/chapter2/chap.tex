@@ -453,22 +453,42 @@ With the above result in hand, we can finally give meaning to a universal norm f
 	\lv f \rv_u &:= \sup\left\{ \lv \pi \rtimes u (f)\rv \mid  \pi \rtimes u \text{ is a non-degenerate covariant represenation of }(A,G ,\alpha) \right\}\\
 	&\leq \lv f \rv_1,
 \end{align*}
-and it is easy to see that the assignment $\cc(G,A,\alpha) \ni f \mapsto \lv f \rv_u$ is a norm: It clearly satisfies $\lv f + g \rv_u \leq \lv f \rv_u + \lv g \rv_u$ and $\lv cf \rv_u = |c| \lv f \rv_u$ for $f,g \in \cc(G,A,\alpha)$ and $c \in \C$. If $\lv f \rv_u = 0$ then $\tilde{\pi} \rtimes \lambda (f) = 0$ for all faithful $\pi$, which implies by \Cref{cross:regfaith} that $f = 0$. Moreover, we see that $\cc(G,A,\alpha)$ is a pre $C^*$-algebra, since $\pi \rtimes u$ is a homomorphism for all covariant representations $(\pi,u)$, and thus $\lv \pi \rtimes u (f^*\ast f)\rv = \lv \pi \rtimes u(f)^* \circ \pi \rtimes u(f)\rv = \lv \pi \rtimes u (f)\rv^2$, so $\lv f^* \ast f\rv_u = \lv f \rv_u^2$. 
+and it is easy to see that the assignment $\cc(G,A,\alpha) \ni f \mapsto \lv f \rv_u$ is a norm: It clearly satisfies $\lv f + g \rv_u \leq \lv f \rv_u + \lv g \rv_u$ and $\lv cf \rv_u = |c| \lv f \rv_u$ for $f,g \in \cc(G,A,\alpha)$ and $c \in \C$. If $\lv f \rv_u = 0$ then $\tilde{\pi} \rtimes \lambda (f) = 0$ for all faithful $\pi$, which implies by \Cref{cross:regfaith} that $f = 0$. Moreover, we see that $\cc(G,A,\alpha)$ is a pre $C^*$-algebra, since $\pi \rtimes u$ is a homomorphism for all covariant representations $(\pi,u)$, and thus $\lv \pi \rtimes u (f^*\ast f)\rv = \lv \pi \rtimes u(f)^* \circ \pi \rtimes u(f)\rv = \lv \pi \rtimes u (f)\rv^2$, so that $\lv f^* \ast f\rv_u = \lv f \rv_u^2$. 
 \begin{note}
 	While it indeed is not possible to take the supremum over a class, it can be shown that it is enough to take the supremum over cyclic covariant representations, which is a set.
 \end{note}
 This allows us to define the general crossed product as the completion of $\cc(G,A,\alpha)$:
 \begin{definition}
-	For a $C^*$-dynamical system $(A,G,\alpha)$, we define the \myemph{crossed product} of $A$ and $G$ to be norm closure of $\cc(G,A,\alpha)$ in the norm $\lv \cdot \rv_u$, and we will denote it by $A \rtimes_\alpha G$.
+	For a $C^*$-dynamical system $(A,G,\alpha)$, we define the \myemph{full crossed product} (or simply the crossed product) of $A$ and $G$ to be norm closure of $\cc(G,A,\alpha)$ in the norm $\lv \cdot \rv_u$, and we will denote it by $A \rtimes_\alpha G$.
 \end{definition}
 \begin{remark}
 	Another (equivalent) formulation of the crossed product is to consider the representation of $L^1(G,A)$ given by the direct sum of all non-degenerate covariant representations of $L^1(G,A)$. Again, one can reformulate the above to only consider cyclic covariant representations, and use the fact that every representation of a $C^*$-algebra is a sum of cyclic representations.
 \end{remark}
 Inconvenient as it is, there is no guarantee that $A \rtimes_\alpha G$ contains a copy of $A$ or $G$ except under certain additional conditions on $A$ and $G$. However, we can always embed $A$ and $G$ into the Multiplier Algebra $M(A \rtimes_\alpha G)$ of $A \rtimes_\alpha G$:
 \begin{lemma}
-	Suppose that $G \acts \alpha A$ is a $C^*$-dynamical system. Define for $a \in A$ the map $\iota_A(a) \colon A \rtimes_\alpha G \to A \rtimes_\alpha G$ by extending the map defined on $\cc(G,A,\alpha)$ by
+	Suppose that $G \acts \alpha A$ is a $C^*$-dynamical system. Define for $a \in A$ the map $\iota_A(a) \colon A \rtimes_\alpha G \to A \rtimes_\alpha G$ to be the extension of the map defined on $\cc(G,A,\alpha)$ by
 	\begin{align*}
 		\iota_A(a) f(s) = af(s), \text{ for } f \in \cc(G,A,\alpha) \text{ and } s \in G.
 	\end{align*}
 	Then $\iota_A \colon A \to M(A \rtimes_\alpha G)$, $a \mapsto \iota_A(a)$, is a faithful non-degenerate $^*$-representation.
 \end{lemma}
+\begin{proof}
+First, for covariant representations $(\pi,u)$ of $G \acts \alpha A$, we see that
+\begin{align*}
+	\pi \rtimes u(\iota_A(a) f) = \int_G \pi(a) \pi(f(s)) u_s \d s = \pi(a) \pi \rtimes u (f),
+\end{align*}
+for all $f \in \cc(G,A,\alpha)$ and $a \in A$, so $\lv \iota_A(a) f \rv \leq \lv a \rv \lv f \rv$. Hence $\iota_A(a)$ extends to an operator, which we also denote by $\iota_A(a)$. If $a \in A$ and $f \in \cc(G,A,\alpha)$, then 
+\begin{align*}
+	\left( \iota_A(a) f \right)^*(s) = \Delta(s^{-1}) \alpha_s(f(s^{-1})^*) \alpha_s(a^*) = f^*(s) \alpha_s(a^*), \text{ for }s \in G,
+\end{align*}
+and hence we see that 
+\begin{align*}
+	\left( \iota_A(a) f \right)^* \ast g (s) = \int_G f^*(r) \alpha_r(a^*) \alpha_r(g(r^{-1}s)) \d r &= \int_G f^*(r) \alpha_r \left(  (\iota_A(a^*) g)(r^{-1}s)\right) \d r \\
+	&= f^* \ast(\iota_A(a^*) g)(s),
+\end{align*}
+so $\iota_A(a^*)$ is an adjoint on a dense sub$*$-algebra (of the $C^*$-algebra seen as a Hilbert module over itself), hence everywhere by continuity, so $\iota_A(a) \in M(A \rtimes_\alpha G)$. For injectivity, let $\pi$ be any faithful, non-degenerate representation of $A$, and let $\overline{\tilde \pi \rtimes \lambda}$ denote the extension of $\tilde \pi \rtimes \lambda$ to $M(A \rtimes_\alpha G)$. By \ref{cross:integform} and the above, we see that $\tilde \pi(a) = \overline{\tilde \pi \rtimes \lambda } \circ \iota_A(a)$, hence $\iota_A(a) = 0 \implies \tilde \pi(a) = 0 \implies a = 0$, since $\tilde \pi$ is faithfull.
+\end{proof}
+
+
+
+
