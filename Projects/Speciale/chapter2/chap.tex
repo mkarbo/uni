@@ -377,6 +377,9 @@ Now, given a locally compact topological group $G$, let $\lambda \colon G \to \U
 	\end{align*}
 	as wanted.
 \end{proof}
+\begin{corollary}
+To every $C^*$-dynamical system $G \acts \alpha A$, there exists a covariant representation.
+\end{corollary}
 In light of the above, we may define the following important class of covariant representations of a $C^*$-dynamical system:
 \begin{definition}
 	Given $G \acts \alpha A$, then for any representation $\pi$ of $A$ on $\H$, the above covariant representation is called the \myemph{induced regular representation}, and we will write $\mathrm{Ind}_e^G(\pi) := (\tilde{\pi}, \lambda)$. Any representation of the above form is called a \myemph{regular representation}.
@@ -387,21 +390,85 @@ As we shall see, the integrated form of the above plays a crucial role in the th
 	\label{cross:regrepnondeg}
 \end{lemma}
 \begin{proof}
-	The set $ f \otimes \eta \colon r \mapsto f(r) \eta$ with $f \in \cc(G)$ and $\eta \in \H$ is dense in $L^2(G,\H)$, and since $\pi$ is non-degenerate, the set $\{ f \otimes \pi(a) \eta \mid \eta \in \H, \ f \in \cc(G) \text{ and } a \in A \}$ is dense in $L^2(G, \H)$ as well. Let $\varepsilon > 0$ and let $(e_i)$ be an approximate identity of $A$. By the previous discussion and the fact that $\tilde{\pi}$ is norm-reducing, it suffices to see that 
+	First note that the set $ f \otimes \eta \colon r \mapsto f(r) \eta$ with $f \in \cc(G)$ and $\eta \in \H$ has dense linear span in $L^2(G,\H)$, and since $\pi$ is non-degenerate, the set $\{ f \otimes \pi(a) \eta \mid \eta \in \H, \ f \in \cc(G) \text{ and } a \in A \}$ has dense linear in $L^2(G, \H)$ as well. Let $\varepsilon > 0$ and let $(e_i)$ be an approximate identity of $A$. By the previous remark and the fact that $\tilde{\pi}$ is a linear contraction, it suffices to see that 
 	\begin{align*}
-		\tilde{\pi}(e_i) (f \otimes \pi(a) \xi)(r)=f(r) \pi(\alpha_{r}^{-1}(e_i)a) \xi  \to f(r) \pi(a) \xi,
+		\tilde{\pi}(e_i) (f \otimes \pi(a) \xi)(r)=f(r) \pi(\alpha_{r}^{-1}(e_i)a) \xi   \stackrel 2 \to f(r) \pi(a) \xi,
 	\end{align*}
-	for $f \in \cc(G)$, $\xi \in \H$ and $a \in A$ and $r \in \supp f$. The argument thus boils down to showing that $\alpha_r^{-1}(e_i) a \to a$, which an easy argument of contradiction using compactness of $\supp f$ and the approximate identity property passing to subnets shows that this is true.
+	\todo{perhaps elaborate using proper integrals}for $f \in \cc(G)$, $\xi \in \H$ and $a \in A$ and $r \in \supp f$. The argument thus boils down to showing that $\alpha_r^{-1}(e_i) a \to a$, which an easy argument of contradiction using compactness of $\supp f$ and the approximate identity property passing to subnets shows that this is true.
 \end{proof}
 \begin{remark}
-	In particular, if $\pi$ is a non-degenerate representation of $A$, then the integrated form, $\tilde{\pi} \rtimes \lambda$, of $\mathrm{Ind}_e^G \pi$ is non-degenerate by \Cref{cross:integform}. This is not the only property which carries over from the map $\mathrm{Ind}_e^G \pi \mapsto \tilde{\pi} \rtimes \lambda$:
+	In particular, if $\pi$ is a non-degenerate representation of $A$, then the integrated form, $\tilde{\pi} \rtimes \lambda$, of $\mathrm{Ind}_e^G \pi$ is non-degenerate by \Cref{cross:integform}. This is not the only property which carries over from the map $\mathrm{Ind}_e^G \pi \mapsto \tilde{\pi} \rtimes \lambda$, but before we further comment on this, we must introduce some new maps
 \end{remark}
+\begin{definition}
+	Suppose that $G \acts \alpha A$. Let $f \otimes a  \in \cc(G,A)$ be the map $r \mapsto f(r)a$. For $s \in G$, let $\iota_G(s)$ be the linear extension of the map $\lambda_s \otimes \alpha_s \colon f \otimes a \mapsto \lambda_s f \otimes \alpha_s(a)$ to all of $\cc(G,A)$, i.e., $\iota_G(s) h(t) = \alpha_s(h(s^{-1}t))$ for $h \in \cc(G,A)$.
+\end{definition}
+And, we have the following handy lemma:
 \begin{lemma}
-	Suppose that $G \acts \alpha A$ and $\pi$ is a faitful representation of $A$ on $\H$. Then $\tilde{\pi} \rtimes \lambda$ is a faithful representation of $\cc(G,A,\alpha)$.
-	\label{}
+	Suppose that $(\pi,u)$ is a covariant representation of a $C^*$-dynamical system $G \acts \alpha A$, and let $\pi \rtimes u$ denote the representation of $\cc(G,A,\alpha)$. Then, for $f \in \cc(G,A)$ and $r \in G$ it holds that
+	\begin{align*}
+		 u_r  \circ \pi \rtimes u \circ \iota_G(r) (f) =   \pi \rtimes u (f)
+	\end{align*}
+	\label{cross:iotaG}
 \end{lemma}
+\begin{proof}
+It follows from the calculation
+\begin{align*}
+	\pi \rtimes u (\iota_G(r)f) = \int_G \pi(\iota_G(r) f(s) ) u_s \d s &= \int_G \pi(\alpha_r(f(r^{-1}s))) u_ru_{r^{-1}s} \d s\\
+	&= \int_G u_r \pi(f(r^{-1}t)) u_{r^{-1}s} \d s \\
+	&= u_r \int_G  \pi(f(s)) u_s \d s \\
+	&= u_r \circ \pi \rtimes u (f).
+\end{align*}
+\end{proof}
+\begin{lemma}
+	Suppose that $G \acts \alpha A$ and $\pi$ is a faitful representation of $A$ on $\H$. Then the integrated form, $\tilde{\pi} \rtimes \lambda$, of $\mathrm{Ind}_e^G (\pi)=(\tilde \pi , \lambda)$ is a faithful representation of $\cc(G,A,\alpha)$.
+	\label{cross:regfaith}
+\end{lemma}
+\begin{proof}
+	Let $0 \neq f \in \cc(G,A)$, and let $r \in G$ witness this, i.e, $f(r) \neq 0$. By \Cref{cross:iotaG} we can replace $f$ by $\iota_G(r^{1})f$ and assume that $r=e$, so without loss of generality we assume $r = e$. Let $\xi, \eta \in \H$ witness faithfulness of $\pi$, i.e., such that $\langle \pi ( f(e)) \xi, \eta \rangle \neq 0$. Pick an open neighborhood $e \in V$ such that for $s,r \in V$ we have 
+	\begin{align*}
+		| \langle \pi(\alpha_r^{-1}(f(s))) \xi  - \pi(f(e)))\xi , \eta \rangle|  < \frac{| \langle \pi (f(e)) \xi , \eta\rangle|}{3}.
+	\end{align*}
+Let $W \subseteq V$ be a symmetric neighborhood such that $W^2 \subseteq V$, and let $\varphi \in \cc(G)$ such that $\varphi \geq 0$ and $\supp \varphi \subseteq W$ and
+\begin{align*}
+	\int_G \int_G \varphi(s^{-1}r) \varphi(r) \d r \d s = 1.
+\end{align*}
+Let $\zeta = \varphi \otimes \xi$ and $\psi = \varphi \otimes \eta$, then
+\begin{align*}
+	\langle \tilde{ \pi } \rtimes \lambda (f) \zeta, \psi \rangle  =  \int_G \langle \tilde{\pi}(f(s)) \lambda_s \zeta , \psi\rangle \d s &= \int_G \int_G \langle \tilde{\pi} f(s) \lambda_s \zeta(r) , \psi(r) \rangle \d r \d s\\
+	&= \int_G \int_G \langle \pi(\alpha_{r^{-1}}f(s)) \zeta\left( r^{-1}s \right) \psi(s) \rangle \d r \d s\\
+	&= \int_G \int_G \varphi(r^{-1}s) \varphi(r) \langle \pi(\alpha_{r^{-1}}f(s)) \xi , \eta \rangle \d r \d s
+\end{align*}
+and hence for all $r,s \in W$ we have
+\begin{align*}
+	\left | \tilde{\pi} \rtimes \lambda (f) \zeta , \psi \rangle - \langle \pi(f(e)) \zeta , \psi \rangle\right | &=  \left |  \int_G \int_G\varphi(r^{-1}s) \varphi (s) (\langle \pi(\alpha_{r^{-1}} f(s)) \xi , \eta \rangle - \langle \pi(f(e)) \xi , \eta \rangle  \d r \d s \right | \\
+	&\leq \int_G \int_G \varphi(r^{-1}s ) \varphi (s) | \langle \pi(\alpha_{r^{-1}}(f(s))) \xi , \eta\rangle - \langle \pi(f(e)) \xi , \eta \rangle | \d r \d s \\
+	&< \int_G \int_G \varphi(r^{-1}s) \varphi(s) \frac{| \langle \pi(f(e)) \xi, \eta \rangle|}{3} \d r \d s \\
+	&= \frac{| \langle \pi(f(e)) \xi , \eta \rangle|} {3},
+\end{align*}
+and in particular, it follows that $\tilde{\pi} \rtimes \lambda (f) \neq 0$.
+\end{proof}
 
-
-
-
-
+With the above result in hand, we can finally give meaning to a universal norm for the general convolution algebra $\cc(G,A,\alpha)$. Like in the discrete case, we define the \emph{universal norm} of $f \in \cc(G,A,\alpha)$ to be non-negative real number
+\begin{align*}
+	\lv f \rv_u &:= \sup\left\{ \lv \pi \rtimes u (f)\rv \mid  \pi \rtimes u \text{ is a non-degenerate covariant represenation of }(A,G ,\alpha) \right\}\\
+	&\leq \lv f \rv_1,
+\end{align*}
+and it is easy to see that the assignment $\cc(G,A,\alpha) \ni f \mapsto \lv f \rv_u$ is a norm: It clearly satisfies $\lv f + g \rv_u \leq \lv f \rv_u + \lv g \rv_u$ and $\lv cf \rv_u = |c| \lv f \rv_u$ for $f,g \in \cc(G,A,\alpha)$ and $c \in \C$. If $\lv f \rv_u = 0$ then $\tilde{\pi} \rtimes \lambda (f) = 0$ for all faithful $\pi$, which implies by \Cref{cross:regfaith} that $f = 0$. Moreover, we see that $\cc(G,A,\alpha)$ is a pre $C^*$-algebra, since $\pi \rtimes u$ is a homomorphism for all covariant representations $(\pi,u)$, and thus $\lv \pi \rtimes u (f^*\ast f)\rv = \lv \pi \rtimes u(f)^* \circ \pi \rtimes u(f)\rv = \lv \pi \rtimes u (f)\rv^2$, so $\lv f^* \ast f\rv_u = \lv f \rv_u^2$. 
+\begin{note}
+	While it indeed is not possible to take the supremum over a class, it can be shown that it is enough to take the supremum over cyclic covariant representations, which is a set.
+\end{note}
+This allows us to define the general crossed product as the completion of $\cc(G,A,\alpha)$:
+\begin{definition}
+	For a $C^*$-dynamical system $(A,G,\alpha)$, we define the \myemph{crossed product} of $A$ and $G$ to be norm closure of $\cc(G,A,\alpha)$ in the norm $\lv \cdot \rv_u$, and we will denote it by $A \rtimes_\alpha G$.
+\end{definition}
+\begin{remark}
+	Another (equivalent) formulation of the crossed product is to consider the representation of $L^1(G,A)$ given by the direct sum of all non-degenerate covariant representations of $L^1(G,A)$. Again, one can reformulate the above to only consider cyclic covariant representations, and use the fact that every representation of a $C^*$-algebra is a sum of cyclic representations.
+\end{remark}
+Inconvenient as it is, there is no guarantee that $A \rtimes_\alpha G$ contains a copy of $A$ or $G$ except under certain additional conditions on $A$ and $G$. However, we can always embed $A$ and $G$ into the Multiplier Algebra $M(A \rtimes_\alpha G)$ of $A \rtimes_\alpha G$:
+\begin{lemma}
+	Suppose that $G \acts \alpha A$ is a $C^*$-dynamical system. Define for $a \in A$ the map $\iota_A(a) \colon A \rtimes_\alpha G \to A \rtimes_\alpha G$ by extending the map defined on $\cc(G,A,\alpha)$ by
+	\begin{align*}
+		\iota_A(a) f(s) = af(s), \text{ for } f \in \cc(G,A,\alpha) \text{ and } s \in G.
+	\end{align*}
+	Then $\iota_A \colon A \to M(A \rtimes_\alpha G)$, $a \mapsto \iota_A(a)$, is a faithful non-degenerate $^*$-representation.
+\end{lemma}
