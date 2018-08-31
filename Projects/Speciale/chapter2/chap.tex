@@ -470,7 +470,11 @@ Inconvenient as it is, there is no guarantee that $A \rtimes_\alpha G$ contains 
 	\begin{align*}
 		\iota_A(a) f(s) = af(s), \text{ for } f \in \cc(G,A,\alpha) \text{ and } s \in G.
 	\end{align*}
-	Then $\iota_A \colon A \to M(A \rtimes_\alpha G)$, $a \mapsto \iota_A(a)$, is a faithful non-degenerate $^*$-representation.
+	Then $\iota_A \colon A \to M(A \rtimes_\alpha G)$, $a \mapsto \iota_A(a)$, is a faithful non-degenerate $^*$-representation, satisfying
+	\begin{align*}
+		\overline{\pi \rtimes u } \iota_A(a) = \pi(a),
+	\end{align*}
+	for all covariant representations $(\pi,u)$ of $G \acts \alpha A $.
 \end{lemma}
 \begin{proof}
 First, for covariant representations $(\pi,u)$ of $G \acts \alpha A$, we see that
@@ -488,7 +492,40 @@ and hence we see that
 \end{align*}
 so $\iota_A(a^*)$ is an adjoint on a dense sub$*$-algebra (of the $C^*$-algebra seen as a Hilbert module over itself), hence everywhere by continuity, so $\iota_A(a) \in M(A \rtimes_\alpha G)$. For injectivity, let $\pi$ be any faithful, non-degenerate representation of $A$, and let $\overline{\tilde \pi \rtimes \lambda}$ denote the extension of $\tilde \pi \rtimes \lambda$ to $M(A \rtimes_\alpha G)$. By \ref{cross:integform} and the above, we see that $\tilde \pi(a) = \overline{\tilde \pi \rtimes \lambda } \circ \iota_A(a)$, hence $\iota_A(a) = 0 \implies \tilde \pi(a) = 0 \implies a = 0$, since $\tilde \pi$ is faithfull.
 \end{proof}
-
+\begin{lemma}
+	There is an injective and strongly continuous group homomorphism
+	\begin{align*}
+		\iota_G \colon G \to \mathcal{U} M(A \rtimes_\alpha G),
+	\end{align*}
+	such that for $f \in \cc(G,A,\alpha) \subseteq A \rtimes_\alpha G$ we have
+	\begin{align*}
+		\iota_G(s) f(t) = \alpha_s (f(s^{-1}t)),
+	\end{align*}
+	for all $s,t \in G$, and if $(\pi,u)$ is a covariant representation of $G \acts \alpha A$, then
+	\begin{align*}
+		\overline{\pi \rtimes u} \iota_G(s) =u_s,
+	\end{align*}
+for $s \in G$, where $\overline {\pi \rtimes u}$
+\end{lemma}
+Before we commence the proof of the above, we want to point out that the above to lemmas ensures that for each covariant representation $(\pi , u)$ of $G \acts \alpha A$ we obtain the following commutative diagram
+\begin{equation}
+	\begin{tikzcd}
+		G \arrow[rr, "\iota_G", hook] \arrow[rrd, "u"'] && M(A \rtimes_\alpha G) \arrow[d, "\overline{\pi \rtimes u }"] && A \arrow[ll,"\iota_A"',hook] \arrow[lld, "\pi"]\\
+		& &\mathbb{B}(\H)&&
+	\end{tikzcd}
+\end{equation}
+And we shall see that they are in fact a covariant pair. But first, the proof of the above lemma:
+\begin{proof}
+	Let $\iota_G(s)$ be defined on $\cc(G,A,\alpha)$ as earlier. By \Cref{cross:iotaG}, we see that
+	\begin{align*}
+		\lv \iota_G(r) f \rv_u = \lv f \rv_u,
+	\end{align*}
+	for all $f \in \cc(G,A,\alpha)$, and so extends to $A \rtimes_\alpha G$. Let $s,r \in G$, then for $f \in \cc(G,A,\alpha)$, we see that
+	\begin{align*}
+		(\iota_G(r) f(s))^* = \Delta(s^{-1}) \alpha_r(f(r^{-1}s^{-1})^*),
+	\end{align*}
+	which can be used to show that $\iota_G(r)^* = \iota_G(r^{-1})$, so that $\iota_G(r) \in M(A \rtimes_\alpha G)$.
+\end{proof}
 
 
 
