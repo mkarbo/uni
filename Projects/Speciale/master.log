@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.28)  3 SEP 2018 12:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.28)  3 SEP 2018 16:04
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -2979,20 +2979,26 @@ fier (name{theorem.2.30}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.516 \end{equation}
+l.518 \end{equation}
                     pdfTeX warning (ext4): destination with the same identifier
  (name{theorem.2.31}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.516 \end{equation}
+l.518 \end{equation}
                     ] [34pdfTeX warning (ext4): destination with the same ident
 ifier (name{theorem.2.32}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.549 	\end{align*}
-                   ]) [35] (./appendix/appendix.tex [36
+l.551 	\end{align*}
+                   ]) [35pdfTeX warning (ext4): destination with the same ident
+ifier (name{theorem.2.33}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.28 \backmatter
+                ] (./appendix/appendix.tex [36
 
 
 ]
@@ -3034,10 +3040,10 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 33.
  )
 (\end occurred when \iftrue on line 5 was incomplete) 
 Here is how much of TeX's memory you used:
- 40967 strings out of 493029
- 743280 string characters out of 6136234
+ 40970 strings out of 493029
+ 743321 string characters out of 6136234
  1107126 words of memory out of 5000000
- 43698 multiletter control sequences out of 15000+600000
+ 43700 multiletter control sequences out of 15000+600000
  23603 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,17n,82p,10480b,1805s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3063,10 +3069,10 @@ lic/cm-super/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc109
 xmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/publ
 ic/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000
 .pfb></usr/share/texmf/fonts/type1/public/cm-super/sfxc1200.pfb>
-Output written on master.pdf (41 pages, 780816 bytes).
+Output written on master.pdf (41 pages, 782823 bytes).
 PDF statistics:
- 586 PDF objects out of 1000 (max. 8388607)
- 510 compressed objects within 6 object streams
- 177 named destinations out of 1000 (max. 500000)
+ 589 PDF objects out of 1000 (max. 8388607)
+ 513 compressed objects within 6 object streams
+ 178 named destinations out of 1000 (max. 500000)
  106 words of extra memory for PDF output out of 10000 (max. 10000000)
 

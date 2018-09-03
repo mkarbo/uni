@@ -490,7 +490,9 @@ and hence we see that
 	\left( \iota_A(a) f \right)^* \ast g (s) = \int_G f^*(r) \alpha_r(a^*) \alpha_r(g(r^{-1}s)) \d r &= \int_G f^*(r) \alpha_r \left(  (\iota_A(a^*) g)(r^{-1}s)\right) \d r \\
 	&= f^* \ast(\iota_A(a^*) g)(s),
 \end{align*}
-so $\iota_A(a^*)$ is an adjoint on a dense sub$*$-algebra (of the $C^*$-algebra seen as a Hilbert module over itself), hence everywhere by continuity, so $\iota_A(a) \in M(A \rtimes_\alpha G)$. For injectivity, let $\pi$ be any faithful, non-degenerate representation of $A$, and let $\overline{\tilde \pi \rtimes \lambda}$ denote the extension of $\tilde \pi \rtimes \lambda$ to $M(A \rtimes_\alpha G)$. By \ref{cross:integform} and the above, we see that $\tilde \pi(a) = \overline{\tilde \pi \rtimes \lambda } \circ \iota_A(a)$, hence $\iota_A(a) = 0 \implies \tilde \pi(a) = 0 \implies a = 0$, since $\tilde \pi$ is faithfull.
+so $\iota_A(a^*)$ is an adjoint on a dense sub$*$-algebra (of the $C^*$-algebra seen as a Hilbert module over itself), hence everywhere by continuity, so $\iota_A(a) \in M(A \rtimes_\alpha G)$. For injectivity, let $\pi$ be any faithful, non-degenerate representation of $A$, and let $\overline{\tilde \pi \rtimes \lambda}$ denote the extension of $\tilde \pi \rtimes \lambda$ to $M(A \rtimes_\alpha G)$. By \ref{cross:integform} and the above, we see that $\tilde \pi(a) = \overline{\tilde \pi \rtimes \lambda } \circ \iota_A(a)$, hence $\iota_A(a) = 0 \implies \tilde \pi(a) = 0 \implies a = 0$, since $\tilde \pi$ is faithful.
+
+For non-degeneracy, note that \ref{int:indlmdense} implies that the span of $\varphi \otimes ab$ is dense in $A \rtimes_\alpha G$, since the denseness in the inductive limit topology also implies that the span is dense in the $L^1$-norm on $\cc(G,A)$, and clearly $\varphi \otimes ab \in \{ \iota_A(a) x \mid\ a \in A, \ x \in A \rtimes_\alpha G\}$.
 \end{proof}
 \begin{lemma}
 	There is an injective and strictly continuous group homomorphism
@@ -560,5 +562,15 @@ And, we summarize the above in the following
 	\end{align*}
 	for $f \in \cc(G,a,\alpha)$, $a \in A$ and $s,r \in G$.
 \end{proof}
-
-
+We now embark on our final task in our construction and picture painting of the general crossed product $A \rtimes_ \alpha G$, namely we wish to properly characterize its representation theory. We are going to see that $A \rtimes_\alpha G$ is the $C^*$-algebra whose representation theory is in a one-to-one correspondance with the covariant representations of $(A,G,\alpha)$ via the map $(\pi,u) \mapsto \pi \rtimes u$. But first, we need to include the full group $C^*$-algebra, $C^*(G)$, of $G$, into the above developed theory:
+\begin{lemma}
+	There exists a group homomorphsim $\tilde \iota_G \colon C^*(G) \to M(A \rtimes_\alpha G)$ such that
+	\begin{align*}
+		\tilde \iota_G(z) = \int_G z(s) \iota_G(s) \d s, 
+	\end{align*}
+	for all $z \in \cc(G)$
+	\label{cross:2.35}
+\end{lemma}
+\begin{proof}
+	For all $z \in \cc(G)$, the map $s \mapsto z(s) \iota_G(s)$ is strictly continuous, and we may define the integral by \Cref{int:multstrictintegral}.
+\end{proof}<++>
