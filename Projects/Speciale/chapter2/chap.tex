@@ -493,7 +493,7 @@ and hence we see that
 so $\iota_A(a^*)$ is an adjoint on a dense sub$*$-algebra (of the $C^*$-algebra seen as a Hilbert module over itself), hence everywhere by continuity, so $\iota_A(a) \in M(A \rtimes_\alpha G)$. For injectivity, let $\pi$ be any faithful, non-degenerate representation of $A$, and let $\overline{\tilde \pi \rtimes \lambda}$ denote the extension of $\tilde \pi \rtimes \lambda$ to $M(A \rtimes_\alpha G)$. By \ref{cross:integform} and the above, we see that $\tilde \pi(a) = \overline{\tilde \pi \rtimes \lambda } \circ \iota_A(a)$, hence $\iota_A(a) = 0 \implies \tilde \pi(a) = 0 \implies a = 0$, since $\tilde \pi$ is faithfull.
 \end{proof}
 \begin{lemma}
-	There is an injective and strongly continuous group homomorphism
+	There is an injective and strictly continuous group homomorphism
 	\begin{align*}
 		\iota_G \colon G \to \mathcal{U} M(A \rtimes_\alpha G),
 	\end{align*}
@@ -522,10 +522,43 @@ And we shall see that they are in fact a covariant pair. But first, the proof of
 	\end{align*}
 	for all $f \in \cc(G,A,\alpha)$, and so extends to $A \rtimes_\alpha G$. Let $s,r \in G$, then for $f \in \cc(G,A,\alpha)$, we see that
 	\begin{align*}
-		(\iota_G(r) f(s))^* = \Delta(s^{-1}) \alpha_r(f(r^{-1}s^{-1})^*),
+		(\iota_G(r) f(s))^* = \Delta(s^{-1}) \alpha_s ( (\alpha_r(f(r^{-1}s^{-1}))^*) \Delta(s^{-1}) \alpha_{sr}(f(r^{-1}s^{-1})^*),
 	\end{align*}
-	which can be used to show that $\iota_G(r)^* = \iota_G(r^{-1})$, so that $\iota_G(r) \in M(A \rtimes_\alpha G)$.
-\end{proof}
+	which, combined with the fact that $\Delta(s^{-1}) \d s$ is the integrand of a right Haar measure, can be used to show that $\iota_G(r)^* = \iota_G(r^{-1})$, so that $\iota_G(r) \in M(A \rtimes_\alpha G)$. In fact, since clearly $\iota_G(rs) = \iota_G(r) \circ \iota_G(s)$ for $s,r \in G$, it is a unitary element.
 
+	Let $(\pi,u)$ be any non-degenerate covariant representation of $G \acts \alpha A$. By \Cref{cross:iotaG}, we see that $u_s  = \overline{ \pi \rtimes u} \iota_G(s)$ for all $ s \in G$, and if $\pi$ is a faithful representation of $A$, then considering  $\mathrm{Ind} \pi = (\tilde \pi, \lambda)$, we see that $\iota_G(s) \neq \mathrm{id}$ if $s \neq e$. For continuity, let $f \in \cc(G,A,\alpha)$. We will see that $\iota_G$ is strongly continuous, which by \Cref{int:unistrictstrong} is equivalent to being strictly continuous. We thus show that if $(s_i)\subseteq G$, $s_i \to e$, then $\iota_G(s_i) x \to x$ for $x \in A \rtimes_\alpha G$. We know that the set of functions $\varphi \otimes a$, $\varphi \in \cc(G)$ and $a \in A$, spans a dense subset of $\cc(G,A)$, hence it suffices to show that $\iota_G(s_i) \varphi \otimes a \stackrel{L^1}{\to} \varphi \otimes a$, but
+	\begin{align*}
+		\lv \iota_G(r_{i}) \varphi \otimes a - \varphi \otimes a \rv_1 &= \int_G \lv \varphi(r_{i}^{-1}s) \alpha_{r_i}(a) - \varphi(r_i^{-1}s) a + \varphi(r_{i}^{-1}a) a - \varphi(s) a \rv_A \d s\\ 
+		& \leq \lv \alpha_{r_i}(a) - a \rv \lv \varphi \rv_1 + \lv \lambda_{r_i} \varphi - \varphi \rv_1 \lv a \rv,
+	\end{align*}
+	which goes to $0$, by uniform continuity of $\varphi$ and the fact that $\alpha_{r_i}(a) \to a$ for all $ a\in A$ as $r_i \to e$.
+\end{proof}
+And, we summarize the above in the following
+\begin{proposition}
+	For a $C^*$-dynamical system $G \acts \alpha A$, there exists a non-degenerate faithful $^*$-homomorphsim 
+	\begin{align*}
+	\iota_A \colon A \to M(A \rtimes_\alpha G),	
+	\end{align*}
+	and an injective strictly continuous unitary representation 
+	\begin{align*}
+		\iota_G \colon G \to \mathcal{U}M(A \rtimes_\alpha G),
+	\end{align*}
+	such that $\iota_G(r) f(s) = \alpha_r(f(r^{-1}s))$  and $\iota_A(a) f(s) = af(s)$ for $f \in \cc(G,A,\alpha)$ and $r,s \in G$ and $a \in A$. Moreover, the pair $(\iota_A,\iota_G)$ is covariant with respect to $\alpha$, i.e., 
+	\begin{align*}
+		\iota_A(\alpha_r (a) ) = \iota_G(r)  \iota_A(a) \iota_G(r)^*,
+	\end{align*}
+	and for non-degenerate covariant representations $(\pi,u)$ we have
+	\begin{align*}
+		\overline{\pi \rtimes u} \circ \iota_A(a) = \pi(a) \text{ and } \overline{\pi \rtimes u } \circ \iota_G (s) = u_s.
+	\end{align*}
+	\label{cross:iotaprop}
+\end{proposition}
+\begin{proof}
+	The only thing left to be shown is the covariance relation, but this follows immediately from the following calculation:
+	\begin{align*}
+		\iota_G(r) \iota_A(a) \iota_G(r)^* f(s) = \alpha_r(\iota_A(a) \iota_G(r)^{*}f(r^{-1}s)) = \alpha_r(a) \alpha_r ( \alpha_{r^{-1}}f(r r^{-1}s))= \iota_A(\alpha_r(a)) f(s),
+	\end{align*}
+	for $f \in \cc(G,a,\alpha)$, $a \in A$ and $s,r \in G$.
+\end{proof}
 
 
