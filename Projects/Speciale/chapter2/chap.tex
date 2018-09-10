@@ -11,7 +11,7 @@ The main motivation of the theory we are about to develop is this: Given a covar
 \begin{align*}
 	\pi \rtimes u (f) = \int \pi(f(t))u_t \d t.
 \end{align*}
-The problem at hand is, a priori $u_t$ is not norm continuous, and so we don't know if the integrand is integrable. We will however show that $u_t$ is strictly convergent and use this to define our integral using $M(\mathbb{B}(\H)) = \mathbb{K}_A(A_A)= \mathbb{B}(\H)$. 
+The problem at hand is, a priori $u_t$ is not norm continuous, and so we don't know if the integrand is integrable. We will however show that $u_t$ is strictly convergent and use this to define our integral by combining it with the previously seen fact that $M(\mathbb{B}(\H)) = \mathbb{K}_A(A_A)= \mathbb{B}(\H)$. 
 
 For $f \in \cc(G,A)$, the map $s \mapsto \lv f(s) \rv$ is in $\cc(G)$, and we define the number $\lv f \rv_1 \in [0,\infty)$ to be
 \begin{align*}
@@ -450,13 +450,32 @@ and in particular, it follows that $\tilde{\pi} \rtimes \lambda (f) \neq 0$.
 
 With the above result in hand, we can finally give meaning to a universal norm for the general convolution algebra $\cc(G,A,\alpha)$. Like in the discrete case, we define the \emph{universal norm} of $f \in \cc(G,A,\alpha)$ to be non-negative real number
 \begin{align*}
-	\lv f \rv_u &:= \sup\left\{ \lv \pi \rtimes u (f)\rv \mid  \pi \rtimes u \text{ is a non-degenerate covariant represenation of }(A,G ,\alpha) \right\}\\
+	\lv f \rv_u &:= \sup\left\{ \lv \pi \rtimes u (f)\rv \mid  \pi \rtimes u \text{ is a covariant represenation of }(A,G ,\alpha) \right\}\\
 	&\leq \lv f \rv_1,
 \end{align*}
 and it is easy to see that the assignment $\cc(G,A,\alpha) \ni f \mapsto \lv f \rv_u$ is a norm: It clearly satisfies $\lv f + g \rv_u \leq \lv f \rv_u + \lv g \rv_u$ and $\lv cf \rv_u = |c| \lv f \rv_u$ for $f,g \in \cc(G,A,\alpha)$ and $c \in \C$. If $\lv f \rv_u = 0$ then $\tilde{\pi} \rtimes \lambda (f) = 0$ for all faithful $\pi$, which implies by \Cref{cross:regfaith} that $f = 0$. Moreover, we see that $\cc(G,A,\alpha)$ is a pre $C^*$-algebra, since $\pi \rtimes u$ is a homomorphism for all covariant representations $(\pi,u)$, and thus $\lv \pi \rtimes u (f^*\ast f)\rv = \lv \pi \rtimes u(f)^* \circ \pi \rtimes u(f)\rv = \lv \pi \rtimes u (f)\rv^2$, so that $\lv f^* \ast f\rv_u = \lv f \rv_u^2$. 
 \begin{note}
-	While it indeed is not possible to take the supremum over a class, it can be shown that it is enough to take the supremum over cyclic covariant representations, which is a set.
+	While it indeed is not possible to take the supremum over a class, it can be shown that it is enough to take the supremum over cyclic covariant representations, which is a set. For now, we stick with the following:
 \end{note}
+\begin{lemma}
+	Let $G \acts \alpha A$ be a $C^*$-dynamical system and let $(\pi,u)$ be a covariant representation on $\H$. Let 
+	\begin{align*}
+		V_\pi = \overline \Span\left\{ \pi(a) \xi \mid a \in A \text{ and } \xi \in \H \right\} \subseteq \H,
+	\end{align*}
+	then $V$ is invariant under both $\pi$ and $u$, and if $\pi^{V_\pi}$ and $ u^{V_\pi}$ denotes the corresponding subrepresentations on $V^{\pi}$, we have for all $f \in \cc(G,A,\alpha)$ 
+	\begin{align*}
+		\lv \pi ^{V_\pi} \rtimes u^{V_\pi}(f) \rv = \lv \pi \rtimes u (f) \rv,
+	\end{align*}
+	so that
+	\begin{align*}
+		\lv f \rv_u = \sup\left\{ \lv \pi \rtimes u(f) \rv \mid  (\pi,u) \text{ is a non-degenerate covariant representation of } G \acts \alpha A\right\}.
+	\end{align*}
+	\label{cross:essnorm}
+\end{lemma}
+\begin{proof}
+	This is a standard proof, and we refer to \cite[52]{williamscrossed} for the proof.
+\end{proof}
+
 This allows us to define the general crossed product as the completion of $\cc(G,A,\alpha)$:
 \begin{definition}
 	For a $C^*$-dynamical system $(A,G,\alpha)$, we define the \myemph{full crossed product} (or simply the crossed product) of $A$ and $G$ to be norm closure of $\cc(G,A,\alpha)$ in the norm $\lv \cdot \rv_u$, and we will denote it by $A \rtimes_\alpha G$.
@@ -562,15 +581,60 @@ And, we summarize the above in the following
 	\end{align*}
 	for $f \in \cc(G,a,\alpha)$, $a \in A$ and $s,r \in G$.
 \end{proof}
-We now embark on our final task in our construction and picture painting of the general crossed product $A \rtimes_ \alpha G$, namely we wish to properly characterize its representation theory. We are going to see that $A \rtimes_\alpha G$ is the $C^*$-algebra whose representation theory is in a one-to-one correspondance with the covariant representations of $(A,G,\alpha)$ via the map $(\pi,u) \mapsto \pi \rtimes u$. But first, we need to include the full group $C^*$-algebra, $C^*(G)$, of $G$, into the above developed theory:
-\begin{lemma}
-	There exists a group homomorphsim $\tilde \iota_G \colon C^*(G) \to M(A \rtimes_\alpha G)$ such that
-	\begin{align*}
-		\tilde \iota_G(z) = \int_G z(s) \iota_G(s) \d s, 
-	\end{align*}
-	for all $z \in \cc(G)$
-	\label{cross:2.35}
-\end{lemma}
+We now embark on our final task in our construction and picture painting of the general crossed product $A \rtimes_ \alpha G$, namely we wish to properly characterize its representation theory. We are going to see that $A \rtimes_\alpha G$ is the $C^*$-algebra whose representation theory is in a one-to-one correspondance with the covariant representations of $(A,G,\alpha)$ via the map $(\pi,u) \mapsto \pi \rtimes u$. To see this, we note first that as one usually does when dealing with representations of $C^*$-algebras and groups, we decompose them into subrepresentations:
+\begin{corollary}
+	Let $G \acts \alpha A$ be a $C^*$-dynamical system and let $a \in A$, $f,h \in \cc(G,A)$ and $\varphi \in \cc(G)$. Then
+\begin{align*}
+	\iota_A(a) \iota_G(\varphi) &= \varphi \otimes a,\\
+	\int_G \iota_A(f(s)) \iota_G(s)h  \d s &= f \ast h \text{ and }\\
+	\int_G \iota_A(f(s)) \iota_G(s) \d s & = f,
+\end{align*}
+where we've identified $\cc(G,A,\alpha) \subseteq A \rtimes_\alpha G \subseteq M(A \rtimes_\alpha G)$.
+	\label{cross:iotaresults}
+\end{corollary}
 \begin{proof}
-	For all $z \in \cc(G)$, the map $s \mapsto z(s) \iota_G(s)$ is strictly continuous, and we may define the integral by \Cref{int:multstrictintegral}.
-\end{proof}<++>
+	Let $(\pi, u)$ be a non-degenerate covariant representation of $G \acts \alpha A$ and notice that 
+	\begin{align*}
+		\overline{\pi \rtimes u}\left( \int_G \iota_a(f(s)) \iota_G(s) \d s  \right) = \pi \rtimes u (f),
+	\end{align*}
+	which combined with \cref{cross:essnorm} shows the last and first identity. The second inequality follows from the last and  \cref{int:multstrictintegral}.
+\end{proof}
+\begin{theorem}
+	Let $G \acts \alpha A$ be a $C ^*$-dynamical system and let $\H$ be a Hilbert space. If $L \colon A \rtimes_\alpha G \to \mathbb{B}(\H)$ is a non-degenerate $*$-representation, then there exists a non-degenerate covariant representation $(\pi,u)$ of $G \acts \alpha A$ into $ \mathbb{B}(\H)$ such that $L= \pi \rtimes u$, and in fact it can be defined by
+	\begin{align*}
+		u_s = \overline L(\iota_G(s)) \text{ and } \pi(a) = \overline L(\iota_A(a)),
+	\end{align*}
+	for all $s \in G$ and $a \in A$. In fact, there is a bijective correspondance between covariant representations of $G \acts \alpha A$ and $*$-representations of $A \rtimes_\alpha G$
+\end{theorem}
+\begin{proof}
+	We already have seen the assignment $(\pi,u) \mapsto \pi \rtimes u$. For the converse, suppose that $L$ is a non-degenerate representation of $A \rtimes_\alpha G$. Let $\pi, u$ be defined by the above. \todo{finish easy proof}
+\end{proof}
+
+%But first, we need to include the full group $C^*$-algebra, $C^*(G)$, of $G$, into the above developed theory:
+%\begin{lemma}
+%	There exists a group homomorphsim $\tilde \iota_G \colon C^*(G) \to M(A \rtimes_\alpha G)$ such that
+%	\begin{align*}
+%		\tilde \iota_G(z) = \int_G z(s) \iota_G(s) \d s, 
+%	\end{align*}
+%	for all $z \in \cc(G)$
+%	\label{cross:2.35}
+%\end{lemma}
+%\begin{proof}
+%	For all $z \in \cc(G)$, the map $s \mapsto z(s) \iota_G(s)$ is strictly continuous, and we may define the integral by \Cref{int:multstrictintegral}. Let $z,w \in \cc(G)$, then
+%	\begin{align*}
+%		\tilde \iota_G(z \ast w) &= \int_G \int_G z(r)w(r^{-1}s) \d r \iota_G(s) \d s \\
+%		&= \int_G \int_G z(r) w(r^{-1}s) \iota_G(s) \d s \d r\\
+%		&= \int_G \int_G z(r) w(s) \iota_G(rs) \d s \d r\\
+%		&= \int_G z(r) \iota_G(r) \d r \int_G w(s) \iota_G(s) \d s \\
+%		&= \tilde \iota_G(z) \tilde \iota_G(w),
+%	\end{align*}
+%	so if it is well-defined and continuous on $C^*(G)$, it will be a homomorphism. Let $\pi$ be any faithful and non-degenerate representation of $A \rtimes_\alpha G$, so that its extension $\overline \pi $ to $M(A \rtimes_ \alpha G)$ is faithful aswell. Consider the composition $s \mapsto \overline{\pi} \circ \iota_G(s)$, which is a unitary valued homomorphism. It is in fact strongly continuous: Suppose that $f \in \cc(G,A)$ and $\xi \in \H_\pi$, then for $s \in G$ we see that $\overline{ \pi} (\iota_G(s)) \pi(f) \xi = \pi(\iota_G(s) f) \xi$, and it follows that $s \mapsto \overline{\pi}(\tilde \iota_G(s)) \xi$ is continuous for all $\xi \in \H$ by continuity of $s \mapsto \iota_G(s)f$ and non-degeneracy of $\pi$. Thus
+%	\begin{align}
+%		\lv \tilde \iota_G(z)\rv \leq \lv z \rv,
+%	\end{align}
+%	for all $z \in \cc(G)$, so it extends to a unitary-valued homomorphism $C^*(G) \to M(A \rtimes_\alpha G)$, which we will also denote by $\iota_G$
+%\end{proof}
+
+
+
+
