@@ -16,10 +16,12 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.2}Crossed Products}{27}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{37}{section*.8}
+\contentsline {section}{\numberline {2.3}Properties of Crossed products}{38}{section.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Appendix}{38}{appendix*.9}
+\contentsline {chapter}{Bibliography}{39}{section*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Integration Theory In Groups}{38}{section*.10}
+\contentsline {chapter}{Appendix}{40}{appendix*.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Alphabetical Index}{39}{section*.11}
+\contentsline {section}{Integration Theory In Groups}{40}{section*.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Alphabetical Index}{41}{section*.11}

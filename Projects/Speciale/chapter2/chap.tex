@@ -593,48 +593,60 @@ where we've identified $\cc(G,A,\alpha) \subseteq A \rtimes_\alpha G \subseteq M
 	\label{cross:iotaresults}
 \end{corollary}
 \begin{proof}
-	Let $(\pi, u)$ be a non-degenerate covariant representation of $G \acts \alpha A$ and notice that 
+	Let $(\pi, u)$ be a non-degenerate covariant representation of $G \acts \alpha A$ and notice that
 	\begin{align*}
 		\overline{\pi \rtimes u}\left( \int_G \iota_a(f(s)) \iota_G(s) \d s  \right) = \pi \rtimes u (f),
 	\end{align*}
 	which combined with \cref{cross:essnorm} shows the last and first identity. The second inequality follows from the last and  \cref{int:multstrictintegral}.
 \end{proof}
+\todo{swap around}
+Before we finalize the description of the representation theory of $A \rtimes_\alpha G$, we need to extend the map $\iota_G$ to $C^*(G)$, the full group $C^*$-algebra of $G$, since this will provide us with a useful characterization of a dense subset of $A \rtimes_\alpha G$, so without further ado:
+\begin{lemma}
+	There exists a group homomorphsim $\tilde \iota_G \colon C^*(G) \to M(A \rtimes_\alpha G)$ such that
+	\begin{align*}
+		\tilde \iota_G(z) = \int_G z(s) \iota_G(s) \d s, 
+	\end{align*}
+	for all $z \in \cc(G)$
+	\label{cross:2.35}
+\end{lemma}
+\begin{proof}
+	For all $z \in \cc(G)$, the map $s \mapsto z(s) \iota_G(s)$ is strictly continuous, and we may define the integral by \Cref{int:multstrictintegral}. Let $z,w \in \cc(G)$, then
+	\begin{align*}
+		\tilde \iota_G(z \ast w) &= \int_G \int_G z(r)w(r^{-1}s) \d r \iota_G(s) \d s \\
+		&= \int_G \int_G z(r) w(r^{-1}s) \iota_G(s) \d s \d r\\
+		&= \int_G \int_G z(r) w(s) \iota_G(rs) \d s \d r\\
+		&= \int_G z(r) \iota_G(r) \d r \int_G w(s) \iota_G(s) \d s \\
+		&= \tilde \iota_G(z) \tilde \iota_G(w),
+	\end{align*}
+	so if it is well-defined and continuous on $C^*(G)$, it will be a homomorphism. Let $\pi$ be any faithful and non-degenerate representation of $A \rtimes_\alpha G$, so that its extension $\overline \pi $ to $M(A \rtimes_ \alpha G)$ is faithful aswell. Consider the composition $s \mapsto \overline{\pi} \circ \iota_G(s)$, which is a unitary valued homomorphism. It is in fact strongly continuous: Suppose that $f \in \cc(G,A)$ and $\xi \in \H_\pi$, then for $s \in G$ we see that $\overline{ \pi} (\iota_G(s)) \pi(f) \xi = \pi(\iota_G(s) f) \xi$, and it follows that $s \mapsto \overline{\pi}(\tilde \iota_G(s)) \xi$ is continuous for all $\xi \in \H$ by continuity of $s \mapsto \iota_G(s)f$ and non-degeneracy of $\pi$. Thus
+	\begin{align}
+		\lv \tilde \iota_G(z)\rv \leq \lv z \rv,
+	\end{align}
+	for all $z \in \cc(G)$, so it extends to a unitary-valued homomorphism $C^*(G) \to M(A \rtimes_\alpha G)$, which we will also denote by $\iota_G$
+\end{proof}
+\begin{remark}
+In particular, by the above and \cref{int:indlmdense} we see that the set of functions of the form $\iota_A(a) \iota_G(z)$ for $a \in A$ and $z \in \cc(G)$ span a dense subset of $A \rtimes_\alpha G$. This will be useful in the following:
+\end{remark}
 \begin{theorem}
-	Let $G \acts \alpha A$ be a $C ^*$-dynamical system and let $\H$ be a Hilbert space. If $L \colon A \rtimes_\alpha G \to \mathbb{B}(\H)$ is a non-degenerate $*$-representation, then there exists a non-degenerate covariant representation $(\pi,u)$ of $G \acts \alpha A$ into $ \mathbb{B}(\H)$ such that $L= \pi \rtimes u$, and in fact it can be defined by
+	Let $G \acts \alpha A$ be a $C ^*$-dynamical system and let $\H$ be a Hilbert space. If $L \colon A \rtimes_\alpha G \to \mathbb{B}(\H)$ is a non-degenerate $*$-representation, then there exists a non-degenerate covariant representation $(\pi,u)$ of $G \acts \alpha A$ into $ \mathbb{B}(\H)$ such that $L= \pi \rtimes u$ which can be realised by 
 	\begin{align*}
 		u_s = \overline L(\iota_G(s)) \text{ and } \pi(a) = \overline L(\iota_A(a)),
 	\end{align*}
-	for all $s \in G$ and $a \in A$. In fact, there is a bijective correspondance between covariant representations of $G \acts \alpha A$ and $*$-representations of $A \rtimes_\alpha G$
+	for all $s \in G$ and $a \in A$. In fact, there is a bijective correspondance between covariant representations of $G \acts \alpha A$ and $*$-representations of $A \rtimes_\alpha G$.
 \end{theorem}
 \begin{proof}
-	We already have seen the assignment $(\pi,u) \mapsto \pi \rtimes u$. For the converse, suppose that $L$ is a non-degenerate representation of $A \rtimes_\alpha G$. Let $\pi, u$ be defined by the above. \todo{finish easy proof}
+	We already have seen the assignment $(\pi,u) \mapsto \pi \rtimes u$. For the converse, suppose that $L$ is a non-degenerate representation of $A \rtimes_\alpha G$. Let $\pi, u$ be defined by the above. It is clear that $\pi$ is a $*$-representation of $A$ on $\mathbb{B}(\H)$ and similarly that $u$ is a strongly continuous unitary-valued group representation on $\mathbb{B}(\H)$, since $\iota_G$ is strictly and hence strongly continuous. To see that $(\pi,u)$ is non-degenerate, let $(e_i)$ be an approximate unit for $A$. Then $\iota_A(e_i) \to 1$ strictly in $M(A \rtimes_\alpha G)$, and so $\pi = \overline L(\iota_A(e_i)) \to I$ strictly, so in particular $\pi(e_i) \xi \to \xi$ for all $\xi \in \H$ and $\pi$ is non-degenerate. Now, let $s \in G$ and $a \in A$, then
+	\begin{align*}
+		u_s \pi(a) u_s^* = \overline L(\iota_G(s) ) \overline L (\iota_A(a)) \overline L(\iota_G(s))^* = \overline L( \iota_A(\alpha_s(a))) = \pi(\alpha_{s}(a)),
+	\end{align*}
+	so the pair is a proper non-degenerate covariant representation of $G \acts \alpha A$. Finally, using \cref{int:multstrictintegral}, we see that
+\begin{align*}
+	\pi \rtimes u(\iota_A(a) \iota_G(z)) &= \pi(a) \circ \overline{\pi \rtimes u}(\iota_G(z)) = \overline L(\iota_A(a)) \int_G z(s) \overline L(\iota_G(s)) \d s \\
+	&= \overline L(\iota_A(a)) \overline L(\iota_G(z)) \\
+	&= \overline L(\iota_A(a) \iota_G(z)),
+\end{align*}
+for all $z \in \cc(G)$ and $a \in A$, which by the above remark ensures that $L = \pi \rtimes u$ on all of $A \rtimes_ \alpha G$.
 \end{proof}
 
-%But first, we need to include the full group $C^*$-algebra, $C^*(G)$, of $G$, into the above developed theory:
-%\begin{lemma}
-%	There exists a group homomorphsim $\tilde \iota_G \colon C^*(G) \to M(A \rtimes_\alpha G)$ such that
-%	\begin{align*}
-%		\tilde \iota_G(z) = \int_G z(s) \iota_G(s) \d s, 
-%	\end{align*}
-%	for all $z \in \cc(G)$
-%	\label{cross:2.35}
-%\end{lemma}
-%\begin{proof}
-%	For all $z \in \cc(G)$, the map $s \mapsto z(s) \iota_G(s)$ is strictly continuous, and we may define the integral by \Cref{int:multstrictintegral}. Let $z,w \in \cc(G)$, then
-%	\begin{align*}
-%		\tilde \iota_G(z \ast w) &= \int_G \int_G z(r)w(r^{-1}s) \d r \iota_G(s) \d s \\
-%		&= \int_G \int_G z(r) w(r^{-1}s) \iota_G(s) \d s \d r\\
-%		&= \int_G \int_G z(r) w(s) \iota_G(rs) \d s \d r\\
-%		&= \int_G z(r) \iota_G(r) \d r \int_G w(s) \iota_G(s) \d s \\
-%		&= \tilde \iota_G(z) \tilde \iota_G(w),
-%	\end{align*}
-%	so if it is well-defined and continuous on $C^*(G)$, it will be a homomorphism. Let $\pi$ be any faithful and non-degenerate representation of $A \rtimes_\alpha G$, so that its extension $\overline \pi $ to $M(A \rtimes_ \alpha G)$ is faithful aswell. Consider the composition $s \mapsto \overline{\pi} \circ \iota_G(s)$, which is a unitary valued homomorphism. It is in fact strongly continuous: Suppose that $f \in \cc(G,A)$ and $\xi \in \H_\pi$, then for $s \in G$ we see that $\overline{ \pi} (\iota_G(s)) \pi(f) \xi = \pi(\iota_G(s) f) \xi$, and it follows that $s \mapsto \overline{\pi}(\tilde \iota_G(s)) \xi$ is continuous for all $\xi \in \H$ by continuity of $s \mapsto \iota_G(s)f$ and non-degeneracy of $\pi$. Thus
-%	\begin{align}
-%		\lv \tilde \iota_G(z)\rv \leq \lv z \rv,
-%	\end{align}
-%	for all $z \in \cc(G)$, so it extends to a unitary-valued homomorphism $C^*(G) \to M(A \rtimes_\alpha G)$, which we will also denote by $\iota_G$
-%\end{proof}
-
-
-
-
+\ssection{Properties of Crossed products}
+It is well-known that for abelian, discrete and second countable groups $G$, the crossed product coincides with the reduced crossed product.
