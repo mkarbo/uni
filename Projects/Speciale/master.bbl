@@ -183,6 +183,25 @@
   \field{year}{1989}
 \endentry
 
+\entry{pedersenalgauto}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Pedersen}{P.}%
+     {Gert~K}{G.~K.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Academic press}%
+  }
+  \strng{namehash}{PGK1}
+  \strng{fullhash}{PGK1}
+  \field{sortinit}{P}
+  \field{title}{C\^{}*-algebras and their automorphism groups}
+  \field{journaltitle}{London Mathematical Society Monographs}
+  \field{year}{1979}
+\endentry
+
 \entry{williamsmorita}{book}{}
   \name{author}{2}{}{%
     {{}%

@@ -28,7 +28,7 @@ For $A= \C$, it is well known that given $f \in \cc(G,A)$ and $\varepsilon > 0$,
 
 We will use $\mathcal{D}$ to denote an arbitrary complex Banach space, and for $f \in \cc(G)$ and $x \in \mathcal{D}$, we denote by $f \otimes x$ the map $G \ni t \mapsto f(t)x \in \mathcal{D}$. It is clear that then $f \otimes x \in \cc(G,\mathcal{D})$. We introduce a 'topology' or a name for a special kind of convergence on $\cc(G,\mathcal{D})$, which will prove useful:
 \begin{definition}
-	We say that a net $\{f_i\}_{i \in I} \subseteq \cc(G,\mathcal{D})$ converges to a function $f$ on $\cc(G,\mathcal{D})$ in the \emph{inductive limit topology} if $f_i \to f$ uniformly and there is a compact set $K \subseteq G$ and $i_0 \in I$ such that for $i \geq i_0$ we have $f_i \big|_{K^c} = 0$, i.e., $\mathrm{supp} f_i \subseteq K$.
+	We say that a net $\{f_i\}_{i \in I} \subseteq \cc(G,\mathcal{D})$ converges to a function $f$ on $\cc(G,\mathcal{D})$ in the \myemph{inductive limit topology} if $f_i \to f$ uniformly and there is a compact set $K \subseteq G$ and $i_0 \in I$ such that for $i \geq i_0$ we have $f_i \big|_{K^c} = 0$, i.e., $\mathrm{supp} f_i \subseteq K$.
 \end{definition}
 
 \begin{lemma}
@@ -448,7 +448,7 @@ and hence for all $r,s \in W$ we have
 and in particular, it follows that $\tilde{\pi} \rtimes \lambda (f) \neq 0$.
 \end{proof}
 
-With the above result in hand, we can finally give meaning to a universal norm for the general convolution algebra $\cc(G,A,\alpha)$. Like in the discrete case, we define the \emph{universal norm} of $f \in \cc(G,A,\alpha)$ to be non-negative real number
+With the above result in hand, we can finally give meaning to a universal norm for the general convolution algebra $\cc(G,A,\alpha)$. Like in the discrete case, we define the \myemph{universal norm} of $f \in \cc(G,A,\alpha)$ to be non-negative real number
 \begin{align*}
 	\lv f \rv_u &:= \sup\left\{ \lv \pi \rtimes u (f)\rv \mid  \pi \rtimes u \text{ is a covariant represenation of }(A,G ,\alpha) \right\}\\
 	&\leq \lv f \rv_1,
@@ -599,10 +599,10 @@ where we've identified $\cc(G,A,\alpha) \subseteq A \rtimes_\alpha G \subseteq M
 	\end{align*}
 	which combined with \cref{cross:essnorm} shows the last and first identity. The second inequality follows from the last and  \cref{int:multstrictintegral}.
 \end{proof}
-\todo{swap around}
+\todo{swap around the above and below}
 Before we finalize the description of the representation theory of $A \rtimes_\alpha G$, we need to extend the map $\iota_G$ to $C^*(G)$, the full group $C^*$-algebra of $G$, since this will provide us with a useful characterization of a dense subset of $A \rtimes_\alpha G$, so without further ado:
 \begin{lemma}
-	There exists a group homomorphsim $\tilde \iota_G \colon C^*(G) \to M(A \rtimes_\alpha G)$ such that
+	There exists a $^*$-homomorphsim $\tilde \iota_G \colon C^*(G) \to M(A \rtimes_\alpha G)$ such that
 	\begin{align*}
 		\tilde \iota_G(z) = \int_G z(s) \iota_G(s) \d s, 
 	\end{align*}
@@ -618,11 +618,11 @@ Before we finalize the description of the representation theory of $A \rtimes_\a
 		&= \int_G z(r) \iota_G(r) \d r \int_G w(s) \iota_G(s) \d s \\
 		&= \tilde \iota_G(z) \tilde \iota_G(w),
 	\end{align*}
-	so if it is well-defined and continuous on $C^*(G)$, it will be a homomorphism. Let $\pi$ be any faithful and non-degenerate representation of $A \rtimes_\alpha G$, so that its extension $\overline \pi $ to $M(A \rtimes_ \alpha G)$ is faithful aswell. Consider the composition $s \mapsto \overline{\pi} \circ \iota_G(s)$, which is a unitary valued homomorphism. It is in fact strongly continuous: Suppose that $f \in \cc(G,A)$ and $\xi \in \H_\pi$, then for $s \in G$ we see that $\overline{ \pi} (\iota_G(s)) \pi(f) \xi = \pi(\iota_G(s) f) \xi$, and it follows that $s \mapsto \overline{\pi}(\tilde \iota_G(s)) \xi$ is continuous for all $\xi \in \H$ by continuity of $s \mapsto \iota_G(s)f$ and non-degeneracy of $\pi$. Thus
+	so if it is well-defined and continuous on $C^*(G)$, it will be a $^*$-homomorphism, since the integral also respects taking adjoints. Let $\pi$ be any faithful and non-degenerate representation of $A \rtimes_\alpha G$, so that its extension $\overline \pi $ to $M(A \rtimes_ \alpha G)$ is faithful aswell. Consider the composition $s \mapsto \overline{\pi} \circ \iota_G(s)$, which is a unitary valued homomorphism. It is in fact strongly continuous: Suppose that $f \in \cc(G,A)$ and $\xi \in \H_\pi$, then for $s \in G$ we see that $\overline{ \pi} (\iota_G(s)) \pi(f) \xi = \pi(\iota_G(s) f) \xi$, and it follows that $s \mapsto \overline{\pi}(\tilde \iota_G(s)) \xi$ is continuous for all $\xi \in \H$ by continuity of $s \mapsto \iota_G(s)f$ and non-degeneracy of $\pi$. Thus
 	\begin{align}
 		\lv \tilde \iota_G(z)\rv \leq \lv z \rv,
 	\end{align}
-	for all $z \in \cc(G)$, so it extends to a unitary-valued homomorphism $C^*(G) \to M(A \rtimes_\alpha G)$, which we will also denote by $\iota_G$
+	for all $z \in \cc(G)$, so it extends to a $^*$-homomorphism $C^*(G) \to M(A \rtimes_\alpha G)$, which we will also denote by $\iota_G$
 \end{proof}
 \begin{remark}
 In particular, by the above and \cref{int:indlmdense} we see that the set of functions of the form $\iota_A(a) \iota_G(z)$ for $a \in A$ and $z \in \cc(G)$ span a dense subset of $A \rtimes_\alpha G$. This will be useful in the following:
@@ -649,4 +649,54 @@ for all $z \in \cc(G)$ and $a \in A$, which by the above remark ensures that $L 
 \end{proof}
 
 \ssection{Properties of Crossed products}
-It is well-known that for abelian, discrete and second countable groups $G$, the crossed product coincides with the reduced crossed product.
+We want to examine some interesting properties of Crossed products, such as what happens when $G$ is amenable or how can we concretize the statespace $\mathcal{S}(A\rtimes_\alpha G)$. To do this, we will need to recall the usual definition of a positive definite function $G \to \C$ and extend it to the case of positive definite functions $G \to A^*$. The following is from \cite{pedersenalgauto}
+
+\begin{definition}
+	Suppose that $G \acts \alpha A$ is a dynamical system, then a bounded continuous (with respect to the norm on $A^*$) function $\varphi \colon G \to A^*$ is \myemph{positive definite} if any of the following equivalent statements hold:
+	\begin{enumerate}
+		\item There is a positive functional $\psi \in (A \rtimes_\alpha G)^*$ such that $\varphi(t)(a) = \psi(\iota_A(a) \iota_G(t))$ for all $t \in G$ and $a \in A$,
+		\item $\sum_{i,j} \varphi (s_i^{-1}s_j)(\alpha_{s_{i}^{-1}}(x_{i}^* x_{j})) \geq 0 $ for all finite sets $s_1,\dots,s_n \in G$ and $x_1,\dots,x_n \in A$,
+		\item $\sum_{i,j}\int_G \varphi(t)(x_{i}^*\alpha_t(x_j))(f_i^* \times f_j)(t) \d t \geq 0$ for all finite sets $f_1,\dots,f_n \in \cc(G,A,\alpha)$ and $x_1,\dots,x_n \in A$, and
+		\item $\int \varphi(t)(f^* \rtimes f)(t) \d t \geq 0$ for all $f \in \cc(G,A,\alpha)$.
+	\end{enumerate}
+\end{definition}
+For $A = \C$ and $\alpha = 1$ is the trivial representation, the above becomes the regular result of about equivalent definitions of positive definite functions on $G$, as described in \cite{folland2016fourier} or in \cite{pedersenalgauto}.
+
+The first definition is the general motivation behind the above, since we will be dealing with a class of functions arising this way, which leads to the following definition:
+\begin{definition}
+	Suppose that $G \acts \alpha A$. For each $\varphi \in (A \rtimes_\alpha G)^*$, define the map $\Gamma_\varphi \colon G \to A^*$, given by
+	\begin{align*}
+		\Gamma_\varphi(t)(a) :=\varphi(\iota_A(a) \iota_G(t)) \in \C,
+	\end{align*}
+	for $t \in G $ and $a \in A$. The set of functions $G \to A^*$ defined in this way is denoted by $B(A \rtimes_ \alpha G)$, and the set of $\Gamma_\varphi \in B(A \rtimes_ \alpha G)$ for $\varphi \geq 0$,  is denoted by $B_+(A \rtimes_\alpha G)$. We denote by $B_+^1(A \rtimes_\alpha G)$ the functions such that $\lv \Gamma_\varphi (e) \rv = 1$ and $\varphi \geq 0$.
+\end{definition}
+\begin{remark}
+	Note that we may use the fact that every non-degenerate representation of $A \rtimes_\alpha G$ is of the form $\pi \rtimes u$ for some covariant, non-degenerate representation $(\pi,u)$ of $G \acts \alpha A$ to show that for all $\varphi \in \mathcal{S}(A \rtimes_\alpha G)$ we have
+	\begin{align*}
+		\varphi(y) = \int_G \Gamma_\varphi(t)(y(t)) \d t,
+	\end{align*}
+	for all $y \in \cc(G,A,\alpha) \subseteq A \rtimes_\alpha G$: To $\varphi$ we associate a GNS triple $(\pi_\varphi,\xi, \H)$ with $\pi_{\varphi}$ non-degenerate. By the above, we see that $\pi_\varphi$ is of the form $\pi \rtimes u$ for a suitable covariant representation $(\pi,u)$, and so
+	\begin{align*}
+	\varphi(y) = \langle \pi_\varphi(y) \xi, \xi \rangle = \langle \pi \rtimes u(y) \xi, \xi\rangle &= \int_G \langle \pi(y(t)) u_t \xi, \xi \rangle \d t\\
+	&= \int_G \langle \overline{\pi \rtimes u }(\iota_A(y(t))) \overline{\pi \rtimes u } (\iota_G(t)) \xi , \xi \rangle \d t\\
+	&= \int_G \langle \overline{\pi \rtimes u} (\iota_A(y(t)) \iota_G(t)) \xi , \xi \rangle\d t\\
+	&= \int_G \varphi(\iota_A(y(t)) \iota_G(t)) \d t \\
+	&= \int_G \Gamma_\varphi (t) (y(t)) \d t.
+	\end{align*}
+	In particular, density of $\cc(G,A,\alpha) \subseteq A \rtimes_\alpha G$ implies by the above that the assignment $\mathcal{S}(A \rtimes_\alpha G) \ni \varphi \mapsto \Gamma_\varphi \in B_+^1(A \rtimes_\alpha G)$ is a bijection. Combining this with afffinity of the assignment, i.e., that $\Gamma_{\alpha \varphi + \beta \psi}= \alpha \Gamma_\varphi + \beta \Gamma_\psi$ for $\alpha, \beta \in \C$ and $\varphi, \psi \in (A \rtimes_\alpha G)^*$, this shows that the assignment also induces a bijection between $(A \rtimes_\alpha G )^*$ and $B(A \rtimes_\alpha G)$.
+	\todo{Continuity of $\Gamma_\varphi$ using cauchy-schwarz}
+\end{remark}
+
+We introduce a topology on $B_+^1(A \rtimes_\alpha G)$, which extends the topology of uniform convergence on compacta of $G$ for when $A = \C$ and the action is the trivial one:
+\begin{definition}
+	We define \myemph{the topology of weak$^*$ uniformly convergence on compacta} on $B_+^1(A \rtimes_\alpha G)$ to be the topology satisfying that a net $\Gamma_{\varphi_i} \subseteq B_+^1(A \rtimes_\alpha G)$ converges to $\Gamma_{\varphi} \in B_+^1(A \rtimes_\alpha G)$ if and only if for each $a \in A$, the restriction of the map
+	\begin{align*}
+		t \mapsto \Gamma_{f_i}(t)(a)
+	\end{align*}
+	to any compact subset $K \subseteq G$ is uniformly continuous to the map $t \mapsto \Gamma_\varphi(t)(a)$ restricted to $K$. A basis for the topology consists of the sets
+	\begin{align*}
+		V(\varepsilon, f, K, a) :=\left\{ f' \in B_+^1(A \rtimes_\alpha G) \mid | f'(t)(a) - f(t)(a) | < \varepsilon \text{ for all } t \in K \right\},
+	\end{align*}
+	where $f \in B_{+}^1(A \rtimes_\alpha G)$, $\varepsilon > 0$, $a \in A$ and $K \subseteq G$ is compact.
+\end{definition}
+
