@@ -660,7 +660,7 @@ We want to examine some interesting properties of Crossed products, such as what
 		\item $\int \varphi(t)(f^* \rtimes f)(t) \d t \geq 0$ for all $f \in \cc(G,A,\alpha)$.
 	\end{enumerate}
 \end{definition}
-For $A = \C$ and $\alpha = 1$ is the trivial representation, the above becomes the regular result of about equivalent definitions of positive definite functions on $G$, as described in \cite{folland2016fourier} or in \cite{pedersenalgauto}.
+For $A = \C$ and $\alpha = 1$ is the trivial representation, the above becomes the regular result of about equivalent definitions of positive definite functions on $G$, as described in \cite{folland2016fourier} or in \cite{pedersenalgauto} 
 
 The first definition is the general motivation behind the above, since we will be dealing with a class of functions arising this way, which leads to the following definition:
 \begin{definition}
@@ -672,9 +672,10 @@ The first definition is the general motivation behind the above, since we will b
 \end{definition}
 \begin{remark}
 	Note that we may use the fact that every non-degenerate representation of $A \rtimes_\alpha G$ is of the form $\pi \rtimes u$ for some covariant, non-degenerate representation $(\pi,u)$ of $G \acts \alpha A$ to show that for all $\varphi \in \mathcal{S}(A \rtimes_\alpha G)$ we have
-	\begin{align*}
-		\varphi(y) = \int_G \Gamma_\varphi(t)(y(t)) \d t,
-	\end{align*}
+	\begin{align}
+		\varphi(y) = \int_G \Gamma_\varphi(t)(y(t)) \d t
+		\label{eq:gammafun}
+	\end{align}
 	for all $y \in \cc(G,A,\alpha) \subseteq A \rtimes_\alpha G$: To $\varphi$ we associate a GNS triple $(\pi_\varphi,\xi, \H)$ with $\pi_{\varphi}$ non-degenerate. By the above, we see that $\pi_\varphi$ is of the form $\pi \rtimes u$ for a suitable covariant representation $(\pi,u)$, and so
 	\begin{align*}
 	\varphi(y) = \langle \pi_\varphi(y) \xi, \xi \rangle = \langle \pi \rtimes u(y) \xi, \xi\rangle &= \int_G \langle \pi(y(t)) u_t \xi, \xi \rangle \d t\\
@@ -686,8 +687,13 @@ The first definition is the general motivation behind the above, since we will b
 	In particular, density of $\cc(G,A,\alpha) \subseteq A \rtimes_\alpha G$ implies by the above that the assignment $\mathcal{S}(A \rtimes_\alpha G) \ni \varphi \mapsto \Gamma_\varphi \in B_+^1(A \rtimes_\alpha G)$ is a bijection. Combining this with afffinity of the assignment, i.e., that $\Gamma_{\alpha \varphi + \beta \psi}= \alpha \Gamma_\varphi + \beta \Gamma_\psi$ for $\alpha, \beta \in \C$ and $\varphi, \psi \in (A \rtimes_\alpha G)^*$, this shows that the assignment also induces a bijection between $(A \rtimes_\alpha G )^*$ and $B(A \rtimes_\alpha G)$.
 	\todo{Continuity of $\Gamma_\varphi$ using cauchy-schwarz}
 \end{remark}
+For $A = \C$ again and $\alpha = 1$, we may represent $G$ on $M(C^*G)$ via $t \mapsto \delta_t$, and then $\Gamma_\varphi$ becomes the map $t \mapsto \varphi(\delta_t)$ for $ \varphi \in C^*(G)^*$ which leads to the following result (see \cite[7.1.11]{pedersenalgauto}):
+\begin{proposition}
+	For $A= \C$ and $\alpha = 1$, the isomorphism above is a homeomorphism $\mathcal{S}(C^*(G))$ with the weak$^*$-topology onto the set of positive-definite functions on $G$ with $\Gamma_\varphi(e)=1$ equipped with the topology of uniform convergence on compacta.
+	\label{mult:OGstatehomeo}
+\end{proposition}
 
-We introduce a topology on $B_+^1(A \rtimes_\alpha G)$, which extends the topology of uniform convergence on compacta of $G$ for when $A = \C$ and the action is the trivial one:
+Generalizing the above, we introduce a topology on $B_+^1(A \rtimes_\alpha G)$, which extends the topology of uniform convergence on compacta of $G$ for when $A = \C$ and the action is the trivial one:
 \begin{definition}
 	We define \myemph{the topology of weak$^*$ uniformly convergence on compacta} on $B_+^1(A \rtimes_\alpha G)$ to be the topology satisfying that a net $\Gamma_{\varphi_i} \subseteq B_+^1(A \rtimes_\alpha G)$ converges to $\Gamma_{\varphi} \in B_+^1(A \rtimes_\alpha G)$ if and only if for each $a \in A$, the restriction of the map
 	\begin{align*}
@@ -700,3 +706,31 @@ We introduce a topology on $B_+^1(A \rtimes_\alpha G)$, which extends the topolo
 	where $f \in B_{+}^1(A \rtimes_\alpha G)$, $\varepsilon > 0$, $a \in A$ and $K \subseteq G$ is compact.
 \end{definition}
 
+And this allows us to generalize the above result to the general case:
+\begin{proposition}
+	The map $\mathcal{S}(A \rtimes_\alpha G) \ni \varphi \mapsto \Gamma_\varphi \in B_+^1(A \rtimes_\alpha G)$ is a homeomorphism with respect to the weak$^*$-topology on $\mathcal{S}(A \rtimes_\alpha G)$ and the topology of weak$^*$ convergence uniformly on compacta of $G$.	
+\end{proposition}
+\begin{proof}
+	We have already established the bijectivity. For the last part, suppose that we have a convergent net $(\varphi_i) \subseteq \mathcal{S}(A \rtimes _\alpha  G)$	with limit $\varphi \in \mathcal{S}(A \rtimes_\alpha G)$. We will in the following also write $\Gamma_\varphi$ to denote the extension from $A$ to $A^1$. For $x,y \in A^1$, define the map $\Psi_{\varphi}(x,y) \colon G \to \C$ by $t \mapsto \Gamma_\varphi(x^* \alpha_t(y))$. The polarization identity and linearity ensures that if for all $x \in A^1$ we have $\Psi_{\varphi_i}(x,x) \to \Psi_{\varphi}(x,x)$ in the topology of convergence uniformly on compacta then $\Psi_{\varphi_i}(x,y) \to \Psi_{\varphi}(x,y)$ as well. By \Cref{mult:OGstatehomeo}, we see that $\Psi_{\varphi_i}(x,x) \to \Psi_{\varphi}(x,x)$ in the topology of convergence uniformly on compacta of $G$, and setting $y = 1_{A^1}$, we see that $\Gamma_{\varphi_i} \to \Gamma_\varphi$.
+
+	Conversely, suppose that $\Gamma_{\varphi_i} \to \Gamma_{\varphi}$, then in particular $\varphi_{i}(f \otimes x) \to \varphi(f \otimes x)$ for all $x \in A$ and $f \in \cc(G)$ by \Cref{eq:gammafun} and hence on all of $A \rtimes_\alpha G$, since the functions $f \otimes x$ span a dense subset of $A \rtimes_\alpha G$.
+\end{proof}
+
+For discrete groups, it is well-known \todo{add cite Brown Ozawa} that if $G$ is amenable (or more generally acts amenably on $A$), i.e., has a left-invariant mean $m \in \ell^\infty(G)$, then there is only one crossed product of $G$ and any $C^*$-algebra $A$ (if $G$ is not amenable, but admits an amenable action on $A$, then the statement is true for crossed products with $A$ as well). We will see that this is true for locally compact groups as well - in particular, it is true for abelian groups, c.f. \cite{bekka2008kazhdan}
+
+Alas, we continue:
+\begin{lemma}
+	Suppose that $G \acts \alpha A$ and $(\pi,\H)$ is a cyclic representation of $A$ with respect to a set $(\xi_i) \subseteq \H$, and suppose that $\eta_j \subseteq L^2(G)$ is cyclic for the left-regular representation $\lambda$ of $G$. Then the set of $\xi_i \otimes \eta_j$ is cyclic for the representation $(\tilde \pi \rtimes \lambda, L^2(G,\H)$.
+	\label{mult:cyclic1}
+\end{lemma}
+\begin{proof}
+	We will show that the orthogonal complement of $\sum_{i,j} (A \rtimes_\alpha G)(\xi_i \otimes \eta_j)$ is $0$. Suppose that $\xi$ is orthogonal to it, then for all $i,j$ and $x \otimes f \in \cc(G,A) \subseteq A \rtimes_\alpha G$ we have
+	\begin{align*}
+		0 &= \langle \tilde \pi \rtimes \lambda (x \otimes f) (\xi_i \otimes \eta_j) , \xi \rangle_{L^2}\\
+		&= \int_G \langle \tilde \pi \rtimes \lambda (x \otimes f) (\xi_i \otimes \eta_j)(s) , \xi(s)\rangle_\H \d s \\
+		&= \int_G \int_G \langle \pi(\alpha_{t^{-1}}\left( (x \otimes f)(s) \right) \lambda_t \eta_j(s) \xi_i , \xi \rangle_\H \d t \d s\\
+		&= \int_G \int_G \langle \pi\left( \alpha_{t^{-1}} (x) \right) f(s) \eta_j(t^{-1}s) \xi_i , \xi \rangle_\H \d t\d s\\
+		&= \int_G \int_G \langle \pi( \alpha_{t^{-1}}(x) ) \xi_i , \xi \rangle_H f(s) \eta_j(t^{-1}s) \d t \d s \\
+		&= \int_G \langle \pi(\alpha_{t^{-1}}(x)) \xi_i , \xi \rangle_\H (f \ast \eta_j)(s) \d s
+	\end{align*}
+\end{proof}
