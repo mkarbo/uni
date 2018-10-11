@@ -455,7 +455,7 @@ With the above result in hand, we can finally give meaning to a universal norm f
 \end{align*}
 and it is easy to see that the assignment $\cc(G,A,\alpha) \ni f \mapsto \lv f \rv_u$ is a norm: It clearly satisfies $\lv f + g \rv_u \leq \lv f \rv_u + \lv g \rv_u$ and $\lv cf \rv_u = |c| \lv f \rv_u$ for $f,g \in \cc(G,A,\alpha)$ and $c \in \C$. If $\lv f \rv_u = 0$ then $\tilde{\pi} \rtimes \lambda (f) = 0$ for all faithful $\pi$, which implies by \Cref{cross:regfaith} that $f = 0$. Moreover, we see that $\cc(G,A,\alpha)$ is a pre $C^*$-algebra, since $\pi \rtimes u$ is a homomorphism for all covariant representations $(\pi,u)$, and thus $\lv \pi \rtimes u (f^*\ast f)\rv = \lv \pi \rtimes u(f)^* \circ \pi \rtimes u(f)\rv = \lv \pi \rtimes u (f)\rv^2$, so that $\lv f^* \ast f\rv_u = \lv f \rv_u^2$. 
 \begin{note}
-	While it indeed is not possible to take the supremum over a class, it can be shown that it is enough to take the supremum over cyclic covariant representations, which is a set. For now, we stick with the following:
+	While it indeed is not possible to take the supremum over a class, it can be shown that it is enough to take the supremum over cyclic covariant representations, which is indeed a set - this is due to the fact that every non-degenerate representation of a $^*$-algebra is a direct sum of cyclic representations, see e.g. \cite[Theorem 5.1.3]{murphy2014c}. For now, we stick with the following:
 \end{note}
 \begin{lemma}
 	Let $G \acts \alpha A$ be a $C^*$-dynamical system and let $(\pi,u)$ be a covariant representation on $\H$. Let 
@@ -534,6 +534,7 @@ Before we commence the proof of the above, we want to point out that the above t
 		G \arrow[rr, "\iota_G", hook] \arrow[rrd, "u"'] && M(A \rtimes_\alpha G) \arrow[d, "\overline{\pi \rtimes u }"] && A \arrow[ll,"\iota_A"',hook] \arrow[lld, "\pi"]\\
 		& &\mathbb{B}(\H)&&
 	\end{tikzcd}
+	\label{diag:iotacom}
 \end{equation}
 And we shall see that they are in fact a covariant pair. But first, the proof of the above lemma:
 \begin{proof}
@@ -731,6 +732,79 @@ Alas, we continue:
 		&= \int_G \int_G \langle \pi(\alpha_{t^{-1}}\left( (x \otimes f)(s) \right) \lambda_t \eta_j(s) \xi_i , \xi \rangle_\H \d t \d s\\
 		&= \int_G \int_G \langle \pi\left( \alpha_{t^{-1}} (x) \right) f(s) \eta_j(t^{-1}s) \xi_i , \xi \rangle_\H \d t\d s\\
 		&= \int_G \int_G \langle \pi( \alpha_{t^{-1}}(x) ) \xi_i , \xi \rangle_H f(s) \eta_j(t^{-1}s) \d t \d s \\
-		&= \int_G \langle \pi(\alpha_{t^{-1}}(x)) \xi_i , \xi \rangle_\H (f \ast \eta_j)(s) \d s
+		&= \int_G \langle \pi(\alpha_{t^{-1}}(x)) \xi_i , \xi \rangle_\H (f \ast \eta_j)(s) \d s.
 	\end{align*}
+	Now, let $E \subseteq G$ be any compact set. We will argue that $\xi = 0$ by showing that $\xi = 0$ on any arbitrarily large compact subset $F$ of $E$: Let $\varepsilon > 0$, and use a Banach space-valued analogue of Lusin's theorem (e.g. as in \cite[Appendix B]{williamscrossed}) to pick $F \subseteq E$ compact with $\mu(E\backslash F) < \varepsilon$ and such that $\xi|F \in \cc(F,H)$. Cyclicity of $\left\{ \eta_j \right\}_{j \in J}$ implies that the set $\{f \ast \eta_j \mid j \in J \text{ and } f \in \cc(G)\}$ spans a dense subset of $C_c(G)$ (ee e.g. \cite[Proposition 3.33]{folland2016fourier}), so
+	\begin{align*}
+		\int_{F} \langle \pi(\alpha_{t^{-1}}(x)) \xi_i , \xi(t) \rangle_H f(t) \d t = 0,
+	\end{align*}
+	for all $f \in C(F)$, from which we conclude that $F \ni t \mapsto \langle \pi(\alpha_{t^{-1}}(x)) \xi_i , \xi(t) \rangle=0$, and since $\xi_i$ was cyclic for $\pi$, this means that $\xi|_F = 0$. In particular, since $\varepsilon > 0$ was arbitrary, this means that $\xi|_E = 0$ and since $E \subseteq G$ was arbitrary, this means that $\xi = 0$, finishing the proof.
 \end{proof}
+
+We now will go through a result which will allow us to describe regular representations pointwise through approximations of states of a certain form:
+\begin{proposition}
+	Let $(A,G,\alpha)$ be a $C^*$-dynamical system. Given $\varphi \in \mathcal{S}(A)$, for each $z \in \cc(G,A,\alpha)$ such that $\varphi(z^* \ast z(e)) = 1$, there is a vector state $\tilde \varphi_z \in \mathcal{S}(A \rtimes_\alpha G)$ of the representation $(\tilde \pi_{\varphi} \rtimes \lambda , L^2(G,\H_\varphi))$ satisfying
+	\begin{align*}
+		\tilde \varphi_z (f) =\varphi\left( (z^* \ast f \ast z)(e) \right), \ \text{ for all } f \in \cc(G,A,\alpha).
+	\end{align*}
+	And the set of vector states contained in $\tilde \pi_{\varphi} \rtimes \lambda , L^2(G,\H_\varphi))$ is a norm limit of vector states of this form.
+	\label{mult:vectorstateapprox}
+\end{proposition}
+\begin{proof}
+	For $z \in \cc(G,A,\alpha)$\todo{$C_0$ or $\cc$} with $t \mapsto \lv z(t) \rv \in L^2(G)$, define
+	\begin{align*}
+		\xi_z(t) = \pi_{\varphi}\left( \alpha_{t^{-1}}(z(t) \right)\xi_\varphi,
+	\end{align*}
+	so that $\xi_z \in L^2(G,\H_\varphi)$. A few calculations then shows that 
+	\begin{align*}
+		\langle \tilde \pi_\varphi \rtimes \lambda (y^* \ast y) \xi_z , \xi_z \rangle  = \lv \tilde \pi_\varphi \rtimes \lambda(y) \xi_z \rv ^2 &= \int_G \lv  \pi_\varphi ( \alpha_{t^{-1}}(y \ast z)(t) \xi_\varphi \rv^2 \d t \\
+		&=\int_G \varphi\left( (y \ast z)^*(t) \alpha_t( (y \ast z)( t^{-1}) ) \right) \d t \\
+		&= \varphi ( \underbrace{(y  \ast z )^*}_{= z^* \ast y^*} \ast (y \ast z) (e)) = \tilde\varphi_{z} (y^* \ast y),
+	\end{align*}
+	for all $y \in \cc(G,A,\alpha)$. By linearity, it follows that $\tilde \varphi_z$ is a vector state on $A \rtimes_\alpha G$ of $(\tilde \pi \rtimes \lambda, L^2(G,\H_\varphi))$.
+	
+	For the last claim, we show that the set $\{ \xi_z \mid z \in \cc(G,A,\alpha)\}$ is dense in $L^2(G,\H_\varphi)$: Note that for $z \in \cc(G,A,\alpha)$, $f \in \cc(G)$ and $t \in G$ we have
+	\begin{align*}
+		\tilde \pi_\varphi(z(s)) (\lambda_s (f \otimes \xi_\varphi))(t) = \pi_\varphi(\alpha_t^{-1}(z(s)))f(s^{-1}t) \xi_\varphi,
+	\end{align*}
+	which implies that 
+	\begin{align*}
+		\tilde \pi_\varphi \rtimes \lambda (z) (f \otimes \xi_\varphi) (t) = \xi_{z \ast f}(t),
+	\end{align*}
+	where $z \ast f(s) = \int_G z(s) f(s^{-1}t) \d s \in A$. \todo{fix $\ast$'s} By cyclicity of $\xi_\varphi$ and \Cref{mult:cyclic1}, since $\cc(G) \subseteq L^2(G)$ is dense, we see that the set $\{ f \otimes \xi_\varphi \mid f \in \cc(G)\}$ is cyclic for $\tilde \pi_\varphi \rtimes \lambda$, which finishes the proof.
+\end{proof}
+
+
+Recall the definition of the universal representation $(\pi_u,\H_u)$ of a $C^*$-algebra $A$. The induced representation $\mathrm{Ind}(\pi_u)$ gives rise to the reduced crossed product of a $C^*$-dynamical system $(A,G,\alpha)$:
+\begin{definition}
+	For a $C^*$-dynamical system $(A,G,\alpha)$, we define the \myemph{reduced crossed product} of $G$ and $A$ to be the algebra
+	\begin{align*}
+		A \rtimes_{\alpha,r} G := \overline{\tilde \pi_u \rtimes \lambda (\cc(G,A,\alpha))},
+	\end{align*}
+	or equivalently, as the image of $A \rtimes_\alpha G$ of the extension of $\tilde \pi_u \rtimes \lambda$ to $A \rtimes_\alpha G$. 
+\end{definition}
+
+We need define yet another subset of functionals on $A \rtimes_\alpha G$, one which closely resembles vector states of $\tilde \pi_u \rtimes \lambda$:
+\begin{definition}
+	The set of functionals $\psi \in (A \rtimes_\alpha G)^*$ of the form
+	\begin{align*}
+		\psi(x) = \sum_{i} \langle \tilde \pi_u \rtimes \lambda (x) \xi_i , \eta_i\rangle,
+	\end{align*}
+	where $(\xi_i)\subseteq L^2(G,\H_u)$ and $(\eta_i) \subseteq L^2(G,\H_u)$ have finite $\ell^2$-norm, i.e., $ \sum_i \lv \eta_i\rv^2 < \infty$ and $\sum_{i} \lv \xi_i \rv^2 < \infty$, is easily seen to be a norm-closed subspace of $(A \rtimes_\alpha G)^*$. We define the set 
+	\begin{align*}
+		A(A \rtimes_\alpha G) := \{\Gamma_\psi \in B(A \rtimes_\alpha G) \mid \psi(x) = \sum_{i} \langle \tilde \pi_u \rtimes \lambda(x) \xi_i , \eta_i \rangle , \ (\xi_i), \ (\eta_i) \text{ is } \ell^2-\text{summable}\}.
+	\end{align*}
+\end{definition}
+\begin{remark}
+	It is an easy consequence of the commutativity of \Cref{diag:iotacom} that if $\varphi \in \mathcal{S}(A)$ satisfies the condition of \Cref{mult:vectorstateapprox} with respect to some $z \in \cc(G,A,\alpha)$, then 
+\begin{align*}
+	\Gamma_{\tilde \varphi_z}(t)(x) = \varphi_z(\iota_A(x)  \iota_G(t)) = \langle \overline{\pi \rtimes \lambda(\iota_A(x) \iota_G(t))} \xi_z , \xi_z\rangle & = \int_G \varphi(z^*(s)\alpha_s(x)\alpha_{st}(z\left( st \right)^{-1})) \d s \\
+	&= \varphi\left( \int_G z^*(s) \alpha_s(x) \alpha_{st}(z(st)^{-1})\d s \right),
+\end{align*}
+and in particular, we have $\Gamma_{\tilde \varphi_z} \in A_+(A \rtimes_\alpha G)$. Another consequence of \Cref{mult:vectorstateapprox} is that every function in $A_+(A \rtimes_\alpha G)$ is a norm limit of linear combinations of functions $\Gamma_{\tilde \varphi_z}$, for states $\varphi \in \mathcal{S}(A)$. This is because $\pi_u$ is the direct sum of cyclic representations of $A$.
+\end{remark}
+For a representation $(\pi,\H)$ of $A$, we will also use $\tilde \pi \rtimes \lambda$ to denote the extension from $\cc(G,A,\alpha)\subseteq A \rtimes_{\alpha,r}G$ to all of $A \rtimes_{\alpha, r} G$. With this, we may prove the following essential theorem in our description of the reduced crossed product:
+\begin{theorem}
+	
+	\label{mult:reducedfaithful}
+\end{theorem}<++>

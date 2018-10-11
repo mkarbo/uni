@@ -18,6 +18,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.3}Properties of Crossed products}{38}{section.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{41}{section*.10}
+\contentsline {chapter}{Bibliography}{43}{section*.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Alphabetical Index}{42}{section*.11}
+\contentsline {chapter}{Alphabetical Index}{44}{section*.13}
