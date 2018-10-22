@@ -803,8 +803,29 @@ We need define yet another subset of functionals on $A \rtimes_\alpha G$, one wh
 \end{align*}
 and in particular, we have $\Gamma_{\tilde \varphi_z} \in A_+(A \rtimes_\alpha G)$. Another consequence of \Cref{mult:vectorstateapprox} is that every function in $A_+(A \rtimes_\alpha G)$ is a norm limit of linear combinations of functions $\Gamma_{\tilde \varphi_z}$, for states $\varphi \in \mathcal{S}(A)$. This is because $\pi_u$ is the direct sum of cyclic representations of $A$.
 \end{remark}
-For a representation $(\pi,\H)$ of $A$, we will also use $\tilde \pi \rtimes \lambda$ to denote the extension from $\cc(G,A,\alpha)\subseteq A \rtimes_{\alpha,r}G$ to all of $A \rtimes_{\alpha, r} G$. With this, we may prove the following essential theorem in our description of the reduced crossed product:
+For a representation $(\pi,\H)$ of $A$, we will also use $\tilde \pi \rtimes \lambda$ to denote the extension from $\cc(G,A,\alpha)\subseteq A \rtimes_{\alpha,r}G$ to all of $A \rtimes_{\alpha, r} G$ (doable, since the norm $\pi_u$ is the universal representation of $A$, hence the norm will be bounded by it). With this, we may prove the following essential theorem in our description of the reduced crossed product: \todo{rephrase}
 \begin{theorem}
-	
+	For a $C^*$-dynamical system $(A,G,\alpha)$, given any faithful representation $(\pi,\H)$ of $A$, it holds that the associated integrated form $\tilde \pi \rtimes \lambda$ will be faithful on $A \rtimes_{\alpha, r} G$.
 	\label{mult:reducedfaithful}
-\end{theorem}<++>
+\end{theorem}
+\begin{proof}
+	For this particular proof, we will let $\tilde \pi \rtimes_r \lambda$ denote the corresponding representation of $A \rtimes_{\alpha,r}G$.
+
+	We will show that $\tilde \pi_u \rtimes_r \lambda$ is \myemph{weakly contained} in $\tilde \pi \rtimes_r \lambda$ for all faithful representations $\pi$ of $A$, i.e., that $\ker \tilde \pi \rtimes_r \lambda \subseteq \ker \pi_u \rtimes_r \lambda = 0$. By \cite[80]{dixmier1969c}, this is equivalent to showing that the set of vector states of $\tilde \pi \rtimes_r \lambda$ is weak$^*$ dense in the set of states in $\tilde \pi_u \rtimes_r \lambda$.
+
+	Let $E$ be the set of states contained in $(\pi,\H)$. For now, let $\sigma$ denote the surjective $*$-representation $A \rtimes_\alpha G \to A \rtimes_{\alpha,r}G$. We then let $F$ denote set of functions
+	\begin{align*}
+		F = \left\{  \Gamma_\psi \in A_+^1(A\rtimes_\alpha G) \mid \Gamma_\psi = \Gamma_{\varphi \circ \sigma} \text{ for some state } \varphi \text{ contained in } \tilde \pi \rtimes_r \lambda \right\}
+	\end{align*}
+
+	Note that the set of vector states in $\tilde \pi_u \rtimes_r \lambda$ is exactly the set of functionals which give rise to $A_+^1(A \rtimes_\alpha G)$, by definition and the fact that we may view $A \rtimes_{\alpha,r} G$ as the image of $A \rtimes_\alpha G$ under $\tilde \pi_u \rtimes \lambda$.
+
+	Hence if $F \subseteq A_+^1(A \rtimes_\alpha G)$ is dense in the topology ofweak$^*$ convergence uniformly on compacta, then, by the isomorphism between the statespace of $A \rtimes_\alpha G$ and $B(A \rtimes_\alpha G)$, we be done.
+
+	By the above remark and \Cref{mult:vectorstateapprox}, it is enough to consider approximations of the functions of the form
+	\begin{align*}
+		\Gamma_{\tilde \varphi_z}(t) (x) =\varphi\left( \int_G z^*(s) \alpha_s(x) \alpha_{st}(z\left( (st)^{-1} \right)\d s \right),
+	\end{align*}
+	for suitable $\varphi \in \mathcal{S}(A)$ and $z \in \cc(G,A,\alpha)$, i.e., with $\varphi(z^* \ast z(e)) = 1$, since they span a dense subset of $A_+^1(A \rtimes_\alpha G)$, so let such $\varphi$ and $z$ be given. By density of $E$, pick a convergent net $\varphi_i \to \varphi$ in the weak$^*$-topology. This implies that $\Gamma_{\tilde {\varphi_i}_z}(t) \to \Gamma_{\tilde \varphi_z}(t)$ weak$^*$, uniformly on compacta of $G$. Since $\varphi_i \in E$, of the corresponding $(\pi_{\varphi_i},H_{\varphi_i})$ corresponds to a sub-representation of $(\pi,H)$, so $\Gamma_{\tilde {\varphi_i}_z} \in F$, finishing the proof.
+\end{proof}
+In particular, this means that we may always consider $A \rtimes_{\alpha,r}G$ as the completion of $\cc(G,A,\alpha)$ under the regular representation induced by a faithful representation of $A$.

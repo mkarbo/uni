@@ -120,6 +120,24 @@
   \field{year}{2008}
 \endentry
 
+\entry{dixmier1969c}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Dixmier}{D.}%
+     {Jacques}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {S. l.]: Gauthier-Villars}%
+  }
+  \strng{namehash}{DJ1}
+  \strng{fullhash}{DJ1}
+  \field{sortinit}{D}
+  \field{title}{Les C* algLbres et leurs repr{\O}sentations}
+  \field{year}{1969}
+\endentry
+
 \entry{folland2016fourier}{book}{}
   \name{author}{1}{}{%
     {{}%
