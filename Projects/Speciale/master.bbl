@@ -249,6 +249,28 @@
   \field{year}{1979}
 \endentry
 
+\entry{raeburn1988crossed}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Raeburn}{R.}%
+     {Iain}{I.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Cambridge University Press}%
+  }
+  \strng{namehash}{RI1}
+  \strng{fullhash}{RI1}
+  \field{sortinit}{R}
+  \field{number}{2}
+  \field{pages}{321\bibrangedash 330}
+  \field{title}{On crossed products and Takai duality}
+  \field{volume}{31}
+  \field{journaltitle}{Proceedings of the Edinburgh Mathematical Society}
+  \field{year}{1988}
+\endentry
+
 \entry{williamsmorita}{book}{}
   \name{author}{2}{}{%
     {{}%
@@ -308,6 +330,28 @@
   \field{sortinit}{S}
   \field{title}{Measures, Integrals and Martingales}
   \field{year}{2017}
+\endentry
+
+\entry{takai1975duality}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Takai}{T.}%
+     {Hiroshi}{H.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Academic Press}%
+  }
+  \strng{namehash}{TH1}
+  \strng{fullhash}{TH1}
+  \field{sortinit}{T}
+  \field{number}{1}
+  \field{pages}{25\bibrangedash 39}
+  \field{title}{On a duality for crossed products of $C^*$-algebras}
+  \field{volume}{19}
+  \field{journaltitle}{Journal of Functional Analysis}
+  \field{year}{1975}
 \endentry
 
 \entry{williamscrossed}{book}{}

@@ -828,4 +828,103 @@ For a representation $(\pi,\H)$ of $A$, we will also use $\tilde \pi \rtimes \la
 	\end{align*}
 	for suitable $\varphi \in \mathcal{S}(A)$ and $z \in \cc(G,A,\alpha)$, i.e., with $\varphi(z^* \ast z(e)) = 1$, since they span a dense subset of $A_+^1(A \rtimes_\alpha G)$, so let such $\varphi$ and $z$ be given. By density of $E$, pick a convergent net $\varphi_i \to \varphi$ in the weak$^*$-topology. This implies that $\Gamma_{\tilde {\varphi_i}_z}(t) \to \Gamma_{\tilde \varphi_z}(t)$ weak$^*$, uniformly on compacta of $G$. Since $\varphi_i \in E$, of the corresponding $(\pi_{\varphi_i},H_{\varphi_i})$ corresponds to a sub-representation of $(\pi,H)$, so $\Gamma_{\tilde {\varphi_i}_z} \in F$, finishing the proof.
 \end{proof}
-In particular, this means that we may always consider $A \rtimes_{\alpha,r}G$ as the completion of $\cc(G,A,\alpha)$ under the regular representation induced by a faithful representation of $A$.
+In particular, this means that we may always consider $A \rtimes_{\alpha,r}G$ as the completion of $\cc(G,A,\alpha)$ under the regular representation induced by a faithful representation of $A$, which will be convenient, as we shall see, for in a large case of groups there is only one crossed product. The following useful lemma can be found in \cite[Lemma 7.7.6]{pedersenalgauto}:
+\begin{lemma}
+	If $\Gamma_\varphi \in B_+^1(A \rtimes_\alpha G)$ has compact support, then $\Gamma_\varphi \in A_+^1(A \rtimes_\alpha G)$
+	\label{crossed:compactposdef}
+\end{lemma}
+
+We recall one of the several equivalent definition of amenability for locally compact groups $G$:
+\begin{definition}
+	A group $G$ is \myemph{amenable} if there is a net $(f_i) \subseteq L^2(G)$ such that $(f_ \rtimes \tilde f_i)$ converges uniformly on compacta of $G$ to $1$, where $\tilde f (t) = \overline f(t^{-1})$ for $f \in L^2(G)$ and $t \in G$.
+\end{definition}
+
+With this, we obtain the following:
+\begin{theorem}
+	If $G$ is amenable, then whenever $G \acts \alpha A$, we have $A \rtimes_\alpha G \cong A \rtimes_{\alpha,r}G$.
+	\label{cross:amenable}
+\end{theorem}
+\begin{proof}
+	By applying the above to $G \acts \C$ as the trivial action, we obtain a net $\Psi_i \in B_{+}(\C \rtimes_\alpha G)$ with compact support convergin uniformly on compacta to $1$, by amenability of $G$ and \cite[Lemma 7.2.4]{pedersenalgauto}. It is easy to see that the pointwise product $\Psi_i \Gamma_\varphi \in B_+^1(A \rtimes_\alpha G)$ for all $\varphi \in \mathcal{S}(A \rtimes_\alpha G)$, and since $\Psi_i$ has compact support, we see that $\Psi_i \Gamma_\varphi \in A_+(A \rtimes_\alpha G)$ and $\Psi_i \Gamma_\varphi \to \Gamma_\varphi$ in the topology of weak$^*$ uniformly convergence on compacta of $G$. Hence, $A_+(A \rtimes_\alpha G) \subseteq B_+(A \rtimes_\alpha G)$ is dense. In particular, this implies that if $\pi$ denotes the universal faithful representation of $A \rtimes_\alpha G$, then $\ker \tilde \pi_u \rtimes \lambda \subseteq \ker \pi = 0$, by weak containment (\cite[80]{dixmier1969c}), so $A \rtimes_\alpha G \cong \tilde \pi_u \rtimes \lambda( A \rtimes_\alpha G) = A \rtimes_{\alpha,r}G$.
+\end{proof}
+Combining the above , we obtain
+\begin{corollary}
+	If $G \acts \alpha A$ with $G$ amenable, then $A \rtimes_\alpha G = \overline{\tilde \pi \rtimes \lambda (\cc(G,A,\alpha))}$ for any faithful representation $\pi$ of $A$.
+\end{corollary}
+The above allows us to concretely work with the crossed products of a large class of groups which include finite groups, abelian groups, compact groups and others. This will be very useful.
+
+For a fixed group $G$, the crossed product constructions described above are in fact functors from the category of $G$-algebras $A$ to the category of $C^*$-algebras, where the objects in $G$-algebras are $C^*$-algebras $A$ equipped with an action $G \acts \alpha A$ and morphism given by $G$-equivariant $*$-morphism, i.e., $\varphi \colon A \to B$ for $G$-algebras is a morphism if the diagram
+
+\begin{equation}
+	\begin{tikzcd}
+		A \arrow[r, "\varphi"] \arrow[d, "\alpha_g"'] & B  \arrow[d, "\beta_g"]\\
+		A \arrow[r, "\varphi"'] & B
+	\end{tikzcd}
+\end{equation}
+commutes for every $g \in G$. This can bee seen by the following:
+\begin{proposition}
+	Suppose that $G \acts \alpha A$ and $G \acts \beta B$ and $\varphi \colon A \to B$ is a $G$-equivariant morphism. Then the map $\tilde \varphi \colon \cc(G,A,\alpha) \to \cc(G,B,\beta)$, $\tilde \varphi (f)(s) := \varphi(f(s))$, extends to a $*$-morphism $A \rtimes_\alpha G \to B \rtimes_\beta G$.
+\end{proposition}
+\begin{proof}
+	It is clear that $\tilde \varphi$ is a $*$-morphism. To see that it extends, we show that $\lv \tilde \varphi(f) \rv \leq \lv f \rv$, where the norms comes from the embeddings $\cc(G,A,\alpha) \subseteq A \rtimes_\alpha G$ and $\cc(G,B,\beta) \subseteq B \rtimes_\beta G$. For this, let $(\pi,u)$ be a covariant representation of $G \acts \beta B$. Then, clearly $(\pi \circ \varphi , u)$ is a covariant representation of $G \acts \alpha A$, and moreover, if $f \in \cc(G,A,\alpha)$, then
+	\begin{align*}
+		(\pi \circ \varphi) \rtimes u(f) = \int_G \pi(\varphi(f(s))) u_s \d s = \int _G \pi (\tilde \varphi(f)(s)) u_s \d s  =  \pi \rtimes u \circ \tilde \varphi (f),
+	\end{align*}
+	so $\pi \circ \varphi \rtimes u = \pi \rtimes u \circ \tilde \varphi$, and hence 
+	\begin{align*}
+		\lv \pi \rtimes u \circ \tilde \varphi(f)\rv = \lv \pi \circ \varphi \rtimes u (f) \rv \leq \lv f \rv,
+	\end{align*}
+	since the integrated form of a covariant representation is norm decreasing. Hence, since the norm of $ \tilde \varphi(f)$ is the supremum of integrated forms of covariant representations of $G \acts \beta B$, we see that $\tilde \varphi$ extends to a morphism $A \rtimes_\alpha G \to B \rtimes_\beta G$.
+\end{proof}
+The above proof applies to the case of the reduced crossed product. This is easily seen by applying the above proof to regular representations $(\tilde \pi, \lambda)$ rather than any covariant representation. The remaining properties for a functor are easily verified, i.e., preserves composition and sends the identity map to the identity map.
+
+\sssection{Takai Dualty}
+In the 70's, Hiroshi Takai published a paper (see \cite{takai1975duality}) showing that the crossed product construction in a way captures the duality of locally compact abelian groups, in the sense of $\hat{\hat G} \cong G$, where $\hat G$ denotes the dual group of $G$. He showed that taking the crossed product twice with $G$ (in the sense that $\hat G \acts {\hat \alpha} A \rtimes_\alpha G$), one obtains an isomorphism 
+\begin{align*}
+	A \otimes_{\max} \mathbb{K}(L^2(G)) \cong (A \rtimes_\alpha G) \rtimes_{\hat \alpha} \hat G,
+\end{align*}
+and in fact that both of these are $G$-dynamical systems and the isomorphism is covariant. \todo{revisit if really raeburn or if pedersen} We will follow Raeburns take on this result, found in \cite{raeburn1988crossed}, since it is more aligned with the results we've developed so far.
+
+For this, we first show that the left-hand side is a $C*$-dynamical system for any (also non-abelian) locally compact group $G$:
+\begin{proposition}
+	Let $G \acts \alpha A$ and let $\rho$ denote the right-regular representation of $G$ on $L^2(G)$, $\rho_t f(s) = f(st) \Delta(t)^{\frac12}$. Then $A \otimes \mathbb{K}(L^2(G)), G, \alpha \otimes \mathrm{Ad} \rho)$ is a $C^*$-dynamical system.
+\end{proposition}
+\begin{proof}
+	The proof relies on the fact that \todo{7.5.1 proof} in a Von Neumann algebra $\mathcal{W}$ equipped with a strongly continuous action $G \acts \alpha \mathcal{W}$, the set of elements $x \in \mathcal{W}$ such that $t \mapsto \alpha_t(x)$ is norm-continuous forms a $C^*$-algebra which is invariant under $G$, see e.g., \cite[Lemma 7.5.1]{pedersenalgauto} or \cite[Proposition III.3.2.4]{blackadar}. With this in mind, let $(\pi,u)$ be a covariant representation of $(A, G, \alpha)$ on a Hilbert space $H$ with $\pi$ faithful. Define a representation $\sigma$ of $G$ on $H \otimes L^2(G)$ by
+	\begin{align*}
+	\sigma = u \otimes \rho,
+	\end{align*}
+	so that $\sigma$ is a strongly continuous unitary representation. For $x \in A \subseteq \mathbb{B}(H)$ and $y \in \mathbb{K}(L^2(G))$ we see that
+	\begin{align*}
+		\sigma_t (x \otimes y) \sigma_t^* = \alpha_t(x) \otimes \rho_t y \rho_t^* \in A \otimes \mathbb{K}(L^2(G)) \subseteq \mathbb{B}(H \otimes L^2(G)).
+	\end{align*}
+	Hence $A \otimes \mathbb{K}(L^2(G))$ is invariant under $\mathrm{Ad}_\sigma$. Moreover, for finite dimensional $y \in \mathbb{K}(L^2(G))$, the map $t \mapsto \mathrm{Ad}_{\sigma_t}(y)$ is norm continuous. The closure of $F = \Span\{a \otimes y \mid a \in A, \ y \text{ finite rank}\}$ equals $A \otimes \mathbb{K}(L^2(G))$. The $C^*$-algebra of elements $x \in A \otimes \mathbb{K}(L^2(G))$ such that $t \mapsto \sigma_t x \sigma_t^*$ is continuous and $\mathrm{Ad}_{\sigma_s}$ invariant for all $s$ and contains $F$ hence equals $A \otimes \mathbb{K}(L^2(G))$. Letting $\alpha \otimes \mathrm{Ad}_\rho := \mathrm{Ad}_{\sigma}$, we see that $(A \otimes \mathbb{K}(L^2(G)), G , \alpha \otimes \mathrm{Ad}_\rho)$ is a $C^*$-dynamical system.
+\end{proof}
+
+The way we show Takai duality is that we will show that the $C^*$-dynamical system defined in the above proposition is covariantly isomorphic to another dynamical system, and then finally showing an isomorphism between this system and the dual system when $G$ is abelian. We show the first step in this in the following:
+\begin{theorem}
+	Let $G \acts \alpha A$. Then there is a $C^*$-dynamical system $(C_0(G,A) \rtimes_{\gamma,r} G , G, \sigma )$ where we define the actions $G \acts \gamma C_0(G,A)$ and $G \acts \sigma C_0(G,A)$ by
+	\begin{align*}
+		\gamma_s (f)(t) = f(ts) \text{ and } \sigma_s f(t) = \alpha_s(f(s^{-1}t)),
+	\end{align*}
+	for $f \in C_0(G,A)$ and $s,t \in G$. This system is covariantly isomorphic to $(A \otimes \mathbb{K}(L^2(G)), G , \alpha \otimes \mathrm{Ad}_\rho)$.
+\end{theorem}
+\begin{proof}
+	\todo{Add as example the dynamical systems} Represent $A$ faithfully on a Hilbert space $\H$, and define a representation of $C_0(G,A)$ on $L^2(G,A)$ as multiplication operators, i.e.,
+	\begin{align*}
+		\pi(f) \xi (s) = f(s)\xi(s), 
+	\end{align*}
+	for $f \in C_0(G,A)$, $\xi \in L^2(G,A)$ and $s \in G$. This is easily seen to be a faithful representation, so by \Cref{mult:reducedfaithful} we obtain a faithful representation $\tilde \pi \rtimes \lambda$ of $C_0(G,A) \rtimes_{\gamma,r} G$ on $L^2(G,L^2(G,H)) \cong L^2(G \times G, H)$. Consider $\cc(G \times G,A) \subseteq \cc(G,C_0(G,A))$, then for $z \in \cc(G \times G, A)$, we see that
+	\begin{align*}
+		\tilde \pi \rtimes \lambda (z) \xi(s,t) &= \int_G \alpha_{s^{-1}}(z(r,st)) \xi(r^{-1}s,t) \d r.
+	\end{align*}
+	Define the operator $w$ on $L^2(G\times G,H)$ by
+	\begin{align*}
+		w \xi(s,t) \xi(st,t) \Delta(t)^{\frac12},
+	\end{align*}
+	then $w$ is a unitary operator with adjoint $w^* \xi(s,t) = \xi(st^{-1},t) \Delta(t)^{-\frac12}$. We then calculate for $z \in \cc(G \times G, A)$
+	\begin{align*}
+		w^*  \tilde \pi \rtimes \lambda (z) w (\xi) (s,t) = \int_G \alpha_{ts^{-1}} (z(r,s)) w \xi(r^{-1} s t^{-1},t) \d r \Delta(t)^{-\frac12} = \int_G \alpha_{ts^{-1}}(z(r,s)) \xi(r^{-1}s,t) \d r,
+	\end{align*}
+	for all $\xi \in L^2(G \times G, H)$ and $s,t \in G$.
+\end{proof}
