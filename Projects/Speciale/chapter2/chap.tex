@@ -926,5 +926,37 @@ The way we show Takai duality is that we will show that the $C^*$-dynamical syst
 	\begin{align*}
 		w^*  \tilde \pi \rtimes \lambda (z) w (\xi) (s,t) = \int_G \alpha_{ts^{-1}} (z(r,s)) w \xi(r^{-1} s t^{-1},t) \d r \Delta(t)^{-\frac12} = \int_G \alpha_{ts^{-1}}(z(r,s)) \xi(r^{-1}s,t) \d r,
 	\end{align*}
-	for all $\xi \in L^2(G \times G, H)$ and $s,t \in G$.
+	for all $\xi \in L^2(G \times G, H)$ and $s,t \in G$. Is is not hard to see that any function $f \in \cc(G \times G , A)$ can be approximated by linear combinations of maps of the form $(s,t) \mapsto z(s)g(t)\alpha_t(x)$ for $z,g \in \cc(G)$ and $a \in A$, and hence also by functions of the form
+	\begin{align*}
+		f(s,t) = \alpha_{t}(x) z(s^{-1}t)g(t) \Delta(s^{-1}t),
+	\end{align*}
+	for fixed $z,g \in \cc(G)$ and $x \in A$. Applying $\mathrm{Ad}_{w}$ to this we get
+	\begin{align*}
+		w^* \tilde \pi \rtimes \lambda f w(\xi)(s,t) = \int_G \alpha_{ts^{-1}}(f(r,s)) \xi(r^{-1}s,t) \d r &= \int_G \alpha_{ts^{-1}}(\alpha_s(x) z(r^{-1}s)g(s) \Delta(r^{-1}s)) \xi(r^{-1}s,t) \d r \\
+		&= \int_G \alpha_t(x) z(r^{-1}s) g(s) \xi(r^{-1}s,t) \Delta(r^{-1}s)  \d r\\
+		&= \alpha_t(x) g(s) \int_G z(r) \xi(r,t) \d r.
+	\end{align*}
+	Consider the faithful representation $\check \pi$ of $A$ on $L^2(G,H)$ by $\check \pi(x) \xi(s) = \alpha_s(x) \xi(s)$. Given $K \in \mathbb{K}(H)$ and $x \in A$, if $U$ denotes the unitary operator identifying $L^2(G) \otimes L^2(G,H)$ with $L^2(G, L^2(G, H)$, then for $h \in L^2(G)$ and $\xi \in L^2(G,H)$ we see that
+	\begin{align*}
+		U (\check \pi(x) \otimes K (h \otimes \xi))(s)(t) = \alpha_s(x) h(s) K \xi(t),
+	\end{align*}
+	so after identifying $L^2(G,L^2(G,H))$ with $L^2(G \times G,H)$, we see that for $f$ as above:
+	\begin{align*}
+		w^* \tilde \pi \rtimes \lambda (f) w  = \check \pi \otimes p_{zg} \in A \otimes \mathbb{K}(L^2(G)) \subseteq \mathbb{B}(L^2(G \times G, H)),
+	\end{align*}
+	where is $p_{z,g}$ the rank-one operator $\eta \mapsto \langle \eta , \overline z \rangle g$, $\eta \in L^2(G)$.
+	In particular, this implies that 
+	\begin{align*}
+		A \otimes \mathbb{K}(L^2(G)) \subseteq w^* (\tilde \pi \rtimes \lambda (C_0(G,A) \rtimes_{\lambda, r} G))w,
+	\end{align*}
+	since $\check \pi$ is faithful and $\mathbb{K}(L^2(G))$ is the closure of the span of rank-one operators. Since we may approximate $cc(G \times G, A)$ by linear combinations of forms $(s,t) \ \alpha_s(x)  f(r^{-1}s)g(s) \Delta(r^{-1}s)$, and $\cc(G \times G, A)$ is dense in $C_0(G,A) \rtimes_{\lambda, r}G$, the above inclusion is an equality, so the two algebras are spatially isomorphic with respect to $w$.
+
+	Denote also by $\sigma_t$ the representation of $G$ on $\cc(G,C_0(G,A))$, $\sigma_t f(x)(y) = f(s)(yt)$. Then $\sigma_t$ extends to all of $C_0(G,A) \rtimes_{\lambda, r}G$ by continuity and denseness. If $f$ is as above, then
+	\begin{align*}
+		w^* \tilde \pi \rtimes \lambda \sigma_r (f) w \xi(s,t) &= \alpha_{tr}(x)\underbrace{g(sr) \Delta(r)}_{= \rho_r g(s) \Delta(r) ^{\frac12}} \int_G \underbrace{z(qr)}_{= \rho_{r}z(q) \Delta(r)^{-\frac12}} \xi(q,t) \d q\\
+		&= \alpha_{t} ( \alpha_r(x)) \rho_{r} g(s) \int_G \rho_r z(q) \xi(q,t) \d q\\ 
+		&= ( \check \pi(\alpha_r(x)) \otimes \rho_r p_{z,g} \rho_{r}^*) \xi(s,t)\\
+		&= ( \check \pi(\alpha_r(x)) \otimes \mathrm{Ad}_{\rho_r}p_{z,g}) \xi(s,t),
+	\end{align*}
+	In particular, after identifying $\check \pi (A) $ with $A$, we see that $(C_0(G,A) \rtimes_{\lambda , r}, G , \sigma)$ is covariantly isomorphic to $(A \otimes \mathbb{K}(L^2(G)), G, \alpha \otimes \mathrm{Ad}_{\sigma})$ via $w$.
 \end{proof}
