@@ -1,9 +1,10 @@
 \documentclass[10pt,twoside,openany,final]{memoir}
 \usepackage[utf8]{inputenc}
 \usepackage[pass]{geometry}
-\usepackage[T1]{fontenc}
+%\usepackage[T1]{fontenc}
 \usepackage[english]{babel}
 \usepackage{amsmath}
+\usepackage{showkeys}
 \usepackage{amsfonts}
 \usepackage{amsthm}
 \usepackage{amssymb} 
@@ -29,6 +30,17 @@
 \usepackage{faktor}
 \usepackage{imakeidx} 
 \usepackage{xfrac}
+
+\makeatletter
+	\def\SK@def\Cref#1{\SK@\SK@@ref{#1}\SK@Cref{#1}}%
+\makeatother
+
+%\usepackage{courier}
+%\renewcommand*\familydefault{\ttdefault} %% Only if the base font of the document is to be typewriter style
+
+\usepackage[T1]{fontenc}
+
+%\renewcommand{\ttdefault}{pcr}
 
 %\usepackage{mathabx} 
 
@@ -79,6 +91,7 @@
 {\newline}{}
 \theoremstyle{definition}
 \newtheorem{theorem}{Theorem}[chapter]
+\numberwithin{theorem}{section}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
@@ -207,3 +220,8 @@
 
 
 \newcommand{\myemph}[1]{\index{#1}\emph{#1}}%
+
+
+
+
+\defbibheading{bibnumbered}[\refname]{\chapter{#1}}

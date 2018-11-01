@@ -3,7 +3,7 @@
 \bibliography{bibtest}
 
 \begin{document}
-
+\ttfamily
 %\emergencystretch=4em
 \input{frontpage/frontpage}
 \frontmatter
@@ -26,7 +26,8 @@
 
 %\input{chapter3/chap}
 \backmatter
-\printbibliography
+\printbibheading[title = {Bibliography}, heading = bibnumbered]
+\printbibliography[heading=none]
 %\appendix
 %\input{appendix/appendix}
 \printindex
