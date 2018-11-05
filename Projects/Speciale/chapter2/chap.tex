@@ -907,9 +907,10 @@ The way we show Takai duality is that we will show that the $C^*$-dynamical syst
 \begin{theorem}
 	Let $G \acts \alpha A$. Then there is a $C^*$-dynamical system $(C_0(G,A) \rtimes_{\gamma,r} G , G, \sigma )$ where we define the actions $G \acts \gamma C_0(G,A)$ and $G \acts \sigma C_0(G,A)$ by
 	\begin{align*}
-		\gamma_s (f)(t) = f(ts) \text{ and } \sigma_s f(t) = \alpha_s(f(s^{-1}t)),
+		\sigma_s (f)(t) = f(ts) \text{ and } \gamma_s f(t) = \alpha_s(f(s^{-1}t)),
 	\end{align*}
 	for $f \in C_0(G,A)$ and $s,t \in G$. This system is covariantly isomorphic to $(A \otimes \mathbb{K}(L^2(G)), G , \alpha \otimes \mathrm{Ad}_\rho)$.
+	\label{takai:compactiso}
 \end{theorem}
 \begin{proof}
 	\todo{Add as example the dynamical systems} Represent $A$ faithfully on a Hilbert space $\H$, and define a representation of $C_0(G,A)$ on $L^2(G,A)$ as multiplication operators, i.e.,
@@ -1089,7 +1090,7 @@ We are now ready to define the $C^*$-dynamical system which we will show is cova
 	\begin{align*}
 		\beta_t f(\chi) = \overline{ ( t, \chi)} \alpha_t(f(\chi)),	
 	\end{align*}
-	for $f \in \cc(\hat G, A, \iota)$ and $\chi \in \hat G$. Then $\beta_t$ extends to an automorphism of $A \rtimes_{\iota} \hat G$ such $t \mapsto \beta_t$ is an action of $G$ on $A \rtimes_\iota \hat G$. With this $\beta$, we have a covariant isomorphism $(A \rtimes_\iota \hat G) \rtimes_\beta G \cong (A \rtimes_\alpha G) \rtimes_{\hat \alpha} \hat G$.
+	for $f \in \cc(\hat G, A, \iota)$ and $\chi \in \hat G$. Then $\beta_t$ extends to an automorphism of $A \rtimes_{\iota} \hat G$ such $t \mapsto \beta_t$ is an action of $G$ on $A \rtimes_\iota \hat G$. With this $\beta$, we have a covariant isomorphism $(A \rtimes_\iota \hat G) \rtimes_\beta G \cong (A \rtimes_\alpha G) \rtimes_{\hat \alpha} \hat G$. \todo{reformulate, you don't show covariant isomorphism}
 \end{proposition}
 \begin{proof}
 Define $\gamma_t \colon C_0(G,A) \to C_0(G,A)$ to be the diagonal action
@@ -1114,17 +1115,65 @@ and similarly for $y \in \cc(G \times \hat G, A)$ and $\eta \in L^2(G \times \ha
 \begin{align*}
 	y \eta(\chi,t) = \int_{\hat G} \int_G \alpha_{-t}(y(\sigma,s)) \xi(\chi-\sigma, t-s) \overline{(t,\sigma)} \d s \d \sigma,
 \end{align*}
-for all $\chi \in \hat G$ and $t \in G$. Define isomorphism $\Phi \colon \cc(G \times \hat G, A) \to \cc(\hat G\times G , A)$ by
+for all $\chi \in \hat G$ and $t \in G$. Define isomorphism $\Phi \colon \cc(G \times \hat G, A) \to \cc(\hat G\times G , A)$ and the isometry $w \colon L^2(G \times \hat G, H) \to L^2(\hat G \times G, H)$ by
 \begin{align*}
-	
+	\Phi(y)(\chi,t) = (t,\chi) y(t,\chi) \text{ and } w \xi(\chi,t) = \overline{(t,\chi)} \xi(t,\chi)	
 \end{align*}
-
-Note that for $\sigma, \chi \in \hat G$ and $s,t \in G$ we have
+so that
+\begin{align*}
+	\Phi^{-1}(x)(t,\chi) = \overline{(t,\chi)} x(\chi,t) \text{ and } w^* \eta(t,\chi) = (t,\chi) \eta(\chi,t)	
+\end{align*}
+for $t \in G$, $\chi \in \hat G$. Note now that for $\sigma, \chi \in \hat G$ and $s,t \in G$ we have
 \begin{align*}
 	(s,\sigma) \overline{(t-s,\chi- \sigma)}\overline{(s,\sigma)} = \overline{(t,\chi)}(t,\sigma),
 \end{align*}
 hence for $x \in \cc(G \times \hat G, A)$ and $\xi \in L^2(G \times \hat G,H)$ we get using the above identities:
 \begin{align*}
-	
+	\Phi(x) w \xi(\chi,t)&= \int_{\hat G} \int_G \alpha_{-t}(x(s, \sigma)) \xi(t-s, \sigma- \chi)(s, \sigma) \overline{(t-s,\sigma-\chi)}\overline{(s,\sigma)} \d s \d \sigma\\
+	&= \overline{(t,\chi)} \int_{\hat G} \int_G \alpha_{-t}(x(s,\sigma)) \xi(t-s,\sigma-\chi)(t,\sigma) \d s \d \sigma\\
+	&= w x \xi(t,\chi),
 \end{align*}
+so that $w^* \Phi(x) w = x$ for all $x \in \cc(G \times \hat G, A)$. By density, it follows that the two algebras $(G \rtimes_\alpha A) \rtimes_{\hat \alpha} \hat G $ and $(A \rtimes_{\iota} \hat G)\rtimes_{\beta} G$ are isomorphic.
+\end{proof}
+We are now ready to prove the main theorem by combining the above:
+\begin{theorem}[Takai Duality]
+	Suppose that $G \acts \alpha A$. Then the double dual system $\left( (A \rtimes_\alpha G) \rtimes_{\hat \alpha} \hat G, G, \hat{\hat{\alpha}} \right)$ is covariantly isomorphic to the $C^*$-dynamical system $(A \otimes \mathbb{K}(L^2(G)), G, \alpha \otimes \mathrm{Ad} \rho)$.	
+	\label{takai:takai}
+\end{theorem}
+\begin{proof}
+	We already have the following diagram of isomorphisms
+	\begin{equation*}
+		\begin{tikzcd}
+			A \otimes \mathbb{K}(L^2(G)) \ar[r,"\cong"] & C_0(G,A) \rtimes_{\gamma} G \ar[r, "\cong"] & (A \rtimes_\iota \hat G) \rtimes_\beta G \ar[r, "\cong"] & (A \rtimes_\alpha G) \rtimes_{\hat \alpha} \hat G
+		\end{tikzcd}
+	\end{equation*}
+	Moreover, the dynamical systems $(A \otimes \mathbb{K}(L^2(G), G, \alpha \otimes \mathrm{Ad} \rho)$ and $(C_0(G,A) \rtimes_{\gamma} G, G, \sigma)$ are covariantly isomorphic, c.f. \cref{takai:compactiso}. We finish the proof by showing that $(C_0(G,A) \rtimes_{\lambda} G, G, \sigma)$ is covariantly isomorphic to $( (A \rtimes_{\alpha} G)\rtimes_{\hat \alpha} \hat G, G, \hat{\hat{\alpha}})$, which is done by showing the relation on the generating set of functions $z \in \cc(G,C_0(G,A))$, 
+	\begin{align*}
+		z(s,t) =x f(s) \hat g(t),
+	\end{align*}
+	for some $x \in A$, $f \in \cc(G)$ and $g \in \cc(\hat G)$. Denote by $\check z \in \cc(G \times \hat G, A)$ the image of $z$ under the isomorphism above, so that
+	\begin{align*}
+		\check z(s,\chi) = x f(s) g(\chi),
+	\end{align*}
+	for $(s,\chi) \in G \times \hat G$, and note that the map $g_r \colon \chi \mapsto g(\chi)(r,\chi)$ is mapped to the function $\hat g_r \colon t \mapsto \hat g(r+t)$. Denote by $\Phi$ the last isomorphism in the above, so that $\Phi(\check z) \in \cc(\hat G\times  G, A)$ is the map
+	\begin{align*}
+		\Phi(\check z)(\chi,s) = (s,\chi) \check z(s,\chi) = x f(s) g(\chi) (s,\chi).
+	\end{align*}
+	In particular, for the action $G \acts \sigma C_0(G,A) \rtimes_{\lambda} G$ is the action $\sigma_r y(s,t) = y(s,t+r)$ for $y \in \cc(G \times G,A)$, then we see that
+	\begin{align*}
+		\sigma_r z(s,t) = x f(s) + \hat g(t+r) = x f(s) \hat g_r(t),
+	\end{align*}
+	whence we see that
+	\begin{align*}
+		\check{ \sigma_r z}(s,\chi) = x f(s) g(\chi) (r,\chi),
+	\end{align*}
+	so that
+	\begin{align*}
+	\Phi(\check{ \sigma_r z})(\chi,s) = x f(s) g(\chi)(s,\chi)(r,\chi) = \Phi(\check z)(\chi,s) (r,\chi).
+	\end{align*}
+	Note also, that if $G \acts {\hat{\hat{\alpha}}} (A \rtimes_\alpha G) \rtimes_{\hat{\alpha}} \hat G$ is the dual of the dual action, then for $y \in \cc(\hat G \times G, A) \subseteq (A \rtimes_\alpha G) \rtimes_{\hat{\alpha}} \hat G$ then
+	\begin{align*}
+		\hat{\hat{\alpha}}_r y(\chi,t) = (r,\chi) y(\chi,t),
+	\end{align*}
+	whence we see that $\hat{\hat{\alpha}}_r(\Phi(\check z))= \Phi(\check{\sigma_r (z)})$, and since $z$ generates $C_0(G,A) \rtimes_\lambda G$, this shows the desired covariant isomorphism of the systems $(C_0(G,A) \rtimes_\lambda G, G, \sigma)$ and $( (A \rtimes_\alpha G)\rtimes_{\hat{\alpha}} \hat G, G, \hat{\hat{\alpha}})$.
 \end{proof}
