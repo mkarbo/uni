@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.28)  5 NOV 2018 12:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.28)  6 NOV 2018 15:58
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -2184,6 +2184,306 @@ Package: xfrac 2016/01/19 v6377 L3 Experimental split-level fractions
 . Defining command \sfrac with sig. 'omom' on line 451.
 .................................................
 )
+(/usr/share/texlive/texmf-dist/tex/generic/mathabx/mathabx.sty
+Package: mathabx 2003/07/29 v0.0 Non-standard LaTeX package mathabx
+\symmatha=\mathgroup6
+\symmathb=\mathgroup7
+\symmathx=\mathgroup8
+
+(/usr/share/texlive/texmf-dist/tex/generic/mathabx/mathabx.dcl
+LaTeX Font Info:    Redeclaring math symbol \cdotp on input line 25.
+LaTeX Font Info:    Redeclaring math symbol \times on input line 33.
+LaTeX Font Info:    Redeclaring math symbol \div on input line 34.
+LaTeX Font Info:    Redeclaring math symbol \cdot on input line 35.
+LaTeX Font Info:    Redeclaring math symbol \circ on input line 36.
+LaTeX Font Info:    Redeclaring math symbol \ast on input line 38.
+LaTeX Font Info:    Redeclaring math symbol \pm on input line 41.
+LaTeX Font Info:    Redeclaring math symbol \mp on input line 42.
+LaTeX Font Info:    Redeclaring math symbol \ltimes on input line 43.
+LaTeX Font Info:    Redeclaring math symbol \rtimes on input line 44.
+LaTeX Font Info:    Redeclaring math symbol \diamond on input line 45.
+LaTeX Font Info:    Redeclaring math symbol \bullet on input line 46.
+LaTeX Font Info:    Redeclaring math symbol \star on input line 47.
+LaTeX Font Info:    Redeclaring math symbol \amalg on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \dotplus on input line 58.
+LaTeX Font Info:    Redeclaring math symbol \square on input line 63.
+LaTeX Font Info:    Redeclaring math symbol \divideontimes on input line 71.
+LaTeX Font Info:    Redeclaring math symbol \bigstar on input line 75.
+LaTeX Font Info:    Redeclaring math symbol \equiv on input line 83.
+LaTeX Font Info:    Redeclaring math symbol \sim on input line 84.
+LaTeX Font Info:    Redeclaring math symbol \approx on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \simeq on input line 86.
+LaTeX Font Info:    Redeclaring math symbol \asymp on input line 89.
+LaTeX Font Info:    Redeclaring math symbol \nsim on input line 97.
+LaTeX Font Info:    Redeclaring math symbol \ncong on input line 100.
+LaTeX Font Info:    Redeclaring math symbol \risingdotseq on input line 118.
+LaTeX Font Info:    Redeclaring math symbol \fallingdotseq on input line 119.
+LaTeX Font Info:    Redeclaring math symbol \circeq on input line 125.
+LaTeX Font Info:    Redeclaring math symbol \eqcirc on input line 126.
+LaTeX Font Info:    Redeclaring math symbol \triangleq on input line 127.
+LaTeX Font Info:    Redeclaring math symbol \neg on input line 134.
+LaTeX Font Info:    Redeclaring math symbol \ll on input line 136.
+LaTeX Font Info:    Redeclaring math symbol \gg on input line 137.
+LaTeX Font Info:    Redeclaring math symbol \vdash on input line 139.
+LaTeX Font Info:    Redeclaring math symbol \dashv on input line 140.
+LaTeX Font Info:    Redeclaring math symbol \nvdash on input line 141.
+LaTeX Font Info:    Redeclaring math symbol \vDash on input line 143.
+LaTeX Font Info:    Redeclaring math symbol \nvDash on input line 145.
+LaTeX Font Info:    Redeclaring math symbol \Vdash on input line 147.
+LaTeX Font Info:    Redeclaring math symbol \nVdash on input line 149.
+LaTeX Font Info:    Redeclaring math symbol \flat on input line 158.
+LaTeX Font Info:    Redeclaring math symbol \natural on input line 159.
+LaTeX Font Info:    Redeclaring math symbol \sharp on input line 160.
+LaTeX Font Info:    Redeclaring math symbol \infty on input line 161.
+LaTeX Font Info:    Redeclaring math symbol \propto on input line 162.
+LaTeX Font Info:    Redeclaring math symbol \dagger on input line 163.
+LaTeX Font Info:    Redeclaring math symbol \ddagger on input line 164.
+LaTeX Font Info:    Redeclaring math symbol \between on input line 170.
+LaTeX Font Info:    Redeclaring math symbol \smile on input line 171.
+LaTeX Font Info:    Redeclaring math symbol \frown on input line 172.
+LaTeX Font Info:    Redeclaring math symbol \leftthreetimes on input line 174.
+LaTeX Font Info:    Redeclaring math symbol \rightthreetimes on input line 175.
+
+LaTeX Font Info:    Redeclaring math symbol \pitchfork on input line 176.
+LaTeX Font Info:    Redeclaring math symbol \nVDash on input line 182.
+LaTeX Font Info:    Redeclaring math symbol \Vvdash on input line 184.
+LaTeX Font Info:    Redeclaring math symbol \therefore on input line 189.
+LaTeX Font Info:    Redeclaring math symbol \because on input line 190.
+LaTeX Font Info:    Redeclaring math symbol \measuredangle on input line 202.
+LaTeX Font Info:    Redeclaring math symbol \sphericalangle on input line 203.
+LaTeX Font Info:    Redeclaring math symbol \setminus on input line 218.
+LaTeX Font Info:    Redeclaring math symbol \mid on input line 222.
+LaTeX Font Info:    Redeclaring math symbol \forall on input line 279.
+LaTeX Font Info:    Redeclaring math symbol \complement on input line 280.
+LaTeX Font Info:    Redeclaring math symbol \partial on input line 281.
+LaTeX Font Info:    Redeclaring math symbol \exists on input line 284.
+LaTeX Font Info:    Redeclaring math symbol \nexists on input line 285.
+LaTeX Font Info:    Redeclaring math symbol \Finv on input line 286.
+LaTeX Font Info:    Redeclaring math symbol \Game on input line 287.
+LaTeX Font Info:    Redeclaring math symbol \emptyset on input line 288.
+LaTeX Font Info:    Redeclaring math symbol \top on input line 290.
+LaTeX Font Info:    Redeclaring math symbol \bot on input line 291.
+LaTeX Font Info:    Redeclaring math symbol \perp on input line 292.
+LaTeX Font Info:    Redeclaring math symbol \curlywedge on input line 296.
+LaTeX Font Info:    Redeclaring math symbol \curlyvee on input line 297.
+LaTeX Font Info:    Redeclaring math symbol \in on input line 299.
+LaTeX Font Info:    Redeclaring math symbol \owns on input line 300.
+LaTeX Font Info:    Redeclaring math symbol \cap on input line 312.
+LaTeX Font Info:    Redeclaring math symbol \cup on input line 313.
+LaTeX Font Info:    Redeclaring math symbol \uplus on input line 314.
+LaTeX Font Info:    Redeclaring math symbol \sqcap on input line 315.
+LaTeX Font Info:    Redeclaring math symbol \sqcup on input line 316.
+LaTeX Font Info:    Redeclaring math symbol \wedge on input line 318.
+LaTeX Font Info:    Redeclaring math symbol \vee on input line 320.
+LaTeX Font Info:    Redeclaring math symbol \barwedge on input line 327.
+LaTeX Font Info:    Redeclaring math symbol \veebar on input line 328.
+LaTeX Font Info:    Redeclaring math symbol \doublebarwedge on input line 329.
+LaTeX Font Info:    Redeclaring math symbol \doublecap on input line 331.
+LaTeX Font Info:    Redeclaring math symbol \doublecup on input line 333.
+LaTeX Font Info:    Redeclaring math symbol \subset on input line 344.
+LaTeX Font Info:    Redeclaring math symbol \supset on input line 345.
+LaTeX Font Info:    Redeclaring math symbol \subseteq on input line 348.
+LaTeX Font Info:    Redeclaring math symbol \supseteq on input line 349.
+LaTeX Font Info:    Redeclaring math symbol \nsubseteq on input line 350.
+LaTeX Font Info:    Redeclaring math symbol \nsupseteq on input line 351.
+LaTeX Font Info:    Redeclaring math symbol \subsetneq on input line 352.
+LaTeX Font Info:    Redeclaring math symbol \supsetneq on input line 353.
+LaTeX Font Info:    Redeclaring math symbol \varsubsetneq on input line 354.
+LaTeX Font Info:    Redeclaring math symbol \varsupsetneq on input line 355.
+LaTeX Font Info:    Redeclaring math symbol \subseteqq on input line 357.
+LaTeX Font Info:    Redeclaring math symbol \supseteqq on input line 358.
+LaTeX Font Info:    Redeclaring math symbol \nsubseteqq on input line 359.
+LaTeX Font Info:    Redeclaring math symbol \nsupseteqq on input line 360.
+LaTeX Font Info:    Redeclaring math symbol \subsetneqq on input line 361.
+LaTeX Font Info:    Redeclaring math symbol \supsetneqq on input line 362.
+LaTeX Font Info:    Redeclaring math symbol \varsubsetneqq on input line 363.
+LaTeX Font Info:    Redeclaring math symbol \varsupsetneqq on input line 364.
+LaTeX Font Info:    Redeclaring math symbol \Subset on input line 366.
+LaTeX Font Info:    Redeclaring math symbol \Supset on input line 367.
+LaTeX Font Info:    Redeclaring math symbol \sqsubseteq on input line 380.
+LaTeX Font Info:    Redeclaring math symbol \sqsupseteq on input line 381.
+LaTeX Font Info:    Redeclaring math symbol \triangleleft on input line 407.
+LaTeX Font Info:    Redeclaring math symbol \vartriangleleft on input line 408.
+
+LaTeX Font Info:    Redeclaring math symbol \triangleright on input line 409.
+LaTeX Font Info:    Redeclaring math symbol \vartriangleright on input line 410
+.
+LaTeX Font Info:    Redeclaring math symbol \ntriangleleft on input line 411.
+LaTeX Font Info:    Redeclaring math symbol \ntriangleright on input line 412.
+LaTeX Font Info:    Redeclaring math symbol \trianglelefteq on input line 413.
+LaTeX Font Info:    Redeclaring math symbol \trianglerighteq on input line 414.
+
+LaTeX Font Info:    Redeclaring math symbol \ntrianglelefteq on input line 415.
+
+LaTeX Font Info:    Redeclaring math symbol \ntrianglerighteq on input line 416
+.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangledown on input line 42
+7.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangleleft on input line 42
+8.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangleright on input line 4
+29.
+LaTeX Font Info:    Redeclaring math symbol \nless on input line 437.
+LaTeX Font Info:    Redeclaring math symbol \ngtr on input line 438.
+LaTeX Font Info:    Redeclaring math symbol \leq on input line 439.
+LaTeX Font Info:    Redeclaring math symbol \geq on input line 441.
+LaTeX Font Info:    Redeclaring math symbol \nleq on input line 443.
+LaTeX Font Info:    Redeclaring math symbol \ngeq on input line 445.
+LaTeX Font Info:    Redeclaring math symbol \lneq on input line 451.
+LaTeX Font Info:    Redeclaring math symbol \gneq on input line 452.
+LaTeX Font Info:    Redeclaring math symbol \leqq on input line 453.
+LaTeX Font Info:    Redeclaring math symbol \geqq on input line 454.
+LaTeX Font Info:    Redeclaring math symbol \nleqq on input line 455.
+LaTeX Font Info:    Redeclaring math symbol \ngeqq on input line 456.
+LaTeX Font Info:    Redeclaring math symbol \lneqq on input line 457.
+LaTeX Font Info:    Redeclaring math symbol \gneqq on input line 458.
+LaTeX Font Info:    Redeclaring math symbol \lvertneqq on input line 459.
+LaTeX Font Info:    Redeclaring math symbol \gvertneqq on input line 460.
+LaTeX Font Info:    Redeclaring math symbol \eqslantless on input line 461.
+LaTeX Font Info:    Redeclaring math symbol \eqslantgtr on input line 462.
+LaTeX Font Info:    Redeclaring math symbol \lessgtr on input line 465.
+LaTeX Font Info:    Redeclaring math symbol \gtrless on input line 466.
+LaTeX Font Info:    Redeclaring math symbol \lesseqgtr on input line 467.
+LaTeX Font Info:    Redeclaring math symbol \gtreqless on input line 468.
+LaTeX Font Info:    Redeclaring math symbol \lesseqqgtr on input line 469.
+LaTeX Font Info:    Redeclaring math symbol \gtreqqless on input line 470.
+LaTeX Font Info:    Redeclaring math symbol \lesssim on input line 472.
+LaTeX Font Info:    Redeclaring math symbol \gtrsim on input line 473.
+LaTeX Font Info:    Redeclaring math symbol \lnsim on input line 476.
+LaTeX Font Info:    Redeclaring math symbol \gnsim on input line 477.
+LaTeX Font Info:    Redeclaring math symbol \lessapprox on input line 478.
+LaTeX Font Info:    Redeclaring math symbol \gtrapprox on input line 479.
+LaTeX Font Info:    Redeclaring math symbol \lnapprox on input line 482.
+LaTeX Font Info:    Redeclaring math symbol \gnapprox on input line 483.
+LaTeX Font Info:    Redeclaring math symbol \lessdot on input line 485.
+LaTeX Font Info:    Redeclaring math symbol \gtrdot on input line 486.
+LaTeX Font Info:    Redeclaring math symbol \lll on input line 488.
+LaTeX Font Info:    Redeclaring math symbol \ggg on input line 489.
+LaTeX Font Info:    Redeclaring math symbol \prec on input line 498.
+LaTeX Font Info:    Redeclaring math symbol \succ on input line 499.
+LaTeX Font Info:    Redeclaring math symbol \nprec on input line 500.
+LaTeX Font Info:    Redeclaring math symbol \nsucc on input line 501.
+LaTeX Font Info:    Redeclaring math symbol \preccurlyeq on input line 502.
+LaTeX Font Info:    Redeclaring math symbol \succcurlyeq on input line 503.
+LaTeX Font Info:    Redeclaring math symbol \preceq on input line 506.
+LaTeX Font Info:    Redeclaring math symbol \succeq on input line 507.
+LaTeX Font Info:    Redeclaring math symbol \npreceq on input line 508.
+LaTeX Font Info:    Redeclaring math symbol \nsucceq on input line 509.
+LaTeX Font Info:    Redeclaring math symbol \curlyeqprec on input line 512.
+LaTeX Font Info:    Redeclaring math symbol \curlyeqsucc on input line 513.
+LaTeX Font Info:    Redeclaring math symbol \precsim on input line 517.
+LaTeX Font Info:    Redeclaring math symbol \succsim on input line 518.
+LaTeX Font Info:    Redeclaring math symbol \precnsim on input line 521.
+LaTeX Font Info:    Redeclaring math symbol \succnsim on input line 522.
+LaTeX Font Info:    Redeclaring math symbol \precapprox on input line 523.
+LaTeX Font Info:    Redeclaring math symbol \succapprox on input line 524.
+LaTeX Font Info:    Redeclaring math symbol \precnapprox on input line 527.
+LaTeX Font Info:    Redeclaring math symbol \succnapprox on input line 528.
+LaTeX Font Info:    Redeclaring math symbol \leftarrow on input line 540.
+LaTeX Font Info:    Redeclaring math symbol \rightarrow on input line 542.
+LaTeX Font Info:    Redeclaring math symbol \nwarrow on input line 546.
+LaTeX Font Info:    Redeclaring math symbol \nearrow on input line 547.
+LaTeX Font Info:    Redeclaring math symbol \swarrow on input line 548.
+LaTeX Font Info:    Redeclaring math symbol \searrow on input line 549.
+LaTeX Font Info:    Redeclaring math symbol \leftrightarrow on input line 550.
+LaTeX Font Info:    Redeclaring math symbol \nleftarrow on input line 552.
+LaTeX Font Info:    Redeclaring math symbol \nrightarrow on input line 553.
+LaTeX Font Info:    Redeclaring math symbol \nleftrightarrow on input line 554.
+
+LaTeX Font Info:    Redeclaring math symbol \mapstochar on input line 557.
+LaTeX Font Info:    Redeclaring math symbol \leftharpoonup on input line 560.
+LaTeX Font Info:    Redeclaring math symbol \rightharpoonup on input line 561.
+LaTeX Font Info:    Redeclaring math symbol \leftharpoondown on input line 562.
+
+LaTeX Font Info:    Redeclaring math symbol \rightharpoondown on input line 563
+.
+LaTeX Font Info:    Redeclaring math symbol \upharpoonleft on input line 564.
+LaTeX Font Info:    Redeclaring math symbol \downharpoonleft on input line 565.
+
+LaTeX Font Info:    Redeclaring math symbol \upharpoonright on input line 566.
+LaTeX Font Info:    Redeclaring math symbol \restriction on input line 567.
+LaTeX Font Info:    Redeclaring math symbol \downharpoonright on input line 568
+.
+LaTeX Font Info:    Redeclaring math symbol \leftrightharpoons on input line 56
+9.
+LaTeX Font Info:    Redeclaring math symbol \Leftarrow on input line 575.
+LaTeX Font Info:    Redeclaring math symbol \Rightarrow on input line 576.
+LaTeX Font Info:    Redeclaring math symbol \Leftrightarrow on input line 579.
+LaTeX Font Info:    Redeclaring math symbol \nLeftarrow on input line 581.
+LaTeX Font Info:    Redeclaring math symbol \nRightarrow on input line 582.
+LaTeX Font Info:    Redeclaring math symbol \nLeftrightarrow on input line 583.
+
+LaTeX Font Info:    Redeclaring math symbol \leftleftarrows on input line 593.
+LaTeX Font Info:    Redeclaring math symbol \rightrightarrows on input line 594
+.
+LaTeX Font Info:    Redeclaring math symbol \upuparrows on input line 595.
+LaTeX Font Info:    Redeclaring math symbol \downdownarrows on input line 596.
+LaTeX Font Info:    Redeclaring math symbol \leftrightarrows on input line 597.
+
+LaTeX Font Info:    Redeclaring math symbol \rightleftarrows on input line 598.
+
+LaTeX Font Info:    Redeclaring math symbol \rhook on input line 612.
+LaTeX Font Info:    Redeclaring math symbol \lhook on input line 613.
+LaTeX Font Info:    Redeclaring math symbol \diagup on input line 614.
+LaTeX Font Info:    Redeclaring math symbol \diagdown on input line 615.
+LaTeX Font Info:    Redeclaring math symbol \Lsh on input line 617.
+LaTeX Font Info:    Redeclaring math symbol \Rsh on input line 619.
+LaTeX Font Info:    Redeclaring math symbol \looparrowleft on input line 624.
+LaTeX Font Info:    Redeclaring math symbol \looparrowright on input line 626.
+LaTeX Font Info:    Redeclaring math symbol \curvearrowleft on input line 631.
+LaTeX Font Info:    Redeclaring math symbol \curvearrowright on input line 633.
+
+LaTeX Font Info:    Redeclaring math symbol \circlearrowleft on input line 641.
+
+LaTeX Font Info:    Redeclaring math symbol \circlearrowright on input line 642
+.
+LaTeX Font Info:    Redeclaring math symbol \rightsquigarrow on input line 645.
+
+LaTeX Font Info:    Redeclaring math symbol \leftrightsquigarrow on input line 
+646.
+LaTeX Font Info:    Redeclaring math symbol \oplus on input line 658.
+LaTeX Font Info:    Redeclaring math symbol \ominus on input line 659.
+LaTeX Font Info:    Redeclaring math symbol \otimes on input line 661.
+LaTeX Font Info:    Redeclaring math symbol \odot on input line 663.
+LaTeX Font Info:    Redeclaring math symbol \oslash on input line 675.
+LaTeX Font Info:    Redeclaring math symbol \boxplus on input line 683.
+LaTeX Font Info:    Redeclaring math symbol \boxminus on input line 684.
+LaTeX Font Info:    Redeclaring math symbol \boxtimes on input line 686.
+LaTeX Font Info:    Redeclaring math symbol \boxdot on input line 688.
+\mayacnter=\count429
+\mayacnta=\count430
+\mayacntb=\count431
+\mayacntc=\count432
+\mayawidth=\dimen369
+LaTeX Font Info:    Redeclaring math symbol \intop on input line 753.
+LaTeX Font Info:    Redeclaring math symbol \ointop on input line 760.
+LaTeX Font Info:    Redeclaring math delimiter \lbrace on input line 842.
+LaTeX Info: Redefining \{ on input line 846.
+LaTeX Font Info:    Redeclaring math delimiter \rbrace on input line 848.
+LaTeX Info: Redefining \} on input line 852.
+LaTeX Font Info:    Redeclaring math delimiter \langle on input line 858.
+LaTeX Font Info:    Redeclaring math delimiter \rangle on input line 859.
+LaTeX Font Info:    Redeclaring math delimiter \vert on input line 863.
+LaTeX Font Info:    Redeclaring math delimiter \Vert on input line 865.
+LaTeX Font Info:    Redeclaring math delimiter \uparrow on input line 868.
+LaTeX Font Info:    Redeclaring math delimiter \downarrow on input line 869.
+LaTeX Font Info:    Redeclaring math delimiter \updownarrow on input line 870.
+LaTeX Font Info:    Redeclaring math delimiter \Uparrow on input line 871.
+LaTeX Font Info:    Redeclaring math delimiter \Downarrow on input line 872.
+LaTeX Font Info:    Redeclaring math delimiter \Updownarrow on input line 873.
+LaTeX Font Info:    Redeclaring math delimiter \lgroup on input line 880.
+LaTeX Font Info:    Redeclaring math delimiter \rgroup on input line 881.
+LaTeX Font Info:    Redeclaring math delimiter \lceil on input line 882.
+LaTeX Font Info:    Redeclaring math delimiter \rceil on input line 883.
+LaTeX Font Info:    Redeclaring math delimiter \lfloor on input line 884.
+LaTeX Font Info:    Redeclaring math delimiter \rfloor on input line 885.
+LaTeX Font Info:    Redeclaring math symbol \braceld on input line 903.
+LaTeX Font Info:    Redeclaring math symbol \bracerd on input line 905.
+LaTeX Font Info:    Redeclaring math symbol \bracelu on input line 907.
+LaTeX Font Info:    Redeclaring math symbol \braceru on input line 909.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 944.
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 946.
+))
 (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
@@ -2251,7 +2551,7 @@ ng of objects, relative to a reference object or in absolute terms
 (/usr/share/texlive/texmf-dist/tex/latex/stackengine/stackengine.sty
 Package: stackengine 2014/01/06 v3.24\ Stacking text and objects in convenient 
 ways
-\c@@stackindex=\count429
+\c@@stackindex=\count433
 \@boxshift=\skip292
 \stack@tmplength=\skip293
 \temp@stkl=\skip294
@@ -2260,9 +2560,9 @@ ways
 \@anchorbox=\box92
 \stackedbox=\box93
 \@centerbox=\box94
-\c@ROWcellindex@=\count430
+\c@ROWcellindex@=\count434
 )
-\c@theorem=\count431
+\c@theorem=\count435
 )
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
@@ -2274,8 +2574,8 @@ File: english.lbx 2016/03/03 v3.3 biblatex localization (PK/JW/AB)
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count432
-\@quotereset=\count433
+\@quotelevel=\count436
+\@quotereset=\count437
 (./master.aux)
 \openout1 = `master.aux'.
 
@@ -2289,7 +2589,7 @@ LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
+LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
@@ -2330,16 +2630,16 @@ LaTeX Font Info:    ... okay on input line 5.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count434
-\scratchdimen=\dimen369
+\scratchcounter=\count438
+\scratchdimen=\dimen370
 \scratchbox=\box95
-\nofMPsegments=\count435
-\nofMParguments=\count436
+\nofMPsegments=\count439
+\nofMParguments=\count440
 \everyMPshowfont=\toks64
-\MPscratchCnt=\count437
-\MPscratchDim=\dimen370
-\MPnumerator=\count438
-\makeMPintoPDFobject=\count439
+\MPscratchCnt=\count441
+\MPscratchDim=\dimen371
+\MPnumerator=\count442
+\makeMPintoPDFobject=\count443
 \everyMPtoPDFconversion=\toks65
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -2365,7 +2665,7 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count440
+\c@section@level=\count444
 )
 Redoing nameref's sectioning
 Redoing nameref's label
@@ -2465,57 +2765,51 @@ pdfTeX warning (ext4): destination with the same identifier (name{theorem.1.1.1
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.24 \begin{proposition}
-                        [Cauchy-Schwarz Inequality]] [2pdfTeX warning (ext4): d
-estination with the same identifier (name{theorem.1.1.2}) has been already used
-, duplicate ignored
+l.20 	T
+       here is of course a corresponding version of left inner-product $A$-m...
+] [2pdfTeX warning (ext4): destination with the same identifier (name{theorem.1
+.1.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.63 \begin{lemma}
-                  pdfTeX warning (ext4): destination with the same identifier (
-name{theorem.1.1.3}) has been already used, duplicate ignored
+l.52 \end{align*}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{theorem.1.1.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.63 \begin{lemma}
-                  ] [3pdfTeX warning (ext4): destination with the same identifi
-er (name{theorem.1.1.4}) has been already used, duplicate ignored
+l.52 \end{align*}
+                 ] [3pdfTeX warning (ext4): destination with the same identifie
+r (name{theorem.1.1.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.103 	\end{align}
-                  pdfTeX warning (ext4): destination with the same identifier (
-name{theorem.1.1.5}) has been already used, duplicate ignored
+l.91 	\begin{align*}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{theorem.1.1.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.103 	\end{align}
-                  pdfTeX warning (ext4): destination with the same identifier (
-name{theorem.1.1.6}) has been already used, duplicate ignored
+l.91 	\begin{align*}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{theorem.1.1.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.103 	\end{align}
-                  pdfTeX warning (ext4): destination with the same identifier (
-name{theorem.1.1.7}) has been already used, duplicate ignored
+l.91 	\begin{align*}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{theorem.1.1.7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.103 	\end{align}
-                  pdfTeX warning (ext4): destination with the same identifier (
-name{theorem.1.1.8}) has been already used, duplicate ignored
+l.91 	\begin{align*}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{theorem.1.1.8}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.103 	\end{align}
-                  pdfTeX warning (ext4): destination with the same identifier (
-name{theorem.1.1.9}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.103 	\end{align}
-                  ]
+l.91 	\begin{align*}
+                    ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 113.
@@ -2528,63 +2822,67 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 113.
 
+[4pdfTeX warning (ext4): destination with the same identifier (name{theorem.1.1
+.9}) has been already used, duplicate ignored
 
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.121 \end{definition}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{theorem.1.2.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.121 \end{definition}
+                      ]
 Underfull \hbox (badness 10000) in paragraph at lines 125--126
 
  []
 
-[4pdfTeX warning (ext4): destination with the same identifier (name{theorem.1.2
-.1}) has been already used, duplicate ignored
+[5pdfTeX warning (ext4): destination with the same identifier (name{theorem.1.2
+.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.141 	T
-        he algebra $\mathcal{L}(E)$ is a closed $*$-subalgebra of $\mathbb{B...
-pdfTeX warning (ext4): destination with the same identifier (name{theorem.1.2.2
-}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.141 	T
-        he algebra $\mathcal{L}(E)$ is a closed $*$-subalgebra of $\mathbb{B...
-] [5pdfTeX warning (ext4): destination with the same identifier (name{theorem.1
-.2.3}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.178 	\end{align*}
+l.155 	\end{align*}
                    pdfTeX warning (ext4): destination with the same identifier 
-(name{theorem.1.2.4}) has been already used, duplicate ignored
+(name{theorem.1.2.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.178 	\end{align*}
+l.155 	\end{align*}
+                   ] [6pdfTeX warning (ext4): destination with the same identif
+ier (name{theorem.1.2.4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.186 	\end{align*}
                    pdfTeX warning (ext4): destination with the same identifier 
 (name{theorem.1.2.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.178 	\end{align*}
-                   ] [6pdfTeX warning (ext4): destination with the same identif
+l.186 	\end{align*}
+                   ] [7pdfTeX warning (ext4): destination with the same identif
 ier (name{theorem.1.2.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.216 	\end{enumerate}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{theorem.1.2.7}) has been already used, duplicate ignored
+l.227 \end{align*}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{theorem.1.2.7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.216 	\end{enumerate}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{theorem.1.2.8}) has been already used, duplicate ignored
+l.227 \end{align*}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{theorem.1.2.8}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.216 	\end{enumerate}
-                      ] [7pdfTeX warning (ext4): destination with the same iden
-tifier (name{theorem.1.2.9}) has been already used, duplicate ignored
+l.227 \end{align*}
+                  ] [8pdfTeX warning (ext4): destination with the same identifi
+er (name{theorem.1.2.9}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -2607,107 +2905,108 @@ ame{theorem.1.2.12}) has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.258 \end{proof}
-                 ] [8pdfTeX warning (ext4): destination with the same identifie
+                 ] [9pdfTeX warning (ext4): destination with the same identifie
 r (name{theorem.1.2.13}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.299 \begin{lemma}
+l.295 \end{align*}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{theorem.1.2.14}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.295 \end{align*}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{theorem.1.2.15}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.295 \end{align*}
+                  ] [10pdfTeX warning (ext4): destination with the same identif
+ier (name{theorem.1.2.16}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.331 	\end{align*}
                    pdfTeX warning (ext4): destination with the same identifier 
-(name{theorem.1.2.14}) has been already used, duplicate ignored
+(name{theorem.1.2.17}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.299 \begin{lemma}
-                   pdfTeX warning (ext4): destination with the same identifier 
-(name{theorem.1.2.15}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.299 \begin{lemma}
-                   pdfTeX warning (ext4): destination with the same identifier 
-(name{theorem.1.2.16}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.299 \begin{lemma}
-                   ] [9pdfTeX warning (ext4): destination with the same identif
-ier (name{theorem.1.2.17}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.348 	\end{align*}
+l.331 	\end{align*}
                    pdfTeX warning (ext4): destination with the same identifier 
 (name{theorem.1.2.18}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.348 	\end{align*}
-                   ] [10pdfTeX warning (ext4): destination with the same identi
+l.331 	\end{align*}
+                   ] [11pdfTeX warning (ext4): destination with the same identi
 fier (name{theorem.1.2.19}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.407 \end{proposition}
-                       pdfTeX warning (ext4): destination with the same identif
-ier (name{theorem.1.2.20}) has been already used, duplicate ignored
+l.387 	\begin{align*}
+                     ] [12pdfTeX warning (ext4): destination with the same iden
+tifier (name{theorem.1.2.20}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.407 \end{proposition}
-                       ] [11pdfTeX warning (ext4): destination with the same id
-entifier (name{theorem.1.2.21}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.445 	A
-         \myemph{unitalization} of a $C^*$-algebra $A$ is a pair $(B,\iota)$...
-pdfTeX warning (ext4): destination with the same identifier (name{theorem.1.3.1
-}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.445 	A
-         \myemph{unitalization} of a $C^*$-algebra $A$ is a pair $(B,\iota)$...
-pdfTeX warning (ext4): destination with the same identifier (name{theorem.1.3.2
-}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.445 	A
-         \myemph{unitalization} of a $C^*$-algebra $A$ is a pair $(B,\iota)$...
-] [12pdfTeX warning (ext4): destination with the same identifier (name{theorem.
-1.3.3}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.477 \end{definition}
+l.425 \end{definition}
                       pdfTeX warning (ext4): destination with the same identifi
-er (name{theorem.1.3.4}) has been already used, duplicate ignored
+er (name{theorem.1.2.21}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.477 \end{definition}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{theorem.1.3.5}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.477 \end{definition}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{theorem.1.3.6}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.477 \end{definition}
+l.425 \end{definition}
                       ] [13pdfTeX warning (ext4): destination with the same ide
-ntifier (name{theorem.1.3.7}) has been already used, duplicate ignored
+ntifier (name{theorem.1.3.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.514 \end{proof}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{theorem.1.3.8}) has been already used, duplicate ignored
+l.450 	\begin{align*}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{theorem.1.3.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.450 	\begin{align*}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{theorem.1.3.3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.450 	\begin{align*}
+                     ] [14pdfTeX warning (ext4): destination with the same iden
+tifier (name{theorem.1.3.4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.480 	L
+        et $B$ be a $C^*$-algebra and $E$ a Hilbert $A$-module. A homomorphi...
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.1.3.5
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.480 	L
+        et $B$ be a $C^*$-algebra and $E$ a Hilbert $A$-module. A homomorphi...
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.1.3.6
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.480 	L
+        et $B$ be a $C^*$-algebra and $E$ a Hilbert $A$-module. A homomorphi...
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.1.3.7
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.480 	L
+        et $B$ be a $C^*$-algebra and $E$ a Hilbert $A$-module. A homomorphi...
+] [15pdfTeX warning (ext4): destination with the same identifier (name{theorem.
+1.3.8}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -2724,281 +3023,290 @@ ame{theorem.1.3.10}) has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.514 \end{proof}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{theorem.1.3.11}) has been already used, duplicate ignored
+                 ] [16pdfTeX warning (ext4): destination with the same identifi
+er (name{theorem.1.3.11}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.514 \end{proof}
-                 ] [14pdfTeX warning (ext4): destination with the same identifi
-er (name{theorem.1.3.12}) has been already used, duplicate ignored
+l.548 \begin{proposition}
+                         pdfTeX warning (ext4): destination with the same ident
+ifier (name{theorem.1.3.12}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.552 	\end{align*}
-                   ] [15pdfTeX warning (ext4): destination with the same identi
-fier (name{theorem.1.3.14}) has been already used, duplicate ignored
+l.548 \begin{proposition}
+                         ] [17pdfTeX warning (ext4): destination with the same 
+identifier (name{theorem.1.3.14}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.580 
-      pdfTeX warning (ext4): destination with the same identifier (name{theorem
-.1.3.15}) has been already used, duplicate ignored
+l.575 \begin{example}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{theorem.1.3.15}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.580 
-      pdfTeX warning (ext4): destination with the same identifier (name{theorem
-.1.3.16}) has been already used, duplicate ignored
+l.575 \begin{example}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{theorem.1.3.16}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.580 
-      pdfTeX warning (ext4): destination with the same identifier (name{theorem
-.1.3.17}) has been already used, duplicate ignored
+l.575 \begin{example}
+                     ] [18pdfTeX warning (ext4): destination with the same iden
+tifier (name{theorem.1.3.17}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.580 
-      ] [16pdfTeX warning (ext4): destination with the same identifier (name{th
-eorem.1.3.18}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.608 	\begin{align*}
-                     ]) (./chapter2/chap.tex [17pdfTeX warning (ext4): destinat
-ion with the same identifier (name{theorem.1.3.19}) has been already used, dupl
-icate ignored
+l.594 \begin{definition}
+                        ]) (./chapter2/chap.tex [19pdfTeX warning (ext4): desti
+nation with the same identifier (name{theorem.1.3.18}) has been already used, d
+uplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.1 \chapter
-            {Crossed Products with Topological Groups}] [18
-
-]
-Overfull \hbox (14.29054pt too wide) in paragraph at lines 51--51
-[] 
- []
-
-[19pdfTeX warning (ext4): destination with the same identifier (name{theorem.2.
-1.1}) has been already used, duplicate ignored
+            {Crossed Products with Topological Groups}pdfTeX warning (ext4): de
+stination with the same identifier (name{theorem.1.3.19}) has been already used
+, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.51 	\end{align*}
+l.1 \chapter
+            {Crossed Products with Topological Groups}] [20
+
+] [21pdfTeX warning (ext4): destination with the same identifier (name{theorem.
+2.1.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.46 	\end{align*}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{theorem.2.1.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.51 	\end{align*}
+l.46 	\end{align*}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{theorem.2.1.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.51 	\end{align*}
-                  ] [20pdfTeX warning (ext4): destination with the same identif
-ier (name{theorem.2.1.4}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.92 	\begin{align*}
-                    pdfTeX warning (ext4): destination with the same identifier
- (name{theorem.2.1.5}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.92 	\begin{align*}
-                    pdfTeX warning (ext4): destination with the same identifier
- (name{theorem.2.1.6}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.92 	\begin{align*}
-                    pdfTeX warning (ext4): destination with the same identifier
- (name{theorem.2.1.7}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.92 	\begin{align*}
-                    ] [21pdfTeX warning (ext4): destination with the same ident
-ifier (name{theorem.2.1.8}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.124 	\begin{align*}
-                     ] [22pdfTeX warning (ext4): destination with the same iden
-tifier (name{theorem.2.1.9}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.159 \end{proof}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{theorem.2.1.10}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.159 \end{proof}
-                 ] [23pdfTeX warning (ext4): destination with the same identifi
-er (name{theorem.2.1.11}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.202 	\begin{align*}
-                     ] [24]
-Overfull \hbox (6.88582pt too wide) in paragraph at lines 244--244
+l.46 	\end{align*}
+                  ]
+Overfull \hbox (11.26875pt too wide) in paragraph at lines 51--51
 [] 
  []
 
-[25pdfTeX warning (ext4): destination with the same identifier (name{theorem.2.
+[22pdfTeX warning (ext4): destination with the same identifier (name{theorem.2.
+1.4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.84 
+     pdfTeX warning (ext4): destination with the same identifier (name{theorem.
+2.1.5}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.84 
+     pdfTeX warning (ext4): destination with the same identifier (name{theorem.
+2.1.6}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.84 
+     ] [23pdfTeX warning (ext4): destination with the same identifier (name{the
+orem.2.1.7}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.115 \end{align}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{theorem.2.1.8}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.115 \end{align}
+                 ] [24pdfTeX warning (ext4): destination with the same identifi
+er (name{theorem.2.1.9}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.152 	\begin{align*}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{theorem.2.1.10}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.152 	\begin{align*}
+                     ] [25pdfTeX warning (ext4): destination with the same iden
+tifier (name{theorem.2.1.11}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.177 	\begin{align}
+                    ] [26]
+Overfull \hbox (4.63557pt too wide) in paragraph at lines 244--244
+[] 
+ []
+
+[27pdfTeX warning (ext4): destination with the same identifier (name{theorem.2.
 1.13}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.269 \end{proof}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{theorem.2.1.14}) has been already used, duplicate ignored
+l.249 \end{corollary}
+                     ] [28pdfTeX warning (ext4): destination with the same iden
+tifier (name{theorem.2.1.14}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.269 \end{proof}
-                 ] [26] [27pdfTeX warning (ext4): destination with the same ide
-ntifier (name{theorem.2.2.1}) has been already used, duplicate ignored
+l.278 \ssection{Crossed Products}
+                                 ] [29pdfTeX warning (ext4): destination with t
+he same identifier (name{theorem.2.2.1}) has been already used, duplicate ignor
+ed
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.317 \end{proof}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{theorem.2.2.2}) has been already used, duplicate ignored
+l.314 \end{lemma}
+                 ]
+Underfull \vbox (badness 4303) has occurred while \output is active []
+
+ [30pdfTeX warning (ext4): destination with the same identifier (name{theorem.2
+.2.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.317 \end{proof}
-                 ] [28pdfTeX warning (ext4): destination with the same identifi
-er (name{theorem.2.2.3}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.354 	\end{align*}
-                   ] [29pdfTeX warning (ext4): destination with the same identi
-fier (name{theorem.2.2.4}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.375 	\begin{align*}
-                     ] [30pdfTeX warning (ext4): destination with the same iden
-tifier (name{theorem.2.2.5}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.410 	\end{align*}
+l.343 	\end{align*}
                    pdfTeX warning (ext4): destination with the same identifier 
-(name{theorem.2.2.6}) has been already used, duplicate ignored
+(name{theorem.2.2.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.410 	\end{align*}
-                   pdfTeX warning (ext4): destination with the same identifier 
-(name{theorem.2.2.7}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.410 	\end{align*}
-                   pdfTeX warning (ext4): destination with the same identifier 
-(name{theorem.2.2.8}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.410 	\end{align*}
-                   pdfTeX warning (ext4): destination with the same identifier 
-(name{theorem.2.2.9}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.410 	\end{align*}
+l.343 	\end{align*}
                    ]
-Overfull \hbox (1.74988pt too wide) in paragraph at lines 447--447
+Underfull \vbox (badness 2753) has occurred while \output is active []
+
+ [31]
+[32pdfTeX warning (ext4): destination with the same identifier (name{theorem.2.
+2.4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.394 	\begin{align*}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{theorem.2.2.5}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.394 	\begin{align*}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{theorem.2.2.6}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.394 	\begin{align*}
+                     ] [33pdfTeX warning (ext4): destination with the same iden
+tifier (name{theorem.2.2.7}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.420 \end{align*}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{theorem.2.2.8}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.420 \end{align*}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{theorem.2.2.9}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.420 \end{align*}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{theorem.2.2.10}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.420 \end{align*}
+                  ]
+Overfull \hbox (2.15215pt too wide) in paragraph at lines 447--447
 [] 
  []
 
-[31pdfTeX warning (ext4): destination with the same identifier (name{theorem.2.
-2.10}) has been already used, duplicate ignored
+
+Underfull \vbox (badness 2426) has occurred while \output is active []
+
+ [34pdfTeX warning (ext4): destination with the same identifier (name{theorem.2
+.2.11}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.447 \end{align*}
-                  pdfTeX warning (ext4): destination with the same identifier (
-name{theorem.2.2.11}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.447 \end{align*}
-                  ] [32pdfTeX warning (ext4): destination with the same identif
+                  ] [35pdfTeX warning (ext4): destination with the same identif
 ier (name{theorem.2.2.12}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.481 	F
-        or a $C^*$-dynamical system $(A,G,\alpha)$, we define the \myemph{fu...
-pdfTeX warning (ext4): destination with the same identifier (name{theorem.2.2.1
-3}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.481 	F
-        or a $C^*$-dynamical system $(A,G,\alpha)$, we define the \myemph{fu...
-] [33pdfTeX warning (ext4): destination with the same identifier (name{theorem.
-2.2.14}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.515 \end{proof}
+l.474 \end{lemma}
                  pdfTeX warning (ext4): destination with the same identifier (n
-ame{theorem.2.2.15}) has been already used, duplicate ignored
+ame{theorem.2.2.13}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.515 \end{proof}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{theorem.2.2.16}) has been already used, duplicate ignored
+l.474 \end{lemma}
+                 ] [36pdfTeX warning (ext4): destination with the same identifi
+er (name{theorem.2.2.14}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.515 \end{proof}
-                 ] [34pdfTeX warning (ext4): destination with the same identifi
-er (name{theorem.2.2.17}) has been already used, duplicate ignored
+l.511 \end{align*}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{theorem.2.2.15}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.552 	\begin{align*}
-                     ] [35pdfTeX warning (ext4): destination with the same iden
-tifier (name{theorem.2.2.18}) has been already used, duplicate ignored
+l.511 \end{align*}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{theorem.2.2.16}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.592 \end{align*}
-                  ] [36pdfTeX warning (ext4): destination with the same identif
-ier (name{theorem.2.2.19}) has been already used, duplicate ignored
+l.511 \end{align*}
+                  ] [37pdfTeX warning (ext4): destination with the same identif
+ier (name{theorem.2.2.17}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.623 	\begin{align}
-                    pdfTeX warning (ext4): destination with the same identifier
- (name{theorem.2.2.20}) has been already used, duplicate ignored
+l.544 	\end{align*}
+                   ] [38pdfTeX warning (ext4): destination with the same identi
+fier (name{theorem.2.2.18}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.623 	\begin{align}
-                    ] [37pdfTeX warning (ext4): destination with the same ident
-ifier (name{theorem.2.2.21}) has been already used, duplicate ignored
+l.577 \end{proposition}
+                       ] [39pdfTeX warning (ext4): destination with the same id
+entifier (name{theorem.2.2.19}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.652 \ssection{Properties of Crossed products}
-                                               ] [38pdfTeX warning (ext4): dest
-ination with the same identifier (name{theorem.2.3.1}) has been already used, d
-uplicate ignored
+l.609 	\end{align*}
+                   ] [40pdfTeX warning (ext4): destination with the same identi
+fier (name{theorem.2.2.20}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.637 \end{theorem}
+                   pdfTeX warning (ext4): destination with the same identifier 
+(name{theorem.2.2.21}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.637 \end{theorem}
+                   ] [41] [42pdfTeX warning (ext4): destination with the same i
+dentifier (name{theorem.2.3.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -3015,182 +3323,177 @@ l.687 	\end{align*}
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.687 	\end{align*}
-                   ] [39pdfTeX warning (ext4): destination with the same identi
+                   ] [43pdfTeX warning (ext4): destination with the same identi
 fier (name{theorem.2.3.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.716 
-      pdfTeX warning (ext4): destination with the same identifier (name{theorem
-.2.3.5}) has been already used, duplicate ignored
+l.713 \end{proposition}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{theorem.2.3.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.716 
-      pdfTeX warning (ext4): destination with the same identifier (name{theorem
-.2.3.6}) has been already used, duplicate ignored
+l.713 \end{proposition}
+                       ]
+Underfull \vbox (badness 4193) has occurred while \output is active []
+
+ [44pdfTeX warning (ext4): destination with the same identifier (name{theorem.2
+.3.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.716 
-      ] [40pdfTeX warning (ext4): destination with the same identifier (name{th
-eorem.2.3.7}) has been already used, duplicate ignored
+l.736 	\end{align*}
+                   pdfTeX warning (ext4): destination with the same identifier 
+(name{theorem.2.3.7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.740 	\end{align*}
-                   ] [41pdfTeX warning (ext4): destination with the same identi
+l.736 	\end{align*}
+                   ] [45pdfTeX warning (ext4): destination with the same identi
 fier (name{theorem.2.3.8}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.779 \begin{definition}
-                        ]
-Overfull \hbox (2.59035pt too wide) in paragraph at lines 796--796
+l.763 	\end{align*}
+                   ] [46pdfTeX warning (ext4): destination with the same identi
+fier (name{theorem.2.3.9}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.800 \begin{align*}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{theorem.2.3.10}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.800 \begin{align*}
+                    ]
+Overfull \hbox (3.29695pt too wide) in paragraph at lines 803--803
 [] 
  []
 
-
-Overfull \hbox (2.6846pt too wide) in paragraph at lines 803--803
-[] 
- []
-
-[42pdfTeX warning (ext4): destination with the same identifier (name{theorem.2.
-3.9}) has been already used, duplicate ignored
+[47pdfTeX warning (ext4): destination with the same identifier (name{theorem.2.
+3.11}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.816 	L
-        et $E$ be the set of states contained in $(\pi,\H)$. For now, let $\...
-pdfTeX warning (ext4): destination with the same identifier (name{theorem.2.3.1
-0}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.816 	L
-        et $E$ be the set of states contained in $(\pi,\H)$. For now, let $\...
-pdfTeX warning (ext4): destination with the same identifier (name{theorem.2.3.1
-1}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.816 	L
-        et $E$ be the set of states contained in $(\pi,\H)$. For now, let $\...
-] [43pdfTeX warning (ext4): destination with the same identifier (name{theorem.
+l.825 	B
+        y the above remark and \Cref{mult:vectorstateapprox}, it is enough t...
+] [48pdfTeX warning (ext4): destination with the same identifier (name{theorem.
 2.3.13}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.849 \end{proof}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{theorem.2.3.14}) has been already used, duplicate ignored
+l.853 \end{corollary}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{theorem.2.3.14}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.849 \end{proof}
-                 ] [44pdfTeX warning (ext4): destination with the same identifi
-er (name{theorem.2.3.16}) has been already used, duplicate ignored
+l.853 \end{corollary}
+                     ] [49pdfTeX warning (ext4): destination with the same iden
+tifier (name{theorem.2.3.16}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.880 
-      pdfTeX warning (ext4): destination with the same identifier (name{theorem
-.2.3.17}) has been already used, duplicate ignored
+l.881 ...case of Abelian groups and Takai Duality}
+                                                  pdfTeX warning (ext4): destin
+ation with the same identifier (name{theorem.2.3.17}) has been already used, du
+plicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.880 
-      ]
-Overfull \hbox (6.72682pt too wide) in paragraph at lines 902--904
-\T1/cmr/m/n/10 the map $\OML/cmm/m/it/10 t \OMS/cmsy/m/n/10 7! [][]\OT1/cmr/m/n
-/10 (\OML/cmm/m/it/10 y\OT1/cmr/m/n/10 )$ \T1/cmr/m/n/10 is norm con-tin-u-ous.
- The clo-sure of $\OML/cmm/m/it/10 F \OT1/cmr/m/n/10 = []\OMS/cmsy/m/n/10 f\OML
-/cmm/m/it/10 a \OMS/cmsy/m/n/10 
- \OML/cmm/m/it/10 y \OMS/cmsy/m/n/10 j \OML/cmm/m/it/10 a \OMS/cmsy/m/n/10 2 \O
-ML/cmm/m/it/10 A;  y[]\OMS/cmsy/m/n/10 g$
+l.881 ...case of Abelian groups and Takai Duality}
+                                                  ]
+Overfull \hbox (4.2144pt too wide) in paragraph at lines 902--904
+\T1/cmr/m/n/10 the map $\OML/cmm/m/it/10 t \U/matha/m/n/10 об [][]p\OML/cmm/m/i
+t/10 y\U/matha/m/n/10 q$ \T1/cmr/m/n/10 is norm con-tin-u-ous. The clo-sure of 
+$\OML/cmm/m/it/10 F \U/matha/m/n/10 ^^P []t\OML/cmm/m/it/10 a \U/matha/m/n/10 b
+ \OML/cmm/m/it/10 y \U/matha/m/n/10 | \OML/cmm/m/it/10 a \U/matha/m/n/10 P \OML
+/cmm/m/it/10 A;  y[]\U/matha/m/n/10 u$
  []
 
-[45pdfTeX warning (ext4): destination with the same identifier (name{theorem.2.
+[50pdfTeX warning (ext4): destination with the same identifier (name{theorem.2.
 4.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.908 	L
-        et $G \acts \alpha A$. Then there is a $C^*$-dynamical system $(C_0(...
-]
-Overfull \hbox (15.90524pt too wide) in paragraph at lines 931--931
+l.907 \begin{theorem}
+                     ]
+Overfull \hbox (14.52066pt too wide) in paragraph at lines 931--931
 [] 
  []
 
 
-Overfull \hbox (38.54814pt too wide) in paragraph at lines 941--941
+Overfull \hbox (37.16164pt too wide) in paragraph at lines 941--941
 [] 
  []
 
-[46] [47pdfTeX warning (ext4): destination with the same identifier (name{theor
-em.2.4.3}) has been already used, duplicate ignored
+[51] [52] [53pdfTeX warning (ext4): destination with the same identifier (name{
+theorem.2.4.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.984 \begin{definition}
-                        ] [48pdfTeX warning (ext4): destination with the same i
-dentifier (name{theorem.2.4.4}) has been already used, duplicate ignored
+l.1005 \begin{proposition}
+                          pdfTeX warning (ext4): destination with the same iden
+tifier (name{theorem.2.4.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1017 	\end{align*}
+l.1005 \begin{proposition}
+                          pdfTeX warning (ext4): destination with the same iden
+tifier (name{theorem.2.4.5}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1005 \begin{proposition}
+                          ] [54pdfTeX warning (ext4): destination with the same
+ identifier (name{theorem.2.4.6}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1040 \end{lemma}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{theorem.2.4.7}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1040 \end{lemma}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{theorem.2.4.8}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1040 \end{lemma}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{theorem.2.4.9}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1040 \end{lemma}
+                  ] [55pdfTeX warning (ext4): destination with the same identif
+ier (name{theorem.2.4.10}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1072 	\end{align*}
                     pdfTeX warning (ext4): destination with the same identifier
- (name{theorem.2.4.5}) has been already used, duplicate ignored
+ (name{theorem.2.4.11}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1017 	\end{align*}
-                    pdfTeX warning (ext4): destination with the same identifier
- (name{theorem.2.4.6}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1017 	\end{align*}
-                    pdfTeX warning (ext4): destination with the same identifier
- (name{theorem.2.4.7}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1017 	\end{align*}
-                    ] [49pdfTeX warning (ext4): destination with the same ident
-ifier (name{theorem.2.4.8}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1061 \end{note}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{theorem.2.4.9}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1061 \end{note}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{theorem.2.4.10}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1061 \end{note}
-                 ] [50pdfTeX warning (ext4): destination with the same identifi
-er (name{theorem.2.4.11}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1092 	\end{align*}
-                    ] [51pdfTeX warning (ext4): destination with the same ident
+l.1072 	\end{align*}
+                    ] [56pdfTeX warning (ext4): destination with the same ident
 ifier (name{theorem.2.4.12}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1135 \end{align*}
-                   ] [52]) [53] [54
+l.1107 \end{align*}
+                   ] [57] [58]) [59] [60
 
 
-] [55]
+] [61]
 runsystem(makeindex master.idx)...executed.
 
  (./master.ind)
@@ -3201,7 +3504,7 @@ FiXme Summary: Number of notes: 0,
 (FiXme)        Number of fatal errors: 0,
 (FiXme)        Total: 0.
 
-[56
+[62
 
 
 ]
@@ -3222,13 +3525,13 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 34.
  )
 (\end occurred when \iftrue on line 5 was incomplete) 
 Here is how much of TeX's memory you used:
- 41266 strings out of 493029
- 749375 string characters out of 6136234
- 1120168 words of memory out of 5000000
- 43920 multiletter control sequences out of 15000+600000
- 23603 words of font info for 70 fonts, out of 8000000 for 9000
+ 41661 strings out of 493029
+ 753592 string characters out of 6136234
+ 1116895 words of memory out of 5000000
+ 44289 multiletter control sequences out of 15000+600000
+ 30927 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,17n,82p,10480b,1805s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,17n,82p,10480b,1778s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/en
 c/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
@@ -3239,22 +3542,26 @@ mi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx09
-00.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/t
-exmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/pub
-lic/cm-super/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc109
-5.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/te
-xmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/publ
-ic/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000
-.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfxc1200.pfb>
-Output written on master.pdf (59 pages, 873871 bytes).
+st/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/mathabx-type1/matha10.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/mathabx-type1/matha5.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/mathabx-type1/matha7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/mathabx-type1/matha8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+mathabx-type1/mathb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mat
+habx-type1/mathx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx0900.pfb>
+</usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fo
+nts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-
+super/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1095.pfb><
+/usr/share/texmf/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf/fon
+ts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-s
+uper/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></
+usr/share/texmf/fonts/type1/public/cm-super/sfxc1200.pfb>
+Output written on master.pdf (65 pages, 885162 bytes).
 PDF statistics:
- 776 PDF objects out of 1000 (max. 8388607)
- 681 compressed objects within 7 object streams
- 255 named destinations out of 1000 (max. 500000)
+ 819 PDF objects out of 1000 (max. 8388607)
+ 713 compressed objects within 8 object streams
+ 261 named destinations out of 1000 (max. 500000)
  106 words of extra memory for PDF output out of 10000 (max. 10000000)
 

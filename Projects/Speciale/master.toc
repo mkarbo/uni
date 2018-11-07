@@ -8,18 +8,18 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.2}The $C^*$-algebra of adjointable operators}{4}{section.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.3}Unitalizations and the Multiplier Algebra}{11}{section.1.3}
+\contentsline {section}{\numberline {1.3}Unitalizations and the Multiplier Algebra}{13}{section.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {2}Crossed Products with Topological Groups}{18}{chapter.2}
+\contentsline {chapter}{\chapternumberline {2}Crossed Products with Topological Groups}{20}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Integral Forms And Representation Theory}{18}{section.2.1}
+\contentsline {section}{\numberline {2.1}Integral Forms And Representation Theory}{20}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Crossed Products}{27}{section.2.2}
+\contentsline {section}{\numberline {2.2}Crossed Products}{29}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Properties of Crossed products}{38}{section.2.3}
+\contentsline {section}{\numberline {2.3}Properties of Crossed products}{42}{section.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}The case of Abelian groups and Takai Duality}{45}{section.2.4}
+\contentsline {section}{\numberline {2.4}The case of Abelian groups and Takai Duality}{50}{section.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{54}{chapter*.18}
+\contentsline {chapter}{Bibliography}{60}{chapter*.18}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Alphabetical Index}{56}{section*.19}
+\contentsline {chapter}{Alphabetical Index}{62}{section*.19}

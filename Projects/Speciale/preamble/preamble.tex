@@ -30,6 +30,9 @@
 \usepackage{faktor}
 \usepackage{imakeidx} 
 \usepackage{xfrac}
+\usepackage{mathabx}
+
+
 
 \makeatletter
 	\def\SK@def\Cref#1{\SK@\SK@@ref{#1}\SK@Cref{#1}}%
@@ -69,7 +72,7 @@
 
 \setlength{\parindent}{0em}
 \setlength{\parskip}{1em}
-\renewcommand{\baselinestretch}{1}
+\renewcommand{\baselinestretch}{1.2}
 
 \usepackage{scalerel,stackengine}
 \stackMath
@@ -225,3 +228,7 @@
 
 
 \defbibheading{bibnumbered}[\refname]{\chapter{#1}}
+
+
+\renewcommand{\hat}[1]{\widehat{#1}}
+\renewcommand{\check}[1]{\widecheck{#1}}
