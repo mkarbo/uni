@@ -20,6 +20,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.4}The case of Abelian groups and Takai Duality}{50}{section.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{60}{chapter*.18}
+\contentsline {chapter}{Bibliography}{60}{chapter*.20}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Alphabetical Index}{62}{section*.19}
+\contentsline {chapter}{Alphabetical Index}{62}{section*.21}

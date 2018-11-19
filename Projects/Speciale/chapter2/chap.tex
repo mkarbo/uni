@@ -1,5 +1,5 @@
 \chapter{Crossed Products with Topological Groups}
-Suppose that you are given a $C^*$-dynamical system $(A,G,\alpha)$ with $G$ discrete. It is not hard to extend representations of $G$ and $A$ to the $*$-algebra $\C_C(G,A)$, and thus create new $C^*$-algebras through completion of it, examples include the reduced- and full crossed product of $A$ and $G$, $A \rtimes_{\alpha,r} G$ and $A \rtimes_{\alpha} G$.
+Suppose that you are given a $C^*$-dynamical system $(A,G,\alpha)$ with $G$ discrete. It is not hard to extend representations of $G$ and $A$ to the $*$-algebra $\cc(G,A)$, and thus create new $C^*$-algebras through completion of it. Examples include the reduced- and full crossed product of $A$ and $G$, $A \rtimes_{\alpha,r} G$ and $A \rtimes_{\alpha} G$.
 
 However, when $G$ is not discrete, we run into issues since we can not assume that a unitary representation of $G$ is continuous in norm, which is required by classic constructions seen e.g., in \cite{brown2008c}. We will in this chapter develop the necessary theory to define the non-discrete analogues of these techniques, i.e., for when $G$ is a locally compact Hausdorff group.
 
@@ -34,20 +34,22 @@ We will use $\mathcal{D}$ to denote an arbitrary complex Banach space, and for $
 \begin{lemma}
 Let $\mathcal{D}_0 \subseteq \mathcal{D}$ be any dense subset. Then the set
 \begin{align*}
-	\cc(G) \odot \mathcal{D}_0 := \Span\left\{ f \otimes x \mid f \in \cc(G) \text{ and } x \in \mathcal{D_0} \right\} 
+	\cc(G) \odot \mathcal{D}_0 := \Span\left\{ f \otimes x \mid f \in \cc(G) \text{ and } x \in \mathcal{D}_0 \right\} 
 \end{align*}
 is dense in the inductive limit topology on $\cc(G,\mathcal{D})$.
 	\label{int:indlmdense}
 \end{lemma}
 \begin{proof}	
-	Let $\varphi \in \cc(G,B)$ and $\varepsilon > 0$ be arbitrary. Let $K= \mathrm{supp} \varphi$ and let $W$ denote an arbitrary compact neighborhood of $e \in G$, and pick \todo{add ref} a symmetric neighborhood $e \in V_{\varepsilon} \subseteq W$ such that $sr^{-1} \in V$ implies $\lv f(s) - f(r) \rv < \frac{\varepsilon}{\mu(WK)}$. Since $K$ is compact, there is a finite set $\left\{ r_1,\dots,r_n \right\} \subseteq K$ such that $K \subseteq \bigcup_{1 \leq i \leq n} V r_i$. Recall that every locally compact Hausdorff group is the disjoint union of $\sigma$-compact subspaces, hence we can pick a partition of unity $\left\{ f_j \right\}_{j=0}^n$ of $K^c \cup \left( \bigcup_{1 \leq i \leq n} Vr_i\right)=G$ such that $\mathrm{supp}f_0 \subseteq K^c$ and $\mathrm{supp}f_i \subseteq V r_i$ for $i = 1 ,\dots,n$. Define
+	Let $\varphi \in \cc(G,\mathcal{D})$ and $\varepsilon > 0$ be arbitrary. Let $K= \mathrm{supp} \varphi$ and let $W$ denote an arbitrary compact neighborhood of $e \in G$, and pick a symmetric neighborhood $e \in V_{\varepsilon} \subseteq W$ such that $sr^{-1} \in V_\varepsilon$ implies $\lv f(s) - f(r) \rv < \frac{\varepsilon}{\mu(WK)}$. Since $K$ is compact, there is a finite set $\left\{ r_1,\dots,r_n \right\} \subseteq K$ such that $K \subseteq \bigcup_{1 \leq i \leq n} V_\varepsilon r_i$. Recall that every locally compact Hausdorff group is paracompact and the cover $K^c \cup \left( \bigcup_{1 \leq i \leq n } V_\varepsilon r_i \right)$ admits a partition of unity $\left\{ f_j \right\}_{j=0}^n$ such that $\mathrm{supp}f_0 \subseteq K^c$ and $\mathrm{supp}f_i \subseteq V_\varepsilon r_i$ for $i = 1 ,\dots,n$. 
+	
+	Using this, we define
 	\begin{align*}
 		g_\varepsilon := \sum_{i=1}^n f_i \otimes x_i,
 	\end{align*}
-	where $x_i \in B_0$ such that $\lv x_i - \varphi(r_i)\rv < \frac{\varepsilon}{2\mu(WK)}$ for $i = 1,\dots,n$. Then $g_\varepsilon \in \cc(G) \odot \mathcal{B}_0$, and the partition of unity satisfies $\sum_{i=1}^n f_i(s) \leq 1$ for all $s \in G$ and is equal to $1$ for $s \in K$. Hence
+	where $x_i \in \mathcal{D}_0$ such that $\lv x_i - \varphi(r_i)\rv < \frac{\varepsilon}{2\mu(WK)}$ for $i = 1,\dots,n$. Then $g_\varepsilon \in \cc(G) \odot \mathcal{D}_0$ with $\mathrm{supp} g_\varepsilon \subseteq V_\varepsilon K \subseteq W K$. The partition of unity satisfies $\sum_{i=1}^n f_i(s) \leq 1$ for all $s \in G$ with equality for $s \in K$, so in particular $\sum_{1 \leq i \leq n}f_i(s) \varphi(s) = \varphi(s)$ for all $s \in G$. Hence we see that for $s \in G$: 
 	\begin{align*}
-		\lv\varphi(s) - g_{\varepsilon}\rv = \lv \sum_{i=1}^n f_i(s)(\varphi(s) - \varphi(r_i)+\varphi(r_i)-x_i)\rv &\leq \sum_{i=1}^n f_i(s) (\lv \varphi(s) - \varphi(r_i)\rv+\lv \varphi(r_i)-x_i\rv) \\
-		&\leq \frac{\varepsilon}{\mu(WK)}.
+		\lv\varphi(s) - g_{\varepsilon}(s)\rv = \lv \sum_{i=1}^n f_i(s)(\varphi(s) - \varphi(r_i)+\varphi(r_i)-x_i)\rv &\leq \sum_{i=1}^n f_i(s) (\lv \varphi(s) - \varphi(r_i)\rv+\lv \varphi(r_i)-x_i\rv) \\
+		&\leq \frac{\varepsilon}{\mu(WK)},
 	\end{align*}
 	Since $\varepsilon$ was arbitrary and $W,K$ didn't depend on $\varepsilon$ and $ \mathrm{supp} g_\varepsilon \subseteq WK$, we see that $g_\varepsilon \to f$ in the inductive limit topology as $\varepsilon \to 0$.
 \end{proof}
@@ -84,7 +86,7 @@ We will see that $L_f$ is equal to $\hat a \colon \varphi \to \varphi(a)$ for so
 
 	Fix $\varepsilon > 0$, and pick a neighborhood $V$ of $e \in G$ such that $ \lv f(s) - f(r) \rv < \varepsilon$ for $s^{-1}r \in V$. Assume without loss of generality that $\mathrm{supp} f V \subseteq W$, since we can make $V$ arbitrarily small. Using compactness of $\supp f$, pick $s_1,\dots,s_n \in \supp f$ such that $\left\{ s_i V \right\}$ covers $\supp f$.
 	
-	Since $ \left\{ s_i V \right\} \subseteq W$, it has compact closure, so pick a partition of unity $\left\{ \varphi_i \right\}_{i=1}^n$ of $ K \subseteq \bigcup_{i=1}^n s_i V$. Define 
+	Since $ \left\{ s_i V \right\} \subseteq W$, it has compact closure, so we may pick a partition of unity $\left\{ \varphi_i \right\}_{i=1}^n$ of $ K \subseteq \bigcup_{i=1}^n s_i V$. Using this, we define 
 	\begin{align*}
 		g_\varepsilon (s) := \sum_{i=1}^n f(s_i) \varphi(s),
 	\end{align*}
@@ -97,7 +99,7 @@ We will see that $L_f$ is equal to $\hat a \colon \varphi \to \varphi(a)$ for so
 	\begin{align*}
 		L_{g_{\varepsilon}} ( \psi ) = \int_{G} \psi\left( \sum_{i=1}^n \varphi(s) f(s_i) \right) \d s = \sum_{i=1}^n \int_G \varphi(s) \d s \psi(f(s_i)) = \sum_{i=1}^n \int_G \varphi(s) \d s \underbrace{\iota(f(s_i))}_{ \in \iota(C)} (\psi) 
 	\end{align*}
-	so $L_{g_{\varepsilon}}  \in D \iota(C) \subseteq \mu(W) \iota(C)$, since $0 \in C$ so we can shrink scalar $\mu(W)$ to $D$. For $\varepsilon \to 0$, we see that $g_{\varepsilon} \to f$ in the inductive limit topology and $L_{g_\varepsilon} \in \mu(W) \iota(C)$. 
+	so $L_{g_{\varepsilon}}  \in D \iota(C) \subseteq \mu(W) \iota(C)$, since $0 \in C$ so we can shrink the scalar $\mu(W)$ to $D$. For $\varepsilon \to 0$, we see that $g_{\varepsilon} \to f$ in the inductive limit topology and $L_{g_\varepsilon} \in \mu(W) \iota(C)$. 
 
 	Since $C$ is compact and convex, it is weakly compact which by definition is equivalent to $\iota(C)$ being compact in the weak$^*$-topology of $B^{**}$, and since $g_{\varepsilon} \to f$ in the inductive limit topology, we from \ref{note:induct} we see that $L_{g_\varepsilon } \to L_f$ in the weak $^*$-topology on $B^{**}$. In particular, since $\iota(C)$ is weak$^*$-compact, it is closed and hence $\mu(W) \iota(C)$ is closed in the weak$^*$-topology so $L_f \in \mu(W) \iota(C) \subseteq \iota(B)$.
 \end{proof}
@@ -109,26 +111,26 @@ There exists a unique linear map $I \colon \cc(G,B) \to B$,
 \end{align*}
 such that for all $f \in \cc(G,B)$ we have
 \begin{align}
-	\varphi(\int_g f(s) \d s ) &= \int_G \varphi(f(s)) \d s, \ \text{ for all } \varphi \in B^*,\\
+	\varphi(\int_G f(s) \d s ) &= \int_G \varphi(f(s)) \d s, \ \text{ for all } \varphi \in B^*,\\
 	\lv \int_G f(s) \d s \rv &\leq \lv f \rv_1 \\
-	\int_G g \otimes x (s) \d s &=x \int_G g(s) \d s, \text{ for all } g \otimes x \in \cc(G) \odot B,
+	\int_G (g \otimes x) (s) \d s &=x \int_G g(s) \d s, \text{ for all } g \otimes x \in \cc(G) \odot B,
 \end{align}
-and if $T \colon B \to D$ is a bounded linear operator, then
+and if $T \colon B \to D$ is a bounded linear operator between Banach spaces. Then
 \begin{align*}
 	T\left( \int_G f(s) \d s \right) = \int_G T(f(s)) \d s.
 \end{align*}
 	\label{int:bochnerproperties}
 \end{lemma}
 \begin{proof}
-	Clearly letting $I(f) := \iota^{-1}(L_f)$, with $L_f$ as in \ref{int:defintegral}, then $f \mapsto I(f)$ is which instantly satisfies all the properties but the last. Suppose that $T \colon B \to D$ is a bounded linear operator between Banach spaces. Then $T \circ f \in \cc(G,D)$ for all $f \in \cc(G,B)$, and $\varphi \circ T \in B^*$ for all $ \varphi \in D^*$. Hence 
+	Clearly letting $I(f) := \iota^{-1}(L_f)$, with $L_f$ as in \ref{int:defintegral}, then $f \mapsto I(f)$ instantly satisfies the first properties. For the last, suppose that $T \colon B \to D$ is a bounded linear operator between Banach spaces. Then $T \circ f \in \cc(G,D)$ for all $f \in \cc(G,B)$, and $\varphi \circ T \in B^*$ for all $ \varphi \in D^*$. Hence 
 	\begin{align*}
 		\varphi \circ T \left( \int_G f(s) \d s  \right) = \int_G \varphi( T \circ f (s) ) \d s = \varphi \left( \int_G T (f(s)) \d s \right),
 	\end{align*}
-	for all $\varphi \in D^*$, which separates points points of $D$, finishing the proof.
+	for all $\varphi \in D^*$, finishing the proof.
 \end{proof}
 In light of the above, we may give the following definition:
 \begin{definition}
-	For $f \in \cc(G,B)$, define the integral of $f$ $I(f) := \iota^{-1}(L_f)$, which we denote by $\int_G f(s) \d s := I(f)$.
+	For $f \in \cc(G,B)$, define the integral of $f$ as $I(f) := \iota^{-1}(L_f)$, which we denote by $\int_G f(s) \d s := I(f)$.
 \end{definition}
 
 In particular, if we let $A$ be a $C^*$-algebra, then we obtain the following useful result:
@@ -148,7 +150,7 @@ In particular, if we let $A$ be a $C^*$-algebra, then we obtain the following us
 	\label{int:cstarint}
 \end{proposition}
 \begin{proof}
-	Define the vector-state $\varphi_\pi \colon a \mapsto \langle \pi(a) \xi , \eta \rangle$. Then, $\varphi_\pi \in A^*$, and the first statement follows. Suppose now that $\pi$ is a faithful representation, then since $\int_G \pi(f(s)) \d s = \pi \left( f(s) \d s \right)$, we see that the second statement holds as well when applied to $\varphi_\pi(I(f)^*)$. Finally if $a,b \in M(A)$ then
+	Define the vector-state $\varphi_\pi \colon a \mapsto \langle \pi(a) \xi , \eta \rangle$. Then, $\varphi_\pi \in A^*$, and the first statement follows. Suppose now that $\pi$ is a faithful representation, then since $\int_G \pi(f(s)) \d s = \pi \left( \int_Gf(s) \d s \right)$, we see that the second statement holds as well when applied to $\varphi_\pi(I(f)^*)$. Finally if $a,b \in M(A)$ then
 	\begin{align*}
 		\langle \pi\left(a \int_G f(s) \d s b \right) \xi , \eta \rangle &= \langle \overline \pi(a) \pi\left( \int_G f(s) \d s \right) \overline \pi (b)  \xi , \eta \rangle \\
 		 &= \langle \pi \left( \int_G f(s) \d s \right) (\overline \pi (b) \xi ) , \overline \pi(a^*) \eta \rangle \\ 
@@ -158,13 +160,13 @@ In particular, if we let $A$ be a $C^*$-algebra, then we obtain the following us
 	\end{align*}
 \end{proof}
 
-As mentioned, we will need to consider maps of the form of the form $s \mapsto \pi(f(s)) U_s$ where $f \in \cc(G,A)$, $\pi A \to \mathbb{B}(\H)$ and $U \colon G \to \mathcal{U}(\H)$ is strongly continuous. In order to use the above theorem to give sense then, we will want to change $A$ out with $M_s(A)$, i.e., the multiplier algebra of $A$ equipped with the strict topology, and combine it with the following lemma:
+As mentioned, we will need to consider maps of the form of the form $s \mapsto \pi(f(s)) U_s$ where $f \in \cc(G,A)$, $\pi\colon  A \to \mathbb{B}(\H)$ and $U \colon G \to \mathcal{U}(\H)$ is strongly continuous. In order to use the above theorem to make sense, we will want to change $A$ out with $M_s(A)$, i.e., the multiplier algebra of $A$ equipped with the strict topology, and combine it with the following lemma:
 \begin{lemma}
 	Let $E$ be a Hilbert $A$-module, and let $u \colon G \to \mathcal{U}(E)$ be a group homomorphism from $G$ to the group of unitary operators on $E$, i.e., operators $T \in \mathcal{L}_A(E)$ such that $T^*T=TT^*=I_E$. Then $u$ is strictly continous if and only if $u$ is strongly continuous.
 	\label{int:unistrictstrong}
 \end{lemma}
 \begin{proof}
-	We saw in \cref{mult:STARTSTRONG} that on bounded sets, the strict and the $*$-strong topology coincided. In particular, since $\mathcal{L}_A(E)$ is a $C^*$-algebra, the set of unitary operators is a subset of the unit circle. Thus, it suffices to show that if $s \mapsto u_s x$ is continuous for $x$ then $s \mapsto u_s^* x$ is continuous. Let $x \in E$, then
+	We saw in \cref{mult:STARTSTRONG} that on bounded sets, the strict and the $*$-strong topology coincided. In particular, since $\mathcal{L}_A(E)$ is a $C^*$-algebra, the set of unitary operators is a subset of the unit sphere. Thus, it suffices to show that if $s \mapsto u_s x$ is continuous for $x$ then $s \mapsto u_s^* x$ is continuous. Let $x \in E$, then
 	\begin{align*}
 		\lv u_s^* x - u_t^*x \rv_A^2 = \underbrace{\lv u_s^* x \rv_A^2}_{= \lv x \rv_A^2} + \underbrace{\lv u_t^*x \rv_A^2}_{= \lv x \rv_A^2} - \langle \underbrace{ \left( u_t u_s^* + u_s u_t^*  \right)}_{\stackrel{s \to t}{\longrightarrow} 2I_E} x ,x \rangle \stackrel{s \to t}{\longrightarrow} 0,
 	\end{align*}
@@ -228,13 +230,13 @@ In the construction of the general crossed product and other $C^*$-algebras asso
 \begin{lemma}
 For $f \in \cc(G \times G  , B)$, the function
 	\begin{align*}
-		s \mapsto \int_G f(s,t) \d t
+		t \mapsto \int_G f(t,s) \d s
 	\end{align*}
 	is an element of $\cc(G,B)$.
 	\label{int:singleint}
 \end{lemma}
 \begin{proof}
-	It is easy to see that if $F \colon G \to B$ is the map $s \mapsto \int_G f(s,t) \d t$, then $ \supp F$ is compact. We show continuity. Suppose that $x_i \to x \in G$ and let $ \varepsilon > 0$. Pick compact $K_1,K_2 \subseteq G$ covering the support of $f$, i.e., such that $ \supp f \subseteq K_1 \times K_2$. Note that $f(x_i,y) \to f(x,y)$ uniformly: If not, then we can find a net $(r_j)\subseteq G$ and $\varepsilon_0 > 0$ such that
+	It is easy to see that if $F \colon G \to B$ is the map $t \mapsto \int_G f(t,s) \d s$, then $ \supp F$ is compact. We show continuity. Suppose that $x_i \to x \in G$ and let $ \varepsilon > 0$. Pick compact $K_1,K_2 \subseteq G$ covering the support of $f$, i.e., such that $ \supp f \subseteq K_1 \times K_2$. Note that $f(x_i,y) \to f(x,y)$ uniformly: If not, then we can find a net $(r_j)\subseteq G$ and $\varepsilon_0 > 0$ such that
 	\begin{align*}
 		\lv f(x_i,r_j) - f(x,r_j) \rv \geq \varepsilon_0,
 	\end{align*}
@@ -299,7 +301,7 @@ In analysis, an object of interest is the group algebra $L^1(G)$ for locally com
 	Straightforward calculations show that $f \mapsto \lv f \rv_1$ is a norm, and we denote the completion of $\cc(G,A,\alpha)$ in $\lv \cdot \rv_1$ by $L^1(G,A,\alpha)$.
 \end{definition}
 
-For discrete and second-countable groups $G$ acting on a $C^*$-algebra $A$ via an action $\alpha$, we may easily construct a $*$-representation of $\cc(G,\A)$ from a convariant representation $(\pi,u)$ by letting $\pi \rtimes u \colon \cc(A,G,\alpha) \to \mathbb{B}(\H)$ be the map
+For discrete and second-countable groups $G$ acting on a $C^*$-algebra $A$ via an action $\alpha$, we may easily construct a $*$-representation of $\cc(G,A)$ from a covariant representation $(\pi,u)$ by letting $\pi \rtimes u \colon \cc(A,G,\alpha) \to \mathbb{B}(\H)$ be the map
 \begin{align*}
 	\sum_{g \in G} a_g \delta_g \mapsto \pi(a_g) u_g,
 \end{align*}
@@ -355,7 +357,7 @@ And we shall see that this representation has a lot of nice properties:
 	as wanted. Assuming non-degeneracy of $\pi$, for $h \in \H$ and $\varepsilon>0$ we can pick $a \in A$, $\lv a \rv =1$ such that $\lv \pi(a) h - h \rv < \varepsilon$. Being a unitary representation, we may choose a neighborhood $e \in V \subseteq G$ such that $\lv u_s h - h\rv < \varepsilon$ for $s \in V$. Pick $0 \leq \varphi \in \cc(G)$ such that $\int_G \varphi(s) \d s = 1$ and $\supp \varphi \subseteq V$. Then, $f := \varphi \otimes a \in \cc(G,A)$ satisfies for $k \in \H$, $\lv k \rv = 1$, that
 	\begin{align*}
 	\left| \langle \pi \rtimes u(f)h-h,k\rangle \right| &= 	\left| \int_G \varphi(s) \langle \pi(a)u_s h-h,k \rangle\right|\\
-	& \leq \int_G \varphi(s) (|\langle \pi(a) (u_s h-h,k\rangle|+|\langle \pi(a)h-h,k\rangle| ) \d s \\
+	& \leq \int_G \varphi(s) (|\langle \pi(a) (u_s h-h),k\rangle|+|\langle \pi(a)h-h,k\rangle| ) \d s \\
 	&< 2 \varepsilon,
 	\end{align*}
 	showing that $\lv \pi \rtimes u(f)h-h\rv \leq 2 \varepsilon$.
@@ -363,7 +365,7 @@ And we shall see that this representation has a lot of nice properties:
 
 Now, given a locally compact topological group $G$, let $\lambda \colon G \to \U(L^2(G))$ be the left-regular representation $\langle \lambda_g \xi, \eta\rangle = \int_G \xi(g^{-1}s)\overline{\eta(s)}\d s$ for $g \in G$ and $\xi, \eta \in L^2(G)$. Even though $L^2(G)$ consists of equivalence classes (unless e.g., $G$ is discrete), we will abbreviate $\lambda_g \xi(s) := \xi(g^{-1}s)$. Given a Hilbert space $\H$, we will use $\lambda_g$ to denote the operator $I \otimes \lambda_g$ on $\H \otimes L^2(G) \cong L^2(G,\H)$. With this, we have the following:
 \begin{lemma}
-	Suppose that $G \acts \alpha A$, and $\pi$ is a representation of $A$ on $\H$. Define $\tilde{\pi}(a) \colon L^2(G,H)$ by 
+	Suppose that $G \acts \alpha A$, and $\pi$ is a representation of $A$ on $\H$. Define $\tilde{\pi}(a) \colon L^2(G,H) \to L^2(G,H)$ by 
 	\begin{align*}
 		\tilde{\pi}(a)\xi(r) = \pi(\alpha_{r^{-1}}(a))\xi(r), \text{ for } a \in A, \ r \in G \text{ and } \xi \in L^2(G,H).
 	\end{align*}
@@ -1051,6 +1053,7 @@ To see that this in fact is a well-defined action, we use the following:
 	\end{align*}
 \end{proof}
 \begin{note}
+	\todo{Add definition of $G$-product and Landstad's condition and rewrite this}
 	Let $u$ and $\hat \alpha$ be as above. If $a \in A \subseteq M(A \rtimes_\alpha G)$, then $\hat \alpha_\chi a = u_\chi a u_\chi^* = a$, since $a y(t) = \alpha_t(a) y(t)$ for all $y \in \cc(G,A,\alpha)$, hence $\hat \alpha_\chi (a)y(t) = (t, \chi) \alpha_{-t}(a) (t,-\chi) y(t) = \alpha_{-t}(a) y(t) = ay(t)$.  
 
 	If $f \in \cc(G)$ and $a \in A$, then for all $\xi \in L^2(G,H)$ and $s \in G$ we see that

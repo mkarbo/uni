@@ -140,6 +140,24 @@
   \field{year}{2008}
 \endentry
 
+\entry{connesclassification}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Connes}{C.}%
+     {Alain}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {III}%
+  }
+  \strng{namehash}{CA1}
+  \strng{fullhash}{CA1}
+  \field{sortinit}{C}
+  \field{title}{Une classification desfacteurs de type}
+  \field{year}{1973}
+\endentry
+
 \entry{dixmier1969c}{article}{}
   \name{author}{1}{}{%
     {{}%
