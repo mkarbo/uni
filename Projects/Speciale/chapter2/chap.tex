@@ -392,11 +392,11 @@ As we shall see, the integrated form of the above plays a crucial role in the th
 	\label{cross:regrepnondeg}
 \end{lemma}
 \begin{proof}
-	First note that the set $ f \otimes \eta \colon r \mapsto f(r) \eta$ with $f \in \cc(G)$ and $\eta \in \H$ has dense linear span in $L^2(G,\H)$, and since $\pi$ is non-degenerate, the set $\{ f \otimes \pi(a) \eta \mid \eta \in \H, \ f \in \cc(G) \text{ and } a \in A \}$ has dense linear in $L^2(G, \H)$ as well. Let $\varepsilon > 0$ and let $(e_i)$ be an approximate identity of $A$. By the previous remark and the fact that $\tilde{\pi}$ is a linear contraction, it suffices to see that 
+	Recall that the set of functions $ f \otimes \eta \colon r \mapsto f(r) \eta$ with $f \in \cc(G)$ and $\eta \in \H$ has dense linear span in $L^2(G,\H)$, and since $\pi$ is non-degenerate, the set $\{ f \otimes \pi(a) \eta \mid \eta \in \H, \ f \in \cc(G) \text{ and } a \in A \}$ has dense linear in $L^2(G, \H)$ as well. Let $\varepsilon > 0$ and let $(e_i)$ be an approximate identity of $A$. By the previous remark and the fact that $\tilde{\pi}$ is a linear contraction, it suffices to see that 
 	\begin{align*}
 		\tilde{\pi}(e_i) (f \otimes \pi(a) \xi)(r)=f(r) \pi(\alpha_{r}^{-1}(e_i)a) \xi   \stackrel 2 \to f(r) \pi(a) \xi,
 	\end{align*}
-	\todo{perhaps elaborate using proper integrals}for $f \in \cc(G)$, $\xi \in \H$ and $a \in A$ and $r \in \supp f$. The argument thus boils down to showing that $\alpha_r^{-1}(e_i) a \to a$, which an easy argument of contradiction using compactness of $\supp f$ and the approximate identity property passing to subnets shows that this is true.
+	for $f \in \cc(G)$, $\xi \in \H$ and $a \in A$ and $r \in \supp f$. The argument thus boils down to showing that $\alpha_r^{-1}(e_i) a \to a$, which an easy argument of contradiction using compactness of $\supp f$ and the approximate identity property passing to subnets shows that this is true.
 \end{proof}
 \begin{remark}
 	In particular, if $\pi$ is a non-degenerate representation of $A$, then the integrated form, $\tilde{\pi} \rtimes \lambda$, of $\mathrm{Ind}_e^G \pi$ is non-degenerate by \Cref{cross:integform}. This is not the only property which carries over from the map $\mathrm{Ind}_e^G \pi \mapsto \tilde{\pi} \rtimes \lambda$, but before we further comment on this, we must introduce some new maps
@@ -408,7 +408,7 @@ And, we have the following handy lemma:
 \begin{lemma}
 	Suppose that $(\pi,u)$ is a covariant representation of a $C^*$-dynamical system $G \acts \alpha A$, and let $\pi \rtimes u$ denote the representation of $\cc(G,A,\alpha)$. Then, for $f \in \cc(G,A)$ and $r \in G$ it holds that
 	\begin{align*}
-		 u_r  \circ \pi \rtimes u \circ \iota_G(r) (f) =   \pi \rtimes u (f)
+		 u_r^*  \circ \pi \rtimes u \circ \iota_G(r) (f) =   \pi \rtimes u (f)
 	\end{align*}
 	\label{cross:iotaG}
 \end{lemma}
@@ -426,7 +426,7 @@ It follows from the calculation
 	\label{cross:regfaith}
 \end{lemma}
 \begin{proof}
-	Let $0 \neq f \in \cc(G,A)$, and let $r \in G$ witness this, i.e, $f(r) \neq 0$. By \Cref{cross:iotaG} we can replace $f$ by $\iota_G(r^{1})f$ and assume that $r=e$, so without loss of generality we assume $r = e$. Let $\xi, \eta \in \H$ witness faithfulness of $\pi$, i.e., such that $\langle \pi ( f(e)) \xi, \eta \rangle \neq 0$. Pick an open neighborhood $e \in V$ such that for $s,r \in V$ we have 
+	Let $0 \neq f \in \cc(G,A)$, and let $r \in G$ witness this, i.e, $f(r) \neq 0$. By \Cref{cross:iotaG} we can replace $f$ by $\iota_G(r^{-1})f$ and assume that $r=e$. So without loss of generality we assume $r = e$, and let $\xi, \eta \in \H$ witness faithfulness of $\pi$, i.e., such that $\langle \pi ( f(e)) \xi, \eta \rangle \neq 0$. Pick an open neighborhood $e \in V$ such that for $s,r \in V$ we have 
 	\begin{align*}
 		| \langle \pi(\alpha_r^{-1}(f(s))) \xi  - \pi(f(e)))\xi , \eta \rangle|  < \frac{| \langle \pi (f(e)) \xi , \eta\rangle|}{3}.
 	\end{align*}
@@ -434,7 +434,7 @@ Let $W \subseteq V$ be a symmetric neighborhood such that $W^2 \subseteq V$, and
 \begin{align*}
 	\int_G \int_G \varphi(s^{-1}r) \varphi(r) \d r \d s = 1.
 \end{align*}
-Let $\zeta = \varphi \otimes \xi$ and $\psi = \varphi \otimes \eta$, then
+Let $\zeta = \varphi \otimes \xi$ and $\psi = \varphi \otimes \eta$ be the above defined elements of $L^2(G,H)$. Then
 \begin{align*}
 	\langle \tilde{ \pi } \rtimes \lambda (f) \zeta, \psi \rangle  =  \int_G \langle \tilde{\pi}(f(s)) \lambda_s \zeta , \psi\rangle \d s &= \int_G \int_G \langle \tilde{\pi} f(s) \lambda_s \zeta(r) , \psi(r) \rangle \d r \d s\\
 	&= \int_G \int_G \langle \pi(\alpha_{r^{-1}}f(s)) \zeta\left( r^{-1}s \right) \psi(s) \rangle \d r \d s\\
@@ -442,10 +442,10 @@ Let $\zeta = \varphi \otimes \xi$ and $\psi = \varphi \otimes \eta$, then
 \end{align*}
 and hence for all $r,s \in W$ we have
 \begin{align*}
-	\left | \tilde{\pi} \rtimes \lambda (f) \zeta , \psi \rangle - \langle \pi(f(e)) \zeta , \psi \rangle\right | &=  \left |  \int_G \int_G\varphi(r^{-1}s) \varphi (s) (\langle \pi(\alpha_{r^{-1}} f(s)) \xi , \eta \rangle - \langle \pi(f(e)) \xi , \eta \rangle  \d r \d s \right | \\
+	\left | \langle\tilde{\pi} \rtimes \lambda (f) \zeta , \psi \rangle - \langle \pi(f(e)) \zeta , \psi \rangle\right | &=  \left |  \int_G \int_G\varphi(r^{-1}s) \varphi (s) (\langle \pi(\alpha_{r^{-1}} f(s)) \xi , \eta \rangle - \langle \pi(f(e)) \xi , \eta \rangle  \d r \d s \right | \\
 	&\leq \int_G \int_G \varphi(r^{-1}s ) \varphi (s) | \langle \pi(\alpha_{r^{-1}}(f(s))) \xi , \eta\rangle - \langle \pi(f(e)) \xi , \eta \rangle | \d r \d s \\
 	&< \int_G \int_G \varphi(r^{-1}s) \varphi(s) \frac{| \langle \pi(f(e)) \xi, \eta \rangle|}{3} \d r \d s \\
-	&= \frac{| \langle \pi(f(e)) \xi , \eta \rangle|} {3},
+	&= \frac{| \langle \pi(f(e)) \xi , \eta \rangle|} {2},
 \end{align*}
 and in particular, it follows that $\tilde{\pi} \rtimes \lambda (f) \neq 0$.
 \end{proof}
@@ -464,7 +464,7 @@ and it is easy to see that the assignment $\cc(G,A,\alpha) \ni f \mapsto \lv f \
 	\begin{align*}
 		V_\pi = \overline \Span\left\{ \pi(a) \xi \mid a \in A \text{ and } \xi \in \H \right\} \subseteq \H,
 	\end{align*}
-	then $V$ is invariant under both $\pi$ and $u$, and if $\pi^{V_\pi}$ and $ u^{V_\pi}$ denotes the corresponding subrepresentations on $V^{\pi}$, we have for all $f \in \cc(G,A,\alpha)$ 
+	then $V_\pi$ is invariant under both $\pi$ and $u$ by covariance, and if $\pi^{V_\pi}$ and $ u^{V_\pi}$ denotes the corresponding subrepresentations on $V_{\pi}$, we have for all $f \in \cc(G,A,\alpha)$ 
 	\begin{align*}
 		\lv \pi ^{V_\pi} \rtimes u^{V_\pi}(f) \rv = \lv \pi \rtimes u (f) \rv,
 	\end{align*}
@@ -485,6 +485,16 @@ This allows us to define the general crossed product as the completion of $\cc(G
 \begin{remark}
 	Another (equivalent) formulation of the crossed product is to consider the representation of $L^1(G,A)$ given by the direct sum of all non-degenerate covariant representations of $L^1(G,A)$. Again, one can reformulate the above to only consider cyclic covariant representations, and use the fact that every representation of a $C^*$-algebra is a sum of cyclic representations.
 \end{remark}
+The perhaps most trivial example is in fact not a degenerate example, for it gives us a way to define the full group $C^*$-algebra of a locally compact group $G$:
+\begin{example}
+	Recall the definition of the full group $C^*$-algebra $C^*(G)$, which is given as the closure of $\cc(G)$ (or $L^1(G)$) coming from the direct sum of all non-degenerate representations of the Banach $^*$-algebra $L^1(G)$. This is equivalent to the construction above when we let $G \acts \C$ be the trivial action $1$. 
+\end{example}
+Another fundamental example is the following:
+\begin{example}
+	Let $G = \Z$ and let $\theta \in \R$. Define an action of $\Z$ on $C(S^1)$ by $\alpha_\theta(n)f(w) = f(e^{-2\pi \theta n} w)$. The corresponding crossed product $C(S^1) \rtimes_{\alpha_\theta} \Z$ is called the \myemph{(Ir)rational Rotation Algebra} (depending on wether $\theta$ is irrational or rational).
+\end{example}
+In fact, for $\theta$ irrational, we obtain one of the prototypes of simple crossed product algebras, which we recall is the topic of this thesis. Nice!
+
 Inconvenient as it is, there is no guarantee that $A \rtimes_\alpha G$ contains a copy of $A$ or $G$ except under certain additional conditions on $A$ and $G$. However, we can always embed $A$ and $G$ into the Multiplier Algebra $M(A \rtimes_\alpha G)$ of $A \rtimes_\alpha G$:
 \begin{lemma}
 	Suppose that $G \acts \alpha A$ is a $C^*$-dynamical system. Define for $a \in A$ the map $\iota_A(a) \colon A \rtimes_\alpha G \to A \rtimes_\alpha G$ to be the extension of the map defined on $\cc(G,A,\alpha)$ by
@@ -493,7 +503,7 @@ Inconvenient as it is, there is no guarantee that $A \rtimes_\alpha G$ contains 
 	\end{align*}
 	Then $\iota_A \colon A \to M(A \rtimes_\alpha G)$, $a \mapsto \iota_A(a)$, is a faithful non-degenerate $^*$-representation, satisfying
 	\begin{align*}
-		\overline{\pi \rtimes u } \iota_A(a) = \pi(a),
+		\overline{\pi \rtimes u } \ \iota_A(a) = \pi(a),
 	\end{align*}
 	for all covariant representations $(\pi,u)$ of $G \acts \alpha A $.
 \end{lemma}
@@ -506,14 +516,16 @@ for all $f \in \cc(G,A,\alpha)$ and $a \in A$, so $\lv \iota_A(a) f \rv \leq \lv
 \begin{align*}
 	\left( \iota_A(a) f \right)^*(s) = \Delta(s^{-1}) \alpha_s(f(s^{-1})^*) \alpha_s(a^*) = f^*(s) \alpha_s(a^*), \text{ for }s \in G,
 \end{align*}
-and hence we see that 
+implying that
 \begin{align*}
 	\left( \iota_A(a) f \right)^* \ast g (s) = \int_G f^*(r) \alpha_r(a^*) \alpha_r(g(r^{-1}s)) \d r &= \int_G f^*(r) \alpha_r \left(  (\iota_A(a^*) g)(r^{-1}s)\right) \d r \\
-	&= f^* \ast(\iota_A(a^*) g)(s),
+	&= f^* \ast(\iota_A(a^*) g)(s).
 \end{align*}
-so $\iota_A(a^*)$ is an adjoint on a dense sub$*$-algebra (of the $C^*$-algebra seen as a Hilbert module over itself), hence everywhere by continuity, so $\iota_A(a) \in M(A \rtimes_\alpha G)$. For injectivity, let $\pi$ be any faithful, non-degenerate representation of $A$, and let $\overline{\tilde \pi \rtimes \lambda}$ denote the extension of $\tilde \pi \rtimes \lambda$ to $M(A \rtimes_\alpha G)$. By \ref{cross:integform} and the above, we see that $\tilde \pi(a) = \overline{\tilde \pi \rtimes \lambda } \circ \iota_A(a)$, hence $\iota_A(a) = 0 \implies \tilde \pi(a) = 0 \implies a = 0$, since $\tilde \pi$ is faithful.
+We conclude that $\iota_A(a^*)$ is an adjoint (with respect to the canonical $A \rtimes_\alpha G)$-valued inner product) on the dense sub$*$-algebra $\cc(G,A,\alpha) \subseteq A \rtimes_\alpha G$, hence everywhere by continuity, i.e., $\iota_A(a) \in M(A \rtimes_\alpha G)$. 
 
-For non-degeneracy, note that \ref{int:indlmdense} implies that the span of $\varphi \otimes ab$ is dense in $A \rtimes_\alpha G$, since the denseness in the inductive limit topology also implies that the span is dense in the $L^1$-norm on $\cc(G,A)$, and clearly $\varphi \otimes ab \in \{ \iota_A(a) x \mid\ a \in A, \ x \in A \rtimes_\alpha G\}$.
+For injectivity, let $\pi$ be any faithful, non-degenerate representation of $A$, and let $\overline{\tilde \pi \rtimes \lambda}$ denote the extension of $\tilde \pi \rtimes \lambda$ to $M(A \rtimes_\alpha G)$. By \ref{cross:integform} and the above, we see that $\tilde \pi(a) = \overline{\tilde \pi \rtimes \lambda } \circ \iota_A(a)$, hence $\iota_A(a) = 0 \implies \tilde \pi(a) = 0 \implies a = 0$, since $\tilde \pi$ is faithful.
+
+For non-degeneracy, recall that the set of functions $\varphi \rtimes b$ for $\varphi \in \cc(G)$ and $b \in A $ span a dense subset of $\cc(G,A)$ in the inductive limit norm and hence in $L^1$-norm by \cref{int:indlmdense}. This means that this set also spans a dense subset of $A \rtimes_\alpha G$ in the universal norm. Also, for $a \in A$, we see that $\iota_A(a) \varphi \rtimes b = \varphi \rtimes ab$, from which we conclude that the set $\iota_A(A) A \rtimes_\alpha G$ is dense, finishing the proof.
 \end{proof}
 \begin{lemma}
 	There is an injective and strictly continuous group homomorphism
@@ -528,7 +540,7 @@ For non-degeneracy, note that \ref{int:indlmdense} implies that the span of $\va
 	\begin{align*}
 		\overline{\pi \rtimes u} \iota_G(s) =u_s,
 	\end{align*}
-for $s \in G$, where $\overline {\pi \rtimes u}$
+for $s \in G$.
 \end{lemma}
 Before we commence the proof of the above, we want to point out that the above to lemmas ensures that for each covariant representation $(\pi , u)$ of $G \acts \alpha A$ we obtain the following commutative diagram
 \begin{equation}
@@ -538,19 +550,22 @@ Before we commence the proof of the above, we want to point out that the above t
 	\end{tikzcd}
 	\label{diag:iotacom}
 \end{equation}
-And we shall see that they are in fact a covariant pair. But first, the proof of the above lemma:
+And we shall see that this pair is in fact a covariant pair. But first, the proof of the above lemma:
 \begin{proof}
 	Let $\iota_G(s)$ be defined on $\cc(G,A,\alpha)$ as earlier. By \Cref{cross:iotaG}, we see that
 	\begin{align*}
 		\lv \iota_G(r) f \rv_u = \lv f \rv_u,
 	\end{align*}
-	for all $f \in \cc(G,A,\alpha)$, and so extends to $A \rtimes_\alpha G$. Let $s,r \in G$, then for $f \in \cc(G,A,\alpha)$, we see that
+	for all $f \in \cc(G,A,\alpha)$, and so it extends to $A \rtimes_\alpha G$. Let $s,r \in G$, then for $f \in \cc(G,A,\alpha)$, we see that
 	\begin{align*}
 		(\iota_G(r) f(s))^* = \Delta(s^{-1}) \alpha_s ( (\alpha_r(f(r^{-1}s^{-1}))^*) \Delta(s^{-1}) \alpha_{sr}(f(r^{-1}s^{-1})^*),
 	\end{align*}
 	which, combined with the fact that $\Delta(s^{-1}) \d s$ is the integrand of a right Haar measure, can be used to show that $\iota_G(r)^* = \iota_G(r^{-1})$, so that $\iota_G(r) \in M(A \rtimes_\alpha G)$. In fact, since clearly $\iota_G(rs) = \iota_G(r) \circ \iota_G(s)$ for $s,r \in G$, it is a unitary element.
 
-	Let $(\pi,u)$ be any non-degenerate covariant representation of $G \acts \alpha A$. By \Cref{cross:iotaG}, we see that $u_s  = \overline{ \pi \rtimes u} \iota_G(s)$ for all $ s \in G$, and if $\pi$ is a faithful representation of $A$, then considering  $\mathrm{Ind} \pi = (\tilde \pi, \lambda)$, we see that $\iota_G(s) \neq \mathrm{id}$ if $s \neq e$. For continuity, let $f \in \cc(G,A,\alpha)$. We will see that $\iota_G$ is strongly continuous, which by \Cref{int:unistrictstrong} is equivalent to being strictly continuous. We thus show that if $(s_i)\subseteq G$, $s_i \to e$, then $\iota_G(s_i) x \to x$ for $x \in A \rtimes_\alpha G$. We know that the set of functions $\varphi \otimes a$, $\varphi \in \cc(G)$ and $a \in A$, spans a dense subset of $\cc(G,A)$, hence it suffices to show that $\iota_G(s_i) \varphi \otimes a \stackrel{L^1}{\to} \varphi \otimes a$, but
+	Let $(\pi,u)$ be any non-degenerate covariant representation of $G \acts \alpha A$. By \Cref{cross:iotaG}, we see that $u_s  = \overline{ \pi \rtimes u} \iota_G(s)$ for all $ s \in G$. Moreover, for faithful representations $\pi$ (which also implies that $\tilde \pi$ is faithful) we have that the corresponding representation $\tilde \pi \rtimes \lambda$ is faithful on $\cc(G,A,\alpha)$. This implies that for $s \neq e$ we have $\mathrm{id} \neq \lambda_s = \overline{\tilde \pi \rtimes \lambda} \iota_G(s)$ for $s \neq e$, hence $\iota_G(s) \neq \mathrm{id}$ as well, so it is injective.
+		
+	
+	For continuity, let $f \in \cc(G,A,\alpha)$. We will see that $\iota_G$ is strongly continuous, which by \Cref{int:unistrictstrong} is equivalent to being strictly continuous: Let $(s_i)\subseteq G$, $s_i \to e$. Then we claim that $\iota_G(s_i) x \to x$ for $x \in A \rtimes_\alpha G$. To see this, note that we know that the set of functions $\varphi \otimes a$, $\varphi \in \cc(G)$ and $a \in A$, spans a dense subset of $\cc(G,A)$, hence it suffices to show that $\iota_G(s_i) \varphi \otimes a \stackrel{L^1}{\to} \varphi \otimes a$, but
 	\begin{align*}
 		\lv \iota_G(r_{i}) \varphi \otimes a - \varphi \otimes a \rv_1 &= \int_G \lv \varphi(r_{i}^{-1}s) \alpha_{r_i}(a) - \varphi(r_i^{-1}s) a + \varphi(r_{i}^{-1}a) a - \varphi(s) a \rv_A \d s\\ 
 		& \leq \lv \alpha_{r_i}(a) - a \rv \lv \varphi \rv_1 + \lv \lambda_{r_i} \varphi - \varphi \rv_1 \lv a \rv,
@@ -584,26 +599,7 @@ And, we summarize the above in the following
 	\end{align*}
 	for $f \in \cc(G,a,\alpha)$, $a \in A$ and $s,r \in G$.
 \end{proof}
-We now embark on our final task in our construction and picture painting of the general crossed product $A \rtimes_ \alpha G$, namely we wish to properly characterize its representation theory. We are going to see that $A \rtimes_\alpha G$ is the $C^*$-algebra whose representation theory is in a one-to-one correspondance with the covariant representations of $(A,G,\alpha)$ via the map $(\pi,u) \mapsto \pi \rtimes u$. To see this, we note first that as one usually does when dealing with representations of $C^*$-algebras and groups, we decompose them into subrepresentations:
-\begin{corollary}
-	Let $G \acts \alpha A$ be a $C^*$-dynamical system and let $a \in A$, $f,h \in \cc(G,A)$ and $\varphi \in \cc(G)$. Then
-\begin{align*}
-	\iota_A(a) \iota_G(\varphi) &= \varphi \otimes a,\\
-	\int_G \iota_A(f(s)) \iota_G(s)h  \d s &= f \ast h \text{ and }\\
-	\int_G \iota_A(f(s)) \iota_G(s) \d s & = f,
-\end{align*}
-where we've identified $\cc(G,A,\alpha) \subseteq A \rtimes_\alpha G \subseteq M(A \rtimes_\alpha G)$.
-	\label{cross:iotaresults}
-\end{corollary}
-\begin{proof}
-	Let $(\pi, u)$ be a non-degenerate covariant representation of $G \acts \alpha A$ and notice that
-	\begin{align*}
-		\overline{\pi \rtimes u}\left( \int_G \iota_a(f(s)) \iota_G(s) \d s  \right) = \pi \rtimes u (f),
-	\end{align*}
-	which combined with \cref{cross:essnorm} shows the last and first identity. The second inequality follows from the last and  \cref{int:multstrictintegral}.
-\end{proof}
-\todo{swap around the above and below}
-Before we finalize the description of the representation theory of $A \rtimes_\alpha G$, we need to extend the map $\iota_G$ to $C^*(G)$, the full group $C^*$-algebra of $G$, since this will provide us with a useful characterization of a dense subset of $A \rtimes_\alpha G$, so without further ado:
+We now embark on our final task in our construction and picture painting of the general crossed product $A \rtimes_ \alpha G$, namely we wish to properly characterize its representation theory. We are going to see that $A \rtimes_\alpha G$ is the $C^*$-algebra whose representation theory is in a one-to-one correspondance with the covariant representations of $(A,G,\alpha)$ via the map $(\pi,u) \mapsto \pi \rtimes u$, but before we finalize the description of the representation theory of $A \rtimes_\alpha G$, we need to extend the map $\iota_G$ to $C^*(G)$, the full group $C^*$-algebra of $G$, since this will provide us with a useful characterization of a dense subset of $A \rtimes_\alpha G$, so without further ado:
 \begin{lemma}
 	There exists a $^*$-homomorphsim $\tilde \iota_G \colon C^*(G) \to M(A \rtimes_\alpha G)$ such that
 	\begin{align*}
@@ -621,12 +617,32 @@ Before we finalize the description of the representation theory of $A \rtimes_\a
 		&= \int_G z(r) \iota_G(r) \d r \int_G w(s) \iota_G(s) \d s \\
 		&= \tilde \iota_G(z) \tilde \iota_G(w),
 	\end{align*}
-	so if it is well-defined and continuous on $C^*(G)$, it will be a $^*$-homomorphism, since the integral also respects taking adjoints. Let $\pi$ be any faithful and non-degenerate representation of $A \rtimes_\alpha G$, so that its extension $\overline \pi $ to $M(A \rtimes_ \alpha G)$ is faithful aswell. Consider the composition $s \mapsto \overline{\pi} \circ \iota_G(s)$, which is a unitary valued homomorphism. It is in fact strongly continuous: Suppose that $f \in \cc(G,A)$ and $\xi \in \H_\pi$, then for $s \in G$ we see that $\overline{ \pi} (\iota_G(s)) \pi(f) \xi = \pi(\iota_G(s) f) \xi$, and it follows that $s \mapsto \overline{\pi}(\tilde \iota_G(s)) \xi$ is continuous for all $\xi \in \H$ by continuity of $s \mapsto \iota_G(s)f$ and non-degeneracy of $\pi$. Thus
+	so if it is well-defined and continuous on $C^*(G)$, it will be a $^*$-homomorphism, since the integral also respects taking adjoints. 
+	
+	Let $\pi$ be any faithful and non-degenerate representation of $A \rtimes_\alpha G$, so that its extension $\overline \pi $ to $M(A \rtimes_ \alpha G)$ is faithful aswell. Consider the composition $s \mapsto \overline{\pi} \circ \iota_G(s)$, which is a unitary valued homomorphism. It is strongly continuous: Suppose that $f \in \cc(G,A)$ and $\xi \in \H_\pi$, then for $s \in G$ we see that $\overline{ \pi} (\iota_G(s)) \pi(f) \xi = \pi(\iota_G(s) f) \xi$, and it follows that $s \mapsto \overline{\pi}(\iota_G(s)) \xi$ is continuous for all $\xi \in \H$ by continuity of $s \mapsto \iota_G(s)f$ and non-degeneracy of $\pi$. Thus
 	\begin{align}
 		\lv \tilde \iota_G(z)\rv \leq \lv z \rv,
 	\end{align}
 	for all $z \in \cc(G)$, so it extends to a $^*$-homomorphism $C^*(G) \to M(A \rtimes_\alpha G)$, which we will also denote by $\iota_G$
 \end{proof}
+\begin{corollary}
+	Let $G \acts \alpha A$ be a $C^*$-dynamical system and let $a \in A$, $f,h \in \cc(G,A)$ and $\varphi \in \cc(G)$. Then
+\begin{align*}
+	\iota_A(a) \iota_G(\varphi) &= \varphi \otimes a,\\
+	\int_G \iota_A(f(s)) \iota_G(s)h  \d s &= f \ast h \text{ and }\\
+	\int_G \iota_A(f(s)) \iota_G(s) \d s & = f,
+\end{align*}
+where we've identified $\cc(G,A,\alpha) \subseteq A \rtimes_\alpha G \subseteq M(A \rtimes_\alpha G)$.
+	\label{cross:iotaresults}
+\end{corollary}
+\begin{proof}
+	Let $(\pi, u)$ be a non-degenerate covariant representation of $G \acts \alpha A$ and notice that
+	\begin{align*}
+		\overline{\pi \rtimes u}\left( \int_G \iota_a(f(s)) \iota_G(s) \d s  \right) = \pi \rtimes u (f),
+	\end{align*}
+	which combined with \cref{cross:essnorm} shows the first and last identity. The second equality follows from the last and  \cref{int:multstrictintegral}.
+\end{proof}
+\todo{swap around the above and below}
 \begin{remark}
 In particular, by the above and \cref{int:indlmdense} we see that the set of functions of the form $\iota_A(a) \iota_G(z)$ for $a \in A$ and $z \in \cc(G)$ span a dense subset of $A \rtimes_\alpha G$. This will be useful in the following:
 \end{remark}
