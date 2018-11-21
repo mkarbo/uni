@@ -754,16 +754,16 @@ Alas, we continue:
 	\label{mult:cyclic1}
 \end{lemma}
 \begin{proof}
-	We will show that the orthogonal complement of $\sum_{i,j} (A \rtimes_\alpha G)(\xi_i \otimes \eta_j)$ is $0$. Suppose that $\xi$ is orthogonal to it, then for all $i,j$ and $x \otimes f \in \cc(G,A) \subseteq A \rtimes_\alpha G$ we have
+	We will show that the orthogonal complement of $\sum_{i,j} (A \rtimes_\alpha G)(\xi_i \otimes \eta_j)$ is $0$. Suppose that $\xi$ is orthogonal to $\tilde \pi \rtimes \lambda(x) \xi_i \otimes \eta_j$ for all $i,j$. Then for all $i,j$ and $a \otimes f \in \cc(G,A) \subseteq A \rtimes_\alpha G$ we have
 	\begin{align*}
-		0 &= \langle \tilde \pi \rtimes \lambda (x \otimes f) (\xi_i \otimes \eta_j) , \xi \rangle_{L^2}\\
-		&= \int_G \langle \tilde \pi \rtimes \lambda (x \otimes f) (\xi_i \otimes \eta_j)(s) , \xi(s)\rangle_\H \d s \\
-		&= \int_G \int_G \langle \pi(\alpha_{t^{-1}}\left( (x \otimes f)(s) \right) \lambda_t \eta_j(s) \xi_i , \xi \rangle_\H \d t \d s\\
-		&= \int_G \int_G \langle \pi\left( \alpha_{t^{-1}} (x) \right) f(s) \eta_j(t^{-1}s) \xi_i , \xi \rangle_\H \d t\d s\\
-		&= \int_G \int_G \langle \pi( \alpha_{t^{-1}}(x) ) \xi_i , \xi \rangle_H f(s) \eta_j(t^{-1}s) \d t \d s \\
-		&= \int_G \langle \pi(\alpha_{t^{-1}}(x)) \xi_i , \xi \rangle_\H (f \ast \eta_j)(s) \d s.
+		0 &= \langle \tilde \pi \rtimes \lambda (a \otimes f) (\xi_i \otimes \eta_j) , \xi \rangle_{L^2}\\
+		&= \int_G \langle \tilde \pi \rtimes \lambda (a \otimes f) (\xi_i \otimes \eta_j)(s) , \xi(s)\rangle_\H \d s \\
+		&= \int_G \int_G \langle \pi(\alpha_{t^{-1}}\left( (a \otimes f)(s) \right) \lambda_t \eta_j(s) \xi_i , \xi \rangle_\H \d t \d s\\
+		&= \int_G \int_G \langle \pi\left( \alpha_{t^{-1}} (a) \right) f(s) \eta_j(t^{-1}s) \xi_i , \xi \rangle_\H \d t\d s\\
+		&= \int_G \int_G \langle \pi( \alpha_{t^{-1}}(a) ) \xi_i , \xi \rangle_H f(s) \eta_j(t^{-1}s) \d t \d s \\
+		&= \int_G \langle \pi(\alpha_{t^{-1}}(a)) \xi_i , \xi \rangle_\H (f \ast \eta_j)(s) \d s.
 	\end{align*}
-	Now, let $E \subseteq G$ be any compact set. We will argue that $\xi = 0$ by showing that $\xi = 0$ on any arbitrarily large compact subset $F$ of $E$: Let $\varepsilon > 0$, and use a Banach space-valued analogue of Lusin's theorem (e.g. as in \cite[Appendix B]{williamscrossed}) to pick $F \subseteq E$ compact with $\mu(E\backslash F) < \varepsilon$ and such that $\xi|F \in \cc(F,H)$. Cyclicity of $\left\{ \eta_j \right\}_{j \in J}$ implies that the set $\{f \ast \eta_j \mid j \in J \text{ and } f \in \cc(G)\}$ spans a dense subset of $C_c(G)$ (ee e.g. \cite[Proposition 3.33]{folland2016fourier}), so
+	Now, let $E \subseteq G$ be any compact set. We will argue that $\xi = 0$ by showing that $\xi = 0$ on any arbitrarily large compact subset $F$ of $E$: Let $\varepsilon > 0$, and use a Banach space-valued analogue of Lusin's theorem (e.g. as in \cite[Appendix B]{williamscrossed}) to pick $F \subseteq E$ compact with $\mu(E\backslash F) < \varepsilon$ and such that $\xi|F \in \cc(F,H)=C(F,H)$. Cyclicity of $\left\{ \eta_j \right\}_{j \in J}$ implies that the set $\{f \ast \eta_j \mid j \in J \text{ and } f \in \cc(G)\}$ spans a dense subset of $C_c(G)$ (ee e.g. \cite[Proposition 3.33]{folland2016fourier}), so
 	\begin{align*}
 		\int_{F} \langle \pi(\alpha_{t^{-1}}(x)) \xi_i , \xi(t) \rangle_H f(t) \d t = 0,
 	\end{align*}
@@ -776,7 +776,7 @@ We now will go through a result which will allow us to describe regular represen
 	\begin{align*}
 		\tilde \varphi_z (f) =\varphi\left( (z^* \ast f \ast z)(e) \right), \ \text{ for all } f \in \cc(G,A,\alpha).
 	\end{align*}
-	And the set of vector states contained in $\tilde \pi_{\varphi} \rtimes \lambda , L^2(G,\H_\varphi))$ is a norm limit of vector states of this form.
+	Moreover, the set of vector states contained in $(\tilde \pi_{\varphi} \rtimes \lambda , L^2(G,\H_\varphi))$ is a norm limit of vector states of this form.
 	\label{mult:vectorstateapprox}
 \end{proposition}
 \begin{proof}
@@ -810,9 +810,11 @@ Recall the definition of the universal representation $(\pi_u,\H_u)$ of a $C^*$-
 	\begin{align*}
 		A \rtimes_{\alpha,r} G := \overline{\tilde \pi_u \rtimes \lambda (\cc(G,A,\alpha))},
 	\end{align*}
-	or equivalently, as the image of $A \rtimes_\alpha G$ of the extension of $\tilde \pi_u \rtimes \lambda$ to $A \rtimes_\alpha G$. 
+	where $\pi_u$ is the universal representation of $A$. Equivalently, we may define $A \rtimes_{\alpha , r} G$ as the image of $A \rtimes_\alpha G$ of the extension of $\tilde \pi_u \rtimes \lambda$ to $A \rtimes_\alpha G$. 
 \end{definition}
-
+\begin{remark}
+	We will soon see that the above is actually independent of the choice of the representation $\pi_u$ of $A$, and may just as well be replaced with any faithful representation $\pi$ of $A$.
+\end{remark}
 We need define yet another subset of functionals on $A \rtimes_\alpha G$, one which closely resembles vector states of $\tilde \pi_u \rtimes \lambda$:
 \begin{definition}
 	The set of functionals $\psi \in (A \rtimes_\alpha G)^*$ of the form
@@ -838,24 +840,25 @@ For a representation $(\pi,\H)$ of $A$, we will also use $\tilde \pi \rtimes \la
 	\label{mult:reducedfaithful}
 \end{theorem}
 \begin{proof}
+	\todo{Is this the proper way of describing states contained in $\tilde \pi \rtimes_r \lambda$, or should we use the identification using predual, instead of using composition with $\sigma$}
 	For this particular proof, we will let $\tilde \pi \rtimes_r \lambda$ denote the corresponding representation of $A \rtimes_{\alpha,r}G$.
 
 	We will show that $\tilde \pi_u \rtimes_r \lambda$ is \myemph{weakly contained} in $\tilde \pi \rtimes_r \lambda$ for all faithful representations $\pi$ of $A$, i.e., that $\ker \tilde \pi \rtimes_r \lambda \subseteq \ker \pi_u \rtimes_r \lambda = 0$. By \cite[80]{dixmier1969c}, this is equivalent to showing that the set of vector states of $\tilde \pi \rtimes_r \lambda$ is weak$^*$ dense in the set of states in $\tilde \pi_u \rtimes_r \lambda$.
 
-	Let $E$ be the set of states contained in $(\pi,\H)$. For now, let $\sigma$ denote the surjective $*$-representation $A \rtimes_\alpha G \to A \rtimes_{\alpha,r}G$. We then let $F$ denote set of functions
+	Let $E$ be the set of states contained in $(\pi,\H)$, which will be weak$^*$ dense in $\mathcal{S}(A)$ by faithfulness of $\pi$. For now, let $\sigma$ denote the surjective $*$-representation $A \rtimes_\alpha G \to A \rtimes_{\alpha,r}G$. We then let $F$ denote set of functions
 	\begin{align*}
 		F = \left\{  \Gamma_\psi \in A_+^1(A\rtimes_\alpha G) \mid \Gamma_\psi = \Gamma_{\varphi \circ \sigma} \text{ for some state } \varphi \text{ contained in } \tilde \pi \rtimes_r \lambda \right\}
 	\end{align*}
 
 	Note that the set of vector states in $\tilde \pi_u \rtimes_r \lambda$ is exactly the set of functionals which give rise to $A_+^1(A \rtimes_\alpha G)$, by definition and the fact that we may view $A \rtimes_{\alpha,r} G$ as the image of $A \rtimes_\alpha G$ under $\tilde \pi_u \rtimes \lambda$.
 
-	Hence if $F \subseteq A_+^1(A \rtimes_\alpha G)$ is dense in the topology ofweak$^*$ convergence uniformly on compacta, then, by the isomorphism between the statespace of $A \rtimes_\alpha G$ and $B(A \rtimes_\alpha G)$, we be done.
+	Hence if $F \subseteq A_+^1(A \rtimes_\alpha G)$ is dense in the topology of weak$^*$ convergence uniformly on compacta, then, by the isomorphism between the statespace of $A \rtimes_\alpha G$ and $B(A \rtimes_\alpha G)$, we're done.
 
 	By the above remark and \Cref{mult:vectorstateapprox}, it is enough to consider approximations of the functions of the form
 	\begin{align*}
 		\Gamma_{\tilde \varphi_z}(t) (x) =\varphi\left( \int_G z^*(s) \alpha_s(x) \alpha_{st}(z\left( (st)^{-1} \right)\d s \right),
 	\end{align*}
-	for suitable $\varphi \in \mathcal{S}(A)$ and $z \in \cc(G,A,\alpha)$, i.e., with $\varphi(z^* \ast z(e)) = 1$, since they span a dense subset of $A_+^1(A \rtimes_\alpha G)$, so let such $\varphi$ and $z$ be given. By density of $E$, pick a convergent net $\varphi_i \to \varphi$ in the weak$^*$-topology. This implies that $\Gamma_{\tilde {\varphi_i}_z}(t) \to \Gamma_{\tilde \varphi_z}(t)$ weak$^*$, uniformly on compacta of $G$. Since $\varphi_i \in E$, of the corresponding $(\pi_{\varphi_i},H_{\varphi_i})$ corresponds to a sub-representation of $(\pi,H)$, so $\Gamma_{\tilde {\varphi_i}_z} \in F$, finishing the proof.
+	for suitable $\varphi \in \mathcal{S}(A)$ and $z \in \cc(G,A,\alpha)$, i.e., with $\varphi(z^* \ast z(e)) = 1$, since they span a dense subset of $A_+^1(A \rtimes_\alpha G)$: Let such $\varphi$ and $z$ be given. By density of $E$, pick a convergent net $\varphi_i \to \varphi$ in the weak$^*$-topology. This implies that $\Gamma_{\tilde {\varphi_i}_z}(t) \to \Gamma_{\tilde \varphi_z}(t)$ weak$^*$, uniformly on compacta of $G$. Since $\varphi_i \in E$, the corresponding representation $(\pi_{\varphi_i},H_{\varphi_i})$ will be a sub-representation of $(\pi,H)$, from which we conclude that $\Gamma_{\tilde {\varphi_i}_z} \in F$, finishing the proof.
 \end{proof}
 In particular, this means that we may always consider $A \rtimes_{\alpha,r}G$ as the completion of $\cc(G,A,\alpha)$ under the regular representation induced by a faithful representation of $A$, which will be convenient, as we shall see, for in a large case of groups there is only one crossed product. The following useful lemma can be found in \cite[Lemma 7.7.6]{pedersenalgauto}:
 \begin{lemma}
@@ -865,8 +868,9 @@ In particular, this means that we may always consider $A \rtimes_{\alpha,r}G$ as
 
 We recall one of the several equivalent definition of amenability for locally compact groups $G$:
 \begin{definition}
-	A group $G$ is \myemph{amenable} if there is a net $(f_i) \subseteq L^2(G)$ such that $(f_ \rtimes \tilde f_i)$ converges uniformly on compacta of $G$ to $1$, where $\tilde f (t) = \overline f(t^{-1})$ for $f \in L^2(G)$ and $t \in G$.
+	A group $G$ is \myemph{amenable} if there is a net $(f_i) \subseteq L^2(G)$ such that $(f_ \ast \tilde f_i)$ converges uniformly on compacta of $G$ to $1$, where $\tilde f (t) = \overline f(t^{-1})$ for $f \in L^2(G)$ and $t \in G$.
 \end{definition}
+See e.g., \cite[Appendix G]{bekka2008kazhdan}, \cite[Proposition 7.3.7 and 7.3.8]{pedersenalgauto} for the above and more characterizations. 
 
 With this, we obtain the following:
 \begin{theorem}
@@ -874,7 +878,7 @@ With this, we obtain the following:
 	\label{cross:amenable}
 \end{theorem}
 \begin{proof}
-	By applying the above to $G \acts \C$ as the trivial action, we obtain a net $\Psi_i \in B_{+}(\C \rtimes_\alpha G)$ with compact support convergin uniformly on compacta to $1$, by amenability of $G$ and \cite[Lemma 7.2.4]{pedersenalgauto}. It is easy to see that the pointwise product $\Psi_i \Gamma_\varphi \in B_+^1(A \rtimes_\alpha G)$ for all $\varphi \in \mathcal{S}(A \rtimes_\alpha G)$, and since $\Psi_i$ has compact support, we see that $\Psi_i \Gamma_\varphi \in A_+(A \rtimes_\alpha G)$ and $\Psi_i \Gamma_\varphi \to \Gamma_\varphi$ in the topology of weak$^*$ uniformly convergence on compacta of $G$. Hence, $A_+(A \rtimes_\alpha G) \subseteq B_+(A \rtimes_\alpha G)$ is dense. In particular, this implies that if $\pi$ denotes the universal faithful representation of $A \rtimes_\alpha G$, then $\ker \tilde \pi_u \rtimes \lambda \subseteq \ker \pi = 0$, by weak containment (\cite[80]{dixmier1969c}), so $A \rtimes_\alpha G \cong \tilde \pi_u \rtimes \lambda( A \rtimes_\alpha G) = A \rtimes_{\alpha,r}G$.
+	By applying the above to $G \acts 1 \C$ as the trivial action, we obtain a net $\Psi_i \in B_{+}(\C \rtimes_\alpha G)$ with compact support convergin uniformly on compacta to $1$, by amenability of $G$ and \cite[Lemma 7.2.4]{pedersenalgauto}. It is easy to see that the pointwise product $\Psi_i \Gamma_\varphi \in B_+^1(A \rtimes_\alpha G)$ for all $\varphi \in \mathcal{S}(A \rtimes_\alpha G)$, and since $\Psi_i$ has compact support, we see that $\Psi_i \Gamma_\varphi \in A_+(A \rtimes_\alpha G)$ and $\Psi_i \Gamma_\varphi \to \Gamma_\varphi$ in the topology of weak$^*$ uniformly convergence on compacta of $G$. Hence, $A_+(A \rtimes_\alpha G) \subseteq B_+(A \rtimes_\alpha G)$ is dense. In particular, this implies that if $\pi$ denotes the universal faithful representation of $A \rtimes_\alpha G$, then $\ker \tilde \pi_u \rtimes \lambda \subseteq \ker \pi = 0$, by weak containment (\cite[80]{dixmier1969c}), so $A \rtimes_\alpha G \cong \tilde \pi_u \rtimes \lambda( A \rtimes_\alpha G) = A \rtimes_{\alpha,r}G$.
 \end{proof}
 Combining the above , we obtain
 \begin{corollary}
