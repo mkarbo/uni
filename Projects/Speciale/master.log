@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.28)  21 NOV 2018 15:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.28)  21 NOV 2018 16:57
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -3427,7 +3427,7 @@ ame{theorem.2.3.19}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.911 \end{proof}
                  ] [51]
-Overfull \hbox (4.2144pt too wide) in paragraph at lines 935--937
+Overfull \hbox (4.2144pt too wide) in paragraph at lines 938--940
 \T1/cmr/m/n/10 the map $\OML/cmm/m/it/10 t \U/matha/m/n/10 об [][]p\OML/cmm/m/i
 t/10 y\U/matha/m/n/10 q$ \T1/cmr/m/n/10 is norm con-tin-u-ous. The clo-sure of 
 $\OML/cmm/m/it/10 F \U/matha/m/n/10 ^^P []t\OML/cmm/m/it/10 a \U/matha/m/n/10 b
@@ -3440,85 +3440,87 @@ $\OML/cmm/m/it/10 F \U/matha/m/n/10 ^^P []t\OML/cmm/m/it/10 a \U/matha/m/n/10 b
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.941 	L
-        et $G \acts \alpha A$. Then there is a $C^*$-dynamical system $(C_0(...
-]
-Overfull \hbox (15.63425pt too wide) in paragraph at lines 964--964
+l.940 \end{proof}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{theorem.2.4.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.940 \end{proof}
+                 ]
+Overfull \hbox (23.41013pt too wide) in paragraph at lines 967--967
 [] 
  []
 
-
-Overfull \hbox (38.27522pt too wide) in paragraph at lines 974--974
+[53]
+Overfull \hbox (53.82698pt too wide) in paragraph at lines 977--977
 [] 
  []
 
-[53] [54pdfTeX warning (ext4): destination with the same identifier (name{theor
-em.2.4.3}) has been already used, duplicate ignored
+[54] [55pdfTeX warning (ext4): destination with the same identifier (name{theor
+em.2.4.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1011 \begin{align*}
-                     ] [55pdfTeX warning (ext4): destination with the same iden
-tifier (name{theorem.2.4.4}) has been already used, duplicate ignored
+l.1033 	\end{align*}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{theorem.2.4.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1043 	T
-         here is a bijective correspondance between unitary representations ...
-pdfTeX warning (ext4): destination with the same identifier (name{theorem.2.4.5
-}) has been already used, duplicate ignored
+l.1033 	\end{align*}
+                    ] [56pdfTeX warning (ext4): destination with the same ident
+ifier (name{theorem.2.4.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1043 	T
-         here is a bijective correspondance between unitary representations ...
-] [56pdfTeX warning (ext4): destination with the same identifier (name{theorem.
-2.4.6}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1080 	\end{align*}
+l.1070 	\end{align*}
                     pdfTeX warning (ext4): destination with the same identifier
  (name{theorem.2.4.7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1080 	\end{align*}
+l.1070 	\end{align*}
                     pdfTeX warning (ext4): destination with the same identifier
  (name{theorem.2.4.8}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1080 	\end{align*}
+l.1070 	\end{align*}
                     pdfTeX warning (ext4): destination with the same identifier
  (name{theorem.2.4.9}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1080 	\end{align*}
+l.1070 	\end{align*}
                     ] [57pdfTeX warning (ext4): destination with the same ident
-ifier (name{section*.18}) has been already used, duplicate ignored
+ifier (name{theorem.2.4.10}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1118 	\end{align*}
-                    pdfTeX warning (ext4): destination with the same identifier
- (name{theorem.2.4.11}) has been already used, duplicate ignored
+l.1107 	\begin{align*}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{section*.18}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1118 	\end{align*}
-                    ] [58pdfTeX warning (ext4): destination with the same ident
-ifier (name{theorem.2.4.12}) has been already used, duplicate ignored
+l.1107 	\begin{align*}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{theorem.2.4.12}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1144 W
-        e now show that the system $(\hat G \rtimes_\iota  A , G, \beta)$ is...
-] [59]) [60] [61
+l.1107 	\begin{align*}
+                      ] [58pdfTeX warning (ext4): destination with the same ide
+ntifier (name{theorem.2.4.13}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1140 \end{align*}
+                   ] [59] [60]) [61] [62
 
 
-] [62]
+] [63]
 runsystem(makeindex master.idx)...executed.
 
  (./master.ind)
@@ -3529,7 +3531,7 @@ FiXme Summary: Number of notes: 0,
 (FiXme)        Number of fatal errors: 0,
 (FiXme)        Total: 0.
 
-[63
+[64
 
 
 ]
@@ -3550,13 +3552,13 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 34.
  )
 (\end occurred when \iftrue on line 5 was incomplete) 
 Here is how much of TeX's memory you used:
- 41697 strings out of 493029
- 754341 string characters out of 6136234
- 1115901 words of memory out of 5000000
+ 41699 strings out of 493029
+ 754362 string characters out of 6136234
+ 1117901 words of memory out of 5000000
  44316 multiletter control sequences out of 15000+600000
  30927 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,17n,82p,10480b,1776s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,17n,82p,10480b,1788s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/en
 c/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
@@ -3583,10 +3585,10 @@ super/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1095.pfb><
 ts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-s
 uper/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></
 usr/share/texmf/fonts/type1/public/cm-super/sfxc1200.pfb>
-Output written on master.pdf (66 pages, 893504 bytes).
+Output written on master.pdf (67 pages, 894442 bytes).
 PDF statistics:
- 836 PDF objects out of 1000 (max. 8388607)
- 729 compressed objects within 8 object streams
- 270 named destinations out of 1000 (max. 500000)
+ 844 PDF objects out of 1000 (max. 8388607)
+ 736 compressed objects within 8 object streams
+ 272 named destinations out of 1000 (max. 500000)
  106 words of extra memory for PDF output out of 10000 (max. 10000000)
 
