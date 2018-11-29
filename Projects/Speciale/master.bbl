@@ -250,6 +250,89 @@
   \field{year}{2014}
 \endentry
 
+\entry{olesenpedersen1}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Olesen}{O.}%
+     {Dorte}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Pedersen}{P.}%
+     {Gert~K}{G.~K.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Academic Press}%
+  }
+  \strng{namehash}{ODPGK1}
+  \strng{fullhash}{ODPGK1}
+  \field{sortinit}{O}
+  \field{number}{2}
+  \field{pages}{179\bibrangedash 197}
+  \field{title}{Applications of the Connes spectrum to $C^*$-dynamical systems}
+  \field{volume}{30}
+  \field{journaltitle}{Journal of Functional Analysis}
+  \field{year}{1978}
+\endentry
+
+\entry{olesenpedersen2}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Olesen}{O.}%
+     {Dorte}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Pedersen}{P.}%
+     {Gert~K}{G.~K.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Academic Press}%
+  }
+  \strng{namehash}{ODPGK1}
+  \strng{fullhash}{ODPGK1}
+  \field{sortinit}{O}
+  \field{number}{1}
+  \field{pages}{18\bibrangedash 32}
+  \field{title}{Applications of the Connes spectrum to $C^*$-dynamical systems,
+  II}
+  \field{volume}{36}
+  \field{journaltitle}{Journal of Functional Analysis}
+  \field{year}{1980}
+\endentry
+
+\entry{olesenpedersen3}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Olesen}{O.}%
+     {Dorte}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Pedersen}{P.}%
+     {Gert~K}{G.~K.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Elsevier}%
+  }
+  \strng{namehash}{ODPGK1}
+  \strng{fullhash}{ODPGK1}
+  \field{sortinit}{O}
+  \field{number}{3}
+  \field{pages}{357\bibrangedash 390}
+  \field{title}{Applications of the Connes spectrum to $C^*$-dynamical systems,
+  III}
+  \field{volume}{45}
+  \field{journaltitle}{Journal of Functional Analysis}
+  \field{year}{1982}
+\endentry
+
 \entry{annow}{article}{}
   \name{author}{1}{}{%
     {{}%

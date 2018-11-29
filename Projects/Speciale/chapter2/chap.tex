@@ -9,68 +9,68 @@ Throughout this chapter, we let $G$ be a locally compact topological group and $
 
 The main motivation of the theory we are about to develop is this: Given a covariant representation $(\pi,u,\H)$ of $(A,G,\alpha)$, we wish to construct a representation $\pi \rtimes u$ of $\cc(G,\mathbb{B}(\H))$ satisfying 
 \begin{align*}
-	\pi \rtimes u (f) = \int \pi(f(t))u_t \d t.
+\pi \rtimes u (f) = \int \pi(f(t))u_t \d t.
 \end{align*}
 The problem at hand is, a priori $u_t$ is not norm continuous, and so we don't know if the integrand is integrable. We will however show that $u_t$ is strictly convergent and use this to define our integral by combining it with the previously seen fact that $M(\mathbb{B}(\H)) = \mathbb{K}_A(A_A)= \mathbb{B}(\H)$. 
 
 For $f \in \cc(G,A)$, the map $s \mapsto \lv f(s) \rv$ is in $\cc(G)$, and we define the number $\lv f \rv_1 \in [0,\infty)$ to be
 \begin{align*}
-	\lv f \rv_1 = \int_G \lv f(t) \rv \d t.
+\lv f \rv_1 = \int_G \lv f(t) \rv \d t.
 \end{align*}
 For $A= \C$, it is well known that given $f \in \cc(G,A)$ and $\varepsilon > 0$, there is a neighborhood $V$ of $e \in G$ such that $sr^{-1} \in V$ or $s^{-1}r \in V$ implies $| f(s) - f(r)| < \varepsilon$, i.e., $f$ is left- and right uniformly continuous. The statement holds for general $A$, and the proof is identical, see e.g. \cite[Proposition 2.6]{folland2016fourier} or \cite[Lemma 1.88]{williamscrossed}
 \begin{lemma}
-	For $f \in \cc(G,A)$ and $\varepsilon>0$, there is a neighborhood $V$ of $e \in G$ such that either $sr^{-1} \in V$ or $s^{-1}r \in V$ implies
-	\begin{align*}
-		\lv f(s)  - f(r) \rv < \varepsilon.
-	\end{align*}
-	\label{int:lrunicont}
+For $f \in \cc(G,A)$ and $\varepsilon>0$, there is a neighborhood $V$ of $e \in G$ such that either $sr^{-1} \in V$ or $s^{-1}r \in V$ implies
+\begin{align*}
+	\lv f(s)  - f(r) \rv < \varepsilon.
+\end{align*}
+\label{int:lrunicont}
 \end{lemma}
 
 We will use $\mathcal{D}$ to denote an arbitrary complex Banach space, and for $f \in \cc(G)$ and $x \in \mathcal{D}$, we denote by $f \otimes x$ the map $G \ni t \mapsto f(t)x \in \mathcal{D}$. It is clear that then $f \otimes x \in \cc(G,\mathcal{D})$. We introduce a 'topology' or a name for a special kind of convergence on $\cc(G,\mathcal{D})$, which will prove useful:
 \begin{definition}
-	We say that a net $\{f_i\}_{i \in I} \subseteq \cc(G,\mathcal{D})$ converges to a function $f$ on $\cc(G,\mathcal{D})$ in the \myemph{inductive limit topology} if $f_i \to f$ uniformly and there is a compact set $K \subseteq G$ and $i_0 \in I$ such that for $i \geq i_0$ we have $f_i \big|_{K^c} = 0$, i.e., $\mathrm{supp} f_i \subseteq K$.
+We say that a net $\{f_i\}_{i \in I} \subseteq \cc(G,\mathcal{D})$ converges to a function $f$ on $\cc(G,\mathcal{D})$ in the \myemph{inductive limit topology} if $f_i \to f$ uniformly and there is a compact set $K \subseteq G$ and $i_0 \in I$ such that for $i \geq i_0$ we have $f_i \big|_{K^c} = 0$, i.e., $\mathrm{supp} f_i \subseteq K$.
 \end{definition}
 
 \begin{lemma}
 Let $\mathcal{D}_0 \subseteq \mathcal{D}$ be any dense subset. Then the set
 \begin{align*}
-	\cc(G) \odot \mathcal{D}_0 := \Span\left\{ f \otimes x \mid f \in \cc(G) \text{ and } x \in \mathcal{D}_0 \right\} 
+\cc(G) \odot \mathcal{D}_0 := \Span\left\{ f \otimes x \mid f \in \cc(G) \text{ and } x \in \mathcal{D}_0 \right\} 
 \end{align*}
 is dense in the inductive limit topology on $\cc(G,\mathcal{D})$.
-	\label{int:indlmdense}
+\label{int:indlmdense}
 \end{lemma}
 \begin{proof}	
-	Let $\varphi \in \cc(G,\mathcal{D})$ and $\varepsilon > 0$ be arbitrary. Let $K= \mathrm{supp} \varphi$ and let $W$ denote an arbitrary compact neighborhood of $e \in G$, and pick a symmetric neighborhood $e \in V_{\varepsilon} \subseteq W$ such that $sr^{-1} \in V_\varepsilon$ implies $\lv f(s) - f(r) \rv < \frac{\varepsilon}{\mu(WK)}$. Since $K$ is compact, there is a finite set $\left\{ r_1,\dots,r_n \right\} \subseteq K$ such that $K \subseteq \bigcup_{1 \leq i \leq n} V_\varepsilon r_i$. Recall that every locally compact Hausdorff group is paracompact and the cover $K^c \cup \left( \bigcup_{1 \leq i \leq n } V_\varepsilon r_i \right)$ admits a partition of unity $\left\{ f_j \right\}_{j=0}^n$ such that $\mathrm{supp}f_0 \subseteq K^c$ and $\mathrm{supp}f_i \subseteq V_\varepsilon r_i$ for $i = 1 ,\dots,n$. 
-	
-	Using this, we define
-	\begin{align*}
-		g_\varepsilon := \sum_{i=1}^n f_i \otimes x_i,
-	\end{align*}
-	where $x_i \in \mathcal{D}_0$ such that $\lv x_i - \varphi(r_i)\rv < \frac{\varepsilon}{2\mu(WK)}$ for $i = 1,\dots,n$. Then $g_\varepsilon \in \cc(G) \odot \mathcal{D}_0$ with $\mathrm{supp} g_\varepsilon \subseteq V_\varepsilon K \subseteq W K$. The partition of unity satisfies $\sum_{i=1}^n f_i(s) \leq 1$ for all $s \in G$ with equality for $s \in K$, so in particular $\sum_{1 \leq i \leq n}f_i(s) \varphi(s) = \varphi(s)$ for all $s \in G$. Hence we see that for $s \in G$: 
-	\begin{align*}
-		\lv\varphi(s) - g_{\varepsilon}(s)\rv = \lv \sum_{i=1}^n f_i(s)(\varphi(s) - \varphi(r_i)+\varphi(r_i)-x_i)\rv &\leq \sum_{i=1}^n f_i(s) (\lv \varphi(s) - \varphi(r_i)\rv+\lv \varphi(r_i)-x_i\rv) \\
-		&\leq \frac{\varepsilon}{\mu(WK)},
-	\end{align*}
-	Since $\varepsilon$ was arbitrary and $W,K$ didn't depend on $\varepsilon$ and $ \mathrm{supp} g_\varepsilon \subseteq WK$, we see that $g_\varepsilon \to f$ in the inductive limit topology as $\varepsilon \to 0$.
+Let $\varphi \in \cc(G,\mathcal{D})$ and $\varepsilon > 0$ be arbitrary. Let $K= \mathrm{supp} \varphi$ and let $W$ denote an arbitrary compact neighborhood of $e \in G$, and pick a symmetric neighborhood $e \in V_{\varepsilon} \subseteq W$ such that $sr^{-1} \in V_\varepsilon$ implies $\lv f(s) - f(r) \rv < \frac{\varepsilon}{\mu(WK)}$. Since $K$ is compact, there is a finite set $\left\{ r_1,\dots,r_n \right\} \subseteq K$ such that $K \subseteq \bigcup_{1 \leq i \leq n} V_\varepsilon r_i$. Recall that every locally compact Hausdorff group is paracompact and the cover $K^c \cup \left( \bigcup_{1 \leq i \leq n } V_\varepsilon r_i \right)$ admits a partition of unity $\left\{ f_j \right\}_{j=0}^n$ such that $\mathrm{supp}f_0 \subseteq K^c$ and $\mathrm{supp}f_i \subseteq V_\varepsilon r_i$ for $i = 1 ,\dots,n$. 
+
+Using this, we define
+\begin{align*}
+	g_\varepsilon := \sum_{i=1}^n f_i \otimes x_i,
+\end{align*}
+where $x_i \in \mathcal{D}_0$ such that $\lv x_i - \varphi(r_i)\rv < \frac{\varepsilon}{2\mu(WK)}$ for $i = 1,\dots,n$. Then $g_\varepsilon \in \cc(G) \odot \mathcal{D}_0$ with $\mathrm{supp} g_\varepsilon \subseteq V_\varepsilon K \subseteq W K$. The partition of unity satisfies $\sum_{i=1}^n f_i(s) \leq 1$ for all $s \in G$ with equality for $s \in K$, so in particular $\sum_{1 \leq i \leq n}f_i(s) \varphi(s) = \varphi(s)$ for all $s \in G$. Hence we see that for $s \in G$: 
+\begin{align*}
+	\lv\varphi(s) - g_{\varepsilon}(s)\rv = \lv \sum_{i=1}^n f_i(s)(\varphi(s) - \varphi(r_i)+\varphi(r_i)-x_i)\rv &\leq \sum_{i=1}^n f_i(s) (\lv \varphi(s) - \varphi(r_i)\rv+\lv \varphi(r_i)-x_i\rv) \\
+	&\leq \frac{\varepsilon}{\mu(WK)},
+\end{align*}
+Since $\varepsilon$ was arbitrary and $W,K$ didn't depend on $\varepsilon$ and $ \mathrm{supp} g_\varepsilon \subseteq WK$, we see that $g_\varepsilon \to f$ in the inductive limit topology as $\varepsilon \to 0$.
 \end{proof}
 We will also need the following result, which can be found in \cite[Theorem 3.20, part (b, c)]{rudin1991functional}
 \begin{lemma}
-	If $K \subseteq B$ is compact, then the convex hull convex hull $\conv(K)$ is totally bounded and hence it has compact closure.
-	\label{int:clconvcomp}
+If $K \subseteq B$ is compact, then the convex hull convex hull $\conv(K)$ is totally bounded and hence it has compact closure.
+\label{int:clconvcomp}
 \end{lemma}
 
 
 \begin{definition}
-	Let $f \in \cc(G,B)$ and $\varphi \in B^*$, the continuous dual of $B$. Then we can define a bounded linear functional $I_f$ on $B^*$ by
-	\begin{align*}
-		L_f(\varphi) := \int_G \varphi(f(s)) \d s,
-	\end{align*}
-	since $| L_f(\varphi)| \leq \int_G \lv \varphi \rv \lv f(s) \rv \d s = \lv f \rv_1 \lv \varphi\rv$.
+Let $f \in \cc(G,B)$ and $\varphi \in B^*$, the continuous dual of $B$. Then we can define a bounded linear functional $I_f$ on $B^*$ by
+\begin{align*}
+	L_f(\varphi) := \int_G \varphi(f(s)) \d s,
+\end{align*}
+since $| L_f(\varphi)| \leq \int_G \lv \varphi \rv \lv f(s) \rv \d s = \lv f \rv_1 \lv \varphi\rv$.
 \end{definition}
 \begin{note}	
 If $(f_i) \subseteq  \cc(G,B)$ is a net which converges in the inductive limit topology to $f \in \cc(G,B)$, i.e., $f_i \to f$ uniformly on $G$ and for some $K \subseteq G$ compact we have $\supp f_i \subseteq K$ eventually (and hence also $\supp f \subseteq K$), then
 \begin{align*}
-	\lv f_i - f\rv_1 = \int_{G} \lv f_i(s) - f(s) \rv \d s 	\leq \lv f_i - f \rv \mu(K) \to 0,
+\lv f_i - f\rv_1 = \int_{G} \lv f_i(s) - f(s) \rv \d s 	\leq \lv f_i - f \rv \mu(K) \to 0,
 \end{align*}
 so $f_i \to f$ in the $L^1$-norm, and hence by the above we see that $|L_{f_i}(\varphi) - L_f(\varphi) | \leq \lv f_i-f\rv_1 \lv \varphi \rv \to 0$ for all $ \varphi \in B^*$, i.e.,  $L_{f_i}\to L_f$ in the weak$^*$ topology of $B^{**}$.
 \label{note:induct}
@@ -78,192 +78,192 @@ so $f_i \to f$ in the $L^1$-norm, and hence by the above we see that $|L_{f_i}(\
 
 We will see that $L_f$ is equal to $\hat a \colon \varphi \to \varphi(a)$ for some unique $a \in B$. Let $\iota \colon B \to B^{**}$ denote the inclusion $\iota(a) = \hat a$, then we have
 \begin{lemma}
-	If $f \in \cc(G,B)$, then $L_f \in \iota(B)$.
-	\label{int:defintegral}
+If $f \in \cc(G,B)$, then $L_f \in \iota(B)$.
+\label{int:defintegral}
 \end{lemma}
 \begin{proof}
-	Let $W$ be a compact neighborhood of $\mathrm{supp} f$, and let $K:= f(G) \cup \left\{ 0 \right\} \subseteq B$. Then $K$ is compact, so by \ref{int:clconvcomp} the set $C := \overline \conv \left\{ K \right\}$ is compact.
+Let $W$ be a compact neighborhood of $\mathrm{supp} f$, and let $K:= f(G) \cup \left\{ 0 \right\} \subseteq B$. Then $K$ is compact, so by \ref{int:clconvcomp} the set $C := \overline \conv \left\{ K \right\}$ is compact.
 
-	Fix $\varepsilon > 0$, and pick a neighborhood $V$ of $e \in G$ such that $ \lv f(s) - f(r) \rv < \varepsilon$ for $s^{-1}r \in V$. Assume without loss of generality that $\mathrm{supp} f V \subseteq W$, since we can make $V$ arbitrarily small. Using compactness of $\supp f$, pick $s_1,\dots,s_n \in \supp f$ such that $\left\{ s_i V \right\}$ covers $\supp f$.
-	
-	Since $ \left\{ s_i V \right\} \subseteq W$, it has compact closure, so we may pick a partition of unity $\left\{ \varphi_i \right\}_{i=1}^n$ of $ K \subseteq \bigcup_{i=1}^n s_i V$. Using this, we define 
-	\begin{align*}
-		g_\varepsilon (s) := \sum_{i=1}^n f(s_i) \varphi(s),
-	\end{align*}
-	so $\supp g \subseteq W$. If $s \in \left( \bigcup_{i=1}^n s_i V \right)^c$ then $f(s) = g_{\varepsilon}(s) = 0$, and otherwise we see that if $s \in s_i V$, then $s_i^{-1}s \in V$ and $\lv f(s) - f(s_i) \rv < \varepsilon$, and hence
-	\begin{align*}
-		\lv f(s) - g_{\varepsilon} \rv  \leq \sum_{i=1}^n \varphi(s) \lv f(s)-f(s_i) \rv  < \varepsilon.
-	\end{align*}
+Fix $\varepsilon > 0$, and pick a neighborhood $V$ of $e \in G$ such that $ \lv f(s) - f(r) \rv < \varepsilon$ for $s^{-1}r \in V$. Assume without loss of generality that $\mathrm{supp} f V \subseteq W$, since we can make $V$ arbitrarily small. Using compactness of $\supp f$, pick $s_1,\dots,s_n \in \supp f$ such that $\left\{ s_i V \right\}$ covers $\supp f$.
 
-	Since $s \mapsto \sum_{i=1}^n \varphi(s) \leq 1$ and has compact support and $\bigcup_{i=1}^n \supp \varphi_i \subseteq W$, we have $\sum_{i=1}^n \int_G \varphi_i(s) \d s \leq \mu(W) < \infty$, so it is equal to some number $D$. For $\psi \in B^*$ we see that
-	\begin{align*}
-		L_{g_{\varepsilon}} ( \psi ) = \int_{G} \psi\left( \sum_{i=1}^n \varphi(s) f(s_i) \right) \d s = \sum_{i=1}^n \int_G \varphi(s) \d s \psi(f(s_i)) = \sum_{i=1}^n \int_G \varphi(s) \d s \underbrace{\iota(f(s_i))}_{ \in \iota(C)} (\psi) 
-	\end{align*}
-	so $L_{g_{\varepsilon}}  \in D \iota(C) \subseteq \mu(W) \iota(C)$, since $0 \in C$ so we can shrink the scalar $\mu(W)$ to $D$. For $\varepsilon \to 0$, we see that $g_{\varepsilon} \to f$ in the inductive limit topology and $L_{g_\varepsilon} \in \mu(W) \iota(C)$. 
+Since $ \left\{ s_i V \right\} \subseteq W$, it has compact closure, so we may pick a partition of unity $\left\{ \varphi_i \right\}_{i=1}^n$ of $ K \subseteq \bigcup_{i=1}^n s_i V$. Using this, we define 
+\begin{align*}
+	g_\varepsilon (s) := \sum_{i=1}^n f(s_i) \varphi(s),
+\end{align*}
+so $\supp g \subseteq W$. If $s \in \left( \bigcup_{i=1}^n s_i V \right)^c$ then $f(s) = g_{\varepsilon}(s) = 0$, and otherwise we see that if $s \in s_i V$, then $s_i^{-1}s \in V$ and $\lv f(s) - f(s_i) \rv < \varepsilon$, and hence
+\begin{align*}
+	\lv f(s) - g_{\varepsilon} \rv  \leq \sum_{i=1}^n \varphi(s) \lv f(s)-f(s_i) \rv  < \varepsilon.
+\end{align*}
 
-	Since $C$ is compact and convex, it is weakly compact which by definition is equivalent to $\iota(C)$ being compact in the weak$^*$-topology of $B^{**}$, and since $g_{\varepsilon} \to f$ in the inductive limit topology, we from \ref{note:induct} we see that $L_{g_\varepsilon } \to L_f$ in the weak $^*$-topology on $B^{**}$. In particular, since $\iota(C)$ is weak$^*$-compact, it is closed and hence $\mu(W) \iota(C)$ is closed in the weak$^*$-topology so $L_f \in \mu(W) \iota(C) \subseteq \iota(B)$.
+Since $s \mapsto \sum_{i=1}^n \varphi(s) \leq 1$ and has compact support and $\bigcup_{i=1}^n \supp \varphi_i \subseteq W$, we have $\sum_{i=1}^n \int_G \varphi_i(s) \d s \leq \mu(W) < \infty$, so it is equal to some number $D$. For $\psi \in B^*$ we see that
+\begin{align*}
+	L_{g_{\varepsilon}} ( \psi ) = \int_{G} \psi\left( \sum_{i=1}^n \varphi(s) f(s_i) \right) \d s = \sum_{i=1}^n \int_G \varphi(s) \d s \psi(f(s_i)) = \sum_{i=1}^n \int_G \varphi(s) \d s \underbrace{\iota(f(s_i))}_{ \in \iota(C)} (\psi) 
+\end{align*}
+so $L_{g_{\varepsilon}}  \in D \iota(C) \subseteq \mu(W) \iota(C)$, since $0 \in C$ so we can shrink the scalar $\mu(W)$ to $D$. For $\varepsilon \to 0$, we see that $g_{\varepsilon} \to f$ in the inductive limit topology and $L_{g_\varepsilon} \in \mu(W) \iota(C)$. 
+
+Since $C$ is compact and convex, it is weakly compact which by definition is equivalent to $\iota(C)$ being compact in the weak$^*$-topology of $B^{**}$, and since $g_{\varepsilon} \to f$ in the inductive limit topology, we from \ref{note:induct} we see that $L_{g_\varepsilon } \to L_f$ in the weak $^*$-topology on $B^{**}$. In particular, since $\iota(C)$ is weak$^*$-compact, it is closed and hence $\mu(W) \iota(C)$ is closed in the weak$^*$-topology so $L_f \in \mu(W) \iota(C) \subseteq \iota(B)$.
 \end{proof}
 And we have a lemma emphasizing important properties of this integral:
 \begin{lemma}
 There exists a unique linear map $I \colon \cc(G,B) \to B$,
 \begin{align*}
-	f \mapsto \int_G f(s) \d s
+f \mapsto \int_G f(s) \d s
 \end{align*}
 such that for all $f \in \cc(G,B)$ we have
 \begin{align}
-	\varphi(\int_G f(s) \d s ) &= \int_G \varphi(f(s)) \d s, \ \text{ for all } \varphi \in B^*,\\
-	\lv \int_G f(s) \d s \rv &\leq \lv f \rv_1 \\
-	\int_G (g \otimes x) (s) \d s &=x \int_G g(s) \d s, \text{ for all } g \otimes x \in \cc(G) \odot B,
+\varphi(\int_G f(s) \d s ) &= \int_G \varphi(f(s)) \d s, \ \text{ for all } \varphi \in B^*,\\
+\lv \int_G f(s) \d s \rv &\leq \lv f \rv_1 \\
+\int_G (g \otimes x) (s) \d s &=x \int_G g(s) \d s, \text{ for all } g \otimes x \in \cc(G) \odot B,
 \end{align}
 and if $T \colon B \to D$ is a bounded linear operator between Banach spaces. Then
 \begin{align*}
-	T\left( \int_G f(s) \d s \right) = \int_G T(f(s)) \d s.
+T\left( \int_G f(s) \d s \right) = \int_G T(f(s)) \d s.
 \end{align*}
-	\label{int:bochnerproperties}
+\label{int:bochnerproperties}
 \end{lemma}
 \begin{proof}
-	Clearly letting $I(f) := \iota^{-1}(L_f)$, with $L_f$ as in \ref{int:defintegral}, then $f \mapsto I(f)$ instantly satisfies the first properties. For the last, suppose that $T \colon B \to D$ is a bounded linear operator between Banach spaces. Then $T \circ f \in \cc(G,D)$ for all $f \in \cc(G,B)$, and $\varphi \circ T \in B^*$ for all $ \varphi \in D^*$. Hence 
-	\begin{align*}
-		\varphi \circ T \left( \int_G f(s) \d s  \right) = \int_G \varphi( T \circ f (s) ) \d s = \varphi \left( \int_G T (f(s)) \d s \right),
-	\end{align*}
-	for all $\varphi \in D^*$, finishing the proof.
+Clearly letting $I(f) := \iota^{-1}(L_f)$, with $L_f$ as in \ref{int:defintegral}, then $f \mapsto I(f)$ instantly satisfies the first properties. For the last, suppose that $T \colon B \to D$ is a bounded linear operator between Banach spaces. Then $T \circ f \in \cc(G,D)$ for all $f \in \cc(G,B)$, and $\varphi \circ T \in B^*$ for all $ \varphi \in D^*$. Hence 
+\begin{align*}
+	\varphi \circ T \left( \int_G f(s) \d s  \right) = \int_G \varphi( T \circ f (s) ) \d s = \varphi \left( \int_G T (f(s)) \d s \right),
+\end{align*}
+for all $\varphi \in D^*$, finishing the proof.
 \end{proof}
 In light of the above, we may give the following definition:
 \begin{definition}
-	For $f \in \cc(G,B)$, define the integral of $f$ as $I(f) := \iota^{-1}(L_f)$, which we denote by $\int_G f(s) \d s := I(f)$.
+For $f \in \cc(G,B)$, define the integral of $f$ as $I(f) := \iota^{-1}(L_f)$, which we denote by $\int_G f(s) \d s := I(f)$.
 \end{definition}
 
 In particular, if we let $A$ be a $C^*$-algebra, then we obtain the following useful result:
 \begin{proposition}
-	For $f \in \cc(G,A)$, if $\pi \colon A \to \mathbb{B}(\H)$ is a representation of $A$, then for all $\xi , \eta \in \H$ the integral of \ref{int:bochnerproperties} satisfies
-	\begin{align*}
-		\langle \pi\left( \int_G f(s) \d s ) \right) \xi , \eta \rangle = \int_{G} \langle \pi(f(s)) \xi , \eta \rangle \d s,
-	\end{align*}
-	and 
-	\begin{align*}
-		\left( \int_G f(s) \d s  \right)^* = \int_G f(s)^* \d s
-	\end{align*}
-	and for $a , b \in M(A)$ we have
-	\begin{align*}
-	 a \int_G f(s) \d s b = \int_G a f(s) b \d s.		
-	\end{align*}
-	\label{int:cstarint}
+For $f \in \cc(G,A)$, if $\pi \colon A \to \mathbb{B}(\H)$ is a representation of $A$, then for all $\xi , \eta \in \H$ the integral of \ref{int:bochnerproperties} satisfies
+\begin{align*}
+	\langle \pi\left( \int_G f(s) \d s ) \right) \xi , \eta \rangle = \int_{G} \langle \pi(f(s)) \xi , \eta \rangle \d s,
+\end{align*}
+and 
+\begin{align*}
+	\left( \int_G f(s) \d s  \right)^* = \int_G f(s)^* \d s
+\end{align*}
+and for $a , b \in M(A)$ we have
+\begin{align*}
+ a \int_G f(s) \d s b = \int_G a f(s) b \d s.		
+\end{align*}
+\label{int:cstarint}
 \end{proposition}
 \begin{proof}
-	Define the vector-state $\varphi_\pi \colon a \mapsto \langle \pi(a) \xi , \eta \rangle$. Then, $\varphi_\pi \in A^*$, and the first statement follows. Suppose now that $\pi$ is a faithful representation, then since $\int_G \pi(f(s)) \d s = \pi \left( \int_Gf(s) \d s \right)$, we see that the second statement holds as well when applied to $\varphi_\pi(I(f)^*)$. Finally if $a,b \in M(A)$ then
-	\begin{align*}
-		\langle \pi\left(a \int_G f(s) \d s b \right) \xi , \eta \rangle &= \langle \overline \pi(a) \pi\left( \int_G f(s) \d s \right) \overline \pi (b)  \xi , \eta \rangle \\
-		 &= \langle \pi \left( \int_G f(s) \d s \right) (\overline \pi (b) \xi ) , \overline \pi(a^*) \eta \rangle \\ 
-		 &= \int_G \langle \pi(f(s)) \overline \pi (b) \xi , \overline \pi(a ^* ) \eta \rangle \d s\\
-		 &= \int_G \langle \pi(af(s)b) \xi , \eta \rangle \d s\\
-		 &= \langle \pi \left(  \int_G a f(s) b \d s  \right) \xi , \eta \rangle.
-	\end{align*}
+Define the vector-state $\varphi_\pi \colon a \mapsto \langle \pi(a) \xi , \eta \rangle$. Then, $\varphi_\pi \in A^*$, and the first statement follows. Suppose now that $\pi$ is a faithful representation, then since $\int_G \pi(f(s)) \d s = \pi \left( \int_Gf(s) \d s \right)$, we see that the second statement holds as well when applied to $\varphi_\pi(I(f)^*)$. Finally if $a,b \in M(A)$ then
+\begin{align*}
+	\langle \pi\left(a \int_G f(s) \d s b \right) \xi , \eta \rangle &= \langle \overline \pi(a) \pi\left( \int_G f(s) \d s \right) \overline \pi (b)  \xi , \eta \rangle \\
+	 &= \langle \pi \left( \int_G f(s) \d s \right) (\overline \pi (b) \xi ) , \overline \pi(a^*) \eta \rangle \\ 
+	 &= \int_G \langle \pi(f(s)) \overline \pi (b) \xi , \overline \pi(a ^* ) \eta \rangle \d s\\
+	 &= \int_G \langle \pi(af(s)b) \xi , \eta \rangle \d s\\
+	 &= \langle \pi \left(  \int_G a f(s) b \d s  \right) \xi , \eta \rangle.
+\end{align*}
 \end{proof}
 
 As mentioned, we will need to consider maps of the form of the form $s \mapsto \pi(f(s)) U_s$ where $f \in \cc(G,A)$, $\pi\colon  A \to \mathbb{B}(\H)$ and $U \colon G \to \mathcal{U}(\H)$ is strongly continuous. In order to use the above theorem to make sense, we will want to change $A$ out with $M_s(A)$, i.e., the multiplier algebra of $A$ equipped with the strict topology, and combine it with the following lemma:
 \begin{lemma}
-	Let $E$ be a Hilbert $A$-module, and let $u \colon G \to \mathcal{U}(E)$ be a group homomorphism from $G$ to the group of unitary operators on $E$, i.e., operators $T \in \mathcal{L}_A(E)$ such that $T^*T=TT^*=I_E$. Then $u$ is strictly continous if and only if $u$ is strongly continuous.
-	\label{int:unistrictstrong}
+Let $E$ be a Hilbert $A$-module, and let $u \colon G \to \mathcal{U}(E)$ be a group homomorphism from $G$ to the group of unitary operators on $E$, i.e., operators $T \in \mathcal{L}_A(E)$ such that $T^*T=TT^*=I_E$. Then $u$ is strictly continous if and only if $u$ is strongly continuous.
+\label{int:unistrictstrong}
 \end{lemma}
 \begin{proof}
-	We saw in \cref{mult:STARTSTRONG} that on bounded sets, the strict and the $*$-strong topology coincided. In particular, since $\mathcal{L}_A(E)$ is a $C^*$-algebra, the set of unitary operators is a subset of the unit sphere. Thus, it suffices to show that if $s \mapsto u_s x$ is continuous for $x$ then $s \mapsto u_s^* x$ is continuous. Let $x \in E$, then
-	\begin{align*}
-		\lv u_s^* x - u_t^*x \rv_A^2 = \underbrace{\lv u_s^* x \rv_A^2}_{= \lv x \rv_A^2} + \underbrace{\lv u_t^*x \rv_A^2}_{= \lv x \rv_A^2} - \langle \underbrace{ \left( u_t u_s^* + u_s u_t^*  \right)}_{\stackrel{s \to t}{\longrightarrow} 2I_E} x ,x \rangle \stackrel{s \to t}{\longrightarrow} 0,
-	\end{align*}
-	showing the wanted, since $x \in E$ was arbitrary.
+We saw in \cref{mult:STARTSTRONG} that on bounded sets, the strict and the $*$-strong topology coincided. In particular, since $\mathcal{L}_A(E)$ is a $C^*$-algebra, the set of unitary operators is a subset of the unit sphere. Thus, it suffices to show that if $s \mapsto u_s x$ is continuous for $x$ then $s \mapsto u_s^* x$ is continuous. Let $x \in E$, then
+\begin{align*}
+	\lv u_s^* x - u_t^*x \rv_A^2 = \underbrace{\lv u_s^* x \rv_A^2}_{= \lv x \rv_A^2} + \underbrace{\lv u_t^*x \rv_A^2}_{= \lv x \rv_A^2} - \langle \underbrace{ \left( u_t u_s^* + u_s u_t^*  \right)}_{\stackrel{s \to t}{\longrightarrow} 2I_E} x ,x \rangle \stackrel{s \to t}{\longrightarrow} 0,
+\end{align*}
+showing the wanted, since $x \in E$ was arbitrary.
 \end{proof}
 
 We now generalize the result of \cref{int:cstarint} to cover the class of functions which we shall deal with later on.
 \begin{theorem}
-	Given a $C^*$-algebra $A$, there is a unique linear map $I\colon \cc(G,M_s(A)) \to M(A)$, $f \mapsto \int_G f(s) \d s$, such that for any non-degenerate representation $\pi \colon A \to \mathbb{B}(\H)$ and all $\xi, \eta \in \H$ the identity
-	\begin{align}
-		\langle \overline \pi \left( \int_G f(s) \d s \right) \xi , \eta \rangle = \int_{G} \langle \overline \pi(f(s)) \xi , \eta \rangle \d s,
-		\label{mult:1.35}
-	\end{align}
-	and for all $f \in \cc(G,M_s(A))$
-	\begin{align}
-		\lv I(f) \d s \rv \leq \lv f \rv _{ \infty} \mu(\supp f ).
-	\end{align}
-	Also, the identities
-	\begin{align}
-		\int_G f(s) ^* \d s = \left( \int_G f(s) \d s \right)^*,
-	\end{align}
-	and
-	\begin{align}
-		\int_G a f(s) b \d s = a \left( \int_G f(s) \d s  \right) b
-	\end{align}
-	hold for all $f \in \cc(G,M_s(A))$ and $a,b \in M(A)$. If $T \colon A \to M(B)$ is a non-degenerate homomorphism of $C^*$-algebras, then
-	\begin{align}
-		\overline T \left( \int_G f(s) \d s\right) = \int_G \overline T (f(s)) \d s.
-	\end{align}
+Given a $C^*$-algebra $A$, there is a unique linear map $I\colon \cc(G,M_s(A)) \to M(A)$, $f \mapsto \int_G f(s) \d s$, such that for any non-degenerate representation $\pi \colon A \to \mathbb{B}(\H)$ and all $\xi, \eta \in \H$ the identity
+\begin{align}
+	\langle \overline \pi \left( \int_G f(s) \d s \right) \xi , \eta \rangle = \int_{G} \langle \overline \pi(f(s)) \xi , \eta \rangle \d s,
+	\label{mult:1.35}
+\end{align}
+and for all $f \in \cc(G,M_s(A))$
+\begin{align}
+	\lv I(f) \d s \rv \leq \lv f \rv _{ \infty} \mu(\supp f ).
+\end{align}
+Also, the identities
+\begin{align}
+	\int_G f(s) ^* \d s = \left( \int_G f(s) \d s \right)^*,
+\end{align}
+and
+\begin{align}
+	\int_G a f(s) b \d s = a \left( \int_G f(s) \d s  \right) b
+\end{align}
+hold for all $f \in \cc(G,M_s(A))$ and $a,b \in M(A)$. If $T \colon A \to M(B)$ is a non-degenerate homomorphism of $C^*$-algebras, then
+\begin{align}
+	\overline T \left( \int_G f(s) \d s\right) = \int_G \overline T (f(s)) \d s.
+\end{align}
 
-	\label{int:multstrictintegral}
+\label{int:multstrictintegral}
 \end{theorem}
 \begin{proof}
-	If $I$ exists, then letting $\pi$ be a faithful representation of $A$ we see that $I$ must be unique by the first identity. For  $f \in \cc(G,M_s(A))$ and $a \in A$, it is easy to see that if $f_a \colon s \mapsto f(s) a$, then $f_a \in \cc(G,A)$. This allows us to use \cref{int:cstarint} to define the integral $\int_G f(s) a \d s$ for all $f \in \cc(G,M_s(A))$ and $a \in A$. Define $L_f \colon A \to A$ by
-	\begin{align*}
-		L_f(a) = \int_G f(s) a \d s, \ \text{ for } a \in A.
-	\end{align*}
-	Then $L_f \in \mathcal{L}_A(A_A)$, for if $a,b \in A$ then \cref{int:cstarint} implies that
-	\begin{align*}
-		\langle L_f a , b \rangle_{A_A} = (L_f a )^* b = \int_G (f(s) a)^* \d s b = \int_G a^* f(s)^* \d s = a^* \int_G f(s)^* b \d s = \langle a , L_{f^*} b\rangle_{A_A}.
-	\end{align*}
-	So $L_{f^*}$ is an adjoint of $L_f$. Let $\int_G f(s) \d s := L_f$ for all $f \in \cc(G,M_s(A)$, then $L_f \in \mathcal{L}_A(A_A) = M(A)$, and it is not hard to see that the assignment $f \mapsto L_f$ is linear.
+If $I$ exists, then letting $\pi$ be a faithful representation of $A$ we see that $I$ must be unique by the first identity. For  $f \in \cc(G,M_s(A))$ and $a \in A$, it is easy to see that if $f_a \colon s \mapsto f(s) a$, then $f_a \in \cc(G,A)$. This allows us to use \cref{int:cstarint} to define the integral $\int_G f(s) a \d s$ for all $f \in \cc(G,M_s(A))$ and $a \in A$. Define $L_f \colon A \to A$ by
+\begin{align*}
+	L_f(a) = \int_G f(s) a \d s, \ \text{ for } a \in A.
+\end{align*}
+Then $L_f \in \mathcal{L}_A(A_A)$, for if $a,b \in A$ then \cref{int:cstarint} implies that
+\begin{align*}
+	\langle L_f a , b \rangle_{A_A} = (L_f a )^* b = \int_G (f(s) a)^* \d s b = \int_G a^* f(s)^* \d s = a^* \int_G f(s)^* b \d s = \langle a , L_{f^*} b\rangle_{A_A}.
+\end{align*}
+So $L_{f^*}$ is an adjoint of $L_f$. Let $\int_G f(s) \d s := L_f$ for all $f \in \cc(G,M_s(A)$, then $L_f \in \mathcal{L}_A(A_A) = M(A)$, and it is not hard to see that the assignment $f \mapsto L_f$ is linear.
 
-	Again, by \cref{int:cstarint}, we see that a non-degenerate representation $\pi \colon A \to \mathbb{B}(\H)$ with $a \in A$ and $\xi, \eta \in \H$ that
-	\begin{align*}
-		\langle \overline \pi \left( \int_G f(s) \d s \right) \pi(a) \xi , \eta \rangle =\langle \pi \left(f(s) a \d s \right) \xi , \eta \rangle &= \int_G \langle \pi(f(s) a) \xi , \eta \rangle \d s\\
-		&= \int_G \langle \overline \pi (f(s)) \pi(a) \xi , \eta \rangle \d s,
-	\end{align*}
-	which shows \cref{mult:1.35}, since $\pi$ is non-degenerate. The analogues of \cref{int:cstarint} follows similarly. Let $a \in A$ with $\lv a \rv \leq 1$, then by \cref{int:cstarint} applied to $f_a \in \cc(G,A)$, we see that
-	\begin{align*}
-		\lv \int_G f(s) \d s a \rv  \leq \lv f_a \rv_1 = \int_G \lv f(s) a \rv \d s \leq \int_G 1_{\supp f} \lv f \rv_{\infty} \d s = \mu(\supp f) \lv f \rv_{\infty},
-	\end{align*}
-	Hence $\lv \int_G f(s) \d s \rv = \sup_{\lv a \rv \leq 1} \lv \int_G f(s) \d s a\rv \leq \lv f \rv_{\infty} \mu(\supp f)$. Let $T \colon A \to M(B)$ be a non-degenerate homomorphism, with unique extension $\overline T \colon M(A) \to M(B)$, and hence for all $ a \in A$ and $b \in B$ we have
-	\begin{align*}
-		\overline T\left(  \int_G f(s) \d s \right) T(a) b = T\left( \int_G f(s) a \d s  \right)b= \int_{G} T(f(s)a ) b \d s &= \int_G \overline T(f(s)) T(a)b \d s \\
-		&=\int_G \overline T(f(s)) \d s T(a)b,
-	\end{align*}
-	hence $\overline T \left( \int_G f(s) \d s \right) = \int_G \overline T(f(s)) \d s$ by non-degeneracy.
+Again, by \cref{int:cstarint}, we see that a non-degenerate representation $\pi \colon A \to \mathbb{B}(\H)$ with $a \in A$ and $\xi, \eta \in \H$ that
+\begin{align*}
+	\langle \overline \pi \left( \int_G f(s) \d s \right) \pi(a) \xi , \eta \rangle =\langle \pi \left(f(s) a \d s \right) \xi , \eta \rangle &= \int_G \langle \pi(f(s) a) \xi , \eta \rangle \d s\\
+	&= \int_G \langle \overline \pi (f(s)) \pi(a) \xi , \eta \rangle \d s,
+\end{align*}
+which shows \cref{mult:1.35}, since $\pi$ is non-degenerate. The analogues of \cref{int:cstarint} follows similarly. Let $a \in A$ with $\lv a \rv \leq 1$, then by \cref{int:cstarint} applied to $f_a \in \cc(G,A)$, we see that
+\begin{align*}
+	\lv \int_G f(s) \d s a \rv  \leq \lv f_a \rv_1 = \int_G \lv f(s) a \rv \d s \leq \int_G 1_{\supp f} \lv f \rv_{\infty} \d s = \mu(\supp f) \lv f \rv_{\infty},
+\end{align*}
+Hence $\lv \int_G f(s) \d s \rv = \sup_{\lv a \rv \leq 1} \lv \int_G f(s) \d s a\rv \leq \lv f \rv_{\infty} \mu(\supp f)$. Let $T \colon A \to M(B)$ be a non-degenerate homomorphism, with unique extension $\overline T \colon M(A) \to M(B)$, and hence for all $ a \in A$ and $b \in B$ we have
+\begin{align*}
+	\overline T\left(  \int_G f(s) \d s \right) T(a) b = T\left( \int_G f(s) a \d s  \right)b= \int_{G} T(f(s)a ) b \d s &= \int_G \overline T(f(s)) T(a)b \d s \\
+	&=\int_G \overline T(f(s)) \d s T(a)b,
+\end{align*}
+hence $\overline T \left( \int_G f(s) \d s \right) = \int_G \overline T(f(s)) \d s$ by non-degeneracy.
 \end{proof}
 In the construction of the general crossed product and other $C^*$-algebras associated to a $C^*$-dynamical system $(A,G,\alpha)$ we will need to deal with the algebra $\cc(G,A)$ quite a lot. We will want to develop a sort of twisted-convolution incorporating the action $\alpha$ of $G$. However, in order to do this properly, we will need a form of Fubini's theorem for the above:
 \begin{lemma}
 For $f \in \cc(G \times G  , B)$, the function
-	\begin{align*}
-		t \mapsto \int_G f(t,s) \d s
-	\end{align*}
-	is an element of $\cc(G,B)$.
-	\label{int:singleint}
+\begin{align*}
+	t \mapsto \int_G f(t,s) \d s
+\end{align*}
+is an element of $\cc(G,B)$.
+\label{int:singleint}
 \end{lemma}
 \begin{proof}
-	It is easy to see that if $F \colon G \to B$ is the map $t \mapsto \int_G f(t,s) \d s$, then $ \supp F$ is compact. We show continuity. Suppose that $x_i \to x \in G$ and let $ \varepsilon > 0$. Pick compact $K_1,K_2 \subseteq G$ covering the support of $f$, i.e., such that $ \supp f \subseteq K_1 \times K_2$. Note that $f(x_i,y) \to f(x,y)$ uniformly: If not, then we can find a net $(r_j)\subseteq G$ and $\varepsilon_0 > 0$ such that
-	\begin{align*}
-		\lv f(x_i,r_j) - f(x,r_j) \rv \geq \varepsilon_0,
-	\end{align*}
-	for all $i,j$. This shows that $r_j \in K_2$ for all $j$, hence we may assume that $r_j \to r \in K_2$ (up to passing to a subnet). But then for sufficiently large $i,j$ we would have $\lv f(x_i,r_j) - f(x,r_j) \rv < \varepsilon_0$. Hence we can assume that $\lv F(x_i) - F(x) \rv < \frac{\varepsilon}{ \mu(K_2)}$. Then, 
-	\begin{align*}
-		\lv \int_G f(x_i,s) \d s - \int_G f(x,s) \d s \rv \leq \int_{K_2} \lv f(x_i,s) - f(x,s) \rv \ d s + \int_{K_2^c} \lv f(x_i,s) - f(x,s) \rv \d s  \leq \varepsilon,
-	\end{align*}
-	as $\supp f \subseteq K_1 \times K_2$, so $F \in \cc(G,B)$.
+It is easy to see that if $F \colon G \to B$ is the map $t \mapsto \int_G f(t,s) \d s$, then $ \supp F$ is compact. We show continuity. Suppose that $x_i \to x \in G$ and let $ \varepsilon > 0$. Pick compact $K_1,K_2 \subseteq G$ covering the support of $f$, i.e., such that $ \supp f \subseteq K_1 \times K_2$. Note that $f(x_i,y) \to f(x,y)$ uniformly: If not, then we can find a net $(r_j)\subseteq G$ and $\varepsilon_0 > 0$ such that
+\begin{align*}
+	\lv f(x_i,r_j) - f(x,r_j) \rv \geq \varepsilon_0,
+\end{align*}
+for all $i,j$. This shows that $r_j \in K_2$ for all $j$, hence we may assume that $r_j \to r \in K_2$ (up to passing to a subnet). But then for sufficiently large $i,j$ we would have $\lv f(x_i,r_j) - f(x,r_j) \rv < \varepsilon_0$. Hence we can assume that $\lv F(x_i) - F(x) \rv < \frac{\varepsilon}{ \mu(K_2)}$. Then, 
+\begin{align*}
+	\lv \int_G f(x_i,s) \d s - \int_G f(x,s) \d s \rv \leq \int_{K_2} \lv f(x_i,s) - f(x,s) \rv \ d s + \int_{K_2^c} \lv f(x_i,s) - f(x,s) \rv \d s  \leq \varepsilon,
+\end{align*}
+as $\supp f \subseteq K_1 \times K_2$, so $F \in \cc(G,B)$.
 \end{proof}
 \begin{corollary}
-	Replacing the integral of \cref{int:singleint} with $\int_G f(t,s) \d t$ the statement still holds.
+Replacing the integral of \cref{int:singleint} with $\int_G f(t,s) \d t$ the statement still holds.
 \end{corollary}
 \begin{theorem}[Fubini's for $C^*$-valued integrals]
-	Suppose that $f \in \cc(G \times G, M_s(A))$, then 
-	\begin{align*}
-		s \mapsto \int_G^{M_s(A)} f(s,t) \d t \text{ and } s \mapsto \int_G^{M_s(A)} f(t,s) \d t
-	\end{align*}
-	are elements of $\cc(G,M_s(A))$ and moreover
-	\begin{align*}
-		\int_G^{M_s(A)} \int_G^{M_s(A)} f(s,t) \d s \d t = \int_G^{M_s(A)} \int_G^{M_s(A)} f(s,t) \d t \d s.
-	\end{align*}
-	\label{int:fubini}
+Suppose that $f \in \cc(G \times G, M_s(A))$, then 
+\begin{align*}
+	s \mapsto \int_G^{M_s(A)} f(s,t) \d t \text{ and } s \mapsto \int_G^{M_s(A)} f(t,s) \d t
+\end{align*}
+are elements of $\cc(G,M_s(A))$ and moreover
+\begin{align*}
+	\int_G^{M_s(A)} \int_G^{M_s(A)} f(s,t) \d s \d t = \int_G^{M_s(A)} \int_G^{M_s(A)} f(s,t) \d t \d s.
+\end{align*}
+\label{int:fubini}
 \end{theorem}
 \begin{proof}
 Define for a fixed $s$, the map $t \mapsto f(s,t)$ is in $\cc(G,M_s(A)$, hence we can define $\int_G f(s,t) \d t$ and $\int_G f(t,s) \d t$ as in \Cref{int:multstrictintegral}. Recall that $M(A) = M(\mathbb{K}_A(A_A))$, so the strict topology is induced by multiplication operators on $A$, so it suffices to show that $s \mapsto a \left(\int_Gf(s,t) \d t\right)$ and $s \mapsto \left(\int_G f(s,t) \d t\right) a $ are in $\cc(G,A)$ for all $ a \in A$ for the first claim. By \Cref{int:multstrictintegral}, we have 
 \begin{align*}
-	a \left( \int_G f(s,t) \d t \right) = \int_G a f(s,t) \d t,
+a \left( \int_G f(s,t) \d t \right) = \int_G a f(s,t) \d t,
 \end{align*}
 for all $a \in A$ and $s \in G$, and similarly $\left( \int_G f(s,t) \d t \right)a = \int_G f(s,t) a \d t$. The maps $(s,t) \mapsto a f(s,t)$ and $(s,t) \mapsto f(s,t) a$ are in $\cc(G \times G , A)$, clearly, so \Cref{int:singleint} ensures that $s \mapsto \int_G^{M_s(A)} f(s,t) \d t$ and $s \mapsto \int_G ^{M_s(A)} f(t,s) \d t$ are in $\cc(G,M_s(A)$.
 
@@ -280,246 +280,246 @@ For the last claim, we now see that the double integrals are well-defined \Cref{
 \ssection{Crossed Products}
 In analysis, an object of interest is the group algebra $L^1(G)$ for locally compact groups $G$. One can turn it into a $*$-algebra by showing that the convolution gives rise to a well-defined multiplication, and one can use the modular function to define an involution. Analogously to this, we do the same for $A$ valued functions:
 \begin{definition}
-	Suppose that $G \acts\alpha A$. We let 
+Suppose that $G \acts\alpha A$. We let 
+\begin{align*}
+	\cc(G,A):=\{ f \colon G \to A \mid f \text{ continuous and compactly supported}\}.
+\end{align*}
+For $f,g \in \cc(G,A)$, we define the $\alpha$-twisted convolution of $f$ and $g$ at $t \in G$ by
+\begin{align*}
+	(f \ast_\alpha g)(t):= \int_G  f(s) \alpha_s(g(s^{-1}t)) \d s,
+\end{align*}
+which is well defined since the map $(s,t) \mapsto f(s) \alpha_s g(s^{-1}t)$ is in $\cc(G \times G , A)$ and \cref{int:singleint} applies. Moreover, we define an $\alpha$-twisted involution of $f \in \cc(G,A)$ at $t \in G$ by
+\begin{align*}
+	f^*(t):=\Delta(t^{-1}) \alpha_t(f(t^{-1})^*).
+\end{align*}
+Straight forward calculations similar to the one classic ones show that $\cc(G,A)$ becomes a $*$-algebra with multiplication given by the $\alpha$-twisted convolution and involution given by the $\alpha$-twisted involution. We denote the associated $*$-algebra by $\cc(G,A,\alpha)$.
+
+To $f \in \cc(G,A,\alpha)$, we associate the number $\lv f \rv_1 \in [0, \infty)$ by
 	\begin{align*}
-		\cc(G,A):=\{ f \colon G \to A \mid f \text{ continuous and compactly supported}\}.
+		\lv f \rv_1 := \int_G \lv f(t) \rv \d t.
 	\end{align*}
-	For $f,g \in \cc(G,A)$, we define the $\alpha$-twisted convolution of $f$ and $g$ at $t \in G$ by
-	\begin{align*}
-		(f \ast_\alpha g)(t):= \int_G  f(s) \alpha_s(g(s^{-1}t)) \d s,
-	\end{align*}
-	which is well defined since the map $(s,t) \mapsto f(s) \alpha_s g(s^{-1}t)$ is in $\cc(G \times G , A)$ and \cref{int:singleint} applies. Moreover, we define an $\alpha$-twisted involution of $f \in \cc(G,A)$ at $t \in G$ by
-	\begin{align*}
-		f^*(t):=\Delta(t^{-1}) \alpha_t(f(t^{-1})^*).
-	\end{align*}
-	Straight forward calculations similar to the one classic ones show that $\cc(G,A)$ becomes a $*$-algebra with multiplication given by the $\alpha$-twisted convolution and involution given by the $\alpha$-twisted involution. We denote the associated $*$-algebra by $\cc(G,A,\alpha)$.
-	
-	To $f \in \cc(G,A,\alpha)$, we associate the number $\lv f \rv_1 \in [0, \infty)$ by
-		\begin{align*}
-			\lv f \rv_1 := \int_G \lv f(t) \rv \d t.
-		\end{align*}
-	Straightforward calculations show that $f \mapsto \lv f \rv_1$ is a norm, and we denote the completion of $\cc(G,A,\alpha)$ in $\lv \cdot \rv_1$ by $L^1(G,A,\alpha)$.
+Straightforward calculations show that $f \mapsto \lv f \rv_1$ is a norm, and we denote the completion of $\cc(G,A,\alpha)$ in $\lv \cdot \rv_1$ by $L^1(G,A,\alpha)$.
 \end{definition}
 
 For discrete and second-countable groups $G$ acting on a $C^*$-algebra $A$ via an action $\alpha$, we may easily construct a $*$-representation of $\cc(G,A)$ from a covariant representation $(\pi,u)$ by letting $\pi \rtimes u \colon \cc(A,G,\alpha) \to \mathbb{B}(\H)$ be the map
 \begin{align*}
-	\sum_{g \in G} a_g \delta_g \mapsto \pi(a_g) u_g,
+\sum_{g \in G} a_g \delta_g \mapsto \pi(a_g) u_g,
 \end{align*}
 however as discussed previously, this is not enough when $G$ is locally compact, since we can't assume that $u$ was continuous with respect to the norm on $\mathbb{B}(\H)$. However, in the previous section we constructed the tools to construct the desired generalization:
 \begin{lemma}
-	Suppose that $G \acts \alpha A$ with $G$ locally compact. If $(\pi,u)$ is a covariant representation of the associated $C^*$-dynamical system, then for all $f \in \cc(G,A)$, the map
-	\begin{align*}
-		s \mapsto \pi(f(s)) u_s, \text{ for }s \in G
-	\end{align*}
-	is in $\cc(G,\mathbb{B}_s(\H))$, where $\mathbb{B}_s(\H)$ indicates that we endow $\mathbb{B}\left(\H \right)$ with the strict topology of $ \mathbb{K}(\H)$.
-	\label{cross:integrandcont}
+Suppose that $G \acts \alpha A$ with $G$ locally compact. If $(\pi,u)$ is a covariant representation of the associated $C^*$-dynamical system, then for all $f \in \cc(G,A)$, the map
+\begin{align*}
+	s \mapsto \pi(f(s)) u_s, \text{ for }s \in G
+\end{align*}
+is in $\cc(G,\mathbb{B}_s(\H))$, where $\mathbb{B}_s(\H)$ indicates that we endow $\mathbb{B}\left(\H \right)$ with the strict topology of $ \mathbb{K}(\H)$.
+\label{cross:integrandcont}
 \end{lemma}
 \begin{proof}
-	By assumption, $u$ is strongly continuous, which is equivalent to being strictly continuous by \Cref{int:unistrictstrong}. Since $f \in \cc(G,A)$, we see that $\pi \circ f \in \cc(G,\mathbb{B}(\H))$, and being norm continuous implies strict continuity, so $s \mapsto \pi(f(s)) u_s$ is an element of $\cc(G,\mathbb{B}_s(\H))$.
+By assumption, $u$ is strongly continuous, which is equivalent to being strictly continuous by \Cref{int:unistrictstrong}. Since $f \in \cc(G,A)$, we see that $\pi \circ f \in \cc(G,\mathbb{B}(\H))$, and being norm continuous implies strict continuity, so $s \mapsto \pi(f(s)) u_s$ is an element of $\cc(G,\mathbb{B}_s(\H))$.
 \end{proof}
 The above and \ref{int:multstrictintegral} shows that given a covariant representation $(\pi,u)$ of $G \acts \alpha A$, there is a well-defined linear map $\pi \rtimes u \colon \cc(G,A) \to \mathbb{B}(\H)$ given by
 \begin{align*}
-	\pi \rtimes u (f) = \int_G^{\mathbb{B}(\H)} \pi(f(s)) u_s \d s,
+\pi \rtimes u (f) = \int_G^{\mathbb{B}(\H)} \pi(f(s)) u_s \d s,
 \end{align*}
 And we shall see that this representation has a lot of nice properties:
 
 \begin{proposition}
-	Suppose that $(\pi,u)$ is a covariant representation of a dynamical system $G \acts \alpha A$, with $G$ locally compact. Then the map $\pi \rtimes u$ is a $*$-representation of $\cc(G,A,\alpha)$ on $\mathbb{B}(\H)$ which is norm-decreasing. We call $\pi \rtimes u$ the \myemph{integrated form} \emph{of $\pi$ and $u$}. If $\pi$ is non-degenerate, then $\pi \rtimes u$ is as well.
-	\label{cross:integform}
+Suppose that $(\pi,u)$ is a covariant representation of a dynamical system $G \acts \alpha A$, with $G$ locally compact. Then the map $\pi \rtimes u$ is a $*$-representation of $\cc(G,A,\alpha)$ on $\mathbb{B}(\H)$ which is norm-decreasing. We call $\pi \rtimes u$ the \myemph{integrated form} \emph{of $\pi$ and $u$}. If $\pi$ is non-degenerate, then $\pi \rtimes u$ is as well.
+\label{cross:integform}
 \end{proposition}
 \begin{proof}
-	Let $\xi , \eta \in \H$ and $f \in \cc(G,A)$, then
-	\begin{align*}
-		 |\langle \pi \rtimes u (f) \xi , \eta \rangle| \leq \int_G | \langle \pi(f(s)) u_s \xi , \eta \rangle| \d s \leq \int_G \lv \pi(f(s)) \rv \lv \xi\rv \lv \eta \rv \d s \leq \lv f \rv_1 \lv \xi \rv \lv \eta \rv
-	\end{align*}
-	Since $\xi, \eta$ can be any unit vector, we have $\lv \pi \rtimes u (f) \rv \leq \lv f \rv_1$ for all $f \in \cc(G,A)$.
+Let $\xi , \eta \in \H$ and $f \in \cc(G,A)$, then
+\begin{align*}
+	 |\langle \pi \rtimes u (f) \xi , \eta \rangle| \leq \int_G | \langle \pi(f(s)) u_s \xi , \eta \rangle| \d s \leq \int_G \lv \pi(f(s)) \rv \lv \xi\rv \lv \eta \rv \d s \leq \lv f \rv_1 \lv \xi \rv \lv \eta \rv
+\end{align*}
+Since $\xi, \eta$ can be any unit vector, we have $\lv \pi \rtimes u (f) \rv \leq \lv f \rv_1$ for all $f \in \cc(G,A)$.
 
-	Let $f \in \cc(G,A,\alpha)$, then
-	\begin{align*}
-		\pi \rtimes u(f)^* = \int_G^{\mathbb{B}(\H)}  u_s^* \pi(f(s))^* \d s &= \int_G^{\mathbb{B}(\H)} u_{s^{-1}} \pi(f(s)^*) \d s\\
-		&= \int_G^{\mathbb{B}(\H)} \Delta(s)^{-1} u_{s} \pi(f(s^{-1})^*) \d s \\
-		&= \int_G^{\mathbb{B}(\H)} \Delta(s)^{-1} \pi(\alpha_s(f(s^{-1})^*)) u_s \d s\\
-		&= \int_G^{\mathbb{B}(\H)} \pi\left( \underbrace{\alpha_s\left( \Delta(s)^{-1}f(s^{-1})^* \right)}_{=f^*(s)} \right) u_s \d s\\
-		&= \int_G^{\mathbb{B}(\H)} \pi(f^*(s)) u_s \d s\\
-		&= \pi \rtimes u(f^*)
-	\end{align*}
-	and if $f,g \in \cc(G,A,\alpha)$ then using left-invariance of $\d s$, \Cref{int:cstarint} and \Cref{int:fubini}, we see that
-	\begin{align*}
-		\pi \rtimes u(f\ast_{\alpha}g) &= \int_G^{\mathbb{B}(\H)} \pi \left( f \ast_\alpha g(s) \right)u_s \d s\\
-		&= \int_G^{\mathbb{B}(\H)} \pi\left( \int_G^A f(t) \alpha_t g(t^{-1}s) \d t \right)u_s \d s\\
-		&= \int_G^{\mathbb{B}(\H)}\int_G^{\mathbb{B}(\H)} \pi(f(t)) \pi(\alpha_t(g(t^{-1}s))u_{t t^{-1}s} \d t \d s\\
-		&= \int_G^{\mathbb{B}(\H)} \int_G ^{\mathbb{B}(\H)} \pi(f(t)) u_t \pi(g(t^{-1}s)) u_{t^{-1}s}\d s \d t\\
-		&= \int_G^{\mathbb{B}(\H)} \pi(f(t)) u_t \int_G^{\mathbb{B}(\H)} \pi(g(t^{-1}s )) u_{t^{-1}s} \d s \d t\\
-		&= \int_G ^{\mathbb{B}(\H)} \pi(f(t)) u_t \int_G ^{\mathbb{B}(\H)} \pi(g(s)) u_s \d s \d t\\
-		&= \int_G ^{\mathbb{B}(\H)} \pi(f(t)) u_t \d t \int_G ^{\mathbb{B}(\H)} \pi(g(s)) u_s \d s \\
-		&= \pi \rtimes u (f) \pi\rtimes u (g),
-	\end{align*}
-	as wanted. Assuming non-degeneracy of $\pi$, for $h \in \H$ and $\varepsilon>0$ we can pick $a \in A$, $\lv a \rv =1$ such that $\lv \pi(a) h - h \rv < \varepsilon$. Being a unitary representation, we may choose a neighborhood $e \in V \subseteq G$ such that $\lv u_s h - h\rv < \varepsilon$ for $s \in V$. Pick $0 \leq \varphi \in \cc(G)$ such that $\int_G \varphi(s) \d s = 1$ and $\supp \varphi \subseteq V$. Then, $f := \varphi \otimes a \in \cc(G,A)$ satisfies for $k \in \H$, $\lv k \rv = 1$, that
-	\begin{align*}
-	\left| \langle \pi \rtimes u(f)h-h,k\rangle \right| &= 	\left| \int_G \varphi(s) \langle \pi(a)u_s h-h,k \rangle\right|\\
-	& \leq \int_G \varphi(s) (|\langle \pi(a) (u_s h-h),k\rangle|+|\langle \pi(a)h-h,k\rangle| ) \d s \\
-	&< 2 \varepsilon,
-	\end{align*}
-	showing that $\lv \pi \rtimes u(f)h-h\rv \leq 2 \varepsilon$.
+Let $f \in \cc(G,A,\alpha)$, then
+\begin{align*}
+	\pi \rtimes u(f)^* = \int_G^{\mathbb{B}(\H)}  u_s^* \pi(f(s))^* \d s &= \int_G^{\mathbb{B}(\H)} u_{s^{-1}} \pi(f(s)^*) \d s\\
+	&= \int_G^{\mathbb{B}(\H)} \Delta(s)^{-1} u_{s} \pi(f(s^{-1})^*) \d s \\
+	&= \int_G^{\mathbb{B}(\H)} \Delta(s)^{-1} \pi(\alpha_s(f(s^{-1})^*)) u_s \d s\\
+	&= \int_G^{\mathbb{B}(\H)} \pi\left( \underbrace{\alpha_s\left( \Delta(s)^{-1}f(s^{-1})^* \right)}_{=f^*(s)} \right) u_s \d s\\
+	&= \int_G^{\mathbb{B}(\H)} \pi(f^*(s)) u_s \d s\\
+	&= \pi \rtimes u(f^*)
+\end{align*}
+and if $f,g \in \cc(G,A,\alpha)$ then using left-invariance of $\d s$, \Cref{int:cstarint} and \Cref{int:fubini}, we see that
+\begin{align*}
+	\pi \rtimes u(f\ast_{\alpha}g) &= \int_G^{\mathbb{B}(\H)} \pi \left( f \ast_\alpha g(s) \right)u_s \d s\\
+	&= \int_G^{\mathbb{B}(\H)} \pi\left( \int_G^A f(t) \alpha_t g(t^{-1}s) \d t \right)u_s \d s\\
+	&= \int_G^{\mathbb{B}(\H)}\int_G^{\mathbb{B}(\H)} \pi(f(t)) \pi(\alpha_t(g(t^{-1}s))u_{t t^{-1}s} \d t \d s\\
+	&= \int_G^{\mathbb{B}(\H)} \int_G ^{\mathbb{B}(\H)} \pi(f(t)) u_t \pi(g(t^{-1}s)) u_{t^{-1}s}\d s \d t\\
+	&= \int_G^{\mathbb{B}(\H)} \pi(f(t)) u_t \int_G^{\mathbb{B}(\H)} \pi(g(t^{-1}s )) u_{t^{-1}s} \d s \d t\\
+	&= \int_G ^{\mathbb{B}(\H)} \pi(f(t)) u_t \int_G ^{\mathbb{B}(\H)} \pi(g(s)) u_s \d s \d t\\
+	&= \int_G ^{\mathbb{B}(\H)} \pi(f(t)) u_t \d t \int_G ^{\mathbb{B}(\H)} \pi(g(s)) u_s \d s \\
+	&= \pi \rtimes u (f) \pi\rtimes u (g),
+\end{align*}
+as wanted. Assuming non-degeneracy of $\pi$, for $h \in \H$ and $\varepsilon>0$ we can pick $a \in A$, $\lv a \rv =1$ such that $\lv \pi(a) h - h \rv < \varepsilon$. Being a unitary representation, we may choose a neighborhood $e \in V \subseteq G$ such that $\lv u_s h - h\rv < \varepsilon$ for $s \in V$. Pick $0 \leq \varphi \in \cc(G)$ such that $\int_G \varphi(s) \d s = 1$ and $\supp \varphi \subseteq V$. Then, $f := \varphi \otimes a \in \cc(G,A)$ satisfies for $k \in \H$, $\lv k \rv = 1$, that
+\begin{align*}
+\left| \langle \pi \rtimes u(f)h-h,k\rangle \right| &= 	\left| \int_G \varphi(s) \langle \pi(a)u_s h-h,k \rangle\right|\\
+& \leq \int_G \varphi(s) (|\langle \pi(a) (u_s h-h),k\rangle|+|\langle \pi(a)h-h,k\rangle| ) \d s \\
+&< 2 \varepsilon,
+\end{align*}
+showing that $\lv \pi \rtimes u(f)h-h\rv \leq 2 \varepsilon$.
 \end{proof}
 
 Now, given a locally compact topological group $G$, let $\lambda \colon G \to \U(L^2(G))$ be the left-regular representation $\langle \lambda_g \xi, \eta\rangle = \int_G \xi(g^{-1}s)\overline{\eta(s)}\d s$ for $g \in G$ and $\xi, \eta \in L^2(G)$. Even though $L^2(G)$ consists of equivalence classes (unless e.g., $G$ is discrete), we will abbreviate $\lambda_g \xi(s) := \xi(g^{-1}s)$. Given a Hilbert space $\H$, we will use $\lambda_g$ to denote the operator $I \otimes \lambda_g$ on $\H \otimes L^2(G) \cong L^2(G,\H)$. With this, we have the following:
 \begin{lemma}
-	Suppose that $G \acts \alpha A$, and $\pi$ is a representation of $A$ on $\H$. Define $\tilde{\pi}(a) \colon L^2(G,H) \to L^2(G,H)$ by 
-	\begin{align*}
-		\tilde{\pi}(a)\xi(r) = \pi(\alpha_{r^{-1}}(a))\xi(r), \text{ for } a \in A, \ r \in G \text{ and } \xi \in L^2(G,H).
-	\end{align*}
-	Then $(\tilde{\pi},\lambda)$ is a covariant representation of $G \acts \alpha A$ on $L^2(G,\H)$.
-	\label{cross:regularrep}
+Suppose that $G \acts \alpha A$, and $\pi$ is a representation of $A$ on $\H$. Define $\tilde{\pi}(a) \colon L^2(G,H) \to L^2(G,H)$ by 
+\begin{align*}
+	\tilde{\pi}(a)\xi(r) = \pi(\alpha_{r^{-1}}(a))\xi(r), \text{ for } a \in A, \ r \in G \text{ and } \xi \in L^2(G,H).
+\end{align*}
+Then $(\tilde{\pi},\lambda)$ is a covariant representation of $G \acts \alpha A$ on $L^2(G,\H)$.
+\label{cross:regularrep}
 \end{lemma}
 \begin{proof}
-	Let $a \in A$ and $r \in G$. Then for all $\xi \in L^2(G,\H)$ and $s \in G$:
-	\begin{align*}
-		\lambda_g (\tilde{\pi}(a) \lambda_{g^{-1}} \xi)(s) = \pi(\alpha_{g^{-1}r}^{-1}(a))\lambda_g^* \xi(g^{-1}s) = \pi(\alpha_{r^{-1}}\alpha_g(a))\xi (g g^{-1} s) = \tilde{\pi}(\alpha_g(a))\xi(s),
-	\end{align*}
-	as wanted.
+Let $a \in A$ and $r \in G$. Then for all $\xi \in L^2(G,\H)$ and $s \in G$:
+\begin{align*}
+	\lambda_g (\tilde{\pi}(a) \lambda_{g^{-1}} \xi)(s) = \pi(\alpha_{g^{-1}r}^{-1}(a))\lambda_g^* \xi(g^{-1}s) = \pi(\alpha_{r^{-1}}\alpha_g(a))\xi (g g^{-1} s) = \tilde{\pi}(\alpha_g(a))\xi(s),
+\end{align*}
+as wanted.
 \end{proof}
 \begin{corollary}
 To every $C^*$-dynamical system $G \acts \alpha A$, there exists a covariant representation.
 \end{corollary}
 In light of the above, we may define the following important class of covariant representations of a $C^*$-dynamical system:
 \begin{definition}
-	Given $G \acts \alpha A$, then for any representation $\pi$ of $A$ on $\H$, the above covariant representation is called the \myemph{induced regular representation}, and we will write $\mathrm{Ind}_e^G(\pi) := (\tilde{\pi}, \lambda)$. Any representation of the above form is called a \myemph{regular representation}.
+Given $G \acts \alpha A$, then for any representation $\pi$ of $A$ on $\H$, the above covariant representation is called the \myemph{induced regular representation}, and we will write $\mathrm{Ind}_e^G(\pi) := (\tilde{\pi}, \lambda)$. Any representation of the above form is called a \myemph{regular representation}.
 \end{definition}
 As we shall see, the integrated form of the above plays a crucial role in the theory regarded in this thesis, but first, we shall need the following lemma:
 \begin{lemma}
-	Suppose that $G \acts \alpha A$, and $\pi$ is a representation of $A$ on $\H$. Then $\mathrm{Ind}_e^G \pi$ is non-degenerate if $\pi$ is non-degenerate.
-	\label{cross:regrepnondeg}
+Suppose that $G \acts \alpha A$, and $\pi$ is a representation of $A$ on $\H$. Then $\mathrm{Ind}_e^G \pi$ is non-degenerate if $\pi$ is non-degenerate.
+\label{cross:regrepnondeg}
 \end{lemma}
 \begin{proof}
-	Recall that the set of functions $ f \otimes \eta \colon r \mapsto f(r) \eta$ with $f \in \cc(G)$ and $\eta \in \H$ has dense linear span in $L^2(G,\H)$, and since $\pi$ is non-degenerate, the set $\{ f \otimes \pi(a) \eta \mid \eta \in \H, \ f \in \cc(G) \text{ and } a \in A \}$ has dense linear in $L^2(G, \H)$ as well. Let $\varepsilon > 0$ and let $(e_i)$ be an approximate identity of $A$. By the previous remark and the fact that $\tilde{\pi}$ is a linear contraction, it suffices to see that 
-	\begin{align*}
-		\tilde{\pi}(e_i) (f \otimes \pi(a) \xi)(r)=f(r) \pi(\alpha_{r}^{-1}(e_i)a) \xi   \stackrel 2 \to f(r) \pi(a) \xi,
-	\end{align*}
-	for $f \in \cc(G)$, $\xi \in \H$ and $a \in A$ and $r \in \supp f$. The argument thus boils down to showing that $\alpha_r^{-1}(e_i) a \to a$, which an easy argument of contradiction using compactness of $\supp f$ and the approximate identity property passing to subnets shows that this is true.
+Recall that the set of functions $ f \otimes \eta \colon r \mapsto f(r) \eta$ with $f \in \cc(G)$ and $\eta \in \H$ has dense linear span in $L^2(G,\H)$, and since $\pi$ is non-degenerate, the set $\{ f \otimes \pi(a) \eta \mid \eta \in \H, \ f \in \cc(G) \text{ and } a \in A \}$ has dense linear in $L^2(G, \H)$ as well. Let $\varepsilon > 0$ and let $(e_i)$ be an approximate identity of $A$. By the previous remark and the fact that $\tilde{\pi}$ is a linear contraction, it suffices to see that 
+\begin{align*}
+	\tilde{\pi}(e_i) (f \otimes \pi(a) \xi)(r)=f(r) \pi(\alpha_{r}^{-1}(e_i)a) \xi   \stackrel 2 \to f(r) \pi(a) \xi,
+\end{align*}
+for $f \in \cc(G)$, $\xi \in \H$ and $a \in A$ and $r \in \supp f$. The argument thus boils down to showing that $\alpha_r^{-1}(e_i) a \to a$, which an easy argument of contradiction using compactness of $\supp f$ and the approximate identity property passing to subnets shows that this is true.
 \end{proof}
 \begin{remark}
-	In particular, if $\pi$ is a non-degenerate representation of $A$, then the integrated form, $\tilde{\pi} \rtimes \lambda$, of $\mathrm{Ind}_e^G \pi$ is non-degenerate by \Cref{cross:integform}. This is not the only property which carries over from the map $\mathrm{Ind}_e^G \pi \mapsto \tilde{\pi} \rtimes \lambda$, but before we further comment on this, we must introduce some new maps
+In particular, if $\pi$ is a non-degenerate representation of $A$, then the integrated form, $\tilde{\pi} \rtimes \lambda$, of $\mathrm{Ind}_e^G \pi$ is non-degenerate by \Cref{cross:integform}. This is not the only property which carries over from the map $\mathrm{Ind}_e^G \pi \mapsto \tilde{\pi} \rtimes \lambda$, but before we further comment on this, we must introduce some new maps
 \end{remark}
 \begin{definition}
-	Suppose that $G \acts \alpha A$. Let $f \otimes a  \in \cc(G,A)$ be the map $r \mapsto f(r)a$. For $s \in G$, let $\iota_G(s)$ be the linear extension of the map $\lambda_s \otimes \alpha_s \colon f \otimes a \mapsto \lambda_s f \otimes \alpha_s(a)$ to all of $\cc(G,A)$, i.e., $\iota_G(s) h(t) = \alpha_s(h(s^{-1}t))$ for $h \in \cc(G,A)$.
+Suppose that $G \acts \alpha A$. Let $f \otimes a  \in \cc(G,A)$ be the map $r \mapsto f(r)a$. For $s \in G$, let $\iota_G(s)$ be the linear extension of the map $\lambda_s \otimes \alpha_s \colon f \otimes a \mapsto \lambda_s f \otimes \alpha_s(a)$ to all of $\cc(G,A)$, i.e., $\iota_G(s) h(t) = \alpha_s(h(s^{-1}t))$ for $h \in \cc(G,A)$.
 \end{definition}
 And, we have the following handy lemma:
 \begin{lemma}
-	Suppose that $(\pi,u)$ is a covariant representation of a $C^*$-dynamical system $G \acts \alpha A$, and let $\pi \rtimes u$ denote the representation of $\cc(G,A,\alpha)$. Then, for $f \in \cc(G,A)$ and $r \in G$ it holds that
-	\begin{align*}
-		 u_r^*  \circ \pi \rtimes u \circ \iota_G(r) (f) =   \pi \rtimes u (f)
-	\end{align*}
-	\label{cross:iotaG}
+Suppose that $(\pi,u)$ is a covariant representation of a $C^*$-dynamical system $G \acts \alpha A$, and let $\pi \rtimes u$ denote the representation of $\cc(G,A,\alpha)$. Then, for $f \in \cc(G,A)$ and $r \in G$ it holds that
+\begin{align*}
+	 u_r^*  \circ \pi \rtimes u \circ \iota_G(r) (f) =   \pi \rtimes u (f)
+\end{align*}
+\label{cross:iotaG}
 \end{lemma}
 \begin{proof}
 It follows from the calculation
 \begin{align*}
-	\pi \rtimes u (\iota_G(r)f) = \int_G \pi(\iota_G(r) f(s) ) u_s \d s &= \int_G \pi(\alpha_r(f(r^{-1}s))) u_ru_{r^{-1}s} \d s\\
-	&= \int_G u_r \pi(f(r^{-1}t)) u_{r^{-1}s} \d s \\
-	&= u_r \int_G  \pi(f(s)) u_s \d s \\
-	&= u_r \circ \pi \rtimes u (f).
+\pi \rtimes u (\iota_G(r)f) = \int_G \pi(\iota_G(r) f(s) ) u_s \d s &= \int_G \pi(\alpha_r(f(r^{-1}s))) u_ru_{r^{-1}s} \d s\\
+&= \int_G u_r \pi(f(r^{-1}t)) u_{r^{-1}s} \d s \\
+&= u_r \int_G  \pi(f(s)) u_s \d s \\
+&= u_r \circ \pi \rtimes u (f).
 \end{align*}
 \end{proof}
 \begin{lemma}
-	Suppose that $G \acts \alpha A$ and $\pi$ is a faitful representation of $A$ on $\H$. Then the integrated form, $\tilde{\pi} \rtimes \lambda$, of $\mathrm{Ind}_e^G (\pi)=(\tilde \pi , \lambda)$ is a faithful representation of $\cc(G,A,\alpha)$.
-	\label{cross:regfaith}
+Suppose that $G \acts \alpha A$ and $\pi$ is a faitful representation of $A$ on $\H$. Then the integrated form, $\tilde{\pi} \rtimes \lambda$, of $\mathrm{Ind}_e^G (\pi)=(\tilde \pi , \lambda)$ is a faithful representation of $\cc(G,A,\alpha)$.
+\label{cross:regfaith}
 \end{lemma}
 \begin{proof}
-	Let $0 \neq f \in \cc(G,A)$, and let $r \in G$ witness this, i.e, $f(r) \neq 0$. By \Cref{cross:iotaG} we can replace $f$ by $\iota_G(r^{-1})f$ and assume that $r=e$. So without loss of generality we assume $r = e$, and let $\xi, \eta \in \H$ witness faithfulness of $\pi$, i.e., such that $\langle \pi ( f(e)) \xi, \eta \rangle \neq 0$. Pick an open neighborhood $e \in V$ such that for $s,r \in V$ we have 
-	\begin{align*}
-		| \langle \pi(\alpha_r^{-1}(f(s))) \xi  - \pi(f(e)))\xi , \eta \rangle|  < \frac{| \langle \pi (f(e)) \xi , \eta\rangle|}{3}.
-	\end{align*}
+Let $0 \neq f \in \cc(G,A)$, and let $r \in G$ witness this, i.e, $f(r) \neq 0$. By \Cref{cross:iotaG} we can replace $f$ by $\iota_G(r^{-1})f$ and assume that $r=e$. So without loss of generality we assume $r = e$, and let $\xi, \eta \in \H$ witness faithfulness of $\pi$, i.e., such that $\langle \pi ( f(e)) \xi, \eta \rangle \neq 0$. Pick an open neighborhood $e \in V$ such that for $s,r \in V$ we have 
+\begin{align*}
+	| \langle \pi(\alpha_r^{-1}(f(s))) \xi  - \pi(f(e)))\xi , \eta \rangle|  < \frac{| \langle \pi (f(e)) \xi , \eta\rangle|}{3}.
+\end{align*}
 Let $W \subseteq V$ be a symmetric neighborhood such that $W^2 \subseteq V$, and let $\varphi \in \cc(G)$ such that $\varphi \geq 0$ and $\supp \varphi \subseteq W$ and
 \begin{align*}
-	\int_G \int_G \varphi(s^{-1}r) \varphi(r) \d r \d s = 1.
+\int_G \int_G \varphi(s^{-1}r) \varphi(r) \d r \d s = 1.
 \end{align*}
 Let $\zeta = \varphi \otimes \xi$ and $\psi = \varphi \otimes \eta$ be the above defined elements of $L^2(G,H)$. Then
 \begin{align*}
-	\langle \tilde{ \pi } \rtimes \lambda (f) \zeta, \psi \rangle  =  \int_G \langle \tilde{\pi}(f(s)) \lambda_s \zeta , \psi\rangle \d s &= \int_G \int_G \langle \tilde{\pi} f(s) \lambda_s \zeta(r) , \psi(r) \rangle \d r \d s\\
-	&= \int_G \int_G \langle \pi(\alpha_{r^{-1}}f(s)) \zeta\left( r^{-1}s \right) \psi(s) \rangle \d r \d s\\
-	&= \int_G \int_G \varphi(r^{-1}s) \varphi(r) \langle \pi(\alpha_{r^{-1}}f(s)) \xi , \eta \rangle \d r \d s
+\langle \tilde{ \pi } \rtimes \lambda (f) \zeta, \psi \rangle  =  \int_G \langle \tilde{\pi}(f(s)) \lambda_s \zeta , \psi\rangle \d s &= \int_G \int_G \langle \tilde{\pi} f(s) \lambda_s \zeta(r) , \psi(r) \rangle \d r \d s\\
+&= \int_G \int_G \langle \pi(\alpha_{r^{-1}}f(s)) \zeta\left( r^{-1}s \right) \psi(s) \rangle \d r \d s\\
+&= \int_G \int_G \varphi(r^{-1}s) \varphi(r) \langle \pi(\alpha_{r^{-1}}f(s)) \xi , \eta \rangle \d r \d s
 \end{align*}
 and hence for all $r,s \in W$ we have
 \begin{align*}
-	\left | \langle\tilde{\pi} \rtimes \lambda (f) \zeta , \psi \rangle - \langle \pi(f(e)) \zeta , \psi \rangle\right | &=  \left |  \int_G \int_G\varphi(r^{-1}s) \varphi (s) (\langle \pi(\alpha_{r^{-1}} f(s)) \xi , \eta \rangle - \langle \pi(f(e)) \xi , \eta \rangle  \d r \d s \right | \\
-	&\leq \int_G \int_G \varphi(r^{-1}s ) \varphi (s) | \langle \pi(\alpha_{r^{-1}}(f(s))) \xi , \eta\rangle - \langle \pi(f(e)) \xi , \eta \rangle | \d r \d s \\
-	&< \int_G \int_G \varphi(r^{-1}s) \varphi(s) \frac{| \langle \pi(f(e)) \xi, \eta \rangle|}{3} \d r \d s \\
-	&= \frac{| \langle \pi(f(e)) \xi , \eta \rangle|} {2},
+\left | \langle\tilde{\pi} \rtimes \lambda (f) \zeta , \psi \rangle - \langle \pi(f(e)) \zeta , \psi \rangle\right | &=  \left |  \int_G \int_G\varphi(r^{-1}s) \varphi (s) (\langle \pi(\alpha_{r^{-1}} f(s)) \xi , \eta \rangle - \langle \pi(f(e)) \xi , \eta \rangle  \d r \d s \right | \\
+&\leq \int_G \int_G \varphi(r^{-1}s ) \varphi (s) | \langle \pi(\alpha_{r^{-1}}(f(s))) \xi , \eta\rangle - \langle \pi(f(e)) \xi , \eta \rangle | \d r \d s \\
+&< \int_G \int_G \varphi(r^{-1}s) \varphi(s) \frac{| \langle \pi(f(e)) \xi, \eta \rangle|}{3} \d r \d s \\
+&= \frac{| \langle \pi(f(e)) \xi , \eta \rangle|} {2},
 \end{align*}
 and in particular, it follows that $\tilde{\pi} \rtimes \lambda (f) \neq 0$.
 \end{proof}
 
 With the above result in hand, we can finally give meaning to a universal norm for the general convolution algebra $\cc(G,A,\alpha)$. Like in the discrete case, we define the \myemph{universal norm} of $f \in \cc(G,A,\alpha)$ to be non-negative real number
 \begin{align*}
-	\lv f \rv_u &:= \sup\left\{ \lv \pi \rtimes u (f)\rv \mid  \pi \rtimes u \text{ is a covariant represenation of }(A,G ,\alpha) \right\}\\
-	&\leq \lv f \rv_1,
+\lv f \rv_u &:= \sup\left\{ \lv \pi \rtimes u (f)\rv \mid  \pi \rtimes u \text{ is a covariant represenation of }(A,G ,\alpha) \right\}\\
+&\leq \lv f \rv_1,
 \end{align*}
 and it is easy to see that the assignment $\cc(G,A,\alpha) \ni f \mapsto \lv f \rv_u$ is a norm: It clearly satisfies $\lv f + g \rv_u \leq \lv f \rv_u + \lv g \rv_u$ and $\lv cf \rv_u = |c| \lv f \rv_u$ for $f,g \in \cc(G,A,\alpha)$ and $c \in \C$. If $\lv f \rv_u = 0$ then $\tilde{\pi} \rtimes \lambda (f) = 0$ for all faithful $\pi$, which implies by \Cref{cross:regfaith} that $f = 0$. Moreover, we see that $\cc(G,A,\alpha)$ is a pre $C^*$-algebra, since $\pi \rtimes u$ is a homomorphism for all covariant representations $(\pi,u)$, and thus $\lv \pi \rtimes u (f^*\ast f)\rv = \lv \pi \rtimes u(f)^* \circ \pi \rtimes u(f)\rv = \lv \pi \rtimes u (f)\rv^2$, so that $\lv f^* \ast f\rv_u = \lv f \rv_u^2$. 
 \begin{note}
-	While it indeed is not possible to take the supremum over a class, it can be shown that it is enough to take the supremum over cyclic covariant representations, which is indeed a set - this is due to the fact that every non-degenerate representation of a $^*$-algebra is a direct sum of cyclic representations, see e.g. \cite[Theorem 5.1.3]{murphy2014c}. For now, we stick with the following:
+While it indeed is not possible to take the supremum over a class, it can be shown that it is enough to take the supremum over cyclic covariant representations, which is indeed a set - this is due to the fact that every non-degenerate representation of a $^*$-algebra is a direct sum of cyclic representations, see e.g. \cite[Theorem 5.1.3]{murphy2014c}. For now, we stick with the following:
 \end{note}
 \begin{lemma}
-	Let $G \acts \alpha A$ be a $C^*$-dynamical system and let $(\pi,u)$ be a covariant representation on $\H$. Let 
-	\begin{align*}
-		V_\pi = \overline \Span\left\{ \pi(a) \xi \mid a \in A \text{ and } \xi \in \H \right\} \subseteq \H,
-	\end{align*}
-	then $V_\pi$ is invariant under both $\pi$ and $u$ by covariance, and if $\pi^{V_\pi}$ and $ u^{V_\pi}$ denotes the corresponding subrepresentations on $V_{\pi}$, we have for all $f \in \cc(G,A,\alpha)$ 
-	\begin{align*}
-		\lv \pi ^{V_\pi} \rtimes u^{V_\pi}(f) \rv = \lv \pi \rtimes u (f) \rv,
-	\end{align*}
-	so that
-	\begin{align*}
-		\lv f \rv_u = \sup\left\{ \lv \pi \rtimes u(f) \rv \mid  (\pi,u) \text{ is a non-degenerate covariant representation of } G \acts \alpha A\right\}.
-	\end{align*}
-	\label{cross:essnorm}
+Let $G \acts \alpha A$ be a $C^*$-dynamical system and let $(\pi,u)$ be a covariant representation on $\H$. Let 
+\begin{align*}
+	V_\pi = \overline \Span\left\{ \pi(a) \xi \mid a \in A \text{ and } \xi \in \H \right\} \subseteq \H,
+\end{align*}
+then $V_\pi$ is invariant under both $\pi$ and $u$ by covariance, and if $\pi^{V_\pi}$ and $ u^{V_\pi}$ denotes the corresponding subrepresentations on $V_{\pi}$, we have for all $f \in \cc(G,A,\alpha)$ 
+\begin{align*}
+	\lv \pi ^{V_\pi} \rtimes u^{V_\pi}(f) \rv = \lv \pi \rtimes u (f) \rv,
+\end{align*}
+so that
+\begin{align*}
+	\lv f \rv_u = \sup\left\{ \lv \pi \rtimes u(f) \rv \mid  (\pi,u) \text{ is a non-degenerate covariant representation of } G \acts \alpha A\right\}.
+\end{align*}
+\label{cross:essnorm}
 \end{lemma}
 \begin{proof}
-	This is a standard proof, and we refer to \cite[52]{williamscrossed} for the proof.
+This is a standard proof, and we refer to \cite[52]{williamscrossed} for the proof.
 \end{proof}
 
 This allows us to define the general crossed product as the completion of $\cc(G,A,\alpha)$:
 \begin{definition}
-	For a $C^*$-dynamical system $(A,G,\alpha)$, we define the \myemph{full crossed product} (or simply the crossed product) of $A$ and $G$ to be norm closure of $\cc(G,A,\alpha)$ in the norm $\lv \cdot \rv_u$, and we will denote it by $A \rtimes_\alpha G$.
+For a $C^*$-dynamical system $(A,G,\alpha)$, we define the \myemph{full crossed product} (or simply the crossed product) of $A$ and $G$ to be norm closure of $\cc(G,A,\alpha)$ in the norm $\lv \cdot \rv_u$, and we will denote it by $A \rtimes_\alpha G$.
 \end{definition}
 \begin{remark}
-	Another (equivalent) formulation of the crossed product is to consider the representation of $L^1(G,A)$ given by the direct sum of all non-degenerate covariant representations of $L^1(G,A)$. Again, one can reformulate the above to only consider cyclic covariant representations, and use the fact that every representation of a $C^*$-algebra is a sum of cyclic representations.
+Another (equivalent) formulation of the crossed product is to consider the representation of $L^1(G,A)$ given by the direct sum of all non-degenerate covariant representations of $L^1(G,A)$. Again, one can reformulate the above to only consider cyclic covariant representations, and use the fact that every representation of a $C^*$-algebra is a sum of cyclic representations.
 \end{remark}
 The perhaps most trivial example is in fact not a degenerate example, for it gives us a way to define the full group $C^*$-algebra of a locally compact group $G$:
 \begin{example}
-	Recall the definition of the full group $C^*$-algebra $C^*(G)$, which is given as the closure of $\cc(G)$ (or $L^1(G)$) coming from the direct sum of all non-degenerate representations of the Banach $^*$-algebra $L^1(G)$. This is equivalent to the construction above when we let $G \acts \C$ be the trivial action $1$. 
+Recall the definition of the full group $C^*$-algebra $C^*(G)$, which is given as the closure of $\cc(G)$ (or $L^1(G)$) coming from the direct sum of all non-degenerate representations of the Banach $^*$-algebra $L^1(G)$. This is equivalent to the construction above when we let $G \acts \C$ be the trivial action $1$. 
 \end{example}
 Another fundamental example is the following:
 \begin{example}
-	Let $G = \Z$ and let $\theta \in \R$. Define an action of $\Z$ on $C(S^1)$ by $\alpha_\theta(n)f(w) = f(e^{-2\pi \theta n} w)$. The corresponding crossed product $C(S^1) \rtimes_{\alpha_\theta} \Z$ is called the \myemph{(Ir)rational Rotation Algebra} (depending on wether $\theta$ is irrational or rational).
+Let $G = \Z$ and let $\theta \in \R$. Define an action of $\Z$ on $C(S^1)$ by $\alpha_\theta(n)f(w) = f(e^{-2\pi \theta n} w)$. The corresponding crossed product $C(S^1) \rtimes_{\alpha_\theta} \Z$ is called the \myemph{(Ir)rational Rotation Algebra} (depending on wether $\theta$ is irrational or rational).
 \end{example}
 In fact, for $\theta$ irrational, we obtain one of the prototypes of simple crossed product algebras, which we recall is the topic of this thesis. Nice!
 
 Inconvenient as it is, there is no guarantee that $A \rtimes_\alpha G$ contains a copy of $A$ or $G$ except under certain additional conditions on $A$ and $G$. However, we can always embed $A$ and $G$ into the Multiplier Algebra $M(A \rtimes_\alpha G)$ of $A \rtimes_\alpha G$:
 \begin{lemma}
-	Suppose that $G \acts \alpha A$ is a $C^*$-dynamical system. Define for $a \in A$ the map $\iota_A(a) \colon A \rtimes_\alpha G \to A \rtimes_\alpha G$ to be the extension of the map defined on $\cc(G,A,\alpha)$ by
-	\begin{align*}
-		\iota_A(a) f(s) = af(s), \text{ for } f \in \cc(G,A,\alpha) \text{ and } s \in G.
-	\end{align*}
-	Then $\iota_A \colon A \to M(A \rtimes_\alpha G)$, $a \mapsto \iota_A(a)$, is a faithful non-degenerate $^*$-representation, satisfying
-	\begin{align*}
-		\overline{\pi \rtimes u } \ \iota_A(a) = \pi(a),
-	\end{align*}
-	for all covariant representations $(\pi,u)$ of $G \acts \alpha A $.
+Suppose that $G \acts \alpha A$ is a $C^*$-dynamical system. Define for $a \in A$ the map $\iota_A(a) \colon A \rtimes_\alpha G \to A \rtimes_\alpha G$ to be the extension of the map defined on $\cc(G,A,\alpha)$ by
+\begin{align*}
+	\iota_A(a) f(s) = af(s), \text{ for } f \in \cc(G,A,\alpha) \text{ and } s \in G.
+\end{align*}
+Then $\iota_A \colon A \to M(A \rtimes_\alpha G)$, $a \mapsto \iota_A(a)$, is a faithful non-degenerate $^*$-representation, satisfying
+\begin{align*}
+	\overline{\pi \rtimes u } \ \iota_A(a) = \pi(a),
+\end{align*}
+for all covariant representations $(\pi,u)$ of $G \acts \alpha A $.
 \end{lemma}
 \begin{proof}
 First, for covariant representations $(\pi,u)$ of $G \acts \alpha A$, we see that
 \begin{align*}
-	\pi \rtimes u(\iota_A(a) f) = \int_G \pi(a) \pi(f(s)) u_s \d s = \pi(a) \pi \rtimes u (f),
+\pi \rtimes u(\iota_A(a) f) = \int_G \pi(a) \pi(f(s)) u_s \d s = \pi(a) \pi \rtimes u (f),
 \end{align*}
 for all $f \in \cc(G,A,\alpha)$ and $a \in A$, so $\lv \iota_A(a) f \rv \leq \lv a \rv \lv f \rv$. Hence $\iota_A(a)$ extends to an operator, which we also denote by $\iota_A(a)$. If $a \in A$ and $f \in \cc(G,A,\alpha)$, then 
 \begin{align*}
-	\left( \iota_A(a) f \right)^*(s) = \Delta(s^{-1}) \alpha_s(f(s^{-1})^*) \alpha_s(a^*) = f^*(s) \alpha_s(a^*), \text{ for }s \in G,
+\left( \iota_A(a) f \right)^*(s) = \Delta(s^{-1}) \alpha_s(f(s^{-1})^*) \alpha_s(a^*) = f^*(s) \alpha_s(a^*), \text{ for }s \in G,
 \end{align*}
 implying that
 \begin{align*}
-	\left( \iota_A(a) f \right)^* \ast g (s) = \int_G f^*(r) \alpha_r(a^*) \alpha_r(g(r^{-1}s)) \d r &= \int_G f^*(r) \alpha_r \left(  (\iota_A(a^*) g)(r^{-1}s)\right) \d r \\
-	&= f^* \ast(\iota_A(a^*) g)(s).
+\left( \iota_A(a) f \right)^* \ast g (s) = \int_G f^*(r) \alpha_r(a^*) \alpha_r(g(r^{-1}s)) \d r &= \int_G f^*(r) \alpha_r \left(  (\iota_A(a^*) g)(r^{-1}s)\right) \d r \\
+&= f^* \ast(\iota_A(a^*) g)(s).
 \end{align*}
 We conclude that $\iota_A(a^*)$ is an adjoint (with respect to the canonical $A \rtimes_\alpha G)$-valued inner product) on the dense sub$*$-algebra $\cc(G,A,\alpha) \subseteq A \rtimes_\alpha G$, hence everywhere by continuity, i.e., $\iota_A(a) \in M(A \rtimes_\alpha G)$. 
 
@@ -528,149 +528,149 @@ For injectivity, let $\pi$ be any faithful, non-degenerate representation of $A$
 For non-degeneracy, recall that the set of functions $\varphi \rtimes b$ for $\varphi \in \cc(G)$ and $b \in A $ span a dense subset of $\cc(G,A)$ in the inductive limit norm and hence in $L^1$-norm by \cref{int:indlmdense}. This means that this set also spans a dense subset of $A \rtimes_\alpha G$ in the universal norm. Also, for $a \in A$, we see that $\iota_A(a) \varphi \rtimes b = \varphi \rtimes ab$, from which we conclude that the set $\iota_A(A) A \rtimes_\alpha G$ is dense, finishing the proof.
 \end{proof}
 \begin{lemma}
-	There is an injective and strictly continuous group homomorphism
-	\begin{align*}
-		\iota_G \colon G \to \mathcal{U} M(A \rtimes_\alpha G),
-	\end{align*}
-	such that for $f \in \cc(G,A,\alpha) \subseteq A \rtimes_\alpha G$ we have
-	\begin{align*}
-		\iota_G(s) f(t) = \alpha_s (f(s^{-1}t)),
-	\end{align*}
-	for all $s,t \in G$, and if $(\pi,u)$ is a covariant representation of $G \acts \alpha A$, then
-	\begin{align*}
-		\overline{\pi \rtimes u} \iota_G(s) =u_s,
-	\end{align*}
+There is an injective and strictly continuous group homomorphism
+\begin{align*}
+	\iota_G \colon G \to \mathcal{U} M(A \rtimes_\alpha G),
+\end{align*}
+such that for $f \in \cc(G,A,\alpha) \subseteq A \rtimes_\alpha G$ we have
+\begin{align*}
+	\iota_G(s) f(t) = \alpha_s (f(s^{-1}t)),
+\end{align*}
+for all $s,t \in G$, and if $(\pi,u)$ is a covariant representation of $G \acts \alpha A$, then
+\begin{align*}
+	\overline{\pi \rtimes u} \iota_G(s) =u_s,
+\end{align*}
 for $s \in G$.
 \end{lemma}
 Before we commence the proof of the above, we want to point out that the above to lemmas ensures that for each covariant representation $(\pi , u)$ of $G \acts \alpha A$ we obtain the following commutative diagram
 \begin{equation}
-	\begin{tikzcd}
-		G \arrow[rr, "\iota_G", hook] \arrow[rrd, "u"'] && M(A \rtimes_\alpha G) \arrow[d, "\overline{\pi \rtimes u }"] && A \arrow[ll,"\iota_A"',hook] \arrow[lld, "\pi"]\\
-		& &\mathbb{B}(\H)&&
-	\end{tikzcd}
-	\label{diag:iotacom}
+\begin{tikzcd}
+	G \arrow[rr, "\iota_G", hook] \arrow[rrd, "u"'] && M(A \rtimes_\alpha G) \arrow[d, "\overline{\pi \rtimes u }"] && A \arrow[ll,"\iota_A"',hook] \arrow[lld, "\pi"]\\
+	& &\mathbb{B}(\H)&&
+\end{tikzcd}
+\label{diag:iotacom}
 \end{equation}
 And we shall see that this pair is in fact a covariant pair. But first, the proof of the above lemma:
 \begin{proof}
-	Let $\iota_G(s)$ be defined on $\cc(G,A,\alpha)$ as earlier. By \Cref{cross:iotaG}, we see that
-	\begin{align*}
-		\lv \iota_G(r) f \rv_u = \lv f \rv_u,
-	\end{align*}
-	for all $f \in \cc(G,A,\alpha)$, and so it extends to $A \rtimes_\alpha G$. Let $s,r \in G$, then for $f \in \cc(G,A,\alpha)$, we see that
-	\begin{align*}
-		(\iota_G(r) f(s))^* = \Delta(s^{-1}) \alpha_s ( (\alpha_r(f(r^{-1}s^{-1}))^*) \Delta(s^{-1}) \alpha_{sr}(f(r^{-1}s^{-1})^*),
-	\end{align*}
-	which, combined with the fact that $\Delta(s^{-1}) \d s$ is the integrand of a right Haar measure, can be used to show that $\iota_G(r)^* = \iota_G(r^{-1})$, so that $\iota_G(r) \in M(A \rtimes_\alpha G)$. In fact, since clearly $\iota_G(rs) = \iota_G(r) \circ \iota_G(s)$ for $s,r \in G$, it is a unitary element.
+Let $\iota_G(s)$ be defined on $\cc(G,A,\alpha)$ as earlier. By \Cref{cross:iotaG}, we see that
+\begin{align*}
+	\lv \iota_G(r) f \rv_u = \lv f \rv_u,
+\end{align*}
+for all $f \in \cc(G,A,\alpha)$, and so it extends to $A \rtimes_\alpha G$. Let $s,r \in G$, then for $f \in \cc(G,A,\alpha)$, we see that
+\begin{align*}
+	(\iota_G(r) f(s))^* = \Delta(s^{-1}) \alpha_s ( (\alpha_r(f(r^{-1}s^{-1}))^*)= \Delta(s^{-1}) \alpha_{sr}(f(r^{-1}s^{-1})^*),
+\end{align*}
+which, combined with the fact that $\Delta(s^{-1}) \d s$ is the integrand of a right Haar measure, can be used to show that $\iota_G(r)^* = \iota_G(r^{-1})$, so that $\iota_G(r) \in M(A \rtimes_\alpha G)$. In fact, since clearly $\iota_G(rs) = \iota_G(r) \circ \iota_G(s)$ for $s,r \in G$, it is a unitary element.
 
-	Let $(\pi,u)$ be any non-degenerate covariant representation of $G \acts \alpha A$. By \Cref{cross:iotaG}, we see that $u_s  = \overline{ \pi \rtimes u} \iota_G(s)$ for all $ s \in G$. Moreover, for faithful representations $\pi$ (which also implies that $\tilde \pi$ is faithful) we have that the corresponding representation $\tilde \pi \rtimes \lambda$ is faithful on $\cc(G,A,\alpha)$. This implies that for $s \neq e$ we have $\mathrm{id} \neq \lambda_s = \overline{\tilde \pi \rtimes \lambda} \iota_G(s)$ for $s \neq e$, hence $\iota_G(s) \neq \mathrm{id}$ as well, so it is injective.
-		
+Let $(\pi,u)$ be any non-degenerate covariant representation of $G \acts \alpha A$. By \Cref{cross:iotaG}, we see that $u_s  = \overline{ \pi \rtimes u} \iota_G(s)$ for all $ s \in G$. Moreover, for faithful representations $\pi$ (which also implies that $\tilde \pi$ is faithful) we have that the corresponding representation $\tilde \pi \rtimes \lambda$ is faithful on $\cc(G,A,\alpha)$. This implies that for $s \neq e$ we have $\mathrm{id} \neq \lambda_s = \overline{\tilde \pi \rtimes \lambda} \iota_G(s)$ for $s \neq e$, hence $\iota_G(s) \neq \mathrm{id}$ as well, so it is injective.
 	
-	For continuity, let $f \in \cc(G,A,\alpha)$. We will see that $\iota_G$ is strongly continuous, which by \Cref{int:unistrictstrong} is equivalent to being strictly continuous: Let $(s_i)\subseteq G$, $s_i \to e$. Then we claim that $\iota_G(s_i) x \to x$ for $x \in A \rtimes_\alpha G$. To see this, note that we know that the set of functions $\varphi \otimes a$, $\varphi \in \cc(G)$ and $a \in A$, spans a dense subset of $\cc(G,A)$, hence it suffices to show that $\iota_G(s_i) \varphi \otimes a \stackrel{L^1}{\to} \varphi \otimes a$, but
-	\begin{align*}
-		\lv \iota_G(r_{i}) \varphi \otimes a - \varphi \otimes a \rv_1 &= \int_G \lv \varphi(r_{i}^{-1}s) \alpha_{r_i}(a) - \varphi(r_i^{-1}s) a + \varphi(r_{i}^{-1}a) a - \varphi(s) a \rv_A \d s\\ 
-		& \leq \lv \alpha_{r_i}(a) - a \rv \lv \varphi \rv_1 + \lv \lambda_{r_i} \varphi - \varphi \rv_1 \lv a \rv,
-	\end{align*}
-	which goes to $0$, by uniform continuity of $\varphi$ and the fact that $\alpha_{r_i}(a) \to a$ for all $ a\in A$ as $r_i \to e$.
+
+For continuity, let $f \in \cc(G,A,\alpha)$. We will see that $\iota_G$ is strongly continuous, which by \Cref{int:unistrictstrong} is equivalent to being strictly continuous: Let $(s_i)\subseteq G$, $s_i \to e$. Then we claim that $\iota_G(s_i) x \to x$ for $x \in A \rtimes_\alpha G$. To see this, note that we know that the set of functions $\varphi \otimes a$, $\varphi \in \cc(G)$ and $a \in A$, spans a dense subset of $\cc(G,A)$, hence it suffices to show that $\iota_G(s_i) \varphi \otimes a \stackrel{L^1}{\to} \varphi \otimes a$, but
+\begin{align*}
+	\lv \iota_G(r_{i}) \varphi \otimes a - \varphi \otimes a \rv_1 &= \int_G \lv \varphi(r_{i}^{-1}s) \alpha_{r_i}(a) - \varphi(r_i^{-1}s) a + \varphi(r_{i}^{-1}a) a - \varphi(s) a \rv_A \d s\\ 
+	& \leq \lv \alpha_{r_i}(a) - a \rv \lv \varphi \rv_1 + \lv \lambda_{r_i} \varphi - \varphi \rv_1 \lv a \rv,
+\end{align*}
+which goes to $0$, by uniform continuity of $\varphi$ and the fact that $\alpha_{r_i}(a) \to a$ for all $ a\in A$ as $r_i \to e$.
 \end{proof}
 And, we summarize the above in the following
 \begin{proposition}
-	For a $C^*$-dynamical system $G \acts \alpha A$, there exists a non-degenerate faithful $^*$-homomorphsim 
-	\begin{align*}
-	\iota_A \colon A \to M(A \rtimes_\alpha G),	
-	\end{align*}
-	and an injective strictly continuous unitary representation 
-	\begin{align*}
-		\iota_G \colon G \to \mathcal{U}M(A \rtimes_\alpha G),
-	\end{align*}
-	such that $\iota_G(r) f(s) = \alpha_r(f(r^{-1}s))$  and $\iota_A(a) f(s) = af(s)$ for $f \in \cc(G,A,\alpha)$ and $r,s \in G$ and $a \in A$. Moreover, the pair $(\iota_A,\iota_G)$ is covariant with respect to $\alpha$, i.e., 
-	\begin{align*}
-		\iota_A(\alpha_r (a) ) = \iota_G(r)  \iota_A(a) \iota_G(r)^*,
-	\end{align*}
-	and for non-degenerate covariant representations $(\pi,u)$ we have
-	\begin{align*}
-		\overline{\pi \rtimes u} \circ \iota_A(a) = \pi(a) \text{ and } \overline{\pi \rtimes u } \circ \iota_G (s) = u_s.
-	\end{align*}
-	\label{cross:iotaprop}
+For a $C^*$-dynamical system $G \acts \alpha A$, there exists a non-degenerate faithful $^*$-homomorphsim 
+\begin{align*}
+\iota_A \colon A \to M(A \rtimes_\alpha G),	
+\end{align*}
+and an injective strictly continuous unitary representation 
+\begin{align*}
+	\iota_G \colon G \to \mathcal{U}M(A \rtimes_\alpha G),
+\end{align*}
+such that $\iota_G(r) f(s) = \alpha_r(f(r^{-1}s))$  and $\iota_A(a) f(s) = af(s)$ for $f \in \cc(G,A,\alpha)$ and $r,s \in G$ and $a \in A$. Moreover, the pair $(\iota_A,\iota_G)$ is covariant with respect to $\alpha$, i.e., 
+\begin{align*}
+	\iota_A(\alpha_r (a) ) = \iota_G(r)  \iota_A(a) \iota_G(r)^*,
+\end{align*}
+and for non-degenerate covariant representations $(\pi,u)$ we have
+\begin{align*}
+	\overline{\pi \rtimes u} \circ \iota_A(a) = \pi(a) \text{ and } \overline{\pi \rtimes u } \circ \iota_G (s) = u_s.
+\end{align*}
+\label{cross:iotaprop}
 \end{proposition}
 \begin{proof}
-	The only thing left to be shown is the covariance relation, but this follows immediately from the following calculation:
-	\begin{align*}
-		\iota_G(r) \iota_A(a) \iota_G(r)^* f(s) = \alpha_r(\iota_A(a) \iota_G(r)^{*}f(r^{-1}s)) = \alpha_r(a) \alpha_r ( \alpha_{r^{-1}}f(r r^{-1}s))= \iota_A(\alpha_r(a)) f(s),
-	\end{align*}
-	for $f \in \cc(G,a,\alpha)$, $a \in A$ and $s,r \in G$.
+The only thing left to be shown is the covariance relation, but this follows immediately from the following calculation:
+\begin{align*}
+	\iota_G(r) \iota_A(a) \iota_G(r)^* f(s) = \alpha_r(\iota_A(a) \iota_G(r)^{*}f(r^{-1}s)) = \alpha_r(a) \alpha_r ( \alpha_{r^{-1}}f(r r^{-1}s))= \iota_A(\alpha_r(a)) f(s),
+\end{align*}
+for $f \in \cc(G,a,\alpha)$, $a \in A$ and $s,r \in G$.
 \end{proof}
 We now embark on our final task in our construction and picture painting of the general crossed product $A \rtimes_ \alpha G$, namely we wish to properly characterize its representation theory. We are going to see that $A \rtimes_\alpha G$ is the $C^*$-algebra whose representation theory is in a one-to-one correspondance with the covariant representations of $(A,G,\alpha)$ via the map $(\pi,u) \mapsto \pi \rtimes u$, but before we finalize the description of the representation theory of $A \rtimes_\alpha G$, we need to extend the map $\iota_G$ to $C^*(G)$, the full group $C^*$-algebra of $G$, since this will provide us with a useful characterization of a dense subset of $A \rtimes_\alpha G$, so without further ado:
 \begin{lemma}
-	There exists a $^*$-homomorphsim $\tilde \iota_G \colon C^*(G) \to M(A \rtimes_\alpha G)$ such that
-	\begin{align*}
-		\tilde \iota_G(z) = \int_G z(s) \iota_G(s) \d s, 
-	\end{align*}
-	for all $z \in \cc(G)$
-	\label{cross:2.35}
+There exists a $^*$-homomorphsim $\tilde \iota_G \colon C^*(G) \to M(A \rtimes_\alpha G)$ such that
+\begin{align*}
+	\tilde \iota_G(z) = \int_G z(s) \iota_G(s) \d s, 
+\end{align*}
+for all $z \in \cc(G)$
+\label{cross:2.35}
 \end{lemma}
 \begin{proof}
-	For all $z \in \cc(G)$, the map $s \mapsto z(s) \iota_G(s)$ is strictly continuous, and we may define the integral by \Cref{int:multstrictintegral}. Let $z,w \in \cc(G)$, then
-	\begin{align*}
-		\tilde \iota_G(z \ast w) &= \int_G \int_G z(r)w(r^{-1}s) \d r \iota_G(s) \d s \\
-		&= \int_G \int_G z(r) w(r^{-1}s) \iota_G(s) \d s \d r\\
-		&= \int_G \int_G z(r) w(s) \iota_G(rs) \d s \d r\\
-		&= \int_G z(r) \iota_G(r) \d r \int_G w(s) \iota_G(s) \d s \\
-		&= \tilde \iota_G(z) \tilde \iota_G(w),
-	\end{align*}
-	so if it is well-defined and continuous on $C^*(G)$, it will be a $^*$-homomorphism, since the integral also respects taking adjoints. 
-	
-	Let $\pi$ be any faithful and non-degenerate representation of $A \rtimes_\alpha G$, so that its extension $\overline \pi $ to $M(A \rtimes_ \alpha G)$ is faithful aswell.
-	
-	Consider the composition $u \colon s \mapsto \overline{\pi}( \iota_G(s))$, which is a unitary valued homomorphism. It is strongly continuous: Suppose that $f \in \cc(G,A)$ and $\xi \in \H_\pi$, then for $s \in G$ we see that $\overline{ \pi} (\iota_G(s)) \pi(f) \xi = \pi(\iota_G(s) f) \xi$, and it follows that  $s \mapsto u_s \xi$ is continuous for all $\xi \in \H$ by continuity of $s \mapsto \iota_G(s)f$ and non-degeneracy of $\pi$. Hence:
-	\begin{align*}
-	\overline \pi(\tilde \iota_G(z)) = \overline \pi \left(  \int_G z(s) \iota_G(s) \d s \right) &=\int_G z(s) \overline \pi(\iota_G(s)) \d s \\
-	&= u(z),
-	\end{align*}
-	Where the last line is the representation of $L^1(G)$ correpsonding the the unitary representation $\overline \pi \circ \iota_G$ of $G$, which we shall discuss later on. In particular, this implies that
-	\begin{align}
-		\lv \tilde \iota_G(z)\rv = \lv u(z)\rv \leq \lv z \rv,
-	\end{align}
-	for all $z \in \cc(G)$, so it extends to a $^*$-homomorphism $C^*(G) \to M(A \rtimes_\alpha G)$, which we will also denote by $\iota_G$.
+For all $z \in \cc(G)$, the map $s \mapsto z(s) \iota_G(s)$ is strictly continuous, and we may define the integral by \Cref{int:multstrictintegral}. Let $z,w \in \cc(G)$, then
+\begin{align*}
+	\tilde \iota_G(z \ast w) &= \int_G \int_G z(r)w(r^{-1}s) \d r \iota_G(s) \d s \\
+	&= \int_G \int_G z(r) w(r^{-1}s) \iota_G(s) \d s \d r\\
+	&= \int_G \int_G z(r) w(s) \iota_G(rs) \d s \d r\\
+	&= \int_G z(r) \iota_G(r) \d r \int_G w(s) \iota_G(s) \d s \\
+	&= \tilde \iota_G(z) \tilde \iota_G(w),
+\end{align*}
+so if it is well-defined and continuous on $C^*(G)$, it will be a $^*$-homomorphism, since the integral also respects taking adjoints. 
+
+Let $\pi$ be any faithful and non-degenerate representation of $A \rtimes_\alpha G$, so that its extension $\overline \pi $ to $M(A \rtimes_ \alpha G)$ is faithful aswell.
+
+Consider the composition $u \colon s \mapsto \overline{\pi}( \iota_G(s))$, which is a unitary valued homomorphism. It is strongly continuous: Suppose that $f \in \cc(G,A)$ and $\xi \in \H_\pi$, then for $s \in G$ we see that $\overline{ \pi} (\iota_G(s)) \pi(f) \xi = \pi(\iota_G(s) f) \xi$, and it follows that  $s \mapsto u_s \xi$ is continuous for all $\xi \in \H$ by continuity of $s \mapsto \iota_G(s)f$ and non-degeneracy of $\pi$. Hence:
+\begin{align*}
+\overline \pi(\tilde \iota_G(z)) = \overline \pi \left(  \int_G z(s) \iota_G(s) \d s \right) &=\int_G z(s) \overline \pi(\iota_G(s)) \d s \\
+&= u(z),
+\end{align*}
+Where the last line is the representation of $L^1(G)$ correpsonding the the unitary representation $\overline \pi \circ \iota_G$ of $G$, which we shall discuss later on. In particular, this implies that
+\begin{align}
+	\lv \tilde \iota_G(z)\rv = \lv u(z)\rv \leq \lv z \rv,
+\end{align}
+for all $z \in \cc(G)$, so it extends to a $^*$-homomorphism $C^*(G) \to M(A \rtimes_\alpha G)$, which we will also denote by $\iota_G$.
 \end{proof}
 \begin{corollary}
-	Let $G \acts \alpha A$ be a $C^*$-dynamical system and let $a \in A$, $f,h \in \cc(G,A)$ and $\varphi \in \cc(G)$. Then
+Let $G \acts \alpha A$ be a $C^*$-dynamical system and let $a \in A$, $f,h \in \cc(G,A)$ and $\varphi \in \cc(G)$. Then
 \begin{align*}
-	\iota_A(a) \iota_G(\varphi) &= \varphi \otimes a,\\
-	\int_G \iota_A(f(s)) \iota_G(s)h  \d s &= f \ast h \text{ and }\\
-	\int_G \iota_A(f(s)) \iota_G(s) \d s & = f,
+\iota_A(a) \iota_G(\varphi) &= \varphi \otimes a,\\
+\int_G \iota_A(f(s)) \iota_G(s)h  \d s &= f \ast h \text{ and }\\
+\int_G \iota_A(f(s)) \iota_G(s) \d s & = f,
 \end{align*}
 where we've identified $\cc(G,A,\alpha) \subseteq A \rtimes_\alpha G \subseteq M(A \rtimes_\alpha G)$.
-	\label{cross:iotaresults}
+\label{cross:iotaresults}
 \end{corollary}
 \begin{proof}
-	Let $(\pi, u)$ be a non-degenerate covariant representation of $G \acts \alpha A$ and notice that
-	\begin{align*}
-		\overline{\pi \rtimes u}\left( \int_G \iota_a(f(s)) \iota_G(s) \d s  \right) = \pi \rtimes u (f),
-	\end{align*}
-	which combined with \cref{cross:essnorm} shows the first and last identity. The second equality follows from the last and  \cref{int:multstrictintegral}.
+Let $(\pi, u)$ be a non-degenerate covariant representation of $G \acts \alpha A$ and notice that
+\begin{align*}
+	\overline{\pi \rtimes u}\left( \int_G \iota_a(f(s)) \iota_G(s) \d s  \right) = \pi \rtimes u (f),
+\end{align*}
+which combined with \cref{cross:essnorm} shows the first and last identity. The second equality follows from the last and  \cref{int:multstrictintegral}.
 \end{proof}
 \todo{swap around the above and below}
 \begin{remark}
 In particular, by the above and \cref{int:indlmdense} we see that the set of functions of the form $\iota_A(a) \iota_G(z)$ for $a \in A$ and $z \in \cc(G)$ span a dense subset of $A \rtimes_\alpha G$. This will be useful in the following:
 \end{remark}
 \begin{theorem}
-	Let $G \acts \alpha A$ be a $C ^*$-dynamical system and let $\H$ be a Hilbert space. If $L \colon A \rtimes_\alpha G \to \mathbb{B}(\H)$ is a non-degenerate $*$-representation, then there exists a non-degenerate covariant representation $(\pi,u)$ of $G \acts \alpha A$ into $ \mathbb{B}(\H)$ such that $L= \pi \rtimes u$ which can be realised by 
-	\begin{align*}
-		u_s = \overline L(\iota_G(s)) \text{ and } \pi(a) = \overline L(\iota_A(a)),
-	\end{align*}
-	for all $s \in G$ and $a \in A$. In fact, there is a bijective correspondance between covariant representations of $G \acts \alpha A$ and $*$-representations of $A \rtimes_\alpha G$.
-	\label{cross:onetoonecor}
+Let $G \acts \alpha A$ be a $C ^*$-dynamical system and let $\H$ be a Hilbert space. If $L \colon A \rtimes_\alpha G \to \mathbb{B}(\H)$ is a non-degenerate $*$-representation, then there exists a non-degenerate covariant representation $(\pi,u)$ of $G \acts \alpha A$ into $ \mathbb{B}(\H)$ such that $L= \pi \rtimes u$ which can be realised by 
+\begin{align*}
+	u_s = \overline L(\iota_G(s)) \text{ and } \pi(a) = \overline L(\iota_A(a)),
+\end{align*}
+for all $s \in G$ and $a \in A$. In fact, there is a bijective correspondance between covariant representations of $G \acts \alpha A$ and $*$-representations of $A \rtimes_\alpha G$.
+\label{cross:onetoonecor}
 \end{theorem}
 \begin{proof}
-	We already have seen the assignment $(\pi,u) \mapsto \pi \rtimes u$. For the converse, suppose that $L$ is a non-degenerate representation of $A \rtimes_\alpha G$. Let $\pi, u$ be defined by the above. It is clear that $\pi$ is a $*$-representation of $A$ on $\mathbb{B}(\H)$ and similarly that $u$ is a strongly continuous unitary-valued group representation on $\mathbb{B}(\H)$, since $\iota_G$ is strictly and hence strongly continuous. To see that $(\pi,u)$ is non-degenerate, let $(e_i)$ be an approximate unit for $A$. Then $\iota_A(e_i) \to 1$ strictly in $M(A \rtimes_\alpha G)$, and so $\pi(e_i) = \overline L(\iota_A(e_i)) \to I$ strictly, so in particular $\pi(e_i) \xi \to \xi$ for all $\xi \in \H$ and $\pi$ is non-degenerate. Now, let $s \in G$ and $a \in A$, then
-	\begin{align*}
-		u_s \pi(a) u_s^* = \overline L(\iota_G(s) ) \overline L (\iota_A(a)) \overline L(\iota_G(s))^* = \overline L( \iota_A(\alpha_s(a))) = \pi(\alpha_{s}(a)),
-	\end{align*}
-	so the pair is a proper non-degenerate covariant representation of $G \acts \alpha A$. Finally, using \cref{int:multstrictintegral}, we see that
+We already have seen the assignment $(\pi,u) \mapsto \pi \rtimes u$. For the converse, suppose that $L$ is a non-degenerate representation of $A \rtimes_\alpha G$. Let $\pi, u$ be defined by the above. It is clear that $\pi$ is a $*$-representation of $A$ on $\mathbb{B}(\H)$ and similarly that $u$ is a strongly continuous unitary-valued group representation on $\mathbb{B}(\H)$, since $\iota_G$ is strictly and hence strongly continuous. To see that $(\pi,u)$ is non-degenerate, let $(e_i)$ be an approximate unit for $A$. Then $\iota_A(e_i) \to 1$ strictly in $M(A \rtimes_\alpha G)$, and so $\pi(e_i) = \overline L(\iota_A(e_i)) \to I$ strictly, so in particular $\pi(e_i) \xi \to \xi$ for all $\xi \in \H$ and $\pi$ is non-degenerate. Now, let $s \in G$ and $a \in A$, then
 \begin{align*}
-	\pi \rtimes u(\iota_A(a) \iota_G(z)) &= \pi(a) \circ \overline{\pi \rtimes u}(\iota_G(z)) = \overline L(\iota_A(a)) \int_G z(s) \overline L(\iota_G(s)) \d s \\
-	&= \overline L(\iota_A(a)) \overline L(\iota_G(z)) \\
-	&= \overline L(\iota_A(a) \iota_G(z)),
+	u_s \pi(a) u_s^* = \overline L(\iota_G(s) ) \overline L (\iota_A(a)) \overline L(\iota_G(s))^* = \overline L( \iota_A(\alpha_s(a))) = \pi(\alpha_{s}(a)),
+\end{align*}
+so the pair is a proper non-degenerate covariant representation of $G \acts \alpha A$. Finally, using \cref{int:multstrictintegral}, we see that
+\begin{align*}
+\pi \rtimes u(\iota_A(a) \iota_G(z)) &= \pi(a) \circ \overline{\pi \rtimes u}(\iota_G(z)) = \overline L(\iota_A(a)) \int_G z(s) \overline L(\iota_G(s)) \d s \\
+&= \overline L(\iota_A(a)) \overline L(\iota_G(z)) \\
+&= \overline L(\iota_A(a) \iota_G(z)),
 \end{align*}
 for all $z \in \cc(G)$ and $a \in A$, which by the above remark ensures that $L = \pi \rtimes u$ on all of $A \rtimes_ \alpha G$.
 \end{proof}
@@ -679,538 +679,574 @@ for all $z \in \cc(G)$ and $a \in A$, which by the above remark ensures that $L 
 We want to examine some interesting properties of Crossed products, such as what happens when $G$ is amenable or how can we concretize the statespace $\mathcal{S}(A\rtimes_\alpha G)$. To do this, we will need to recall the usual definition of a positive definite function $G \to \C$ and extend it to the case of positive definite functions $G \to A^*$. The following is from \cite{pedersenalgauto}
 
 \begin{definition}
-	Suppose that $G \acts \alpha A$ is a dynamical system, then a bounded continuous (with respect to the norm on $A^*$) function $\varphi \colon G \to A^*$ is \myemph{positive definite} if any of the following equivalent statements hold:
-	\begin{enumerate}
-		\item There is a positive functional $\psi \in (A \rtimes_\alpha G)^*$ such that $\varphi(t)(a) = \psi(\iota_A(a) \iota_G(t))$ for all $t \in G$ and $a \in A$,
-		\item $\sum_{i,j} \varphi (s_i^{-1}s_j)(\alpha_{s_{i}^{-1}}(x_{i}^* x_{j})) \geq 0 $ for all finite sets $s_1,\dots,s_n \in G$ and $x_1,\dots,x_n \in A$,
-		\item $\sum_{i,j}\int_G \varphi(t)(x_{i}^*\alpha_t(x_j))(f_i^* \times f_j)(t) \d t \geq 0$ for all finite sets $f_1,\dots,f_n \in \cc(G,A,\alpha)$ and $x_1,\dots,x_n \in A$, and
-		\item $\int \varphi(t)(f^* \rtimes f)(t) \d t \geq 0$ for all $f \in \cc(G,A,\alpha)$.
-	\end{enumerate}
+Suppose that $G \acts \alpha A$ is a dynamical system, then a bounded continuous (with respect to the norm on $A^*$) function $\varphi \colon G \to A^*$ is \myemph{positive definite} if any of the following equivalent statements hold:
+\begin{enumerate}
+	\item There is a positive functional $\psi \in (A \rtimes_\alpha G)^*$ such that $\varphi(t)(a) = \psi(\iota_A(a) \iota_G(t))$ for all $t \in G$ and $a \in A$,
+	\item $\sum_{i,j} \varphi (s_i^{-1}s_j)(\alpha_{s_{i}^{-1}}(x_{i}^* x_{j})) \geq 0 $ for all finite sets $s_1,\dots,s_n \in G$ and $x_1,\dots,x_n \in A$,
+	\item $\sum_{i,j}\int_G \varphi(t)(x_{i}^*\alpha_t(x_j))(f_i^* \times f_j)(t) \d t \geq 0$ for all finite sets $f_1,\dots,f_n \in \cc(G,A,\alpha)$ and $x_1,\dots,x_n \in A$, and
+	\item $\int \varphi(t)(f^* \rtimes f)(t) \d t \geq 0$ for all $f \in \cc(G,A,\alpha)$.
+\end{enumerate}
 \end{definition}
 \begin{remark}
-	Note that in the above, a priori without explanation the first definition does not make sense, since $\iota_A(a) \iota_G(t)$ might not be an element of $A \rtimes_\alpha G$, however, since states of $A \rtimes_\alpha G$ correspond to non-degenerate representations which extend to $M(A \rtimes_\alpha G)$, we may in fact extend each positive functional $\psi$ on $A \rtimes_\alpha G$ to all of $M(A \rtimes_\alpha G)$. We will also denote this extension by $\psi$. 
+Note that in the above, a priori without explanation the first definition does not make sense, since $\iota_A(a) \iota_G(t)$ might not be an element of $A \rtimes_\alpha G$, however, since states of $A \rtimes_\alpha G$ correspond to non-degenerate representations which extend to $M(A \rtimes_\alpha G)$, we may in fact extend each positive functional $\psi$ on $A \rtimes_\alpha G$ to all of $M(A \rtimes_\alpha G)$. We will also denote this extension by $\psi$. 
 \end{remark}
 For $A = \C$ and $\alpha = 1$ is the trivial representation, the above becomes the regular result of about equivalent definitions of positive definite functions on $G$, as described in \cite{folland2016fourier} or in \cite{pedersenalgauto} 
 
 The first definition is the general motivation behind the above for us, since we will be dealing with a class of functions arising this way, which leads to the following definition:
 \begin{definition}
-	Suppose that $G \acts \alpha A$. For each $\varphi \in (A \rtimes_\alpha G)^*$, define the map $\Gamma_\varphi \colon G \to A^*$, given by
-	\begin{align*}
-		\Gamma_\varphi(t)(a) :=\varphi(\iota_A(a) \iota_G(t)) \in \C,
-	\end{align*}
-	for $t \in G $ and $a \in A$. The set of functions $G \to A^*$ defined in this way is denoted by $B(A \rtimes_ \alpha G)$, and the set of $\Gamma_\varphi \in B(A \rtimes_ \alpha G)$ for $\varphi \geq 0$,  is denoted by $B_+(A \rtimes_\alpha G)$. We denote by $B_+^1(A \rtimes_\alpha G)$ the functions such that $\lv \Gamma_\varphi (e) \rv = 1$ and $\varphi \geq 0$. \todo{bounded using C-S}
+Suppose that $G \acts \alpha A$. For each $\varphi \in (A \rtimes_\alpha G)^*$, define the map $\Gamma_\varphi \colon G \to A^*$, given by
+\begin{align*}
+	\Gamma_\varphi(t)(a) :=\varphi(\iota_A(a) \iota_G(t)) \in \C,
+\end{align*}
+for $t \in G $ and $a \in A$. The set of functions $G \to A^*$ defined in this way is denoted by $B(A \rtimes_ \alpha G)$, and the set of $\Gamma_\varphi \in B(A \rtimes_ \alpha G)$ for $\varphi \geq 0$,  is denoted by $B_+(A \rtimes_\alpha G)$. We denote by $B_+^1(A \rtimes_\alpha G)$ the functions such that $\lv \Gamma_\varphi (e) \rv = 1$ and $\varphi \geq 0$. \todo{bounded using C-S}
 \end{definition}
 \begin{remark}
-	Note that we may use the fact that every non-degenerate representation of $A \rtimes_\alpha G$ is of the form $\pi \rtimes u$ for some covariant, non-degenerate representation $(\pi,u)$ of $G \acts \alpha A$ to show that for all $\varphi \in \mathcal{S}(A \rtimes_\alpha G)$ we have
-	\begin{align}
-		\varphi(y) = \int_G \Gamma_\varphi(t)(y(t)) \d t
-		\label{eq:gammafun}
-	\end{align}
-	for all $y \in \cc(G,A,\alpha) \subseteq A \rtimes_\alpha G$: To $\varphi$ we associate a GNS triple $(\pi_\varphi,\xi, \H)$ with $\pi_{\varphi}$ non-degenerate. By \cref{cross:onetoonecor}, we see that $\pi_\varphi$ is of the form $\pi \rtimes u$ for a suitable covariant representation $(\pi,u)$, and so
-	\begin{align*}
-	\varphi(y) = \langle \pi_\varphi(y) \xi, \xi \rangle = \langle \pi \rtimes u(y) \xi, \xi\rangle &= \int_G \langle \pi(y(t)) u_t \xi, \xi \rangle \d t\\
-	&= \int_G \langle \overline{\pi \rtimes u }(\iota_A(y(t))) \overline{\pi \rtimes u } (\iota_G(t)) \xi , \xi \rangle \d t\\
-	&= \int_G \langle \overline{\pi \rtimes u} (\iota_A(y(t)) \iota_G(t)) \xi , \xi \rangle\d t\\
-	&= \int_G \varphi(\iota_A(y(t)) \iota_G(t)) \d t \\
-	&= \int_G \Gamma_\varphi (t) (y(t)) \d t.
-	\end{align*}
-	In particular, density of $\cc(G, A,\alpha) \subseteq A \rtimes_\alpha G$ implies by the above that the assignment $\mathcal{S}(A \rtimes_\alpha G) \ni \varphi \mapsto \Gamma_\varphi \in B_+^1(A \rtimes_\alpha G)$ is a bijection. Combining this with linearity of the assignment, i.e., that $\Gamma_{\alpha \varphi + \beta \psi}= \alpha \Gamma_\varphi + \beta \Gamma_\psi$ for $\alpha, \beta \in \C$ and $\varphi, \psi \in (A \rtimes_\alpha G)^*$, this shows that the assignment also induces a bijection between $(A \rtimes_\alpha G )^*$ and $B(A \rtimes_\alpha G)$.
-	\todo{Continuity of $\Gamma_\varphi$ using cauchy-schwarz}
+Note that we may use the fact that every non-degenerate representation of $A \rtimes_\alpha G$ is of the form $\pi \rtimes u$ for some covariant, non-degenerate representation $(\pi,u)$ of $G \acts \alpha A$ to show that for all $\varphi \in \mathcal{S}(A \rtimes_\alpha G)$ we have
+\begin{align}
+	\varphi(y) = \int_G \Gamma_\varphi(t)(y(t)) \d t
+	\label{eq:gammafun}
+\end{align}
+for all $y \in \cc(G,A,\alpha) \subseteq A \rtimes_\alpha G$: To $\varphi$ we associate a GNS triple $(\pi_\varphi,\xi, \H)$ with $\pi_{\varphi}$ non-degenerate. By \cref{cross:onetoonecor}, we see that $\pi_\varphi$ is of the form $\pi \rtimes u$ for a suitable covariant representation $(\pi,u)$, and so
+\begin{align*}
+\varphi(y) = \langle \pi_\varphi(y) \xi, \xi \rangle = \langle \pi \rtimes u(y) \xi, \xi\rangle &= \int_G \langle \pi(y(t)) u_t \xi, \xi \rangle \d t\\
+&= \int_G \langle \overline{\pi \rtimes u }(\iota_A(y(t))) \overline{\pi \rtimes u } (\iota_G(t)) \xi , \xi \rangle \d t\\
+&= \int_G \langle \overline{\pi \rtimes u} (\iota_A(y(t)) \iota_G(t)) \xi , \xi \rangle\d t\\
+&= \int_G \varphi(\iota_A(y(t)) \iota_G(t)) \d t \\
+&= \int_G \Gamma_\varphi (t) (y(t)) \d t.
+\end{align*}
+In particular, density of $\cc(G, A,\alpha) \subseteq A \rtimes_\alpha G$ implies by the above that the assignment $\mathcal{S}(A \rtimes_\alpha G) \ni \varphi \mapsto \Gamma_\varphi \in B_+^1(A \rtimes_\alpha G)$ is a bijection. Combining this with linearity of the assignment, i.e., that $\Gamma_{\alpha \varphi + \beta \psi}= \alpha \Gamma_\varphi + \beta \Gamma_\psi$ for $\alpha, \beta \in \C$ and $\varphi, \psi \in (A \rtimes_\alpha G)^*$, this shows that the assignment also induces a bijection between $(A \rtimes_\alpha G )^*$ and $B(A \rtimes_\alpha G)$.
+\todo{Continuity of $\Gamma_\varphi$ using cauchy-schwarz}
 \end{remark}
 For $A = \C$ again and $\alpha = 1$, we may represent $G$ on $M(C^*G)$ via $t \mapsto \delta_t$, and then $\Gamma_\varphi$ becomes the map $t \mapsto \varphi(\delta_t)$ for $ \varphi \in C^*(G)^*$ which leads to the following result (see \cite[7.1.11]{pedersenalgauto}):
 \begin{proposition}
-	For $A= \C$ and $\alpha = 1$, the isomorphism above is a homeomorphism from $\mathcal{S}(C^*(G))$ with the weak$^*$-topology onto the set of positive-definite functions on $G$ with $\Gamma_\varphi(e)=1$ equipped with the topology of uniform convergence on compacta.
-	\label{mult:OGstatehomeo}
+For $A= \C$ and $\alpha = 1$, the isomorphism above is a homeomorphism from $\mathcal{S}(C^*(G))$ with the weak$^*$-topology onto the set of positive-definite functions on $G$ with $\Gamma_\varphi(e)=1$ equipped with the topology of uniform convergence on compacta.
+\label{mult:OGstatehomeo}
 \end{proposition}
 
 Generalizing the above, we introduce a topology on $B_+^1(A \rtimes_\alpha G)$, which extends the topology of uniform convergence on compacta of $G$ for the general case of $G \acts \alpha A$:
 \begin{definition}
-	We define \myemph{the topology of weak$^*$ uniformly convergence on compacta} on $B_+^1(A \rtimes_\alpha G)$ to be the topology satisfying that a net $\Gamma_{\varphi_i} \subseteq B_+^1(A \rtimes_\alpha G)$ converges to $\Gamma_{\varphi} \in B_+^1(A \rtimes_\alpha G)$ if and only if for each $a \in A$, the restriction of the map
-	\begin{align*}
-		t \mapsto \Gamma_{f_i}(t)(a)
-	\end{align*}
-	to any compact subset $K \subseteq G$ is uniformly convergent to the map $t \mapsto \Gamma_\varphi(t)(a)$ restricted to $K$. A basis for the topology consists of the sets
-	\begin{align*}
-		V(\varepsilon, f, K, a) :=\left\{ f' \in B_+^1(A \rtimes_\alpha G) \mid \sup_{t \in K}| f'(t)(a) - f(t)(a) | < \varepsilon \right\},
-	\end{align*}
-	where $f \in B_{+}^1(A \rtimes_\alpha G)$, $\varepsilon > 0$, $a \in A$ and $K \subseteq G$ is compact.
+We define \myemph{the topology of weak$^*$ uniformly convergence on compacta} on $B_+^1(A \rtimes_\alpha G)$ to be the topology satisfying that a net $\Gamma_{\varphi_i} \subseteq B_+^1(A \rtimes_\alpha G)$ converges to $\Gamma_{\varphi} \in B_+^1(A \rtimes_\alpha G)$ if and only if for each $a \in A$, the restriction of the map
+\begin{align*}
+	t \mapsto \Gamma_{f_i}(t)(a)
+\end{align*}
+to any compact subset $K \subseteq G$ is uniformly convergent to the map $t \mapsto \Gamma_\varphi(t)(a)$ restricted to $K$. A basis for the topology consists of the sets
+\begin{align*}
+	V(\varepsilon, f, K, a) :=\left\{ f' \in B_+^1(A \rtimes_\alpha G) \mid \sup_{t \in K}| f'(t)(a) - f(t)(a) | < \varepsilon \right\},
+\end{align*}
+where $f \in B_{+}^1(A \rtimes_\alpha G)$, $\varepsilon > 0$, $a \in A$ and $K \subseteq G$ is compact.
 \end{definition}
 
 And this allows us to generalize the above result to the general case:
 \begin{proposition}
-	The map $\mathcal{S}(A \rtimes_\alpha G) \ni \varphi \mapsto \Gamma_\varphi \in B_+^1(A \rtimes_\alpha G)$ is a homeomorphism with respect to the weak$^*$-topology on $\mathcal{S}(A \rtimes_\alpha G)$ and the topology of weak$^*$ convergence uniformly on compacta of $G$.	
+The map $\mathcal{S}(A \rtimes_\alpha G) \ni \varphi \mapsto \Gamma_\varphi \in B_+^1(A \rtimes_\alpha G)$ is a homeomorphism with respect to the weak$^*$-topology on $\mathcal{S}(A \rtimes_\alpha G)$ and the topology of weak$^*$ convergence uniformly on compacta of $G$.	
 \end{proposition}
 \begin{proof}
-	We have already established the bijectivity. For the last part, suppose that we have a convergent net $(\varphi_i) \subseteq \mathcal{S}(A \rtimes _\alpha  G)$	with limit $\varphi \in \mathcal{S}(A \rtimes_\alpha G)$. We will in the following also write $\Gamma_\varphi$ to denote the extension from $A$ to $A^1$. For $x,y \in A^1$, define the map $\Psi_{\varphi}(x,y) \colon G \to \C$ by $t \mapsto \Gamma_\varphi(x^* \alpha_t(y))$. The polarization identity and linearity ensures that if for all $x \in A^1$ we have $\Psi_{\varphi_i}(x,x) \to \Psi_{\varphi}(x,x)$ in the topology of convergence uniformly on compacta then $\Psi_{\varphi_i}(x,y) \to \Psi_{\varphi}(x,y)$ as well. By \Cref{mult:OGstatehomeo}, we see that $\Psi_{\varphi_i}(x,x) \to \Psi_{\varphi}(x,x)$ in the topology of convergence uniformly on compacta of $G$, and setting $y = 1_{A^1}$, we see that $\Gamma_{\varphi_i} \to \Gamma_\varphi$.
+We have already established the bijectivity. For the last part, suppose that we have a convergent net $(\varphi_i) \subseteq \mathcal{S}(A \rtimes _\alpha  G)$	with limit $\varphi \in \mathcal{S}(A \rtimes_\alpha G)$. We will in the following also write $\Gamma_\varphi$ to denote the extension from $A$ to $A^1$. For $x,y \in A^1$, define the map $\Psi_{\varphi}(x,y) \colon G \to \C$ by $t \mapsto \Gamma_\varphi(x^* \alpha_t(y))$. The polarization identity and linearity ensures that if for all $x \in A^1$ we have $\Psi_{\varphi_i}(x,x) \to \Psi_{\varphi}(x,x)$ in the topology of convergence uniformly on compacta then $\Psi_{\varphi_i}(x,y) \to \Psi_{\varphi}(x,y)$ as well. By \Cref{mult:OGstatehomeo}, we see that $\Psi_{\varphi_i}(x,x) \to \Psi_{\varphi}(x,x)$ in the topology of convergence uniformly on compacta of $G$, and setting $y = 1_{A^1}$, we see that $\Gamma_{\varphi_i} \to \Gamma_\varphi$.
 
-	Conversely, suppose that $\Gamma_{\varphi_i} \to \Gamma_{\varphi}$, then in particular $\varphi_{i}(f \otimes x) \to \varphi(f \otimes x)$ for all $x \in A$ and $f \in \cc(G)$ by \Cref{eq:gammafun} and hence on all of $A \rtimes_\alpha G$, since the functions $f \otimes x$ span a dense subset of $A \rtimes_\alpha G$.
+Conversely, suppose that $\Gamma_{\varphi_i} \to \Gamma_{\varphi}$, then in particular $\varphi_{i}(f \otimes x) \to \varphi(f \otimes x)$ for all $x \in A$ and $f \in \cc(G)$ by \Cref{eq:gammafun} and hence on all of $A \rtimes_\alpha G$, since the functions $f \otimes x$ span a dense subset of $A \rtimes_\alpha G$.
 \end{proof}
 
 For discrete groups, it is well-known \todo{add cite Brown Ozawa} that if $G$ is amenable (or more generally acts amenably on $A$), i.e., has a left-invariant mean $m \in \ell^\infty(G)$, then there is only one crossed product of $G$ and any $C^*$-algebra $A$ (if $G$ is not amenable, but admits an amenable action on $A$, then the statement is true for crossed products with $A$ as well). We will see that this is true for locally compact groups as well - in particular, it is true for abelian groups, c.f. \cite[appendix G]{bekka2008kazhdan}.
 
 Alas, we continue:
 \begin{lemma}
-	Suppose that $G \acts \alpha A$ and $(\pi,\H)$ is a cyclic representation of $A$ with respect to a set $(\xi_i) \subseteq \H$, and suppose that $(\eta_j) \subseteq L^2(G)$ is cyclic for the left-regular representation $\lambda$ of $G$. Then the set of $\xi_i \otimes \eta_j$ is cyclic for the representation $(\tilde \pi \rtimes \lambda, L^2(G,\H))$.
-	\label{mult:cyclic1}
+Suppose that $G \acts \alpha A$ and $(\pi,\H)$ is a cyclic representation of $A$ with respect to a set $(\xi_i) \subseteq \H$, and suppose that $(\eta_j) \subseteq L^2(G)$ is cyclic for the left-regular representation $\lambda$ of $G$. Then the set of $\xi_i \otimes \eta_j$ is cyclic for the representation $(\tilde \pi \rtimes \lambda, L^2(G,\H))$.
+\label{mult:cyclic1}
 \end{lemma}
 \begin{proof}
-	We will show that the orthogonal complement of $\sum_{i,j} (A \rtimes_\alpha G)(\xi_i \otimes \eta_j)$ is $0$. Suppose that $\xi$ is orthogonal to $\tilde \pi \rtimes \lambda(x) \xi_i \otimes \eta_j$ for all $i,j$. Then for all $i,j$ and $a \otimes f \in \cc(G,A) \subseteq A \rtimes_\alpha G$ we have
-	\begin{align*}
-		0 &= \langle \tilde \pi \rtimes \lambda (a \otimes f) (\xi_i \otimes \eta_j) , \xi \rangle_{L^2}\\
-		&= \int_G \langle \tilde \pi \rtimes \lambda (a \otimes f) (\xi_i \otimes \eta_j)(s) , \xi(s)\rangle_\H \d s \\
-		&= \int_G \int_G \langle \pi(\alpha_{t^{-1}}\left( (a \otimes f)(s) \right) \lambda_t \eta_j(s) \xi_i , \xi \rangle_\H \d t \d s\\
-		&= \int_G \int_G \langle \pi\left( \alpha_{t^{-1}} (a) \right) f(s) \eta_j(t^{-1}s) \xi_i , \xi \rangle_\H \d t\d s\\
-		&= \int_G \int_G \langle \pi( \alpha_{t^{-1}}(a) ) \xi_i , \xi \rangle_H f(s) \eta_j(t^{-1}s) \d t \d s \\
-		&= \int_G \langle \pi(\alpha_{t^{-1}}(a)) \xi_i , \xi \rangle_\H (f \ast \eta_j)(s) \d s.
-	\end{align*}
-	Now, let $E \subseteq G$ be any compact set. We will argue that $\xi = 0$ by showing that $\xi = 0$ on any arbitrarily large compact subset $F$ of $E$: Let $\varepsilon > 0$, and use a Banach space-valued analogue of Lusin's theorem (e.g. as in \cite[Appendix B]{williamscrossed}) to pick $F \subseteq E$ compact with $\mu(E\backslash F) < \varepsilon$ and such that $\xi|F \in \cc(F,H)=C(F,H)$. Cyclicity of $\left\{ \eta_j \right\}_{j \in J}$ implies that the set $\{f \ast \eta_j \mid j \in J \text{ and } f \in \cc(G)\}$ spans a dense subset of $C_c(G)$ (ee e.g. \cite[Proposition 3.33]{folland2016fourier}), so
-	\begin{align*}
-		\int_{F} \langle \pi(\alpha_{t^{-1}}(x)) \xi_i , \xi(t) \rangle_H f(t) \d t = 0,
-	\end{align*}
-	for all $f \in C(F)$, from which we conclude that $F \ni t \mapsto \langle \pi(\alpha_{t^{-1}}(x)) \xi_i , \xi(t) \rangle=0$, and since $\xi_i$ was cyclic for $\pi$, this means that $\xi|_F = 0$. In particular, since $\varepsilon > 0$ was arbitrary, this means that $\xi|_E = 0$ and since $E \subseteq G$ was arbitrary, this means that $\xi = 0$, finishing the proof.
+We will show that the orthogonal complement of $\sum_{i,j} (A \rtimes_\alpha G)(\xi_i \otimes \eta_j)$ is $0$. Suppose that $\xi$ is orthogonal to $\tilde \pi \rtimes \lambda(x) \xi_i \otimes \eta_j$ for all $i,j$. Then for all $i,j$ and $a \otimes f \in \cc(G,A) \subseteq A \rtimes_\alpha G$ we have
+\begin{align*}
+	0 &= \langle \tilde \pi \rtimes \lambda (a \otimes f) (\xi_i \otimes \eta_j) , \xi \rangle_{L^2}\\
+	&= \int_G \langle \tilde \pi \rtimes \lambda (a \otimes f) (\xi_i \otimes \eta_j)(s) , \xi(s)\rangle_\H \d s \\
+	&= \int_G \int_G \langle \pi(\alpha_{t^{-1}}\left( (a \otimes f)(s) \right) \lambda_t \eta_j(s) \xi_i , \xi \rangle_\H \d t \d s\\
+	&= \int_G \int_G \langle \pi\left( \alpha_{t^{-1}} (a) \right) f(s) \eta_j(t^{-1}s) \xi_i , \xi \rangle_\H \d t\d s\\
+	&= \int_G \int_G \langle \pi( \alpha_{t^{-1}}(a) ) \xi_i , \xi \rangle_H f(s) \eta_j(t^{-1}s) \d t \d s \\
+	&= \int_G \langle \pi(\alpha_{t^{-1}}(a)) \xi_i , \xi \rangle_\H (f \ast \eta_j)(s) \d s.
+\end{align*}
+Now, let $E \subseteq G$ be any compact set. We will argue that $\xi = 0$ by showing that $\xi = 0$ on any arbitrarily large compact subset $F$ of $E$: Let $\varepsilon > 0$, and use a Banach space-valued analogue of Lusin's theorem (e.g. as in \cite[Appendix B]{williamscrossed}) to pick $F \subseteq E$ compact with $\mu(E\backslash F) < \varepsilon$ and such that $\xi|F \in \cc(F,H)=C(F,H)$. Cyclicity of $\left\{ \eta_j \right\}_{j \in J}$ implies that the set $\{f \ast \eta_j \mid j \in J \text{ and } f \in \cc(G)\}$ spans a dense subset of $C_c(G)$ (ee e.g. \cite[Proposition 3.33]{folland2016fourier}), so
+\begin{align*}
+	\int_{F} \langle \pi(\alpha_{t^{-1}}(x)) \xi_i , \xi(t) \rangle_H f(t) \d t = 0,
+\end{align*}
+for all $f \in C(F)$, from which we conclude that $F \ni t \mapsto \langle \pi(\alpha_{t^{-1}}(x)) \xi_i , \xi(t) \rangle=0$, and since $\xi_i$ was cyclic for $\pi$, this means that $\xi|_F = 0$. In particular, since $\varepsilon > 0$ was arbitrary, this means that $\xi|_E = 0$ and since $E \subseteq G$ was arbitrary, this means that $\xi = 0$, finishing the proof.
 \end{proof}
 
 We now will go through a result which will allow us to describe regular representations pointwise through approximations of states of a certain form:
 \begin{proposition}
-	Let $(A,G,\alpha)$ be a $C^*$-dynamical system. Given $\varphi \in \mathcal{S}(A)$, for each $z \in \cc(G,A,\alpha)$ such that $\varphi(z^* \ast z(e)) = 1$, there is a vector state $\tilde \varphi_z \in \mathcal{S}(A \rtimes_\alpha G)$ of the representation $(\tilde \pi_{\varphi} \rtimes \lambda , L^2(G,\H_\varphi))$ satisfying
-	\begin{align*}
-		\tilde \varphi_z (f) =\varphi\left( (z^* \ast f \ast z)(e) \right), \ \text{ for all } f \in \cc(G,A,\alpha).
-	\end{align*}
-	Moreover, the set of vector states contained in $(\tilde \pi_{\varphi} \rtimes \lambda , L^2(G,\H_\varphi))$ is a norm limit of vector states of this form.
-	\label{mult:vectorstateapprox}
+Let $(A,G,\alpha)$ be a $C^*$-dynamical system. Given $\varphi \in \mathcal{S}(A)$, for each $z \in \cc(G,A,\alpha)$ such that $\varphi(z^* \ast z(e)) = 1$, there is a vector state $\tilde \varphi_z \in \mathcal{S}(A \rtimes_\alpha G)$ of the representation $(\tilde \pi_{\varphi} \rtimes \lambda , L^2(G,\H_\varphi))$ satisfying
+\begin{align*}
+	\tilde \varphi_z (f) =\varphi\left( (z^* \ast f \ast z)(e) \right), \ \text{ for all } f \in \cc(G,A,\alpha).
+\end{align*}
+Moreover, the set of vector states contained in $(\tilde \pi_{\varphi} \rtimes \lambda , L^2(G,\H_\varphi))$ is a norm limit of vector states of this form.
+\label{mult:vectorstateapprox}
 \end{proposition}
 \begin{proof}
-	For $z \in \cc(G,A,\alpha)$\todo{$C_0$ or $\cc$} with $t \mapsto \lv z(t) \rv \in L^2(G)$, define
-	\begin{align*}
-		\xi_z(t) = \pi_{\varphi}\left( \alpha_{t^{-1}}(z(t) \right)\xi_\varphi,
-	\end{align*}
-	so that $\xi_z \in L^2(G,\H_\varphi)$. A few calculations then shows that 
-	\begin{align*}
-		\langle \tilde \pi_\varphi \rtimes \lambda (y^* \ast y) \xi_z , \xi_z \rangle  = \lv \tilde \pi_\varphi \rtimes \lambda(y) \xi_z \rv ^2 &= \int_G \lv  \pi_\varphi ( \alpha_{t^{-1}}(y \ast z)(t) \xi_\varphi \rv^2 \d t \\
-		&=\int_G \varphi\left( (y \ast z)^*(t) \alpha_t( (y \ast z)( t^{-1}) ) \right) \d t \\
-		&= \varphi ( \underbrace{(y  \ast z )^*}_{= z^* \ast y^*} \ast (y \ast z) (e)) = \tilde\varphi_{z} (y^* \ast y),
-	\end{align*}
-	for all $y \in \cc(G,A,\alpha)$. By linearity, it follows that $\tilde \varphi_z$ is a vector state on $A \rtimes_\alpha G$ of $(\tilde \pi \rtimes \lambda, L^2(G,\H_\varphi))$.
-	
-	For the last claim, we show that the set $\{ \xi_z \mid z \in \cc(G,A,\alpha)\}$ is dense in $L^2(G,\H_\varphi)$: Note that for $z \in \cc(G,A,\alpha)$, $f \in \cc(G)$ and $t \in G$ we have
-	\begin{align*}
-		\tilde \pi_\varphi(z(s)) (\lambda_s (f \otimes \xi_\varphi))(t) = \pi_\varphi(\alpha_t^{-1}(z(s)))f(s^{-1}t) \xi_\varphi,
-	\end{align*}
-	which implies that 
-	\begin{align*}
-		\tilde \pi_\varphi \rtimes \lambda (z) (f \otimes \xi_\varphi) (t) = \xi_{z \ast f}(t),
-	\end{align*}
-	where $z \ast f(s) = \int_G z(s) f(s^{-1}t) \d s \in A$. \todo{fix $\ast$'s} By cyclicity of $\xi_\varphi$ and \Cref{mult:cyclic1}, since $\cc(G) \subseteq L^2(G)$ is dense, we see that the set $\{ f \otimes \xi_\varphi \mid f \in \cc(G)\}$ is cyclic for $\tilde \pi_\varphi \rtimes \lambda$, which finishes the proof.
+For $z \in \cc(G,A,\alpha)$\todo{$C_0$ or $\cc$} with $t \mapsto \lv z(t) \rv \in L^2(G)$, define
+\begin{align*}
+	\xi_z(t) = \pi_{\varphi}\left( \alpha_{t^{-1}}(z(t) \right)\xi_\varphi,
+\end{align*}
+so that $\xi_z \in L^2(G,\H_\varphi)$. A few calculations then shows that 
+\begin{align*}
+	\langle \tilde \pi_\varphi \rtimes \lambda (y^* \ast y) \xi_z , \xi_z \rangle  = \lv \tilde \pi_\varphi \rtimes \lambda(y) \xi_z \rv ^2 &= \int_G \lv  \pi_\varphi ( \alpha_{t^{-1}}(y \ast z)(t) \xi_\varphi \rv^2 \d t \\
+	&=\int_G \varphi\left( (y \ast z)^*(t) \alpha_t( (y \ast z)( t^{-1}) ) \right) \d t \\
+	&= \varphi ( \underbrace{(y  \ast z )^*}_{= z^* \ast y^*} \ast (y \ast z) (e)) = \tilde\varphi_{z} (y^* \ast y),
+\end{align*}
+for all $y \in \cc(G,A,\alpha)$. By linearity, it follows that $\tilde \varphi_z$ is a vector state on $A \rtimes_\alpha G$ of $(\tilde \pi \rtimes \lambda, L^2(G,\H_\varphi))$.
+
+For the last claim, we show that the set $\{ \xi_z \mid z \in \cc(G,A,\alpha)\}$ is dense in $L^2(G,\H_\varphi)$: Note that for $z \in \cc(G,A,\alpha)$, $f \in \cc(G)$ and $t \in G$ we have
+\begin{align*}
+	\tilde \pi_\varphi(z(s)) (\lambda_s (f \otimes \xi_\varphi))(t) = \pi_\varphi(\alpha_t^{-1}(z(s)))f(s^{-1}t) \xi_\varphi,
+\end{align*}
+which implies that 
+\begin{align*}
+	\tilde \pi_\varphi \rtimes \lambda (z) (f \otimes \xi_\varphi) (t) = \xi_{z \ast f}(t),
+\end{align*}
+where $z \ast f(s) = \int_G z(s) f(s^{-1}t) \d s \in A$. \todo{fix $\ast$'s} By cyclicity of $\xi_\varphi$ and \Cref{mult:cyclic1}, since $\cc(G) \subseteq L^2(G)$ is dense, we see that the set $\{ f \otimes \xi_\varphi \mid f \in \cc(G)\}$ is cyclic for $\tilde \pi_\varphi \rtimes \lambda$, which finishes the proof.
 \end{proof}
 
 
 Recall the definition of the universal representation $(\pi_u,\H_u)$ of a $C^*$-algebra $A$. The induced representation $\mathrm{Ind}(\pi_u)$ gives rise to the reduced crossed product of a $C^*$-dynamical system $(A,G,\alpha)$:
 \begin{definition}
-	For a $C^*$-dynamical system $(A,G,\alpha)$, we define the \myemph{reduced crossed product} of $G$ and $A$ to be the algebra
-	\begin{align*}
-		A \rtimes_{\alpha,r} G := \overline{\tilde \pi_u \rtimes \lambda (\cc(G,A,\alpha))},
-	\end{align*}
-	where $\pi_u$ is the universal representation of $A$. Equivalently, we may define $A \rtimes_{\alpha , r} G$ as the image of $A \rtimes_\alpha G$ of the extension of $\tilde \pi_u \rtimes \lambda$ to $A \rtimes_\alpha G$. 
+For a $C^*$-dynamical system $(A,G,\alpha)$, we define the \myemph{reduced crossed product} of $G$ and $A$ to be the algebra
+\begin{align*}
+	A \rtimes_{\alpha,r} G := \overline{\tilde \pi_u \rtimes \lambda (\cc(G,A,\alpha))},
+\end{align*}
+where $\pi_u$ is the universal representation of $A$. Equivalently, we may define $A \rtimes_{\alpha , r} G$ as the image of $A \rtimes_\alpha G$ of the extension of $\tilde \pi_u \rtimes \lambda$ to $A \rtimes_\alpha G$. 
 \end{definition}
 \begin{remark}
-	We will soon see that the above is actually independent of the choice of the representation $\pi_u$ of $A$, and may just as well be replaced with any faithful representation $\pi$ of $A$.
+We will soon see that the above is actually independent of the choice of the representation $\pi_u$ of $A$, and may just as well be replaced with any faithful representation $\pi$ of $A$.
 \end{remark}
 We need define yet another subset of functionals on $A \rtimes_\alpha G$, one which closely resembles vector states of $\tilde \pi_u \rtimes \lambda$:
 \begin{definition}
-	The set of functionals $\psi \in (A \rtimes_\alpha G)^*$ of the form
-	\begin{align*}
-		\psi(x) = \sum_{i} \langle \tilde \pi_u \rtimes \lambda (x) \xi_i , \eta_i\rangle,
-	\end{align*}
-	where $(\xi_i)\subseteq L^2(G,\H_u)$ and $(\eta_i) \subseteq L^2(G,\H_u)$ have finite $\ell^2$-norm, i.e., $ \sum_i \lv \eta_i\rv^2 < \infty$ and $\sum_{i} \lv \xi_i \rv^2 < \infty$, is easily seen to be a norm-closed subspace of $(A \rtimes_\alpha G)^*$. We define the set 
-	\begin{align*}
-		A(A \rtimes_\alpha G) := \{\Gamma_\psi \in B(A \rtimes_\alpha G) \mid \psi(x) = \sum_{i} \langle \tilde \pi_u \rtimes \lambda(x) \xi_i , \eta_i \rangle , \ (\xi_i), \ (\eta_i) \text{ is } \ell^2-\text{summable}\}.
-	\end{align*}
+The set of functionals $\psi \in (A \rtimes_\alpha G)^*$ of the form
+\begin{align*}
+	\psi(x) = \sum_{i} \langle \tilde \pi_u \rtimes \lambda (x) \xi_i , \eta_i\rangle,
+\end{align*}
+where $(\xi_i)\subseteq L^2(G,\H_u)$ and $(\eta_i) \subseteq L^2(G,\H_u)$ have finite $\ell^2$-norm, i.e., $ \sum_i \lv \eta_i\rv^2 < \infty$ and $\sum_{i} \lv \xi_i \rv^2 < \infty$, is easily seen to be a norm-closed subspace of $(A \rtimes_\alpha G)^*$. We define the set 
+\begin{align*}
+	A(A \rtimes_\alpha G) := \{\Gamma_\psi \in B(A \rtimes_\alpha G) \mid \psi(x) = \sum_{i} \langle \tilde \pi_u \rtimes \lambda(x) \xi_i , \eta_i \rangle , \ (\xi_i), \ (\eta_i) \text{ is } \ell^2-\text{summable}\}.
+\end{align*}
 \end{definition}
 \begin{remark}
-	It is an easy consequence of the commutativity of \Cref{diag:iotacom} that if $\varphi \in \mathcal{S}(A)$ satisfies the condition of \Cref{mult:vectorstateapprox} with respect to some $z \in \cc(G,A,\alpha)$, then 
+It is an easy consequence of the commutativity of \Cref{diag:iotacom} that if $\varphi \in \mathcal{S}(A)$ satisfies the condition of \Cref{mult:vectorstateapprox} with respect to some $z \in \cc(G,A,\alpha)$, then 
 \begin{align*}
-	\Gamma_{\tilde \varphi_z}(t)(x) = \varphi_z(\iota_A(x)  \iota_G(t)) = \langle \overline{\pi \rtimes \lambda(\iota_A(x) \iota_G(t))} \xi_z , \xi_z\rangle & = \int_G \varphi(z^*(s)\alpha_s(x)\alpha_{st}(z\left( st \right)^{-1})) \d s \\
-	&= \varphi\left( \int_G z^*(s) \alpha_s(x) \alpha_{st}(z(st)^{-1})\d s \right),
+\Gamma_{\tilde \varphi_z}(t)(x) = \varphi_z(\iota_A(x)  \iota_G(t)) = \langle \overline{\pi \rtimes \lambda(\iota_A(x) \iota_G(t))} \xi_z , \xi_z\rangle & = \int_G \varphi(z^*(s)\alpha_s(x)\alpha_{st}(z\left( st \right)^{-1})) \d s \\
+&= \varphi\left( \int_G z^*(s) \alpha_s(x) \alpha_{st}(z(st)^{-1})\d s \right),
 \end{align*}
 and in particular, we have $\Gamma_{\tilde \varphi_z} \in A_+(A \rtimes_\alpha G)$. Another consequence of \Cref{mult:vectorstateapprox} is that every function in $A_+(A \rtimes_\alpha G)$ is a norm limit of linear combinations of functions $\Gamma_{\tilde \varphi_z}$, for states $\varphi \in \mathcal{S}(A)$. This is because $\pi_u$ is the direct sum of cyclic representations of $A$.
 \end{remark}
 For a representation $(\pi,\H)$ of $A$, we will also use $\tilde \pi \rtimes \lambda$ to denote the extension from $\cc(G,A,\alpha)\subseteq A \rtimes_{\alpha,r}G$ to all of $A \rtimes_{\alpha, r} G$ (doable, since the norm $\pi_u$ is the universal representation of $A$, hence the norm will be bounded by it). With this, we may prove the following essential theorem in our description of the reduced crossed product: \todo{rephrase}
 \begin{theorem}
-	For a $C^*$-dynamical system $(A,G,\alpha)$, given any faithful representation $(\pi,\H)$ of $A$, it holds that the associated integrated form $\tilde \pi \rtimes \lambda$ will be faithful on $A \rtimes_{\alpha, r} G$.
-	\label{mult:reducedfaithful}
+For a $C^*$-dynamical system $(A,G,\alpha)$, given any faithful representation $(\pi,\H)$ of $A$, it holds that the associated integrated form $\tilde \pi \rtimes \lambda$ will be faithful on $A \rtimes_{\alpha, r} G$.
+\label{mult:reducedfaithful}
 \end{theorem}
 \begin{proof}
-	\todo{Is this the proper way of describing states contained in $\tilde \pi \rtimes_r \lambda$, or should we use the identification using predual, instead of using composition with $\sigma$}
-	For this particular proof, we will let $\tilde \pi \rtimes_r \lambda$ denote the corresponding representation of $A \rtimes_{\alpha,r}G$.
+\todo{Is this the proper way of describing states contained in $\tilde \pi \rtimes_r \lambda$, or should we use the identification using predual, instead of using composition with $\sigma$}
+For this particular proof, we will let $\tilde \pi \rtimes_r \lambda$ denote the corresponding representation of $A \rtimes_{\alpha,r}G$.
 
-	We will show that $\tilde \pi_u \rtimes_r \lambda$ is \myemph{weakly contained} in $\tilde \pi \rtimes_r \lambda$ for all faithful representations $\pi$ of $A$, i.e., that $\ker \tilde \pi \rtimes_r \lambda \subseteq \ker \pi_u \rtimes_r \lambda = 0$. By \cite[80]{dixmier1969c}, this is equivalent to showing that the set of vector states of $\tilde \pi \rtimes_r \lambda$ is weak$^*$ dense in the set of states in $\tilde \pi_u \rtimes_r \lambda$.
+We will show that $\tilde \pi_u \rtimes_r \lambda$ is \myemph{weakly contained} in $\tilde \pi \rtimes_r \lambda$ for all faithful representations $\pi$ of $A$, i.e., that $\ker \tilde \pi \rtimes_r \lambda \subseteq \ker \pi_u \rtimes_r \lambda = 0$. By \cite[80]{dixmier1969c}, this is equivalent to showing that the set of vector states of $\tilde \pi \rtimes_r \lambda$ is weak$^*$ dense in the set of states in $\tilde \pi_u \rtimes_r \lambda$.
 
-	Let $E$ be the set of states contained in $(\pi,\H)$, which will be weak$^*$ dense in $\mathcal{S}(A)$ by faithfulness of $\pi$. For now, let $\sigma$ denote the surjective $*$-representation $A \rtimes_\alpha G \to A \rtimes_{\alpha,r}G$. We then let $F$ denote set of functions
-	\begin{align*}
-		F = \left\{  \Gamma_\psi \in A_+^1(A\rtimes_\alpha G) \mid \Gamma_\psi = \Gamma_{\varphi \circ \sigma} \text{ for some state } \varphi \text{ contained in } \tilde \pi \rtimes_r \lambda \right\}
-	\end{align*}
+Let $E$ be the set of states contained in $(\pi,\H)$, which will be weak$^*$ dense in $\mathcal{S}(A)$ by faithfulness of $\pi$. For now, let $\sigma$ denote the surjective $*$-representation $A \rtimes_\alpha G \to A \rtimes_{\alpha,r}G$. We then let $F$ denote set of functions
+\begin{align*}
+	F = \left\{  \Gamma_\psi \in A_+^1(A\rtimes_\alpha G) \mid \Gamma_\psi = \Gamma_{\varphi \circ \sigma} \text{ for some state } \varphi \text{ contained in } \tilde \pi \rtimes_r \lambda \right\}
+\end{align*}
 
-	Note that the set of vector states in $\tilde \pi_u \rtimes_r \lambda$ is exactly the set of functionals which give rise to $A_+^1(A \rtimes_\alpha G)$, by definition and the fact that we may view $A \rtimes_{\alpha,r} G$ as the image of $A \rtimes_\alpha G$ under $\tilde \pi_u \rtimes \lambda$.
+Note that the set of vector states in $\tilde \pi_u \rtimes_r \lambda$ is exactly the set of functionals which give rise to $A_+^1(A \rtimes_\alpha G)$, by definition and the fact that we may view $A \rtimes_{\alpha,r} G$ as the image of $A \rtimes_\alpha G$ under $\tilde \pi_u \rtimes \lambda$.
 
-	Hence if $F \subseteq A_+^1(A \rtimes_\alpha G)$ is dense in the topology of weak$^*$ convergence uniformly on compacta, then, by the isomorphism between the statespace of $A \rtimes_\alpha G$ and $B(A \rtimes_\alpha G)$, we're done.
+Hence if $F \subseteq A_+^1(A \rtimes_\alpha G)$ is dense in the topology of weak$^*$ convergence uniformly on compacta, then, by the isomorphism between the statespace of $A \rtimes_\alpha G$ and $B(A \rtimes_\alpha G)$, we're done.
 
-	By the above remark and \Cref{mult:vectorstateapprox}, it is enough to consider approximations of the functions of the form
-	\begin{align*}
-		\Gamma_{\tilde \varphi_z}(t) (x) =\varphi\left( \int_G z^*(s) \alpha_s(x) \alpha_{st}(z\left( (st)^{-1} \right)\d s \right),
-	\end{align*}
-	for suitable $\varphi \in \mathcal{S}(A)$ and $z \in \cc(G,A,\alpha)$, i.e., with $\varphi(z^* \ast z(e)) = 1$, since they span a dense subset of $A_+^1(A \rtimes_\alpha G)$: Let such $\varphi$ and $z$ be given. By density of $E$, pick a convergent net $\varphi_i \to \varphi$ in the weak$^*$-topology. This implies that $\Gamma_{\tilde {\varphi_i}_z}(t) \to \Gamma_{\tilde \varphi_z}(t)$ weak$^*$, uniformly on compacta of $G$. Since $\varphi_i \in E$, the corresponding representation $(\pi_{\varphi_i},H_{\varphi_i})$ will be a sub-representation of $(\pi,H)$, from which we conclude that $\Gamma_{\tilde {\varphi_i}_z} \in F$, finishing the proof.
+By the above remark and \Cref{mult:vectorstateapprox}, it is enough to consider approximations of the functions of the form
+\begin{align*}
+	\Gamma_{\tilde \varphi_z}(t) (x) =\varphi\left( \int_G z^*(s) \alpha_s(x) \alpha_{st}(z\left( (st)^{-1} \right)\d s \right),
+\end{align*}
+for suitable $\varphi \in \mathcal{S}(A)$ and $z \in \cc(G,A,\alpha)$, i.e., with $\varphi(z^* \ast z(e)) = 1$, since they span a dense subset of $A_+^1(A \rtimes_\alpha G)$: Let such $\varphi$ and $z$ be given. By density of $E$, pick a convergent net $\varphi_i \to \varphi$ in the weak$^*$-topology. This implies that $\Gamma_{\tilde {\varphi_i}_z}(t) \to \Gamma_{\tilde \varphi_z}(t)$ weak$^*$, uniformly on compacta of $G$. Since $\varphi_i \in E$, the corresponding representation $(\pi_{\varphi_i},H_{\varphi_i})$ will be a sub-representation of $(\pi,H)$, from which we conclude that $\Gamma_{\tilde {\varphi_i}_z} \in F$, finishing the proof.
 \end{proof}
 In particular, this means that we may always consider $A \rtimes_{\alpha,r}G$ as the completion of $\cc(G,A,\alpha)$ under the regular representation induced by a faithful representation of $A$, which will be convenient, as we shall see, for in a large case of groups there is only one crossed product. The following useful lemma can be found in \cite[Lemma 7.7.6]{pedersenalgauto}:
 \begin{lemma}
-	If $\Gamma_\varphi \in B_+^1(A \rtimes_\alpha G)$ has compact support, then $\Gamma_\varphi \in A_+^1(A \rtimes_\alpha G)$
-	\label{crossed:compactposdef}
+If $\Gamma_\varphi \in B_+^1(A \rtimes_\alpha G)$ has compact support, then $\Gamma_\varphi \in A_+^1(A \rtimes_\alpha G)$
+\label{crossed:compactposdef}
 \end{lemma}
 
 We recall one of the several equivalent definition of amenability for locally compact groups $G$:
 \begin{definition}
-	A group $G$ is \myemph{amenable} if there is a net $(f_i) \subseteq L^2(G)$ such that $(f_ \ast \tilde f_i)$ converges uniformly on compacta of $G$ to $1$, where $\tilde f (t) = \overline f(t^{-1})$ for $f \in L^2(G)$ and $t \in G$.
+A group $G$ is \myemph{amenable} if there is a net $(f_i) \subseteq L^2(G)$ such that $(f_ \ast \tilde f_i)$ converges uniformly on compacta of $G$ to $1$, where $\tilde f (t) = \overline f(t^{-1})$ for $f \in L^2(G)$ and $t \in G$.
 \end{definition}
 See e.g., \cite[Appendix G]{bekka2008kazhdan}, \cite[Proposition 7.3.7 and 7.3.8]{pedersenalgauto} for the above and more characterizations. 
 
 With this, we obtain the following:
 \begin{theorem}
-	If $G$ is amenable, then whenever $G \acts \alpha A$, we have $A \rtimes_\alpha G \cong A \rtimes_{\alpha,r}G$.
-	\label{cross:amenable}
+If $G$ is amenable, then whenever $G \acts \alpha A$, we have $A \rtimes_\alpha G \cong A \rtimes_{\alpha,r}G$.
+\label{cross:amenable}
 \end{theorem}
 \begin{proof}
-	By applying the above to $G \acts 1 \C$ as the trivial action, we obtain a net $\Psi_i \in B_{+}(\C \rtimes_\alpha G)$ with compact support convergin uniformly on compacta to $1$, by amenability of $G$ and \cite[Lemma 7.2.4]{pedersenalgauto}. It is easy to see that the pointwise product $\Psi_i \Gamma_\varphi \in B_+^1(A \rtimes_\alpha G)$ for all $\varphi \in \mathcal{S}(A \rtimes_\alpha G)$, and since $\Psi_i$ has compact support, we see that $\Psi_i \Gamma_\varphi \in A_+(A \rtimes_\alpha G)$ and $\Psi_i \Gamma_\varphi \to \Gamma_\varphi$ in the topology of weak$^*$ uniformly convergence on compacta of $G$. Hence, $A_+(A \rtimes_\alpha G) \subseteq B_+(A \rtimes_\alpha G)$ is dense. In particular, this implies that if $\pi$ denotes the universal faithful representation of $A \rtimes_\alpha G$, then $\ker \tilde \pi_u \rtimes \lambda \subseteq \ker \pi = 0$, by weak containment (\cite[80]{dixmier1969c}), so $A \rtimes_\alpha G \cong \tilde \pi_u \rtimes \lambda( A \rtimes_\alpha G) = A \rtimes_{\alpha,r}G$.
+By applying the above to $G \acts 1 \C$ as the trivial action, we obtain a net $\Psi_i \in B_{+}(\C \rtimes_\alpha G)$ with compact support convergin uniformly on compacta to $1$, by amenability of $G$ and \cite[Lemma 7.2.4]{pedersenalgauto}. It is easy to see that the pointwise product $\Psi_i \Gamma_\varphi \in B_+^1(A \rtimes_\alpha G)$ for all $\varphi \in \mathcal{S}(A \rtimes_\alpha G)$, and since $\Psi_i$ has compact support, we see that $\Psi_i \Gamma_\varphi \in A_+(A \rtimes_\alpha G)$ and $\Psi_i \Gamma_\varphi \to \Gamma_\varphi$ in the topology of weak$^*$ uniformly convergence on compacta of $G$. Hence, $A_+(A \rtimes_\alpha G) \subseteq B_+(A \rtimes_\alpha G)$ is dense. In particular, this implies that if $\pi$ denotes the universal faithful representation of $A \rtimes_\alpha G$, then $\ker \tilde \pi_u \rtimes \lambda \subseteq \ker \pi = 0$, by weak containment (\cite[80]{dixmier1969c}), so $A \rtimes_\alpha G \cong \tilde \pi_u \rtimes \lambda( A \rtimes_\alpha G) = A \rtimes_{\alpha,r}G$.
 \end{proof}
 Combining the above , we obtain
 \begin{corollary}
-	If $G \acts \alpha A$ with $G$ amenable, then $A \rtimes_\alpha G = \overline{\tilde \pi \rtimes \lambda (\cc(G,A,\alpha))}$ for any faithful representation $\pi$ of $A$.
+If $G \acts \alpha A$ with $G$ amenable, then $A \rtimes_\alpha G = \overline{\tilde \pi \rtimes \lambda (\cc(G,A,\alpha))}$ for any faithful representation $\pi$ of $A$.
 \end{corollary}
 The above allows us to concretely work with the crossed products of a large class of groups which include finite groups, abelian groups, compact groups and others. This will be very useful.
 
 For a fixed group $G$, the crossed product constructions described above are in fact functors from the category of $G$-algebras $A$ to the category of $C^*$-algebras, where the objects in $G$-algebras are $C^*$-algebras $A$ equipped with an action $G \acts \alpha A$ and morphism given by $G$-equivariant $*$-morphism, i.e., $\varphi \colon A \to B$ for $G$-algebras is a morphism if the diagram
 
 \begin{equation}
-	\begin{tikzcd}
-		A \arrow[r, "\varphi"] \arrow[d, "\alpha_g"'] & B  \arrow[d, "\beta_g"]\\
-		A \arrow[r, "\varphi"'] & B
-	\end{tikzcd}
+\begin{tikzcd}
+	A \arrow[r, "\varphi"] \arrow[d, "\alpha_g"'] & B  \arrow[d, "\beta_g"]\\
+	A \arrow[r, "\varphi"'] & B
+\end{tikzcd}
 \end{equation}
 commutes for every $g \in G$. This can bee seen by the following:
 \begin{proposition}
-	Suppose that $G \acts \alpha A$ and $G \acts \beta B$ and $\varphi \colon A \to B$ is a $G$-equivariant morphism. Then the map $\tilde \varphi \colon \cc(G,A,\alpha) \to \cc(G,B,\beta)$, $\tilde \varphi (f)(s) := \varphi(f(s))$, extends to a $*$-morphism $A \rtimes_\alpha G \to B \rtimes_\beta G$.
+Suppose that $G \acts \alpha A$ and $G \acts \beta B$ and $\varphi \colon A \to B$ is a $G$-equivariant morphism. Then the map $\tilde \varphi \colon \cc(G,A,\alpha) \to \cc(G,B,\beta)$, $\tilde \varphi (f)(s) := \varphi(f(s))$, extends to a $*$-morphism $A \rtimes_\alpha G \to B \rtimes_\beta G$.
 \end{proposition}
 \begin{proof}
-	It is clear that $\tilde \varphi$ is a $*$-morphism. To see that it extends, we show that $\lv \tilde \varphi(f) \rv \leq \lv f \rv$, where the norms comes from the embeddings $\cc(G,A,\alpha) \subseteq A \rtimes_\alpha G$ and $\cc(G,B,\beta) \subseteq B \rtimes_\beta G$. For this, let $(\pi,u)$ be a covariant representation of $G \acts \beta B$. Then, clearly $(\pi \circ \varphi , u)$ is a covariant representation of $G \acts \alpha A$, and moreover, if $f \in \cc(G,A,\alpha)$, then
-	\begin{align*}
-		(\pi \circ \varphi) \rtimes u(f) = \int_G \pi(\varphi(f(s))) u_s \d s = \int _G \pi (\tilde \varphi(f)(s)) u_s \d s  =  \pi \rtimes u \circ \tilde \varphi (f),
-	\end{align*}
-	so $\pi \circ \varphi \rtimes u = \pi \rtimes u \circ \tilde \varphi$, and hence 
-	\begin{align*}
-		\lv \pi \rtimes u \circ \tilde \varphi(f)\rv = \lv \pi \circ \varphi \rtimes u (f) \rv \leq \lv f \rv,
-	\end{align*}
-	since the integrated form of a covariant representation is norm decreasing. Hence, since the norm of $ \tilde \varphi(f)$ is the supremum of integrated forms of covariant representations of $G \acts \beta B$, we see that $\tilde \varphi$ extends to a morphism $A \rtimes_\alpha G \to B \rtimes_\beta G$.
+It is clear that $\tilde \varphi$ is a $*$-morphism. To see that it extends, we show that $\lv \tilde \varphi(f) \rv \leq \lv f \rv$, where the norms comes from the embeddings $\cc(G,A,\alpha) \subseteq A \rtimes_\alpha G$ and $\cc(G,B,\beta) \subseteq B \rtimes_\beta G$. For this, let $(\pi,u)$ be a covariant representation of $G \acts \beta B$. Then, clearly $(\pi \circ \varphi , u)$ is a covariant representation of $G \acts \alpha A$, and moreover, if $f \in \cc(G,A,\alpha)$, then
+\begin{align*}
+	(\pi \circ \varphi) \rtimes u(f) = \int_G \pi(\varphi(f(s))) u_s \d s = \int _G \pi (\tilde \varphi(f)(s)) u_s \d s  =  \pi \rtimes u \circ \tilde \varphi (f),
+\end{align*}
+so $\pi \circ \varphi \rtimes u = \pi \rtimes u \circ \tilde \varphi$, and hence 
+\begin{align*}
+	\lv \pi \rtimes u \circ \tilde \varphi(f)\rv = \lv \pi \circ \varphi \rtimes u (f) \rv \leq \lv f \rv,
+\end{align*}
+since the integrated form of a covariant representation is norm decreasing. Hence, since the norm of $ \tilde \varphi(f)$ is the supremum of integrated forms of covariant representations of $G \acts \beta B$, we see that $\tilde \varphi$ extends to a morphism $A \rtimes_\alpha G \to B \rtimes_\beta G$.
 \end{proof}
 The above proof applies to the case of the reduced crossed product. This is easily seen by applying the above proof to regular representations $(\tilde \pi, \lambda)$ rather than any covariant representation. The remaining properties for a functor are easily verified, i.e., preserves composition and sends the identity map to the identity map.
 
 \ssection{The case of Abelian groups and Takai Duality}
 In the 70's, Hiroshi Takai published a paper (see \cite{takai1975duality}) showing that the crossed product construction in a way captures the duality of locally compact abelian groups, in the sense of $\hat{\hat G} \cong G$, where $\hat G$ denotes the dual group of $G$. He showed that taking the crossed product twice with $G$ (in the sense that $\hat G \acts {\hat \alpha} A \rtimes_\alpha G$), one obtains an isomorphism 
 \begin{align*}
-	A \otimes \mathbb{K}(L^2(G)) \cong (A \rtimes_\alpha G) \rtimes_{\hat \alpha} \hat G,
+A \otimes \mathbb{K}(L^2(G)) \cong (A \rtimes_\alpha G) \rtimes_{\hat \alpha} \hat G,
 \end{align*}
 and in fact that both of these are $G$-dynamical systems and the isomorphism is covariant. \todo{revisit if really raeburn or if pedersen} We will follow Raeburns take on this result, found in \cite{raeburn1988crossed}, since it is more aligned with the results we've developed so far.
 \begin{note}
-	In the above, and in the rest, unless otherwise stated, we will use $A \otimes B$ between two $C^*$-algebras to mean the maximal tensor product, and we recall that for a commutative $C^*$-algebra, the maximal and minimal tensorproducts coincide, i.e., they are nuclear. For this, see e.g., \cite{brown2008c}.
+In the above, and in the rest, unless otherwise stated, we will use $A \otimes B$ between two $C^*$-algebras to mean the maximal tensor product, and we recall that for a commutative $C^*$-algebra, the maximal and minimal tensorproducts coincide, i.e., they are nuclear. For this, see e.g., \cite{brown2008c}.
 \end{note}
 
 For this, we first show that the left-hand side is a $C^*$-dynamical system for any (also non-abelian) locally compact group $G$:
 \begin{proposition}
-	Let $G \acts \alpha A$ and let $\rho$ denote the right-regular representation of $G$ on $L^2(G)$, $\rho_t f(s) = f(st) \Delta(t)^{\frac12}$. Then $A \otimes \mathbb{K}(L^2(G)), G, \alpha \otimes \mathrm{Ad} \rho)$ is a $C^*$-dynamical system.
+Let $G \acts \alpha A$ and let $\rho$ denote the right-regular representation of $G$ on $L^2(G)$, $\rho_t f(s) = f(st) \Delta(t)^{\frac12}$. Then $A \otimes \mathbb{K}(L^2(G)), G, \alpha \otimes \mathrm{Ad} \rho)$ is a $C^*$-dynamical system.
 \end{proposition}
 \begin{proof}
-	The proof relies on the fact that in a Von Neumann algebra $\mathcal{W}$ (or Borel $*$-algebra $B$) equipped with a strongly continuous action $G \acts \alpha \mathcal{W}$, the set of elements $x \in \mathcal{W}$ such that $t \mapsto \alpha_t(x)$ is norm-continuous forms a $C^*$-algebra which is invariant under $G$, see e.g., \cite[Proof of Lemma 7.5.1]{pedersenalgauto} or \cite[Proposition III.3.2.4]{blackadar}. \todo{easy proof for $C^*$-algebra as well, no need to cite}.
-	
-	With this in mind, let $(\pi,u)$ be a covariant representation of $(A, G, \alpha)$ on a Hilbert space $H$ with $\pi$ faithful. Define a representation $\sigma$ of $G$ on $H \otimes L^2(G)$ by
-	\begin{align*}
-	\sigma = u \otimes \rho,
-	\end{align*}
-	so that $\sigma$ is a strongly continuous unitary representation. For $x \in A \subseteq \mathbb{B}(H)$ and $y \in \mathbb{K}(L^2(G))$ we see that
-	\begin{align*}
-		\sigma_t (x \otimes y) \sigma_t^* = \alpha_t(x) \otimes \rho_t y \rho_t^* \in A \otimes \mathbb{K}(L^2(G)) \subseteq \mathbb{B}(H \otimes L^2(G)).
-	\end{align*}
-	Hence $A \otimes \mathbb{K}(L^2(G))$ is invariant under $\mathrm{Ad}_\sigma$. Moreover, for finite dimensional $y \in \mathbb{K}(L^2(G))$, the map $t \mapsto \mathrm{Ad}_{\sigma_t}(y)$ is norm continuous. The closure of $F = \Span\{a \otimes y \mid a \in A, \ y \text{ finite rank}\}$ equals $A \otimes \mathbb{K}(L^2(G))$. The $C^*$-algebra of elements $x\otimes y \in A \otimes \mathbb{K}(L^2(G))$ such that $t \mapsto \sigma_t x \otimes y\sigma_t^*$ is continuous and $\mathrm{Ad}_{\sigma_s}$ invariant for all $s$ and contains $F$ hence equals $A \otimes \mathbb{K}(L^2(G))$. Letting $\alpha \otimes \mathrm{Ad}_\rho := \mathrm{Ad}_{\sigma}$, we see that $(A \otimes \mathbb{K}(L^2(G)), G , \alpha \otimes \mathrm{Ad}_\rho)$ is a $C^*$-dynamical system.
+The proof relies on the fact that in a Von Neumann algebra $\mathcal{W}$ (or Borel $*$-algebra $B$) equipped with a strongly continuous action $G \acts \alpha \mathcal{W}$, the set of elements $x \in \mathcal{W}$ such that $t \mapsto \alpha_t(x)$ is norm-continuous forms a $C^*$-algebra which is invariant under $G$, see e.g., \cite[Proof of Lemma 7.5.1]{pedersenalgauto} or \cite[Proposition III.3.2.4]{blackadar}. \todo{easy proof for $C^*$-algebra as well, no need to cite}.
+
+With this in mind, let $(\pi,u)$ be a covariant representation of $(A, G, \alpha)$ on a Hilbert space $H$ with $\pi$ faithful. Define a representation $\sigma$ of $G$ on $H \otimes L^2(G)$ by
+\begin{align*}
+\sigma = u \otimes \rho,
+\end{align*}
+so that $\sigma$ is a strongly continuous unitary representation. For $x \in A \subseteq \mathbb{B}(H)$ and $y \in \mathbb{K}(L^2(G))$ we see that
+\begin{align*}
+	\sigma_t (x \otimes y) \sigma_t^* = \alpha_t(x) \otimes \rho_t y \rho_t^* \in A \otimes \mathbb{K}(L^2(G)) \subseteq \mathbb{B}(H \otimes L^2(G)).
+\end{align*}
+Hence $A \otimes \mathbb{K}(L^2(G))$ is invariant under $\mathrm{Ad}_\sigma$. Moreover, for finite dimensional $y \in \mathbb{K}(L^2(G))$, the map $t \mapsto \mathrm{Ad}_{\sigma_t}(y)$ is norm continuous. The closure of $F = \Span\{a \otimes y \mid a \in A, \ y \text{ finite rank}\}$ equals $A \otimes \mathbb{K}(L^2(G))$. The $C^*$-algebra of elements $x\otimes y \in A \otimes \mathbb{K}(L^2(G))$ such that $t \mapsto \sigma_t x \otimes y\sigma_t^*$ is continuous and $\mathrm{Ad}_{\sigma_s}$ invariant for all $s$ and contains $F$ hence equals $A \otimes \mathbb{K}(L^2(G))$. Letting $\alpha \otimes \mathrm{Ad}_\rho := \mathrm{Ad}_{\sigma}$, we see that $(A \otimes \mathbb{K}(L^2(G)), G , \alpha \otimes \mathrm{Ad}_\rho)$ is a $C^*$-dynamical system.
 \end{proof}
 
 The way we show Takai duality is that we will show that the $C^*$-dynamical system defined in the above proposition is covariantly isomorphic to another dynamical system, and then finally showing an isomorphism between this system and the dual system when $G$ is abelian. We show the first step in this in the following:
 \begin{theorem}
-	Let $G \acts \alpha A$. Then there is a $C^*$-dynamical system $(C_0(G,A) \rtimes_{\gamma,r} G , G, \sigma )$ where we define the actions $G \acts \gamma C_0(G,A)$ and $G \acts \sigma C_0(G,A)$ by
-	\begin{align*}
-		\sigma_s (f)(t) = f(ts) \text{ and } \gamma_s f(t) = \alpha_s(f(s^{-1}t)),
-	\end{align*}
-	for $f \in C_0(G,A)$ and $s,t \in G$. This system is covariantly isomorphic to $(A \otimes \mathbb{K}(L^2(G)), G , \alpha \otimes \mathrm{Ad}_\rho)$.
-	\label{takai:compactiso}
+Let $G \acts \alpha A$. Then there is a $C^*$-dynamical system $(C_0(G,A) \rtimes_{\gamma,r} G , G, \sigma )$ where we define the actions $G \acts \gamma C_0(G,A)$ and $G \acts \sigma C_0(G,A)$ by
+\begin{align*}
+	\sigma_s (f)(t) = f(ts) \text{ and } \gamma_s f(t) = \alpha_s(f(s^{-1}t)),
+\end{align*}
+for $f \in C_0(G,A)$ and $s,t \in G$. This system is covariantly isomorphic to $(A \otimes \mathbb{K}(L^2(G)), G , \alpha \otimes \mathrm{Ad}_\rho)$.
+\label{takai:compactiso}
 \end{theorem}
 \begin{proof}
-	\todo{Add as example the dynamical systems} Represent $A$ faithfully on a Hilbert space $\H$, and define a representation of $C_0(G,A)$ on $L^2(G,A)$ as multiplication operators, i.e.,
-	\begin{align*}
-		\pi(f) \xi (s) = f(s)\xi(s), 
-	\end{align*}
-	for $f \in C_0(G,A)$, $\xi \in L^2(G,A)$ and $s \in G$. This is easily seen to be a faithful representation, so by \Cref{mult:reducedfaithful} we obtain a faithful representation $\tilde \pi \rtimes \lambda$ of $C_0(G,A) \rtimes_{\gamma,r} G$ on $L^2(G,L^2(G,H)) \cong L^2(G \times G, H)$. Consider $\cc(G \times G,A) \subseteq \cc(G,C_0(G,A))$, via the map $(f \colon (x,y) \mapsto f(x,y)) \mapsto (x \mapsto (y \mapsto f(x,y)))$, and note that there is not necessarily equality (e.g., for the case $G=  \R$ and $A = \C$). For $z \in \cc(G \times G, A)$, we see that
-	\begin{align*}
-		\tilde \pi \rtimes \lambda (z) \xi(s,t) &= \int_G \alpha_{s^{-1}}(z(r,st)) \xi(r^{-1}s,t) \d r.
-	\end{align*}
-	Define the operator $w$ on $L^2(G\times G,H)$ by
-	\begin{align*}
-		w \xi(s,t) \xi(st,t) \Delta(t)^{\frac12},
-	\end{align*}
-	then $w$ is a unitary operator with adjoint $w^* \xi(s,t) = \xi(st^{-1},t) \Delta(t)^{-\frac12}$. We then calculate for $z \in \cc(G \times G, A)$
-	\begin{align*}
-		w^*  (\tilde \pi \rtimes \lambda (z)) w (\xi) (s,t) = \int_G \alpha_{ts^{-1}} (z(r,s)) w \xi(r^{-1} s t^{-1},t) \d r \Delta(t)^{-\frac12} = \int_G \alpha_{ts^{-1}}(z(r,s)) \xi(r^{-1}s,t) \d r,
-	\end{align*}
-	for all $\xi \in L^2(G \times G, H)$ and $s,t \in G$. It is not hard to see that any function $f \in \cc(G \times G , A)$ can be approximated by linear combinations of maps of the form $(s,t) \mapsto z(s)g(t)\alpha_t(x)$ for $z,g \in \cc(G)$ and $x \in A$, and hence also by functions of the form
-	\begin{align*}
-		f(s,t) = \alpha_{t}(x) z(s^{-1}t)g(t) \Delta(s^{-1}t),
-	\end{align*}
-	for fixed $z,g \in \cc(G)$ and $x \in A$. Applying $\mathrm{Ad}_{w}$ to this we get
-	\begin{align*}
-		w^* (\tilde \pi \rtimes \lambda(f)) w(\xi)(s,t) = \int_G \alpha_{ts^{-1}}(f(r,s)) \xi(r^{-1}s,t) \d r &= \int_G \alpha_{ts^{-1}}(\alpha_s(x) z(r^{-1}s)g(s) \Delta(r^{-1}s)) \xi(r^{-1}s,t) \d r \\
-		&= \int_G \alpha_t(x) z(r^{-1}s) g(s) \xi(r^{-1}s,t) \Delta(r^{-1}s)  \d r\\
-		&= \alpha_t(x) g(s) \int_G z(r) \xi(r,t) \d r.
-	\end{align*}
-	Consider the faithful representation $\check \pi$ of $A$ on $L^2(G,H)$ by $\check \pi(x) \xi(s) = \alpha_s(x) \xi(s)$. Given $K \in \mathbb{K}(H)$ and $x \in A$, if $U$ denotes the unitary operator identifying $L^2(G) \otimes L^2(G,H)$ with $L^2(G, L^2(G, H)$, then for $h \in L^2(G)$ and $\xi \in L^2(G,H)$ we see that
-	\begin{align*}
-		U (\check \pi(x) \otimes K (h \otimes \xi))(s)(t) = \alpha_s(x) h(s) K \xi(t),
-	\end{align*}
-	so after identifying $L^2(G,L^2(G,H))$ with $L^2(G \times G,H)$, we see that for $f$ as above:
-	\begin{align*}
-		w^* (\tilde \pi \rtimes \lambda (f)) w  = \check \pi \otimes p_{zg} \in A \otimes \mathbb{K}(L^2(G)) \subseteq \mathbb{B}(L^2(G \times G, H)),
-	\end{align*}
-	where is $p_{z,g}$ the rank-one operator $\eta \mapsto \langle \eta , \overline z \rangle g$, $\eta \in L^2(G)$.
-	In particular, this implies that 
-	\begin{align*}
-		A \otimes \mathbb{K}(L^2(G)) \subseteq w^* (\tilde \pi \rtimes \lambda (C_0(G,A) \rtimes_{\lambda, r} G))w,
-	\end{align*}
-	since $\check \pi$ is faithful and $\mathbb{K}(L^2(G))$ is the closure of the span of rank-one operators. Since we may approximate $\cc(G \times G, A)$ by linear combinations of forms $(s,t)  \alpha_s(x)  f(r^{-1}s)g(s) \Delta(r^{-1}s)$, and $\cc(G \times G, A)$ is dense in $C_0(G,A) \rtimes_{\lambda, r}G$, the above inclusion is an equality, so the two algebras are spatially isomorphic with respect to $w$.
+\todo{Add as example the dynamical systems} Represent $A$ faithfully on a Hilbert space $\H$, and define a representation of $C_0(G,A)$ on $L^2(G,A)$ as multiplication operators, i.e.,
+\begin{align*}
+	\pi(f) \xi (s) = f(s)\xi(s), 
+\end{align*}
+for $f \in C_0(G,A)$, $\xi \in L^2(G,A)$ and $s \in G$. This is easily seen to be a faithful representation, so by \Cref{mult:reducedfaithful} we obtain a faithful representation $\tilde \pi \rtimes \lambda$ of $C_0(G,A) \rtimes_{\gamma,r} G$ on $L^2(G,L^2(G,H)) \cong L^2(G \times G, H)$. Consider $\cc(G \times G,A) \subseteq \cc(G,C_0(G,A))$, via the map $(f \colon (x,y) \mapsto f(x,y)) \mapsto (x \mapsto (y \mapsto f(x,y)))$, and note that there is not necessarily equality (e.g., for the case $G=  \R$ and $A = \C$). For $z \in \cc(G \times G, A)$, we see that
+\begin{align*}
+	\tilde \pi \rtimes \lambda (z) \xi(s,t) &= \int_G \alpha_{s^{-1}}(z(r,st)) \xi(r^{-1}s,t) \d r.
+\end{align*}
+Define the operator $w$ on $L^2(G\times G,H)$ by
+\begin{align*}
+	w \xi(s,t) \xi(st,t) \Delta(t)^{\frac12},
+\end{align*}
+then $w$ is a unitary operator with adjoint $w^* \xi(s,t) = \xi(st^{-1},t) \Delta(t)^{-\frac12}$. We then calculate for $z \in \cc(G \times G, A)$
+\begin{align*}
+	w^*  (\tilde \pi \rtimes \lambda (z)) w (\xi) (s,t) = \int_G \alpha_{ts^{-1}} (z(r,s)) w \xi(r^{-1} s t^{-1},t) \d r \Delta(t)^{-\frac12} = \int_G \alpha_{ts^{-1}}(z(r,s)) \xi(r^{-1}s,t) \d r,
+\end{align*}
+for all $\xi \in L^2(G \times G, H)$ and $s,t \in G$. It is not hard to see that any function $f \in \cc(G \times G , A)$ can be approximated by linear combinations of maps of the form $(s,t) \mapsto z(s)g(t)\alpha_t(x)$ for $z,g \in \cc(G)$ and $x \in A$, and hence also by functions of the form
+\begin{align*}
+	f(s,t) = \alpha_{t}(x) z(s^{-1}t)g(t) \Delta(s^{-1}t),
+\end{align*}
+for fixed $z,g \in \cc(G)$ and $x \in A$. Applying $\mathrm{Ad}_{w}$ to this we get
+\begin{align*}
+	w^* (\tilde \pi \rtimes \lambda(f)) w(\xi)(s,t) = \int_G \alpha_{ts^{-1}}(f(r,s)) \xi(r^{-1}s,t) \d r &= \int_G \alpha_{ts^{-1}}(\alpha_s(x) z(r^{-1}s)g(s) \Delta(r^{-1}s)) \xi(r^{-1}s,t) \d r \\
+	&= \int_G \alpha_t(x) z(r^{-1}s) g(s) \xi(r^{-1}s,t) \Delta(r^{-1}s)  \d r\\
+	&= \alpha_t(x) g(s) \int_G z(r) \xi(r,t) \d r.
+\end{align*}
+Consider the faithful representation $\check \pi$ of $A$ on $L^2(G,H)$ by $\check \pi(x) \xi(s) = \alpha_s(x) \xi(s)$. Given $K \in \mathbb{K}(H)$ and $x \in A$, if $U$ denotes the unitary operator identifying $L^2(G) \otimes L^2(G,H)$ with $L^2(G, L^2(G, H)$, then for $h \in L^2(G)$ and $\xi \in L^2(G,H)$ we see that
+\begin{align*}
+	U (\check \pi(x) \otimes K (h \otimes \xi))(s)(t) = \alpha_s(x) h(s) K \xi(t),
+\end{align*}
+so after identifying $L^2(G,L^2(G,H))$ with $L^2(G \times G,H)$, we see that for $f$ as above:
+\begin{align*}
+	w^* (\tilde \pi \rtimes \lambda (f)) w  = \check \pi \otimes p_{zg} \in A \otimes \mathbb{K}(L^2(G)) \subseteq \mathbb{B}(L^2(G \times G, H)),
+\end{align*}
+where is $p_{z,g}$ the rank-one operator $\eta \mapsto \langle \eta , \overline z \rangle g$, $\eta \in L^2(G)$.
+In particular, this implies that 
+\begin{align*}
+	A \otimes \mathbb{K}(L^2(G)) \subseteq w^* (\tilde \pi \rtimes \lambda (C_0(G,A) \rtimes_{\lambda, r} G))w,
+\end{align*}
+since $\check \pi$ is faithful and $\mathbb{K}(L^2(G))$ is the closure of the span of rank-one operators. Since we may approximate $\cc(G \times G, A)$ by linear combinations of forms $(s,t)  \alpha_s(x)  f(r^{-1}s)g(s) \Delta(r^{-1}s)$, and $\cc(G \times G, A)$ is dense in $C_0(G,A) \rtimes_{\lambda, r}G$, the above inclusion is an equality, so the two algebras are spatially isomorphic with respect to $w$.
 
-	Denote also by $\sigma_t$ the representation of $G$ on $\cc(G,C_0(G,A))$, $\sigma_t f(x)(y) = f(s)(yt)$. Then $\sigma_t$ extends to all of $C_0(G,A) \rtimes_{\lambda, r}G$ by continuity and density. If $f$ is as above, then
-	\begin{align*}
-		w^* (\tilde \pi \rtimes \lambda \sigma_r (f) )w \xi(s,t) &= \alpha_{tr}(x)\underbrace{g(sr) \Delta(r)}_{= \rho_r g(s) \Delta(r) ^{\frac12}} \int_G \underbrace{z(qr)}_{= \rho_{r}z(q) \Delta(r)^{-\frac12}} \xi(q,t) \d q\\
-		&= \alpha_{t} ( \alpha_r(x)) \rho_{r} g(s) \int_G \rho_r z(q) \xi(q,t) \d q\\ 
-		&= ( \check \pi(\alpha_r(x)) \otimes \rho_r p_{z,g} \rho_{r}^*) \xi(s,t)\\
-		&= ( \check \pi(\alpha_r(x)) \otimes \mathrm{Ad}_{\rho_r}p_{z,g}) \xi(s,t).
-	\end{align*}
-	In particular, after identifying $\check \pi (A) $ with $A$, we have
-	\begin{align*}
-		w^* (\tilde \pi \rtimes \lambda(\sigma_r(f)))w = (\alpha \otimes \mathrm{Ad}_{\rho})_r(x \otimes p_{z,g}),
-	\end{align*}
-	and hence by density, we see that $(C_0(G,A) \rtimes_{\lambda , r}, G , \sigma)$ is covariantly isomorphic to $(A \otimes \mathbb{K}(L^2(G)), G, \alpha \otimes \mathrm{Ad}_{\sigma})$ via $w$, in the sense that $w$ implements a $G$-equivariant spatial isomorphism between the two systems. \todo{define category of $C^*$-systems and covariant isomorphism}
+Denote also by $\sigma_t$ the representation of $G$ on $\cc(G,C_0(G,A))$, $\sigma_t f(x)(y) = f(s)(yt)$. Then $\sigma_t$ extends to all of $C_0(G,A) \rtimes_{\lambda, r}G$ by continuity and density. If $f$ is as above, then
+\begin{align*}
+	w^* (\tilde \pi \rtimes \lambda \sigma_r (f) )w \xi(s,t) &= \alpha_{tr}(x)\underbrace{g(sr) \Delta(r)}_{= \rho_r g(s) \Delta(r) ^{\frac12}} \int_G \underbrace{z(qr)}_{= \rho_{r}z(q) \Delta(r)^{-\frac12}} \xi(q,t) \d q\\
+	&= \alpha_{t} ( \alpha_r(x)) \rho_{r} g(s) \int_G \rho_r z(q) \xi(q,t) \d q\\ 
+	&= ( \check \pi(\alpha_r(x)) \otimes \rho_r p_{z,g} \rho_{r}^*) \xi(s,t)\\
+	&= ( \check \pi(\alpha_r(x)) \otimes \mathrm{Ad}_{\rho_r}p_{z,g}) \xi(s,t).
+\end{align*}
+In particular, after identifying $\check \pi (A) $ with $A$, we have
+\begin{align*}
+	w^* (\tilde \pi \rtimes \lambda(\sigma_r(f)))w = (\alpha \otimes \mathrm{Ad}_{\rho})_r(x \otimes p_{z,g}),
+\end{align*}
+and hence by density, we see that $(C_0(G,A) \rtimes_{\lambda , r}, G , \sigma)$ is covariantly isomorphic to $(A \otimes \mathbb{K}(L^2(G)), G, \alpha \otimes \mathrm{Ad}_{\sigma})$ via $w$, in the sense that $w$ implements a $G$-equivariant spatial isomorphism between the two systems. \todo{define category of $C^*$-systems and covariant isomorphism}
 \end{proof}
 Applying the above to the case where $A = \C$ and $\alpha = 1$, we obtain the Stone-Von Neumann theorem for reduced crossed products:
 \begin{corollary}
-	Let $\mathrm{lt}$ denote the representation of $G$ on $C_0(G)$ given by left-translation, i.e., $\mathrm{lt}_s f(t) = f(s^{-1}t)$. Then $\mathrm{lt}$ corresponds to $\gamma$ in the above case with $G \acts 1 \C$, so
-	\begin{align*}
-		C_0(G) \rtimes_{\mathrm{lt},r} G \cong \mathbb{K}(L^2(G)) \otimes \C \cong \mathbb{K}(L^2(G)).
-	\end{align*}
+Let $\mathrm{lt}$ denote the representation of $G$ on $C_0(G)$ given by left-translation, i.e., $\mathrm{lt}_s f(t) = f(s^{-1}t)$. Then $\mathrm{lt}$ corresponds to $\gamma$ in the above case with $G \acts 1 \C$, so
+\begin{align*}
+	C_0(G) \rtimes_{\mathrm{lt},r} G \cong \mathbb{K}(L^2(G)) \otimes \C \cong \mathbb{K}(L^2(G)).
+\end{align*}
 \end{corollary}
 It is worth noting that the result also holds for the full crossed product, however, we mention it without proof. The inclined reader is refered to \cite[Theorem 4.24]{williamscrossed} or \cite[§C.6 ]{williamsmorita}. In particular, this implies that
 \begin{align*}
-	C_0(G) \rtimes_{\mathrm{lt},r} G \cong C_0(G) \rtimes_{\mathrm{lt}}G,
+C_0(G) \rtimes_{\mathrm{lt},r} G \cong C_0(G) \rtimes_{\mathrm{lt}}G,
 \end{align*}
 for all groups $G$.
 
 In the following, we will assume that $G$ in addition to being locally compact is abelian, and we will use $+$ to denote the binary operation. We briefly recall the definition of the dual group $\hat G$ and associated notions. For a better exposition on these topics, we again refer the reader to the excellent work \cite{folland2016fourier}. 
 \begin{definition}
-	For a locally compact group $G$, the dual group $\hat G$ is the group of continuous homomorphisms $\xi \colon G \to S^1$, where $S^1$ denotes the circle. For $\xi \in \hat G$, we will write $(t,\xi) := \xi(t)$. An alternative and equivalent definition of $\hat G$ is as the set of irreducible unitary representations of $G$, which by commutativity of $G$ are all one-dimensional, or we may identify $\hat G$ with the spectrum, $\sigma(L^1(G))$, of the group algebra via the pairing
-	\begin{align}
-		\xi(f):=\int_G (t , \xi) f(t) \d t,
-		\label{abel:fourier}
-	\end{align}
-	for $f \in L^1(G)$ and $\xi \in \hat G$. 
+For a locally compact group $G$, the dual group $\hat G$ is the group of continuous homomorphisms $\xi \colon G \to S^1$, where $S^1$ denotes the circle. For $\xi \in \hat G$, we will write $(t,\xi) := \xi(t)$. An alternative and equivalent definition of $\hat G$ is as the set of irreducible unitary representations of $G$, which by commutativity of $G$ are all one-dimensional, or we may identify $\hat G$ with the spectrum, $\sigma(L^1(G))$, of the group algebra via the pairing
+\begin{align}
+	\xi(f):=\int_G (t , \xi) f(t) \d t,
+	\label{abel:fourier}
+\end{align}
+for $f \in L^1(G)$ and $\xi \in \hat G$. 
 \end{definition}
 Usually, one will examine the Fourier transformation of $M(G)$, where $M(G)$ is the space of bounded Radon Measures on $G$. It is useful to recall also that $L^1(G) \subseteq M(G)$ by assigning $f$ to $f \cdot \d x$, where $\d x$ is the integrand of the fixed Haar measure on $G$. However, will instead consider the inverse Fourier transformaton:
 \begin{definition}
-	The inverse Fourier transformation of a measure $\mu \in M(G)$ is the bounded continuous map on $\hat G$ given by 
-	\begin{align*}
-	\hat \mu(\xi) := \int_G	(t, \xi) \d \mu(t).
-	\end{align*}
-	For $f \in L^1(G) \subseteq M(G)$, we have
-	\begin{align*}
-		\hat f(\xi) := \int_G (t, \xi) f(t) \d t.
-	\end{align*}
-	Note that $\hat \mu \in C_b(\hat G)$ and $\hat f \in C_0(\hat G)$ for $\mu \in M(G)$ and $f \in L^1(G)$.
+The inverse Fourier transformation of a measure $\mu \in M(G)$ is the bounded continuous map on $\hat G$ given by 
+\begin{align*}
+\hat \mu(\xi) := \int_G	(t, \xi) \d \mu(t).
+\end{align*}
+For $f \in L^1(G) \subseteq M(G)$, we have
+\begin{align*}
+	\hat f(\xi) := \int_G (t, \xi) f(t) \d t.
+\end{align*}
+Note that $\hat \mu \in C_b(\hat G)$ and $\hat f \in C_0(\hat G)$ for $\mu \in M(G)$ and $f \in L^1(G)$.
 \end{definition}
 And it will be worth noting that there is a topological duality between $G$ and $\hat G$, in the following sense:
 \begin{proposition}
-	A group $G$ is discrete if and only if $\hat G$ is compact and vice versa.
+A group $G$ is discrete if and only if $\hat G$ is compact and vice versa.
 \end{proposition}
 It will also be important to note that there is a one-to-one correspondance between unitary representations of $G$ and representations of $M(G)$ as a Banach $*$-algebra:
 \begin{proposition}
-	There is a bijective correspondance between unitary representations of $G$ and representations of $M(G)$ which restricts to a non-degenerate representation of $L^1(G)$. If $u$ is a unitary representation of $G$ on $\H$, then the associated representation of $L^1(G)$ is given by
-	\begin{align*}
-		u_f(\xi) = \int_G u_s \xi f(s) \d s,
-	\end{align*}
-	in the weak sense, i.e., that 
-	\begin{align*}
-		\langle u_f(\xi), \eta \rangle = \int_G \langle u_s \xi, \eta \rangle f(s) \d s,
-	\end{align*}
-	for $\xi, \eta \in \H$.
+There is a bijective correspondance between unitary representations of $G$ and representations of $M(G)$ which restricts to a non-degenerate representation of $L^1(G)$. If $u$ is a unitary representation of $G$ on $\H$, then the associated representation of $L^1(G)$ is given by
+\begin{align*}
+	u_f(\xi) = \int_G u_s \xi f(s) \d s,
+\end{align*}
+in the weak sense, i.e., that 
+\begin{align*}
+	\langle u_f(\xi), \eta \rangle = \int_G \langle u_s \xi, \eta \rangle f(s) \d s,
+\end{align*}
+for $\xi, \eta \in \H$.
 \end{proposition}
 
 For the rest of this section, we will assume that $G$ is any abelian locally compact group, and we shall think of $A \rtimes_\alpha G$ as operators on $L^2(G,\H_u)$, where $\H_u$ is the universal Hilbert space for $A$.
 \begin{definition}
-	Suppose that $G \acts \alpha A$. We define the dual action $\hat \alpha$ of $\hat G$ on $A \rtimes_\alpha G$, which is defined on the dense subset $\cc(G,A,\alpha)$ by
-	\begin{align*}
-		\hat \alpha_\xi y(t) =  (t,\xi) y(t),
-	\end{align*}
-	for $y \in \cc(G,A,\alpha)$, $\xi \in \hat G$ and $t \in G$.
+Suppose that $G \acts \alpha A$. We define the dual action $\hat \alpha$ of $\hat G$ on $A \rtimes_\alpha G$, which is defined on the dense subset $\cc(G,A,\alpha)$ by
+\begin{align*}
+	\hat \alpha_\xi y(t) =  (t,\xi) y(t),
+\end{align*}
+for $y \in \cc(G,A,\alpha)$, $\xi \in \hat G$ and $t \in G$.
 \end{definition}
 To see that this in fact is a well-defined action, we use the following:
 \begin{lemma}
-	Let $G \acts \alpha A$. Define a unitary representation $u$ of $\hat G$ on $L^2(G,H)$ by
-	\begin{align*}
-		u_\chi \xi(t) = (t, \chi) \xi(t).
-	\end{align*}
-	Then, with $\hat \alpha_\chi$ as above, it holds that
-	\begin{align*}
-		\hat \alpha_\chi = \mathrm{Ad} u_\chi,
-	\end{align*}
-	so that $(A \rtimes_\alpha G, \hat G, \hat \alpha)$ becomes a $C^*$-dynamical system.
+Let $G \acts \alpha A$. Define a unitary representation $u$ of $\hat G$ on $L^2(G,H)$ by
+\begin{align*}
+	u_\chi \xi(t) = (t, \chi) \xi(t).
+\end{align*}
+Then, with $\hat \alpha_\chi$ as above, it holds that
+\begin{align*}
+	\hat \alpha_\chi = \mathrm{Ad} u_\chi,
+\end{align*}
+so that $(A \rtimes_\alpha G, \hat G, \hat \alpha)$ becomes a $C^*$-dynamical system.
+\label{dualaction}
 \end{lemma}
 \begin{proof}
-	Let $y \in \cc(G,A,\alpha)$, so that $y \xi(s) = \int_G \alpha_{-s}(y(t))\xi(t-s) \d s$. Then
-	\begin{align*}
-		\mathrm{Ad} u_{\chi}(y) \xi(t) &= (t, \chi) \int_G \alpha_{-t}(y(s)) (t, - \chi)(-s,-\chi) \xi(t-s) \d s\\
-		&= \int_G \alpha_{-t}( (s,\chi) y(s)) \xi(t-s) \d s \\
-		&= \hat \alpha_{\chi}y \xi(s).
-	\end{align*}
-	Hence, since $\hat \alpha_\chi y \in \cc(G,A,\alpha)$, and conjugation by unitaries is an isometry, we may define 
-	\begin{align*}
-		\hat \alpha_\chi := (A \rtimes_\alpha G \ni x \mapsto \mathrm{Ad} u_\chi x \in A \rtimes_\alpha G) \in \mathrm{Aut}(A \rtimes_\alpha G).
-	\end{align*}
+Let $y \in \cc(G,A,\alpha)$, so that $y \xi(s) = \int_G \alpha_{-s}(y(t))\xi(t-s) \d s$. Then
+\begin{align*}
+	\mathrm{Ad} u_{\chi}(y) \xi(t) &= (t, \chi) \int_G \alpha_{-t}(y(s)) (t, - \chi)(-s,-\chi) \xi(t-s) \d s\\
+	&= \int_G \alpha_{-t}( (s,\chi) y(s)) \xi(t-s) \d s \\
+	&= \hat \alpha_{\chi}y \xi(s).
+\end{align*}
+Hence, since $\hat \alpha_\chi y \in \cc(G,A,\alpha)$, and conjugation by unitaries is an isometry, we may define 
+\begin{align*}
+	\hat \alpha_\chi := (A \rtimes_\alpha G \ni x \mapsto \mathrm{Ad} u_\chi x \in A \rtimes_\alpha G) \in \mathrm{Aut}(A \rtimes_\alpha G),
+\end{align*}
+and we will think of it as the automorphism satisfying $\hat \alpha_\chi y(s) = (s,\chi) y(s)$ for $y \in \cc(G,A,\alpha)$.
 \end{proof}
-\begin{note}
-	\todo{Add definition of $G$-product and Landstad's condition and rewrite this}
-	Let $u$ and $\hat \alpha$ be as above. If $a \in A \subseteq M(A \rtimes_\alpha G)$, then $\hat \alpha_\chi a = u_\chi a u_\chi^* = a$, since $a y(t) = \alpha_t(a) y(t)$ for all $y \in \cc(G,A,\alpha)$, hence $\hat \alpha_\chi (a)y(t) = (t, \chi) \alpha_{-t}(a) (t,-\chi) y(t) = \alpha_{-t}(a) y(t) = ay(t)$.  
+The above example is one of the motivations for the notion of a $G$-product:
+\begin{definition}
+	Let $G$ be a group with dual group $\hat G$. We say that a $C^*$-algebra $A$ is a \myemph{$G$-product} if:
+	\begin{enumerate}
+		\item There is a homomorphism $\lambda \colon G \to \mathcal{U}(M(A))$ such that the map $t \mapsto \alpha_t y$, $y \in A$ is continuous,
+		\item There is a homomorphism $\hat \alpha \colon \hat G \to \mathrm{Aut}(A)$ such that $(A, \hat G, \hat \alpha )$ is a $C^*$-dynamical system satisfying
+			\begin{align*}
+				\hat{\alpha_\chi} \lambda_t = (t,\chi) \lambda_t,
+			\end{align*}
+			for all $t \in G$ and $\chi \in \hat G$.
+	\end{enumerate}
+	Moreover, we say that $x \in M(A)$ satisfies \myemph{Landstad's conditions} if:
+	\begin{enumerate}
+		\item $\hat \alpha_{\chi}(x) = x$ for all $\chi \in \hat G$,
+		\item $ x \lambda_f \in A$ and $\lambda_f x \in A$ for all $f \in L^1(G)$,
+		\item the map $t \mapsto \lambda_t x \lambda_{t}^*$ is continuous.
+	\end{enumerate}
+\end{definition}
 
-	If $f \in \cc(G)$ and $x \in A$, then for all $\xi \in L^2(G,H)$ and $s \in G$ we see that
-	\begin{align*}
-		x \lambda_f \xi(s) = \int_G f(t) x \lambda_t \xi(s) \d t = \int_G f(t) \alpha_{-t}(x) \lambda_t \xi(s) \d t = \int_G (f \otimes x)(t) \lambda_t \xi(s) \d t = (f \otimes x )\xi(s),
-	\end{align*}
-	where we have identified $f \otimes x \in \cc(G,A,\alpha)\subseteq A \rtimes_\alpha G$. In particular $x \lambda_f \in A \rtimes_\alpha G$ and likewise $\lambda_f x \in A \rtimes_\alpha G$ for $f \in \cc(G)$ and hence for $f \in L^1(G)$, by dominance of the norm on $A \rtimes_\alpha G$
-\end{note}
-
-We are going to show the theorem of Takai by combining the previous results with the following: If $G \acts \alpha A$, we let $\iota$ denote the trivial action of $\hat G$ on $A$. Then
 \begin{lemma}
-	For $G \acts \alpha A$, there is an isomorphism $A \rtimes_\iota \hat G \cong C_0(G,A)$. Moreover, the isomorphism is spatially implemented by a unitary $u$.
-	\label{takai:trivcrossiso}
+Suppose that $G \acts \alpha A$. Then with the above action, it holds that $G \rtimes_\alpha A$ is a $G$-product, and each element of $A \subseteq M(A \rtimes_\alpha G)$ satisfies Landstad's condition.
 \end{lemma}
 \begin{proof}
-	Let $C_0(G,A)$ be faithfully represented on $L^2(G,H)$ as multiplication operators $f \xi(s) = f(s) \xi(s)$, where $A$ is faithfully represented on $H$. By the Plancheral Theorem, we have $L^2(G) \cong L^2(\hat G)$ via the (proper) Fourier transformation, and so we may define the isometry $u \colon L^2(G,H) \to L^2(\hat G,H)$ by
-	\begin{align*}
-		u \xi(\chi) = \int_G \xi(t) \overline{(t, \chi)} \d t, \text{ for } \xi \in L^2(G,H) \text{ and } \chi \in \hat G,
-	\end{align*}
-	so that 
-	\begin{align*}
-		u^* \eta (t) = \int_{\hat G} \eta(\chi) (t, \chi) \d \chi, \text{ for } \eta \in L^2(\hat G,H) \text{ and } t \in G,
-	\end{align*}
-	where the integrals are defined in the $L^2$-sense. Then, for all $f \in \cc(\hat G, A,\iota)$ we see that
-	\begin{align*}
-		f u \xi(\chi) = \int_{\hat G} \iota_{-\sigma}(f(\chi)) \lambda_\sigma (u \xi)(\chi) \d \sigma &= \int_{\hat G} f(\chi) \int_G \xi(t) \overline{(t,\chi - \sigma)} \d t \d \sigma\\
-		&= \int_{\hat G}\int_G f(\chi)(t, \sigma) \xi(t) \overline{(t, \chi)} \d t \d \sigma\\
-		&= \int_{\hat G} \hat f(t) \xi(t) \overline{(t, \chi)} \d t\\
-		&= \int_{\hat G} (\hat f \xi)(t) \overline{(t, \chi)} \d t\\
-		&= u \hat f \xi(\chi)
-	\end{align*}
-	implying that $u^* f u = \hat f \in C_0(G, A)$. By density of $\cc(\hat G, A, \iota) \subseteq A \rtimes_\iota \hat G$, it follows that $u$ implements the desired isomorphism.
+Let $u$ and $\hat \alpha$ be as above. Let $\lambda_t$ be the operator on $L^2(G,H)$ given by
+\begin{align*}
+	\lambda_t \xi(s) = \xi(s-t).
+\end{align*}
+Then we may view $\lambda$ as a map $G \to \mathcal{U}(M(A \rtimes_\alpha G))$, $\lambda_t y(s) = \alpha_t (y(s-t))$ for $y \in \cc(G,A)\subseteq A \rtimes_\alpha G$, by \cref{cross:iotaprop} such that $t \mapsto \lambda_t y$ is continuous for all $y \in A \rtimes_\alpha G$. Combining this with the calculations in \cref{dualaction}, we see that $A \rtimes_\alpha G$ is a $G$-product, since
+\begin{align*}
+	u_\chi \lambda_s u_{-\chi} \xi(t) = (t,\chi) (t-s, - \chi) \xi(t-s) = (s, \chi) \lambda_s \xi(t),
+\end{align*}
+for all $\xi \in L^2(G,H)$, $s,t \in G$ and $\chi  \in \hat G$. For the last claim, we see that if $a \in A \subseteq M(A \rtimes_\alpha G)$, then $\hat \alpha_\chi a = u_\chi a u_\chi^* = a$, since $a y(t) = \alpha_t(a) y(t)$ for all $y \in \cc(G,A,\alpha)$, so
+\begin{align*}
+	\hat \alpha_\chi (a)y(t) = (t, \chi) \alpha_{-t}(a) (t,-\chi) y(t) = \alpha_{-t}(a) y(t) = ay(t).
+\end{align*}
+
+If $f \in \cc(G)$ and $x \in A$, then for all $\xi \in L^2(G,H)$ and $s \in G$ we see that
+\begin{align*}
+	x \lambda_f \xi(s) = \int_G f(t) x \lambda_t \xi(s) \d t = \int_G f(t) \alpha_{-t}(x) \lambda_t \xi(s) \d t = \int_G (f \otimes x)(t) \lambda_t \xi(s) \d t = (f \otimes x )\xi(s),
+\end{align*}
+where we have identified $f \otimes x \in \cc(G,A,\alpha)\subseteq A \rtimes_\alpha G$. In particular $x \lambda_f \in A \rtimes_\alpha G$ and likewise $\lambda_f x \in A \rtimes_\alpha G$ for $f \in \cc(G)$ and hence for $f \in L^1(G)$, by dominance of the norm on $A \rtimes_\alpha G$.
+\end{proof}
+
+Now, we are going to show the theorem of Takai by combining the previous results with the following: If $G \acts \alpha A$, we let $\iota$ denote the trivial action of $\hat G$ on $A$. Then
+\begin{lemma}
+For $G \acts \alpha A$, there is an isomorphism $A \rtimes_\iota \hat G \cong C_0(G,A)$. Moreover, the isomorphism is spatially implemented by a unitary $u$.
+\label{takai:trivcrossiso}
+\end{lemma}
+\begin{proof}
+Let $C_0(G,A)$ be faithfully represented on $L^2(G,H)$ as multiplication operators $f \xi(s) = f(s) \xi(s)$, where $A$ is faithfully represented on $H$. By the Plancheral Theorem, we have $L^2(G) \cong L^2(\hat G)$ via the (proper) Fourier transformation, and so we may define the isometry $u \colon L^2(G,H) \to L^2(\hat G,H)$ by
+\begin{align*}
+	u \xi(\chi) = \int_G \xi(t) \overline{(t, \chi)} \d t, \text{ for } \xi \in L^2(G,H) \text{ and } \chi \in \hat G,
+\end{align*}
+so that 
+\begin{align*}
+	u^* \eta (t) = \int_{\hat G} \eta(\chi) (t, \chi) \d \chi, \text{ for } \eta \in L^2(\hat G,H) \text{ and } t \in G,
+\end{align*}
+where the integrals are defined in the $L^2$-sense. Then, for all $f \in \cc(\hat G, A,\iota)$ we see that
+\begin{align*}
+	f u \xi(\chi) = \int_{\hat G} \iota_{-\sigma}(f(\chi)) \lambda_\sigma (u \xi)(\chi) \d \sigma &= \int_{\hat G} f(\chi) \int_G \xi(t) \overline{(t,\chi - \sigma)} \d t \d \sigma\\
+	&= \int_{\hat G}\int_G f(\chi)(t, \sigma) \xi(t) \overline{(t, \chi)} \d t \d \sigma\\
+	&= \int_{\hat G} \hat f(t) \xi(t) \overline{(t, \chi)} \d t\\
+	&= \int_{\hat G} (\hat f \xi)(t) \overline{(t, \chi)} \d t\\
+	&= u \hat f \xi(\chi)
+\end{align*}
+implying that $u^* f u = \hat f \in C_0(G, A)$. By density of $\cc(\hat G, A, \iota) \subseteq A \rtimes_\iota \hat G$, it follows that $u$ implements the desired isomorphism.
 \end{proof}
 We are now ready to define the $C^*$-dynamical system which we will show is covariantly isomorphic to $(A \otimes \mathbb{K}(L^2(G)), G, \alpha \otimes \mathrm{Ad} \lambda)$ and $\left( (A \rtimes_\alpha G)\rtimes_{\hat \alpha} \hat G, G, \hat{\hat \alpha} \right)$:
 \begin{proposition}
-	Suppose that $G \acts \alpha A$. Define for each $t \in G$ the map $\beta_t \colon \cc( \hat G, A, \iota) \to \cc(\hat G, A, \iota)$ by
-	\begin{align*}
-		\beta_t f(\chi) = \overline{ ( t, \chi)} \alpha_t(f(\chi)),	
-	\end{align*}
-	for $f \in \cc(\hat G, A, \iota)$ and $\chi \in \hat G$. Then $\beta_t$ extends to an automorphism of $A \rtimes_{\iota} \hat G$ such $t \mapsto \beta_t$ is an action of $G$ on $A \rtimes_\iota \hat G$. With this $\beta$, we have a covariant isomorphism $(A \rtimes_\iota \hat G) \rtimes_\beta G \cong (A \rtimes_\alpha G) \rtimes_{\hat \alpha} \hat G$. \todo{reformulate, you don't show covariant isomorphism}
+Suppose that $G \acts \alpha A$. Define for each $t \in G$ the map $\beta_t \colon \cc( \hat G, A, \iota) \to \cc(\hat G, A, \iota)$ by
+\begin{align*}
+	\beta_t f(\chi) = \overline{ ( t, \chi)} \alpha_t(f(\chi)),	
+\end{align*}
+for $f \in \cc(\hat G, A, \iota)$ and $\chi \in \hat G$. Then $\beta_t$ extends to an automorphism of $A \rtimes_{\iota} \hat G$ such $t \mapsto \beta_t$ is an action of $G$ on $A \rtimes_\iota \hat G$. With this $\beta$, we have a covariant isomorphism $(A \rtimes_\iota \hat G) \rtimes_\beta G \cong (A \rtimes_\alpha G) \rtimes_{\hat \alpha} \hat G$. \todo{reformulate, you don't show covariant isomorphism}
 \end{proposition}
 \begin{proof}
 Define $\gamma_t \colon C_0(G,A) \to C_0(G,A)$ to be the diagonal action
 \begin{align*}
-	\gamma_t y(s) = \alpha_t (y(s-t)),
+\gamma_t y(s) = \alpha_t (y(s-t)),
 \end{align*}
 here diagonal comes from the fact that $\gamma_t = \alpha_t \otimes \mathrm{lt}_t$, when we identify $C_0(G,A) \cong C_0(G) \otimes A$\todo{add diagonal to earlier introduction}. Let $u$ be as in \cref{takai:trivcrossiso}, $\hat{\beta_s(y)} \eta(t) = u^*yu$. Then, if $\xi \in L^2(G,H)$ we see that
 \begin{align*}
-	\hat{\beta_s(y)}\xi(t) = \hat{\beta_s(y)}(t) \xi(t) = \int_{\hat G} (t, \sigma) \beta_s(y)(\sigma) \xi(t) \d \sigma &= \int_{\hat G} (t-s,\sigma) \alpha_s(y(\sigma)) \xi(t) \d \sigma
+\hat{\beta_s(y)}\xi(t) = \hat{\beta_s(y)}(t) \xi(t) = \int_{\hat G} (t, \sigma) \beta_s(y)(\sigma) \xi(t) \d \sigma &= \int_{\hat G} (t-s,\sigma) \alpha_s(y(\sigma)) \xi(t) \d \sigma
 \end{align*}
 and we also see that 
 \begin{align*}
-	\gamma_s (\hat y) \xi(t) = \alpha_{s}(\hat y(t-s)) \xi(t) = \int_{\hat G} (t-s, \sigma) \alpha_s (y (\sigma)) \xi(t) \d \sigma = \hat{\beta_s(y)} \xi(t),
+\gamma_s (\hat y) \xi(t) = \alpha_{s}(\hat y(t-s)) \xi(t) = \int_{\hat G} (t-s, \sigma) \alpha_s (y (\sigma)) \xi(t) \d \sigma = \hat{\beta_s(y)} \xi(t),
 \end{align*}
 In particular, this allows us to extend $\beta_t$ to an automorphism of $A \rtimes_\iota \hat G$ such that the associated dynamical system is covariantly isomorphic to $(C_0(G,A),G,\gamma)$ via $u$.
 
 We now show that the system $(\hat G \rtimes_\iota  A , G, \beta)$ is covariantly isomorphic to $(G \rtimes_\alpha A, \hat G, \hat \alpha)$. For this, we note that an easy calculation shows for $x \in \cc(\hat G \times G, A)$ and $\xi \in L^2(\hat G \times G, H)$ that
 \begin{align*}
-	x \xi(t, \chi)=\int_G \int_{\hat G} \alpha_{-t}(x(t, \sigma)) \xi(t-s,\chi-\sigma)(t,\sigma)\d \sigma \d s,	
+x \xi(t, \chi)=\int_G \int_{\hat G} \alpha_{-t}(x(t, \sigma)) \xi(t-s,\chi-\sigma)(t,\sigma)\d \sigma \d s,	
 \end{align*}
 and similarly for $y \in \cc(G \times \hat G, A)$ and $\eta \in L^2(G \times \hat G, H)$ we have
 \begin{align*}
-	y \eta(\chi,t) = \int_{\hat G} \int_G \alpha_{-t}(y(\sigma,s)) \xi(\chi-\sigma, t-s) \overline{(t,\sigma)} \d s \d \sigma,
+y \eta(\chi,t) = \int_{\hat G} \int_G \alpha_{-t}(y(\sigma,s)) \xi(\chi-\sigma, t-s) \overline{(t,\sigma)} \d s \d \sigma,
 \end{align*}
 for all $\chi \in \hat G$ and $t \in G$. Define an isomorphism $\Phi \colon \cc(G \times \hat G, A) \to \cc(\hat G\times G , A)$ and the isometry $w \colon L^2(G \times \hat G, H) \to L^2(\hat G \times G, H)$ by
 \begin{align*}
-	\Phi(y)(\chi,t) = (t,\chi) y(t,\chi) \text{ and } w \xi(\chi,t) = \overline{(t,\chi)} \xi(t,\chi)	
+\Phi(y)(\chi,t) = (t,\chi) y(t,\chi) \text{ and } w \xi(\chi,t) = \overline{(t,\chi)} \xi(t,\chi)	
 \end{align*}
 so that
 \begin{align*}
-	\Phi^{-1}(x)(t,\chi) = \overline{(t,\chi)} x(\chi,t) \text{ and } w^* \eta(t,\chi) = (t,\chi) \eta(\chi,t)	
+\Phi^{-1}(x)(t,\chi) = \overline{(t,\chi)} x(\chi,t) \text{ and } w^* \eta(t,\chi) = (t,\chi) \eta(\chi,t)	
 \end{align*}
 for $t \in G$, $\chi \in \hat G$. Note now that for $\sigma, \chi \in \hat G$ and $s,t \in G$ we have
 \begin{align*}
-	(s,\sigma) \overline{(t-s,\chi- \sigma)}\overline{(s,\sigma)} = \overline{(t,\chi)}(t,\sigma),
+(s,\sigma) \overline{(t-s,\chi- \sigma)}\overline{(s,\sigma)} = \overline{(t,\chi)}(t,\sigma),
 \end{align*}
 hence for $x \in \cc(G \times \hat G, A)$ and $\xi \in L^2(G \times \hat G,H)$ we get using the above identities:
 \begin{align*}
-	\Phi(x) w \xi(\chi,t)&= \int_{\hat G} \int_G \alpha_{-t}(x(s, \sigma)) \xi(t-s, \sigma- \chi)(s, \sigma) \overline{(t-s,\sigma-\chi)}\overline{(s,\sigma)} \d s \d \sigma\\
-	&= \overline{(t,\chi)} \int_{\hat G} \int_G \alpha_{-t}(x(s,\sigma)) \xi(t-s,\sigma-\chi)(t,\sigma) \d s \d \sigma\\
-	&= w x \xi(t,\chi),
+\Phi(x) w \xi(\chi,t)&= \int_{\hat G} \int_G \alpha_{-t}(x(s, \sigma)) \xi(t-s, \sigma- \chi)(s, \sigma) \overline{(t-s,\sigma-\chi)}\overline{(s,\sigma)} \d s \d \sigma\\
+&= \overline{(t,\chi)} \int_{\hat G} \int_G \alpha_{-t}(x(s,\sigma)) \xi(t-s,\sigma-\chi)(t,\sigma) \d s \d \sigma\\
+&= w x \xi(t,\chi),
 \end{align*}
 so that $w^* \Phi(x) w = x$ for all $x \in \cc(G \times \hat G, A)$. By density, it follows that the two algebras $(G \rtimes_\alpha A) \rtimes_{\hat \alpha} \hat G $ and $(A \rtimes_{\iota} \hat G)\rtimes_{\beta} G$ are isomorphic.
 \end{proof}
 We are now ready to prove the main theorem by combining the above:
 \begin{theorem}[Takai Duality]
-	Suppose that $G \acts \alpha A$. Then the double dual system $\left( (A \rtimes_\alpha G) \rtimes_{\hat \alpha} \hat G, G, \hat{\hat{\alpha}} \right)$ is covariantly isomorphic to the $C^*$-dynamical system $(A \otimes \mathbb{K}(L^2(G)), G, \alpha \otimes \mathrm{Ad} \rho)$.	
-	\label{takai:takai}
+Suppose that $G \acts \alpha A$. Then the double dual system $\left( (A \rtimes_\alpha G) \rtimes_{\hat \alpha} \hat G, G, \hat{\hat{\alpha}} \right)$ is covariantly isomorphic to the $C^*$-dynamical system $(A \otimes \mathbb{K}(L^2(G)), G, \alpha \otimes \mathrm{Ad} \rho)$.	
+\label{takai:takai}
 \end{theorem}
 \begin{proof}
-	We already have the following diagram of isomorphisms
-	\begin{equation*}
-		\begin{tikzcd}
-			A \otimes \mathbb{K}(L^2(G)) \ar[r,"\cong"] & C_0(G,A) \rtimes_{\gamma} G \ar[r, "\cong"] & (A \rtimes_\iota \hat G) \rtimes_\beta G \ar[r, "\cong"] & (A \rtimes_\alpha G) \rtimes_{\hat \alpha} \hat G
-		\end{tikzcd}
-	\end{equation*}
-	Moreover, the dynamical systems $(A \otimes \mathbb{K}(L^2(G), G, \alpha \otimes \mathrm{Ad} \rho)$ and $(C_0(G,A) \rtimes_{\gamma} G, G, \sigma)$ are covariantly isomorphic, c.f. \cref{takai:compactiso}. We finish the proof by showing that $(C_0(G,A) \rtimes_{\gamma} G, G, \sigma)$ is covariantly isomorphic to $( (A \rtimes_{\alpha} G)\rtimes_{\hat \alpha} \hat G, G, \hat{\hat{\alpha}})$, which is done by showing the relation on the generating set of functions $z \in \cc(G,C_0(G,A))$, 
-	\begin{align*}
-		z(s,t) =x f(s) \hat g(t),
-	\end{align*}
-	for some $x \in A$, $f \in \cc(G)$ and $g \in \cc(\hat G)$. Denote by $\check z \in \cc(G \times \hat G, A)$ the image of $z$ under the isomorphism above, so that
-	\begin{align*}
-		\check z(s,\chi) = x f(s) g(\chi),
-	\end{align*}
-	for $(s,\chi) \in G \times \hat G$, and note that the map $g_r \colon \chi \mapsto g(\chi)(r,\chi)$ is mapped to the function $\hat g_r \colon t \mapsto \hat g(r+t)$. Denote by $\Phi$ the last isomorphism in the above, so that $\Phi(\check z) \in \cc(\hat G\times  G, A)$ is the map
-	\begin{align*}
-		\Phi(\check z)(\chi,s) = (s,\chi) \check z(s,\chi) = x f(s) g(\chi) (s,\chi).
-	\end{align*}
-	In particular, for the action $G \acts \sigma C_0(G,A) \rtimes_{\gamma} G$ is the action $\sigma_r y(s,t) = y(s,t+r)$ for $y \in \cc(G \times G,A)$, then we see that
-	\begin{align*}
-		\sigma_r z(s,t) = x f(s) + \hat g(t+r) = x f(s) \hat g_r(t),
-	\end{align*}
-	whence we see that
-	\begin{align*}
-		\check{ \sigma_r z}(s,\chi) = x f(s) g(\chi) (r,\chi),
-	\end{align*}
-	so that
-	\begin{align*}
-	\Phi(\check{ \sigma_r z})(\chi,s) = x f(s) g(\chi)(s,\chi)(r,\chi) = \Phi(\check z)(\chi,s) (r,\chi).
-	\end{align*}
-	Note also, that if $G \acts {\hat{\hat{\alpha}}} (A \rtimes_\alpha G) \rtimes_{\hat{\alpha}} \hat G$ is the dual of the dual action, then for $y \in \cc(\hat G \times G, A) \subseteq (A \rtimes_\alpha G) \rtimes_{\hat{\alpha}} \hat G$ then
-	\begin{align*}
-		\hat{\hat{\alpha}}_r y(\chi,t) = (r,\chi) y(\chi,t),
-	\end{align*}
-	whence we see that $\hat{\hat{\alpha}}_r(\Phi(\check z))= \Phi(\check{\sigma_r (z)})$, and since $z$ generates $C_0(G,A) \rtimes_\gamma G$, this shows the desired covariant isomorphism of the systems $(C_0(G,A) \rtimes_\gamma G, G, \sigma)$ and $( (A \rtimes_\alpha G)\rtimes_{\hat{\alpha}} \hat G, G, \hat{\hat{\alpha}})$.
+We already have the following diagram of isomorphisms
+\begin{equation*}
+	\begin{tikzcd}
+		A \otimes \mathbb{K}(L^2(G)) \ar[r,"\cong"] & C_0(G,A) \rtimes_{\gamma} G \ar[r, "\cong"] & (A \rtimes_\iota \hat G) \rtimes_\beta G \ar[r, "\cong"] & (A \rtimes_\alpha G) \rtimes_{\hat \alpha} \hat G
+	\end{tikzcd}
+\end{equation*}
+Moreover, the dynamical systems $(A \otimes \mathbb{K}(L^2(G), G, \alpha \otimes \mathrm{Ad} \rho)$ and $(C_0(G,A) \rtimes_{\gamma} G, G, \sigma)$ are covariantly isomorphic, c.f. \cref{takai:compactiso}. We finish the proof by showing that $(C_0(G,A) \rtimes_{\gamma} G, G, \sigma)$ is covariantly isomorphic to $( (A \rtimes_{\alpha} G)\rtimes_{\hat \alpha} \hat G, G, \hat{\hat{\alpha}})$, which is done by showing the relation on the generating set of functions $z \in \cc(G,C_0(G,A))$, 
+\begin{align*}
+	z(s,t) =x f(s) \hat g(t),
+\end{align*}
+for some $x \in A$, $f \in \cc(G)$ and $g \in \cc(\hat G)$. Denote by $\check z \in \cc(G \times \hat G, A)$ the image of $z$ under the isomorphism above, so that
+\begin{align*}
+	\check z(s,\chi) = x f(s) g(\chi),
+\end{align*}
+for $(s,\chi) \in G \times \hat G$, and note that the map $g_r \colon \chi \mapsto g(\chi)(r,\chi)$ is mapped to the function $\hat g_r \colon t \mapsto \hat g(r+t)$. Denote by $\Phi$ the last isomorphism in the above, so that $\Phi(\check z) \in \cc(\hat G\times  G, A)$ is the map
+\begin{align*}
+	\Phi(\check z)(\chi,s) = (s,\chi) \check z(s,\chi) = x f(s) g(\chi) (s,\chi).
+\end{align*}
+In particular, for the action $G \acts \sigma C_0(G,A) \rtimes_{\gamma} G$ is the action $\sigma_r y(s,t) = y(s,t+r)$ for $y \in \cc(G \times G,A)$, then we see that
+\begin{align*}
+	\sigma_r z(s,t) = x f(s) + \hat g(t+r) = x f(s) \hat g_r(t),
+\end{align*}
+whence we see that
+\begin{align*}
+	\check{ \sigma_r z}(s,\chi) = x f(s) g(\chi) (r,\chi),
+\end{align*}
+so that
+\begin{align*}
+\Phi(\check{ \sigma_r z})(\chi,s) = x f(s) g(\chi)(s,\chi)(r,\chi) = \Phi(\check z)(\chi,s) (r,\chi).
+\end{align*}
+Note also, that if $G \acts {\hat{\hat{\alpha}}} (A \rtimes_\alpha G) \rtimes_{\hat{\alpha}} \hat G$ is the dual of the dual action, then for $y \in \cc(\hat G \times G, A) \subseteq (A \rtimes_\alpha G) \rtimes_{\hat{\alpha}} \hat G$ then
+\begin{align*}
+	\hat{\hat{\alpha}}_r y(\chi,t) = (r,\chi) y(\chi,t),
+\end{align*}
+whence we see that $\hat{\hat{\alpha}}_r(\Phi(\check z))= \Phi(\check{\sigma_r (z)})$, and since $z$ generates $C_0(G,A) \rtimes_\gamma G$, this shows the desired covariant isomorphism of the systems $(C_0(G,A) \rtimes_\gamma G, G, \sigma)$ and $( (A \rtimes_\alpha G)\rtimes_{\hat{\alpha}} \hat G, G, \hat{\hat{\alpha}})$.
 \end{proof}
+
+We end this chapter with the promise that the above result actual has meaningfull implications, even if they are not apparent just yet. In particular, in a few papers of Olesen and Pedersen, see e.g., \cite{olesenpedersen1}, \cite{olesenpedersen2} and \cite{olesenpedersen3}, Takai duality is used to describe a necessary and sufficient condition for simplicity of $A \rtimes_\alpha G$ in terms of a certain subgroup of $\hat G$ and certain properties of the action $G \acts \alpha A$. These particular articles established the foundation of much of the theory which we will examine in the next chapter.
