@@ -31,7 +31,10 @@
 \usepackage{imakeidx} 
 \usepackage{xfrac}
 \usepackage{mathabx}
+\usepackage{mathrsfs}
 
+\setsecnumdepth{subsection}
+\maxtocdepth{subsection}
 
 
 \makeatletter
@@ -69,6 +72,12 @@
 \addtolength{\textwidth}{30pt}
 \addtolength{\foremargin}{-30pt}
 \checkandfixthelayout
+
+\newcommand{\ssubsection}[1]{%
+\subsection[#1]{\centering\normalfont\scshape \textbf{#1}}}
+\checkandfixthelayout
+
+
 
 \setlength{\parindent}{0em}
 \setlength{\parskip}{1em}
@@ -108,7 +117,7 @@
 \newtheorem{example}[theorem]{Example}
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem{note}[theorem]{Note}
-\setcounter{secnumdepth}{0}
+%\setcounter{secnumdepth}{0}
 \usepackage{xpatch}
 \xpatchcmd{\proof}{\ignorespaces}{\mbox{}\\\ignorespaces}{}{}
 %\newenvironment{Proof}{\proof \mbox{} \\ \\ *}{\endproof}
@@ -196,7 +205,7 @@
 \newcommand{\acts}[1]{\stackrel{#1}{\curvearrowright}}
 %\def\acts{\curvearrowright}
 \renewcommand{\d}{\mathrm{d}}
-
+\newcommand{\Sp}[1]{\mathrm{Sp}(#1)}
 
 \makeatletter
 \newcommand{\Spvek}[2][r]{%

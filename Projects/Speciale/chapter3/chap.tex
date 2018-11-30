@@ -1,6 +1,41 @@
 \chapter{Simplicity Of Crossed Products}
 As previously mentioned, we will now begin describing the theory, both old and new, describing the ideal structure of crossed products $A \rtimes_\alpha G$ for topological groups $G$. We will begin by introducing some new structures and concepts associated to this theory.
 
-\sssection{The group spectra and properties of actions}
-\todo{Split into 1 Arveson spectrum, 2 Borcher spectrum, 3 Connes spectrum, 4 actions and 5 properties of $C^*$-algebras}
+Since we will describe theory which only describes dynamical systems $(A,G,\alpha)$ where $G$ is abelian and also theory which describes the general case, we introduce the notation that a triple $(A, G, \alpha)$ is a $C^*$-dynamic a-system if $G \acts \alpha A$ and $G$ is abelian. 
 
+\sssection{The Group Spectra}
+\ssubsection{The Arveson and Connes spectra}
+For the time being, we will untill otherwise stated assume that $G$ is abelian with dual group $\hat G$ as in the previous chapter. Recall that whenever we have a $C^*$-dynamical a-system $(A, G, \alpha)$, we also obtain a representation of $L^1(G)$.
+\begin{definition}
+	The \myemph{Arveson Spectrum} of an action $G \acts \alpha A$ is the subset $\Sp \alpha$ of $\hat G$ given by
+	\begin{align*}
+		\Sp \alpha := \left\{ \chi \in \hat G \mid \hat f(\chi) = 0 \text{ whenever } f \in L^1(G) \text{ satisfies } \alpha_f(x) = 0 \text{ for all } x \in A  \right\}.
+	\end{align*}
+	Here $\alpha_f$ denotes the \myemph{weak$^*$-integral} of $f$, i.e., such that for each $x \in A$ the element $\alpha_f(x) \in A$ is the unique element satisfying 
+	\begin{align*}
+		\varphi(\alpha_f(x)) = \int_G \varphi(\alpha_t(x))f(t) \d t, \text{ for all } \varphi \in A^*.
+	\end{align*}
+	For a proof of the existence of $\alpha_f$ for all $f \in L^1(G)$, see \cite[Appendix 3, Lemma 7.4.4]{pedersenalgauto}.
+\end{definition}
+In his dissertation, see \cite{connesclassification}, A. Connes proved that $\chi \in \Sp \alpha$ if and only if there exists a net $(a_i)_i$ in the unit sphere of $A$ such that
+\begin{align*}
+	\alpha_g(a_i) - (g,\chi) a_i \to 0, \text{ for all } g \in G.
+\end{align*}
+For a self-contained proof, see \cite[Proposition 8.1.9]{pedersenalgauto}. We shall switch between these two equivalent definitions. The main motivation (in our case) for introducing the Arveson spectrum is to define the Connes Spectrum. For this, we need to introduce the concept of hereditary sub-$C^*$-algebras:
+\begin{definition}
+	A $C^*$-subalgebra $B\subseteq A$ is \myemph{hereditary} if for all positive $x \in A_+$ we have $x \in B_+$ whenever $y \in B_+$ with $0 \leq x \leq y$. We define $\mathscr{H}(A)$ to be the set of non-zero hereditary $C^*$-subalgebras of $A$. 
+	
+	If furthermore we assume that $(A, G, \alpha)$ is a $C^*$-dynamical system, we defin $\mathscr{H}^\alpha(A)$ to be the set
+	\begin{align*}
+		\mathscr{H}^\alpha (A) := \{ D \in \mathscr{H}(A) \mid \alpha_g(D)=D \text{ for all } g \in G\}.
+	\end{align*}
+\end{definition}
+
+With this, we may define the Connes spectrum of an action $G \acts \alpha A$.
+\begin{definition}
+	The \myemph{Connes Spectrum} of an action $G \acts \alpha A$ is the subset $\Gamma(\alpha)$ of $\hat G$ given by
+	\begin{align*}
+		\Gamma( \alpha) := \bigcap_{D \in \mathscr{H}^\alpha (A)} \Sp {\alpha|_D}.	
+	\end{align*}
+\end{definition}
+As we shall see, this subset is very important in the theory of classification of crossed products, for instance it is an invariant under exterior equivalence (which we've yet to define).

@@ -22,8 +22,10 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {3}Simplicity Of Crossed Products}{63}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}The group spectra and properties of actions}{63}{section.3.1}
+\contentsline {section}{\numberline {3.1}The Group Spectra}{63}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{64}{chapter*.21}
+\contentsline {subsection}{\numberline {3.1.1}The Arveson and Connes spectra}{63}{subsection.3.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Alphabetical Index}{66}{section*.22}
+\contentsline {chapter}{Bibliography}{65}{chapter*.21}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Alphabetical Index}{67}{section*.22}

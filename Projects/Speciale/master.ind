@@ -1,16 +1,19 @@
 \begin{theindex}
 
   \item $G$-product, 57
+  \item $\mathaccentV {widehat}870{\alpha }$-integrable, 62
   \item (Ir)rational Rotation Algebra, 36
 
   \indexspace
 
   \item adjointable maps, 5
   \item amenable, 49
+  \item Arveson Spectrum, 63
 
   \indexspace
 
   \item Compact Operators on a Hilbert $A$-module, 8
+  \item Connes Spectrum, 64
 
   \indexspace
 
@@ -23,6 +26,7 @@
 
   \indexspace
 
+  \item hereditary, 64
   \item Hilbert $A$-module, 2
   \item Hilbert $C^*$-module over $A$, 2
 
@@ -72,6 +76,7 @@
 
   \indexspace
 
+  \item weak$^*$-integral, 63
   \item weakly contained, 48
 
 \end{theindex}

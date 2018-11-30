@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.28)  29 NOV 2018 18:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.28)  30 NOV 2018 14:52
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -2482,6 +2482,10 @@ LaTeX Font Info:    Redeclaring math symbol \braceru on input line 914.
 LaTeX Font Info:    Redeclaring math accent \widehat on input line 949.
 LaTeX Font Info:    Redeclaring math accent \widetilde on input line 951.
 ))
+(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup9
+)
 (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
@@ -2506,6 +2510,26 @@ Headheight and headsep: 12pt and 18.06749pt
 Footskip: 25.29494pt
 Columnsep and columnseprule: 10pt and 0pt
 Marginparsep and marginparwidth: 7pt and 120.02501pt
+Sidecapsep and sidecapwidth: 7pt and 128pt
+Sidebarhsep and sidebarwidth: 7pt and 128pt
+Sidebarvsep and sidebartopsep: 12pt and 0pt
+Sidebarheight: 548.39996pt
+Sidefoothsep and sidefootwidth: 7pt and 128pt
+Sidefootvsep and sidefootheight: 12pt and 548.39996pt
+******************************************************
+
+
+******************************************************
+Stock height and width: 794.96999pt by 614.295pt
+Top and edge trims: 0pt and 0pt
+Page height and width: 794.96999pt by 614.295pt
+Text height and width: 550pt by 401pt
+Spine and edge margins: 109.26999pt and 104.02501pt
+Upper and lower margins: 124.33748pt and 120.6325pt
+Headheight and headsep: 12pt and 18.06749pt
+Footskip: 25.29494pt
+Columnsep and columnseprule: 10pt and 0pt
+Marginparsep and marginparwidth: 7pt and 90.02501pt
 Sidecapsep and sidecapwidth: 7pt and 128pt
 Sidebarhsep and sidebarwidth: 7pt and 128pt
 Sidebarvsep and sidebartopsep: 12pt and 0pt
@@ -2685,6 +2709,11 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 5.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 5.
+
+(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
 Package xypdf Info: Line width: 0.39998pt on input line 5.
 
 ABD: EveryShipout initializing macros
@@ -2708,7 +2737,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--10
 
  []
 
-<frontpage/1.pdf, id=59, 597.48439pt x 844.93057pt>
+<frontpage/1.pdf, id=63, 597.48439pt x 844.93057pt>
 File: frontpage/1.pdf Graphic file (type pdf)
  <use frontpage/1.pdf>
 Package pdftex.def Info: frontpage/1.pdf used on input line 19.
@@ -3498,41 +3527,65 @@ fier (name{theorem.2.4.10}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1111 \end{lemma}
-                  pdfTeX warning (ext4): destination with the same identifier (
-name{theorem.2.4.11}) has been already used, duplicate ignored
+l.1107 	\end{enumerate}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{theorem.2.4.11}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1111 \end{lemma}
-                  ] [58pdfTeX warning (ext4): destination with the same identif
-ier (name{theorem.2.4.12}) has been already used, duplicate ignored
+l.1107 	\end{enumerate}
+                       ] [58pdfTeX warning (ext4): destination with the same id
+entifier (name{theorem.2.4.12}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1142 \end{align*}
+l.1143 \end{align*}
                    pdfTeX warning (ext4): destination with the same identifier 
 (name{theorem.2.4.13}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1142 \end{align*}
+l.1143 \end{align*}
                    ] [59pdfTeX warning (ext4): destination with the same identi
 fier (name{theorem.2.4.14}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1177 \end{align*}
-                   ] [60] [61]) (./chapter3/chap.tex [62]) [63
+l.1178 \end{align*}
+                   ] [60] [61]) (./chapter3/chap.tex [62pdfTeX warning (ext4): 
+destination with the same identifier (name{theorem.2.4.16}) has been already us
+ed, duplicate ignored
 
-] [64
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1 \chapter
+            {Simplicity Of Crossed Products}] [63
+
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.3.1.1
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.23 \end{align*}
+                 ]) [64pdfTeX warning (ext4): destination with the same identif
+ier (name{theorem.3.1.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.29 \backmatter
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{theorem.3.1.3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.29 \backmatter
+                ] [65
 
 
-] [65]
+] [66]
 runsystem(makeindex master.idx)...executed.
 
-
-(./master.ind)
+ (./master.ind)
 
 FiXme Summary: Number of notes: 0,
 (FiXme)        Number of warnings: 0,
@@ -3540,7 +3593,7 @@ FiXme Summary: Number of notes: 0,
 (FiXme)        Number of fatal errors: 0,
 (FiXme)        Total: 0.
 
-[66
+[67
 
 
 ]
@@ -3553,7 +3606,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 35.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 35.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 35.
 Package rerunfilecheck Info: File `master.out' has not changed.
-(rerunfilecheck)             Checksum: 8B4D434833B9978E97287A59D44623B4;967.
+(rerunfilecheck)             Checksum: 4D0500D34F648F8859A569D8BEE1D834;1025.
 Package logreq Info: Writing requests to 'master.run.xml'.
 \openout1 = `master.run.xml'.
 
@@ -3561,13 +3614,13 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 35.
  )
 (\end occurred when \iftrue on line 5 was incomplete) 
 Here is how much of TeX's memory you used:
- 41724 strings out of 493029
- 754725 string characters out of 6136234
- 1118901 words of memory out of 5000000
- 44325 multiletter control sequences out of 15000+600000
- 30927 words of font info for 91 fonts, out of 8000000 for 9000
+ 41775 strings out of 493029
+ 755638 string characters out of 6136234
+ 1119006 words of memory out of 5000000
+ 44358 multiletter control sequences out of 15000+600000
+ 33554 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,17n,82p,10480b,1788s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,17n,82p,10480b,1799s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/en
 c/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
@@ -3586,18 +3639,21 @@ lic/mathabx-type1/matha8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 mathabx-type1/mathb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mat
 habx-type1/mathx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx0900.pfb>
-</usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fo
-nts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-
-super/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1095.pfb><
-/usr/share/texmf/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf/fon
-ts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-s
-uper/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></
-usr/share/texmf/fonts/type1/public/cm-super/sfxc1200.pfb>
-Output written on master.pdf (69 pages, 900753 bytes).
+s/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs
+10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs7.pfb></usr/s
+hare/texmf/fonts/type1/public/cm-super/sfbx0900.pfb></usr/share/texmf/fonts/typ
+e1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
+fbx1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/sh
+are/texmf/fonts/type1/public/cm-super/sfcc1000.pfb></usr/share/texmf/fonts/type
+1/public/cm-super/sfcc1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
+cc1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/sha
+re/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1
+/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfx
+c1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfxc1200.pfb>
+Output written on master.pdf (70 pages, 944134 bytes).
 PDF statistics:
- 878 PDF objects out of 1000 (max. 8388607)
- 768 compressed objects within 8 object streams
- 285 named destinations out of 1000 (max. 500000)
- 122 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 912 PDF objects out of 1000 (max. 8388607)
+ 797 compressed objects within 8 object streams
+ 291 named destinations out of 1000 (max. 500000)
+ 130 words of extra memory for PDF output out of 10000 (max. 10000000)
 
