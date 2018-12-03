@@ -20,12 +20,12 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.4}The case of Abelian groups and Takai Duality}{52}{section.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {3}Simplicity Of Crossed Products}{64}{chapter.3}
+\contentsline {chapter}{\chapternumberline {3}Simplicity Of Crossed Products}{66}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}The Group Spectra}{64}{section.3.1}
+\contentsline {section}{\numberline {3.1}The Group Spectra}{66}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.1}The Arveson and Connes spectra}{64}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.1}The Arveson and Connes spectra}{66}{subsection.3.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{66}{chapter*.22}
+\contentsline {chapter}{Bibliography}{68}{chapter*.22}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Alphabetical Index}{68}{section*.23}
+\contentsline {chapter}{Alphabetical Index}{70}{section*.23}

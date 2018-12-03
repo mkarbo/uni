@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.28)  3 DEC 2018 15:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.28)  3 DEC 2018 19:55
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -3570,21 +3570,31 @@ l.1283 \end{remark}
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.1283 \end{remark}
-                   ]) (./chapter3/chap.tex [63pdfTeX warning (ext4): destinatio
-n with the same identifier (name{theorem.2.4.19}) has been already used, duplic
-ate ignored
+                   ] [63pdfTeX warning (ext4): destination with the same identi
+fier (name{theorem.2.4.19}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1 \chapter
-            {Simplicity Of Crossed Products}pdfTeX warning (ext4): destination 
-with the same identifier (name{theorem.2.4.20}) has been already used, duplicat
-e ignored
+l.1318 	\end{align*}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{theorem.2.4.20}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1 \chapter
-            {Simplicity Of Crossed Products}] [64
+l.1318 	\end{align*}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{theorem.2.4.21}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1318 	\end{align*}
+                    ] [64pdfTeX warning (ext4): destination with the same ident
+ifier (name{theorem.2.4.22}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1345 	\end{align*}
+                    ]) (./chapter3/chap.tex [65] [66
 
 pdfTeX warning (ext4): destination with the same identifier (name{theorem.3.1.1
 }) has been already used, duplicate ignored
@@ -3592,7 +3602,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{theorem.3.1.1
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.23 \end{align*}
-                 ]) [65pdfTeX warning (ext4): destination with the same identif
+                 ]) [67pdfTeX warning (ext4): destination with the same identif
 ier (name{theorem.3.1.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -3604,10 +3614,10 @@ me{theorem.3.1.3}) has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.29 \backmatter
-                ] [66
+                ] [68
 
 
-] [67]
+] [69]
 runsystem(makeindex master.idx)...executed.
 
  (./master.ind)
@@ -3618,7 +3628,7 @@ FiXme Summary: Number of notes: 0,
 (FiXme)        Number of fatal errors: 0,
 (FiXme)        Total: 0.
 
-[68
+[70
 
 
 ]
@@ -3632,10 +3642,6 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 35.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 35.
 Package rerunfilecheck Info: File `master.out' has not changed.
 (rerunfilecheck)             Checksum: 60B082FAC5F8314DF1CA423E15DEB3A1;1025.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package logreq Info: Writing requests to 'master.run.xml'.
 \openout1 = `master.run.xml'.
 
@@ -3643,10 +3649,10 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 35.
  )
 (\end occurred when \iftrue on line 5 was incomplete) 
 Here is how much of TeX's memory you used:
- 41795 strings out of 493029
- 756025 string characters out of 6136234
+ 41801 strings out of 493029
+ 756102 string characters out of 6136234
  1119006 words of memory out of 5000000
- 44371 multiletter control sequences out of 15000+600000
+ 44373 multiletter control sequences out of 15000+600000
  33554 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,17n,82p,10480b,1799s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3679,10 +3685,10 @@ cc1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/sha
 re/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1
 /public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfx
 c1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfxc1200.pfb>
-Output written on master.pdf (71 pages, 949692 bytes).
+Output written on master.pdf (73 pages, 956136 bytes).
 PDF statistics:
- 926 PDF objects out of 1000 (max. 8388607)
- 809 compressed objects within 9 object streams
- 298 named destinations out of 1000 (max. 500000)
+ 943 PDF objects out of 1000 (max. 8388607)
+ 824 compressed objects within 9 object streams
+ 302 named destinations out of 1000 (max. 500000)
  130 words of extra memory for PDF output out of 10000 (max. 10000000)
 

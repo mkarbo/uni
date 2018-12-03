@@ -1295,7 +1295,58 @@ where $1$ is the identity operator on $M(A)$.
 		\hat \lambda (\delta_\sigma \ast \hat f) = \lambda_{\sigma f} = \int_{\hat G} \hat \alpha_\sigma(\lambda_t) f(t) \d t  = \hat \alpha_\sigma ( \lambda_f) = \hat \lambda_\sigma ( \hat \lambda(\hat f)).
 	\end{align*}
 	Continuity of the extension ensures that $\hat \lambda(\delta_{-\sigma} \ast g) = \hat \alpha_{\sigma}(\hat \lambda(g))$ for all $g \in C_b(\hat G)$. Letting $f \in L^1(G) \cap L^2(G)$, we then obtain
+	\begin{align*}
+	\hat \alpha_\sigma(\lambda_f^* \lambda_f) = \hat \alpha_\sigma(\hat \lambda( | \hat f | ^2)) = \hat \lambda(\delta_\sigma \ast | \hat f |^2).		
+	\end{align*}
+	Since $\lv \delta_\sigma \ast f \rv_2 = \lv f \rv_2$, we see that
+	\begin{align*}
+		I(\lambda_f^* \lambda_f) = I\left( \int \delta_\sigma \ast | \hat f \|^2 \d \sigma \right) \hat \lambda (\lv \hat f \rv_2^2 1) = \lv f \rv_2^2 1.
+	\end{align*}
 \end{proof}
+\begin{lemma}
+	Let $A$ be a $G$-product and $f,g \in L^1(G) \cap L^2(G)$ and $x \in M(A)$. Then $ \lambda_f^* x \lambda_g$ is $\hat \alpha$-integrable. If we further assume that $x \in A$, then the function $t \mapsto I(\lambda_f^* x \lambda_g \lambda_f)$ is continuous with respect to the norm topology and $\lambda_f^* x \lambda_f - x \to 0$ whenever $f$ ranges through an approximate identity of $L^1(G)$ which is also in $L^2(G)$.
+	\label{olpe1lemma2.7}
+\end{lemma}
+\begin{proof}
+	We first note that by \cref{olpe1lemma2.5} and \cref{olpe1lemma2.6}, whenever $f\in L^1(G) \cap L^2(G)$ and $0 \leq x \in B$, we have $0 \leq \lambda_f^* x \lambda_f \leq \lv x \rv \lambda_f^* \lambda_f$ and similarly. Hence, replacing $x$ with $x^{\frac12}$ and letting $f,g \in L^1(G) \cap L^2(G)$ be arbitrary we see that $( x^{\frac12}\lambda_f)^* x^{\frac12} g  = \lambda_f^* x \lambda_g$ will be $\hat \alpha$-integrable. Hence it holds for every $x \in B$ as well.
 
-
+	For the last statement, we see using \cref{olpe1lemma2.5} that
+	\begin{align*}
+		\lv I(\lambda_f^* x \lambda_g \lambda_t) - I(\lambda_f^* x \lambda_g \lambda_s)\rv^2 &= \lv I(\lambda_f^* x \lambda_g(\lambda_t-\lambda_s)\rv^2 \\
+		&\leq \lv I(\lambda_f^* x x^* \lambda_f)\rv  \lv I( ( \lambda_t - \lambda_s)^* \lambda_g^* \lambda_g ( \lambda_t - \lambda_s))\rv \\
+		&\leq \lv f \rv _ 2^2 \lv x \rv ^2 \lv g \ast(\delta_{t}-\delta_s) \rv_2^2,
+	\end{align*}
+	which tends to $0$ as $s \to t$, showing that the claim of continuity is true. For the final statment, if $f \geq 0$ with $\lv f \rv_1 = 1$, then
+	\begin{align*}
+		\lv \lambda_f^* x \lambda_f - x \rv &= \lv \int \int (\lambda_t x \lambda_s-x) f(s) f^*(t) \d t \d s \rv \\
+	&= \lv \int \int (\lambda_t x  - x \lambda_s^*)f^*(t) \d t \lambda_s f(s) \d s \rv\\
+	&\leq \int \int \lv ( \lambda_t x -x + (x-x\lambda_s^* )\rv |f^*(t)| \d t \lv\lambda_s \rv |f(s)| \d s \\
+	&\leq \int \int (\lv \lambda_t x - x \rv + \lv  x -x\lambda_s^* \rv)  f^*(t) f(s) \d t \d s\\
+	&= \int \lv \lambda_t x -x \rv f^*(t) \d t + \int \lv x \lambda_s - x \lambda_s^* \lambda_s \rv f(s) \d s,
+	\end{align*}
+	which, whenever $x \in A$ will go to zero whenever if $f$ ranges over an approximate identity of $L^1(G)$ consisting of continuous functions with shrinking compact supports, since we assumed continuity of the maps $t \mapsto \lambda_t x$ and $s \mapsto x \lambda_s$ whenever $x \in A$
+\end{proof}
+\begin{proposition}
+	Let $A$ be a $G$-product. If $x = \lambda_f^* y \lambda_f \in A$ for $f \in L^1(G) \cap L^2(G)$ and $y \in A$, then $I(x)$ satisfies Landstad's condition and $x$ is the norm limit of elements given by 
+	\begin{align*}
+		\int I(x \lambda_{-t}) \lambda_t f_i(t) \d t,
+	\end{align*}
+	for some net $(f_i) \subseteq L^1(G)$ satisfying $(\hat f_i) \subseteq L^1(\hat G)$ is an approximate identity.
+\end{proposition}
+\begin{proof}
+	Note first that given $x \in A$ of the form given above, then by \cref{olpe1lemma2.7}, and $x$ is $\hat \alpha$-integrable and the map $t \mapsto I(x \lambda_t)$ is continuous in norm. We calculate
+	\begin{align*}
+		I(x\lambda_{-t}) \lambda_t = \int_{\hat G} \hat \alpha_\sigma(x \lambda_{-t}) \lambda_t \d \sigma &= \int_{\hat G} \hat \alpha_\sigma(x \lambda_{-t}) \overline{(t,\sigma)} \hat \alpha_\sigma(\lambda_t) \d \sigma\\
+		&= \int_{\hat G} \hat \alpha_\sigma(x) \overline{(t,\sigma)} \d \sigma,
+	\end{align*}
+	hence if $(f_i) \subseteq L^1(G)$ satisfies the conditions of the proposition, then
+	\begin{align*}
+		\int_{G}I(x \lambda_{-t}) \lambda_t f_i(t) \d t = \int_{\hat G} \int_G \hat \alpha_\sigma(x) \overline{(t,\sigma)} f_i(t) \d t \d \sigma = \int_{\hat G} \hat \alpha_\sigma (x) \hat f_i(-\sigma) \d \sigma \in A,
+	\end{align*}
+	and in particular
+	\begin{align*}
+		\int_G I(x \lambda_{-t}) \lambda_t f_i(t) \d t \to x.
+	\end{align*}
+	in norm
+\end{proof}
 \todo{rewrite since more added above} We end this chapter with the promise that the above result actual has meaningfull implications, even if they are not apparent just yet. In particular, in a few papers of Olesen and Pedersen, see e.g., \cite{olesenpedersen1}, \cite{olesenpedersen2} and \cite{olesenpedersen3}, Takai duality is used to describe a necessary and sufficient condition for simplicity of $A \rtimes_\alpha G$ in terms of a certain subgroup of $\hat G$ and certain properties of the action $G \acts \alpha A$. These particular articles established the foundation of much of the theory which we will examine in the next chapter.
