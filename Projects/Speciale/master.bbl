@@ -154,7 +154,7 @@
   \strng{namehash}{CA1}
   \strng{fullhash}{CA1}
   \field{sortinit}{C}
-  \field{title}{Une classification desfacteurs de type}
+  \field{title}{Une classification des facteurs de type III}
   \field{year}{1973}
 \endentry
 
@@ -230,6 +230,25 @@
   \field{title}{Hilbert C*-modules: a toolkit for operator algebraists}
   \field{volume}{210}
   \field{year}{1995}
+\endentry
+
+\entry{landstad1979duality}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Landstad}{L.}%
+     {Magnus~B}{M.~B.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{LMB1}
+  \strng{fullhash}{LMB1}
+  \field{sortinit}{L}
+  \field{number}{2}
+  \field{pages}{223\bibrangedash 267}
+  \field{title}{Duality theory for covariant systems}
+  \field{volume}{248}
+  \field{journaltitle}{Transactions of the American Mathematical Society}
+  \field{year}{1979}
 \endentry
 
 \entry{murphy2014c}{book}{}
@@ -439,15 +458,15 @@
   \name{author}{1}{}{%
     {{}%
      {Schilling}{S.}%
-     {ren{\'e}~L}{r.~L.}%
+     {Ren{\'e}~L}{R.~L.}%
      {}{}%
      {}{}}%
   }
   \list{publisher}{1}{%
     {Cambridge University Press}%
   }
-  \strng{namehash}{SrL1}
-  \strng{fullhash}{SrL1}
+  \strng{namehash}{SRL1}
+  \strng{fullhash}{SRL1}
   \field{sortinit}{S}
   \field{title}{Measures, Integrals and Martingales}
   \field{year}{2017}

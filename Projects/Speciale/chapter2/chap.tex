@@ -1249,14 +1249,53 @@ Note also, that if $G \acts {\hat{\hat{\alpha}}} (A \rtimes_\alpha G) \rtimes_{\
 whence we see that $\hat{\hat{\alpha}}_r(\Phi(\check z))= \Phi(\check{\sigma_r (z)})$, and since $z$ generates $C_0(G,A) \rtimes_\gamma G$, this shows the desired covariant isomorphism of the systems $(C_0(G,A) \rtimes_\gamma G, G, \sigma)$ and $( (A \rtimes_\alpha G)\rtimes_{\hat{\alpha}} \hat G, G, \hat{\hat{\alpha}})$.
 \end{proof}
 
-Before we begin our discussion of simplicity in crossed product in the next chapter, we will actually go back to the concept of a $G$-product and properties thereof.
+Before we begin our discussion of simplicity in crossed product in the next chapter, we will actually go back to the concept of a $G$-product and properties thereof, since it will give us a useful characterization of crossed products. We follow the guidelines of \cite{olesenpedersen1} in doing this, but the results are due to Landstad (\cite{landstad1979duality}).
 \begin{definition}
 	An element $y \in M(A)_+$, for a $G$-product $A$, is said to be \myemph{$\hat \alpha $-integrable} if there is an element $I(y) \in M(A)_+$ such that
 	\begin{align*}
 		\varphi(I(y)) = \int_G \varphi(\hat \alpha_\chi (y)) \d \chi,
 	\end{align*}
-	for all $\varphi \in A^*$.
+	for all $\varphi \in A^*$. If $x \in M(A)$ is such that $x$ may be decomposed into $\hat \alpha$-integrable positive parts, we then say that $x$ is also $\hat \alpha$-integrable.
 \end{definition}
+\begin{note}
+	If $0 \leq x \leq y \in M(A)_+$ and $y$ is $\hat \alpha$-integrable, then both $x$ is $\hat \alpha$-integrable. This can be seen from considering \todo{finish easy argument using statespace theory} 
+\end{note}
+
+
+\begin{lemma}
+Let $A$ be a $G$-product. Assume that $x,y \in M(B)$ satisfy that $x^*x$ and $y^*y$ are $\hat \alpha$-integrable. Then $y^*x$ is $\hat \alpha$-integrable with
+\begin{align*}
+	\lv I(y^*x)\rv^2 \leq \lv I(x^*x) \rv \lv I(y^*y)\rv.
+\end{align*}
+	\label{olpe1lemma2.5}
+\end{lemma}
+\begin{proof}
+	It follows from the polarization identity that $y^*x$ is $\hat \alpha$-integrable, since $0 \leq (x+i^ky)^*(x+i^ky) \leq 2(x^*x+y^*y)$. Assume that $M(B)$ is faithfully represented in $\mathbb{B}(H)$ for some Hilbert space $H$. Then for all $\xi, \eta \in H$ we have
+	\begin{align*}
+		|\langle I(y^*x) \xi , \eta\rangle| &= \left| \int_{\hat G} \langle \hat \alpha_\sigma(x) \xi , \hat \alpha_\sigma(y) \eta \rangle \d \sigma\right| \\
+		&\leq \left( \int_{\hat G} \lv \hat \alpha_\sigma(x) \xi \rv ^2 \d \sigma \int_{\hat G} \lv \hat \alpha_\sigma(y) \eta \rv^2 \d \sigma \right)^{\frac12}\\
+		&= \left( \langle I(x^*x) \xi, \xi \rangle \langle I(y^*y) \eta, \eta \rangle  \right)^{\frac12},
+	\end{align*}
+	finishing the proof.
+\end{proof}
+\begin{remark}	
+	For the following, recall that the Fourier transformation embeds $L^1(G)$ into a dense $*$-subalgebra of $C_0(\hat G)$, and recall that we saw that $M(C_0(\hat G)) \cong C_b(\hat G)$ in chapter 1, and hence given a $G$-product $A$, the (induced) $*$-representation $\lambda \colon L^1(G) \to M(A)$ extends by continuity to a $*$-representation of $\hat \lambda \colon C_0(\hat G)\to M(A)$. Taking the multiplier on each side, we obtain a representation $\hat \lambda M(C_0(\hat G)) = C_b(\hat G) \to M(M(A)) = M(A)$.
+\end{remark}
+\begin{lemma}
+	Let $A$ be a $G$-product. If $f \in L^1(G) \cap L^2(G)$, then $\lambda_f^* \lambda_f$ is $\hat \alpha$-integrable and
+\begin{align*}
+	I(\lambda_f^* \lambda_f) = \lv f \rv_ 2^2 1,
+\end{align*}
+where $1$ is the identity operator on $M(A)$.
+	\label{olpe1lemma2.6}
+\end{lemma}
+\begin{proof}
+	Recall that for $f \in L^1(G)$, the extension $\hat \lambda$ to $C_0(\hat G)$ satisfies $\hat \lambda(\hat f) = \lambda_f$. Hence, if $\sigma \in \hat G$ and $f \in L^1(G)$, then $\hat {\sigma \cdot f } = \delta_{-\sigma} \ast \hat f$, and so
+	\begin{align*}
+		\hat \lambda (\delta_\sigma \ast \hat f) = \lambda_{\sigma f} = \int_{\hat G} \hat \alpha_\sigma(\lambda_t) f(t) \d t  = \hat \alpha_\sigma ( \lambda_f) = \hat \lambda_\sigma ( \hat \lambda(\hat f)).
+	\end{align*}
+	Continuity of the extension ensures that $\hat \lambda(\delta_{-\sigma} \ast g) = \hat \alpha_{\sigma}(\hat \lambda(g))$ for all $g \in C_b(\hat G)$. Letting $f \in L^1(G) \cap L^2(G)$, we then obtain
+\end{proof}
 
 
 \todo{rewrite since more added above} We end this chapter with the promise that the above result actual has meaningfull implications, even if they are not apparent just yet. In particular, in a few papers of Olesen and Pedersen, see e.g., \cite{olesenpedersen1}, \cite{olesenpedersen2} and \cite{olesenpedersen3}, Takai duality is used to describe a necessary and sufficient condition for simplicity of $A \rtimes_\alpha G$ in terms of a certain subgroup of $\hat G$ and certain properties of the action $G \acts \alpha A$. These particular articles established the foundation of much of the theory which we will examine in the next chapter.
