@@ -1279,7 +1279,7 @@ Let $A$ be a $G$-product. Assume that $x,y \in M(B)$ satisfy that $x^*x$ and $y^
 	finishing the proof.
 \end{proof}
 \begin{remark}	
-	For the following, recall that the Fourier transformation embeds $L^1(G)$ into a dense $*$-subalgebra of $C_0(\hat G)$, and recall that we saw that $M(C_0(\hat G)) \cong C_b(\hat G)$ in chapter 1, and hence given a $G$-product $A$, the (induced) $*$-representation $\lambda \colon L^1(G) \to M(A)$ extends by continuity to a $*$-representation of $\hat \lambda \colon C_0(\hat G)\to M(A)$. Taking the multiplier on each side, we obtain a representation $\hat \lambda M(C_0(\hat G)) = C_b(\hat G) \to M(M(A)) = M(A)$.
+	For the following, recall that the Fourier transformation embeds $L^1(G)$ into a dense $*$-subalgebra of $C_0(\hat G)$, and recall that we saw that $M(C_0(\hat G)) \cong C_b(\hat G)$ in chapter 1, and hence given a $G$-product $A$, the (induced) $*$-representation $\lambda \colon L^1(G) \to M(A)$ extends by continuity to a $*$-representation of $\hat \lambda \colon C_0(\hat G)\to M(A)$. Taking the multiplier on each side, we obtain a representation $\hat \lambda \colon M(C_0(\hat G)) = C_b(\hat G) \to M(M(A)) = M(A)$.
 \end{remark}
 \begin{lemma}
 	Let $A$ be a $G$-product. If $f \in L^1(G) \cap L^2(G)$, then $\lambda_f^* \lambda_f$ is $\hat \alpha$-integrable and
@@ -1290,6 +1290,7 @@ where $1$ is the identity operator on $M(A)$.
 	\label{olpe1lemma2.6}
 \end{lemma}
 \begin{proof}
+	\todo{Note on dirac convolutions being measure convolutions and L1 functions}
 	Recall that for $f \in L^1(G)$, the extension $\hat \lambda$ to $C_0(\hat G)$ satisfies $\hat \lambda(\hat f) = \lambda_f$. Hence, if $\sigma \in \hat G$ and $f \in L^1(G)$, then $\hat {\sigma \cdot f } = \delta_{-\sigma} \ast \hat f$, and so
 	\begin{align*}
 		\hat \lambda (\delta_\sigma \ast \hat f) = \lambda_{\sigma f} = \int_{\hat G} \hat \alpha_\sigma(\lambda_t) f(t) \d t  = \hat \alpha_\sigma ( \lambda_f) = \hat \lambda_\sigma ( \hat \lambda(\hat f)).
@@ -1347,6 +1348,26 @@ where $1$ is the identity operator on $M(A)$.
 	\begin{align*}
 		\int_G I(x \lambda_{-t}) \lambda_t f_i(t) \d t \to x.
 	\end{align*}
-	in norm
+	in norm, since $(\hat f_i)$ is an approximate identity \todo{add note on shrinking support and norm can be chosen to be 1}. To see that $I\left( x \right)$ satisfies Landstad's condition for each $x$ of the above form, we first note that the first condition is immediately satisfied, since $G$ is abelian and hence unimodular. For the second, et $g \in L^1(G)$ and $\varepsilon > 0$. Pick a symmetric neighborhood $E$ of $0$ satisfying
+	\begin{align*}
+		\lv I(x \lambda_t) - I(x) \rv<\varepsilon \text{ and } \lv g - \delta_t \times g \rv_1 < \varepsilon,
+	\end{align*}
+	for all $t \in E$. Pick now positive $f \in L^1(G)$ satsifying $\lv f \rv_1 = 1$ with support contained in $E$ such that $\hat f \in L^1 (\hat G)$. Then we see that
+	\begin{align*}
+		\lv g - f \times g \rv_1 = \int_G \left|g(s) - \int_G f(t) g(s-t) \d t\right| \d s &= \int_G \left | \int_G f(t)(g(s)-g(s-t)) \d t \right| \d s \\
+		&\leq \int_G f(t) \int_G | g(s) - g(s-t)| \d s \d t\\
+		& = \int_G f(t) \lv g - \delta_t \ast g \rv \d t \\
+		&< \varepsilon.
+	\end{align*}
+	With this, we see that
+	\begin{align*}
+		\lv I(x) \lambda_g - \int_G I(x \lambda_{-t})\lambda_t f(t) \d t \lambda_g \rv &= \lv I(x) \lambda_g - I(x)\lambda_f \lambda_g + I(x) \lambda_f \lambda_g - \int_G I(x \lambda_{-t})\lambda_t f(t) \d t \lambda_g \rv\\
+		\leq \lv I(x) (\lambda_g - \lambda_f \lambda_g ) \rv + \lv \int_G (I(x) - I(x\lambda_{-t}))\lambda_t f(t) \d t \lambda_g\rv\\
+		&\leq \lv I(x)\rv \lv g - f \ast g \rv_1 + \int_G \lv I(x) - I(x\lambda_{-t})\rv f(t) \d t \lv g \rv_1\\
+		&\leq (\lv I(x) \rv + \lv g \rv_1) \varepsilon,
+	\end{align*}
+	from which we conclude, by arbitrariness of $\varepsilon$, that $I(x) \lambda_g \in A$. Similarly $\lambda_g I(x) \in A$. For the third condition, note that $\lambda_t I(x) \lambda_t^* = I(\lambda_t I(x) \lambda_t^*)$, and the map $t \mapsto I(\lambda_t x \lambda_t^*)$ is continuous by \cref{olpe1lemma2.7}, finishing the proof.
 \end{proof}
+
+
 \todo{rewrite since more added above} We end this chapter with the promise that the above result actual has meaningfull implications, even if they are not apparent just yet. In particular, in a few papers of Olesen and Pedersen, see e.g., \cite{olesenpedersen1}, \cite{olesenpedersen2} and \cite{olesenpedersen3}, Takai duality is used to describe a necessary and sufficient condition for simplicity of $A \rtimes_\alpha G$ in terms of a certain subgroup of $\hat G$ and certain properties of the action $G \acts \alpha A$. These particular articles established the foundation of much of the theory which we will examine in the next chapter.
