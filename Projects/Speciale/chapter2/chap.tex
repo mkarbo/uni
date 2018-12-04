@@ -1168,7 +1168,7 @@ Define $\gamma_t \colon C_0(G,A) \to C_0(G,A)$ to be the diagonal action
 \begin{align*}
 \gamma_t y(s) = \alpha_t (y(s-t)),
 \end{align*}
-here diagonal comes from the fact that $\gamma_t = \alpha_t \otimes \mathrm{lt}_t$, when we identify $C_0(G,A) \cong C_0(G) \otimes A$\todo{add diagonal to earlier introduction}. Let $u$ be as in \cref{takai:trivcrossiso}, $\hat{\beta_s(y)} \eta(t) = u^*yu$. Then, if $\xi \in L^2(G,H)$ we see that
+here diagonal comes from the fact that $\gamma_t = \alpha_t \otimes \mathrm{lt}_t$, when we identify $C_0(G,A) \cong C_0(G) \otimes A$\todo{add diagonal to earlier introduction}. Let $u$ be as in \Cref{takai:trivcrossiso}, $\hat{\beta_s(y)} \eta(t) = u^*yu$. Then, if $\xi \in L^2(G,H)$ we see that
 \begin{align*}
 \hat{\beta_s(y)}\xi(t) = \hat{\beta_s(y)}(t) \xi(t) = \int_{\hat G} (t, \sigma) \beta_s(y)(\sigma) \xi(t) \d \sigma &= \int_{\hat G} (t-s,\sigma) \alpha_s(y(\sigma)) \xi(t) \d \sigma
 \end{align*}
@@ -1305,7 +1305,7 @@ where $1$ is the identity operator on $M(A)$.
 	\end{align*}
 \end{proof}
 \begin{lemma}
-	Let $A$ be a $G$-product and $f,g \in L^1(G) \cap L^2(G)$ and $x \in M(A)$. Then $ \lambda_f^* x \lambda_g$ is $\hat \alpha$-integrable. If we further assume that $x \in A$, then the function $t \mapsto I(\lambda_f^* x \lambda_g \lambda_f)$ is continuous with respect to the norm topology and $\lambda_f^* x \lambda_f - x \to 0$ whenever $f$ ranges through an approximate identity of $L^1(G)$ which is also in $L^2(G)$.
+	Let $A$ be a $G$-product and $f,g \in L^1(G) \cap L^2(G)$ and $x \in M(A)$. Then $ \lambda_f^* x \lambda_g$ is $\hat \alpha$-integrable. If we further assume that $x \in A$, then the function $t \mapsto I(\lambda_f^* x \lambda_g \lambda_t)$ is continuous with respect to the norm topology and $\lambda_f^* x \lambda_f - x \to 0$ whenever $f$ ranges through an approximate identity of $L^1(G)$ which is also in $L^2(G)$.
 	\label{olpe1lemma2.7}
 \end{lemma}
 \begin{proof}
@@ -1333,6 +1333,7 @@ where $1$ is the identity operator on $M(A)$.
 		\int I(x \lambda_{-t}) \lambda_t f_i(t) \d t,
 	\end{align*}
 	for some net $(f_i) \subseteq L^1(G)$ satisfying $(\hat f_i) \subseteq L^1(\hat G)$ is an approximate identity.
+	\label{olpe1lemma2.8}
 \end{proposition}
 \begin{proof}
 	Note first that given $x \in A$ of the form given above, then by \cref{olpe1lemma2.7}, and $x$ is $\hat \alpha$-integrable and the map $t \mapsto I(x \lambda_t)$ is continuous in norm. We calculate
@@ -1362,12 +1363,61 @@ where $1$ is the identity operator on $M(A)$.
 	With this, we see that
 	\begin{align*}
 		\lv I(x) \lambda_g - \int_G I(x \lambda_{-t})\lambda_t f(t) \d t \lambda_g \rv &= \lv I(x) \lambda_g - I(x)\lambda_f \lambda_g + I(x) \lambda_f \lambda_g - \int_G I(x \lambda_{-t})\lambda_t f(t) \d t \lambda_g \rv\\
-		\leq \lv I(x) (\lambda_g - \lambda_f \lambda_g ) \rv + \lv \int_G (I(x) - I(x\lambda_{-t}))\lambda_t f(t) \d t \lambda_g\rv\\
+		&\leq \lv I(x) (\lambda_g - \lambda_f \lambda_g ) \rv + \lv \int_G (I(x) - I(x\lambda_{-t}))\lambda_t f(t) \d t \lambda_g\rv\\
 		&\leq \lv I(x)\rv \lv g - f \ast g \rv_1 + \int_G \lv I(x) - I(x\lambda_{-t})\rv f(t) \d t \lv g \rv_1\\
 		&\leq (\lv I(x) \rv + \lv g \rv_1) \varepsilon,
 	\end{align*}
 	from which we conclude, by arbitrariness of $\varepsilon$, that $I(x) \lambda_g \in A$. Similarly $\lambda_g I(x) \in A$. For the third condition, note that $\lambda_t I(x) \lambda_t^* = I(\lambda_t I(x) \lambda_t^*)$, and the map $t \mapsto I(\lambda_t x \lambda_t^*)$ is continuous by \cref{olpe1lemma2.7}, finishing the proof.
 \end{proof}
+The above proposition was the final ingredient in the theorem of Landstad, which shows that every $G$-product $B$ is also a crossed product $A \rtimes_\alpha G$ for some $C^*$-algebra $A$ with $G \acts \alpha A$:
+\begin{theorem}
+	A $C^*$-algebra $B$ is a $G$-product if and only if there exists a $C^*$-algebra $A$ and an action $G \acts \alpha A$ such that $B = A \rtimes_\alpha G$. The $C^*$-algebra $A$ consists of exactly the elements of $M(B)$ satisfying Landstad's conditions, with $\alpha_t = \mathrm{Ad} {\lambda_t}|_A$, $t \in G$.	
+	\label{landstadcross}
+\end{theorem}
+\begin{proof}
+	We have already seen one implication earlier, i.e., that a crossed product $A \rtimes_\alpha G$ is a $G$-product. For the converse, assume that $B$ is a $G$-product and $A \subseteq M(B)$ be the set of elements which satisfy Landstad's condition. The three conditions are all based on continuous operations in such a way that $A$ is closed, this is immediate. It is easy to check that $A$ is also a $*$-subalgebra, hence a $C^*$-subalgebra of $M(B)$. 
+	
+	The last of the Landstad conditions ensures that the map $t \mapsto \alpha_t := \mathrm{Ad} \lambda_t|_A$ is a strongly continuous action of $G$ on $A$, so that $(A, G, \alpha)$ becomes a $C^*$-dynamical system.
+	
+	Let $M(B)$ be faithfully represented on $H$ for some Hilbert space. In particular, this means that $A \subseteq \mathbb{B}(H)$ so that we may identify $A \rtimes_\alpha G \subseteq \mathbb{B}(L^2(G,H))$. Note that by assumption that $B$ is a $G$-product, the action $\hat G \acts {\hat \alpha} B$ gives a faithful non-degenerate representation $\pi$ of $B \rtimes_{\hat \alpha } \hat G$ on $\mathbb{B}(L^2(\hat G, H))$ as well, given by 
+	\begin{align*}
+		\pi(y) \eta (\sigma) = \hat \alpha_{-\sigma}(y) \eta (\sigma),	
+	\end{align*}
+	for all $y \in B, \eta \in L^2(\hat G, H)$ and $\sigma \in \hat G$. This representation extends to a faithful representation $\overline p$ of $M(B)$ (by non-degeneracy) on $\mathbb{B}(L^2(\hat G,H))$. We will also denote the extension by $\pi$. As in the proof of \cref{takai:trivcrossiso}, let $u \colon L^2(G,H) \to L^2(\hat G, H)$ denote the isometry
+	\begin{align*}
+		u \xi(\sigma) &= \int_G \lambda_t \xi(t) \overline{(t,\sigma)} \ d \sigma \text{ and }\\
+		u^* \eta(t) = \lambda_{-t} \int_{\hat G} \eta(\sigma) (t, \sigma) \d \sigma.
+	\end{align*}
+	If $f \otimes x \in \cc(G,A)$, $f \in \cc(G)$ and $x \in A$, then an easy calculation shows that $ (f \otimes x) u^* \eta(\sigma) = (u^* \pi(x \lambda_f) \eta)(t)$, so that
+	\begin{align}
+		u (f \otimes x) u^* = \pi(x \lambda_f) \in \pi(B),
+		\label{eq:lands}
+	\end{align}
+	since $x \lambda_f \in B$. Density of the span of functions $f \otimes x$ in $A \rtimes_\alpha G$ shows that
+	\begin{align*}
+		u (A \rtimes_\alpha G)u^* \subseteq \pi(B).
+	\end{align*}
+	For the converse, let $x \in B$ be $\hat \alpha$-integrable of the form $\lambda_g^* y \lambda_g$, for some $g \in L^1(G) \cap L^2(G)$ and $y \in B$. By \cref{olpe1lemma2.8}, we have $I(x) \in A$. For each $f \in \cc(G)$ and $t \in G$, we then calculate, using the identity of \cref{eq:lands}:
+	\begin{align*}
+		u(I(x\lambda_{-t} \otimes \delta_t \ast f) u^* = \pi(I(x\lambda_{-t})\lambda_{\delta_t \ast f}) = \pi(I(x \lambda_{-t}) \lambda_t \lambda_f).
+	\end{align*}
+	Let $(f_i) \subseteq L^1(G)$ be a net satisfying the conditions of \cref{olpe1lemma2.7}. Then, 
+	\begin{align*}
+		x_i := \int_G I(x \lambda_{-t}) \lambda_t f_i(t) \d t \to x,
+	\end{align*}
+	in norm. By \cref{olpe1lemma2.8}, we know that the map, $t \mapsto I(x\lambda_t)=I(\lambda_g^* y \lambda_g t)$, is a continuous map $G \to M(B)$. Continuity of $\mathrm{Ad} u$ and $\pi$ plus the identity above gives that the map $t \mapsto I(x \lambda_{-t}) \otimes \delta_t \ast f$ is continuous from $G \to \cc(G,A) \subseteq A \rtimes_\alpha G$. In particular, density of $\cc(G)\subseteq L^1(G)$ ensures that the integral of $t \mapsto I(x \lambda_{-t} \otimes \delta_t \ast f) \cdot f_i(t)$ makes sense for all $i$, i.e., that
+	\begin{align*}
+		u^* \pi(x_i \lambda_f)u &= \int_G u^* (\pi(I(x_i \lambda_{-t})) \lambda_t \lambda_f )f_i(t))u \d t \\
+		&= \int_G (I(x_i \lambda_{-t}) \otimes \delta_t \ast f ) f_i(t) \d t \in A \rtimes_\alpha G.
+	\end{align*}
+	In the limit of $i$, we get that $u^* \pi(x \lambda_f) u \in A \rtimes_\alpha G$, implying by \cref{olpe1lemma2.8} that $u^* \pi(z \lambda_f) u \in A \rtimes_\alpha G$ for all $z \in B$. Letting $f$ go through an approximate identity of $L^1(G)$ with shrinking compact support, we know that $z\lambda_f - z \to 0$ for all $z \in B$. Hence
+	\begin{align*}
+		u^* \pi(B) u \subseteq A \rtimes_\alpha G.
+	\end{align*}	
+\end{proof}
+It is quite easy to show that the above $C^*$-dynamical system is unique up to covariant isomorphism, however we will not go into details and refer the reader to \cite[Theorem 2.9]{olesenpedersen1}. The proof relies on the result, which we also wont go into detail with, but include.
+\begin{lemma}[\mbox{\cite[Lemma 2.10]{olesenpedersen1}}]%
+	Let $(A, G, \alpha)$ be a $C^*$-dynamical system and let $B \subseteq A$ be a $G$-invariant $C^*$-subalgebra of $A$. Then there is a natural injection $B \rtimes_\alpha G \subseteq A \rtimes_\alpha G$ which is surjective if and only if $B = A$.
+\end{lemma}
 
-
-\todo{rewrite since more added above} We end this chapter with the promise that the above result actual has meaningfull implications, even if they are not apparent just yet. In particular, in a few papers of Olesen and Pedersen, see e.g., \cite{olesenpedersen1}, \cite{olesenpedersen2} and \cite{olesenpedersen3}, Takai duality is used to describe a necessary and sufficient condition for simplicity of $A \rtimes_\alpha G$ in terms of a certain subgroup of $\hat G$ and certain properties of the action $G \acts \alpha A$. These particular articles established the foundation of much of the theory which we will examine in the next chapter.
+We end this chapter with the promise that the results describes here, in particular Takai Duality, has concrete utilizations in describing the ideal structure of crossed products, even if they are not apparent just yet. In particular, in a series papers of Olesen and Pedersen (we have covered some of the theory of one of them), see e.g., \cite{olesenpedersen1}, \cite{olesenpedersen2} and \cite{olesenpedersen3}, Takai duality is used to describe a necessary and sufficient condition for simplicity of $A \rtimes_\alpha G$ in terms of a certain subgroup of $\hat G$ and certain properties of the action $G \acts \alpha A$. These particular articles established the foundation of much of the theory which we will examine in the next chapter.
