@@ -60,12 +60,25 @@ The main motivation (in our case) for introducing the Arveson spectrum is to def
 		\mathscr{H}^\alpha (A) := \{ D \in \mathscr{H}(A) \mid \alpha_g(D)=D \text{ for all } g \in G\}.
 	\end{align*}
 \end{definition}
-
 With this, we may define the Connes spectrum of an action $G \acts \alpha A$.
 \begin{definition}
 	The \myemph{Connes Spectrum} of an action $G \acts \alpha A$ is the subset $\Gamma(\alpha)$ of $\hat G$ given by
 	\begin{align*}
-		\Gamma( \alpha) := \bigcap_{D \in \mathscr{H}^\alpha (A)} \Sp {\alpha|_D}.	
+		\hat G ( \alpha) := \bigcap_{D \in \mathscr{H}^\alpha (A)} \Sp {\alpha|_D}.
 	\end{align*}
 \end{definition}
-As we shall see, this subset is very important in the theory of classification of crossed products, for instance it is an invariant under exterior equivalence (which we've yet to define).
+As we shall see, this subset is very important in the theory of classification of crossed products, for instance it is an invariant under an equivalence relation called exterior equivalence (yet to be defined) and the Connes spectrum of the dual system detects ideals in $A$:
+\begin{lemma}
+	Let $(A, G, \alpha)$ be a $C^*$-dynamical a-system. Then $t \in G(\hat \alpha)$ if and only if $I \cap \alpha_t(I) \neq 0$ for all non-zero ideals of $A$.
+\end{lemma}
+\begin{remark}
+	The proof of this, due to Olesen and Pedersen, relies on the theory of $W^*$-dynamical systems, which quite similar to that of $C^*$-dynamical systems. We will use some properties without proof, as it will take us too much off course to develop properly, and instead refer the reader to relevant material on the subject whenever needed.
+	
+\begin{definition}
+	A \myemph{$W^*$-system} is a triple $(\mathscr{M},G,\beta)$ where $\mathscr{M}$ is a von-Neumann Algebra, $G$ a locally compact Hausdorff group and $\beta \colon G \to \mathrm{Aut}(\mathscr{M})$ is group homomorphism which is continuous with respect to the pointwise weak topology on $\mathrm{Aut}(\mathscr{M})$.
+\end{definition}
+	 We refer the curious reader to \cite[Chapter 7.4 and 7.10]{pedersenalgauto} for a thorough exposition of the subjects.
+\end{remark}
+\begin{proof}
+	We will be considering $A \rtimes_\alpha G$ as a $G$-product, so that $A \subseteq M(A \rtimes\alpha G)$ is the set of elements satisfying Landstad's conditions \todo{Cref Landstad}. Assume that $I \cap \alpha_t(I) = 0$ for $0 \neq I \in \mathcal{I}(A)$.	
+\end{proof}
