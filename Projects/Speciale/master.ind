@@ -1,19 +1,19 @@
 \begin{theindex}
 
-  \item $G$-product, 57
-  \item $\mathaccentV {widehat}870{\alpha }$-integrable, 62
-  \item (Ir)rational Rotation Algebra, 36
+  \item $G$-product, 58
+  \item $\mathaccentV {widehat}870{\alpha }$-integrable, 63
+  \item (Ir)rational Rotation Algebra, 37
 
   \indexspace
 
   \item adjointable maps, 5
-  \item amenable, 49
-  \item Arveson Spectrum, 68
+  \item amenable, 50
+  \item Arveson Spectrum, 70
 
   \indexspace
 
   \item Compact Operators on a Hilbert $A$-module, 8
-  \item Connes Spectrum, 69
+  \item Connes Spectrum, 71
 
   \indexspace
 
@@ -22,24 +22,24 @@
   \indexspace
 
   \item full, 3
-  \item full crossed product, 36
+  \item full crossed product, 37
 
   \indexspace
 
-  \item hereditary, 69
+  \item hereditary, 71
   \item Hilbert $A$-module, 2
   \item Hilbert $C^*$-module over $A$, 2
 
   \indexspace
 
-  \item induced regular representation, 32
+  \item induced regular representation, 33
   \item inductive limit topology, 21
   \item inner-product $A$-module, 1
-  \item integrated form, 30
+  \item integrated form, 31
 
   \indexspace
 
-  \item Landstad's conditions, 57
+  \item Landstad's conditions, 58
 
   \indexspace
 
@@ -53,30 +53,32 @@
 
   \indexspace
 
-  \item positive definite, 43
+  \item positive definite, 44
 
   \indexspace
 
-  \item reduced crossed product, 47
-  \item regular representation, 32
+  \item reduced crossed product, 48
+  \item regular representation, 33
 
   \indexspace
 
   \item semi-inner-product $A$-module, 2
+  \item spectral $M$-subspace, 70
+  \item spectral $R$-subspace, 70
   \item strict topology, 12
 
   \indexspace
 
-  \item the topology of weak$^*$ uniformly convergence on compacta, 44
+  \item the topology of weak$^*$ uniform convergence on compacta, 45
 
   \indexspace
 
   \item unitalization, 13
-  \item universal norm, 35
+  \item universal norm, 36
 
   \indexspace
 
-  \item weak$^*$-integral, 68
-  \item weakly contained, 48
+  \item weak$^*$-integrals, 69
+  \item weakly contained, 49
 
 \end{theindex}
