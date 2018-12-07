@@ -7,7 +7,7 @@ In this chapter we introduce some of the fundamental theory of Hilbert $C^*$-mod
 \sssection{Hilbert $C^*$-modules}
 Given a non-unital $C^*$-algebra $A$, we can extend a lot of the theory of unital $C^*$-algebras to $A$ by considering the unitalization $A^\dagger = A + 1\C$ with the canonical operations. This is the 'smallest' unitalization in the sense that $A$ the inclusion map is non-degenerate and maps $A$ to an ideal of $A^\dagger$ such that $A^\dagger/A \cong \C$. We can also consider a maximal unitalization, called the \myemph{Multiplier Algebra} of $A$, denoted by $M(A)$. We will now construct it and some theory revolving it, in particular that of Hilbert-modules:
 \begin{definition}
-	Let $A$ be any $C^*$-algebra. An \myemph{inner-product $A$-module} is a complex vector space $E$ which is also a right-$A$-module which is equipped with a map $\langle \cdot, \cdot\rangle_A \colon E \times A \to A$ such that for $x,y,z \in E, \ \alpha,\beta \in \C$ and $a \in A$ we have
+	Let $A$ be any $C^*$-algebra. An \myemph{inner-product $A$-module} is a complex vector space $E$ which is also a right-$A$-module which is equipped with a map $\langle \cdot, \cdot\rangle_A \colon E \times E \to A$ such that for $x,y,z \in E, \ \alpha,\beta \in \C$ and $a \in A$ we have
 	\begin{align}
 		\langle a , \alpha y + \beta z \rangle_A &= \alpha \langle x,y\rangle_A+\beta x,z \rangle_A\\
 		\langle x , y \cdot a \rangle-A &= \langle x,y\rangle_A \cdot a\\
@@ -521,7 +521,7 @@ It turns out that this is a maximal unitalization of $A$, as we shall see in a m
 \begin{proof}
 	In \ref{mult:compess} we saw that $\mathbb{K}_A(A_A)$ is an essential ideal of $\mathcal{L}_A(A_A)$ and nondegeneracy was seen in \ref{mult:compnondeg}. By \ref{mult:uniqueext}, the corollary follows.
 \end{proof}
-In particular, if $E=A_A$ and $C = M(B)$, then the above proposition guarantees an extension from $B$ to $M(B)$ for all non-degenerate homomorphisms $\varphi \colon B \to M(A)$.
+In particular, if $E=A_A$ and $C = M(B)$, then the above proposition guarantees an extension from $B$ to $M(B)$ for all non-degenerate homomorphisms $\varphi \colon B \to M(A)$. This will be particularly useful whenever we consider the following case: Let $\pi$ be a non-degenerate representation of a $C^*$-algebra $A$ on a Hilbert space $\H$, i.e., $\pi \colon A \to \mathbb{B}(\H)$. Then $\pi$ extends to a representation of $M(A)$ on $\mathbb{B}(\H)$. 
 
 We shall now see that the homomorphism provided by the universal property of a maximal unitalization is unique, this is the final ingredient we shall need to show that $M(A)$ is a maximal unitalization of $A$:
 \begin{lemma}

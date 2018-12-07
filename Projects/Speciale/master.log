@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.12.7)  7 DEC 2018 19:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.12.7)  7 DEC 2018 21:39
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -3053,54 +3053,52 @@ tifier (name{theorem.1.3.11}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.557 \begin{proposition}
-                         pdfTeX warning (ext4): destination with the same ident
-ifier (name{theorem.1.3.12}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.557 \begin{proposition}
-                         ] [17pdfTeX warning (ext4): destination with the same 
-identifier (name{theorem.1.3.14}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.584 \begin{example}
+l.552 	\end{equation}
                      pdfTeX warning (ext4): destination with the same identifie
-r (name{theorem.1.3.15}) has been already used, duplicate ignored
+r (name{theorem.1.3.12}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.584 \begin{example}
+l.552 	\end{equation}
+                     ] [17pdfTeX warning (ext4): destination with the same iden
+tifier (name{theorem.1.3.14}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.576 \end{proof}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{theorem.1.3.15}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.576 \end{proof}
+                 ] [18pdfTeX warning (ext4): destination with the same identifi
+er (name{theorem.1.3.16}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.597 \end{proof}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{theorem.1.3.17}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.597 \end{proof}
+                 ] [19pdfTeX warning (ext4): destination with the same identifi
+er (name{theorem.1.3.18}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.623 	\begin{align*}
                      pdfTeX warning (ext4): destination with the same identifie
-r (name{theorem.1.3.16}) has been already used, duplicate ignored
+r (name{theorem.1.3.19}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.584 \begin{example}
-                     ] [18pdfTeX warning (ext4): destination with the same iden
-tifier (name{theorem.1.3.17}) has been already used, duplicate ignored
+l.623 	\begin{align*}
+                     ]) (./chapter2/chap.tex [20] [21
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.603 \begin{definition}
-                        ]) (./chapter2/chap.tex [19pdfTeX warning (ext4): desti
-nation with the same identifier (name{theorem.1.3.18}) has been already used, d
-uplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1 \chapter
-            {Crossed Products with Topological Groups}pdfTeX warning (ext4): de
-stination with the same identifier (name{theorem.1.3.19}) has been already used
-, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1 \chapter
-            {Crossed Products with Topological Groups}] [20
-
-] [21pdfTeX warning (ext4): destination with the same identifier (name{theorem.
+] [22pdfTeX warning (ext4): destination with the same identifier (name{theorem.
 2.1.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -3123,7 +3121,7 @@ Overfull \hbox (26.71547pt too wide) in paragraph at lines 53--53
 [] 
  []
 
-[22pdfTeX warning (ext4): destination with the same identifier (name{theorem.2.
+[23pdfTeX warning (ext4): destination with the same identifier (name{theorem.2.
 1.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -3141,7 +3139,7 @@ l.85
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.85 
-     ] [23pdfTeX warning (ext4): destination with the same identifier (name{the
+     ] [24pdfTeX warning (ext4): destination with the same identifier (name{the
 orem.2.1.7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -3153,7 +3151,7 @@ ame{theorem.2.1.8}) has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.116 \end{align}
-                 ] [24pdfTeX warning (ext4): destination with the same identifi
+                 ] [25pdfTeX warning (ext4): destination with the same identifi
 er (name{theorem.2.1.9}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -3165,13 +3163,13 @@ l.153 \begin{align*}
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.153 \begin{align*}
-                    ] [25pdfTeX warning (ext4): destination with the same ident
+                    ] [26pdfTeX warning (ext4): destination with the same ident
 ifier (name{theorem.2.1.11}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.176 \begin{theorem}
-                     ] [26] [27pdfTeX warning (ext4): destination with the same
+                     ] [27] [28pdfTeX warning (ext4): destination with the same
  identifier (name{theorem.2.1.13}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -3182,13 +3180,13 @@ Overfull \hbox (6.86275pt too wide) in paragraph at lines 245--245
 [] 
  []
 
-[28pdfTeX warning (ext4): destination with the same identifier (name{theorem.2.
+[29pdfTeX warning (ext4): destination with the same identifier (name{theorem.2.
 1.14}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.274 \end{proof}
-                 ] [29] [30pdfTeX warning (ext4): destination with the same ide
+                 ] [30] [31pdfTeX warning (ext4): destination with the same ide
 ntifier (name{theorem.2.2.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -3197,7 +3195,7 @@ l.319 \end{lemma}
                  ]
 Underfull \vbox (badness 4303) has occurred while \output is active []
 
- [31pdfTeX warning (ext4): destination with the same identifier (name{theorem.2
+ [32pdfTeX warning (ext4): destination with the same identifier (name{theorem.2
 .2.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -3209,7 +3207,7 @@ name{theorem.2.2.3}) has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.348 \end{align*}
-                  ] [32] [33pdfTeX warning (ext4): destination with the same id
+                  ] [33] [34pdfTeX warning (ext4): destination with the same id
 entifier (name{theorem.2.2.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -3227,7 +3225,7 @@ l.399 \begin{align*}
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.399 \begin{align*}
-                    ] [34pdfTeX warning (ext4): destination with the same ident
+                    ] [35pdfTeX warning (ext4): destination with the same ident
 ifier (name{theorem.2.2.7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -3259,13 +3257,13 @@ Overfull \hbox (7.43138pt too wide) in paragraph at lines 452--452
 
 Underfull \vbox (badness 1424) has occurred while \output is active []
 
- [35pdfTeX warning (ext4): destination with the same identifier (name{theorem.2
+ [36pdfTeX warning (ext4): destination with the same identifier (name{theorem.2
 .2.11}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.452 \end{align*}
-                  ] [36pdfTeX warning (ext4): destination with the same identif
+                  ] [37pdfTeX warning (ext4): destination with the same identif
 ier (name{theorem.2.2.12}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -3277,7 +3275,7 @@ ame{theorem.2.2.13}) has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.479 \end{lemma}
-                 ] [37pdfTeX warning (ext4): destination with the same identifi
+                 ] [38pdfTeX warning (ext4): destination with the same identifi
 er (name{theorem.2.2.14}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -3301,7 +3299,7 @@ l.504 \begin{align*}
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.504 \begin{align*}
-                    ] [38pdfTeX warning (ext4): destination with the same ident
+                    ] [39pdfTeX warning (ext4): destination with the same ident
 ifier (name{theorem.2.2.18}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -3313,20 +3311,20 @@ name{theorem.2.2.19}) has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.541 \end{align*}
-                  ] [39] [40pdfTeX warning (ext4): destination with the same id
+                  ] [40] [41pdfTeX warning (ext4): destination with the same id
 entifier (name{theorem.2.2.20}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.607 T
        here exists a $^*$-homomorphsim $\tilde \iota_G \colon C^*(G) \to M(A...
-] [41pdfTeX warning (ext4): destination with the same identifier (name{theorem.
+] [42pdfTeX warning (ext4): destination with the same identifier (name{theorem.
 2.2.21}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.637 \end{proof}
-                 ] [42pdfTeX warning (ext4): destination with the same identifi
+                 ] [43pdfTeX warning (ext4): destination with the same identifi
 er (name{theorem.2.2.22}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -3338,7 +3336,7 @@ l.669 \begin{align*}
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.669 \begin{align*}
-                    ] [43] [44pdfTeX warning (ext4): destination with the same 
+                    ] [44] [45pdfTeX warning (ext4): destination with the same 
 identifier (name{theorem.2.3.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -3356,7 +3354,7 @@ l.708 \begin{align}
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.708 \begin{align}
-                   ] [45pdfTeX warning (ext4): destination with the same identi
+                   ] [46pdfTeX warning (ext4): destination with the same identi
 fier (name{theorem.2.3.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -3374,7 +3372,7 @@ name{theorem.2.3.6}) has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.738 \end{align*}
-                  ] [46pdfTeX warning (ext4): destination with the same identif
+                  ] [47pdfTeX warning (ext4): destination with the same identif
 ier (name{theorem.2.3.7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -3386,13 +3384,13 @@ name{theorem.2.3.8}) has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.767 \end{align*}
-                  ] [47pdfTeX warning (ext4): destination with the same identif
+                  ] [48pdfTeX warning (ext4): destination with the same identif
 ier (name{theorem.2.3.9}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.794 \end{align*}
-                  ] [48pdfTeX warning (ext4): destination with the same identif
+                  ] [49pdfTeX warning (ext4): destination with the same identif
 ier (name{theorem.2.3.10}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -3414,7 +3412,7 @@ Overfull \hbox (3.85374pt too wide) in paragraph at lines 836--836
 [] 
  []
 
-[49pdfTeX warning (ext4): destination with the same identifier (name{theorem.2.
+[50pdfTeX warning (ext4): destination with the same identifier (name{theorem.2.
 3.12}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -3426,7 +3424,7 @@ l.856
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.856 
-      ] [50pdfTeX warning (ext4): destination with the same identifier (name{th
+      ] [51pdfTeX warning (ext4): destination with the same identifier (name{th
 eorem.2.3.15}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -3438,7 +3436,7 @@ ame{theorem.2.3.16}) has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.884 \end{proof}
-                 ] [51pdfTeX warning (ext4): destination with the same identifi
+                 ] [52pdfTeX warning (ext4): destination with the same identifi
 er (name{theorem.2.3.18}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -3450,7 +3448,7 @@ ame{theorem.2.3.19}) has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.913 \end{proof}
-                 ] [52]
+                 ] [53]
 Overfull \hbox (4.2144pt too wide) in paragraph at lines 940--942
 \T1/cmr/m/n/10 the map $\OML/cmm/m/it/10 t \U/matha/m/n/10 об [][]p\OML/cmm/m/i
 t/10 y\U/matha/m/n/10 q$ \T1/cmr/m/n/10 is norm con-tin-u-ous. The clo-sure of 
@@ -3459,7 +3457,7 @@ $\OML/cmm/m/it/10 F \U/matha/m/n/10 ^^P []t\OML/cmm/m/it/10 a \U/matha/m/n/10 b
 /cmm/m/it/10 A;  y[]\U/matha/m/n/10 u$
  []
 
-[53pdfTeX warning (ext4): destination with the same identifier (name{theorem.2.
+[54pdfTeX warning (ext4): destination with the same identifier (name{theorem.2.
 4.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -3476,12 +3474,12 @@ Overfull \hbox (23.41013pt too wide) in paragraph at lines 969--969
 [] 
  []
 
-[54]
+[55]
 Overfull \hbox (53.82698pt too wide) in paragraph at lines 979--979
 [] 
  []
 
-[55] [56pdfTeX warning (ext4): destination with the same identifier (name{theor
+[56] [57pdfTeX warning (ext4): destination with the same identifier (name{theor
 em.2.4.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -3493,7 +3491,7 @@ l.1035 \end{align*}
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.1035 \end{align*}
-                   ] [57pdfTeX warning (ext4): destination with the same identi
+                   ] [58pdfTeX warning (ext4): destination with the same identi
 fier (name{theorem.2.4.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -3517,7 +3515,7 @@ l.1072 \end{align*}
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.1072 \end{align*}
-                   ] [58pdfTeX warning (ext4): destination with the same identi
+                   ] [59pdfTeX warning (ext4): destination with the same identi
 fier (name{theorem.2.4.10}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -3529,7 +3527,7 @@ ier (name{theorem.2.4.11}) has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.1109 	\end{enumerate}
-                       ] [59pdfTeX warning (ext4): destination with the same id
+                       ] [60pdfTeX warning (ext4): destination with the same id
 entifier (name{theorem.2.4.12}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -3541,13 +3539,13 @@ l.1145 \end{align*}
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.1145 \end{align*}
-                   ] [60pdfTeX warning (ext4): destination with the same identi
+                   ] [61pdfTeX warning (ext4): destination with the same identi
 fier (name{theorem.2.4.14}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.1180 \end{align*}
-                   ] [61] [62] [63pdfTeX warning (ext4): destination with the s
+                   ] [62] [63] [64pdfTeX warning (ext4): destination with the s
 ame identifier (name{theorem.2.4.16}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -3565,7 +3563,7 @@ l.1285 \end{remark}
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.1285 \end{remark}
-                   ] [64pdfTeX warning (ext4): destination with the same identi
+                   ] [65pdfTeX warning (ext4): destination with the same identi
 fier (name{theorem.2.4.19}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -3583,7 +3581,7 @@ l.1321 	\end{align*}
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.1321 	\end{align*}
-                    ] [65pdfTeX warning (ext4): destination with the same ident
+                    ] [66pdfTeX warning (ext4): destination with the same ident
 ifier (name{theorem.2.4.22}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -3594,16 +3592,16 @@ Overfull \hbox (11.05417pt too wide) in paragraph at lines 1371--1371
 [] 
  []
 
-[66] [67]) (./chapter3/chap.tex [68pdfTeX warning (ext4): destination with the 
+[67] [68]) (./chapter3/chap.tex [69pdfTeX warning (ext4): destination with the 
 same identifier (name{theorem.2.4.24}) has been already used, duplicate ignored
 
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.1 \chapter
-            {Simplicity Of Crossed Products}] [69
+            {Simplicity Of Crossed Products}] [70
 
-] [70pdfTeX warning (ext4): destination with the same identifier (name{theorem.
+] [71pdfTeX warning (ext4): destination with the same identifier (name{theorem.
 3.1.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -3624,7 +3622,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{theorem.3.1.3
                                                   \fi \fi 
 l.56 	A
         $C^*$-subalgebra $B\subseteq A$ is \myemph{hereditary} if for all po...
-] [71pdfTeX warning (ext4): destination with the same identifier (name{theorem.
+] [72pdfTeX warning (ext4): destination with the same identifier (name{theorem.
 3.1.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -3654,10 +3652,10 @@ me{theorem.3.1.8}) has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.84 \end{proof}
-                ]) [72] [73
+                ]) [73] [74
 
 
-] [74]
+] [75]
 runsystem(makeindex master.idx)...executed.
 
  (./master.ind)
@@ -3668,7 +3666,7 @@ FiXme Summary: Number of notes: 0,
 (FiXme)        Number of fatal errors: 0,
 (FiXme)        Total: 0.
 
-[75
+[76
 
 
 ]
@@ -3689,13 +3687,13 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 35.
  )
 (\end occurred when \iftrue on line 5 was incomplete) 
 Here is how much of TeX's memory you used:
- 41853 strings out of 493029
- 756994 string characters out of 6136234
- 1120006 words of memory out of 5000000
+ 41854 strings out of 493029
+ 757000 string characters out of 6136234
+ 1123006 words of memory out of 5000000
  44403 multiletter control sequences out of 15000+600000
  33554 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,17n,82p,10480b,1810s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,17n,82p,10480b,1799s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/en
 c/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
@@ -3725,10 +3723,10 @@ cc1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/sha
 re/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1
 /public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfx
 c1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfxc1200.pfb>
-Output written on master.pdf (78 pages, 974014 bytes).
+Output written on master.pdf (79 pages, 975346 bytes).
 PDF statistics:
- 997 PDF objects out of 1000 (max. 8388607)
- 873 compressed objects within 9 object streams
- 324 named destinations out of 1000 (max. 500000)
+ 1004 PDF objects out of 1200 (max. 8388607)
+ 879 compressed objects within 9 object streams
+ 325 named destinations out of 1000 (max. 500000)
  130 words of extra memory for PDF output out of 10000 (max. 10000000)
 
