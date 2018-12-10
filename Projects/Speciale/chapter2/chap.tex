@@ -1250,6 +1250,7 @@ Note also, that if $G \acts {\hat{\hat{\alpha}}} (A \rtimes_\alpha G) \rtimes_{\
 \end{align*}
 whence we see that $\hat{\hat{\alpha}}_r(\Phi(\check z))= \Phi(\check{\sigma_r (z)})$, and since $z$ generates $C_0(G,A) \rtimes_\gamma G$, this shows the desired covariant isomorphism of the systems $(C_0(G,A) \rtimes_\gamma G, G, \sigma)$ and $( (A \rtimes_\alpha G)\rtimes_{\hat{\alpha}} \hat G, G, \hat{\hat{\alpha}})$.
 \end{proof}
+In particular, since $\hat \R \cong \R$ (self-duality), we observe using Takai duality that the $C^*$-algebra $\mathbb{K}(L^2(\R))$ is isomorphic to $C_0(\R) \rtimes_\mathrm{lt} \R $, which according to the author is an especially beautiful application of the theory.
 
 Before we begin our discussion of simplicity in crossed product in the next chapter, we will actually go back to the concept of a $G$-product and properties thereof, since it will give us a useful characterization of crossed products. We follow the guidelines of \cite{olesenpedersen1} in doing this, but the results are due to Landstad (\cite{landstad1979duality}).
 \begin{definition}
@@ -1339,10 +1340,11 @@ where $1$ is the identity operator on $M(A)$.
 \end{proposition}
 \begin{proof}
 	Note first that given $x \in A$ of the form given above, then by \cref{olpe1lemma2.7}, and $x$ is $\hat \alpha$-integrable and the map $t \mapsto I(x \lambda_t)$ is continuous in norm. We calculate
-	\begin{align*}
+	\begin{align}
 		I(x\lambda_{-t}) \lambda_t = \int_{\hat G} \hat \alpha_\sigma(x \lambda_{-t}) \lambda_t \d \sigma &= \int_{\hat G} \hat \alpha_\sigma(x \lambda_{-t}) \overline{(t,\sigma)} \hat \alpha_\sigma(\lambda_t) \d \sigma\\
 		&= \int_{\hat G} \hat \alpha_\sigma(x) \overline{(t,\sigma)} \d \sigma,
-	\end{align*}
+		\label{eq:olpe1lemma2.8}
+	\end{align}
 	hence if $(f_i) \subseteq L^1(G)$ satisfies the conditions of the proposition, then
 	\begin{align*}
 		\int_{G}I(x \lambda_{-t}) \lambda_t f_i(t) \d t = \int_{\hat G} \int_G \hat \alpha_\sigma(x) \overline{(t,\sigma)} f_i(t) \d t \d \sigma = \int_{\hat G} \hat \alpha_\sigma (x) \hat f_i(-\sigma) \d \sigma \in A,

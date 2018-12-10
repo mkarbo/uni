@@ -26,6 +26,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1.1}The Arveson and Connes spectra}{70}{subsection.3.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{74}{chapter*.25}
+\contentsline {chapter}{Bibliography}{76}{chapter*.27}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Alphabetical Index}{76}{section*.26}
+\contentsline {chapter}{Alphabetical Index}{78}{section*.28}

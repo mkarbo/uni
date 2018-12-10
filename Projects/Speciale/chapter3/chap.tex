@@ -21,9 +21,9 @@ which is a dense ideal of $L^1(G)$, see \cite[Theorem 4.60]{folland2016fourier}.
 	\end{align*}
 	and similarly, for each closed subset $K \subseteq \hat G$ we define the \myemph{spectral $M$-subspace} $M^\alpha(K)$ to be the subspace of $A$ defined by
 	\begin{align*}
-		M^\alpha(K) := \overline{\Span \left\{ x \in A \mid \alpha_f(x) = 0 \text{ for all } f \in \cc^1(G) \text{ with } \supp \hat f \subseteq K \right\}},
+		M^\alpha(K) := \overline{\Span \left\{ x \in A \mid \alpha_f(x) = 0 \text{ for all } f \in \cc^1(G) \text{ with } \supp \hat f \subseteq K^c \right\}},
 	\end{align*}
-	i.e., as the annihilator of $R^{\alpha'}(K^c)$.
+	i.e., as the annihilator of $R^{\alpha'}(K^c)$, where $\alpha'_f(\varphi)$ is the element of $A^*$ such that $\alpha'_f(\varphi)(x)=\varphi(\alpha_f(x))$ for all $x \in A$.
 \end{definition}
 By \cite[Theorem 8.1.4]{pedersenalgauto}, it follows that the $R$- and $M$-spaces are $G$-invariant subsets, and
 \begin{align*}
@@ -31,9 +31,9 @@ By \cite[Theorem 8.1.4]{pedersenalgauto}, it follows that the $R$- and $M$-space
 \end{align*}
 for all collections of subsets $(K_i)$ of $\hat G$. This allows us to give the following definition:
 \begin{definition}
-	The \myemph{Arveson Spectrum} of an action $G \acts \alpha A$ is defined to be the smallest closed subset of $\hat G$ such that $M^\alpha(K) = A$, and we denote it by $\Sp \alpha$.
+	The \myemph{Arveson Spectrum} of an action $G \acts \alpha A$ is defined to be the smallest closed subset $K$ of $\hat G$ such that $M^\alpha(K) = A$, and we denote it by $\Sp \alpha$.
 \end{definition}
-In his dissertation (see \cite{connesclassification}), Alain Connes proved a series of equivalent characterizations of $\Sp \alpha$, which we will need. We include it without proof and instead refer the reader to \cite[Proposition 8.1.9]{pedersenalgauto} for the proof.
+In his dissertation (see \cite{connesclassification}), Alain Connes proved a series of equivalent characterizations of $\Sp \alpha$, which we will need. We include it without proof and instead refer the reader to \cite[Proposition 8.1.9 and 8.1.8]{pedersenalgauto} for the proof.
 \begin{proposition}
 	Let $(A, G, \alpha)$ be a $C^*$-dynamical a-system. Then for $\sigma \in \hat G$ the following are equivalent:
 	\begin{enumerate}
@@ -41,8 +41,9 @@ In his dissertation (see \cite{connesclassification}), Alain Connes proved a ser
 		\item For all neighborhoods $U$ of $\sigma$: $R^\alpha(U) \neq 0$,
 		\item There is a net of unit vectors $(a_i) \subseteq A$ such that $\lv\alpha_t(x_i) - (t,\sigma)x_i\rv \to 0$ uniformly on compacta of $G$,
 		\item For every finite Radon measure $\mu$ on $G$: $|\hat \mu(\sigma)| \leq \lv \alpha_\mu\rv$,
-		\item For every $f \in L^1(G)$: $|\hat f (\sigma)| \leq \lv \alpha_f\rv$ and
-		\item If $f \in L^1(G)$, $\alpha_f=0$, then $\hat f(\sigma)=0$.
+		\item For every $f \in L^1(G)$: $|\hat f (\sigma)| \leq \lv \alpha_f\rv$,
+		\item If $f \in L^1(G)$, $\alpha_f=0$, then $\hat f(\sigma)=0$ and
+		\item It holds that $M^{\alpha}(\{\sigma\}) := \{x \in A \mid \hat \alpha_t(x) = (t,\sigma)x \text{ for all } t \in G\} \neq 0$.
 	\end{enumerate}
 \end{proposition}
 One very common use of the above is to take the last condition as the definition:
@@ -60,7 +61,10 @@ The main motivation (in our case) for introducing the Arveson spectrum is to def
 		\mathscr{H}^\alpha (A) := \{ D \in \mathscr{H}(A) \mid \alpha_g(D)=D \text{ for all } g \in G\}.
 	\end{align*}
 \end{definition}
-With this, we may define the Connes spectrum of an action $G \acts \alpha A$.
+\begin{remark}
+	There is a bijection between the set of closed left-ideals of a $C^*$-algebra $A$ and the set of hereditary $C^*$-subalgebras of $A$ which maps a closed left-ideal $L$ to $L^* \cap L$, see e.g. \cite[II.5.3.2]{blackadar}.
+\end{remark}
+This bijection will be useful soon, since we may define the Connes spectrum of an action $G \acts \alpha A$ now:
 \begin{definition}
 	The \myemph{Connes Spectrum} of an action $G \acts \alpha A$ is the subset $\Gamma(\alpha)$ of $\hat G$ given by
 	\begin{align*}
@@ -72,13 +76,67 @@ As we shall see, this subset is very important in the theory of classification o
 	Let $(A, G, \alpha)$ be a $C^*$-dynamical a-system. Then $t \in G(\hat \alpha)$ if and only if $I \cap \alpha_t(I) \neq 0$ for all non-zero ideals of $A$.
 \end{lemma}
 \begin{remark}
-	The proof of this, due to Olesen and Pedersen, relies on the theory of $W^*$-dynamical systems, which quite similar to that of $C^*$-dynamical systems. We will use some properties without proof, as it will take us too much off course to develop properly, and instead refer the reader to relevant material on the subject whenever needed.
-	
+	The proof of this, due to Olesen and Pedersen, relies on the theory of $W^*$-dynamical systems, which quite similar to that of $C^*$-dynamical systems. We will use some properties without proof, as it will take us too much off course to develop properly, and instead refer the reader to relevant material on the subject whenever needed.	
 \begin{definition}
 	A \myemph{$W^*$-system} is a triple $(\mathscr{M},G,\beta)$ where $\mathscr{M}$ is a von-Neumann Algebra, $G$ a locally compact Hausdorff group and $\beta \colon G \to \mathrm{Aut}(\mathscr{M})$ is group homomorphism which is continuous with respect to the pointwise weak topology on $\mathrm{Aut}(\mathscr{M})$.
 \end{definition}
 	 We refer the curious reader to \cite[Chapter 7.4 and 7.10]{pedersenalgauto} for a thorough exposition of the subjects.
 \end{remark}
 \begin{proof}
-	We will be considering $A \rtimes_\alpha G$ as a $G$-product, so that $A \subseteq M(A \rtimes\alpha G)$ is the set of elements satisfying Landstad's conditions \todo{Cref Landstad}. Assume that $I \cap \alpha_t(I) = 0$ for $0 \neq I \in \mathcal{I}(A)$.	
+	We will be considering $A \rtimes_\alpha G$ as a $G$-product, so that $A \subseteq M(A \rtimes\alpha G)$ is the set of elements satisfying Landstad's conditions \todo{Cref Landstad}. Assume that $I \cap \alpha_t(I) = 0$ for $0 \neq I \in \mathcal{I}(A)$. \todo{Find out how this works} Let $0 \neq x,y \in I_+$ be such that $yx=y$ (e.g., by considering $(x-\varepsilon)$ for some $ \lv x \rv >\varepsilon > 0$, which will belong to $I \subseteq A^1$ and suitable increasing function $f_\varepsilon$). Let $K$ be a compact neighborhood of $0 \in G$ such that $ \lv \alpha_s(x)-x	\rv < 1$ for $s \in K$. Then $1-(\alpha_s(x)-x)$ is invertible with inverse $\sum_{n=0}^\infty (\alpha_s(x)-x)^n$, see ee.g. \cite[Proposition 2.1]{zhu}. Then
+	\begin{align*}
+		\alpha_s(y)=\alpha_s(y)x \sum_{n=0}^\infty (\alpha_s(x)-x)^n \in I,
+	\end{align*}
+	since $\alpha_s(y)-\alpha_s(yx)=0$, implying that 
+	\begin{align*}
+	y a \alpha_{t-s}(y) = \alpha_{-s}(\alpha_s(y)\alpha_s(a)\alpha_t(y)) \in \subseteq \alpha_{-s}(I A \alpha_t(I)) = 0,
+	\end{align*}
+	for all $a \in A$ and $s \in K$. Every $y$ in $A$ satisfies $\hat\alpha(y) = y$ by Landstad's condition. Hence $B:= C^*(\{y z y \mid z \in A \rtimes_\alpha G\}) \subseteq A \rtimes_\alpha G$ is a $\hat \alpha$-invariant hereditary subalgebra, i.e., $B \in \mathscr{H}^{\hat \alpha}(A \rtimes_\alpha G)$. We claim that $t \not \in \Sp {\hat \alpha |_B}$: Pick any $g \in L^1(G)$ with continuous $\hat g$ such that $\mathrm{supp} \hat g \subseteq t-K$. We show that $\hat \alpha_g |_B = 0$ so that $t \not\in \Sp {\hat \alpha|_B}$, by density of $\hat {L^1(\hat G)}$ in $C_0(G)$; let $b \in B$ be of the form
+	\begin{align*}
+		b = y \lambda_f^* a \lambda_f y,
+	\end{align*}
+	for some $f \in L^1(G) \cap L^2(G)$ and $ a \in A \rtimes_\alpha G$, so that $b$ is $\hat \alpha$-integrable by \todo{add ref}. Then, by the Fourier Inversion formula, we have 
+	\begin{align*}
+		\hat \alpha_g(b) &= \int_{\hat G} y \hat \alpha_\sigma(\lambda_f^* a \lambda_f) y g(\sigma) \d \sigma \\
+		&= \int_{\hat G} \int_G y \hat \alpha_\sigma(\lambda_f^* a \lambda_f) \overline{(s,\sigma)} y \hat g(s) \d s \d \sigma\\
+		&= \int_{\hat G} \int_G y \hat \alpha_\sigma(\lambda_f^* a \lambda_f) \lambda_{-s} \lambda_s \overline{(s,\sigma)} y \hat g(s) \d s \d \sigma\\
+		&= \int_{\hat G} \int_G y \hat \alpha_{\sigma}(\lambda_f^* a \lambda_f \lambda_{-s}) \lambda_s y \hat g(s) \d s \d \sigma\\
+		&= \int_{G} y \left( \int_{\hat G} \hat \alpha_{\sigma}(\lambda_f^* a \lambda_f \lambda_{-s}\right) \lambda_s \d \sigma y \hat g(s) \d s\\
+		&= \int_G y I(\lambda_f^* a \lambda_f \lambda_{-s}) \lambda_s y \hat g(s) \d s\\
+		&= \int_G y I(\lambda_f^* a \lambda_f \lambda_{-s}) \alpha_s(y) \lambda_s \hat g(s)\d s = 0,
+	\end{align*}
+	where we used the identity of \cref{eq:olpe1lemma2.8} and covariance of $(\alpha_s,\lambda_s)$. The last equality follows from $I(\lambda_f^* a \lambda_f \lambda_{-s}) \in A$ by \cref{olpe1lemma2.8} and the fact that $y a' \alpha_s(y)= 0 $ for all $a' \in A$ and $s \in \mathrm{supp} \hat g$ by the above. We know that the set of elements of the form $y \lambda_f^* a \lambda_f y$ spans a dense subset of $B$, hence $\hat \alpha_g | B \neq 0$. Since $g$ can be chosen such that $\hat g (t) \neq 0$, we conclude that $t \not \in \Sp {\hat \alpha|_B}$, hence not in $G(\hat \alpha)$.
+
+	For the converse, assume $t \not \in G(\hat \alpha)$, and let $U$ be a neighborhood of $t$, $B \in \mathscr{H}^{\hat \alpha}(A \rtimes_\alpha G)$  witness this, i.e., such that $\hat \alpha _g | B = 0$ whenever $g \in L^1(\hat G)$ with $\mathrm{supp} \hat g \subseteq U $. Choose a neighborhood $U' \subseteq U$ and a neighborhood $0 \in U_0$ such that $U' + U_0-U_0 \subseteq U$, doable choosing $U_0$ arbitrarily small. Given $f_1,f_2 \in L^1(G)$ with support contained in $U_0$, then for all $g \in L^1(\hat G)$ such that $\mathrm{supp} \hat g \subseteq U'$ we have
+\begin{align*}
+	\hat {((s,\cdot)g)}(t) = \int_{\hat G} (t+s, \sigma) g(\sigma) \d \sigma = \hat g(s+t)  \neq 0 \iff t \in \mathrm{supp} \hat g - s \subseteq U'+U_0-U_0 \subseteq U
+\end{align*}
+for all $s \in U_0-U_0$, so $sg := (s, \cdot) g$ will satisfy $\hat \alpha_g = 0$ on $B$. Hence, if $y \in B$ we have
+\begin{align*}
+	\hat \alpha_g(\lambda_{f_1}^* y \lambda_{f_2}) &=  \int_{G \times G \times \hat G} \lambda_{-r} \hat \alpha_\sigma \lambda_s (s-r,\sigma) g(\sigma) \overline{f_1}(r) f_2(s) \d s \d r \d \sigma\\
+	&=  \int_{G \times G \times \hat G} \alpha_{-r}(\hat \alpha_\sigma(y)) \lambda_{-r} \lambda_{s+r}(s,\sigma) g(\sigma) \overline{f_1}(r) f_2(s+r) \d s \d r \d \sigma\\
+	&= \int_{G} \int_G \alpha_{-r}(\hat \alpha_{sg}(y)) \lambda_s \overline{f_1}(r) f_2(s+r) \d s \d r\\
+	&= 0,
+\end{align*}
+since $r \in \mathrm{supp} f_1$ and $s+r \in \mathrm{supp} f_2$ implies $s \in U_0-U_0$ so $\hat \alpha_{sg}(y) = 0$. Since $B$ is a hereditary $C^*$-subalgebra, there is a left ideal of $A \rtimes_\alpha G$, which necessarily must be $\hat G$ invariant by invariance of $B$, usch that $B = L^* \cap L$. Let $f \in L^1(G) \cap L^2(G)$, such that $f \neq 0 \in L^1(G)$ and with $\mathrm{supp} f \subseteq U_0$. Define
+\begin{align*}
+	L_0 :=	\overline{\Span {\left\{\bigcup_{\sigma \in \hat G} L \lambda_{\sigma f}\right\}}},
+\end{align*}
+so that $L_0$ is a closed $\hat G$-invariant left ideal of $A \rtimes_\alpha G$ giving rise to a hereditary $C^*$-subalgebra given by $B_0:= L_0^* \cap L_0 \in \mathscr H^{\hat \alpha}(A \rtimes_{\alpha}G)$. By the above computations, we see that $\hat \alpha_g(\lambda_{\sigma_1 f}^* y_1^* y_2 \lambda_{\sigma_2 f}) = 0$ for all $\sigma_i \in \hat G$ and $f_i \in L^1(G)$ whenever $g \in L^1(G)$ with $\mathrm{supp} \hat g \subseteq U'$. In particular, this means that $t \not\in \Sp {\hat \alpha|_{B_0}}$.
+
+Let $\mathscr{M}_0$ denote the strong operator closure of $B_0$ in $\mathbb{B}(L^2(G,H))$ (recall that $G$ is abelian, so $A \rtimes_\alpha G \subseteq \mathbb{B}(L^2(G,H))$), and let $\beta$ denote the extension of $\hat \alpha$ making $(\mathscr{M}_0, \hat G, \beta)$ into a $W^*$-dynamical system, i.e., $\beta = \hat \alpha|_{\mathscr{M}_0}$. We define $R^{\beta}(\Omega)$ to be $\sigma$-weak closure of $R^{\hat \alpha}(\Omega)$ for open sets $\Omega \subseteq \hat G$. In particular, we have $\Sp {\hat \alpha|_{B_0}}= \Sp {\beta|_{\mathscr{M}_0}}$ , see e.g. \cite[Proposition 8.8.9]{pedersenalgauto}, so that $t \not \in \Sp {\beta|_{\mathscr{M}_0}}$.
+
+Since $B_0$ is the closure of a set of integrable positive elements (see \cref{olpe1lemma2.7}), let $0 \neq y \in B_0$ be a positive and integrable element and let $x_0 := I(y_0)$. Then $x_0 \in \mathscr{M}_0$, for let $g_i \in \cc(\hat G)$ be a net of positive functions such that $g_i(\sigma)\to 1$ for all $\sigma \in \hat G$. Then, if $x_i := \hat \alpha_{g_i}(y_0) = \int_{\hat G} \hat \alpha_{\sigma}(y) g_i(\sigma) \d \sigma $, we have a net $(x_i) \subseteq B_0$ which increases strongly to $x_0$. Let $a \in A$. Then $x_0 x \lambda_t x_0 = \lim_{i-\text{strong}} x_i x \lambda_t x_i \in \mathscr{M}_0$. By \cref{olpe1lemma2.8}, $x_0 \in A$, and hence for all $\sigma \in \hat G$:
+\begin{align*}
+	\beta_{\sigma}(x_0 x \lambda_t x_0) = \hat \alpha_\sigma( x_0 x \lambda_t x_0) = x_0 x \hat \alpha_\sigma(\lambda_t) x_0 =  (t,\sigma) x_0 x \lambda_t x_0,
+\end{align*}
+by Landstad's condition and the properties of a $G$-product. However, the only element of $A \rtimes_\alpha G$ which satisfies $\hat \alpha_\sigma (a)=(t,\sigma) a$ is $0$, since $t \not \in \Sp {\hat \alpha |_{\mathscr{M}_0}}$.
+
+In particular,
+\begin{align*}
+	x_0 x \alpha_t(x_0) = (x_0 x \lambda_t x_0) \lambda_{-t} = 0,
+\end{align*}
+for all $x \in A$. If $I = \overline{(x_0)} \subseteq A$ is the smalles ideal containing $x_0$, then $0 \neq I \subseteq A$ with $I \cap \alpha_t(I)$.
 \end{proof}
+
+
