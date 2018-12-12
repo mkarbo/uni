@@ -72,9 +72,10 @@ This bijection will be useful soon, since we may define the Connes spectrum of a
 	\end{align*}
 \end{definition}
 As we shall see, this subset is very important in the theory of classification of crossed products, for instance it is an invariant under an equivalence relation called exterior equivalence (yet to be defined) and the Connes spectrum of the dual system detects ideals in $A$:
-\begin{lemma}
+\begin{proposition}
 	Let $(A, G, \alpha)$ be a $C^*$-dynamical a-system. Then $t \in G(\hat \alpha)$ if and only if $I \cap \alpha_t(I) \neq 0$ for all non-zero ideals of $A$.
-\end{lemma}
+	\label{connesideal1}
+\end{proposition}
 \begin{remark}
 	The proof of this, due to Olesen and Pedersen, relies on the theory of $W^*$-dynamical systems, which quite similar to that of $C^*$-dynamical systems. We will use some properties without proof, as it will take us too much off course to develop properly, and instead refer the reader to relevant material on the subject whenever needed.	
 \begin{definition}
@@ -130,13 +131,154 @@ Since $B_0$ is the closure of a set of integrable positive elements (see \cref{o
 \begin{align*}
 	\beta_{\sigma}(x_0 x \lambda_t x_0) = \hat \alpha_\sigma( x_0 x \lambda_t x_0) = x_0 x \hat \alpha_\sigma(\lambda_t) x_0 =  (t,\sigma) x_0 x \lambda_t x_0,
 \end{align*}
-by Landstad's condition and the properties of a $G$-product. However, the only element of $A \rtimes_\alpha G$ which satisfies $\hat \alpha_\sigma (a)=(t,\sigma) a$ is $0$, since $t \not \in \Sp {\hat \alpha |_{\mathscr{M}_0}}$.
+by Landstad's condition and the properties of a $G$-product. However, the only element of $\mathscr{M}_0 \subseteq A \rtimes_\alpha G$ which satisfies $\hat \alpha_\sigma (a)=(t,\sigma) a$ is $0$, since $t \not \in \Sp {\hat \alpha |_{\mathscr{M}_0}}$.
 
 In particular,
 \begin{align*}
 	x_0 x \alpha_t(x_0) = (x_0 x \lambda_t x_0) \lambda_{-t} = 0,
 \end{align*}
-for all $x \in A$. If $I = \overline{(x_0)} \subseteq A$ is the smalles ideal containing $x_0$, then $0 \neq I \subseteq A$ with $I \cap \alpha_t(I)$.
+for all $x \in A$. If $I = \overline{(x_0)} \subseteq A$ is the smalles ideal containing $x_0$, then $0 \neq I \subseteq A$ with $I \cap \alpha_t(I)=I\cdot\alpha_t(I)=0$.
 \end{proof}
+We now define an equivalence on the of $(A,G)$-$C^*$-dynamical systems, i.e., the class of $C^*$-dynamical systems $(A, G, \alpha)$ for fixed $(A,G)$. 
+\begin{definition}
+	We say that the $C^*$-dynamical systems $(A,G,\alpha)$ and $(A, G, \alpha')$ are \myemph{exterior equivalent} if there is a $C^*$-dynamical system $(M_2(A), G, \lambda)$ such that
+	\begin{align*}
+		\lambda_t (x \oplus y) = \alpha_t(x) \oplus \alpha'_t(y),
+	\end{align*}
+	for all $x,y \in A$ and $t \in G$.
+\end{definition}
+\begin{lemma}
+	A necessary and sufficient condition for $(A, G , \alpha)$ and $(A, G , \alpha')$ being exterior equivalent is that there exists a strongly continuous map $G \to \mathcal{U} M(A)$ such that
+	\begin{enumerate}
+		\item $u_{s+t}=u_s\alpha_s(u_t)$ for all $s,t \in G$ and\\
+		\item $\alpha_t' = (\mathrm{Ad} u_t ) \alpha_t$.
+	\end{enumerate}
+\end{lemma}
+\begin{proof}
+Suppose that $(A, G , \alpha)$ and $(A,G,\alpha')$ are exterior equivalent. Extend $\lambda$ to $M(M_2(A))$, and define the operator
+\begin{align*}
+	m_t:=\lambda_t\begin{pmatrix}
+		0 & 0 \\
+		1 & 0
+	\end{pmatrix}.
+\end{align*}
+We then see that 
+\begin{align*}
+	m_t^* m_t = \lambda_{t} \begin{pmatrix}
+		1 & 0 \\
+		0 & 0 
+	\end{pmatrix} =  \begin{pmatrix}
+		1 & 0 \\
+		0 & 0
+	\end{pmatrix},
+\end{align*}
+since $\lambda_t \in \mathrm{Aut}(M(M_2(A)))$. Similarly $m_tm_t^* = \begin{pmatrix}
+	0 & 0\\
+	0 & 1
+\end{pmatrix}$. It follows that $m_t = \begin{pmatrix}
+	0 & 0 \\
+	u_t & 0
+\end{pmatrix}$
+for some unitary operator $u_t \in M(A)$, $t \in G$. It is easy to verify that $u_t$ satisfies the desired properties. For the converse, define $\lambda_t$ on $M_2(A)$ by
+\begin{align*}
+	\lambda_t \begin{pmatrix}
+		a & b \\
+		c & d
+	\end{pmatrix}:=
+	\begin{pmatrix}
+		\alpha_t(a) & \alpha_t(b) u_t^*\\
+		u_t \alpha_t(c) & \alpha'_t(d)
+	\end{pmatrix}
+\end{align*}
+and check that this is indeed an action.
+\end{proof}
+Traditionally, the second condition was called exterior equivalence while the first is called the \myemph{Cocycle equation}. In his thesis (\cite[2.2.5]{connesclassification}), Connes showed that whenever $p\sim q$ are $G$-invariant equivalent projections in $M(A)$ (in the traditional sense, i.e., $p = v^*v$ and $ q = v v^*$ for a partial isometry $v$), then
+\begin{align*}
+	\hat G (\alpha |_{pAp}) = \hat G (\alpha|_{qAq}),
+\end{align*}
+see also \cite[lemma 4.3]{olesenpedersen1}. This is particularly useful for us, since we obtain:
+\begin{proposition}
+	If $(A,G,\alpha)$ and $(A, G , \alpha')$ are exteriorly equivalent, then $\hat G(\alpha) = \hat G(\alpha')$.
+\end{proposition}
+\begin{proof}
+	Let $p = 1 \oplus 0$ and $q = 0 \oplus 1$ in $M_n(M(A))$. Then $p \sim q$ and both are $G$-invariant, and clearly $\alpha = \gamma | _{p(M_2(A))p}$ and $\alpha' = \gamma|_{q (M_2(A))q}$, so
+	\begin{align*}
+		\hat G(\alpha) = \hat G ( \gamma|_{p(M_2(A)p}) = \hat G(\gamma|_{q(M_2(A))q}) = \hat G(\alpha').
+	\end{align*}
+\end{proof}
+\begin{note}
+	If $(A, G, \alpha)$ and $(B, G, \beta)$ are covariantly isomorphic $C^*$-dynamical systems, then (after identifying $A$ with $B$), we see that $(A,G, \alpha)$ and $(A, G, \beta)$ are trivially exteriorly equivalent.
+\end{note}
+\begin{theorem}
+	Let $(A,G,\alpha)$ be a $C^*$-dynamical system. Then $\hat G(\alpha)=\hat G (\hat{\hat \alpha})$ for $(A, G, \alpha)$ and $(A \rtimes_\alpha G \rtimes_{\hat \alpha} \hat G, G, \hat{\hat \alpha})$.
+	\label{dualactionspectrum}
+\end{theorem}
+\begin{proof}
+	First, let $I$ be the trivial representation of $G$ on $\mathbb{K}(L^2(G))$. Then $\hat G(\alpha) = \hat G(\alpha \otimes I)$:
+	Let $\{\xi_i\}$ be a basis of $L^2(G)$, and let $p_i$ be the minimal projection onto $\C \xi_i$. Let $\iota_i$ be the hereditary embedding of $A$ into $A \otimes \mathbb{K}(L^2(G))$, $a \mapsto a \otimes p_i$. Since $A \subseteq A \otimes \mathbb{K}(L^2(G))$ as a hereditary $C^*$-subalgebra, $\hat G(\alpha \otimes I) \subseteq \hat G(\alpha)$. (In fact it is a good exercise to show that given a projection in $p$ a $C^*$-algebra $A$, the cut-off $C^*$-algebra $pAp \subseteq A$ is hereditary, however we instead refer to \cite[Example II.7.3.14]{blackadar})
+	
+	For the other inclusion, note that given any non-zero $G$-invariant hereditary $C^*$-subalgebra $B \subseteq A \otimes \mathbb{K}(L^2(G))$, we have $\iota_i(A) \cap B \neq 0$ for some $i$. For else, given $0 < b \in B$, we have $b_i := (1 \otimes p_i) b (1\otimes p_i)  \in \iota_i(A) \cap B= 0$ for all $i$ (apply hereditarity of $B$ to the opposite cutoff and $b$). From this we infer that $b_i \eta \otimes \xi_i = 0$ for all $i$ and all $\eta \in H$, where $A \subseteq \mathbb{B}(H)$. Since $\{\xi_i\} $ is a basis, this implies that $b = 0$. In particular, $\Sp {\alpha \otimes I |_B} \supseteq \Sp { \alpha |_{\iota_i^{-1}(B \cap \iota_i(A))}}$, so that $\hat G(\alpha \otimes I) \supseteq \hat G(\alpha)$.
+
+	We already know that $\hat G(\hat{\hat \alpha}) = \hat G(\alpha \otimes \mathrm{Ad} \rho)$ by Takai duality. Hence it suffices to show that
+	\begin{align*}
+		(A \otimes \mathbb{K}(L^2(G)), G , \alpha \otimes I) \sim_{\mathrm{ext}} (A \otimes \mathbb{K}(L^2(G)), G , \alpha \otimes \mathrm{Ad} \rho).
+	\end{align*}
+	To see this, let $u_t := 1 \otimes \rho_t \in M(A \otimes \mathbb{K}(L^2(G)))$. Clearly $(\alpha_s \otimes I) (u_t) = \alpha_s(1) \otimes \rho_t = 1 \otimes \rho_t$, so $u_{s+t}= u_s \alpha_s(u_t)$. Also clearly $\alpha \otimes \mathrm{Ad} \rho = \mathrm{Ad} u \circ \alpha \otimes I$, and $t \mapsto u_t$ is equally clearly strongly continuous. We conclude that 
+	\begin{align*}
+		\hat G ( \hat {\hat \alpha}) = \hat G ( \alpha \otimes \mathrm{Ad} \rho) = \hat G( \alpha \otimes I) = \hat G( \alpha),
+	\end{align*}
+	finishing the proof.
+\end{proof}
+Which gives us the first ingredient in determining the ideal structure of $A \rtimes_\alpha G$:
+\begin{corollary}
+	Let $(A,G,\alpha)$ be a $C^*$-dynamical system. Then $\sigma \in \hat G ( \alpha)$ if and only if $I \cap \hat \alpha_\sigma (I) \neq 0$ for all non-zero ideals $I \subseteq A \rtimes_\alpha G$.
+\end{corollary}
+\begin{proof}
+	Apply \cref{connesideal1} to $\hat{ \hat{ \alpha}}$ and combine it with \cref{dualactionspectrum} to obtain the desired result.
+\end{proof}
+\begin{definition}
+	\todo{include Prime $A$ in prelim} Let $G \acts \alpha A$. We say tha $A$ is \myemph{$G$-prime} if whenever $I,J$ are non-zero $G$-invariant ideals in $A$ it holds that $I \cap J \neq 0$.
+\end{definition}
+\begin{remark}
+	Analogously with the regular definition of a prime $C^*$-algebra, the definition of $A$ being $G$-prime is equivalent to every non-zero $G$-invariant ideal of $A$ being essential or if $\alpha_t(x) A \alpha_s(y)=0$ for all $s,t \in G$ implies $x = 0$ or $y = 0$. We will not go into details with this, the details are almost identical to the ones for regular primitivity of $A$.
+
+	Also worth noting is that if $(A,G,\alpha)$ and $(B, \Gamma, \beta)$ are covariantly isomorphic (i.e., there is a $G$-equivariant isomorphism $\varphi \colon A \to B$), then $A$ is $G$-prime if and only if $B$ is $\Gamma$-p, obviously.
+\end{remark}
+With this, we obtain:
+\begin{lemma}
+	Let $(A,G,\alpha)$ be a $C^*$-dynamical system. Then the following are equivalent:
+	\begin{enumerate}
+		\item $A$ is prime;
+		\item (a) $A$ is $G$-prime and (b) $G(\hat \alpha ) =G$.
+	\end{enumerate}
+	\label{olpe1.3.4}
+\end{lemma}
+\begin{proof}
+	That $A$ is prime implies $A$ being $G$-prime is obvious and the last implication follows directly from \cref{connesideal1}.
+
+	Assume towards a contradiction that (a) and (b) holds and $A$ is not prime, and let $I, J$ be non-zero ideals of $A$ such that $I \cap J = 0$. If $t \in G$ is such that $\alpha_t(I) \cap J \neq 0$, then, since $-t \in G(\hat \alpha)$, it must hold that with $L := \alpha_t(I)) \cap J$, we have $L \cap \alpha_{-t}(L) \neq 0$, but $L \cap \alpha_{-t}(L) \subseteq  J \cap I = 0$, so $\alpha_t(I) \cap J = 0$. Let $I_G$ be the smallest ideal containing $\bigcap_{t \in G} \alpha_t(I)$ and note that in particular $I_g$ is a non-zero $G$-invariant ideal of $A$, hence essential by (a). Then $I_G \cap J = 0$, but since $I_G$ is essential in $A$, this implies that $J = 0$, a contradiction. Hence $A$ is a prime $C^*$-algebra.
+\end{proof}
+\begin{lemma}
+	Let $(A, G, \alpha)$ be a $C^*$-dynamical system. Then $A$ is $G$-prime if and only if $A \rtimes_\alpha G$ is $\hat G$-prime.			
+	\label{olpe1.5.7}
+\end{lemma}
+\begin{proof}
+	It is quite easy to see that if $I,J$ are non-zero $\hat G$-invariant ideals of $A \rtimes_\alpha G$, then whenever $f \in L^1(G) \cap L^2(G)$, $\lv f \rv_1  \neq 0$ and $x \in I_+$ and $y \in J_+$ are non-zero, then by \cref{olpe1lemma2.8} we have $a := I(\lambda_f^* y \lambda_f) \in A$ and $b := I(\lambda_f^* x \lambda_f)$ since $A$ are the elements of $M(A \rtimes_\alpha G)$ satisfying Landstad's condition. It is not hard to see that $a z b = 0$ for all $z \in M(A \rtimes_\alpha G)$ (in partiular for all $z \in A \subseteq M(A \rtimes_\alpha G)$), since $\hat \alpha_{\sigma}(\lambda_f^* y \lambda_f) z \hat \alpha_{\chi}(\lambda_f^* x \lambda_f) = 0$ for all $z \in M(A \rtimes_\alpha G)$. In particular, by covariance of $\lambda$ and $\alpha$, we have
+	\begin{align*}
+		\alpha_s(a) z \alpha_t(b) = \lambda_s a (\lambda_{-s} z \lambda_t) b \lambda_{-t}=0,
+	\end{align*}
+	so if $I'$ and $J'$ are the smallest ideals generated by $\{ \alpha_s(a) \mid s \in G\}$ and $\{ \alpha_s(b) \mid s \in G\}$, respectively, which must be $G$-invariant, then $I'\cdot J' = 0$ implying that $A$ is not $G$-prime.
+
+	For the converse, given non-zero $G$-invariant ideals $I,J$ of $A$ then $J':=J \otimes \mathbb{K}(L^2(G))$ and $I':=I \otimes \mathbb{K}(L^2(G))$ are $G$-invariant ideals of $A \otimes \mathbb{K}(L^2(G))$ with respect to the action $\alpha \otimes \mathrm{Ad} \rho$, clearly satisfying $ J'\cap I' = 0$. By Takai duality, this implies that $A \rtimes_\alpha G$ is not $\hat G$-prime. 
+\end{proof}
+Combining the previous round of results, we obtain a nice result:
+\begin{corollary}
+	For a $C^*$-dynamical system $(A,G,\alpha)$, the following are equivalent:
+	\begin{enumerate}
+		\item $A \rtimes_\alpha G$ is prime;
+		\item (a) $A$ is $G$-prime and (b) $\hat G(\alpha) = \hat G$.
+	\end{enumerate}
+	\label{olpe1.5.8}
+\end{corollary}
 
 

@@ -627,3 +627,31 @@ We will use $M_s(A)$ to mean $M(A)$ equipped with the strict topology, and we wi
 \end{proof}
 
 In particular, for a net of unitary operators on a Hilbert $A$-module, strict and $*$-strong convergence is the same. We shall utilize this fact repeatedly later on.
+
+\begin{theorem}
+	Let $A,B$ be $C^*$-algebras. Then there is a faithful non-degenerate $*$-homomorphism
+	\begin{align*}
+		\psi \colon M(A) \otimes_{\min} M(B) \hookrightarrow M(A \otimes_{\min} B).
+	\end{align*}
+	\label{mult:mintens}
+\end{theorem}
+\begin{proof}
+	Let $A,B$ be represented by faithful non-degenerate representations $\pi_A$ and $\pi_B$ on $H_A$ and $H_B$. Identify $M(A)$ and $M(B)$ with the idealizers in $\mathbb{B}(H_A)$ and $\mathbb{B}(H_B)$, respectively. Let $\pi$ be the corresponding non-degenerate and faithful $*$-homomorphism $A \otimes_{\min} B \to \mathbb{B}(H_A \otimes H_B)$ given $\pi(a \otimes b)(\xi \otimes \eta) = \pi_A(a) \xi \otimes \pi_B(b) \eta$, so that $M(A \otimes_{\min} B)$ is the idealizer of $A \otimes_{\min}B$ in $\mathbb{B}(H_A \otimes H_B)$.
+
+	If $t \in M(A)$ and $s \in M(B)$, so $t \otimes s \in M(A) \otimes M(B)$, then for all $a \otimes b \in A \otimes_{\min} B$, we have 
+	\begin{align*}
+		t \otimes s (\pi(a \otimes b) ) = t \pi_A(a) \otimes s \pi_B(b) \in \pi(A \otimes_{\min} B)
+	\end{align*}
+	and similarly $(\pi(a \otimes b) ) t \otimes s \in \pi(A \otimes_{\min} B)$, so $t \otimes s \in M(A \otimes_{\min} B)$ by density of the span of elements of the form $a \otimes b$ in $A \otimes_{\min} B$, showing that $M(A) \otimes_{\min} M(B)  \subseteq M(A \otimes_{\min} B)$.
+\end{proof}
+There is not equiality in the above, for instance if we consider the compact operators in the spot of both $A$ and $B$. However, if $B$ is finite-dimensional, the inclusion is an equality:
+\begin{lemma}
+	For all $C^*$-algebras $A$ and $n \geq 1$: $M(A \otimes M_n(\C) ) = M_n(M(A))$.
+\end{lemma}
+\begin{proof}
+	For this, suppose that $M_n(M(A)) \subseteq M_n(\mathbb{B}(H))$. It suffices to show that given any $t=(t_{i,j})$ in the idealizer of $M_{n}(M(A))$, each $t_{i,j}$ is in the idealizer of $M(A)$. Let $\{e_{l,k}\}$ be the canonical matrix units of $M_n(\C)$, then for all fixed $k,l =1,\dots,n$ we have
+	\begin{align*}
+		\sum_{i=1}^n t_{i,k} a \otimes e_{i,l} = t a \otimes e_{k,l} \in M_n(A),
+	\end{align*}
+	and similarly from the right. This shows that $a \otimes t_{i,j}, t_{i,j} a \in M(A)$ for all $a \in A$ and $i,j = 1,\dots,n$, that $t_{i,j} \in M(A)$ and hence $t \in M_n(M(A))$.
+\end{proof}
