@@ -281,4 +281,79 @@ Combining the previous round of results, we obtain a nice result:
 	\label{olpe1.5.8}
 \end{corollary}
 
+Analogously to the case of primitivity and $G$-primitivity, we introduce the notion of $G$-simplicity of a dynamical system:
+\begin{definition}
+	Let $(A,G,\alpha)$ be a $C^*$-dynamical system. We say that $A$ is \myemph{$G$-simple} if there are no non-trivial $G$-invariant ideals $J$ of $A$.
+\end{definition}
+It is clear that $G$-simple is a stronger requirement than being $G$-prime and is more closely related to simplicity of $A$. We will now see that the set of $G$-invariant ideals of $A$ is in bijection with the set of $\hat G$-invariant ideals of the crossed product $A \rtimes_\alpha G$, and list a necessary and sufficient condition for simplicity of $A \rtimes_\alpha G$ for a large class of groups, but first, we have the following:
+\begin{proposition}
+	Given a $C^*$-dynamical systems $(A,G,\alpha)$, it holds that $A$ is $G$-simple if and only if $A \rtimes_\alpha G$ is $\hat G$-simple.
+	\label{olpe1.6.1}
+\end{proposition}
+\begin{proof}
+	Suppose that $A \rtimes_\alpha G$ is not $\hat G$-simple and choose a non-trivial $\hat G$-invariant ideal $J$ witnessing this. Then there is some state $\varphi \in \mathcal{S}(A \rtimes_\alpha G)$ such that $\varphi(J) = 0$, i.e., by letting $\varphi$ be the state obtained by the representation with kernel $J$. Extend $\varphi$ to all of $M(A \rtimes_\alpha G)$ and note that $\varphi(A) \neq 0$: Wenever $u_i$ is an approximate identity of $A$ we have $u_i x \to x$ for all $x \in A \rtimes_\alpha G$, which by Cauchy-Schwarz gives
+	\begin{align*}
+	|\varphi(u_i^* x)| \leq \varphi(u_i^*u_i)\varphi(x^*x),
+	\end{align*}
+	implying that if $\varphi(A) = 0$ then $\varphi(x) = \lim \varphi(u_i^* x) \leq 0$ for all $x \in A \rtimes_\alpha G$ contradicting our assumptions.
+	
+	Let now $N$ be the subset of $A$ (by \cref{landstadcross} and \cref{olpe1lemma2.8}) given by
+	\begin{align*}
+		N:=\{ I(y) \mid y \in J \text{ is } \hat \alpha-\text{integrable}\},
+	\end{align*}
+	so that $\varphi(N) = 0$ by $\hat G$-invariance of $J$, implying that $N \subseteq A$ is not dense. $*$-linearity of $I$ shows that $N$ is a $*$-subspace, and since the action on $A$ is given by $\alpha_t(a) = \lambda_t a \lambda_{-t}$ and every element are $\hat \alpha$-invariant, we see that $a I(y) b = I(ayb) \in N$ and $\alpha_t(I(y)) = \lambda_t I(y) \lambda_{-t} = I(\lambda_t y \lambda_{-t}) \in N$ for all $I(y)\in N$, $t \in G$ and $a,b \in A$. We conclude that $N$ is an algebraic $*$-ideal of $A$, which is non-zero since $I(\lambda_f^* y \lambda_f) \in N$ for all $y \in J$ and $f \in L^1(G) \cap L^2(G)$ by \cref{olpe1lemma2.8}. Thus the closure of $N$ is a non-trivial $G$-invariant ideal of $A$.
+
+	For the converse, if $J$ is a non-zero $G$-invariant ideal of $A$, then $J \otimes \mathbb{K}(L^2(G))$ is a non-zero $\hat G$-invariant ideal of $A \otimes \mathbb{K}(L^2(G))$ with respect to the action $\alpha \otimes \mathrm{Ad} \rho$, and the result follows from Takai duality.
+\end{proof}
+Allowing us to, analogously with the case of primitivity, to obtain the following:
+\begin{proposition}	
+	For a $C^*$-dynamical system $(A,G,\alpha)$, if $A$ is simple then
+\begin{enumerate}
+	\item $A \rtimes_\alpha G$ is $\hat G$-simple;
+	\item $G(\hat \alpha) = G$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+	If $A$ is simple, then $A$ is in particular $G$-simple implying that $A \rtimes_\alpha G$ is $\hat G$-simple by \cref{olpe1.6.1}. Similarly, if $A$ is simple then $A$ is prime so $G(\hat \alpha) = G$ by \cref{olpe1.3.4}.
+\end{proof}
+\begin{proposition}
+	For a $C^*$-dynamical system $(A,G,\alpha)$, if $A \rtimes_\alpha G$ is simple then 
+	\begin{enumerate}
+		\item $A$ is $G$-simple;
+		\item $\hat G(\alpha)= \hat G$.
+	\end{enumerate}
+	\label{olpe1.6.3}
+\end{proposition}
+\begin{proof}
+	The first condition follows again from \cref{olpe1.6.1}. The second condition follows from \cref{olpe1.5.8} since simplicity implies primitivity.
+\end{proof}
+We proceed to show that whenever $G$ is discrete, then the converse of the above holds. For this, we will apply the fact that $G$ is discrete if and only if $\hat G$ is compact with the following:
+\begin{lemma}
+	Suppose that $G$ is a compact group and $G \acts \alpha A$. If $A$ is prime and $G$-simple then $A$ is simple.	
+	\label{olpe1.6.4}
+\end{lemma}
+\begin{proof}
+	ASsume that $I$ is a non-trivial ideal of $A$, and choose non-zero elements $x,y \in I_+$ with $yx=y$ as in the proof of \cref{connesideal1}. Let $0 \in U$ be a neighborhood such that 
+	\begin{align*}
+		\lv \alpha_s(x)-x\rv < 1, \text{ for all }s \in U,
+	\end{align*}
+	so that $\alpha_s(y) \in I$ for all $s \in U$, as per the proof of \cref{connesideal1}. Let $t_1,\dots,t_n \in G$ be such that $\{ U - t_i\}$ covers $G$. Recall that primitivity implies that for all non-zero $a,b \in A$ there is $z \in A$ with $azy \neq 0$ (or equivalently, $aAb = 0 $ implies $a=0$ or $b = 0$). Recursively, find $a_1,\dots,a_{n-1} \in A \\ \{0\}$ such that
+	\begin{align*}
+	0 \neq	y_0 = \alpha_{t_1}(y) a_1 \alpha_{t_2}(y) a_2\cdots \alpha_{t_{n-1}}(y) a_{n-1} \alpha_{t_n}(y).
+	\end{align*}
+	If $t \in G$, then there is $1 \leq k \leq n$ such that $t-t_k \in U$ and hence $\alpha_t(y_0) = \cdots \alpha_{t+t_k}(y) \dots \in I$, implying that the orbit $\{\alpha_s(y_0) \mid s \in G\}$ is contained in $I$. Let now $I_0$ be the smallest ideal containing this orbit, then $y_0 \in I_0 \subseteq I \neq A$ contradicting the assumption that $A$ is $G$-simple, since $I_0$ is $G$-invariant. Hence $A$ is simple.
+\end{proof}
+\begin{theorem}
+	Let $(A, G ,\alpha)$ be a $C^*$-dynamical system with $G$ discrete, then the following are equivalent:
+	\begin{enumerate}
+		\item $A \rtimes_\alpha G$ is simple;
+		\item (a) $A$ is $G$-simple and (b) $\hat G(\alpha) = \hat G$.
+	\end{enumerate}
+	\label{olpe1thm}
+\end{theorem}
+\begin{proof}
+	The first implication is \cref{olpe1.6.3}. 
+	
+	For the converse, note that $A \rtimes_\alpha G$ is prime by \cref{olpe1.5.8} and by \cref{olpe1.6.1} it is also $\hat G$-simple. Since $G$ is discrete, $\hat G$ is compact and \cref{olpe1.6.4} implies that $A \rtimes_\alpha G$ is simple.
+\end{proof}
 
