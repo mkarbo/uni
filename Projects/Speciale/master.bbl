@@ -213,6 +213,34 @@
   \field{year}{2013}
 \endentry
 
+\entry{gootman1979structure}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Gootman}{G.}%
+     {Elliot~C}{E.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Rosenberg}{R.}%
+     {Jonathan}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer}%
+  }
+  \strng{namehash}{GECRJ1}
+  \strng{fullhash}{GECRJ1}
+  \field{sortinit}{G}
+  \field{number}{3}
+  \field{pages}{283\bibrangedash 298}
+  \field{title}{The structure of crossed productC*-algebras: a proof of the
+  generalized Effros-Hahn conjecture}
+  \field{volume}{52}
+  \field{journaltitle}{Inventiones mathematicae}
+  \field{year}{1979}
+\endentry
+
 \entry{lance1995hilbert}{book}{}
   \name{author}{1}{}{%
     {{}%
@@ -248,6 +276,38 @@
   \field{title}{Duality theory for covariant systems}
   \field{volume}{248}
   \field{journaltitle}{Transactions of the American Mathematical Society}
+  \field{year}{1979}
+\endentry
+
+\entry{landstad1979towards}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Landstad}{L.}%
+     {Magnus~B}{M.~B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Olesen}{O.}%
+     {Dorte}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Pedersen}{P.}%
+     {Gert~Kj{\ae}rg{\aa}rd}{G.~K.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {JSTOR}%
+  }
+  \strng{namehash}{LMBODPGK1}
+  \strng{fullhash}{LMBODPGK1}
+  \field{sortinit}{L}
+  \field{number}{2}
+  \field{pages}{311\bibrangedash 321}
+  \field{title}{Towards a Galois theory for crossed products of C*-algebras}
+  \field{volume}{43}
+  \field{journaltitle}{Mathematica Scandinavica}
   \field{year}{1979}
 \endentry
 
