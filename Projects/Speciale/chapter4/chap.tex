@@ -1,0 +1,50 @@
+\chapter{Actions And Automorphisms}
+In this chapter, we will go through theory describing automorphisms on a $C^*$-algebra $A$ and actions of groups $G$ on $C^*$-algebras, including applications in describing the ideal structure of crossed products. A motivation for including and describing this theory is the result of Archbold And Spielberg (see \cite{archbold1994topologically}), which showed that for a large class of groups and $C^*$-algebras, a certain condition on the action $G \acts {} A$ implies simplicity of the associated (reduced) crossed product $A \rtimes_\alpha G$ ($A \rtimes_{\alpha,r} G$).
+\sssection{Properties of Actions}
+\begin{definition}
+	For a $C^*$-algebra $A$, we define the \myemph{primitive ideal space} of a $C^*$-algebra $A$ to be the set
+	\begin{align*}
+		\Prim A := \left\{ \ker \pi \mid \pi \text{ is an irreducible representation of } A \right\}.
+	\end{align*}
+	Furthermore, we define the \myemph{spectrum of a $C^*$-algebra} $A$ to be the set
+	\begin{align*}
+		\hat A := \{[\pi]_u \mid \pi \text{ is an irreducible representation of } A \}.
+	\end{align*}
+where $[\cdot]_u$ denotes the class of unitarily equivalent representations.
+
+If $\pi_1 \sim_u \pi_2$, then $\ker \pi_1 = \ker \pi_2$ so the map $\kappa \colon \hat A \to \Prim A$, $[\pi]_u \mapsto \ker \pi$, is surjective and well-defined. We endow $\Prim A$ with a topology called the \myemph{hull-kernel topology} defined such that for $S = (s_i)_{i \in I} \subseteq \Prim A$, we define
+\begin{align*}
+	\overline S := \{ p \in \Prim A \mid \cap_{i \in I} s_i \subseteq p\}.
+\end{align*}
+We also endow $\hat A$ with the corresponding initial topology stemming from the surjective map $\kappa$.
+\end{definition}
+\begin{remark}
+	For a commutative $C^*$-algebra (i.e., $A = C_0(X)$), the spectrum of $A$ is the Gelfand Space of $A$, i.e., non-zero $*$-homomorphisms $A \to \C$, since irreducible representations of commutative spaces are one-dimensional. Moreover, in this case it holds that $\hat A \cong \Prim A$.
+\end{remark}
+These objects interact nicely with dynamical systems, in particular, we note that whenever $G$ is discrete and $G \acts \alpha A$ then we may define the \myemph{transposed action of $G$} on both $\hat A$ and $\Prim A$ (as topological spaces) given by
+\begin{align*}
+	\alpha_r^*([\pi]_u) := [\pi \circ \alpha_{r^{-1}}] \text{ and } \alpha_{r}^*(\ker \pi) = \ker \pi \circ \alpha_{r^{-1}},
+\end{align*}
+for all irreducible representations $\pi$ of $A$. We then define the following properties for an action $ G \acts \alpha A$:
+\begin{definition}
+	For an action $G \acts \alpha A$, where $G$ is discrete, we say that the action is \myemph{Topologically free} if for all $t_1,\dots,t_n \in G\backslash\{e\}$ the set $\bigcap_{i=1}^n \left\{ [\pi]_u \in \hat A | \alpha_{t_i}^*([\pi]_u)\neq [\pi]_u \right\}$ is dense in $\hat A$.
+\end{definition}
+We will get back to how this translates for $A$ commutative in a bit, i.e., when $A=C_0(X)$. 
+\begin{definition}
+	For a $C^*$-algebra $A$, we say that $\alpha \in \mathrm{Aut}(A)$ is \myemph{properly outer} if for all $\alpha$-invariant non-zero ideals $I \subseteq A$ and all inner automorphisms $\beta$ of I it holds that
+	\begin{align*}
+		\lv \alpha|_I - \beta \rv = 2.
+	\end{align*}
+\end{definition}
+Elliot and Olesen \& Pedersen showed in \cite[Theorem 3.2]{elliott1980some} and \cite[Theorem 7.2]{olesenpedersen3}, respectively, that for discrete groups $G$ with $G \acts \alpha A$ minimal, a sufficient condition for $C^*$-simplicity of $A \rtimes_{\alpha,r} G$ for a large class of $C^*$-algebras was that $\alpha_t$ be properly outer for $t \neq e$. Archbold and Spielberg later improved on this result in \cite{archbold1994topologically}. We will go through their result. 
+\begin{proposition}[\mbox{\cite[Proposition 1]{archbold1994topologically}}]
+	Let $(A,G,\alpha)$ be a $C^*$-dynamical system. If $\alpha$ is topologically free, then $\alpha_t$ is properly outer for all $t \neq e$.
+\end{proposition}
+\begin{remark}
+	The proof is based on theory of derivations of $C^*$-algebras, which we will not go into detail with. Shortly put, a derivation of a $C^*$-algebra is a linear map which behaves similar to derivation of differentiable functions. For an exhibition on this, see e.g., \cite[Chapter 8.6]{pedersenalgauto} (or the books they refer to \cite{sakai1978recent} and \cite{bratteli2012operator} by Sakai and Bratteli et al., respectively.) 
+
+	The proof is based on a result of Kadison-Ringrose, which characterizes proper outerness with not, in a sense, never locally looking like an inner automorphism composed with the exponential of a derivation, see \cite{kadison1967derivations} or \cite[Theorem 6.6 (i) and (ii)]{olesenpedersen3}.
+\end{remark}
+
+
+
