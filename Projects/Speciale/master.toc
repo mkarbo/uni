@@ -20,12 +20,16 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.4}The case of Abelian groups and Takai Duality}{55}{section.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {3}Simplicity Of Crossed Products}{71}{chapter.3}
+\contentsline {chapter}{\chapternumberline {3}The Group Spectra And Applications}{71}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}The Group Spectra}{71}{section.3.1}
+\contentsline {section}{\numberline {3.1}The Arveson and Connes spectra}{71}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.1}The Arveson and Connes spectra}{71}{subsection.3.1.1}
+\contentsline {section}{\numberline {3.2}The Connes Spectrum and Simplicity}{73}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{86}{chapter*.28}
+\contentsline {chapter}{\chapternumberline {4}Actions And Automorphisms}{85}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Alphabetical Index}{88}{section*.29}
+\contentsline {section}{\numberline {4.1}Properties of Actions}{85}{section.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{87}{chapter*.28}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Index}{90}{section*.29}

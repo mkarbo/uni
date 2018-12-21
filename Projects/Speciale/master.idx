@@ -29,15 +29,21 @@
 \indexentry{Landstad's conditions}{60}
 \indexentry{$\mathaccentV {widehat}870{\alpha }$-integrable}{65}
 \indexentry{weak$^*$-integrals}{71}
-\indexentry{spectral $R$-subspace}{72}
+\indexentry{spectral $R$-subspace}{71}
 \indexentry{spectral $M$-subspace}{72}
 \indexentry{Arveson Spectrum}{72}
 \indexentry{hereditary}{73}
 \indexentry{Connes Spectrum}{73}
-\indexentry{$W^*$-system}{74}
+\indexentry{$W^*$-system}{73}
 \indexentry{exterior equivalent}{76}
 \indexentry{Cocycle equation}{77}
-\indexentry{$G$-prime}{79}
+\indexentry{$G$-prime}{78}
 \indexentry{$G$-simple}{80}
-\indexentry{detects ideals}{83}
-\indexentry{separates ideals}{83}
+\indexentry{detects ideals}{82}
+\indexentry{separates ideals}{82}
+\indexentry{primitive ideal space}{85}
+\indexentry{spectrum of a $C^*$-algebra}{85}
+\indexentry{hull-kernel topology}{85}
+\indexentry{transposed action of $G$}{86}
+\indexentry{Topologically free}{86}
+\indexentry{properly outer}{86}

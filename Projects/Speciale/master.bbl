@@ -16,6 +16,34 @@
   {}
 \endgroup
 
+\entry{archbold1994topologically}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Archbold}{A.}%
+     {Robert~J}{R.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Spielberg}{S.}%
+     {Jack~S}{J.~S.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Cambridge University Press}%
+  }
+  \strng{namehash}{ARJSJS1}
+  \strng{fullhash}{ARJSJS1}
+  \field{sortinit}{A}
+  \field{number}{1}
+  \field{pages}{119\bibrangedash 124}
+  \field{title}{Topologically free actions and ideals in discrete C*-dynamical
+  systems}
+  \field{volume}{37}
+  \field{journaltitle}{Proceedings of the Edinburgh Mathematical Society}
+  \field{year}{1994}
+\endentry
+
 \entry{bekka2008kazhdan}{book}{}
   \name{author}{3}{}{%
     {{}%
@@ -116,6 +144,30 @@
   \field{year}{1996}
 \endentry
 
+\entry{bratteli2012operator}{book}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Bratteli}{B.}%
+     {Ola}{O.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Robinson}{R.}%
+     {Derek~William}{D.~W.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer Science \& Business Media}%
+  }
+  \strng{namehash}{BORDW1}
+  \strng{fullhash}{BORDW1}
+  \field{sortinit}{B}
+  \field{title}{Operator Algebras and Quantum Statistical Mechanics: Volume 1:
+  C*-and W*-Algebras. Symmetry Groups. Decomposition of States}
+  \field{year}{2012}
+\endentry
+
 \entry{brown2008c}{book}{}
   \name{author}{2}{}{%
     {{}%
@@ -174,6 +226,30 @@
   \field{sortinit}{D}
   \field{title}{Les C* algLbres et leurs repr{\O}sentations}
   \field{year}{1969}
+\endentry
+
+\entry{elliott1980some}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Elliott}{E.}%
+     {George~A}{G.~A.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Research Institute forMathematical Sciences}%
+  }
+  \strng{namehash}{EGA1}
+  \strng{fullhash}{EGA1}
+  \field{sortinit}{E}
+  \field{number}{1}
+  \field{pages}{299\bibrangedash 311}
+  \field{title}{Some simple C*-algebras constructed as crossed products with
+  discrete outer automorphism groups}
+  \field{volume}{16}
+  \field{journaltitle}{Publications of the Research Institute for Mathematical
+  Sciences}
+  \field{year}{1980}
 \endentry
 
 \entry{folland2016fourier}{book}{}
@@ -239,6 +315,33 @@
   \field{volume}{52}
   \field{journaltitle}{Inventiones mathematicae}
   \field{year}{1979}
+\endentry
+
+\entry{kadison1967derivations}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Kadison}{K.}%
+     {Richard~V}{R.~V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ringrose}{R.}%
+     {John~R}{J.~R.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer}%
+  }
+  \strng{namehash}{KRVRJR1}
+  \strng{fullhash}{KRVRJR1}
+  \field{sortinit}{K}
+  \field{number}{1}
+  \field{pages}{32\bibrangedash 63}
+  \field{title}{Derivations and automorphisms of operator algebras}
+  \field{volume}{4}
+  \field{journaltitle}{Communications in Mathematical Physics}
+  \field{year}{1967}
 \endentry
 
 \entry{lance1995hilbert}{book}{}
@@ -512,6 +615,27 @@
   \field{title}{Functional analysis. International series in pure and applied
   mathematics}
   \field{year}{1991}
+\endentry
+
+\entry{sakai1978recent}{incollection}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Sakai}{S.}%
+     {Sh{\^o}ichir{\^o}}{S.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer}%
+  }
+  \strng{namehash}{SS1}
+  \strng{fullhash}{SS1}
+  \field{sortinit}{S}
+  \field{booktitle}{C*-algebras and applications to physics}
+  \field{pages}{85\bibrangedash 122}
+  \field{title}{Recent developments in the theory of unbounded derivations in
+  C*-algebras}
+  \field{year}{1978}
 \endentry
 
 \entry{schilling}{book}{}

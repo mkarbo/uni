@@ -1,94 +1,118 @@
 \begin{theindex}
+{\large\sffamily\bfseries Symbols}\nopagebreak
 
-  \item $G$-prime, 79
-  \item $G$-product, 60
-  \item $G$-simple, 80
-  \item $W^*$-system, 74
-  \item $\mathaccentV {widehat}870{\alpha }$-integrable, 65
-  \item (Ir)rational Rotation Algebra, 39
-
-  \indexspace
-
-  \item adjointable maps, 5
-  \item amenable, 52
-  \item Arveson Spectrum, 72
+  \item $G$-prime \dotfill 78
+  \item $G$-product \dotfill 60
+  \item $G$-simple \dotfill 80
+  \item $W^*$-system \dotfill 73
+  \item $\mathaccentV {widehat}870{\alpha }$-integrable \dotfill 65
+  \item (Ir)rational Rotation Algebra \dotfill 39
 
   \indexspace
+{\large\sffamily\bfseries A}\nopagebreak
 
-  \item Cocycle equation, 77
-  \item Compact Operators on a Hilbert $A$-module, 8
-  \item Connes Spectrum, 73
-
-  \indexspace
-
-  \item detects ideals, 83
+  \item adjointable maps \dotfill 5
+  \item amenable \dotfill 52
+  \item Arveson Spectrum \dotfill 72
 
   \indexspace
+{\large\sffamily\bfseries C}\nopagebreak
 
-  \item essential ideal, 13
-  \item exterior equivalent, 76
-
-  \indexspace
-
-  \item full, 3
-  \item full crossed product, 39
+  \item Cocycle equation \dotfill 77
+  \item Compact Operators on a Hilbert $A$-module \dotfill 8
+  \item Connes Spectrum \dotfill 73
 
   \indexspace
+{\large\sffamily\bfseries D}\nopagebreak
 
-  \item hereditary, 73
-  \item Hilbert $A$-module, 2
-  \item Hilbert $C^*$-module over $A$, 2
-
-  \indexspace
-
-  \item induced regular representation, 35
-  \item inductive limit topology, 23
-  \item inner-product $A$-module, 1
-  \item integrated form, 33
+  \item detects ideals \dotfill 82
 
   \indexspace
+{\large\sffamily\bfseries E}\nopagebreak
 
-  \item Landstad's conditions, 60
-
-  \indexspace
-
-  \item maximal, 14
-  \item Multiplier Algebra, 1
-  \item multiplier algebra, 15
+  \item essential ideal \dotfill 13
+  \item exterior equivalent \dotfill 76
 
   \indexspace
+{\large\sffamily\bfseries F}\nopagebreak
 
-  \item non-degenerate, 15
-
-  \indexspace
-
-  \item positive definite, 46
+  \item full \dotfill 3
+  \item full crossed product \dotfill 39
 
   \indexspace
+{\large\sffamily\bfseries H}\nopagebreak
 
-  \item reduced crossed product, 50
-  \item regular representation, 35
-
-  \indexspace
-
-  \item semi-inner-product $A$-module, 2
-  \item separates ideals, 83
-  \item spectral $M$-subspace, 72
-  \item spectral $R$-subspace, 72
-  \item strict topology, 12
+  \item hereditary \dotfill 73
+  \item Hilbert $A$-module \dotfill 2
+  \item Hilbert $C^*$-module over $A$ \dotfill 2
+  \item hull-kernel topology \dotfill 85
 
   \indexspace
+{\large\sffamily\bfseries I}\nopagebreak
 
-  \item the topology of weak$^*$ uniform convergence on compacta, 47
+  \item induced regular representation \dotfill 35
+  \item inductive limit topology \dotfill 23
+  \item inner-product $A$-module \dotfill 1
+  \item integrated form \dotfill 33
 
   \indexspace
+{\large\sffamily\bfseries L}\nopagebreak
 
-  \item unitalization, 13
-  \item universal norm, 38
+  \item Landstad's conditions \dotfill 60
 
   \indexspace
+{\large\sffamily\bfseries M}\nopagebreak
 
-  \item weak$^*$-integrals, 71
-  \item weakly contained, 51
+  \item maximal \dotfill 14
+  \item Multiplier Algebra \dotfill 1
+  \item multiplier algebra \dotfill 15
+
+  \indexspace
+{\large\sffamily\bfseries N}\nopagebreak
+
+  \item non-degenerate \dotfill 15
+
+  \indexspace
+{\large\sffamily\bfseries P}\nopagebreak
+
+  \item positive definite \dotfill 46
+  \item primitive ideal space \dotfill 85
+  \item properly outer \dotfill 86
+
+  \indexspace
+{\large\sffamily\bfseries R}\nopagebreak
+
+  \item reduced crossed product \dotfill 50
+  \item regular representation \dotfill 35
+
+  \indexspace
+{\large\sffamily\bfseries S}\nopagebreak
+
+  \item semi-inner-product $A$-module \dotfill 2
+  \item separates ideals \dotfill 82
+  \item spectral $M$-subspace \dotfill 72
+  \item spectral $R$-subspace \dotfill 71
+  \item spectrum of a $C^*$-algebra \dotfill 85
+  \item strict topology \dotfill 12
+
+  \indexspace
+{\large\sffamily\bfseries T}\nopagebreak
+
+  \item the topology of weak$^*$ uniform convergence on compacta \dotfill 
+		47
+  \item Topologically free \dotfill 86
+  \item transposed action of $G$ \dotfill 86
+
+  \indexspace
+{\large\sffamily\bfseries U}\nopagebreak
+
+  \item unitalization \dotfill 13
+  \item universal norm \dotfill 38
+
+  \indexspace
+{\large\sffamily\bfseries W}\nopagebreak
+
+  \item weak$^*$-integrals \dotfill 71
+  \item weakly contained \dotfill 51
 
 \end{theindex}

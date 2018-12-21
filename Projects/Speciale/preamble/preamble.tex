@@ -50,7 +50,7 @@
 
 %\usepackage{mathabx} 
 
-\makeindex[columns=3, title=Alphabetical Index, intoc]
+\makeindex[columns=2, options=-s master, intoc=true]
 
 %\makeindex[columns=3, title=Alphabetical Index]
 
@@ -206,6 +206,7 @@
 %\def\acts{\curvearrowright}
 \renewcommand{\d}{\mathrm{d}}
 \newcommand{\Sp}[1]{\mathrm{Sp}(#1)}
+\newcommand{\Prim}[1]{\mathrm{Prim}(#1)}
 
 \makeatletter
 \newcommand{\Spvek}[2][r]{%
@@ -232,6 +233,10 @@
 
 
 \newcommand{\myemph}[1]{\index{#1}\emph{#1}}%
+
+    \makeatletter
+        \def\@idxitem{\par\hangindent 2em}
+	    \makeatother
 
 
 
