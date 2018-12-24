@@ -26,10 +26,10 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.2}The Connes Spectrum and Simplicity}{73}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {4}Actions And Automorphisms}{85}{chapter.4}
+\contentsline {chapter}{\chapternumberline {4}Actions And Automorphisms}{86}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Properties of Actions}{85}{section.4.1}
+\contentsline {section}{\numberline {4.1}Properties of Actions}{86}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{87}{chapter*.28}
+\contentsline {chapter}{Bibliography}{88}{chapter*.30}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Index}{90}{section*.29}
+\contentsline {chapter}{Index}{91}{section*.31}

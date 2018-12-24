@@ -45,7 +45,7 @@
   \item hereditary \dotfill 73
   \item Hilbert $A$-module \dotfill 2
   \item Hilbert $C^*$-module over $A$ \dotfill 2
-  \item hull-kernel topology \dotfill 85
+  \item hull-kernel topology \dotfill 86
 
   \indexspace
 {\large\sffamily\bfseries I}\nopagebreak
@@ -76,8 +76,8 @@
 {\large\sffamily\bfseries P}\nopagebreak
 
   \item positive definite \dotfill 46
-  \item primitive ideal space \dotfill 85
-  \item properly outer \dotfill 86
+  \item primitive ideal space \dotfill 86
+  \item properly outer \dotfill 87
 
   \indexspace
 {\large\sffamily\bfseries R}\nopagebreak
@@ -92,7 +92,7 @@
   \item separates ideals \dotfill 82
   \item spectral $M$-subspace \dotfill 72
   \item spectral $R$-subspace \dotfill 71
-  \item spectrum of a $C^*$-algebra \dotfill 85
+  \item spectrum of a $C^*$-algebra \dotfill 86
   \item strict topology \dotfill 12
 
   \indexspace
@@ -100,8 +100,8 @@
 
   \item the topology of weak$^*$ uniform convergence on compacta \dotfill 
 		47
-  \item Topologically free \dotfill 86
-  \item transposed action of $G$ \dotfill 86
+  \item Topologically free \dotfill 87
+  \item transposed action of $G$ \dotfill 87
 
   \indexspace
 {\large\sffamily\bfseries U}\nopagebreak

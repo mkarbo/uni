@@ -42,7 +42,7 @@ In his dissertation (see \cite{connesclassification}), Alain Connes proved a ser
 		\item For every finite Radon measure $\mu$ on $G$: $|\hat \mu(\sigma)| \leq \lv \alpha_\mu\rv$,
 		\item For every $f \in L^1(G)$: $|\hat f (\sigma)| \leq \lv \alpha_f\rv$,
 		\item If $f \in L^1(G)$, $\alpha_f=0$, then $\hat f(\sigma)=0$ and
-		\item It holds that $M^{\alpha}(\{\sigma\}) := \{x \in A \mid \hat \alpha_t(x) = (t,\sigma)x \text{ for all } t \in G\} \neq 0$.
+		\item It holds that $M^{\alpha}(\{\sigma\}) := \{x \in A \mid  \alpha_t(x) = (t,\sigma)x \text{ for all } t \in G\} \neq 0$.
 	\end{enumerate}
 \end{proposition}
 One very common use of the above is to take the last condition as the definition:
@@ -408,3 +408,18 @@ We summerize, for discrete groups (though some of them are also true for non-dis
 	Let $(A,G,\alpha)$ be a $C^*$-dynamical system with $A$ separable and $G = \R$ or $G=S^1$. If $A$ is not primitive, then $G \rtimes_\alpha A$ is simple if and only if $A$ is $G$-simple and $\hat G(\alpha) = \hat G$.
 \end{corollary}
 
+To show that this theory is indeed usable (i.e., one can for instance actually determine the Connes spectrum in a non-trivial case), we will use it to give a simple proof of simplicity of the irrational rotation algebras. For this, we will use the following theorem of Pedersen and Gootman, characterizing the Connes spectrum in the commutative case in terms of stabilizers:
+\begin{theorem}[\mbox{\cite[Theorem 1.2 and Remark 1.3]{gootman1981spectra}}]
+	Suppose that $(C_0(X),G,\alpha)$ is a $C^*$-dynamical system with $A$ and $G$ separable. Then
+	\begin{align*}
+		\hat G(\alpha) = \overline{\bigcup_{x \in X} G_x^\perp}.
+	\end{align*}
+	\todo{include in prelim or earlier} In particular, if $G = \Z$, then if $G_x=\{0\}$ for some $x \in X$ then $\hat \Z(\alpha) = \hat \Z \cong S^1$. In fact, if $\alpha \in \mathrm{Aut}(C_0(X))$ is the automorphism of the dynamical system, then the operator spectrum of $\alpha$ and the Connes spectrum of the system coincide.
+	\label{olgootconnes}
+\end{theorem}
+\begin{example}
+	Let $\theta \in \R \backslash \Q$ and let $\Z \acts \alpha C(S^1)$ denote rotation by $\theta$. Then $C(S^1) \rtimes_\alpha \Z$ is simple.
+\end{example}
+\begin{proof}
+	It is easy to establish that $C(S^1)$ is $\Z$-simple, since the system is minimal (see e.g. \todo{add self} \cite[5.2]{glasner1976proximal}). For the converse, note that by the above, it suffices to show that some isotropy group is $0$. Let $f \colon e^{2 \pi i t} \mapsto e^{2 \pi i t}$, $t \in [0,1]$. Then $\alpha_k(f) = f$ if and only if $k = 0$, hence $\Z_{f} = \{0\}$ implying by \cref{olgootconnes} that $\hat \Z (\alpha) = S^1$, implying by \cref{olpe1thm} that $C(S^1) \rtimes_\alpha \Z$ is simple.
+\end{proof}

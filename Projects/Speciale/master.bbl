@@ -289,6 +289,51 @@
   \field{year}{2013}
 \endentry
 
+\entry{glasner1976proximal}{incollection}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Glasner}{G.}%
+     {Shmuel}{S.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer}%
+  }
+  \strng{namehash}{GS1}
+  \strng{fullhash}{GS1}
+  \field{sortinit}{G}
+  \field{booktitle}{Proximal Flows}
+  \field{pages}{17\bibrangedash 29}
+  \field{title}{Proximal flows}
+  \field{year}{1976}
+\endentry
+
+\entry{gootman1981spectra}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Gootman}{G.}%
+     {Elliot~C}{E.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Olesen}{O.}%
+     {Dorte}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {JSTOR}%
+  }
+  \strng{namehash}{GECOD1}
+  \strng{fullhash}{GECOD1}
+  \field{sortinit}{G}
+  \field{pages}{329\bibrangedash 349}
+  \field{title}{Spectra of actions on type IC*-algebras}
+  \field{journaltitle}{Mathematica Scandinavica}
+  \field{year}{1981}
+\endentry
+
 \entry{gootman1979structure}{article}{}
   \name{author}{2}{}{%
     {{}%
