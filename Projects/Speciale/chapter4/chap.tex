@@ -46,5 +46,94 @@ Elliot and Olesen \& Pedersen showed in \cite[Theorem 3.2]{elliott1980some} and 
 	The proof is based on a result of Kadison-Ringrose, which characterizes proper outerness with not, in a sense, never locally looking like an inner automorphism composed with the exponential of a derivation, see \cite{kadison1967derivations} or \cite[Theorem 6.6 (i) and (ii)]{olesenpedersen3}.
 \end{remark}
 
+Recall that for $G$ discrete, it holds that $A \subseteq A \rtimes_\alpha G$, and that if $A^1 = A \oplus \C$ is the canonical unitalization, then we have inclusions $ A \subseteq A \rtimes_\alpha G  \subseteq A^1 \rtimes_\alpha G \subseteq M(A \rtimes_\alpha G)$, where we abuse the notation $\alpha$ to mean $\alpha \oplus 1$ on $A^1 \rtimes_\alpha G$.
+\begin{definition}
+	Let $A$ denote an arbitrary $C^*$-algebra with two representations $\pi$ and $\tau$ on $H_\pi$ and $H_\tau$. We say that $\pi$ and $\tau$ are \myemph{disjoint representations} if there is no subrepresentations of one which is unitarily equivalent to a non-zero subrepresentation of the other.
+\end{definition}
+\begin{remark}
+	The above definition is the (to the authors knowledge) original definition. We will use the following fact: If $\pi$ and $\tau$ are disjoint if and only if $1 \oplus 0$ is an element of the strong operator closure of $\pi \oplus \tau (A)$, i.e., there is some net $(x_i) \subseteq A$ bounded with $\pi(x_i) \to 1$ and $\tau(x_i) \to 0$ in the strong operator topology if and only if  $\pi \not \sim _u \tau$, see e.g. \cite[Proposition 2.1.4]{arveson2012invitation}. 
+\end{remark}
+Recall that we may identify $G$ as a subset of the unitary group of $M(A \rtimes_\alpha G)$. We denote this identification by $u_t$, $t \in G$. 
+\begin{lemma}
+	Let $G$ be discrete and $G \acts \alpha A$ and $\pi$ is a non-degenerate representation of $A$. If there is $t \in G$ such that $\pi \circ \alpha_t^{-1}$ and $\pi$ are disjoint representations, then for all completely positive extension $\varphi$ of $\pi$ to $A \rtimes_\alpha G$ of norm $1$ it holds that $\varphi(a u_t) = 0$ for all $a \in A$ and $u_t \in G \subseteq M(A \rtimes_\alpha G)$.
+	\label{ASlem1}
+\end{lemma}
+\begin{proof}
+	Let $(e_i) \subseteq A$ be a bounded net such that $\pi  \circ \alpha_{t}^{-1}(e_i) \to 1$ in the strong operator topology and $\pi(e_i) \to 0$. Let $\varphi$ be a unital completely positive extension of $\pi$ to $A^1  \rtimes_\alpha G$ of norm one, possible by non-degeneracy of $\pi$, see e.g. \cite[Proposition 2.2.1]{brown2008c}. Then, for $a \in A$ and $t \in G$:
+	\begin{align*}
+		\varphi(a u_t) = \lim_{\text{SOT}} \varphi(x_i )\varphi(a u_t) = \lim_{\text{SOT}} \varphi(u_t \alpha_{t}^{-1}(x_i a )) = \lim_{\text{SOT}} \varphi(u_t) \varphi(\alpha_t^{-1}(x_i))\varphi(\alpha_{t}^{-1}(a)) = 0,
+	\end{align*}
+	by the bimodule property, see \cite[Proposition 1.5.7 p.t (2)]{brown2008c}.
+\end{proof}
+With this, we obtain the following:
+\begin{theorem}
+	Let $(A,G,\alpha)$ be a $C^*$-dynamical system, $G$ discrete. If $\alpha$ is topologically free, then $A$ detects ideals in $A \rtimes_\alpha G$ modulo the kernel of the canonical surjection $A \rtimes_\alpha G \to A \rtimes_{\alpha,r}G$.
+	\label{ASthm1}
+\end{theorem}
+\begin{proof}
+	Let $I_r$ denote the kernel of the canonical surjection $ \pi_r \colon A \rtimes_\alpha G \to A \rtimes_{\alpha , r}G$ and let $E$ denote the canonical faithful conditional expectation (see e.g., \cite[Proposition 4.1.9]{brown2008c}) given by
+	\begin{align*}
+	E_r \colon A \rtimes_{\alpha,r} G &\to A, \\ 
+		c_c(G,A) \ni \sum_{g \in G} a_g  u_g &\mapsto a_e \in A,
+	\end{align*}
+	and let $E = E_r \circ \pi_r$ denote the canonical conditional expectation $A \rtimes_{\alpha }G \to A$.
+	
+	Suppose that $I$ is an ideal of $A \rtimes_\alpha G$ with $A \cap I=0$ and $I \not \subseteq I_r$. Since $E_r$ is faithful, there is $a \in I_+$ such that $E(a) \neq 0$, e.g., as the pre-image of a non-zero positive element of the image of $I$ in $A \rtimes_{\alpha,r}G$. By density of $\cc(G,A)$ in $A \rtimes_\alpha G$, pick $b = \sum_{g \in F} b_g u_g$ for some finite set $F \subseteq G$ with
+	\begin{align*}
+		\lv a - b \rv < \frac{\lv E (a) \rv}{2}.
+	\end{align*}
+	By assumption, the set $P := \bigcap_{e \neq t \in F}\left\{ p \in \hat A \mid \alpha_{t}^*(p) \neq p \right\}$ is dense in $\hat A$. Let $[\pi] \in P$. Pick a c.c.p extension of the composition $\pi \circ q$, where $q \colon A+I \to (A+I)/I\cong A$ is the quotient map, e.g., by using unitizations and \cite[Proposition 2.2.1]{brown2008c} repeatedly and restricting to the desired domains. Denote the extension by $\tau$, which has $\lv \tau \rv = \lim \lv \tau(e_i)\rv = 1$, where $e_i$ is an approximate identity of $A \rtimes_\alpha G$ contained in $A$. 
+	
+	Recall that $[\pi] \in P$ if and only if for $t \in F\backslash\{e\}$ the representations $\pi$ and $\pi \circ \alpha_{t}^{-1}$ are disjoint (by the remark following the definition), implying by \cref{ASlem1} that
+	\begin{align*}
+		\tau(b) = \sum_{t \in F} \tau(b_t u_t) = \tau(b_e) = \tau(E(b)).
+	\end{align*}
+	Note that if $x \in I$, then $\tau(x) = 0$, since then $\tau(x) = \pi \circ q(x) = \pi(0) =0$. Hence
+	\begin{align*}
+		\lv \pi(E(b))\rv = \lv \tau(b) \rv = \lv \tau(b-a)\rv \leq \lv b-a\rv.
+	\end{align*}
+	Since $P$ is dense in $\hat A$, and $\hat A$ corresponds to states of $A$, we see that $\lv E(b)\rv \leq \lv b-a\rv$, giving the contradiction
+	\begin{align*}
+		\lv E(a) \rv \leq \lv E(a-b)\rv + \lv E(b)\rv \leq 2 \lv a-b\rv <  \lv E(a)\rv,
+	\end{align*}
+	so $I \subseteq I_r$.
+\end{proof}
+\begin{corollary}
+	If $G$ is amenable, then $A$ detects ideals in $A \rtimes_\alpha G$ whenever $\alpha$ is topologically free.
+\end{corollary}
 
+If we further assume that $A$ is abelian, then the converse holds as well:
+\begin{theorem}
+	Let $(A,G,\alpha)$ be a $C^*$-dynamical system with $A$ abelian and $G$ discrete. Then the converse of the implication in \cref{ASthm1} holds.
+	\label{ASthm2}
+\end{theorem}
+\begin{proof}
+	Since $A$ is commutative, we have $A \cong C_0(\hat A)$, by Gelfand theory. Let $x \in \hat A$. Recall that \todo{Add in prelim about top actions} actions of $G$ on locally compact Hausdorff spaces correspond to actions on $C_0(X)$, via the formula $t.f(x) :=  \alpha_t(f)(x) := f(t^{-1}.x)$, here $t.x$ denotes the image of the homeomorphism $t \colon X \to X$. Consider the Hilbert space $\ell^2(\left\{ t.x \mid t \in G\} \right\}$. We define the covariant pair $(\pi_x,u)$ for $(A,G)$ by
+	\begin{align*}
+		\pi_x(f) \delta_{t.x} = f(t.x) \delta_{t.x} \text{ and } u_s \delta_{t.x} = \delta_{st.x},
+	\end{align*}
+	for $f \in C_0(\hat A)$ and $t,s \in G$. That they are representations is easy to verify, we show covariance instead:
+	\begin{align*}
+		u_s \pi_x(f) u_{s^{-1}} \delta_{t.x} = u_{s} f(s^{-1}t.x)\delta_{s^{-1}t.x} = f(s^{-1}t.x) \delta_{t.x} = s.f(t.x) = \pi_x(s.f)\delta_{t.x},
+	\end{align*}
+	so that we obtain a representation $\pi_x \rtimes u_x$ of $A \rtimes_\alpha G$ on $\ell^2(G.x)$ satisfying the same relations (here we identify $G$ with its image in $M(A \rtimes_\alpha G)$). Let $I = \bigcap_{x \in \hat A} \ker \pi_{x}$. If $f \in I$, then $f(t.x) = 0$ for all $t \in G$ (in particular for $t=e$) and $x \in \hat A$, so $f = 0$. Hence $I \cap A = 0$.
+	
+	Suppose that $G \acts \alpha A$ is not topologically free. Then there is $e \neq s \in G$ such that $V=\left\{ y \in \hat A \mid s.y \neq y \right\}$ is not dense in $\hat A$. Let $0 \neq f \in C_0(\hat A)$ with $\supp f \subseteq \overline{V}^c$. Whenever $t.x \in \supp f$, we have $st.x = t.x$, so
+	\begin{align*}
+		\pi_x\rtimes u_x(f-fu_s)\delta_{tx} = f(t.x) \delta_{t.x} - f(st.x)\delta_{st.x}= 0,
+	\end{align*}
+	and if $t.x \not \in \supp(f)$, then (as $s.x=x \iff x = s^{-1}.(s.x)=s^{-1}.x$) we see that $st.x \not \in \supp f$, and hence $\pi_{x} \rtimes u_x (f-f u_s) = 0$ again. Thus $f-f u_s \in I \subseteq I_r$, since $x$ was arbitrary. Since $E(f u_s) = E_r(\pi_r(fu_s)
+) =0$, we see that 
+	\begin{align*}
+		0 \neq f = E(f-fu_s) = E_r (\pi(f-fu_s))= E_r(0) =0,
+	\end{align*}
+	a contradiction. We conclude that the action of $A$ is topologically free.
+\end{proof}
 
+\begin{corollary}
+	Suppose that $G \acts \alpha C_0(X)$ with $G$ discrete. Then $A \rtimes_\alpha G$ is simple if and only if the action is minimal, topologically free and $I_r = 0$.
+\end{corollary}
+\begin{proof}
+	This follows directly from \cref{ASthm1}, \cref{ASthm2} and \cref{ASlem1}.
+\end{proof}
+Once again, this gives an easy proof of minimaly of $C(S^1) \rtimes_{\theta} \Z$ for $\theta$ irrational, since the action is very clearly topologically free (there are no fixpoints on $S^1$ for irrational rotation), and we already know that it is minimal and $I_r = 0$.

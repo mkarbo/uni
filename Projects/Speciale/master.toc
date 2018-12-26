@@ -30,6 +30,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.1}Properties of Actions}{86}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{88}{chapter*.30}
+\contentsline {chapter}{Bibliography}{91}{chapter*.31}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Index}{91}{section*.31}
+\contentsline {chapter}{Index}{94}{section*.32}

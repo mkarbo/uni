@@ -44,6 +44,25 @@
   \field{year}{1994}
 \endentry
 
+\entry{arveson2012invitation}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Arveson}{A.}%
+     {William}{W.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer Science \& Business Media}%
+  }
+  \strng{namehash}{AW1}
+  \strng{fullhash}{AW1}
+  \field{sortinit}{A}
+  \field{title}{An invitation to C*-algebras}
+  \field{volume}{39}
+  \field{year}{2012}
+\endentry
+
 \entry{bekka2008kazhdan}{book}{}
   \name{author}{3}{}{%
     {{}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.12.7)  24 DEC 2018 13:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.12.7)  26 DEC 2018 18:45
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -3530,34 +3530,64 @@ ame{theorem.4.1.2}) has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.23 \end{remark}
-                 ]) [87pdfTeX warning (ext4): destination with the same identif
-ier (name{theorem.4.1.3}) has been already used, duplicate ignored
+                 ] [87pdfTeX warning (ext4): destination with the same identifi
+er (name{theorem.4.1.3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.52 \end{definition}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{theorem.4.1.4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.52 \end{definition}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{theorem.4.1.5}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.52 \end{definition}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{theorem.4.1.6}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.52 \end{definition}
+                     ] [88pdfTeX warning (ext4): destination with the same iden
+tifier (name{theorem.4.1.7}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.82 	\begin{align*}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{theorem.4.1.8}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.82 	\begin{align*}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{theorem.4.1.9}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.82 	\begin{align*}
+                    ] [89pdfTeX warning (ext4): destination with the same ident
+ifier (name{theorem.4.1.11}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.116 	\begin{align*}
+                     ]) [90pdfTeX warning (ext4): destination with the same ide
+ntifier (name{theorem.4.1.13}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.31 \backmatter
-                pdfTeX warning (ext4): destination with the same identifier (na
-me{theorem.4.1.4}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.31 \backmatter
-                pdfTeX warning (ext4): destination with the same identifier (na
-me{theorem.4.1.5}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.31 \backmatter
-                pdfTeX warning (ext4): destination with the same identifier (na
-me{theorem.4.1.6}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.31 \backmatter
-                ] [88
+                ] [91
 
 
-] [89] [90]
+] [92] [93]
 runsystem(makeindex -s master master.idx)...executed.
 
  (./master.ind
@@ -3565,7 +3595,7 @@ LaTeX Font Info:    Try loading font information for T1+cmss on input line 2.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [91
+) [94
 
 
 ])
@@ -3576,7 +3606,7 @@ FiXme Summary: Number of notes: 0,
 (FiXme)        Number of fatal errors: 0,
 (FiXme)        Total: 0.
 
-[92]
+[95]
 \tf@toc=\write9
 \openout9 = `master.toc'.
 
@@ -3586,7 +3616,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 37.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 37.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 37.
 Package rerunfilecheck Info: File `master.out' has not changed.
-(rerunfilecheck)             Checksum: F6F9C848AD722FA3910B7C030DB7F7D4;1155.
+(rerunfilecheck)             Checksum: B90DFBFA049F57FC4B739A13BEC212AF;1155.
 Package logreq Info: Writing requests to 'master.run.xml'.
 \openout1 = `master.run.xml'.
 
@@ -3594,13 +3624,13 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 37.
  )
 (\end occurred when \iftrue on line 5 was incomplete) 
 Here is how much of TeX's memory you used:
- 41732 strings out of 493029
- 757524 string characters out of 6136234
+ 41759 strings out of 493029
+ 757967 string characters out of 6136234
  1120465 words of memory out of 5000000
- 44190 multiletter control sequences out of 15000+600000
+ 44205 multiletter control sequences out of 15000+600000
  33629 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,17n,82p,10480b,2388s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,17n,82p,10480b,2391s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/en
 c/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
@@ -3627,10 +3657,10 @@ r/sfrm0700.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr
 /share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/t
 ype1/public/cm-super/sfsx1095.pfb></usr/share/texmf/fonts/type1/public/cm-super
 /sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfxc1200.pfb>
-Output written on master.pdf (95 pages, 1039893 bytes).
+Output written on master.pdf (98 pages, 1054005 bytes).
 PDF statistics:
- 1205 PDF objects out of 1440 (max. 8388607)
- 1065 compressed objects within 11 object streams
- 410 named destinations out of 1000 (max. 500000)
+ 1239 PDF objects out of 1440 (max. 8388607)
+ 1096 compressed objects within 11 object streams
+ 422 named destinations out of 1000 (max. 500000)
  146 words of extra memory for PDF output out of 10000 (max. 10000000)
 
