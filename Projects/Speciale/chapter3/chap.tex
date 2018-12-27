@@ -38,7 +38,7 @@ In his dissertation (see \cite{connesclassification}), Alain Connes proved a ser
 	\begin{enumerate}
 		\item $\sigma \in \Sp \alpha$,
 		\item For all neighborhoods $U$ of $\sigma$: $R^\alpha(U) \neq 0$,
-		\item There is a net of unit vectors $(a_i) \subseteq A$ such that $\lv\alpha_t(x_i) - (t,\sigma)x_i\rv \to 0$ uniformly on compacta of $G$,
+		\item There is a net of unit vectors $(a_i) \subseteq A$ such that $\lv\alpha_t(x_i) - (t,\sigma)x_i\rv \to 0$ uniformly on compacts of $G$,
 		\item For every finite Radon measure $\mu$ on $G$: $|\hat \mu(\sigma)| \leq \lv \alpha_\mu\rv$,
 		\item For every $f \in L^1(G)$: $|\hat f (\sigma)| \leq \lv \alpha_f\rv$,
 		\item If $f \in L^1(G)$, $\alpha_f=0$, then $\hat f(\sigma)=0$ and
@@ -55,7 +55,7 @@ The main motivation (in our case) for introducing the Arveson spectrum is to def
 \begin{definition}
 	A $C^*$-subalgebra $B\subseteq A$ is \myemph{hereditary} if for all positive $x \in A_+$ we have $x \in B_+$ whenever $y \in B_+$ with $0 \leq x \leq y$. We define $\mathscr{H}(A)$ to be the set of non-zero hereditary $C^*$-subalgebras of $A$. 
 	
-	If furthermore we assume that $(A, G, \alpha)$ is a $C^*$-dynamical system, we defin $\mathscr{H}^\alpha(A)$ to be the set
+	If furthermore we assume that $(A, G, \alpha)$ is a $C^*$-dynamical system, we define $\mathscr{H}^\alpha(A)$ to be the set
 	\begin{align*}
 		\mathscr{H}^\alpha (A) := \{ D \in \mathscr{H}(A) \mid \alpha_g(D)=D \text{ for all } g \in G\}.
 	\end{align*}
@@ -79,12 +79,12 @@ As we shall see, the Connes spectrum is very important in the theory of classifi
 \begin{remark}
 	The proof of this, due to Olesen and Pedersen, relies on the theory of $W^*$-dynamical systems, which quite similar to that of $C^*$-dynamical systems. We will use some properties without proof, as it will take us too much off course to develop properly, and instead refer the reader to relevant material on the subject whenever needed.	
 \begin{definition}
-	A \myemph{$W^*$-system} is a triple $(\mathscr{M},G,\beta)$ where $\mathscr{M}$ is a von-Neumann Algebra, $G$ a locally compact Hausdorff group and $\beta \colon G \to \mathrm{Aut}(\mathscr{M})$ is group homomorphism which is continuous with respect to the pointwise weak topology on $\mathrm{Aut}(\mathscr{M})$.
+	A \myemph{$W^*$-system} is a triple $(\mathscr{M},G,\beta)$ where $\mathscr{M}$ is a von Neumann Algebra, $G$ a locally compact Hausdorff group and $\beta \colon G \to \mathrm{Aut}(\mathscr{M})$ is group homomorphism which is continuous with respect to the pointwise weak topology on $\mathrm{Aut}(\mathscr{M})$.
 \end{definition}
 	 We refer the curious reader to \cite[Chapter 7.4 and 7.10]{pedersenalgauto} for a thorough exposition of the subjects.
 \end{remark}
 \begin{proof}
-	We will be considering $A \rtimes_\alpha G$ as a $G$-product, so that $A \subseteq M(A \rtimes\alpha G)$ is the set of elements satisfying Landstad's conditions \todo{Cref Landstad}. Assume that $I \cap \alpha_t(I) = 0$ for $0 \neq I \in \mathcal{I}(A)$. \todo{Find out how this works} Let $0 \neq x,y \in I_+$ be such that $yx=y$ (e.g., by considering $(x-\varepsilon)$ for some $ \lv x \rv >\varepsilon > 0$, which will belong to $I \subseteq A^1$ and suitable increasing function $f_\varepsilon$). Let $K$ be a compact neighborhood of $0 \in G$ such that $ \lv \alpha_s(x)-x	\rv < 1$ for $s \in K$. Then $1-(\alpha_s(x)-x)$ is invertible with inverse $\sum_{n=0}^\infty (\alpha_s(x)-x)^n$, see ee.g. \cite[Proposition 2.1]{zhu}. Then
+	We will be considering $A \rtimes_\alpha G$ as a $G$-product, so that $A \subseteq M(A \rtimes\alpha G)$ is the set of elements satisfying Landstad's conditions \todo{Cref Landstad}. Assume that $I \cap \alpha_t(I) = 0$ for $0 \neq I \in \mathcal{I}(A)$. \todo{Find out how this works} Let $0 \neq x,y \in I_+$ be such that $yx=y$ (e.g., by considering $(x-\varepsilon)$ for some $ \lv x \rv >\varepsilon > 0$, which will belong to $I \subseteq A^1$ and suitable increasing function $f_\varepsilon$). Let $K$ be a compact neighborhood of $0 \in G$ such that $ \lv \alpha_s(x)-x	\rv < 1$ for $s \in K$. Then $1-(\alpha_s(x)-x)$ is invertible with inverse $\sum_{n=0}^\infty (\alpha_s(x)-x)^n$, see e.g. \cite[Proposition 2.1]{zhu}. Then
 	\begin{align*}
 		\alpha_s(y)=\alpha_s(y)x \sum_{n=0}^\infty (\alpha_s(x)-x)^n \in I,
 	\end{align*}
@@ -119,7 +119,7 @@ for all $s \in U_0-U_0$, so $sg := (s, \cdot) g$ will satisfy $\hat \alpha_g = 0
 	&= \int_{G} \int_G \alpha_{-r}(\hat \alpha_{sg}(y)) \lambda_s \overline{f_1}(r) f_2(s+r) \d s \d r\\
 	&= 0,
 \end{align*}
-since $r \in \mathrm{supp} f_1$ and $s+r \in \mathrm{supp} f_2$ implies $s \in U_0-U_0$ so $\hat \alpha_{sg}(y) = 0$. Since $B$ is a hereditary $C^*$-subalgebra, there is a left ideal of $A \rtimes_\alpha G$, which necessarily must be $\hat G$ invariant by invariance of $B$, usch that $B = L^* \cap L$. Let $f \in L^1(G) \cap L^2(G)$, such that $f \neq 0 \in L^1(G)$ and with $\mathrm{supp} f \subseteq U_0$. Define
+since $r \in \mathrm{supp} f_1$ and $s+r \in \mathrm{supp} f_2$ implies $s \in U_0-U_0$ so $\hat \alpha_{sg}(y) = 0$. Since $B$ is a hereditary $C^*$-subalgebra, there is a left ideal of $A \rtimes_\alpha G$, which necessarily must be $\hat G$-invariant by invariance of $B$, such that $B = L^* \cap L$. Let $f \in L^1(G) \cap L^2(G)$, such that $f \neq 0 \in L^1(G)$ and with $\mathrm{supp} f \subseteq U_0$. Define
 \begin{align*}
 	L_0 :=	\overline{\Span {\left\{\bigcup_{\sigma \in \hat G} L \lambda_{\sigma f}\right\}}},
 \end{align*}
@@ -137,7 +137,7 @@ In particular,
 \begin{align*}
 	x_0 x \alpha_t(x_0) = (x_0 x \lambda_t x_0) \lambda_{-t} = 0,
 \end{align*}
-for all $x \in A$. If $I = \overline{(x_0)} \subseteq A$ is the smalles ideal containing $x_0$, then $0 \neq I \subseteq A$ with $I \cap \alpha_t(I)=I\cdot\alpha_t(I)=0$.
+for all $x \in A$. If $I = \overline{(x_0)} \subseteq A$ is the smallest ideal containing $x_0$, then $0 \neq I \subseteq A$ with $I \cap \alpha_t(I)=I\cdot\alpha_t(I)=0$.
 \end{proof}
 We now define an equivalence on the of $(A,G)$-$C^*$-dynamical systems, i.e., the class of $C^*$-dynamical systems $(A, G, \alpha)$ for fixed $(A,G)$. 
 \begin{definition}
@@ -238,7 +238,7 @@ Which gives us the first ingredient in determining the ideal structure of $A \rt
 	Apply \cref{connesideal1} to $\hat{ \hat{ \alpha}}$ and combine it with \cref{dualactionspectrum} to obtain the desired result.
 \end{proof}
 \begin{definition}
-	\todo{include Prime $A$ in prelim} Let $G \acts \alpha A$. We say tha $A$ is \myemph{$G$-prime} if whenever $I,J$ are non-zero $G$-invariant ideals in $A$ it holds that $I \cap J \neq 0$.
+	\todo{include Prime $A$ in prelim} Let $G \acts \alpha A$. We say that $A$ is \myemph{$G$-prime} if whenever $I,J$ are non-zero $G$-invariant ideals in $A$ it holds that $I \cap J \neq 0$.
 \end{definition}
 \begin{remark}
 	Analogously with the regular definition of a prime $C^*$-algebra, the definition of $A$ being $G$-prime is equivalent to every non-zero $G$-invariant ideal of $A$ being essential or if $\alpha_t(x) A \alpha_s(y)=0$ for all $s,t \in G$ implies $x = 0$ or $y = 0$. We will not go into details with this, the details are almost identical to the ones for regular primitivity of $A$.
@@ -264,7 +264,7 @@ With this, we obtain:
 	\label{olpe1.5.7}
 \end{lemma}
 \begin{proof}
-	It is quite easy to see that if $I,J$ are non-zero $\hat G$-invariant ideals of $A \rtimes_\alpha G$ with $I \cap J = 0$, then whenever $f \in L^1(G) \cap L^2(G)$, $\lv f \rv_1  \neq 0$ and $x \in I_+$ and $y \in J_+$ are non-zero, then by \cref{olpe1lemma2.8} we have $a := I(\lambda_f^* y \lambda_f) \in A$ and $b := I(\lambda_f^* x \lambda_f)$ since $A$ are the elements of $M(A \rtimes_\alpha G)$ satisfying Landstad's condition. It is not hard to see that $a z b = 0$ for all $z \in M(A \rtimes_\alpha G)$ (in partiular for all $z \in A \subseteq M(A \rtimes_\alpha G)$), since $\hat \alpha_{\sigma}(\lambda_f^* y \lambda_f) z \hat \alpha_{\chi}(\lambda_f^* x \lambda_f) = 0$ for all $z \in M(A \rtimes_\alpha G)$. In particular, by covariance of $\lambda$ and $\alpha$, we have
+	It is quite easy to see that if $I,J$ are non-zero $\hat G$-invariant ideals of $A \rtimes_\alpha G$ with $I \cap J = 0$, then whenever $f \in L^1(G) \cap L^2(G)$, $\lv f \rv_1  \neq 0$ and $x \in I_+$ and $y \in J_+$ are non-zero, then by \cref{olpe1lemma2.8} we have $a := I(\lambda_f^* y \lambda_f) \in A$ and $b := I(\lambda_f^* x \lambda_f)$ since $A$ are the elements of $M(A \rtimes_\alpha G)$ satisfying Landstad's condition. It is not hard to see that $a z b = 0$ for all $z \in M(A \rtimes_\alpha G)$ (in particular for all $z \in A \subseteq M(A \rtimes_\alpha G)$), since $\hat \alpha_{\sigma}(\lambda_f^* y \lambda_f) z \hat \alpha_{\chi}(\lambda_f^* x \lambda_f) = 0$ for all $z \in M(A \rtimes_\alpha G)$. In particular, by covariance of $\lambda$ and $\alpha$, we have
 	\begin{align*}
 		\alpha_s(a) z \alpha_t(b) = \lambda_s a (\lambda_{-s} z \lambda_t) b \lambda_{-t}=0,
 	\end{align*}
@@ -292,7 +292,7 @@ It is clear that $G$-simple is a stronger requirement than being $G$-prime and i
 	\label{olpe1.6.1}
 \end{proposition}
 \begin{proof}
-	Suppose that $A \rtimes_\alpha G$ is not $\hat G$-simple and choose a non-trivial $\hat G$-invariant ideal $J$ witnessing this. Then there is some state $\varphi \in \mathcal{S}(A \rtimes_\alpha G)$ such that $\varphi(J) = 0$, i.e., by letting $\varphi$ be the state obtained by the representation with kernel $J$. Extend $\varphi$ to all of $M(A \rtimes_\alpha G)$ and note that $\varphi(A) \neq 0$: Wenever $u_i$ is an approximate identity of $A$ we have $u_i x \to x$ for all $x \in A \rtimes_\alpha G$, which by Cauchy-Schwarz gives
+	Suppose that $A \rtimes_\alpha G$ is not $\hat G$-simple and choose a non-trivial $\hat G$-invariant ideal $J$ witnessing this. Then there is some state $\varphi \in \mathcal{S}(A \rtimes_\alpha G)$ such that $\varphi(J) = 0$, i.e., by letting $\varphi$ be the state obtained by the representation with kernel $J$. Extend $\varphi$ to all of $M(A \rtimes_\alpha G)$ and note that $\varphi(A) \neq 0$: Whenever $u_i$ is an approximate identity of $A$ we have $u_i x \to x$ for all $x \in A \rtimes_\alpha G$, which by Cauchy-Schwarz gives
 	\begin{align*}
 	|\varphi(u_i^* x)| \leq \varphi(u_i^*u_i)\varphi(x^*x),
 	\end{align*}
@@ -334,7 +334,7 @@ We proceed to show that whenever $G$ is discrete, then the converse of the above
 	\label{olpe1.6.4}
 \end{lemma}
 \begin{proof}
-	ASsume that $I$ is a non-trivial ideal of $A$, and choose non-zero elements $x,y \in I_+$ with $yx=y$ as in the proof of \cref{connesideal1}. Let $0 \in U$ be a neighborhood such that 
+	Assume that $I$ is a non-trivial ideal of $A$, and choose non-zero elements $x,y \in I_+$ with $yx=y$ as in the proof of \cref{connesideal1}. Let $0 \in U$ be a neighborhood such that 
 	\begin{align*}
 		\lv \alpha_s(x)-x\rv < 1, \text{ for all }s \in U,
 	\end{align*}
@@ -423,4 +423,4 @@ To show that this theory is indeed usable (i.e., one can for instance actually d
 \begin{proof}
 	It is easy to establish that $C(S^1)$ is $\Z$-simple, since the system is minimal (see e.g. \todo{add self} \cite[5.2]{glasner1976proximal}). It remains to be shown that $\hat \Z(\alpha) = \hat \Z = S^1$. By \cref{olgootconnes} it suffices to show that some isotropy group is $0$, but clearly $\alpha_k(z) = z$ if and only if $k = 0$ (since $\theta$ is irrational), hence $\Z_{z} = \{0\}$ so $\hat \Z (\alpha) = S^1$, implying by \cref{olpe1thm} that $C(S^1) \rtimes_\alpha \Z$ is simple.
 \end{proof}
-While the above result might be an example of 'nuking the ant', since it can (arguably) easier be shown, e.g. through theory of conditional expectations, that the crossed product is simple, we use it to show that the theory is relevant: We can, in not-degenerate examples, compute the Connes spectrum and use the theorem to answer questions about interesting $C^*$-algebras.
+While the above result might be an example of 'nuking the ant', since it can (arguably) easier be shown, e.g., through theory of conditional expectations and the concept of free actions, that the crossed product is simple, we use it to show that the theory is relevant: We can, in not-degenerate examples, compute the Connes spectrum and use the theorem to answer questions about interesting $C^*$-algebras. It is to the authors knowledge not a standard proof seen in common literature.
