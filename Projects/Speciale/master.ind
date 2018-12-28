@@ -1,11 +1,16 @@
 \begin{theindex}
 {\large\sffamily\bfseries Symbols}\nopagebreak
 
-  \item $G$-prime \dotfill 78
+  \item $G \mathrel {\mathop {\curvearrowright }\limits ^{}} X$ \dotfill 
+		71
+  \item $G$-boundary \dotfill 73
+  \item $G$-prime \dotfill 82
   \item $G$-product \dotfill 60
-  \item $G$-simple \dotfill 80
-  \item $W^*$-system \dotfill 73
+  \item $G$-simple \dotfill 84
+  \item $G$-space \dotfill 72
+  \item $W^*$-system \dotfill 77
   \item $\mathaccentV {widehat}870{\alpha }$-integrable \dotfill 65
+  \item $\partial _F G$ \dotfill 74
   \item (Ir)rational Rotation Algebra \dotfill 39
 
   \indexspace
@@ -13,40 +18,47 @@
 
   \item adjointable maps \dotfill 5
   \item amenable \dotfill 52
-  \item Arveson Spectrum \dotfill 72
+  \item Arveson Spectrum \dotfill 76
+
+  \indexspace
+{\large\sffamily\bfseries B}\nopagebreak
+
+  \item boundary action \dotfill 73
 
   \indexspace
 {\large\sffamily\bfseries C}\nopagebreak
 
-  \item Cocycle equation \dotfill 77
+  \item Cocycle equation \dotfill 81
   \item Compact Operators on a Hilbert $A$-module \dotfill 8
-  \item Connes Spectrum \dotfill 73
+  \item compact-open \dotfill 72
+  \item Connes Spectrum \dotfill 77
 
   \indexspace
 {\large\sffamily\bfseries D}\nopagebreak
 
-  \item detects ideals \dotfill 82
-  \item disjoint representations \dotfill 88
+  \item detects ideals \dotfill 86
+  \item disjoint representations \dotfill 92
 
   \indexspace
 {\large\sffamily\bfseries E}\nopagebreak
 
   \item essential ideal \dotfill 13
-  \item exterior equivalent \dotfill 76
+  \item exterior equivalent \dotfill 80
 
   \indexspace
 {\large\sffamily\bfseries F}\nopagebreak
 
   \item full \dotfill 3
   \item full crossed product \dotfill 39
+  \item Furstenberg boundary \dotfill 74
 
   \indexspace
 {\large\sffamily\bfseries H}\nopagebreak
 
-  \item hereditary \dotfill 73
+  \item hereditary \dotfill 77
   \item Hilbert $A$-module \dotfill 2
   \item Hilbert $C^*$-module over $A$ \dotfill 2
-  \item hull-kernel topology \dotfill 86
+  \item hull-kernel topology \dotfill 90
 
   \indexspace
 {\large\sffamily\bfseries I}\nopagebreak
@@ -65,6 +77,7 @@
 {\large\sffamily\bfseries M}\nopagebreak
 
   \item maximal \dotfill 14
+  \item minimal \dotfill 73
   \item Multiplier Algebra \dotfill 1
   \item multiplier algebra \dotfill 15
 
@@ -77,8 +90,8 @@
 {\large\sffamily\bfseries P}\nopagebreak
 
   \item positive definite \dotfill 46
-  \item primitive ideal space \dotfill 86
-  \item properly outer \dotfill 87
+  \item primitive ideal space \dotfill 90
+  \item properly outer \dotfill 91
 
   \indexspace
 {\large\sffamily\bfseries R}\nopagebreak
@@ -90,19 +103,22 @@
 {\large\sffamily\bfseries S}\nopagebreak
 
   \item semi-inner-product $A$-module \dotfill 2
-  \item separates ideals \dotfill 82
-  \item spectral $M$-subspace \dotfill 72
-  \item spectral $R$-subspace \dotfill 71
-  \item spectrum of a $C^*$-algebra \dotfill 86
+  \item separates ideals \dotfill 86
+  \item spectral $M$-subspace \dotfill 76
+  \item spectral $R$-subspace \dotfill 75
+  \item spectrum of a $C^*$-algebra \dotfill 90
   \item strict topology \dotfill 12
+  \item strongly proximal action \dotfill 73
 
   \indexspace
 {\large\sffamily\bfseries T}\nopagebreak
 
   \item the topology of weak$^*$ uniform convergence on compacta \dotfill 
 		47
-  \item Topologically free \dotfill 87
-  \item transposed action of $G$ \dotfill 87
+  \item Topologically free \dotfill 91
+  \item topology on $\mathrm{Homeo}(X)$ \dotfill 72
+  \item Transformation Group \dotfill 72
+  \item transposed action of $G$ \dotfill 91
 
   \indexspace
 {\large\sffamily\bfseries U}\nopagebreak
@@ -113,7 +129,7 @@
   \indexspace
 {\large\sffamily\bfseries W}\nopagebreak
 
-  \item weak$^*$-integrals \dotfill 71
+  \item weak$^*$-integrals \dotfill 75
   \item weakly contained \dotfill 51
 
 \end{theindex}

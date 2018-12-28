@@ -28,23 +28,34 @@
 \indexentry{$G$-product}{60}
 \indexentry{Landstad's conditions}{60}
 \indexentry{$\mathaccentV {widehat}870{\alpha }$-integrable}{65}
-\indexentry{weak$^*$-integrals}{71}
-\indexentry{spectral $R$-subspace}{71}
-\indexentry{spectral $M$-subspace}{72}
-\indexentry{Arveson Spectrum}{72}
-\indexentry{hereditary}{73}
-\indexentry{Connes Spectrum}{73}
-\indexentry{$W^*$-system}{73}
-\indexentry{exterior equivalent}{76}
-\indexentry{Cocycle equation}{77}
-\indexentry{$G$-prime}{78}
-\indexentry{$G$-simple}{80}
-\indexentry{detects ideals}{82}
-\indexentry{separates ideals}{82}
-\indexentry{primitive ideal space}{86}
-\indexentry{spectrum of a $C^*$-algebra}{86}
-\indexentry{hull-kernel topology}{86}
-\indexentry{transposed action of $G$}{87}
-\indexentry{Topologically free}{87}
-\indexentry{properly outer}{87}
-\indexentry{disjoint representations}{88}
+\indexentry{$G \mathrel {\mathop {\curvearrowright }\limits ^{}} X$}{71}
+\indexentry{Transformation Group}{72}
+\indexentry{$G$-space}{72}
+\indexentry{compact-open}{72}
+\indexentry{topology on $\mathrm{Homeo}(X)$}{72}
+\indexentry{minimal}{73}
+\indexentry{strongly proximal action}{73}
+\indexentry{$G$-boundary}{73}
+\indexentry{boundary action}{73}
+\indexentry{Furstenberg boundary}{74}
+\indexentry{$\partial _F G$}{74}
+\indexentry{weak$^*$-integrals}{75}
+\indexentry{spectral $R$-subspace}{75}
+\indexentry{spectral $M$-subspace}{76}
+\indexentry{Arveson Spectrum}{76}
+\indexentry{hereditary}{77}
+\indexentry{Connes Spectrum}{77}
+\indexentry{$W^*$-system}{77}
+\indexentry{exterior equivalent}{80}
+\indexentry{Cocycle equation}{81}
+\indexentry{$G$-prime}{82}
+\indexentry{$G$-simple}{84}
+\indexentry{detects ideals}{86}
+\indexentry{separates ideals}{86}
+\indexentry{primitive ideal space}{90}
+\indexentry{spectrum of a $C^*$-algebra}{90}
+\indexentry{hull-kernel topology}{90}
+\indexentry{transposed action of $G$}{91}
+\indexentry{Topologically free}{91}
+\indexentry{properly outer}{91}
+\indexentry{disjoint representations}{92}

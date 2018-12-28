@@ -187,6 +187,44 @@
   \field{year}{2012}
 \endentry
 
+\entry{breuillard2017c}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Breuillard}{B.}%
+     {Emmanuel}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kalantar}{K.}%
+     {Mehrdad}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kennedy}{K.}%
+     {Matthew}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ozawa}{O.}%
+     {Narutaka}{N.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer}%
+  }
+  \strng{namehash}{BE+1}
+  \strng{fullhash}{BEKMKMON1}
+  \field{sortinit}{B}
+  \field{number}{1}
+  \field{pages}{35\bibrangedash 71}
+  \field{title}{C*-simplicity and the unique trace property for discrete
+  groups}
+  \field{volume}{126}
+  \field{journaltitle}{Publications math{\'e}matiques de l'IH{\'E}S}
+  \field{year}{2017}
+\endentry
+
 \entry{brown2008c}{book}{}
   \name{author}{2}{}{%
     {{}%
@@ -308,6 +346,29 @@
   \field{year}{2013}
 \endentry
 
+\entry{furman2003minimal}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Furman}{F.}%
+     {Alex}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer}%
+  }
+  \strng{namehash}{FA1}
+  \strng{fullhash}{FA1}
+  \field{sortinit}{F}
+  \field{number}{1}
+  \field{pages}{173\bibrangedash 187}
+  \field{title}{On minimal, strongly proximal actions of locally compact
+  groups}
+  \field{volume}{136}
+  \field{journaltitle}{Israel Journal of Mathematics}
+  \field{year}{2003}
+\endentry
+
 \entry{glasner1976proximal}{incollection}{}
   \name{author}{1}{}{%
     {{}%
@@ -406,6 +467,26 @@
   \field{volume}{4}
   \field{journaltitle}{Communications in Mathematical Physics}
   \field{year}{1967}
+\endentry
+
+\entry{bscp}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Karbo}{K.}%
+     {Malthe}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{KM1}
+  \strng{fullhash}{KM1}
+  \field{sortinit}{K}
+  \field{title}{B.sc. project: Simplicity and uniqueness of trace of group
+  $C^*$-algebras}
+  \verb{url}
+  \verb https://github.com/mkarbo/uni/blob/master/Projects/Bachelorproject/mast
+  \verb er.pdf
+  \endverb
+  \field{year}{2017}
 \endentry
 
 \entry{lance1995hilbert}{book}{}

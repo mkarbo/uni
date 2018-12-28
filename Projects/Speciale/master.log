@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.12.7)  27 DEC 2018 14:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.12.7)  28 DEC 2018 14:11
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -2449,7 +2449,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--10
 
  []
 
-<frontpage/1.pdf, id=71, 597.48439pt x 844.93057pt>
+<frontpage/1.pdf, id=83, 597.48439pt x 844.93057pt>
 File: frontpage/1.pdf Graphic file (type pdf)
  <use frontpage/1.pdf>
 Package pdftex.def Info: frontpage/1.pdf used on input line 19.
@@ -3315,104 +3315,200 @@ Overfull \hbox (11.30441pt too wide) in paragraph at lines 1373--1373
 [] 
  []
 
-[68] [69]) (./chapter3/chap.tex [70pdfTeX warning (ext4): destination with the 
-same identifier (name{theorem.2.4.24}) has been already used, duplicate ignored
-
+[68] [69]) (./chapter2.5/chap.tex [70pdfTeX warning (ext4): destination with th
+e same identifier (name{theorem.2.4.24}) has been already used, duplicate ignor
+ed
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.1 \chapter
-            {The Group Spectra And Applications}] [71
+            {An Important Example: Transformation Groups and actions on Spaces}
+] [71
 
 pdfTeX warning (ext4): destination with the same identifier (name{theorem.3.1.1
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
+l.17 \end{definition}
+                     ]
+Overfull \hbox (17.54102pt too wide) in paragraph at lines 32--33
+[]\T1/cmr/m/n/10 And, luck-ily for us, there is a nice cor-re-spon-dance be-twe
+en $\OML/cmm/m/it/10 C[]$\T1/cmr/m/n/10 -dynamical sys-tems $\OT1/cmr/m/n/10 (\
+OML/cmm/m/it/10 C[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X\OT1/cmr/m/n/10 )\OML/cmm
+/m/it/10 ; G; \OT1/cmr/m/n/10 )$
+ []
+
+[72pdfTeX warning (ext4): destination with the same identifier (name{theorem.3.
+1.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.46 \end{definition}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{theorem.3.1.3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.46 \end{definition}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{theorem.3.1.4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.46 \end{definition}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{theorem.3.1.5}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.46 \end{definition}
+                     ] [73pdfTeX warning (ext4): destination with the same iden
+tifier (name{theorem.3.2.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.74 \begin{definition}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{theorem.3.2.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.74 \begin{definition}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{theorem.3.2.3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.74 \begin{definition}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{theorem.3.2.4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.74 \begin{definition}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{theorem.3.2.5}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.74 \begin{definition}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{theorem.3.2.6}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.74 \begin{definition}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{theorem.3.2.7}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.74 \begin{definition}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{theorem.3.2.8}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.74 \begin{definition}
+                       ]) (./chapter3/chap.tex [74pdfTeX warning (ext4): destin
+ation with the same identifier (name{theorem.3.2.9}) has been already used, dup
+licate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1 \chapter
+            {The Group Spectra And Applications}] [75
+
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.4.1.1
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
 l.22 	\begin{align*}
-                    ] [72pdfTeX warning (ext4): destination with the same ident
-ifier (name{theorem.3.1.2}) has been already used, duplicate ignored
+                    ] [76pdfTeX warning (ext4): destination with the same ident
+ifier (name{theorem.4.1.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.57 
      pdfTeX warning (ext4): destination with the same identifier (name{theorem.
-3.1.3}) has been already used, duplicate ignored
+4.1.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.57 
-     ] [73pdfTeX warning (ext4): destination with the same identifier (name{the
-orem.3.1.4}) has been already used, duplicate ignored
+     ] [77pdfTeX warning (ext4): destination with the same identifier (name{the
+orem.4.1.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.85 \end{remark}
                  pdfTeX warning (ext4): destination with the same identifier (n
-ame{theorem.3.1.5}) has been already used, duplicate ignored
+ame{theorem.4.1.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.85 \end{remark}
                  pdfTeX warning (ext4): destination with the same identifier (n
-ame{theorem.3.1.6}) has been already used, duplicate ignored
+ame{theorem.4.1.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.85 \end{remark}
                  pdfTeX warning (ext4): destination with the same identifier (n
-ame{theorem.3.2.1}) has been already used, duplicate ignored
+ame{theorem.4.2.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.85 \end{remark}
                  pdfTeX warning (ext4): destination with the same identifier (n
-ame{theorem.3.2.2}) has been already used, duplicate ignored
+ame{theorem.4.2.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.85 \end{remark}
                  pdfTeX warning (ext4): destination with the same identifier (n
-ame{theorem.3.2.3}) has been already used, duplicate ignored
+ame{theorem.4.2.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.85 \end{remark}
                  ]
 
-LaTeX Warning: Marginpar on page 74 moved by 19.27441pt.
+LaTeX Warning: Marginpar on page 78 moved by 19.27441pt.
 
-[74] [75]
+[78] [79]
 Underfull \hbox (badness 10000) in paragraph at lines 153--154
 
  []
 
-[76pdfTeX warning (ext4): destination with the same identifier (name{theorem.3.
+[80pdfTeX warning (ext4): destination with the same identifier (name{theorem.4.
 2.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.174 \end{align*}
                   pdfTeX warning (ext4): destination with the same identifier (
-name{theorem.3.2.5}) has been already used, duplicate ignored
+name{theorem.4.2.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.174 \end{align*}
-                  ] [77pdfTeX warning (ext4): destination with the same identif
-ier (name{theorem.3.2.6}) has been already used, duplicate ignored
+                  ] [81pdfTeX warning (ext4): destination with the same identif
+ier (name{theorem.4.2.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.219 
       pdfTeX warning (ext4): destination with the same identifier (name{theorem
-.3.2.7}) has been already used, duplicate ignored
+.4.2.7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.219 
-      ] [78pdfTeX warning (ext4): destination with the same identifier (name{th
-eorem.3.2.9}) has been already used, duplicate ignored
+      ] [82pdfTeX warning (ext4): destination with the same identifier (name{th
+eorem.4.2.9}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -3424,178 +3520,188 @@ name{section*.27}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.247 \end{remark}
                   pdfTeX warning (ext4): destination with the same identifier (
-name{theorem.3.2.11}) has been already used, duplicate ignored
+name{theorem.4.2.11}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.247 \end{remark}
-                  ] [79pdfTeX warning (ext4): destination with the same identif
-ier (name{theorem.3.2.12}) has been already used, duplicate ignored
+                  ] [83pdfTeX warning (ext4): destination with the same identif
+ier (name{theorem.4.2.12}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.274 \end{proof}
                  pdfTeX warning (ext4): destination with the same identifier (n
-ame{theorem.3.2.13}) has been already used, duplicate ignored
+ame{theorem.4.2.13}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.274 \end{proof}
-                 ] [80pdfTeX warning (ext4): destination with the same identifi
-er (name{theorem.3.2.14}) has been already used, duplicate ignored
+                 ] [84pdfTeX warning (ext4): destination with the same identifi
+er (name{theorem.4.2.14}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.306 
       pdfTeX warning (ext4): destination with the same identifier (name{theorem
-.3.2.15}) has been already used, duplicate ignored
+.4.2.15}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.306 
       pdfTeX warning (ext4): destination with the same identifier (name{theorem
-.3.2.16}) has been already used, duplicate ignored
+.4.2.16}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.306 
-      ] [81pdfTeX warning (ext4): destination with the same identifier (name{th
-eorem.3.2.17}) has been already used, duplicate ignored
+      ] [85pdfTeX warning (ext4): destination with the same identifier (name{th
+eorem.4.2.17}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.340 	\end{align*}
                    pdfTeX warning (ext4): destination with the same identifier 
-(name{theorem.3.2.18}) has been already used, duplicate ignored
+(name{theorem.4.2.18}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.340 	\end{align*}
                    pdfTeX warning (ext4): destination with the same identifier 
-(name{theorem.3.2.19}) has been already used, duplicate ignored
+(name{theorem.4.2.19}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.340 	\end{align*}
-                   ] [82pdfTeX warning (ext4): destination with the same identi
-fier (name{theorem.3.2.21}) has been already used, duplicate ignored
+                   ] [86pdfTeX warning (ext4): destination with the same identi
+fier (name{theorem.4.2.21}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.370 
       pdfTeX warning (ext4): destination with the same identifier (name{theorem
-.3.2.22}) has been already used, duplicate ignored
+.4.2.22}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.370 
-      ] [83pdfTeX warning (ext4): destination with the same identifier (name{th
-eorem.3.2.23}) has been already used, duplicate ignored
+      ] [87pdfTeX warning (ext4): destination with the same identifier (name{th
+eorem.4.2.23}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.389 	L
         et $(A,G,\alpha)$ be a $C^*$-dynamical system with $G$ discrete. The...
-pdfTeX warning (ext4): destination with the same identifier (name{theorem.3.2.2
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.4.2.2
 4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.389 	L
         et $(A,G,\alpha)$ be a $C^*$-dynamical system with $G$ discrete. The...
-] [84pdfTeX warning (ext4): destination with the same identifier (name{theorem.
-3.2.26}) has been already used, duplicate ignored
+] [88pdfTeX warning (ext4): destination with the same identifier (name{theorem.
+4.2.26}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.416 	\end{align*}
-                   ]) (./chapter4/chap.tex [85pdfTeX warning (ext4): destinatio
-n with the same identifier (name{theorem.3.2.28}) has been already used, duplic
+                   ]) (./chapter4/chap.tex [89pdfTeX warning (ext4): destinatio
+n with the same identifier (name{theorem.4.2.28}) has been already used, duplic
 ate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.1 \chapter
-            {Actions And Automorphisms}] [86
+            {Actions And Automorphisms}] [90
 
-pdfTeX warning (ext4): destination with the same identifier (name{theorem.4.1.1
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.5.1.1
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.23 \end{remark}
                  pdfTeX warning (ext4): destination with the same identifier (n
-ame{theorem.4.1.2}) has been already used, duplicate ignored
+ame{theorem.5.1.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.23 \end{remark}
-                 ] [87pdfTeX warning (ext4): destination with the same identifi
-er (name{theorem.4.1.3}) has been already used, duplicate ignored
+                 ] [91pdfTeX warning (ext4): destination with the same identifi
+er (name{theorem.5.1.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.52 \end{definition}
                      pdfTeX warning (ext4): destination with the same identifie
-r (name{theorem.4.1.4}) has been already used, duplicate ignored
+r (name{theorem.5.1.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.52 \end{definition}
                      pdfTeX warning (ext4): destination with the same identifie
-r (name{theorem.4.1.5}) has been already used, duplicate ignored
+r (name{theorem.5.1.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.52 \end{definition}
                      pdfTeX warning (ext4): destination with the same identifie
-r (name{theorem.4.1.6}) has been already used, duplicate ignored
+r (name{theorem.5.1.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.52 \end{definition}
-                     ] [88pdfTeX warning (ext4): destination with the same iden
-tifier (name{theorem.4.1.7}) has been already used, duplicate ignored
+                     ] [92pdfTeX warning (ext4): destination with the same iden
+tifier (name{theorem.5.1.7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.82 	\begin{align*}
                     pdfTeX warning (ext4): destination with the same identifier
- (name{theorem.4.1.8}) has been already used, duplicate ignored
+ (name{theorem.5.1.8}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.82 	\begin{align*}
                     pdfTeX warning (ext4): destination with the same identifier
- (name{theorem.4.1.9}) has been already used, duplicate ignored
+ (name{theorem.5.1.9}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.82 	\begin{align*}
-                    ] [89pdfTeX warning (ext4): destination with the same ident
-ifier (name{theorem.4.1.11}) has been already used, duplicate ignored
+                    ] [93pdfTeX warning (ext4): destination with the same ident
+ifier (name{theorem.5.1.11}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.116 	\begin{align*}
-                     ]) [90pdfTeX warning (ext4): destination with the same ide
-ntifier (name{theorem.4.1.13}) has been already used, duplicate ignored
+                     ]) [94pdfTeX warning (ext4): destination with the same ide
+ntifier (name{theorem.5.1.13}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.31 \backmatter
-                ] [91
+l.33 \backmatter
+                ] [95
 
 
-] [92] [93]
+]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 35.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+Overfull \hbox (23.5054pt too wide) in paragraph at lines 35--35
+\T1/cmr/m/n/10 2017. \T1/cmr/m/sc/10 url\T1/cmr/m/n/10 : []$\T1/cmtt/m/n/10 htt
+ps : / / github . com / mkarbo / uni / blob / master / Projects / Bachelorproje
+ct /
+ []
+
+[96] [97]
 runsystem(makeindex -s master master.idx)...executed.
 
  (./master.ind
 LaTeX Font Info:    Try loading font information for T1+cmss on input line 2.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [94
+) [98
 
 
 ])
@@ -3606,31 +3712,31 @@ FiXme Summary: Number of notes: 0,
 (FiXme)        Number of fatal errors: 0,
 (FiXme)        Total: 0.
 
-[95]
+[99]
 \tf@toc=\write9
 \openout9 = `master.toc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 37.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 37.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 39.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 39.
  (./master.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 37.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 37.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 39.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 39.
 Package rerunfilecheck Info: File `master.out' has not changed.
-(rerunfilecheck)             Checksum: B90DFBFA049F57FC4B739A13BEC212AF;1155.
+(rerunfilecheck)             Checksum: 0404A9699EBD4ACF6E83ACDCEF2FA8B9;1415.
 Package logreq Info: Writing requests to 'master.run.xml'.
 \openout1 = `master.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 37.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 39.
  )
 (\end occurred when \iftrue on line 5 was incomplete) 
 Here is how much of TeX's memory you used:
- 41759 strings out of 493029
- 757967 string characters out of 6136234
+ 41817 strings out of 493029
+ 759126 string characters out of 6136234
  1120465 words of memory out of 5000000
- 44205 multiletter control sequences out of 15000+600000
- 33629 words of font info for 100 fonts, out of 8000000 for 9000
+ 44232 multiletter control sequences out of 15000+600000
+ 33942 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,17n,82p,10480b,2391s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,17n,82p,10480b,2393s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/en
 c/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
@@ -3656,11 +3762,12 @@ type1/public/cm-super/sfcc1200.pfb></usr/share/texmf/fonts/type1/public/cm-supe
 r/sfrm0700.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr
 /share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/t
 ype1/public/cm-super/sfsx1095.pfb></usr/share/texmf/fonts/type1/public/cm-super
-/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfxc1200.pfb>
-Output written on master.pdf (98 pages, 1054126 bytes).
+/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb></usr/
+share/texmf/fonts/type1/public/cm-super/sfxc1200.pfb>
+Output written on master.pdf (102 pages, 1093204 bytes).
 PDF statistics:
- 1239 PDF objects out of 1440 (max. 8388607)
- 1096 compressed objects within 11 object streams
- 422 named destinations out of 1000 (max. 500000)
- 146 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1310 PDF objects out of 1440 (max. 8388607)
+ 1161 compressed objects within 12 object streams
+ 446 named destinations out of 1000 (max. 500000)
+ 170 words of extra memory for PDF output out of 10000 (max. 10000000)
 

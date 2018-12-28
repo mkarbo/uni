@@ -20,16 +20,22 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.4}The case of Abelian groups and Takai Duality}{55}{section.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {3}The Group Spectra And Applications}{71}{chapter.3}
+\contentsline {chapter}{\chapternumberline {3}An Important Example: Transformation Groups and actions on Spaces}{71}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}The Arveson and Connes spectra}{71}{section.3.1}
+\contentsline {section}{\numberline {3.1}Topological Dynamics}{71}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}The Connes Spectrum and Simplicity}{73}{section.3.2}
+\contentsline {section}{\numberline {3.2}Boundary Actions and the Furstenberg boundary}{72}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {4}Actions And Automorphisms}{86}{chapter.4}
+\contentsline {chapter}{\chapternumberline {4}The Group Spectra And Applications}{75}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Properties of Actions}{86}{section.4.1}
+\contentsline {section}{\numberline {4.1}The Arveson and Connes spectra}{75}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{91}{chapter*.31}
+\contentsline {section}{\numberline {4.2}The Connes Spectrum and Simplicity}{77}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Index}{94}{section*.32}
+\contentsline {chapter}{\chapternumberline {5}Actions And Automorphisms}{90}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}Properties of Actions}{90}{section.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{95}{chapter*.31}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Index}{98}{section*.32}
