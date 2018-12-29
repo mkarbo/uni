@@ -16,6 +16,53 @@
   {}
 \endgroup
 
+\entry{aukhadiev2014crossed}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Aukhadiev}{A.}%
+     {Marat}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Nikitin}{N.}%
+     {Alexander}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Sitdikov}{S.}%
+     {Airat}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{AMNASA1}
+  \strng{fullhash}{AMNASA1}
+  \field{labelalpha}{ANS14}
+  \field{sortinit}{A}
+  \field{title}{A crossed product of the CAR algebra in the Cuntz algebra}
+  \field{journaltitle}{arXiv preprint arXiv:1404.0638}
+  \field{year}{2014}
+\endentry
+
+\entry{arveson2012invitation}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Arveson}{A.}%
+     {William}{W.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer Science \& Business Media}%
+  }
+  \strng{namehash}{AW1}
+  \strng{fullhash}{AW1}
+  \field{labelalpha}{Arv12}
+  \field{sortinit}{A}
+  \field{title}{An invitation to C*-algebras}
+  \field{volume}{39}
+  \field{year}{2012}
+\endentry
+
 \entry{archbold1994topologically}{article}{}
   \name{author}{2}{}{%
     {{}%
@@ -34,6 +81,7 @@
   }
   \strng{namehash}{ARJSJS1}
   \strng{fullhash}{ARJSJS1}
+  \field{labelalpha}{AS94}
   \field{sortinit}{A}
   \field{number}{1}
   \field{pages}{119\bibrangedash 124}
@@ -42,54 +90,6 @@
   \field{volume}{37}
   \field{journaltitle}{Proceedings of the Edinburgh Mathematical Society}
   \field{year}{1994}
-\endentry
-
-\entry{arveson2012invitation}{book}{}
-  \name{author}{1}{}{%
-    {{}%
-     {Arveson}{A.}%
-     {William}{W.}%
-     {}{}%
-     {}{}}%
-  }
-  \list{publisher}{1}{%
-    {Springer Science \& Business Media}%
-  }
-  \strng{namehash}{AW1}
-  \strng{fullhash}{AW1}
-  \field{sortinit}{A}
-  \field{title}{An invitation to C*-algebras}
-  \field{volume}{39}
-  \field{year}{2012}
-\endentry
-
-\entry{bekka2008kazhdan}{book}{}
-  \name{author}{3}{}{%
-    {{}%
-     {Bekka}{B.}%
-     {Bachir}{B.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {La~Harpe}{L.~H.}%
-     {Pierre}{P.}%
-     {de}{d.}%
-     {}{}}%
-    {{}%
-     {Valette}{V.}%
-     {Alain}{A.}%
-     {}{}%
-     {}{}}%
-  }
-  \list{publisher}{1}{%
-    {Cambridge university press}%
-  }
-  \strng{namehash}{BBLHPdVA1}
-  \strng{fullhash}{BBLHPdVA1}
-  \field{sortinit}{B}
-  \field{title}{Kazhdan's property (T)}
-  \field{volume}{11}
-  \field{year}{2008}
 \endentry
 
 \entry{berg1984harmonic}{article}{}
@@ -115,6 +115,7 @@
   }
   \strng{namehash}{BCCJPRRP1}
   \strng{fullhash}{BCCJPRRP1}
+  \field{labelalpha}{BCR84}
   \field{sortinit}{B}
   \field{title}{Harmonic analysis on semigroups}
   \field{year}{1984}
@@ -133,6 +134,7 @@
   }
   \strng{namehash}{BB1}
   \strng{fullhash}{BB1}
+  \field{labelalpha}{Bla06}
   \field{sortinit}{B}
   \field{title}{Operator algebras: theory of C*-algebras and von Neumann
   algebras}
@@ -153,6 +155,7 @@
   }
   \strng{namehash}{BE1}
   \strng{fullhash}{BE1}
+  \field{labelalpha}{Bla96}
   \field{sortinit}{B}
   \field{number}{1}
   \field{pages}{141}
@@ -161,6 +164,61 @@
   \field{journaltitle}{Bulletin de la Soci{\'e}t{\'e} math{\'e}matique de
   France}
   \field{year}{1996}
+\endentry
+
+\entry{bekka2008kazhdan}{book}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Bekka}{B.}%
+     {Bachir}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {La~Harpe}{L.~H.}%
+     {Pierre}{P.}%
+     {de}{d.}%
+     {}{}}%
+    {{}%
+     {Valette}{V.}%
+     {Alain}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Cambridge university press}%
+  }
+  \strng{namehash}{BBLHPdVA1}
+  \strng{fullhash}{BBLHPdVA1}
+  \field{labelalpha}{BLHV08}
+  \field{sortinit}{B}
+  \field{title}{Kazhdan's property (T)}
+  \field{volume}{11}
+  \field{year}{2008}
+\endentry
+
+\entry{brown2008c}{book}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Brown}{B.}%
+     {Nathanial~Patrick}{N.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ozawa}{O.}%
+     {Narutaka}{N.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {American Mathematical Soc.}%
+  }
+  \strng{namehash}{BNPON1}
+  \strng{fullhash}{BNPON1}
+  \field{labelalpha}{BO08}
+  \field{sortinit}{B}
+  \field{title}{C*-algebras and finite-dimensional approximations}
+  \field{volume}{88}
+  \field{year}{2008}
 \endentry
 
 \entry{bratteli2012operator}{book}{}
@@ -181,6 +239,7 @@
   }
   \strng{namehash}{BORDW1}
   \strng{fullhash}{BORDW1}
+  \field{labelalpha}{BR12}
   \field{sortinit}{B}
   \field{title}{Operator Algebras and Quantum Statistical Mechanics: Volume 1:
   C*-and W*-Algebras. Symmetry Groups. Decomposition of States}
@@ -215,6 +274,7 @@
   }
   \strng{namehash}{BE+1}
   \strng{fullhash}{BEKMKMON1}
+  \field{labelalpha}{Bre+17}
   \field{sortinit}{B}
   \field{number}{1}
   \field{pages}{35\bibrangedash 71}
@@ -223,30 +283,6 @@
   \field{volume}{126}
   \field{journaltitle}{Publications math{\'e}matiques de l'IH{\'E}S}
   \field{year}{2017}
-\endentry
-
-\entry{brown2008c}{book}{}
-  \name{author}{2}{}{%
-    {{}%
-     {Brown}{B.}%
-     {Nathanial~Patrick}{N.~P.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Ozawa}{O.}%
-     {Narutaka}{N.}%
-     {}{}%
-     {}{}}%
-  }
-  \list{publisher}{1}{%
-    {American Mathematical Soc.}%
-  }
-  \strng{namehash}{BNPON1}
-  \strng{fullhash}{BNPON1}
-  \field{sortinit}{B}
-  \field{title}{C*-algebras and finite-dimensional approximations}
-  \field{volume}{88}
-  \field{year}{2008}
 \endentry
 
 \entry{connesclassification}{misc}{}
@@ -262,6 +298,7 @@
   }
   \strng{namehash}{CA1}
   \strng{fullhash}{CA1}
+  \field{labelalpha}{Con73}
   \field{sortinit}{C}
   \field{title}{Une classification des facteurs de type III}
   \field{year}{1973}
@@ -280,6 +317,7 @@
   }
   \strng{namehash}{DJ1}
   \strng{fullhash}{DJ1}
+  \field{labelalpha}{Dix69}
   \field{sortinit}{D}
   \field{title}{Les C* algLbres et leurs repr{\O}sentations}
   \field{year}{1969}
@@ -298,6 +336,7 @@
   }
   \strng{namehash}{EGA1}
   \strng{fullhash}{EGA1}
+  \field{labelalpha}{Ell80}
   \field{sortinit}{E}
   \field{number}{1}
   \field{pages}{299\bibrangedash 311}
@@ -307,6 +346,25 @@
   \field{journaltitle}{Publications of the Research Institute for Mathematical
   Sciences}
   \field{year}{1980}
+\endentry
+
+\entry{folland2013real}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Folland}{F.}%
+     {Gerald~B}{G.~B.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {John Wiley \& Sons}%
+  }
+  \strng{namehash}{FGB1}
+  \strng{fullhash}{FGB1}
+  \field{labelalpha}{Fol13}
+  \field{sortinit}{F}
+  \field{title}{Real analysis: modern techniques and their applications}
+  \field{year}{2013}
 \endentry
 
 \entry{folland2016fourier}{book}{}
@@ -323,27 +381,10 @@
   }
   \strng{namehash}{FGB1}
   \strng{fullhash}{FGB1}
+  \field{labelalpha}{Fol16}
   \field{sortinit}{F}
   \field{title}{A course in abstract harmonic analysis}
   \field{year}{2016}
-\endentry
-
-\entry{folland2013real}{book}{}
-  \name{author}{1}{}{%
-    {{}%
-     {Folland}{F.}%
-     {Gerald~B}{G.~B.}%
-     {}{}%
-     {}{}}%
-  }
-  \list{publisher}{1}{%
-    {John Wiley \& Sons}%
-  }
-  \strng{namehash}{FGB1}
-  \strng{fullhash}{FGB1}
-  \field{sortinit}{F}
-  \field{title}{Real analysis: modern techniques and their applications}
-  \field{year}{2013}
 \endentry
 
 \entry{furman2003minimal}{article}{}
@@ -359,6 +400,7 @@
   }
   \strng{namehash}{FA1}
   \strng{fullhash}{FA1}
+  \field{labelalpha}{Fur03}
   \field{sortinit}{F}
   \field{number}{1}
   \field{pages}{173\bibrangedash 187}
@@ -382,6 +424,7 @@
   }
   \strng{namehash}{GS1}
   \strng{fullhash}{GS1}
+  \field{labelalpha}{Gla76}
   \field{sortinit}{G}
   \field{booktitle}{Proximal Flows}
   \field{pages}{17\bibrangedash 29}
@@ -407,9 +450,10 @@
   }
   \strng{namehash}{GECOD1}
   \strng{fullhash}{GECOD1}
+  \field{labelalpha}{GO81}
   \field{sortinit}{G}
   \field{pages}{329\bibrangedash 349}
-  \field{title}{Spectra of actions on type IC*-algebras}
+  \field{title}{Spectra of actions on type I C*-algebras}
   \field{journaltitle}{Mathematica Scandinavica}
   \field{year}{1981}
 \endentry
@@ -432,6 +476,7 @@
   }
   \strng{namehash}{GECRJ1}
   \strng{fullhash}{GECRJ1}
+  \field{labelalpha}{GR79}
   \field{sortinit}{G}
   \field{number}{3}
   \field{pages}{283\bibrangedash 298}
@@ -440,6 +485,54 @@
   \field{volume}{52}
   \field{journaltitle}{Inventiones mathematicae}
   \field{year}{1979}
+\endentry
+
+\entry{bscp}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Karbo}{K.}%
+     {Malthe}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Bachelor's thesis}%
+  }
+  \strng{namehash}{KM1}
+  \strng{fullhash}{KM1}
+  \field{labelalpha}{Kar17}
+  \field{extraalpha}{1}
+  \field{sortinit}{K}
+  \field{title}{Simplicity and uniqueness of trace of group $C^*$-algebras}
+  \verb{url}
+  \verb https://github.com/mkarbo/uni/blob/master/Projects/Bachelorproject/mast
+  \verb er.pdf
+  \endverb
+  \field{year}{2017}
+\endentry
+
+\entry{approxtalk}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Karbo}{K.}%
+     {Malthe}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Lecture Notes for Course Presentation}%
+  }
+  \strng{namehash}{KM1}
+  \strng{fullhash}{KM1}
+  \field{labelalpha}{Kar17}
+  \field{extraalpha}{2}
+  \field{sortinit}{K}
+  \field{title}{Course Presentation on Amenable Actions and Inner Amenability}
+  \verb{url}
+  \verb https://github.com/mkarbo/uni/blob/master/Talks/Approx(2017%262018)/all
+  \verb _approx.pdf
+  \endverb
+  \field{year}{2017+2018}
 \endentry
 
 \entry{kadison1967derivations}{article}{}
@@ -460,6 +553,7 @@
   }
   \strng{namehash}{KRVRJR1}
   \strng{fullhash}{KRVRJR1}
+  \field{labelalpha}{KR67}
   \field{sortinit}{K}
   \field{number}{1}
   \field{pages}{32\bibrangedash 63}
@@ -469,24 +563,24 @@
   \field{year}{1967}
 \endentry
 
-\entry{bscp}{book}{}
+\entry{landstad1979duality}{article}{}
   \name{author}{1}{}{%
     {{}%
-     {Karbo}{K.}%
-     {Malthe}{M.}%
+     {Landstad}{L.}%
+     {Magnus~B}{M.~B.}%
      {}{}%
      {}{}}%
   }
-  \strng{namehash}{KM1}
-  \strng{fullhash}{KM1}
-  \field{sortinit}{K}
-  \field{title}{B.sc. project: Simplicity and uniqueness of trace of group
-  $C^*$-algebras}
-  \verb{url}
-  \verb https://github.com/mkarbo/uni/blob/master/Projects/Bachelorproject/mast
-  \verb er.pdf
-  \endverb
-  \field{year}{2017}
+  \strng{namehash}{LMB1}
+  \strng{fullhash}{LMB1}
+  \field{labelalpha}{Lan79}
+  \field{sortinit}{L}
+  \field{number}{2}
+  \field{pages}{223\bibrangedash 267}
+  \field{title}{Duality theory for covariant systems}
+  \field{volume}{248}
+  \field{journaltitle}{Transactions of the American Mathematical Society}
+  \field{year}{1979}
 \endentry
 
 \entry{lance1995hilbert}{book}{}
@@ -502,29 +596,34 @@
   }
   \strng{namehash}{LEC1}
   \strng{fullhash}{LEC1}
+  \field{labelalpha}{Lan95}
   \field{sortinit}{L}
   \field{title}{Hilbert C*-modules: a toolkit for operator algebraists}
   \field{volume}{210}
   \field{year}{1995}
 \endentry
 
-\entry{landstad1979duality}{article}{}
+\entry{le2017c}{article}{}
   \name{author}{1}{}{%
     {{}%
-     {Landstad}{L.}%
-     {Magnus~B}{M.~B.}%
+     {Le~Boudec}{L.~B.}%
+     {Adrien}{A.}%
      {}{}%
      {}{}}%
   }
-  \strng{namehash}{LMB1}
-  \strng{fullhash}{LMB1}
+  \list{publisher}{1}{%
+    {Springer}%
+  }
+  \strng{namehash}{LBA1}
+  \strng{fullhash}{LBA1}
+  \field{labelalpha}{LB17}
   \field{sortinit}{L}
-  \field{number}{2}
-  \field{pages}{223\bibrangedash 267}
-  \field{title}{Duality theory for covariant systems}
-  \field{volume}{248}
-  \field{journaltitle}{Transactions of the American Mathematical Society}
-  \field{year}{1979}
+  \field{number}{1}
+  \field{pages}{159\bibrangedash 174}
+  \field{title}{C*-simplicity and the amenable radical}
+  \field{volume}{209}
+  \field{journaltitle}{Inventiones mathematicae}
+  \field{year}{2017}
 \endentry
 
 \entry{landstad1979towards}{article}{}
@@ -550,6 +649,7 @@
   }
   \strng{namehash}{LMBODPGK1}
   \strng{fullhash}{LMBODPGK1}
+  \field{labelalpha}{LOP79}
   \field{sortinit}{L}
   \field{number}{2}
   \field{pages}{311\bibrangedash 321}
@@ -572,6 +672,7 @@
   }
   \strng{namehash}{MGJ1}
   \strng{fullhash}{MGJ1}
+  \field{labelalpha}{Mur14}
   \field{sortinit}{M}
   \field{title}{C*-algebras and operator theory}
   \field{year}{2014}
@@ -595,6 +696,7 @@
   }
   \strng{namehash}{ODPGK1}
   \strng{fullhash}{ODPGK1}
+  \field{labelalpha}{OP78}
   \field{sortinit}{O}
   \field{number}{2}
   \field{pages}{179\bibrangedash 197}
@@ -622,6 +724,7 @@
   }
   \strng{namehash}{ODPGK1}
   \strng{fullhash}{ODPGK1}
+  \field{labelalpha}{OP80}
   \field{sortinit}{O}
   \field{number}{1}
   \field{pages}{18\bibrangedash 32}
@@ -650,6 +753,7 @@
   }
   \strng{namehash}{ODPGK1}
   \strng{fullhash}{ODPGK1}
+  \field{labelalpha}{OP82}
   \field{sortinit}{O}
   \field{number}{3}
   \field{pages}{357\bibrangedash 390}
@@ -660,22 +764,22 @@
   \field{year}{1982}
 \endentry
 
-\entry{annow}{article}{}
+\entry{ozawa2014lecture}{inproceedings}{}
   \name{author}{1}{}{%
     {{}%
-     {Pedersen}{P.}%
-     {Gert~K}{G.~K.}%
+     {Ozawa}{O.}%
+     {Narutaka}{N.}%
      {}{}%
      {}{}}%
   }
-  \strng{namehash}{PGK1}
-  \strng{fullhash}{PGK1}
-  \field{sortinit}{P}
-  \field{pages}{23\bibrangedash 29}
-  \field{title}{Analysis now, volume 118 of Graduate Texts in Mathematics}
-  \field{volume}{7}
-  \field{journaltitle}{Springer}
-  \field{year}{1989}
+  \strng{namehash}{ON1}
+  \strng{fullhash}{ON1}
+  \field{labelalpha}{Oza14}
+  \field{sortinit}{O}
+  \field{booktitle}{Annual Meeting of Operator Theory and Operator Algebras
+  (available online), Tokyo}
+  \field{title}{Lecture on the Furstenberg boundary and $C^*$-simplicity}
+  \field{year}{2014}
 \endentry
 
 \entry{pedersenalgauto}{article}{}
@@ -691,10 +795,52 @@
   }
   \strng{namehash}{PGK1}
   \strng{fullhash}{PGK1}
+  \field{labelalpha}{Ped79}
   \field{sortinit}{P}
   \field{title}{C\^{}*-algebras and their automorphism groups}
   \field{journaltitle}{London Mathematical Society Monographs}
   \field{year}{1979}
+\endentry
+
+\entry{annow}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Pedersen}{P.}%
+     {Gert~K}{G.~K.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{PGK1}
+  \strng{fullhash}{PGK1}
+  \field{labelalpha}{Ped89}
+  \field{sortinit}{P}
+  \field{pages}{23\bibrangedash 29}
+  \field{title}{Analysis now, volume 118 of Graduate Texts in Mathematics}
+  \field{volume}{7}
+  \field{journaltitle}{Springer}
+  \field{year}{1989}
+\endentry
+
+\entry{powers1975simplicity}{article}{}
+  \true{moreauthor}
+  \name{author}{1}{}{%
+    {{}%
+     {Powers}{P.}%
+     {Robert~T}{R.~T.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{PRT+1}
+  \strng{fullhash}{PRT+1}
+  \field{labelalpha}{Pow+75}
+  \field{sortinit}{P}
+  \field{number}{1}
+  \field{pages}{151\bibrangedash 156}
+  \field{title}{Simplicity of the C*-algebra associated with the free group on
+  two generators}
+  \field{volume}{42}
+  \field{journaltitle}{Duke Math. J}
+  \field{year}{1975}
 \endentry
 
 \entry{raeburn1988crossed}{article}{}
@@ -710,6 +856,7 @@
   }
   \strng{namehash}{RI1}
   \strng{fullhash}{RI1}
+  \field{labelalpha}{Rae88}
   \field{sortinit}{R}
   \field{number}{2}
   \field{pages}{321\bibrangedash 330}
@@ -717,6 +864,26 @@
   \field{volume}{31}
   \field{journaltitle}{Proceedings of the Edinburgh Mathematical Society}
   \field{year}{1988}
+\endentry
+
+\entry{rudin1991functional}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Rudin}{R.}%
+     {Walter}{W.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {McGraw-Hill, Inc., New York}%
+  }
+  \strng{namehash}{RW1}
+  \strng{fullhash}{RW1}
+  \field{labelalpha}{Rud91}
+  \field{sortinit}{R}
+  \field{title}{Functional analysis. International series in pure and applied
+  mathematics}
+  \field{year}{1991}
 \endentry
 
 \entry{williamsmorita}{book}{}
@@ -737,29 +904,46 @@
   }
   \strng{namehash}{RIWDP1}
   \strng{fullhash}{RIWDP1}
+  \field{labelalpha}{RW98}
   \field{sortinit}{R}
   \field{number}{60}
   \field{title}{Morita equivalence and continuous-trace C*-algebras}
   \field{year}{1998}
 \endentry
 
-\entry{rudin1991functional}{misc}{}
-  \name{author}{1}{}{%
+\entry{rordam2000introduction}{book}{}
+  \name{author}{4}{}{%
     {{}%
-     {Rudin}{R.}%
-     {Walter}{W.}%
+     {R{\o}rdam}{R.}%
+     {Mikael}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Larsen}{L.}%
+     {Flemming}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Larsen}{L.}%
+     {Flemming}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Laustsen}{L.}%
+     {N}{N}%
      {}{}%
      {}{}}%
   }
   \list{publisher}{1}{%
-    {McGraw-Hill, Inc., New York}%
+    {Cambridge University Press}%
   }
-  \strng{namehash}{RW1}
-  \strng{fullhash}{RW1}
+  \strng{namehash}{RM+1}
+  \strng{fullhash}{RMLFLFLN1}
+  \field{labelalpha}{R{\o}r+00}
   \field{sortinit}{R}
-  \field{title}{Functional analysis. International series in pure and applied
-  mathematics}
-  \field{year}{1991}
+  \field{title}{An Introduction to K-theory for C*-algebras}
+  \field{volume}{49}
+  \field{year}{2000}
 \endentry
 
 \entry{sakai1978recent}{incollection}{}
@@ -775,6 +959,7 @@
   }
   \strng{namehash}{SS1}
   \strng{fullhash}{SS1}
+  \field{labelalpha}{Sak78}
   \field{sortinit}{S}
   \field{booktitle}{C*-algebras and applications to physics}
   \field{pages}{85\bibrangedash 122}
@@ -796,6 +981,7 @@
   }
   \strng{namehash}{SRL1}
   \strng{fullhash}{SRL1}
+  \field{labelalpha}{Sch17}
   \field{sortinit}{S}
   \field{title}{Measures, Integrals and Martingales}
   \field{year}{2017}
@@ -814,6 +1000,7 @@
   }
   \strng{namehash}{TH1}
   \strng{fullhash}{TH1}
+  \field{labelalpha}{Tak75}
   \field{sortinit}{T}
   \field{number}{1}
   \field{pages}{25\bibrangedash 39}
@@ -836,6 +1023,7 @@
   }
   \strng{namehash}{WDP1}
   \strng{fullhash}{WDP1}
+  \field{labelalpha}{Wil07}
   \field{sortinit}{W}
   \field{number}{134}
   \field{title}{Crossed products of C*-algebras}
@@ -855,6 +1043,7 @@
   }
   \strng{namehash}{ZK1}
   \strng{fullhash}{ZK1}
+  \field{labelalpha}{Zhu93}
   \field{sortinit}{Z}
   \field{title}{An introduction to operator algebras}
   \field{volume}{9}

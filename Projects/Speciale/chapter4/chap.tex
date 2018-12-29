@@ -1,6 +1,8 @@
 \chapter{Actions And Automorphisms}
-In this chapter, we will go through theory describing automorphisms on a $C^*$-algebra $A$ and actions of groups $G$ on $C^*$-algebras, including applications in describing the ideal structure of crossed products. A motivation for including and describing this theory is the result of Archbold And Spielberg (see \cite{archbold1994topologically}), which showed that for a large class of groups and $C^*$-algebras, a certain condition on the action $G \acts {} A$ implies simplicity of the associated (reduced) crossed product $A \rtimes_\alpha G$ ($A \rtimes_{\alpha,r} G$).
-\sssection{Properties of Actions}
+In this chapter, we will go through theory describing automorphisms on a $C^*$-algebra $A$ and actions of groups $G$ on $C^*$-algebras, including applications in describing the ideal structure of crossed products. A motivation for including and describing this theory is the result of Archbold And Spielberg (see \cite{archbold1994topologically}), which showed that for a large class of groups and $C^*$-algebras, a certain condition on the action $G \acts {} A$ implies simplicity of the associated (reduced) crossed product $A \rtimes G$ ($A \rtimes_{r} G$).
+
+\sssection{Action Properties}
+We are going to discuss a property that an action $G \acts \alpha A$ can have called topological freeness and it's implications on the crossed product. In order to do this, we introduce notation and discuss some results on the spectrum of a general $C^*$-algebra as well as the primitive ideal space of $A$:
 \begin{definition}
 	For a $C^*$-algebra $A$, we define the \myemph{primitive ideal space} of a $C^*$-algebra $A$ to be the set
 	\begin{align*}
@@ -12,24 +14,26 @@ In this chapter, we will go through theory describing automorphisms on a $C^*$-a
 	\end{align*}
 where $[\cdot]_u$ denotes the class of unitarily equivalent representations.
 
-If $\pi_1 \sim_u \pi_2$, then $\ker \pi_1 = \ker \pi_2$ so the map $\kappa \colon \hat A \to \Prim A$, $[\pi]_u \mapsto \ker \pi$, is surjective and well-defined. We endow $\Prim A$ with a topology called the \myemph{hull-kernel topology} defined such that for $S = (s_i)_{i \in I} \subseteq \Prim A$, we define
+If $\pi_1 \sim_u \pi_2$, then $\ker \pi_1 = \ker \pi_2$ so the map $\kappa \colon \hat A \to \Prim A$, $[\pi]_u \mapsto \ker \pi$, is surjective and well-defined. We endow $\Prim A$ with a topology called the \myemph{hull-kernel topology} defined such that for $S = (s_i)_{i \in I} \subseteq \Prim A$ we have
 \begin{align*}
 	\overline S := \{ p \in \Prim A \mid \cap_{i \in I} s_i \subseteq p\}.
 \end{align*}
-We also endow $\hat A$ with the corresponding initial topology stemming from the surjective map $\kappa$.
+To see that this is in fact a topology, we refer to \cite[Appendix A.2]{williamsmorita}. We also endow $\hat A$ with the corresponding initial topology stemming from the surjective map $\kappa$.
 \end{definition}
 \begin{remark}
 	For a commutative $C^*$-algebra (i.e., $A = C_0(X)$), the spectrum of $A$ is the Gelfand Space of $A$, i.e., non-zero $*$-homomorphisms $A \to \C$, since irreducible representations of commutative spaces are one-dimensional. Moreover, in this case it holds that $\hat A \cong \Prim A$.
 \end{remark}
-These objects interact nicely with dynamical systems, in particular, we note that whenever $G$ is discrete and $G \acts \alpha A$ then we may define the \myemph{transposed action of $G$} on both $\hat A$ and $\Prim A$ (as topological spaces) given by
+These objects interact nicely with dynamical systems (we already saw this for $A= C_0(X)$): Whenever $G \acts \alpha A$ then we may define the \myemph{transposed action of $G$} on both $\hat A$ and $\Prim A$ (as topological spaces) by
 \begin{align*}
 	\alpha_r^*([\pi]_u) := [\pi \circ \alpha_{r^{-1}}] \text{ and } \alpha_{r}^*(\ker \pi) = \ker \pi \circ \alpha_{r^{-1}},
 \end{align*}
-for all irreducible representations $\pi$ of $A$. We then define the following properties for an action $ G \acts \alpha A$:
+for all irreducible representations $\pi$ of $A$. These are indeed actions on topological spaces (i.e., the corresponding maps out of $G \times \hat A \to \hat A$ and $G \times \Prim A \to \Prim A$ are jointly continuous cf. \cite[Lemma 7.1]{williamsmorita}).
 \begin{definition}
-	For an action $G \acts \alpha A$, where $G$ is discrete, we say that the action is \myemph{Topologically free} if for all $t_1,\dots,t_n \in G\backslash\{e\}$ the set $\bigcap_{i=1}^n \left\{ [\pi]_u \in \hat A | \alpha_{t_i}^*([\pi]_u)\neq [\pi]_u \right\}$ is dense in $\hat A$.
+	For an action $G \acts \alpha A$ we say that the action is \myemph{Topologically free} if for all $t_1,\dots,t_n \in G\backslash\{e\}$ the set $\bigcap_{i=1}^n \left\{ [\pi]_u \in \hat A | \alpha_{t_i}^*([\pi]_u)\neq [\pi]_u \right\}$ is dense in $\hat A$.
 \end{definition}
-We will get back to how this translates for $A$ commutative in a bit, i.e., when $A=C_0(X)$. 
+\begin{remark}
+	It is easy to see that for $A=C_0(X)$, then an action is topologically free if and only if for all $e \neq t \in G$, the set of fixpoint of the induced action $G \acts{} X$ have empty interior or equivalently dense complement.
+\end{remark}
 \begin{definition}
 	For a $C^*$-algebra $A$, we say that $\alpha \in \mathrm{Aut}(A)$ is \myemph{properly outer} if for all $\alpha$-invariant non-zero ideals $I \subseteq A$ and all inner automorphisms $\beta$ of I it holds that
 	\begin{align*}
@@ -53,6 +57,7 @@ Recall that for $G$ discrete, it holds that $A \subseteq A \rtimes_\alpha G$, an
 \begin{remark}
 	The above definition is the (to the authors knowledge) original definition. We will use the following fact: If $\pi$ and $\tau$ are disjoint if and only if $1 \oplus 0$ is an element of the strong operator closure of $\pi \oplus \tau (A)$, i.e., there is some net $(x_i) \subseteq A$ bounded with $\pi(x_i) \to 1$ and $\tau(x_i) \to 0$ in the strong operator topology if and only if  $\pi \not \sim _u \tau$, see e.g. \cite[Proposition 2.1.4]{arveson2012invitation}. 
 \end{remark}
+\sssection{Consequences of Topological Freeness}
 Recall that we may identify $G$ as a subset of the unitary group of $M(A \rtimes_\alpha G)$. We denote this identification by $u_t$, $t \in G$. 
 \begin{lemma}
 	Let $G$ be discrete and $G \acts \alpha A$ and $\pi$ is a non-degenerate representation of $A$. If there is $t \in G$ such that $\pi \circ \alpha_t^{-1}$ and $\pi$ are disjoint representations, then for all completely positive extension $\varphi$ of $\pi$ to $A \rtimes_\alpha G$ of norm $1$ it holds that $\varphi(a u_t) = 0$ for all $a \in A$ and $u_t \in G \subseteq M(A \rtimes_\alpha G)$.
@@ -136,4 +141,29 @@ If we further assume that $A$ is abelian, then the converse holds as well:
 \begin{proof}
 	This follows directly from \cref{ASthm1}, \cref{ASthm2} and \cref{ASlem1}.
 \end{proof}
-Once again, this gives an easy proof of minimaly of $C(S^1) \rtimes_{\theta} \Z$ for $\theta$ irrational, since the action is very clearly topologically free (there are no fixpoints on $S^1$ for irrational rotation), and we already know that it is minimal and $I_r = 0$.
+Once again, this gives an easy proof of simplicity of $C(S^1) \rtimes_{\theta} \Z$ for $\theta$ irrational, since the action is very clearly topologically free (there are no fixpoints on $S^1$ for irrational rotation), and we already know that it is minimal and $I_r = 0$.
+
+\sssection{A Relation between Ideals of $C_r^*(G)$ and $A \rtimes_{\alpha,r} G$}.
+From here on, let $G$ denote a discrete countable group and $X$ a compact $G$-space. In the following, we will discuss recent developments regarding the classification of $C^*$-simple groups, in particular the results based on theory of boundary actions and topological freeness discussed earlier, and its relation to simplicity of associated crossed products $A \rtimes_{\alpha,r} G$. 
+
+We say that a group $G$ is \myemph{$C^*$-simple} if its reduced group is $C^*$-simple, and we say that $G$ has the \myemph{unique trace property} if the canonical faithful tracial state $\tau_0 \colon f \mapsto \langle \delta_e f , \delta_e\rangle_{\ell^2(G)}$ is the only tracial state on $C_r^*(G)$. It was an open question for a long time wether having the unique tracial state was equivalent to being $C^*$-simple. In 2014, using theory of boundary actions, this was shown by to false by Le Boudec (see \cite[Thoerem A]{le2017c}). However, $C^*$-simplicity does imply unique tracial state which is equivalent to having no non-trivial amenable normal subgroups (see e.g. the authors project on this subject: \cite[Chapter 5]{bscp}).
+
+It is quite a strong condition on a group $G$ to be $C^*$-simple, since as mentioned amenable groups are not $C^*$-simple (nor do they have any amenable subgroups, see again \cite[Chapter 5]{bscp}). Groups which are $C^*$-simple include the class of Powers groups (an homage to R.T. Powers proof on simplicity of the free group on two generators, see \cite{powers1975simplicity} or \cite[chapter 3]{bscp}) which includes the free groups on finite number of generators.
+
+The following result shows the close relationship between topological freeness of actions and $C^*$-simplicty of groups with the ideal structure of crossed products of $G$-boundaries. It is (to the authors knowledge) due to Ozawa (see e.g., \cite{ozawa2014lecture}) and based on the result of Archbold-Spielberg covered earlier:
+\begin{proposition}
+	Let $G \acts {} X$ be a minimal action. If the stabilizer group $G_x := \{ t \in G \ \mid \ t.x =x\}$ is $C^*$-simple for some $x \in X$, then $C(X) \rtimes_\alpha G$ is simple, where $\alpha$ is the induced action of $G$ on $C(X)$.
+\end{proposition}
+\begin{proof}
+	
+\end{proof}
+We have seen that topological freeness implies simplicity of $A \rtimes_{\alpha,r} G$ for $G$-simple $C^*$-algebras. The following result from the same paper as above allows us to determine topological freeness from properties of $G$ and $C(X)\rtimes_\alpha G$:
+\begin{proposition}
+	Suppose that $X$ is a minimal $G$-space and $C(X) \rtimes_\alpha G$ is simple. If there is some $x \in X$ such that the normal subgroup 
+	\begin{align*}
+		G_x^\circ := \{t \in G \ \mid \ t|_U = \mathrm{id} \text{ for some neighborhood } U \text{ of } x\}
+	\end{align*}
+	of $G_x$ is amenable, then the action $G \acts { } X$ is topologically free.
+\end{proposition}
+
+

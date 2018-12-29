@@ -1,7 +1,7 @@
 This is makeindex, version 2.15 [TeX Live 2015] (kpathsea + Thai support).
 Scanning style file ./master.ist......done (6 attributes redefined, 0 ignored).
-Scanning input file master.idx....done (61 entries accepted, 0 rejected).
-Sorting entries....done (386 comparisons).
-Generating output file master.ind....done (135 lines written, 0 warnings).
+Scanning input file master.idx....done (63 entries accepted, 0 rejected).
+Sorting entries....done (424 comparisons).
+Generating output file master.ind....done (139 lines written, 0 warnings).
 Output written in master.ind.
 Transcript written in master.ilg.

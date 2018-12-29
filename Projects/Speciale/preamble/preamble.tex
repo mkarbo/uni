@@ -12,15 +12,16 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 %\usepackage{flexisym}
-\usepackage{hyperref}
 \usepackage{xr}
 \usepackage[all]{xy}
 \usepackage{tikz-cd}
 %\usepackage{hyperref}
-\usepackage[style=numeric,backend=bibtex]{biblatex}
+\usepackage[style=alphabetic,backend=bibtex]{biblatex}
 \usepackage{filecontents}
 \usepackage[english, status=draft]{fixme}
 \fxusetheme{color}
+\usepackage{imakeidx} 
+\usepackage{hyperref}
 \usepackage{cleveref} 
 \usepackage{tensor}
 \usepackage[backgroundcolor=cyan]{todonotes}
@@ -28,7 +29,6 @@
 \usepackage{titlesec}
 %\usepackage[titleloc]{appendix}
 \usepackage{faktor}
-\usepackage{imakeidx} 
 \usepackage{xfrac}
 \usepackage{mathabx}
 \usepackage{mathrsfs}
@@ -153,8 +153,8 @@
 \nouppercaseheads
 \createmark{section}{left}{shownumber}{}{\space}
 \makepagestyle{dut}
-\makeevenhead{dut}{Malthe Karbo\scshape\rightmark}{}{\scshape\leftmark}
-\makeoddhead{dut}{\scshape\leftmark}{}{Malthe Karbo\scshape\rightmark}
+\makeevenhead{dut}{\scshape\rightmark}{}{\scshape\leftmark}
+\makeoddhead{dut}{\scshape\leftmark}{}{\scshape\rightmark}
 \makeevenfoot{dut}{}{\scshape $-$ \thepage\ $-$}{}
 \makeoddfoot{dut}{}{\scshape $-$ \thepage\ $-$}{}
 \makeheadrule{dut}{\textwidth}{\normalrulethickness}

@@ -1,11 +1,11 @@
-\chapter{An Important Example: Transformation Groups and actions on Spaces}
+\sssection{An Important Example: Transformation Groups and actions on Spaces}
 Recall the example of $\R \acts \theta C(S^1)$ via translation by $\theta \in \R$ from earlier. This is a more general construction of great importance which gives many great examples and ways to describe non-trivial examples of $C^*$-algebras and topological spaces. We will see that there is a correspondance between classic topological dynamic system and $C^*$-dynamical systems of abelian $C^*$-algebras and properties thereof. 
 
 Shortly put, we will describe $C^*$-dynamical systems associated with transformation groups, properties of actions on spaces and important examples of transformation groups including $G$-boundaries and the Furstenberg boundary. 
 
 Some of the theory discussed and covered in the following are commonly available in teaching books on the subject, for instance we use \cite{williamscrossed} as an inspiration for the first part. Some theory is newer and not-so-common in teaching books, e.g., the theory of boundary actions. We will refer to the authors written projects (when possible) on these subjects as well as original source material on the subject.
 
-\sssection{Topological Dynamics}
+\ssubsection{Topological Dynamics}
 Throughout this chapter, we will let $X$ denote an arbitrary locally compact Hausdorff space and $G$ an arbitrary locally compact group. 
 \begin{definition}
 	We say that $G$ acts on $X$, abbreviated \myemph{$G \acts {} X$}, if there is a jointly continuous map
@@ -39,7 +39,7 @@ And, luckily for us, there is a nice correspondance between $C^*$-dynamical syst
 \end{proposition}
 For a proof, see \cite[Lemma 1.33, 2.5 and Proposition 2.6]{williamscrossed}.
 
-\sssection{Boundary Actions and the Furstenberg boundary}
+\ssubsection{Boundary Actions and the Furstenberg boundary}
 The rest of this chapter is largely based on discussion and results covered authors written project (see \cite{bscp}), which covers and discusses (in a lesser generality) results of Furman and Glasner, see e.g., \cite{furman2003minimal} and \cite{glasner1976proximal} respectively. We will not go through the proofs and techincal details, and instead offer a heuristic explanation.
 \begin{definition}
 	An action $G \acts {} X$ is said to be \myemph{minimal} if there are no non-trivial $G$-invariant closed subsets of $X$.
@@ -57,7 +57,7 @@ See e.g., \mbox{\cite[Example 4.6]{bscp}}.
 \begin{remark}
 	It is evident that $Y \subseteq X$ is minimal if and only if the action restricts to a minimal action on $Y$. Moreover, an easy application of Zorn's lemma ensures that every compact $G$-space admits a minimal subset.
 \end{remark}
-It is not hard to see that if we let $\mathrm{Prob}(X)$ denote the set of Radon probability measures on a locally compact space $X$, then whenever $G \acts {} X$ we obtain a continuous action on $\mathrm{Prob}(X)$ of $G$ as well (with respect to the weak$^*$-topology of $C_0(X)^*$), which is given by $t.\mu(f) := \mu(\alpha_{t^{-1}}.f)$, where $\alpha$ is the induced action on $C_0(X)$ of $G$. This leads us the following:
+An easy application of abstract change-of-variable and dominated convergence shows that if we let $\mathrm{Prob}(X)$ denote the set of Radon probability measures on a compact $G$-space $X$, then we obtain a continuous action on $\mathrm{Prob}(X)$ of $G$ as well (with respect to the weak$^*$-topology of $C_0(X)^*$), which is given by $t.\mu(f) := \mu(\alpha_{t^{-1}}.f)$, where $\alpha$ is the induced action on $C_0(X)$ of $G$. This leads us the following:
 \begin{definition}
 	Let $X$ be a compact $G$-space. We say that $G \acts {} X$ is a \myemph{strongly proximal action} if for each $\mu \in \mathrm{Prob}(X)$ we have
 	\begin{align*}
@@ -70,7 +70,7 @@ It is not hard to see that if we let $\mathrm{Prob}(X)$ denote the set of Radon 
 \begin{definition}
 	A compact $G$-space $X$ is caled a \myemph{$G$-boundary} if the action is a \myemph{boundary action} which are minimal and strongly proximal actions.
 \end{definition}
-For discrete countable groups, the theory of boundary actions and compact $G$-boundaries have strong influence on the classification of group $C^*$-algebras and other areas, as discovered by E. Breuillard, M. Kalantar, M. Kennedy, N. Ozawa (see e.g. \cite{breuillard2017c}). If $G$ is any (also non-discrete), there is a particularly important $G$-boundary:
+For discrete countable groups, the theory of boundary actions and compact $G$-boundaries have strong influence on the classification of group $C^*$-algebras and other areas, as discovered by E. Breuillard, M. Kalantar, M. Kennedy, N. Ozawa (see e.g. \cite{breuillard2017c}). If $G$ is any (also non-discrete) group, then there is a particularly important $G$-boundary:
 \begin{definition}
 	The \myemph{Furstenberg boundary} of a group $G$ is the universal compact $G$-boundary, abbreviated \myemph{$\dd_F G$}, such that every other compact $G$-boundary $X$ is the continuous image of a $G$-equivariant map $\dd_F G \to X$.
 \end{definition}
@@ -78,4 +78,4 @@ Both the existence and uniqueness is covered in \cite[Chapter 4]{bscp}. For disc
 \begin{align*}
 	a \mapsto (e^{2 \pi i t} \mapsto e^{2 \pi i (t+\theta)}) \text{  and  } b \mapsto (e^{2 \pi i t} \mapsto e^{2 \pi i t^{2}}),
 \end{align*}
-for $\theta \in \R\backslash \Q$, see e.g., \cite[Example 4.13]{bscp}.
+for $\theta \in \R\backslash \Q$, see e.g., \cite[Example 4.13]{bscp}. We will get back to the connection to crossed product and their ideal structure and boundary actions later.
