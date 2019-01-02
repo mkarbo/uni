@@ -32,7 +32,11 @@ for all irreducible representations $\pi$ of $A$. These are indeed actions on to
 	For an action $G \acts \alpha A$ we say that the action is \myemph{Topologically free} if for all $t_1,\dots,t_n \in G\backslash\{e\}$ the set $\bigcap_{i=1}^n \left\{ [\pi]_u \in \hat A | \alpha_{t_i}^*([\pi]_u)\neq [\pi]_u \right\}$ is dense in $\hat A$.
 \end{definition}
 \begin{remark}
-	It is easy to see that for $A=C_0(X)$, then an action is topologically free if and only if for all $e \neq t \in G$, the set of fixpoint of the induced action $G \acts{} X$ have empty interior or equivalently dense complement.
+	It is easy to see that for $A=C_0(X)$, then an action is topologically free if and only if for all $e \neq t \in G$, the set of fixpoint of the induced action $G \acts{} X$ have empty interior or equivalently dense complement. Moreover, define 
+	\begin{align*}
+		G_x^\circ := \{t \in G \ \mid \ t|_U = \mathrm{id} \text{ for some neighborhood } U \text{ of } x\},
+	\end{align*}
+	which is clearly a normal subgroup of $G$, then the action is topologically free if and only $G_x^\circ = \{e\}$ for all $x$: If $t.y= y$ for all $y \in U$ of some neighborhood $U$ of $x$, then the fixpoint set of $t$ has non-empty interior.
 \end{remark}
 \begin{definition}
 	For a $C^*$-algebra $A$, we say that $\alpha \in \mathrm{Aut}(A)$ is \myemph{properly outer} if for all $\alpha$-invariant non-zero ideals $I \subseteq A$ and all inner automorphisms $\beta$ of I it holds that
@@ -150,20 +154,56 @@ We say that a group $G$ is \myemph{$C^*$-simple} if its reduced group is $C^*$-s
 
 It is quite a strong condition on a group $G$ to be $C^*$-simple, since as mentioned amenable groups are not $C^*$-simple (nor do they have any amenable subgroups, see again \cite[Chapter 5]{bscp}). Groups which are $C^*$-simple include the class of Powers groups (an homage to R.T. Powers proof on simplicity of the free group on two generators, see \cite{powers1975simplicity} or \cite[chapter 3]{bscp}) which includes the free groups on finite number of generators.
 
-The following result shows the close relationship between topological freeness of actions and $C^*$-simplicty of groups with the ideal structure of crossed products of $G$-boundaries. It is (to the authors knowledge) due to Ozawa (see e.g., \cite{ozawa2014lecture}) and based on the result of Archbold-Spielberg covered earlier:
+In order to show our desired results, we need to cover a bit of theory on conditional expectations and crossed products. For instance whenever $N$ is a normal subgroup of a discrete group $G$, then the inclusion $N \subseteq G$ gives rise to a conditional expecation $E_{N}^G \colon C_r^*(G) \to C_r^*(N)$ given by $\lambda_s \mapsto 1_{N}(s) \lambda_s$, see e.g. \cite[Corollary 2.5.12]{brown2008c}. Moreover, supposing that $A = C(X)$, then for all $x \in X$, the associated conditional expectation $E_{G_x}^G \colon C_r^* (G) \to C_r^*(G_x)$ (here $G_x$ is the stabilizer subgroup) extends to a condotional expecation
+\begin{align}
+	E_x \colon C(X) \rtimes_{\alpha,r} G &\to C_r^*(G_x), \\
+	f \lambda_s &\mapsto f(x) E_{G_x}^G(\lambda_s).
+	\label{eq:stabcond}
+\end{align}
+
+The following result shows the close relationship between topological freeness of actions and $C^*$-simplicty of groups with the ideal structure of crossed products of $G$-boundaries. It is (to the authors knowledge) due to \cite{breuillard2017c}, however we follow a proof of Ozawa (see e.g., \cite{ozawa2014lecture}). The result is heavily inspired by the proof of the Archbold-Spielberg result covered earlier.
 \begin{proposition}
-	Let $G \acts {} X$ be a minimal action. If the stabilizer group $G_x := \{ t \in G \ \mid \ t.x =x\}$ is $C^*$-simple for some $x \in X$, then $C(X) \rtimes_\alpha G$ is simple, where $\alpha$ is the induced action of $G$ on $C(X)$.
+	Let $G \acts {} X$ be a minimal action. If the stabilizer group $G_x := \{ t \in G \ \mid \ t.x =x\}$ is $C^*$-simple for some $x \in X$, then the corresponding reduced crossed product $C(X) \rtimes_{\alpha,r} G$ is simple.
 \end{proposition}
 \begin{proof}
-	
+	Suppose that $I \subseteq C(X) \rtimes_r G$ is a non-trivial closed ideal and let $x \in X$. Let $E$ denote the canoncial faithful conditional expectation $C(X) \rtimes_r G \to C(X)$, $f \lambda_s \mapsto f$ if $s  = e$ and $0$ else (see e.g., \cite[proposition 4.1.9]{brown2008c}). Then $E(I) \neq 0$, since $E$ is faithful and by minimality of $G \acts {} X$ it is dense in $C(X)$. If $\tau_r$ denotes the canoncial faithful tracial state on $C_r^*(G)$ and let $f \in E(I)$ with $E(f) \neq 0$ and $f(x) \neq 0$. Then $\tau_r (E_x(f \lambda_e))= f(x) = \delta_x(E(f\lambda_e))$, so that $E_x(I)$ is non-zero in $C_r^*(G_x)$. We claim that $E_x(I)$ is not dense in $C_r^*(G_x)$. Similar to the proof of \cref{ASthm1}, we consider state on $C(X) + I$ given by the composition:
+	\begin{align*}
+		C(X) + I \to (C(X)+I)/I \cong C(X) \stackrel {\delta_x} \to \C,
+	\end{align*}
+	where we used that the proper ideal $C(X) \cap I$ of $C(X)$ must be $0$ by minimality of $G \acts {} X$. Let $\varphi_x$ denote any state extending the above composition with $\varphi_x(I) =0$. The result will follow one we show that $\varphi_x = \varphi_x \circ E_x$, for then $\varphi_x (E_x(I)) = \varphi_x(I) = 0 $ implying that $\varphi_x= 0$ on all of $C(X) \rtimes_{\alpha,r}G$ if $E_x(I)$ is dense in $C_r^*(G_x)$. 
+
+	To see that $\varphi_x = \varphi_x \circ E_x$ it suffices to show that $\varphi_x (\lambda_s) = 0$ for $s \not \in G \backslash G_x$: If not, then since $C(X)$ is in the multiplicative domain of $\varphi_x$ it holds that $\varphi_x(f \lambda_s) =  \varphi_x( f(x) \lambda_s)  =  \varphi_x (E_x( f\lambda_s))$. So assume that $s.x \neq x$ and choose a function $h \in C(X)$ such that $h(x) = 1$ and $h(s^{-1}.y) = 0$ for all $y \in \supp h$ (using that $G$ is a normal space). In particular, this implies that 
+	\begin{align*}
+		\varphi_x(\lambda_s) = \varphi_x(h\lambda_s) = \varphi_x(\lambda_s \alpha_s(h)) = h(s^{-1}.x) \varphi_x(\lambda_s) = 0,
+	\end{align*}
+	finishing the proof.
 \end{proof}
 We have seen that topological freeness implies simplicity of $A \rtimes_{\alpha,r} G$ for $G$-simple $C^*$-algebras. The following result from the same paper as above allows us to determine topological freeness from properties of $G$ and $C(X)\rtimes_\alpha G$:
 \begin{proposition}
-	Suppose that $X$ is a minimal $G$-space and $C(X) \rtimes_\alpha G$ is simple. If there is some $x \in X$ such that the normal subgroup 
-	\begin{align*}
-		G_x^\circ := \{t \in G \ \mid \ t|_U = \mathrm{id} \text{ for some neighborhood } U \text{ of } x\}
-	\end{align*}
-	of $G_x$ is amenable, then the action $G \acts { } X$ is topologically free.
+	Suppose that $X$ is a minimal $G$-space and $C(X) \rtimes_\alpha G$ is simple. If there is some $x \in X$ such that the normal subgroup $G_x^\circ$ of $G_x$ is amenable, then the action $G \acts { } X$ is topologically free.
 \end{proposition}
+For a proof, see \cite[Proposition 7.6, 7.7]{breuillard2017c}. 
 
-
+With these results in hand, we may prove a (super substantial) result, again due to \cite{breuillard2017c}:
+\begin{theorem}
+	For a discrete group $G$, the following are equivalent:
+	\begin{enumerate}
+		\item $G$ is $C^*$-simple.
+		\item $C(\dd_F G) \rtimes_r G$ is simple.
+		\item There is some $G$-boundary $X$ such that the action is topologically free.
+		\item Whenever $X$ is a compact minimal $G$-space, amenability of $G_x$ for some $x \in X$ implies topological freeness of the action on $X$.
+		\item If $G \acts \alpha A$ with $A$ unital, then $A \rtimes_{\alpha,r} G$ is simple whenever $G$-simple.
+	\end{enumerate}
+	\label{breulcsimple}
+\end{theorem}
+\begin{corollary}
+	If $G$ is $C^*$-simple, then $C(X) \rtimes_{r}G$ is simple for all compact minimal $G$-spaces $X$.
+\end{corollary}
+\begin{note}
+	As mentioned in the original article, the above result (and the rest of the paper) provided a much needed take on the theory of $C^*$-simplicity of discrete groups. Prior to this, the most common way of checking $C^*$-simplicity was the technique initially found by Powers (see \cite{powers1975simplicity} or the authors take on the subject \cite[chapter 3]{bscp}) in his proof for $C^*$-simplicity of $\mathbb{F}_2$. As mentioned, it provided a route to an answer of the long lasting question of equivalence of $C^*$-simplicity and the unique trace property.
+\end{note}
+We include also a result of the late Uffe Haagerup, which was based on the above article as well, and characterized $C^*$-simplicity and uniqueness of trace in terms of convex hulls and states. For a proof, see the original article \cite{haagerup2015new} or the authors discussion and covering of the result \cite[Chapter 5]{bscp}:
+\begin{theorem}
+	
+	\label{}
+\end{theorem}
