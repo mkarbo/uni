@@ -323,6 +323,29 @@
   \field{year}{1969}
 \endentry
 
+\entry{de2007simplicity}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {De~La~Harpe}{D.~L.~H.}%
+     {Pierre}{P.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Oxford University Press}%
+  }
+  \strng{namehash}{DLHP1}
+  \strng{fullhash}{DLHP1}
+  \field{labelalpha}{DLH07}
+  \field{sortinit}{D}
+  \field{number}{1}
+  \field{pages}{1\bibrangedash 26}
+  \field{title}{On simplicity of reduced C*-algebras of groups}
+  \field{volume}{39}
+  \field{journaltitle}{Bulletin of the London Mathematical Society}
+  \field{year}{2007}
+\endentry
+
 \entry{elliott1980some}{article}{}
   \name{author}{1}{}{%
     {{}%
@@ -385,6 +408,29 @@
   \field{sortinit}{F}
   \field{title}{A course in abstract harmonic analysis}
   \field{year}{2016}
+\endentry
+
+\entry{frolik1971maps}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Frol{\'\i}k}{F.}%
+     {Zden{\v{e}}k}{Z.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Academia Publishing House of the Czechoslovak Academy of Sciences}%
+  }
+  \strng{namehash}{FZ1}
+  \strng{fullhash}{FZ1}
+  \field{labelalpha}{Fro71}
+  \field{sortinit}{F}
+  \field{pages}{131\bibrangedash 142}
+  \field{title}{Maps of extremally disconnected spaces, theory of types, and
+  applications}
+  \field{journaltitle}{General topology and its relations to modern analysis
+  and algebra}
+  \field{year}{1971}
 \endentry
 
 \entry{furman2003minimal}{article}{}
@@ -505,28 +551,27 @@
   \field{year}{2015}
 \endentry
 
-\entry{bscp}{book}{}
+\entry{hamana1979injective}{article}{}
   \name{author}{1}{}{%
     {{}%
-     {Karbo}{K.}%
-     {Malthe}{M.}%
+     {Hamana}{H.}%
+     {Masamichi}{M.}%
      {}{}%
      {}{}}%
   }
   \list{publisher}{1}{%
-    {Bachelor's thesis}%
+    {The Mathematical Society of Japan}%
   }
-  \strng{namehash}{KM1}
-  \strng{fullhash}{KM1}
-  \field{labelalpha}{Kar17}
-  \field{extraalpha}{1}
-  \field{sortinit}{K}
-  \field{title}{Simplicity and uniqueness of trace of group $C^*$-algebras}
-  \verb{url}
-  \verb https://github.com/mkarbo/uni/blob/master/Projects/Bachelorproject/mast
-  \verb er.pdf
-  \endverb
-  \field{year}{2017}
+  \strng{namehash}{HM1}
+  \strng{fullhash}{HM1}
+  \field{labelalpha}{Ham79}
+  \field{sortinit}{H}
+  \field{number}{1}
+  \field{pages}{181\bibrangedash 197}
+  \field{title}{Injective envelopes of C*-algebras}
+  \field{volume}{31}
+  \field{journaltitle}{Journal of the Mathematical Society of Japan}
+  \field{year}{1979}
 \endentry
 
 \entry{approxtalk}{book}{}
@@ -542,15 +587,37 @@
   }
   \strng{namehash}{KM1}
   \strng{fullhash}{KM1}
-  \field{labelalpha}{Kar17}
-  \field{extraalpha}{2}
+  \field{labelalpha}{Kar16}
   \field{sortinit}{K}
   \field{title}{Course Presentation on Amenable Actions and Inner Amenability}
   \verb{url}
   \verb https://github.com/mkarbo/uni/blob/master/Talks/Approx(2017%262018)/all
   \verb _approx.pdf
   \endverb
-  \field{year}{2017+2018}
+  \field{year}{2016+2018}
+\endentry
+
+\entry{bscp}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Karbo}{K.}%
+     {Malthe}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Bachelor's thesis}%
+  }
+  \strng{namehash}{KM1}
+  \strng{fullhash}{KM1}
+  \field{labelalpha}{Kar17}
+  \field{sortinit}{K}
+  \field{title}{Simplicity and uniqueness of trace of group $C^*$-algebras}
+  \verb{url}
+  \verb https://github.com/mkarbo/uni/blob/master/Projects/Bachelorproject/mast
+  \verb er.pdf
+  \endverb
+  \field{year}{2017}
 \endentry
 
 \entry{kadison1967derivations}{article}{}

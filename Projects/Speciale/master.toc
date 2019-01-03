@@ -36,10 +36,10 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.1}Action Properties}{90}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Consequences of Topological Freeness}{92}{section.4.2}
+\contentsline {section}{\numberline {4.2}Consequences of Topological Freeness}{93}{section.4.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.3}A Relation between Ideals of $C_r^*(G)$ and $A \rtimes _{\alpha ,r} G$}{95}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{98}{chapter*.31}
+\contentsline {chapter}{Bibliography}{100}{chapter*.32}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Index}{102}{section*.32}
+\contentsline {chapter}{Index}{104}{section*.33}

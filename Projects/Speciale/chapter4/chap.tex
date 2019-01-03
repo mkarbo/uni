@@ -39,6 +39,22 @@ for all irreducible representations $\pi$ of $A$. These are indeed actions on to
 	which is clearly a normal subgroup of $G$, then the action is topologically free if and only $G_x^\circ = \{e\}$ for all $x$: If $t.y= y$ for all $y \in U$ of some neighborhood $U$ of $x$, then the fixpoint set of $t$ has non-empty interior.
 \end{remark}
 \begin{definition}
+	We say that an action $G \acts {} X$ is free if every stabilizer is trivial, i.e., if for each $x \in X$ the stabilizer $G_x :=\{g \in G \ \mid \ g.x =x\}$ is trivial.
+\end{definition}
+\begin{lemma}
+	Suppose that $G \acts {} X$ is a minimal action. If $G_x^\circ = \{e\}$ for some $x \in X$, then $G_y^\circ = \{e\}$ for all $y \in X$, i.e., the action is topologically free.
+	\label{topfreeminimal}
+\end{lemma}
+\begin{proof}
+	Let $x \in X$ be such that $G_x^\circ = \{e\}$. Suppose towards a contradiction that $s \in G_y^\circ$, $y \neq e$. Let $U \subseteq X$ witness this, i.e, be open with $y \in U$ and $s|_U=\mathrm{id}$. By minimality of the action, there is $t \in G$ such that $x \in tU$. Then $tst^{-1}(tv) =  tsv = tv$ for all $v \in U$, so $tst^{-1}|_{tU}=  \mathrm{id}$. By assumption, this implies that $tst^{-1} = e$, which forces $s = e$ (if $t = e$, then $s \in G_x^\circ$ and if $t \neq e$ then $s = e$), a contradiction on our assumption.
+\end{proof}
+\begin{corollary}
+	The action of $G$ on $\dd_F G$ (the Furstenberg boundary) is topologically free if and only if it is free.
+\end{corollary}
+\begin{proof}
+	This follows directly from the earlier remark that $\dd_F G$ is extremally disconnected, since the $(\dd_F G)_s$ is clopen by a theorem of Frolik, see e.g., \cite[Theorem 3.1]{frolik1971maps}, which says that the set of fixed points of a homeomorphism $f \colon X \to X$, where $X$ is a compact extremally disconnected space, is clopen in $X$.
+\end{proof}
+\begin{definition}
 	For a $C^*$-algebra $A$, we say that $\alpha \in \mathrm{Aut}(A)$ is \myemph{properly outer} if for all $\alpha$-invariant non-zero ideals $I \subseteq A$ and all inner automorphisms $\beta$ of I it holds that
 	\begin{align*}
 		\lv \alpha|_I - \beta \rv = 2.
@@ -172,9 +188,9 @@ The following result shows the close relationship between topological freeness o
 	\end{align*}
 	where we used that the proper ideal $C(X) \cap I$ of $C(X)$ must be $0$ by minimality of $G \acts {} X$. Let $\varphi_x$ denote any state extending the above composition with $\varphi_x(I) =0$. The result will follow one we show that $\varphi_x = \varphi_x \circ E_x$, for then $\varphi_x (E_x(I)) = \varphi_x(I) = 0 $ implying that $\varphi_x= 0$ on all of $C(X) \rtimes_{\alpha,r}G$ if $E_x(I)$ is dense in $C_r^*(G_x)$. 
 
-	To see that $\varphi_x = \varphi_x \circ E_x$ it suffices to show that $\varphi_x (\lambda_s) = 0$ for $s \not \in G \backslash G_x$: If not, then since $C(X)$ is in the multiplicative domain of $\varphi_x$ it holds that $\varphi_x(f \lambda_s) =  \varphi_x( f(x) \lambda_s)  =  \varphi_x (E_x( f\lambda_s))$. So assume that $s.x \neq x$ and choose a function $h \in C(X)$ such that $h(x) = 1$ and $h(s^{-1}.y) = 0$ for all $y \in \supp h$ (using that $G$ is a normal space). In particular, this implies that 
+	To see that $\varphi_x = \varphi_x \circ E_x$ it suffices to show that $\varphi_x (\lambda_s) = 0$ for $s \not \in G \backslash G_x$: If not, then since $C(X)$ is in the multiplicative domain of $\varphi_x$ it holds that $\varphi_x(f \lambda_s) =  \varphi_x( f(x) \lambda_s)  =  \varphi_x (E_x( f\lambda_s))$. So assume that $s.x \neq x$ and choose a function $h \in C(X)$ such that $h(x) = 1$ and $h(s^{-1}.y) = 0$ for all $y \in \supp h$ (using that $G$ is a normal space and applying Uryhson's lemma). In particular, this implies that 
 	\begin{align*}
-		\varphi_x(\lambda_s) = \varphi_x(h\lambda_s) = \varphi_x(\lambda_s \alpha_s(h)) = h(s^{-1}.x) \varphi_x(\lambda_s) = 0,
+		\varphi_x(\lambda_s) = \varphi_x(h\lambda_sh) = \varphi_x(h \alpha_s(h)\lambda_s)   = 0,
 	\end{align*}
 	finishing the proof.
 \end{proof}
@@ -182,7 +198,40 @@ We have seen that topological freeness implies simplicity of $A \rtimes_{\alpha,
 \begin{proposition}
 	Suppose that $X$ is a minimal $G$-space and $C(X) \rtimes_\alpha G$ is simple. If there is some $x \in X$ such that the normal subgroup $G_x^\circ$ of $G_x$ is amenable, then the action $G \acts { } X$ is topologically free.
 \end{proposition}
-For a proof, see \cite[Proposition 7.6, 7.7]{breuillard2017c}. 
+\begin{proof}
+	Before we can begin our work to prove the result, we need make a few remarks: Since $G_x^\circ$ is amenable, the quotient map $q \C G \to \C(G/G_x^\circ)$ extends to a $*$-homomorphism $\pi \colon C_r^*(G) \to C_r^* (G / G_x^\circ)$ such that
+\begin{equation}
+	\begin{tikzcd}
+		\C G \ar[r,"q"] \ar[d,"\lambda_G"'] & \C\left( G/G_x^\circ \right) \ar[d, "\lambda_{G/G_x^\circ}"]\\
+		C_r^*(G) \ar[r,"\pi"'] & C_r^*\left( G/G_x^\circ \right)
+	\end{tikzcd}
+\end{equation}
+see e.g. \cite[Proposition 3]{de2007simplicity}. Note also that we may define a $*$-representation $\pi_x$ of $C(X)$ on $\ell^2(G/G_x^\circ)$ as multiplication operators of the form
+\begin{align*}
+	\pi_x(f) \delta_{[t]} = f(tp) \delta_{[t]},
+\end{align*}
+for $f \in C(X)$ and $t \in G$, induced by the corresponding $*$-homomorphism into $\ell^\infty(G/G_x^\circ)$, which can be check to be injective.
+
+With this, we may define a $^*$-representation $\pi$ of $C(X) \rtimes_r G$ on $\ell^2(G/G_x^{\circ})$ by
+	\begin{align*}
+		\pi(f\lambda_s) \delta_{[t]} = f(spx) \delta_{[st]},
+	\end{align*}
+	for $f \in C(X)$ and $s \in G$ and $[t] \in G/G_x^{\circ}$. An easy computation shows that the state 
+	\begin{align*}
+		C(X) \rtimes_r G\to \C, \ a \mapsto \langle \pi_x(a) \delta_{[e]} , \delta_{[e]}\rangle_{\ell^2(G/G_x^{\circ})},	
+	\end{align*}
+	is actually the map $a \mapsto \langle E_{G_x^{\circ}} (E_x(a)) \delta_e , \delta_e\rangle_{\ell^2(G_x^{\circ})}$. In particular, this implies that $\pi$ is continuous. Let $s \in G_x^\circ$ and let $U$ be a neighborhood of $x$ witnessing this, i.e, be such that $s|_U = \mathrm{id}$ and pick $f \in C(X)$, $f \neq 0$ with $\supp f \subseteq U$. If $f(tx) \neq 0$, then $tx \in U$ so $[st] = [t]$. Hence $\pi\left( ( 1-\lambda_s)f) \right)= 0$, implying that $\lambda_s = \lambda_e$ by injectivity of $\pi$. \todo{revisit, perhaps do contraposition}
+\end{proof}
+
+\begin{note}
+	In order to prove the main theorem of this section, we will need a corollary result saying that $C(\dd _F G)$ is injective as a $G$-algebra (as an object in the category of $G$-$C^*$-algebras): whenever $A$ is a unital $C^*$-algebra and $G \acts A$, then there is a $G$-morphism of $A$ into $C(\dd_F G)$. For a proof, see e.g. \cite[Theorem 6 + Corollary 7]{ozawa2014lecture}.
+\end{note}
+\begin{definition}
+	
+\end{definition}
+\begin{proposition}
+	
+\end{proposition}
 
 With these results in hand, we may prove a (super substantial) result, again due to \cite{breuillard2017c}:
 \begin{theorem}
@@ -192,7 +241,7 @@ With these results in hand, we may prove a (super substantial) result, again due
 		\item $C(\dd_F G) \rtimes_r G$ is simple.
 		\item There is some $G$-boundary $X$ such that the action is topologically free.
 		\item Whenever $X$ is a compact minimal $G$-space, amenability of $G_x$ for some $x \in X$ implies topological freeness of the action on $X$.
-		\item If $G \acts \alpha A$ with $A$ unital, then $A \rtimes_{\alpha,r} G$ is simple whenever $G$-simple.
+		\item If $G \acts \alpha A$ with $A$ unital, then $A \rtimes_{\alpha,r} G$ is simple whenever $A$ is $G$-simple.
 	\end{enumerate}
 	\label{breulcsimple}
 \end{theorem}
@@ -200,10 +249,23 @@ With these results in hand, we may prove a (super substantial) result, again due
 	If $G$ is $C^*$-simple, then $C(X) \rtimes_{r}G$ is simple for all compact minimal $G$-spaces $X$.
 \end{corollary}
 \begin{note}
-	As mentioned in the original article, the above result (and the rest of the paper) provided a much needed take on the theory of $C^*$-simplicity of discrete groups. Prior to this, the most common way of checking $C^*$-simplicity was the technique initially found by Powers (see \cite{powers1975simplicity} or the authors take on the subject \cite[chapter 3]{bscp}) in his proof for $C^*$-simplicity of $\mathbb{F}_2$. As mentioned, it provided a route to an answer of the long lasting question of equivalence of $C^*$-simplicity and the unique trace property.
+	As mentioned in the original article, the above result (and the rest of the paper) provided a much needed take on the theory of $C^*$-simplicity of discrete groups. Prior to this, the most common way of checking $C^*$-simplicity was the technique initially found by Powers (see \cite{powers1975simplicity} or the authors take on the subject \cite[chapter 3]{bscp}) in his proof for $C^*$-simplicity of $\mathbb{F}_2$. As mentioned, the new results of \cite{breuillard2017c} provided a route to an answer of the long lasting question of equivalence of $C^*$-simplicity and the unique trace property.
 \end{note}
 We include also a result of the late Uffe Haagerup, which was based on the above article as well, and characterized $C^*$-simplicity and uniqueness of trace in terms of convex hulls and states. For a proof, see the original article \cite{haagerup2015new} or the authors discussion and covering of the result \cite[Chapter 5]{bscp}:
 \begin{theorem}
-	
-	\label{}
+	Let $G$ be a discrete countable group with canonical tracial state $\tau_0$ on $C_r^*(G)$. Then the following are equivalent:
+	\begin{enumerate}
+		\item $G$ is $C^*$-simple,
+		\item $G$ admits a fre boundary action,
+		\item $\tau_0 \in \left\{ s.\varphi \ \mid \ s \in G \right\}$ for all states $\varphi $ on $C_r^*(G)$, where $s.\varphi(a) = \varphi(\lambda_s a \lambda_s^*)$,
+		\item $\tau_0 \in \overline{\mathrm{conv}}^{w^*}\left\{ s . \varphi \ \mid \ s \in G \right\}$, for all states $\varphi$ on $C_r^*(G)$,
+		\item for all $t_1,\dots,t_m \in G\backslash\{e\}$ and $\varepsilon > 0$ there exists $s_1,\dots,s_n \in G$ such that
+			\begin{align*}
+				\lv \frac1n \sum_{j=1}^n \lambda_{s_jt_ks_j^{-1}}\rv < \varepsilon,
+			\end{align*}
+			for $k=1,\dots,m$,
+		\item $C_r^*(G)$ has the Dixmier property.
+	\end{enumerate}
+	\label{uffecsimple}
 \end{theorem}
+
