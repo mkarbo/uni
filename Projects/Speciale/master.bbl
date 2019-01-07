@@ -620,6 +620,36 @@
   \field{year}{2017}
 \endentry
 
+\entry{kalantar2017boundaries}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Kalantar}{K.}%
+     {Mehrdad}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kennedy}{K.}%
+     {Matthew}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {De Gruyter}%
+  }
+  \strng{namehash}{KMKM1}
+  \strng{fullhash}{KMKM1}
+  \field{labelalpha}{KK17}
+  \field{sortinit}{K}
+  \field{number}{727}
+  \field{pages}{247\bibrangedash 267}
+  \field{title}{Boundaries of reduced C* C\^{}$\{$*$\}$-algebras of discrete
+  groups}
+  \field{volume}{2017}
+  \field{journaltitle}{Journal f{\"u}r die reine und angewandte Mathematik
+  (Crelles Journal)}
+  \field{year}{2017}
+\endentry
+
 \entry{kadison1967derivations}{article}{}
   \name{author}{2}{}{%
     {{}%

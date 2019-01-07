@@ -163,7 +163,7 @@ If we further assume that $A$ is abelian, then the converse holds as well:
 \end{proof}
 Once again, this gives an easy proof of simplicity of $C(S^1) \rtimes_{\theta} \Z$ for $\theta$ irrational, since the action is very clearly topologically free (there are no fixpoints on $S^1$ for irrational rotation), and we already know that it is minimal and $I_r = 0$.
 
-\sssection{A Relation between Ideals of $C_r^*(G)$ and $A \rtimes_{\alpha,r} G$}.
+\sssection{A Relation between Ideals of $C_r^*(G)$ and $A \rtimes_{\alpha,r} G$ and a theorem of four}.
 From here on, let $G$ denote a discrete countable group and $X$ a compact $G$-space. In the following, we will discuss recent developments regarding the classification of $C^*$-simple groups, in particular the results based on theory of boundary actions and topological freeness discussed earlier, and its relation to simplicity of associated crossed products $A \rtimes_{\alpha,r} G$. 
 
 We say that a group $G$ is \myemph{$C^*$-simple} if its reduced group is $C^*$-simple, and we say that $G$ has the \myemph{unique trace property} if the canonical faithful tracial state $\tau_0 \colon f \mapsto \langle \delta_e f , \delta_e\rangle_{\ell^2(G)}$ is the only tracial state on $C_r^*(G)$. It was an open question for a long time wether having the unique tracial state was equivalent to being $C^*$-simple. In 2014, using theory of boundary actions, this was shown by to false by Le Boudec (see \cite[Thoerem A]{le2017c}). However, $C^*$-simplicity does imply unique tracial state which is equivalent to having no non-trivial amenable normal subgroups (see e.g. the authors project on this subject: \cite[Chapter 5]{bscp}).
@@ -180,6 +180,7 @@ In order to show our desired results, we need to cover a bit of theory on condit
 The following result shows the close relationship between topological freeness of actions and $C^*$-simplicty of groups with the ideal structure of crossed products of $G$-boundaries. It is (to the authors knowledge) due to \cite{breuillard2017c}, however we follow a proof of Ozawa (see e.g., \cite{ozawa2014lecture}). The result is heavily inspired by the proof of the Archbold-Spielberg result covered earlier.
 \begin{proposition}
 	Let $G \acts {} X$ be a minimal action. If the stabilizer group $G_x := \{ t \in G \ \mid \ t.x =x\}$ is $C^*$-simple for some $x \in X$, then the corresponding reduced crossed product $C(X) \rtimes_{\alpha,r} G$ is simple.
+	\label{ozawa15pt1}
 \end{proposition}
 \begin{proof}
 	Suppose that $I \subseteq C(X) \rtimes_r G$ is a non-trivial closed ideal and let $x \in X$. Let $E$ denote the canoncial faithful conditional expectation $C(X) \rtimes_r G \to C(X)$, $f \lambda_s \mapsto f$ if $s  = e$ and $0$ else (see e.g., \cite[proposition 4.1.9]{brown2008c}). Then $E(I) \neq 0$, since $E$ is faithful and by minimality of $G \acts {} X$ it is dense in $C(X)$. If $\tau_r$ denotes the canoncial faithful tracial state on $C_r^*(G)$ and let $f \in E(I)$ with $E(f) \neq 0$ and $f(x) \neq 0$. Then $\tau_r (E_x(f \lambda_e))= f(x) = \delta_x(E(f\lambda_e))$, so that $E_x(I)$ is non-zero in $C_r^*(G_x)$. We claim that $E_x(I)$ is not dense in $C_r^*(G_x)$. Similar to the proof of \cref{ASthm1}, we consider state on $C(X) + I$ given by the composition:
@@ -241,7 +242,8 @@ Let $\iota \colon \mathbb{B}(\ell^2(G/G_x^\circ)) \otimes \mathbb{B}(\ell^2(G/G_
 Then the $^*$-homomorphism $\Pi_x \colon C(X) \rtimes_r G \to \mathbb{B}(\ell^2(G/G_x^\circ))$ given by $\Pi_x(a) := u^* \iota(\sigma_x(a)) u $ has the desired properties.
 \end{proof}
 \begin{proposition}
-	Suppose that $X$ is a minimal $G$-space and $C(X) \rtimes_\alpha G$ is simple. If there is some $x \in X$ such that the normal subgroup $G_x^\circ$ of $G$ is amenable, then the action $G \acts { } X$ is topologically free.
+	Suppose that $X$ is a minimal $G$-space and $C(X) \rtimes_\alpha G$ is simple. If there is some $x \in X$ such that the normal subgroup $G_x^\circ$ of $G$ is amenable, then the action $G \acts { } X$ is topologically free. 
+	\label{ozawa15pt2}
 \end{proposition}
 \begin{proof}
 	First, let $\Pi_x$ denote the representation of \cref{CXGrep} and suppose that $s \in G_x^\circ$ and let $U$ be a neighborhood of $x$ witnessing this, i.e, be such that $s|_U = \mathrm{id}$ and pick $f \in C(X)$, $f \neq 0$ with $\supp f \subseteq U$. By the same argument as in the proof of \cref{ASthm2}, if $tx \in \supp f$ then $stx=tx$ and if $tx \not \in \supp f$ then $stx \not \in \supp f$, so
@@ -254,7 +256,8 @@ Then the $^*$-homomorphism $\Pi_x \colon C(X) \rtimes_r G \to \mathbb{B}(\ell^2(
 	In order to prove the main theorem of this section, we will need a corollary result saying that $C(\dd _F G)$ is injective as a $G$-$C^*$-algebra (as an object in the category of $G$-$C^*$-algebras): whenever $A$ is a unital $C^*$-algebra and $G \acts{} A$, then there is a $G$-morphism of $A$ into $C(\dd_F G)$, obtained by the $G$morphism which maps $1$ to $1$. For a proof, see e.g. \cite[Theorem 6 + Corollary 7]{ozawa2014lecture}.
 \end{note}
 \begin{proposition}
-	Let $G \acts {} A$ with $1 \in A$ and let $X$ be a $G$-boundary. If $A \rtimes_r G$ is non-simple then $(A \otimes C(X))\rtimes_r G$ is non-simple in the following way: If $I \subseteq A \rtimes_r G$ is a non-trivial ideal, then the ideal generated by $I$ in $(A \otimes C(X)\rtimes_r G$ is non-trivial.
+	Let $G \acts {} A$ with $1 \in A$ and let $X$ be a $G$-boundary. If $A \rtimes_r G$ is non-simple then $(A \otimes C(X))\rtimes_r G$ is non-simple in the following way: If $I \subseteq A \rtimes_r G$ is a non-trivial ideal, then the ideal generated by $I$ in $(A \otimes C(X)\rtimes_r G$ is proper.
+	\label{ozawprop17}
 \end{proposition}
 \begin{proof}
 	Consider the embedding $A \rtimes_r G$ in $(A \otimes C(X)) \rtimes_r G$ via the map $a \lambda_s \mapsto (a \otimes 1) \lambda_s$. That this is an actual embedding of $C^*$-algebras is due to a technical lemma of Hamana, see e.g., \cite[lemma 3.1]{hamana1979injective}. Let $\pi$ be a non-faithful representation of $A \rtimes_r G$ on $\mathbb{B}(H)$ with kernel $I$, and let $\overline \pi$ denote a unital completely positive extension $(A \otimes C(X)) \rtimes_r G \to \mathbb{B}(H)$. Using \cite[Proposition 1.5.6]{brown2008c}, we see that $\overline \pi(axb) = \pi(a) \overline \pi(x) \pi(b)$ for all $a,b \in A \rtimes_r G$ and $x \in (A \otimes C(X)) \rtimes_r G$, so that the image of $\pi(A)$ and $\overline \pi(C(X))$ commute, since
@@ -287,40 +290,116 @@ Then the $^*$-homomorphism $\Pi_x \colon C(X) \rtimes_r G \to \mathbb{B}(\ell^2(
 	where $E$ is the canonical conditional expectation into $B$. It clearly contains $K \rtimes_r G$ as an ideal.
 \end{definition}
 \begin{remark}
-	That $K \bar \rtimes_r G$ is a closed ideal comes by the virtue \cite[lemma 3.2]{hamana1979injective}: If $E$ ($E_K$) denotes the canonical conditional expectation on $B \rtimes_r G$ (respectively $B/K \rtimes_r G$), then the quotient map $\pi \colon B \to B/K$ extends to a surjective $*$-homomorphism $\Pi \colon B \rtimes_r G \to B/K \rtimes_r G$ such that $\Pi(a \lambda_s) = [a] \lambda_s$ with kernel $K \bar \rtimes_r G$ and which satisfies
+	That $K \bar \rtimes_r G$ is a closed ideal comes by the virtue \cite[lemma 3.2]{hamana1979injective}: If $E$ (respectively $E_K$) denotes the canonical conditional expectation on $B \rtimes_r G$ (respectively $B/K \rtimes_r G$), then the quotient map $\pi \colon B \to B/K$ extends to a surjective $*$-homomorphism $\Pi \colon B \rtimes_r G \to B/K \rtimes_r G$ such that $\Pi(a \lambda_s) = [a] \lambda_s$ with kernel $K \bar \rtimes_r G$ and which satisfies
 	\begin{align*}
 		E_K \circ \Pi =  \pi \circ E.
 	\end{align*}
+	\label{condidealrem}
 \end{remark}
 \begin{proposition}
 	Let $A$ be a unital $C^*$-algebra, $G \acts {} {A}$ and let $X$ be a $G$-boundary such that the action is free (i.e., no fixed points under non-trivial action) and let $J$ be a closed ideal in $(A \otimes C(X)) \rtimes_r G$. Then if $J_A := J \cap (A \otimes C(X))$, we have inclusions
 	\begin{align*}
 		 J_A \rtimes_r G \subseteq J \subseteq J_A \bar \rtimes_r G.
 	\end{align*}
+	\label{ozawprop18}
 \end{proposition}
 \begin{proof}
-	Let $x \in X$, and define $J_A^x := \mathrm{id}_A \otimes \delta_x(J_A) \subseteq A \otimes \C \cong A$, where we let $\delta_x \colon f \mapsto f(x)$ for $f \in C(X)$, that $J_A^x$ is an ideal of $A$ is clear, but it might be an improper ideal based on how $J_A$ is. We note that we obtain a surjective $*$-homomorphism $(A \otimes C(X)) / J_A \to A / J_A^x$ such that the diagram
+	We begin by noting that $J_A$ will is a $G$-invariant ideal: If $s \in G$ and $y \in J_A$, then $s.y = \lambda_s y \lambda_s^*  \in J$ and if moreover $y \in A \otimes C(X)$ then $s.y \in A \otimes C(X)$. Let $x \in X$, and define $J_A^x := \mathrm{id}_A \otimes \delta_x(J_A) \subseteq A \otimes \C \cong A$, where $\delta_x \colon f \mapsto f(x)$ for $f \in C(X)$. It is easy to see that $J_A^x$ is an ideal of $A$, however we can tell if it is proper. We note that we obtain a surjective $*$-homomorphism $\pi_x \colon (A \otimes C(X)) / J_A \to A / J_A^x$ such that the diagram
 	\begin{equation*}
 		\begin{tikzcd}
-			0 \ar[r] & J_A \ar[r] \ar[d, "\mathrm{id}\otimes \delta_x"] & A \otimes C(X) \ar[d, "\mathrm{id}\otimes \delta_x"] \ar[r] &(A \otimes C(X)) /J_A \ar[r] \ar[d, "\pi_x"] & 0\\
-			0 \ar[r] & J_A^x \ar[r] & A \ar[r] & A/J_A^x \ar[r] & 0
+			0 \ar[r] & J_A \ar[r] \ar[d, "\mathrm{id}\otimes \delta_x"] & A \otimes C(X) \ar[d, "\mathrm{id}\otimes \delta_x"] \ar[r,"q"] &(A \otimes C(X)) /J_A \ar[r] \ar[d,dashed, "\pi_x"] & 0\\
+			0 \ar[r] & J_A^x \ar[r] & A \ar[r, "q_x"] & A/J_A^x \ar[r] & 0
 		\end{tikzcd}
 	\end{equation*}
-	commutes with exact rows.
+	commutes with exact rows. We claim that if $y \in \cap_{x \in X} \pi_x$ then $y = 0$: Let $\varepsilon > 0$ and pick some irreducible representation $\pi$ of $(A \otimes C(X))/J_A$ on a Hilbert space $H$ such that $\lv \pi(a) \rv \geq \lv a \rv - \varepsilon$ (recall that $\lv a \rv = \sup_{[\pi]_u} \lv \pi(a)\rv$, where $[\pi]$ runs through irreducible representations over a $C^*$-algebra).
+	
+	Since every element of $(A \otimes C(X))/J_A$ commutes with elements of the form $[1 \otimes f]_{J_A}$, $f \in C(X)$, we see that $\pi\left( (1 \otimes C(X))/J_A \right) \subseteq \C 1_H$, since the commutant of an irreducible representation is trivial. Hence the composition
+	\begin{equation*}
+		\begin{tikzcd}
+			 C(X) \ar[r] & 1 \otimes C(X) \ar[r] & (1 \otimes C(X))/J_A \ar[r, "\pi"] & \C 1_H 
+		\end{tikzcd}
+	\end{equation*}
+	defines a character on $C(X)$, hence there is $x \in X$ such that $\pi([1 \otimes f]) = \delta_x(f)1_H$ for all $f \in C(X)$. Let $\pi_A^x$ denote the representation given by 
+	\begin{equation*}
+		\begin{tikzcd}
+			A \ar[r] &A \otimes 1  \ar[r] & (A \otimes 1)/J_A \ar[r, "\pi"] & \mathbb{B}(H),
+		\end{tikzcd}
+	\end{equation*}
+	i.e., $\pi_A^x \colon a \mapsto \pi([a \otimes 1])$. This gives us the following commutative diagram
+	\begin{equation*}
+		\begin{tikzcd}
+			A \otimes C(X) \ar[rr, "q"] \ar [dd, "\mathrm{id}\otimes \delta_x"] \ar[rrdd, "\pi_A \otimes \delta_x"] && (A \otimes C(X))/J_A \ar[dd, "\pi"]\\ 
+			 & & \\
+			A \ar[rr, "\pi_A^x"] && \mathbb{B}(H)
+		\end{tikzcd}
+	\end{equation*}
+	Combining everything, if $a \in A \otimes C(X)$ is such that $\pi_x([a]_{J_A})=0$, then $a_x \in J_a^x$, where $y_x := \mathrm{id} \otimes \delta_x (y)$. Pick a representative $b \in J_A$ such that $a_x = b_x$. Then
+	\begin{align*}
+		\pi([a]) = \pi( q(a)) =  \pi(q(b)) = \pi([b])=0.
+	\end{align*}
+	Letting $\varepsilon \to 0$, this implies that $[a] = 0$ whenever all $\pi_x([a]) = 0$. 
+	
+	The rest of the proof follows analogously to the proof of the Archbold-Spielberg result: Let $x \in X$ such that $J_A^x \neq A$, and assume $A/J_A^x \subseteq \mathbb{B}(H)$ via some faithful representation $\pi$. Consider the composition
+	\begin{equation}
+		\begin{tikzcd}
+			J + A \otimes C(X) \ar[r, "Q"] & (J+ A \otimes C(X))/J \cong  (A \otimes C(X))/J_A \ar[r, "\pi_x"] & A/J_A^x \ar[r, "\pi"] &\mathbb{B}(H)
+		\end{tikzcd}
+	\end{equation}
+	where we used the isomorphism theorem. Use Arveson's theorem to extend the above composition to a unital completely positive map $\Phi_x \colon (A \otimes C(X)) \rtimes_r G \to \mathbb{B}(H)$. We claim that $\Phi_x \circ E = \Phi_x$, where $E$ is the canonical conditional expectation onto $A \otimes C(X)$: This is true, since $A \otimes C(X)$ is in the multiplicative domain of $\Phi_x$ and 
+	\begin{align*}
+		\Phi_x(1 \otimes f) = \pi_x(q(1 \otimes f)) = f(x).
+	\end{align*}
+	
+	By assumption that the action of $G$ on $X$ being free, pick $h \in C(X)$ such that $h(x) = 1$ and such that $\supp h \cap s. \supp h  = \emptyset$ (e.g., by using Uryhson's lemma), so
+	\begin{align*}
+	\Phi_x( \lambda_s) = \Phi_x ( h \lambda_s h ) = \Phi_x (h (s.h) \lambda_s) = 0,		
+	\end{align*}
+	for all $s \neq e$. Thus $\Phi_x \circ E = \Phi_x$, and so $\pi_x(q(E(J))) = \Phi_x(E(J)) = \Phi_x(J) = 0$ for all $x \in X$, showing that $E(J) \subseteq J_A$ (which was equivalent to $J \subseteq J_A \bar \rtimes_r G$). By construction, $J_A \rtimes_r G \subseteq J$.	
 \end{proof}
-
-With these results in hand, we may prove a (super substantial) result, again due to \cite{breuillard2017c}:
+We will need the following small lemma for the big theorem of this section, and we note that the lemma holds in a more general setting if we weaken the requirement a bit, however, this is out of our scope.
+\begin{lemma}
+	For $G$ discrete, each stabilizer subgroup $G_x$ for $x \in \dd_F G$ is amenable.
+	\label{stabfurstamen}
+\end{lemma}
+For a proof, see \cite[lemma 11]{ozawa2014lecture}. With these results in hand, we may prove a (super substantial) result, again due to \cite{breuillard2017c} and \cite{kalantar2017boundaries}:
 \begin{theorem}
 	For a discrete group $G$, the following are equivalent:
 	\begin{enumerate}
 		\item $G$ is $C^*$-simple.
-		\item $C(\dd_F G) \rtimes_r G$ is simple.
+		\item $C(\dd_F G) \rtimes_r G$ is simple (equivalently the action is free/topologically free).
 		\item There is some $G$-boundary $X$ such that the action is topologically free.
 		\item Whenever $X$ is a compact minimal $G$-space, amenability of $G_x$ for some $x \in X$ implies topological freeness of the action on $X$.
 		\item If $G \acts \alpha A$ with $A$ unital, then $A \rtimes_{\alpha,r} G$ is simple whenever $A$ is $G$-simple.
 	\end{enumerate}
 	\label{breulcsimple}
 \end{theorem}
+\begin{proof}
+	$1 \implies 2$: Let $G$ be a $C^*$-simple group. We show that $C(X) \rtimes_r G$ is simple for all $G$-boundaries $X$: Let $\pi$ be any quotient map $C(X) \rtimes_r G \to A$, and note that simplicity of $C_r^*(G)$ implies that the canonical tracial state on $C_r^*(G)$ gives rise to a map on $\pi(C_r^*(G))$, $\pi(x) \mapsto \tau_0(x)$. So consider $\tau_0$ as a $G$-invariant (where $s.x = \mathrm{Ad} \lambda_s$ on $C(X) \rtimes_r G$) map $ \pi(C_r^*(G)) \to \C 1_{\dd_F G}$ which we may then extend to a $G$-equivariant map $\Phi \colon C(X) \rtimes_r G/\ker_\pi \to C(\dd_F G)$. Again, we see that $\Phi \circ \pi$ restricts to the unique injective $G$-equivariant map $C(X) \to c(\dd_F G)$, i.e, the inclusion map, which again implies that $C(X)$ is a subset of the multiplicative domain of $\Phi \circ \pi$ in $C(X) \rtimes_r G$ implying that
+	\begin{align*}
+		\Phi (\pi(f \lambda_s)) = \delta_{e}(s) \Phi(\pi(f)) = E(f)	
+	\end{align*}
+	after identifying $C(X) \subseteq C(\dd_F G)$. In particular, this implies that $\pi$ must be faithfull, since $E$ is, and since $\pi$ is a $*$-homomorphism it is injective. In particular, since each $G_x$ are amenable for $X= \dd_F G$ by \cref{stabfurstamen} that simplicity of $C( \dd_F G) \rtimes_r G$ implies topological freeness (and freeness, since $\dd_F G$ is extremally disconnected as mentioned earlier) of the action.
+
+	$2 \implies 5$: Consider a $G$-$C^*$-algebra $A$ which is $G$-simple and unital. Let $I$ be a proper ideal of $A \rtimes_r G$. Let $J$ be the ideal of $(A \otimes C(\dd_F G)) \rtimes_r G$ generated by $I$ after identifying $A \rtimes_r G \subseteq (A \otimes C(\dd_F G) ) \rtimes_r G$, and let $i$ denote this identification of $A \rtimes_r G$. By \cref{ozawprop17}, it is a proper ideal, so by \cref{ozawprop18}, the $G$-invariant ideal $J_A = J \cap (A \otimes C(\dd_F G))$ satisfies
+	\begin{align*}
+		J_A \rtimes_r G \subseteq J \subseteq J_A \bar \rtimes_r G.
+	\end{align*}
+
+	We then obtain an ideal $I_A := J \cap i(A) \cong i^{-1}(i(A))$ of $A$ which is $G$-invariant: $i(s.a) = i(\lambda_s a \lambda_s^* ) = \lambda_s i(a) \lambda_s^* = s.i(a)$, for all $s \in G$ and $a \in A$, which by assumption forces $I_A = \{0\}$. This gives rise to the following commutative diagram with exact rows:
+	\begin{equation*}
+		\begin{tikzcd}
+			0 \ar[r] &  I_A \bar \rtimes_r G  \ar[r] & A \rtimes_r G \ar[r, "\pi_A"] \ar[d, hook, "i"] & (A / I_A)\rtimes_r G  \ar[r] \ar[d, hook, "\psi"]  & 0\\
+			0  \ar[r] & J_A \bar \rtimes_r G  \ar[r] & (A \otimes C(X)) \rtimes_r G \ar[r, "\pi"] & \left((A \otimes C(X))/J_A\right) \rtimes_r G \ar[r] & 0
+		\end{tikzcd}
+	\end{equation*}
+	It is easy to see that $I \subseteq I_A \bar \rtimes_r G$: if $y \in I$, then $i(y) \in J \subseteq J_A \bar \rtimes_r G$. By the above diagram, this implies that $y \in \ker \pi = I_A \bar \rtimes_r G$. 
+	
+	We finish the claim by showing that $I_A \bar \rtimes_r G = 0$: For all $y \in I_A \rtimes_r G$ we have $E_A(y^*y) \in I_A = 0$, so $y = 0$ by faithfulness. This shows that $I = 0$, since $I \subseteq I_A \bar \rtimes_r G = 0$.
+
+	$5 \implies 1$: Trivial when applied to the trivial $G$-boundary $\{\cdot\}$.
+
+	$5 \implies 4 \implies 3 \implies 2$: follows from \cref{ozawa15pt1} and \cref{ozawa15pt2}.
+\end{proof}
 \begin{corollary}
 	If $G$ is $C^*$-simple, then $C(X) \rtimes_{r}G$ is simple for all compact minimal $G$-spaces $X$.
 \end{corollary}
