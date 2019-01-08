@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.12.7)  7 JAN 2019 19:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.12.7)  8 JAN 2019 18:48
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -2195,6 +2195,14 @@ LaTeX Font Info:    Redeclaring math accent \widetilde on input line 951.
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup9
 )
+(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2011/09/28 v3.5.2 Customized lists
+\labelindent=\skip285
+\enit@outerparindent=\dimen369
+\enit@toks=\toks64
+\enit@inbox=\box90
+\enitdp@description=\count429
+)
 (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
@@ -2270,30 +2278,30 @@ Sidefootvsep and sidefootheight: 12pt and 548.39996pt
 (/usr/share/texlive/texmf-dist/tex/latex/scalerel/scalerel.sty
 Package: scalerel 2015/02/18 v1.7 Routines for constrained scaling and stretchi
 ng of objects, relative to a reference object or in absolute terms
-\thesrwidth=\skip285
-\thesrheight=\skip286
-\srblobheight=\skip287
-\srblobdepth=\skip288
-\mnxsrwidth=\skip289
-\prebox=\box90
-\LMex=\skip290
-\LMpt=\skip291
+\thesrwidth=\skip286
+\thesrheight=\skip287
+\srblobheight=\skip288
+\srblobdepth=\skip289
+\mnxsrwidth=\skip290
+\prebox=\box91
+\LMex=\skip291
+\LMpt=\skip292
 )
 (/usr/share/texlive/texmf-dist/tex/latex/stackengine/stackengine.sty
 Package: stackengine 2014/01/06 v3.24\ Stacking text and objects in convenient 
 ways
-\c@@stackindex=\count429
-\@boxshift=\skip292
-\stack@tmplength=\skip293
-\temp@stkl=\skip294
-\@stackedboxwidth=\skip295
-\@addedbox=\box91
-\@anchorbox=\box92
-\stackedbox=\box93
-\@centerbox=\box94
-\c@ROWcellindex@=\count430
+\c@@stackindex=\count430
+\@boxshift=\skip293
+\stack@tmplength=\skip294
+\temp@stkl=\skip295
+\@stackedboxwidth=\skip296
+\@addedbox=\box92
+\@anchorbox=\box93
+\stackedbox=\box94
+\@centerbox=\box95
+\c@ROWcellindex@=\count431
 )
-\c@theorem=\count431
+\c@theorem=\count432
 )
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
@@ -2305,8 +2313,8 @@ File: english.lbx 2016/03/03 v3.3 biblatex localization (PK/JW/AB)
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count432
-\@quotereset=\count433
+\@quotelevel=\count433
+\@quotereset=\count434
 (./master.aux)
 \openout1 = `master.aux'.
 
@@ -2361,17 +2369,17 @@ LaTeX Font Info:    ... okay on input line 5.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count434
-\scratchdimen=\dimen369
-\scratchbox=\box95
-\nofMPsegments=\count435
-\nofMParguments=\count436
-\everyMPshowfont=\toks64
-\MPscratchCnt=\count437
-\MPscratchDim=\dimen370
-\MPnumerator=\count438
-\makeMPintoPDFobject=\count439
-\everyMPtoPDFconversion=\toks65
+\scratchcounter=\count435
+\scratchdimen=\dimen370
+\scratchbox=\box96
+\nofMPsegments=\count436
+\nofMParguments=\count437
+\everyMPshowfont=\toks65
+\MPscratchCnt=\count438
+\MPscratchDim=\dimen371
+\MPnumerator=\count439
+\makeMPintoPDFobject=\count440
+\everyMPtoPDFconversion=\toks66
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -2420,7 +2428,7 @@ Package biblatex Info: ... file 'master.bbl' found.
 (./master.bbl)
 Package biblatex Info: Reference section=0 on input line 5.
 Package biblatex Info: Reference segment=0 on input line 5.
-\AtBeginShipoutBox=\box96
+\AtBeginShipoutBox=\box97
 Package hyperref Info: Link coloring OFF on input line 5.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -2428,7 +2436,7 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count440
+\c@section@level=\count441
 )
 Redoing nameref's sectioning
 Redoing nameref's label
@@ -2469,12 +2477,12 @@ l.14 \newpage
 
 ] (./master.toc
 Overfull \hbox (1.74956pt too wide) detected at line 43
- \T1/cmr/bx/n/10 105
+ \T1/cmr/bx/n/10 106
  []
 
 
 Overfull \hbox (1.74956pt too wide) detected at line 45
- \T1/cmr/bx/n/10 109
+ \T1/cmr/bx/n/10 110
  []
 
 ) [2] (./chapter1/chap.tex
@@ -2811,20 +2819,20 @@ er (name{theorem.1.3.18}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.623 	\begin{align*}
-                     pdfTeX warning (ext4): destination with the same identifie
-r (name{theorem.1.3.19}) has been already used, duplicate ignored
+l.626 \end{proof}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{theorem.1.3.19}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.623 	\begin{align*}
-                     ] [20pdfTeX warning (ext4): destination with the same iden
-tifier (name{theorem.1.3.21}) has been already used, duplicate ignored
+l.626 \end{proof}
+                 ] [20pdfTeX warning (ext4): destination with the same identifi
+er (name{theorem.1.3.21}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.655 	\end{align*}
-                   ]) (./chapter2/chap.tex [21] [22
+l.655 \end{proof}
+                 ]) (./chapter2/chap.tex [21] [22
 
 ] [23pdfTeX warning (ext4): destination with the same identifier (name{theorem.
 2.1.1}) has been already used, duplicate ignored
@@ -2884,15 +2892,15 @@ er (name{theorem.2.1.9}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.153 \begin{align*}
-                    pdfTeX warning (ext4): destination with the same identifier
- (name{theorem.2.1.10}) has been already used, duplicate ignored
+l.148 \end{align*}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{theorem.2.1.10}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.153 \begin{align*}
-                    ] [27pdfTeX warning (ext4): destination with the same ident
-ifier (name{theorem.2.1.11}) has been already used, duplicate ignored
+l.148 \end{align*}
+                  ] [27pdfTeX warning (ext4): destination with the same identif
+ier (name{theorem.2.1.11}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
@@ -2902,9 +2910,9 @@ l.176 \begin{theorem}
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.241 \end{align*}
-                  ]
-Overfull \hbox (6.88582pt too wide) in paragraph at lines 245--245
+l.244 \begin{align*}
+                    ]
+Overfull \hbox (6.88582pt too wide) in paragraph at lines 250--250
 [] 
  []
 
@@ -2913,13 +2921,14 @@ Overfull \hbox (6.88582pt too wide) in paragraph at lines 245--245
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.274 \end{proof}
-                 ] [31] [32pdfTeX warning (ext4): destination with the same ide
-ntifier (name{theorem.2.2.1}) has been already used, duplicate ignored
+l.278 F
+       or the last claim, we now see that the double integrals are well-defi...
+] [31] [32pdfTeX warning (ext4): destination with the same identifier (name{the
+orem.2.2.1}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.319 \end{lemma}
+l.328 \end{lemma}
                  ]
 Underfull \vbox (badness 4279) has occurred while \output is active []
 
@@ -2928,222 +2937,225 @@ Underfull \vbox (badness 4279) has occurred while \output is active []
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.348 \end{align*}
+l.357 \end{align*}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{theorem.2.2.3}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.348 \end{align*}
+l.357 \end{align*}
                   ] [34] [35pdfTeX warning (ext4): destination with the same id
 entifier (name{theorem.2.2.4}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.399 \begin{align*}
-                    pdfTeX warning (ext4): destination with the same identifier
- (name{theorem.2.2.5}) has been already used, duplicate ignored
+l.405 \begin{lemma}
+                   pdfTeX warning (ext4): destination with the same identifier 
+(name{theorem.2.2.5}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.399 \begin{align*}
-                    pdfTeX warning (ext4): destination with the same identifier
- (name{theorem.2.2.6}) has been already used, duplicate ignored
+l.405 \begin{lemma}
+                   pdfTeX warning (ext4): destination with the same identifier 
+(name{theorem.2.2.6}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.399 \begin{align*}
-                    ] [36pdfTeX warning (ext4): destination with the same ident
-ifier (name{theorem.2.2.7}) has been already used, duplicate ignored
+l.405 \begin{lemma}
+                   pdfTeX warning (ext4): destination with the same identifier 
+(name{theorem.2.2.7}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.425 \end{align*}
-                  pdfTeX warning (ext4): destination with the same identifier (
-name{theorem.2.2.8}) has been already used, duplicate ignored
+l.405 \begin{lemma}
+                   ] [36pdfTeX warning (ext4): destination with the same identi
+fier (name{theorem.2.2.8}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.425 \end{align*}
+l.437 \end{align*}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{theorem.2.2.9}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.425 \end{align*}
+l.437 \end{align*}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{theorem.2.2.10}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.425 \end{align*}
+l.437 \end{align*}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{theorem.2.2.11}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.437 \end{align*}
                   ]
-Overfull \hbox (5.63878pt too wide) in paragraph at lines 452--452
+Overfull \hbox (5.63878pt too wide) in paragraph at lines 464--464
 [] 
  []
 
-
-Underfull \vbox (badness 1424) has occurred while \output is active []
-
- [37pdfTeX warning (ext4): destination with the same identifier (name{theorem.2
-.2.11}) has been already used, duplicate ignored
+[37pdfTeX warning (ext4): destination with the same identifier (name{theorem.2.
+2.12}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.452 \end{align*}
+l.464 \end{align*}
                   ] [38pdfTeX warning (ext4): destination with the same identif
-ier (name{theorem.2.2.12}) has been already used, duplicate ignored
+ier (name{theorem.2.2.13}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.477 \end{align*}
+l.489 \end{align*}
                   pdfTeX warning (ext4): destination with the same identifier (
-name{theorem.2.2.13}) has been already used, duplicate ignored
+name{theorem.2.2.14}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.477 \end{align*}
+l.489 \end{align*}
                   ] [39pdfTeX warning (ext4): destination with the same identif
-ier (name{theorem.2.2.14}) has been already used, duplicate ignored
+ier (name{theorem.2.2.15}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.502 \end{example}
-                   pdfTeX warning (ext4): destination with the same identifier 
-(name{theorem.2.2.15}) has been already used, duplicate ignored
-
-\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
-                                                  
-l.502 \end{example}
+l.514 \end{example}
                    pdfTeX warning (ext4): destination with the same identifier 
 (name{theorem.2.2.16}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.502 \end{example}
+l.514 \end{example}
                    pdfTeX warning (ext4): destination with the same identifier 
 (name{theorem.2.2.17}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.502 \end{example}
+l.514 \end{example}
+                   pdfTeX warning (ext4): destination with the same identifier 
+(name{theorem.2.2.18}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.514 \end{example}
                    ] [40pdfTeX warning (ext4): destination with the same identi
-fier (name{theorem.2.2.18}) has been already used, duplicate ignored
+fier (name{theorem.2.2.19}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.533 
+l.545 
       pdfTeX warning (ext4): destination with the same identifier (name{theorem
-.2.2.19}) has been already used, duplicate ignored
+.2.2.20}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.533 
+l.545 
       ] [41pdfTeX warning (ext4): destination with the same identifier (name{th
-eorem.2.2.20}) has been already used, duplicate ignored
+eorem.2.2.21}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.568 \end{align*}
+l.580 \end{align*}
                   ] [42pdfTeX warning (ext4): destination with the same identif
-ier (name{theorem.2.2.21}) has been already used, duplicate ignored
+ier (name{theorem.2.2.22}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.600 \end{proposition}
+l.612 \end{proposition}
                        ] [43pdfTeX warning (ext4): destination with the same id
-entifier (name{theorem.2.2.22}) has been already used, duplicate ignored
+entifier (name{theorem.2.2.23}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.629 
+l.641 
       ] [44pdfTeX warning (ext4): destination with the same identifier (name{th
-eorem.2.2.23}) has been already used, duplicate ignored
+eorem.2.2.24}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.661 \end{remark}
+l.673 \end{remark}
                   ] [45pdfTeX warning (ext4): destination with the same identif
-ier (name{theorem.2.2.24}) has been already used, duplicate ignored
+ier (name{theorem.2.2.25}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.684 \ssection{Properties of Crossed products}
+l.696 \ssection{Properties of Crossed products}
                                                ] [46pdfTeX warning (ext4): dest
 ination with the same identifier (name{theorem.2.3.1}) has been already used, d
 uplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.711 \begin{align}
-                   pdfTeX warning (ext4): destination with the same identifier 
-(name{theorem.2.3.2}) has been already used, duplicate ignored
+l.726 \end{align}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{theorem.2.3.2}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.711 \begin{align}
-                   pdfTeX warning (ext4): destination with the same identifier 
-(name{theorem.2.3.3}) has been already used, duplicate ignored
+l.726 \end{align}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{theorem.2.3.3}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.711 \begin{align}
-                   ] [47pdfTeX warning (ext4): destination with the same identi
-fier (name{theorem.2.3.4}) has been already used, duplicate ignored
+l.726 \end{align}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{theorem.2.3.4}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.741 \end{align*}
-                  pdfTeX warning (ext4): destination with the same identifier (
-name{theorem.2.3.5}) has been already used, duplicate ignored
+l.726 \end{align}
+                 ] [47pdfTeX warning (ext4): destination with the same identifi
+er (name{theorem.2.3.5}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.741 \end{align*}
+l.753 \end{align*}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{theorem.2.3.6}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.741 \end{align*}
+l.753 \end{align*}
                   ] [48pdfTeX warning (ext4): destination with the same identif
 ier (name{theorem.2.3.7}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.770 \end{align*}
+l.782 \end{align*}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{theorem.2.3.8}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.770 \end{align*}
+l.782 \end{align*}
                   ] [49pdfTeX warning (ext4): destination with the same identif
 ier (name{theorem.2.3.9}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.791 \end{align*}
+l.803 \end{align*}
                   ] [50pdfTeX warning (ext4): destination with the same identif
 ier (name{theorem.2.3.10}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.825 T
+l.837 T
        he set of functionals $\psi \in (A \rtimes_\alpha G)^*$ of the formpdfTe
 X warning (ext4): destination with the same identifier (name{theorem.2.3.11}) h
 as been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.825 T
+l.837 T
        he set of functionals $\psi \in (A \rtimes_\alpha G)^*$ of the form]
-Overfull \hbox (2.59035pt too wide) in paragraph at lines 832--832
+Overfull \hbox (2.59035pt too wide) in paragraph at lines 844--844
 [] 
  []
 
 
-Overfull \hbox (2.6846pt too wide) in paragraph at lines 839--839
+Overfull \hbox (2.6846pt too wide) in paragraph at lines 851--851
 [] 
  []
 
@@ -3152,39 +3164,39 @@ Overfull \hbox (2.6846pt too wide) in paragraph at lines 839--839
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.856 \end{align*}
+l.868 \end{align*}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{theorem.2.3.13}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.856 \end{align*}
+l.868 \end{align*}
                   ] [52pdfTeX warning (ext4): destination with the same identif
 ier (name{theorem.2.3.15}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.887 \end{proof}
+l.899 \end{proof}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{theorem.2.3.16}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.887 \end{proof}
+l.899 \end{proof}
                  ] [53pdfTeX warning (ext4): destination with the same identifi
 er (name{theorem.2.3.18}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.914 \end{align*}
+l.926 \end{align*}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{theorem.2.3.19}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.914 \end{align*}
+l.926 \end{align*}
                   ] [54]
-Overfull \hbox (6.72682pt too wide) in paragraph at lines 943--945
+Overfull \hbox (5.11569pt too wide) in paragraph at lines 956--958
 \T1/cmr/m/n/10 the map $\OML/cmm/m/it/10 t \OMS/cmsy/m/n/10 7! [][]\OT1/cmr/m/n
 /10 (\OML/cmm/m/it/10 y\OT1/cmr/m/n/10 )$ \T1/cmr/m/n/10 is norm con-tin-u-ous.
  The clo-sure of $\OML/cmm/m/it/10 F \OT1/cmr/m/n/10 = []\OMS/cmsy/m/n/10 f\OML
@@ -3198,133 +3210,132 @@ ML/cmm/m/it/10 A;  y[]\OMS/cmsy/m/n/10 g$
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.945 \end{proof}
+l.958 \end{proof}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{theorem.2.4.2}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.945 \end{proof}
+l.958 \end{proof}
                  ]
-Overfull \hbox (23.68304pt too wide) in paragraph at lines 972--972
+Overfull \hbox (23.68304pt too wide) in paragraph at lines 985--985
 [] 
  []
 
 [56]
-Overfull \hbox (54.10374pt too wide) in paragraph at lines 982--982
-[] 
- []
+Underfull \vbox (badness 2903) has occurred while \output is active []
 
-[57] [58pdfTeX warning (ext4): destination with the same identifier (name{theor
-em.2.4.4}) has been already used, duplicate ignored
+ [57]
+[58pdfTeX warning (ext4): destination with the same identifier (name{theorem.2.
+4.4}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.1038 \end{align*}
+l.1045 \end{align}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{theorem.2.4.5}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.1045 \end{align}
+                  ] [59pdfTeX warning (ext4): destination with the same identif
+ier (name{theorem.2.4.6}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.1078 \begin{definition}
+                         pdfTeX warning (ext4): destination with the same ident
+ifier (name{theorem.2.4.7}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.1078 \begin{definition}
+                         pdfTeX warning (ext4): destination with the same ident
+ifier (name{theorem.2.4.8}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.1078 \begin{definition}
+                         ] [60pdfTeX warning (ext4): destination with the same 
+identifier (name{theorem.2.4.9}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.1119 			\end{align*}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{theorem.2.4.10}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.1119 			\end{align*}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{theorem.2.4.11}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.1119 			\end{align*}
+                      ] [61pdfTeX warning (ext4): destination with the same ide
+ntifier (name{theorem.2.4.12}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.1161 \begin{align*}
+                     ] [62pdfTeX warning (ext4): destination with the same iden
+tifier (name{theorem.2.4.13}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.1190 \end{align*}
                    pdfTeX warning (ext4): destination with the same identifier 
-(name{theorem.2.4.5}) has been already used, duplicate ignored
+(name{theorem.2.4.14}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.1038 \end{align*}
-                   ] [59pdfTeX warning (ext4): destination with the same identi
-fier (name{theorem.2.4.6}) has been already used, duplicate ignored
-
-\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
-                                                  
-l.1075 \end{align*}
-                   pdfTeX warning (ext4): destination with the same identifier 
-(name{theorem.2.4.7}) has been already used, duplicate ignored
-
-\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
-                                                  
-l.1075 \end{align*}
-                   pdfTeX warning (ext4): destination with the same identifier 
-(name{theorem.2.4.8}) has been already used, duplicate ignored
-
-\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
-                                                  
-l.1075 \end{align*}
-                   pdfTeX warning (ext4): destination with the same identifier 
-(name{theorem.2.4.9}) has been already used, duplicate ignored
-
-\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
-                                                  
-l.1075 \end{align*}
-                   ] [60pdfTeX warning (ext4): destination with the same identi
-fier (name{theorem.2.4.10}) has been already used, duplicate ignored
-
-\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
-                                                  
-l.1112 	\end{enumerate}
-                       pdfTeX warning (ext4): destination with the same identif
-ier (name{theorem.2.4.11}) has been already used, duplicate ignored
-
-\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
-                                                  
-l.1112 	\end{enumerate}
-                       ] [61pdfTeX warning (ext4): destination with the same id
-entifier (name{theorem.2.4.12}) has been already used, duplicate ignored
-
-\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
-                                                  
-l.1148 \end{align*}
-                   pdfTeX warning (ext4): destination with the same identifier 
-(name{theorem.2.4.13}) has been already used, duplicate ignored
-
-\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
-                                                  
-l.1148 \end{align*}
-                   ] [62pdfTeX warning (ext4): destination with the same identi
-fier (name{theorem.2.4.14}) has been already used, duplicate ignored
-
-\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
-                                                  
-l.1183 \end{align*}
+l.1190 \end{align*}
                    ] [63] [64] [65pdfTeX warning (ext4): destination with the s
 ame identifier (name{theorem.2.4.16}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.1284 	\end{align*}
+l.1302 	\end{align*}
                     pdfTeX warning (ext4): destination with the same identifier
  (name{theorem.2.4.17}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.1284 	\end{align*}
+l.1302 	\end{align*}
                     pdfTeX warning (ext4): destination with the same identifier
  (name{theorem.2.4.18}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.1284 	\end{align*}
+l.1302 	\end{align*}
                     ] [66pdfTeX warning (ext4): destination with the same ident
 ifier (name{theorem.2.4.19}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.1319 
-       pdfTeX warning (ext4): destination with the same identifier (name{theore
-m.2.4.20}) has been already used, duplicate ignored
+l.1334 \end{lemma}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{theorem.2.4.20}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.1319 
-       ] [67pdfTeX warning (ext4): destination with the same identifier (name{t
-heorem.2.4.21}) has been already used, duplicate ignored
+l.1334 \end{lemma}
+                  ] [67pdfTeX warning (ext4): destination with the same identif
+ier (name{theorem.2.4.21}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.1350 	\end{align}
+l.1368 	\end{align}
                    pdfTeX warning (ext4): destination with the same identifier 
 (name{theorem.2.4.22}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.1350 	\end{align}
+l.1368 	\end{align}
                    ]
-Overfull \hbox (11.30441pt too wide) in paragraph at lines 1376--1376
+Overfull \hbox (11.30441pt too wide) in paragraph at lines 1394--1394
 [] 
  []
 
@@ -3446,64 +3457,59 @@ ifier (name{theorem.3.1.2}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.57 
-     pdfTeX warning (ext4): destination with the same identifier (name{theorem.
-3.1.3}) has been already used, duplicate ignored
+l.56 	W
+       e say that a $C^*$-subalgebra $B\subseteq A$ is \myemph{hereditary} i...
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.3.1.3
+}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.57 
-     ] [77pdfTeX warning (ext4): destination with the same identifier (name{the
-orem.3.1.4}) has been already used, duplicate ignored
+l.56 	W
+       e say that a $C^*$-subalgebra $B\subseteq A$ is \myemph{hereditary} i...
+] [77pdfTeX warning (ext4): destination with the same identifier (name{theorem.
+3.1.4}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.83 \end{definition}
-                     pdfTeX warning (ext4): destination with the same identifie
-r (name{theorem.3.1.5}) has been already used, duplicate ignored
+l.93 	\end{align*}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{theorem.3.1.5}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.83 \end{definition}
-                     pdfTeX warning (ext4): destination with the same identifie
-r (name{theorem.3.1.6}) has been already used, duplicate ignored
+l.93 	\end{align*}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{theorem.3.1.6}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.83 \end{definition}
-                     pdfTeX warning (ext4): destination with the same identifie
-r (name{theorem.3.2.1}) has been already used, duplicate ignored
+l.93 	\end{align*}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{theorem.3.2.1}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.83 \end{definition}
-                     pdfTeX warning (ext4): destination with the same identifie
-r (name{theorem.3.2.2}) has been already used, duplicate ignored
+l.93 	\end{align*}
+                  ] [78pdfTeX warning (ext4): destination with the same identif
+ier (name{theorem.3.2.2}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.83 \end{definition}
-                     ]
-
-LaTeX Warning: Marginpar on page 78 moved by 19.27441pt.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [78pdfTeX warning (ext4): destination with the same identifier (name{theorem.3
-.2.3}) has been already used, duplicate ignored
+l.119 	\end{align*}
+                   pdfTeX warning (ext4): destination with the same identifier 
+(name{theorem.3.2.3}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.108 	\end{align*}
-                   ] [79] [80pdfTeX warning (ext4): destination with the same i
-dentifier (name{theorem.3.2.4}) has been already used, duplicate ignored
+l.119 	\end{align*}
+                   pdfTeX warning (ext4): destination with the same identifier 
+(name{theorem.3.2.4}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.153 		\item $
-               u_{s+t}=u_s\alpha_s(u_t)$ for all $s,t \in G$ and\\]
-Underfull \hbox (badness 10000) in paragraph at lines 153--154
+l.119 	\end{align*}
+                   ] [79] [80]
+Underfull \hbox (badness 10000) in paragraph at lines 186--187
 
  []
 
@@ -3512,125 +3518,131 @@ Underfull \hbox (badness 10000) in paragraph at lines 153--154
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.208 \end{proof}
+l.227 \end{proof}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{theorem.3.2.6}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.208 \end{proof}
+l.227 \end{proof}
                  ] [82pdfTeX warning (ext4): destination with the same identifi
 er (name{theorem.3.2.7}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.236 \end{corollary}
-                     ] [83pdfTeX warning (ext4): destination with the same iden
-tifier (name{theorem.3.2.9}) has been already used, duplicate ignored
+l.254 
+      pdfTeX warning (ext4): destination with the same identifier (name{theorem
+.3.2.8}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.268 	\begin{align*}
-                     pdfTeX warning (ext4): destination with the same identifie
-r (name{section*.27}) has been already used, duplicate ignored
+l.254 
+      ] [83pdfTeX warning (ext4): destination with the same identifier (name{th
+eorem.3.2.10}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.268 	\begin{align*}
-                     pdfTeX warning (ext4): destination with the same identifie
-r (name{theorem.3.2.11}) has been already used, duplicate ignored
-
-\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
-                                                  
-l.268 	\begin{align*}
-                     pdfTeX warning (ext4): destination with the same identifie
-r (name{theorem.3.2.12}) has been already used, duplicate ignored
-
-\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
-                                                  
-l.268 	\begin{align*}
-                     pdfTeX warning (ext4): destination with the same identifie
-r (name{theorem.3.2.13}) has been already used, duplicate ignored
-
-\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
-                                                  
-l.268 	\begin{align*}
-                     ] [84pdfTeX warning (ext4): destination with the same iden
-tifier (name{theorem.3.2.14}) has been already used, duplicate ignored
-
-\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
-                                                  
-l.296 	\begin{align*}
-                     pdfTeX warning (ext4): destination with the same identifie
-r (name{theorem.3.2.15}) has been already used, duplicate ignored
-
-\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
-                                                  
-l.296 	\begin{align*}
-                     pdfTeX warning (ext4): destination with the same identifie
-r (name{theorem.3.2.16}) has been already used, duplicate ignored
-
-\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
-                                                  
-l.296 	\begin{align*}
-                     ] [85pdfTeX warning (ext4): destination with the same iden
-tifier (name{theorem.3.2.17}) has been already used, duplicate ignored
-
-\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
-                                                  
-l.330 \end{proof}
+l.289 \end{lemma}
                  pdfTeX warning (ext4): destination with the same identifier (n
-ame{theorem.3.2.18}) has been already used, duplicate ignored
+ame{section*.25}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.330 \end{proof}
-                 ] [86pdfTeX warning (ext4): destination with the same identifi
-er (name{theorem.3.2.19}) has been already used, duplicate ignored
+l.289 \end{lemma}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{theorem.3.2.12}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.362 	L
-        et $A$ be a $C^*$-subalgebra of a $C^*$-algebra $B$. We say that $A$...
-] [87pdfTeX warning (ext4): destination with the same identifier (name{theorem.
-3.2.21}) has been already used, duplicate ignored
+l.289 \end{lemma}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{theorem.3.2.13}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.383 \end{proposition}
-                       pdfTeX warning (ext4): destination with the same identif
-ier (name{theorem.3.2.22}) has been already used, duplicate ignored
+l.289 \end{lemma}
+                 ] [84pdfTeX warning (ext4): destination with the same identifi
+er (name{theorem.3.2.14}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.383 \end{proposition}
-                       pdfTeX warning (ext4): destination with the same identif
-ier (name{theorem.3.2.23}) has been already used, duplicate ignored
+l.318 \end{proof}
+                 ] [85pdfTeX warning (ext4): destination with the same identifi
+er (name{theorem.3.2.15}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.383 \end{proposition}
-                       ] [88pdfTeX warning (ext4): destination with the same id
-entifier (name{theorem.3.2.24}) has been already used, duplicate ignored
+l.350 
+      pdfTeX warning (ext4): destination with the same identifier (name{theorem
+.3.2.16}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.407 \begin{corollary}
-                       [\mbox{\cite[Corollary 3.3]{olesenpedersen2}}]])
-(./chapter4/chap.tex [89pdfTeX warning (ext4): destination with the same identi
-fier (name{theorem.3.2.26}) has been already used, duplicate ignored
+l.350 
+      pdfTeX warning (ext4): destination with the same identifier (name{theorem
+.3.2.17}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.350 
+      ] [86pdfTeX warning (ext4): destination with the same identifier (name{th
+eorem.3.2.18}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.384 	\end{align*}
+                   pdfTeX warning (ext4): destination with the same identifier 
+(name{theorem.3.2.19}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.384 	\end{align*}
+                   pdfTeX warning (ext4): destination with the same identifier 
+(name{theorem.3.2.20}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.384 	\end{align*}
+                   ] [87pdfTeX warning (ext4): destination with the same identi
+fier (name{theorem.3.2.22}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.414 
+      pdfTeX warning (ext4): destination with the same identifier (name{theorem
+.3.2.23}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.414 
+      ] [88pdfTeX warning (ext4): destination with the same identifier (name{th
+eorem.3.2.24}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.433 	L
+        et $(A,G,\alpha)$ be a $C^*$-dynamical system with $G$ discrete. The...
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.3.2.2
+5}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.433 	L
+        et $(A,G,\alpha)$ be a $C^*$-dynamical system with $G$ discrete. The...
+] [89pdfTeX warning (ext4): destination with the same identifier (name{theorem.
+3.2.27}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.458 	\begin{align*}
+                     ]) (./chapter4/chap.tex [90pdfTeX warning (ext4): destinat
+ion with the same identifier (name{theorem.3.2.29}) has been already used, dupl
+icate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
 l.1 \chapter
-            {Actions And Automorphisms}pdfTeX warning (ext4): destination with 
-the same identifier (name{theorem.3.2.28}) has been already used, duplicate ign
-ored
-
-\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
-                                                  
-l.1 \chapter
-            {Actions And Automorphisms}] [90
+            {Actions And Automorphisms}] [91
 
 pdfTeX warning (ext4): destination with the same identifier (name{theorem.4.1.1
 }) has been already used, duplicate ignored
@@ -3638,7 +3650,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{theorem.4.1.1
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
 l.22 \end{definition}
-                     ] [91pdfTeX warning (ext4): destination with the same iden
+                     ] [92pdfTeX warning (ext4): destination with the same iden
 tifier (name{theorem.4.1.2}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
@@ -3668,7 +3680,7 @@ l.53 \end{corollary}
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
 l.53 \end{corollary}
-                    ] [92pdfTeX warning (ext4): destination with the same ident
+                    ] [93pdfTeX warning (ext4): destination with the same ident
 ifier (name{theorem.4.1.7}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
@@ -3698,7 +3710,7 @@ ame{theorem.4.1.11}) has been already used, duplicate ignored
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
 l.79 \end{remark}
-                 ] [93pdfTeX warning (ext4): destination with the same identifi
+                 ] [94pdfTeX warning (ext4): destination with the same identifi
 er (name{theorem.4.1.12}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
@@ -3710,7 +3722,7 @@ r (name{theorem.4.2.1}) has been already used, duplicate ignored
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
 l.107 	\begin{align*}
-                     ] [94pdfTeX warning (ext4): destination with the same iden
+                     ] [95pdfTeX warning (ext4): destination with the same iden
 tifier (name{theorem.4.2.3}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
@@ -3753,20 +3765,20 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 166.
 
-[95pdfTeX warning (ext4): destination with the same identifier (name{theorem.4.
+[96pdfTeX warning (ext4): destination with the same identifier (name{theorem.4.
 2.5}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
 l.169 W
        e say that a group $G$ is \myemph{$C^*$-simple} if its reduced group ...
-] [96pdfTeX warning (ext4): destination with the same identifier (name{theorem.
+] [97pdfTeX warning (ext4): destination with the same identifier (name{theorem.
 4.3.1}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
 l.187 	\begin{align*}
-                     ] [97pdfTeX warning (ext4): destination with the same iden
+                     ] [98pdfTeX warning (ext4): destination with the same iden
 tifier (name{theorem.4.3.2}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
@@ -3778,8 +3790,8 @@ l.213 	\end{align*}
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
 l.213 	\end{align*}
-                   ] [98] [99pdfTeX warning (ext4): destination with the same i
-dentifier (name{theorem.4.3.4}) has been already used, duplicate ignored
+                   ] [99] [100pdfTeX warning (ext4): destination with the same 
+identifier (name{theorem.4.3.4}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
@@ -3796,7 +3808,7 @@ l.272
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
 l.272 
-      ] [100pdfTeX warning (ext4): destination with the same identifier (name{t
+      ] [101pdfTeX warning (ext4): destination with the same identifier (name{t
 heorem.4.3.7}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
@@ -3808,20 +3820,20 @@ r (name{theorem.4.3.8}) has been already used, duplicate ignored
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
 l.301 	\begin{align*}
-                     ] [101pdfTeX warning (ext4): destination with the same ide
+                     ] [102pdfTeX warning (ext4): destination with the same ide
 ntifier (name{theorem.4.3.9}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
 l.339 	\end{align*}
-                   ] [102pdfTeX warning (ext4): destination with the same ident
+                   ] [103pdfTeX warning (ext4): destination with the same ident
 ifier (name{theorem.4.3.10}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
 l.372 		\item I
                f $G \acts \alpha A$ with $A$ unital, then $A \rtimes_{\alpha...
-] [103]) [104pdfTeX warning (ext4): destination with the same identifier (name{
+] [104]) [105pdfTeX warning (ext4): destination with the same identifier (name{
 theorem.4.3.12}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
@@ -3839,7 +3851,7 @@ Overfull \hbox (6.72047pt too wide) in paragraph at lines 35--35
 *-algebras and finite-dimensional
  []
 
-[105
+[106
 
 
 ]
@@ -3863,13 +3875,13 @@ Overfull \hbox (1.98012pt too wide) in paragraph at lines 35--35
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 35.
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [106]
+) [107]
 Overfull \hbox (11.49193pt too wide) in paragraph at lines 35--35
 []\T1/cmr/m/n/10 E Christo-pher Lance. \T1/cmr/m/it/10 Hilbert C*-modules: a to
 olkit for op-er-a-tor al-ge-braists\T1/cmr/m/n/10 . Vol. 210.
  []
 
-[107] [108]
+[108] [109]
 runsystem(makeindex -s master master.idx)...executed.
 
  (./master.ind
@@ -3877,7 +3889,7 @@ LaTeX Font Info:    Try loading font information for T1+cmss on input line 2.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [109
+) [110
 
 
 ])
@@ -3888,7 +3900,7 @@ FiXme Summary: Number of notes: 0,
 (FiXme)        Number of fatal errors: 0,
 (FiXme)        Total: 0.
 
-[110]
+[111]
 \tf@toc=\write9
 \openout9 = `master.toc'.
 
@@ -3898,20 +3910,20 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 39.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 39.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 39.
 Package rerunfilecheck Info: File `master.out' has not changed.
-(rerunfilecheck)             Checksum: F457AED66DD9F0F6470294312D36B242;1636.
+(rerunfilecheck)             Checksum: E277C22EC598E44B07D78DFAD564EA85;1636.
 Package logreq Info: Writing requests to 'master.run.xml'.
 \openout1 = `master.run.xml'.
 
  )
 (\end occurred when \iftrue on line 5 was incomplete) 
 Here is how much of TeX's memory you used:
- 42176 strings out of 493029
- 768363 string characters out of 6136234
- 1123986 words of memory out of 5000000
- 44531 multiletter control sequences out of 15000+600000
+ 42462 strings out of 493029
+ 773046 string characters out of 6136234
+ 1132071 words of memory out of 5000000
+ 44802 multiletter control sequences out of 15000+600000
  35415 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,20n,82p,10483b,2399s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,20n,82p,10483b,2400s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/en
 c/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
@@ -3942,10 +3954,10 @@ onts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm
 </usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fo
 nts/type1/public/cm-super/sftt1000.pfb></usr/share/texmf/fonts/type1/public/cm-
 super/sfxc1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfxc1200.pfb>
-Output written on master.pdf (113 pages, 1210506 bytes).
+Output written on master.pdf (114 pages, 1217572 bytes).
 PDF statistics:
- 1553 PDF objects out of 1728 (max. 8388607)
- 1387 compressed objects within 14 object streams
- 505 named destinations out of 1000 (max. 500000)
+ 1583 PDF objects out of 1728 (max. 8388607)
+ 1415 compressed objects within 15 object streams
+ 516 named destinations out of 1000 (max. 500000)
  186 words of extra memory for PDF output out of 10000 (max. 10000000)
 

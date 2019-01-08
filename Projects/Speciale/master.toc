@@ -32,14 +32,14 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.2}The Connes Spectrum and Simplicity}{77}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {4}Actions And Automorphisms}{90}{chapter.4}
+\contentsline {chapter}{\chapternumberline {4}Actions And Automorphisms}{91}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Action Properties}{90}{section.4.1}
+\contentsline {section}{\numberline {4.1}Action Properties}{91}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Consequences of Topological Freeness}{93}{section.4.2}
+\contentsline {section}{\numberline {4.2}Consequences of Topological Freeness}{94}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}A Relation between Ideals of $C_r^*(G)$ and $A \rtimes _{\alpha ,r} G$ and a theorem of four}{95}{section.4.3}
+\contentsline {section}{\numberline {4.3}A Relation between Ideals of $C_r^*(G)$ and $A \rtimes _{\alpha ,r} G$ and a theorem of four}{96}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{105}{chapter*.32}
+\contentsline {chapter}{Bibliography}{106}{chapter*.30}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Index}{109}{section*.33}
+\contentsline {chapter}{Index}{110}{section*.31}

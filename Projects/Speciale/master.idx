@@ -13,6 +13,7 @@
 \indexentry{maximal|hyperpage}{14}
 \indexentry{multiplier algebra|hyperpage}{15}
 \indexentry{non-degenerate|hyperpage}{15}
+\indexentry{$*$-strong topology|hyperpage}{19}
 \indexentry{inductive limit topology|hyperpage}{23}
 \indexentry{integrated form|hyperpage}{33}
 \indexentry{induced regular representation|hyperpage}{35}
@@ -25,8 +26,9 @@
 \indexentry{reduced crossed product|hyperpage}{50}
 \indexentry{weakly contained|hyperpage}{51}
 \indexentry{amenable|hyperpage}{52}
+\indexentry{nuclear $C^*$-algebra|hyperpage}{55}
 \indexentry{$G$-product|hyperpage}{60}
-\indexentry{Landstad's conditions|hyperpage}{60}
+\indexentry{Landstad's conditions|hyperpage}{61}
 \indexentry{$\mathaccentV {widehat}870{\alpha }$-integrable|hyperpage}{65}
 \indexentry{$G \mathrel {\mathop {\curvearrowright }\limits ^{}} X$|hyperpage}{71}
 \indexentry{Transformation Group|hyperpage}{71}
@@ -47,20 +49,20 @@
 \indexentry{hereditary|hyperpage}{77}
 \indexentry{Connes Spectrum|hyperpage}{77}
 \indexentry{$W^*$-system|hyperpage}{78}
-\indexentry{exterior equivalent|hyperpage}{80}
-\indexentry{Cocycle equation|hyperpage}{81}
+\indexentry{exterior equivalent|hyperpage}{81}
+\indexentry{Cocycle equation|hyperpage}{82}
 \indexentry{$G$-prime|hyperpage}{83}
-\indexentry{$G$-simple|hyperpage}{84}
+\indexentry{$G$-simple|hyperpage}{85}
 \indexentry{detects ideals|hyperpage}{87}
 \indexentry{separates ideals|hyperpage}{87}
-\indexentry{primitive ideal space|hyperpage}{90}
-\indexentry{spectrum of a $C^*$-algebra|hyperpage}{90}
-\indexentry{hull-kernel topology|hyperpage}{90}
-\indexentry{transposed action of $G$|hyperpage}{91}
-\indexentry{Topologically free|hyperpage}{91}
-\indexentry{properly outer|hyperpage}{92}
-\indexentry{disjoint representations|hyperpage}{92}
-\indexentry{$C^*$-simple|hyperpage}{96}
-\indexentry{unique trace property|hyperpage}{96}
-\indexentry{quasi-regular representation|hyperpage}{97}
-\indexentry{$K \mathaccentV {bar}016\rtimes _r G$|hyperpage}{100}
+\indexentry{primitive ideal space|hyperpage}{91}
+\indexentry{spectrum of a $C^*$-algebra|hyperpage}{91}
+\indexentry{hull-kernel topology|hyperpage}{91}
+\indexentry{transposed action of $G$|hyperpage}{92}
+\indexentry{Topologically free|hyperpage}{92}
+\indexentry{properly outer|hyperpage}{93}
+\indexentry{disjoint representations|hyperpage}{93}
+\indexentry{$C^*$-simple|hyperpage}{97}
+\indexentry{unique trace property|hyperpage}{97}
+\indexentry{quasi-regular representation|hyperpage}{98}
+\indexentry{$K \mathaccentV {bar}016\rtimes _r G$|hyperpage}{101}

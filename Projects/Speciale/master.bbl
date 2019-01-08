@@ -620,6 +620,31 @@
   \field{year}{2017}
 \endentry
 
+\entry{fourierproj}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Karbo}{K.}%
+     {Malthe}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Written Project}%
+  }
+  \strng{namehash}{KM1}
+  \strng{fullhash}{KM1}
+  \field{labelalpha}{Kar18}
+  \field{sortinit}{K}
+  \field{title}{Fourier Analysis and the theory of representation of
+  topological groups}
+  \verb{url}
+  \verb https://github.com/mkarbo/uni/blob/master/Projects/Fourier%20Analysis%2
+  \verb 0And%20The%20Theory%20Of%20Representations%20In%20Topological%20Groups/
+  \verb projekt.pdf
+  \endverb
+  \field{year}{2018}
+\endentry
+
 \entry{kalantar2017boundaries}{article}{}
   \name{author}{2}{}{%
     {{}%

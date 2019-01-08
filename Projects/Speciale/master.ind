@@ -1,15 +1,16 @@
 \begin{theindex}
 {\large\sffamily\bfseries Symbols}\nopagebreak
 
-  \item $C^*$-simple \dotfill \hyperpage{96}
+  \item $*$-strong topology \dotfill \hyperpage{19}
+  \item $C^*$-simple \dotfill \hyperpage{97}
   \item $G \mathrel {\mathop {\curvearrowright }\limits ^{}} X$ \dotfill 
 		\hyperpage{71}
   \item $G$-boundary \dotfill \hyperpage{73}
   \item $G$-prime \dotfill \hyperpage{83}
   \item $G$-product \dotfill \hyperpage{60}
-  \item $G$-simple \dotfill \hyperpage{84}
+  \item $G$-simple \dotfill \hyperpage{85}
   \item $G$-space \dotfill \hyperpage{71}
-  \item $K \mathaccentV {bar}016\rtimes _r G$ \dotfill \hyperpage{100}
+  \item $K \mathaccentV {bar}016\rtimes _r G$ \dotfill \hyperpage{101}
   \item $W^*$-system \dotfill \hyperpage{78}
   \item $\mathaccentV {widehat}870{\alpha }$-integrable \dotfill 
 		\hyperpage{65}
@@ -31,7 +32,7 @@
   \indexspace
 {\large\sffamily\bfseries C}\nopagebreak
 
-  \item Cocycle equation \dotfill \hyperpage{81}
+  \item Cocycle equation \dotfill \hyperpage{82}
   \item Compact Operators on a Hilbert $A$-module \dotfill 
 		\hyperpage{8}
   \item compact-open \dotfill \hyperpage{72}
@@ -41,13 +42,13 @@
 {\large\sffamily\bfseries D}\nopagebreak
 
   \item detects ideals \dotfill \hyperpage{87}
-  \item disjoint representations \dotfill \hyperpage{92}
+  \item disjoint representations \dotfill \hyperpage{93}
 
   \indexspace
 {\large\sffamily\bfseries E}\nopagebreak
 
   \item essential ideal \dotfill \hyperpage{13}
-  \item exterior equivalent \dotfill \hyperpage{80}
+  \item exterior equivalent \dotfill \hyperpage{81}
   \item extremally disconnected space \dotfill \hyperpage{74}
 
   \indexspace
@@ -63,7 +64,7 @@
   \item hereditary \dotfill \hyperpage{77}
   \item Hilbert $A$-module \dotfill \hyperpage{2}
   \item Hilbert $C^*$-module over $A$ \dotfill \hyperpage{2}
-  \item hull-kernel topology \dotfill \hyperpage{90}
+  \item hull-kernel topology \dotfill \hyperpage{91}
 
   \indexspace
 {\large\sffamily\bfseries I}\nopagebreak
@@ -76,7 +77,7 @@
   \indexspace
 {\large\sffamily\bfseries L}\nopagebreak
 
-  \item Landstad's conditions \dotfill \hyperpage{60}
+  \item Landstad's conditions \dotfill \hyperpage{61}
 
   \indexspace
 {\large\sffamily\bfseries M}\nopagebreak
@@ -90,18 +91,19 @@
 {\large\sffamily\bfseries N}\nopagebreak
 
   \item non-degenerate \dotfill \hyperpage{15}
+  \item nuclear $C^*$-algebra \dotfill \hyperpage{55}
 
   \indexspace
 {\large\sffamily\bfseries P}\nopagebreak
 
   \item positive definite \dotfill \hyperpage{46}
-  \item primitive ideal space \dotfill \hyperpage{90}
-  \item properly outer \dotfill \hyperpage{92}
+  \item primitive ideal space \dotfill \hyperpage{91}
+  \item properly outer \dotfill \hyperpage{93}
 
   \indexspace
 {\large\sffamily\bfseries Q}\nopagebreak
 
-  \item quasi-regular representation \dotfill \hyperpage{97}
+  \item quasi-regular representation \dotfill \hyperpage{98}
 
   \indexspace
 {\large\sffamily\bfseries R}\nopagebreak
@@ -116,7 +118,7 @@
   \item separates ideals \dotfill \hyperpage{87}
   \item spectral $M$-subspace \dotfill \hyperpage{76}
   \item spectral $R$-subspace \dotfill \hyperpage{75}
-  \item spectrum of a $C^*$-algebra \dotfill \hyperpage{90}
+  \item spectrum of a $C^*$-algebra \dotfill \hyperpage{91}
   \item strict topology \dotfill \hyperpage{12}
   \item strongly proximal action \dotfill \hyperpage{73}
 
@@ -125,15 +127,15 @@
 
   \item the topology of weak$^*$ uniform convergence on compacta \dotfill 
 		\hyperpage{47}
-  \item Topologically free \dotfill \hyperpage{91}
+  \item Topologically free \dotfill \hyperpage{92}
   \item topology on $\mathrm{Homeo}(X)$ \dotfill \hyperpage{72}
   \item Transformation Group \dotfill \hyperpage{71}
-  \item transposed action of $G$ \dotfill \hyperpage{91}
+  \item transposed action of $G$ \dotfill \hyperpage{92}
 
   \indexspace
 {\large\sffamily\bfseries U}\nopagebreak
 
-  \item unique trace property \dotfill \hyperpage{96}
+  \item unique trace property \dotfill \hyperpage{97}
   \item unitalization \dotfill \hyperpage{13}
   \item universal norm \dotfill \hyperpage{38}
 
