@@ -5,7 +5,7 @@ In this chapter we introduce some of the fundamental theory of Hilbert $C^*$-mod
 
 
 \sssection{Hilbert $C^*$-modules}
-Given a non-unital $C^*$-algebra $A$, we can extend a lot of the theory of unital $C^*$-algebras to $A$ by considering the unitalization $A^\dagger = A + 1\C$ with the canonical operations. This is the 'smallest' unitalization in the sense that $A$ the inclusion map is non-degenerate and maps $A$ to an ideal of $A^\dagger$ such that $A^\dagger/A \cong \C$. We can also consider a maximal unitalization, called the \myemph{Multiplier Algebra} of $A$, denoted by $M(A)$. We will now construct it and some theory revolving it, in particular that of Hilbert-modules:
+Given a non-unital $C^*$-algebra $A$, we can extend a lot of the theory of unital $C^*$-algebras to $A$ by considering the unitization $A^\dagger = A + 1\C$ with the canonical operations. This is the 'smallest' unitization in the sense that $A$ the inclusion map is non-degenerate and maps $A$ to an ideal of $A^\dagger$ such that $A^\dagger/A \cong \C$. We can also consider a maximal unitization, called the \myemph{Multiplier Algebra} of $A$, denoted by $M(A)$. We will now construct it and some theory revolving it, in particular that of Hilbert-modules:
 \begin{definition}
 	Let $A$ be any $C^*$-algebra. An \myemph{inner-product $A$-module} is a complex vector space $E$ which is also a right-$A$-module which is equipped with a map $\langle \cdot, \cdot\rangle_A \colon E \times E \to A$ such that for $x,y,z \in E, \ \alpha,\beta \in \C$ and $a \in A$ we have
 	\begin{align}
@@ -59,34 +59,32 @@ so that $\lv x a \rv \leq \lv x \rv \lv a \rv$, which shows that $E$ is a normed
 	The classic example of a Hilbert $A$-module is $A$ itself with $\langle a,b \rangle = a^*b$, for $a,b \in A$. We will write $A_A$ to specify that we consider $A$ as a Hilbert $A$-module.
 \end{example}
 
-For a Hilbert $A$-module $E$, we let $\langle E,E \rangle =  \Span \left\{ \langle x,y \rangle \mid x,y \in E \right\}$. It is not hard to see that $\overline{\langle E,E \rangle}$ is a closed ideal in $A$, and moreover, we see that:\todo{Should $\langle E,E \rangle$ be closed?}
+For an inner product $A$-module $E$, we let $\langle E,E \rangle =  \Span \left\{ \langle x,y \rangle \mid x,y \in E \right\}$. It is not hard to see that $\overline{\langle E,E \rangle}$ is a closed ideal in $A$, and moreover, we see that:
 \begin{lemma}
 	The set $E\langle E,E\rangle$ is dense in $E$.
 	\label{EEEdense}
 \end{lemma}
 \begin{proof}
-	Let $(u_i)$ denote an approximate unit for $\langle E,E \rangle$. Then clearly $\langle x-x u_i , x-x u_i\rangle \to 0$ for $x \in E$ (seen by expanding the expression), which implies that $x u_i \to x$ in $E$
+	Let $(u_i)$ denote an approximate unit for the ideal $\overline{\langle E,E \rangle}$. Then clearly $\langle x-x u_i , x-x u_i\rangle \to 0$ for $x \in E$ (seen by expanding the expression), which implies that $x u_i \to x$ in $E$
 \end{proof}
 In fact, the above proof also shows that $EA$ is dense in $E$ and that $x1=x$ when $1 \in A$.
 
 \begin{definition}
-	If $\langle E,E \rangle$ is dense in $A$ we say that the Hilbert $A$-module is \myemph{full}.
+	Let $E$ be a Hilbert $A$-module. If $\langle E,E \rangle$ is dense in $A$ we say that the Hilbert $A$-module is \myemph{full}.
 \end{definition}
 
 Many classic constructions preserve Hilbert $C^*$-modules:
 \begin{example}
-	If $E_1,\dots,E_n$ are Hilbert $A$-modules, then $\bigoplus_{1 \leq i \leq n} E_i$ is a Hilbert $A$-module with the inner product $\langle (x_i),(y_i)\rangle = \sum_{1 \leq i \leq n} \langle x_i,y_i\rangle_{E_i}$. This is obvious.
-\end{example}
+	If $E_1,\dots,E_n$ are Hilbert $A$-modules, then $\bigoplus_{1 \leq i \leq n} E_i$ is a Hilbert $A$-module with the inner product $\langle (x_i),(y_i)\rangle = \sum_{1 \leq i \leq n} \langle x_i,y_i\rangle_{E_i}$. 
 
-\begin{example}
-	If $\left\{ E_i \right\}$ is a set of Hilbert $A$-modules, and let $\bigoplus_i E_i$ denote the set
+	Moreover, if $\left\{ E_i \right\}$ is a set of Hilbert $A$-modules, and let $\bigoplus_i E_i$ denote the set
 	\begin{align*}
 		\bigoplus_i E_i := \left\{ (x_i) \in \prod_i E_i \mid \sum_{i} \langle x_i,x_i\rangle \text{ converges in } A \right\}.
 	\end{align*}
-	Then $\bigoplus_i E_i$ is a Hilbert $A$-module. The details of the proof are nothing short of standard, so we refer to \cite[5]{lance1995hilbert}.
+	Then $\bigoplus_i E_i$ is a Hilbert $A$-module. 
 \end{example}
-
-\begin{note}
+For the details in the above, see \cite[5]{lance1995hilbert}.
+\begin{remark}
 	There are similarities and differences between Hilbert $A$-modules and regular Hilbert spaces. One major difference is that for closed submodules $F\subseteq E$, it does not hold that $F \oplus F^\perp=E$, where $F^\perp = \left\{ y \in E \mid \langle x,y\rangle = 0, \ x \in F \right\}$: Let $A=C([0,1])$ and consider $A_A$. Let $F\subseteq A$ be the set $F = \left\{f \in A_A \mid f(0)=f(1)=0  \right\}$. Then $F$ is clearly a closed sub $A$-module of $A_A$. Consider the element $f \in F$ given by
 	\begin{align*}
 		f(t) = \begin{cases}
@@ -97,10 +95,10 @@ Many classic constructions preserve Hilbert $C^*$-modules:
 	For all $g \in F^\perp$ it holds that $\langle f,g\rangle = fg = 0$, so $g(t)=0$ for $t \in (0,1)$ and by uniform continuity on all of $[0,1]$, from which we deduce that $F^\perp = \{0\}$ showing that $A \neq F \oplus F^\perp$. The number of important results in the theory of Hilbert spaces relying on the fact that $\H =  F^\perp \oplus F$ for closed subspaces $F$ of $\H$ is very significant, and hence we do not have the entirety of our usual toolbox available. 
 
 	However, returning to the general case, we are pleased to see that it does hold for Hilbert $A$-modules $E$ that for $x \in E$ we have
-	\begin{align}
-		\lv x \rv = \sup\left\{ \lv \langle x , y \rangle \rv \mid y \in E, \ \lv y \rv \leq 1 \right\}. \tag{$\star$}
+	\begin{equation}
+		\lv x \rv = \sup\left\{ \lv \langle x , y \rangle \rv \mid y \in E, \ \lv y \rv \leq 1 \right\}. 
 		\label{eq:0}
-	\end{align}
+	\end{equation}
 	This is an obvious consequence of the Cauchy-Schwarz theorem for Hilbert $A$-modules. 
 
 	Another huge difference is that adjoints don't automatically exist: Let $A = C([0,1])$ again and $F$ as before. Let $ \iota \colon F \to A$ be the inclusion map. Clearly $\iota$ is a linear map from $F$ to $A$, however, if it had an adjoint $\iota^* \colon A \to F$, then for any self-adjoint $f \in F$, we have
@@ -108,12 +106,12 @@ Many classic constructions preserve Hilbert $C^*$-modules:
 		 f = \langle \iota(f) , 1 \rangle_A = \langle f , \iota^*(1)\rangle = f \iota^*(1),
 	\end{align*}
 	so $\iota^*(1)=1$, but $1 \not\in F$. Hence $\iota^*$ is not adjointable. We shall investigate properties of the adjointable operators in more detail further on.
-\end{note}
+\end{remark}
 
 \sssection{The $C^*$-algebra of adjointable operators}
-The set of adjointable maps between Hilbert $A$-modules is of great importance and has many nice properties, and while not all results carry over from the theory of bounded operators on a Hilbert space, many do, as we shall see.
+The set of adjointable maps between Hilbert $A$-modules is of great importance and has many nice properties, and while not all results carry over from the theory of bounded operators on a Hilbert space, enough results carry over to ensure a rich and useful theory. 
 \begin{definition}
-	For Hilbert $A$-modules $E_i$ with $A$-valued inner-products $\langle \cdot , \cdot\rangle_i$, $i=1,2$, we define $\mathcal{L}_A(E_1,E_2)$ to be the set of all maps $t \colon E_1 \to E_2$ for which there exists a map $t^* \colon E_2 \to E_1$ such that
+	For Hilbert $A$-modules $E_i$ with $A$-valued inner-products $\langle \cdot , \cdot\rangle_i$, $i=1,2$, we define \myemph{$\mathcal{L}_A(E_1,E_2)$} to be the set of all maps $t \colon E_1 \to E_2$ for which there exists a map $t^* \colon E_2 \to E_1$ such that
 	\begin{align*}
 		\langle tx, y \rangle_2 = \langle x , t^*y \rangle_1,
 	\end{align*}
@@ -127,16 +125,18 @@ The set of adjointable maps between Hilbert $A$-modules is of great importance a
 \end{enumerate}
 \end{proposition}
 \begin{proof}
-	Linearity is clear. To see $A$-linearity, note that for $x_1,x_2 \in E_i$ and $a \in A$ we have $a^* \langle x_1,x_2\rangle_i = \langle x_1 a , x_2\rangle_i$, and hence for $x \in E_1$, $y \in E_2$ and $a \in A$ we have $\langle t(xa) , y \rangle_2 = a^* \langle x,t^*(y)\rangle_1 = \langle t(x)a,y\rangle_1$.
-
-	To see that $t$ is bounded, we note that $t$ has closed graph: Let $x_n \to x$ in $E_1$ and assume that $tx_n \to z \in E_2$. Then
+	Linearity is clear. To see $A$-linearity and if $x_1,x_2 \in E_i$ and $a \in A$ then $a^* \langle x_1,x_2\rangle_i = \langle x_1 a , x_2\rangle_i$ so that 
+	\begin{align*}
+		\langle t(xa) , y \rangle_2 = a^* \langle x,t^*(y)\rangle_1 = \langle t(x)a,y\rangle_1,
+	\end{align*}
+	for all $x \in E_1$, $y \in E_2$ and $a \in A$. To see that $t$ is bounded, we note that $t$ has closed graph: Let $x_n \to x$ in $E_1$ and assume that $tx_n \to z \in E_2$. Then
 	\begin{align*}
 		\langle tx_n , y\rangle_2  = \langle x_n, t^*y\rangle_1 \to \langle x, t^*y \rangle_1 = \langle tx,y\rangle_2
 	\end{align*}
-	so $tx = z$, and hence $t$ is bounded, by the Closed Graph Theorem (CGT hereonforth).
+	so $tx = z$, and hence $t$ is bounded, by the Closed Graph Theorem.
 \end{proof}
 
-In particular, similar to the way that the algebra $\mathbb{B}(\H) = \mathcal{L}_\C(\H_\C,\H_\C)$ is of great importance, we examine for a fixed Hilbert $A$-module $E$, the $*$-subalgebra $\mathcal{L}(E):=\mathcal{L}(E,E)$ of bounded operators on $E$:
+In particular, similar to the way that the algebra $\mathbb{B}(\H) = \mathcal{L}_\C(\H_\C,\H_\C)$ is of great importance, we examine for a fixed Hilbert $A$-module $E$, the $*$-subalgebra $\mathcal{L}(E):=\mathcal{L}(E,E)$ of $\mathbb{B}(E)$, i.e., the bounded operators on $E$.
 \begin{proposition}
 	The algebra $\mathcal{L}(E)$ is a closed $*$-subalgebra of $\mathbb{B}(E)$ such that for $t \in \mathcal{L}(E)$ we have
 	\begin{align*}
@@ -149,9 +149,9 @@ In particular, similar to the way that the algebra $\mathbb{B}(\H) = \mathcal{L}
 	\begin{align*}
 		\lv t^* t \rv = \sup_{\lv x \rv \leq 1} \left\{ \lv t^*tx\rv \right\} = \sup_{\lv x\rv, \lv y \rv \leq 1} \left\{ \langle tx,ty\rangle \right\}\geq \sup_{\lv x \rv \leq 1} \left\{ \lv \langle tx, tx \rangle \rv \right\} = \lv t \rv^2,
 	\end{align*}
-	so $\lv t^*t\rv = \lv t\rv^2$. Assume that $t \neq 0$, then we see that $\lv t \rv = \lv t^* t\rv \lv t \rv ^{-1} \leq \lv t^*\rv$ and similarly $\lv t^*\rv \leq \lv t^{**}\rv=\lv t \rv$, so $\lv t \rv = \lv t^*\rv$, in particular $t \mapsto t^*$ is continuous. It is clear that $\mathcal{L}(E)$ is a $*$-subalgebra. To see that is is closed, suppose that $(t_\alpha)$ is a Cauchy-net, and denote its limit by $t \in \mathbb{B}(E)$. By the above, we see that $(t_\alpha^*)$ is Cauchy with limit $f \in \mathbb{B}(E)$, since  Then, we see that for all $x,y \in E$ 
+	so $\lv t^*t\rv = \lv t\rv^2$. Assume that $t \neq 0$, then we see that $\lv t \rv = \lv t^* t\rv \lv t \rv ^{-1} \leq \lv t^*\rv$ and similarly $\lv t^*\rv \leq \lv t^{**}\rv=\lv t \rv$, so $\lv t \rv = \lv t^*\rv$, in particular $t \mapsto t^*$ is continuous. It is clear that $\mathcal{L}(E)$ is a $*$-subalgebra. To see that is is closed, suppose that $(t_net)$ is a Cauchy sequence, and denote its limit by $t \in \mathbb{B}(E)$. By the above, we see that $(t_n^*)$ is Cauchy with limit $f \in \mathbb{B}(E)$, since  Then, we see that for all $x,y \in E$ 
 	\begin{align*}
-		\langle t x,y\rangle = \lim_{\alpha}\langle t_\alpha x , y \rangle = \lim_{_\alpha}\langle x, t_\alpha^* y \rangle = \langle x,fy\rangle,
+		\langle t x,y\rangle = \lim_{n}\langle t_n x , y \rangle = \lim_{_n}\langle x, t_n^* y \rangle = \langle x,fy\rangle,
 	\end{align*}
 	so $t$ is adjointable, hence an element of $\mathcal{L}(E)$.
 \end{proof}
@@ -166,15 +166,15 @@ If we for $x \in E$ denote the element $\langle x, x \rangle^{\frac12}\geq 0$ by
 	\end{align*}
 	for all $x \in E$, as wanted.
 \end{proof}
-A quite useful result about positive operators on a Hilbert space carries over to the case of Hilbert $C^*$-modules, for we have:
+A quite useful characterization of positive operators on a Hilbert space carries over to the case of Hilbert $C^*$-modules, for we have:
 \begin{lemma}
 	Let $E$ be a Hilbert $A$-module and let $T$ be a linear operator on $E$. Then $T$ is a positive operator in $\mathcal{L}_A(E)$ if and only if for all $x \in E$ it holds that $\langle Tx,x \rangle \geq 0$ in $A$.
 	\label{mult:Tpos}
 \end{lemma}
 \begin{proof}
-	If $T$ is adjointable and positive, then $T=S^*S$ for some $S \in \mathcal{L}(E)$ and $\langle Tx,x\rangle = \langle Sx,Sx\rangle\geq 0$. For the converse, we note first that the usual polarization identity applies to Hilbert $C^*$-modules as well:
+	If $T$ is adjointable and positive, then $T=S^*S$ for some $S \in \mathcal{L}(E)$ and $\langle Tx,x\rangle = \langle Sx,Sx\rangle\geq 0$. For the converse, we note first that the usual \myemph{polarization identity} applies to Hilbert $C^*$-modules as well:
 	\begin{align*}
-		4\langle x, y\rangle = \sum_{k=0}^3 i^{k} \langle u+i^kv,u+i^kv\rangle,
+		4\langle u, v\rangle = \sum_{k=0}^3 i^{k} \langle u+i^kv,u+i^kv\rangle,
 	\end{align*}
 	for all $u,v \in E$, since $ \langle u,v \rangle = \langle v,u\rangle ^*$. Hence, if $\langle Tx , x \rangle \geq 0$ for all $x \in E$, we see that $\langle Tx,x\rangle = \langle x,Tx\rangle$, so
 	\begin{align*}
@@ -186,22 +186,21 @@ A quite useful result about positive operators on a Hilbert space carries over t
 	\end{align*}
 	so $\langle (T^-)^3 x,x \rangle = 0$ for all $x$. The polarization identity shows that $(T^-)^3=0$ and hence $(T^-)=0$, so $T=T^+\geq 0$.
 \end{proof}
-And, as in the Hilbert Space situation, we also have 
-\begin{lemma}
+\begin{corollary}
 	Let $E$ be a Hilbert $A$-module and $T \geq 0$ in $\mathcal{L}_A(E)$. Then
 	\begin{align*}
 		\lv T \rv = \sup_{\lv x \rv \leq 1}\left\{ \lv \langle Tx,x\rangle \rv \right\}
 	\end{align*}
 	\label{mult:normposT}
-\end{lemma}
+\end{corollary}
 \begin{proof}
 	Write $T=S^*S$ for $S \in \mathcal{L}_A(E)$ to obtain the identity.
 \end{proof}
 
 
-It is well-known that the only ideal of $\mathbb{B}(\H)$ is the set of compact operators, $\mathbb{K}(\H)$, which is the norm closure of the finite-rank operators. We now examine the Hilbert $C^*$-module analogue of these two subsets:
+It is well-known that the only ideal of $\mathbb{B}(\H)$, $\H$ separable, is the set of compact operators $\mathbb{K}(\H)$, which is the norm closure of the finite-rank operators. We now examine the Hilbert $C^*$-module analogue of these two subsets:
 \begin{definition}
-	Let $E,F$ be Hilbert $A$-modules. Given $x \in E$ and $y \in F$, we let $\Theta_{x,y} \colon F \to E$ be the map
+	Let $E,F$ be Hilbert $A$-modules. Given $x \in E$ and $y \in F$, we define $\Theta_{x,y} \colon F \to E$ by
 	\begin{align*}
 		\Theta_{x,y}(z):=x \langle y,z \rangle,
 	\end{align*}
@@ -241,49 +240,48 @@ It follows that for $E=F$, the $*$-subalgebra of $\mathcal{L}_A(E)$ obtained by 
 \begin{definition}
 We define the \myemph{Compact Operators on a Hilbert $A$-module} $E$ to be the $C^*$-algebra
 	\begin{align*}
-		\mathbb{K}_A(E):= \overline{\Span}\left\{ \Theta_{x,y} \mid x,y \in E \right\} \subseteq \mathcal{L}_A(E).
+		\mathbb{K}_A(E):= \overline{\Span\left\{ \Theta_{x,y} \mid x,y \in E \right\}} \subseteq \mathcal{L}_A(E).
 	\end{align*}
 \end{definition}
 \begin{note}
 	An operator $t \in \mathbb{K}_A(F,E)$ need not be a compact operator when $E,F$ are considered as Banach spaces, i.e., a limit of finite-rank operators. This is easy to see by assuming that $A$ is not-finite dimensional and unital: The operator $\mathrm{id}_A =\Theta_{1,1}$ is in $\mathbb{K}_A(A_A)$, but the identity operator is not a compact operator on an infinite-dimensional Banach space.
 \end{note}
 \begin{lemma}
-	There is an isomorphism $A \cong \mathbb{K}_A(A_A)$. If $A$ is unital, then $\mathbb{K}_A(A_A) = \mathcal{L}_A(A_A)$.
+	There is an isomorphism $A \cong \mathbb{K}_A(A_A)$. If $A$ is unital, then $A \cong \mathbb{K}_A(A_A) = \mathcal{L}_A(A_A)$.
 	\label{mult:AisocompA}
 \end{lemma}
 \begin{proof}
-	\todo{find all instances where $L_a(x)$ is used instead of $L_a x$}
 	Fix $a \in A$ and define $L_a \colon A \to A$ by $L_ab=ab$. Then $\langle L_ax,y \rangle = x^* a^*y = \langle x, L_{a^*}y\rangle$ for all $x,y \in A$, hence $L_a$ is adjointable with adjoint $L_{a^*}$. Note that $L_{ab^*}x = ab^*x = a\langle b,x \rangle = \Theta_{a,b}(x)$ for $a,b,x \in A$, hence if $L\colon a \mapsto L_a$, we have $\mathbb{K}_A(A_A) \subseteq \mathrm{Im}(L)$. It is clear that $L$ is a $*$-homomorphism of norm one, i.e., an isometric homomorphism, so it's image is a $C^*$-algebra. To see that it has image equal to $\mathbb{K}_A(A_A)$, let $(u_i)$ be an approximate identity of $A$. Then for any $a \in A$ $L_{u_i a} \to L_{a}$, and since $L_{u_ia} \in \mathbb{K}_{A}(A_A)$ for all $i$, we see that $L_a \in \mathbb{K}_A(A_A)$.
 
 	If $1 \in A$, then for $t \in \mathcal{L}_A(A_A)$ we see that $t(a)=t(1\cdot a)=t(1)\cdot a=L_{t(1)}a$, so $t \in \mathbb{K}_A(A_A)$, and $\mathcal{L}_A(A_A) \cong A$.
 \end{proof}
 \begin{note}
-	It does not hold in general that $A \cong \mathcal{L}_A(A_A)$, e.g., as we shall see soon for $A=C_0(X)$, where $X$ is locally compact Hausdorff, for then $\mathcal{L}_A(A_A) = C_b(X)$.
+	It does not hold in general that $A \cong \mathcal{L}_A(A_A)$, e.g., as we shall see soon for $A=C_0(X)$, where $X$ is locally compact Hausdorff, for then $\mathcal{L}_A(A_A) = C_b(X) \cong C(\beta X)$, where $\beta X$ is the Stone-\v{C}ech compactification of $X$.
 \end{note}
 
-In \ref{EEEdense} we saw that for a Hilbert $A$-module $E$, the set $E \langle E, E \rangle$ was dense in $E$. We are going to improve this to say that every $x \in E$ is of the form $y \langle y,y \rangle$ for some unique $y \in E$. To do this, we need to examine the compact operators a bit more: 
+In \Cref{EEEdense} we saw that for a Hilbert $A$-module $E$, the set $E \langle E, E \rangle$ was dense in $E$. We are going to improve this to say that every $x \in E$ is of the form $y \langle y,y \rangle$ for some unique $y \in E$. To do this, we need to examine the compact operators a bit more: 
 
 \begin{proposition}
 	Given a right Hilbert $A$-module $E$, then $E$ is a full left Hilbert $\mathbb{K}_A(E)$-module with respect to the action $T\cdot x = T(x)$ for $x \in E$ and $T \in \mathbb{K}_A(E)$ and $\mathbb{K}_A(E)$-valued inner product $_{\mathbb{K}_A(E)} \langle x,y \rangle = \Theta_{x,y}$ for $x, y \in E$. Moreover, the corresponding norm $\lv \cdot \rv_{\mathbb{K}_A(E)} = \lv _{\mathbb{K}_A(E)} \langle \cdot, \cdot \rangle \rv^{\frac12}$ coincides with the norm $\lv \cdot \rv_{A}$ on $E$.
 	\label{mult:leftcompmod}
 \end{proposition}
 \begin{proof}
-	It is easy to see that the first, second and third condition of \ref{mult:defmod} are satisfied in light of \ref{frnkideal}. Note that
+	It is easy to see that the first, second and third condition of \Cref{mult:defmod} are satisfied in light of \Cref{frnkideal}. Note that
 	\begin{align}
 		\langle _{\mathbb{K}_A(E)}\langle x,x \rangle \cdot y , y \rangle_A = \langle x \langle x,y \rangle , y \rangle_A = \langle x,y \rangle_A^* \langle x,y \rangle_A \geq 0,
 		\label{eq:1}
 	\end{align}
-	for all $x,y \in E$, which by \ref{mult:Tpos} implies $_{\mathbb{K}_A(E)} \langle x,x \rangle \geq 0$ for all $x \in E$. The above calculation also shows that if $_{\mathbb{K}_A(E) } \langle x, x \rangle = 0$ then $\langle x,y \rangle_A = 0$ for all $y \in E$ so $x = 0$.
+	for all $x,y \in E$, which by \Cref{mult:Tpos} implies $_{\mathbb{K}_A(E)} \langle x,x \rangle \geq 0$ for all $x \in E$. The above calculation also shows that if $_{\mathbb{K}_A(E) } \langle x, x \rangle = 0$ then $\langle x,y \rangle_A = 0$ for all $y \in E$ so $x = 0$.
 
 	To see the last condition, note that 
 	\begin{align*}
 		\lv \langle _{\mathbb{K}_A(E)} \langle x,x \rangle x , x \rangle_A \rv = \lv \langle x , x \rangle_A^* \langle x, x \rangle_A\rv = \lv x \rv_A^2
 	\end{align*}
-	so by \ref{mult:normposT}, $\lv x \rv_{\mathbb{K}_A(E)} \geq \lv x \rv_{A}$ for all $x \in E$. For the other inequality, applying Cauchy-Schwarz to \ref{eq:1}, we see that 
+	so by \Cref{mult:normposT}, $\lv x \rv_{\mathbb{K}_A(E)} \geq \lv x \rv_{A}$ for all $x \in E$. For the other inequality, applying Cauchy-Schwarz to \Cref{eq:1}, we see that 
 	\begin{align*}
 		\langle _{\mathbb{K}_A(E)} \langle x,x \rangle y , y \rangle_A \leq \lv \langle x,x \rangle_A \rv \langle y,y \rangle_A	
 	\end{align*}
-	so again by \ref{mult:normposT} we see that $\lv _{\mathbb{K}_A(E)} \langle x, x \rangle\rv \leq \lv \langle x,x\rangle_A \rv$ for all $x \in E$.
+	so again by \Cref{mult:normposT} we see that $\lv _{\mathbb{K}_A(E)} \langle x, x \rangle\rv \leq \lv \langle x,x\rangle_A \rv$ for all $x \in E$.
 \end{proof}
 When we considered $E=A_A$, we defined for $a \in A$ the operator $L_a\colon b \mapsto ab$, $b \in A$. Similarly, we do this in the general case:
 \begin{definition}
@@ -296,25 +294,33 @@ The calculation
 \end{align*}
 for $x,y \in E$ and $a \in A$ shows that $L_x$ and $D_x$ are mutual adjoints, so $L_x \in \mathcal{L}_A(A_A,E)$ and $D_x \in \mathcal{L}_A(E,A_A)$.
 \end{remark}
-In fact, the maps $D \colon x \mapsto D_x$ and $L \colon x \mapsto L_x$ are interesting on their own, which extends the result from the case $E=A_A$ seen in \ref{mult:AisocompA}:
+In fact, the maps $D \colon x \mapsto D_x$ and $L \colon x \mapsto L_x$ are interesting on their own, which extends the result from the case $E=A_A$ seen in \Cref{mult:AisocompA}:
 \begin{lemma}
-	Let $E$ be a Hilbert $A$-module. Then $D$ is a conjugate linear isometric isomorphism of $E$ and $\mathbb{K}_A(E,A_A)$ and $L$ is a linear isometric isomorphism of $E$ and $\mathbb{K}_A(A_A,E)$.
+	Let $E$ be a Hilbert $A$-module. Then $E \ni x \mapsto D_x$ is a conjugate linear isometric isomorphism of $E$ and $\mathbb{K}_A(E,A_A)$ and $E \ni x \mapsto L_x$ is a linear isometric isomorphism of $E$ and $\mathbb{K}_A(A_A,E)$.
 	\label{mult:isocompactgen}
 \end{lemma}
 \begin{proof}
-	Conjugate linearity of $D$ follows immediately from $\langle \cdot, y \rangle_A$ possessing said property. We see that $D_x$ is an isometry via \cref{eq:0}, hence it has closed image. Since $\Theta_{a,x} = D_{x a^*}$, it follows that $\mathbb{K}_A(E,A_A) \subseteq D_{E}$. For the converse, let $(e_i)$ be an approximate unit of $\overline{\langle E,E\rangle}$. Then, since $D_E$ is closed and $D$ is continuous, we see that $D_x=\lim_i D_{xe_i} = \lim_i \Theta_{x,e_i} \in D_E$, hence $D_E \subseteq \mathbb{K}_A(E,A_A)$, since $E \langle E,E\rangle$ is dense in $E$.	
+	Conjugate linearity of $D$ follows immediately from $\langle \cdot, y \rangle_A$ possessing said property. We see that $D_x$ is an isometry via \cref{eq:0}, hence it has closed image. Since $\Theta_{a,x} = D_{x a^*}$, it follows that $\mathbb{K}_A(E,A_A) \subseteq D_{E}$, where $D_E$ denotes the image of the identification.
 	
-	The second statement follows since clearly $L \colon x \mapsto D_x^*$ is then a linear isometry and we saw in \ref{frnkideal} that $\Theta_{a,x}^* = \Theta_{x,a}$, so the argument above applies to $L$ as well.
+	For the converse inclusion, let $(e_i)$ be an approximate unit of $\overline{\langle E,E\rangle}$. Then, since $D_E$ is closed and $D$ is continuous, we see that $D_x=\lim_i D_{xe_i} = \lim_i \Theta_{x,e_i} \in D_E$, hence $D_E \subseteq \mathbb{K}_A(E,A_A)$, since $E \langle E,E\rangle$ is dense in $E$.	
+	
+	The second statement follows since clearly $L \colon x \mapsto D_x^*$ is then a linear isometry and we saw in \Cref{frnkideal} that $\Theta_{a,x}^* = \Theta_{x,a}$, so the argument above applies to $L$ as well.
 \end{proof}
 
-Abusing notation, we will in the following use $L_x$ to denote both the operator on $E$ and $A_A$ depending on the location of $x$. We now show a generalization of a standard trick regarding operators on direct sums of Hilbert spaces, the technique is from \cite{blanchard1996deformations} and is based on the $2\times 2$-matrix trick of Connes \cite{connesclassification}: We may, given Hilbert spaces $\H, \mathcal{K}$ view $\mathbb{B}(\H \oplus \mathcal{K})$ as the set of matrices
+\begin{note}
+	Abusing notation, we will in the following use $L_x$ to denote both the operator on $E$ and $A_A$ depending on the location of $x$.
+\end{note}
+ We now show a generalization of a standard trick regarding operators on direct sums of Hilbert spaces, the technique is from \cite{blanchard1996deformations} and is based on the $2\times 2$-matrix trick of Connes \cite{connesclassification}: We may, given Hilbert spaces $\H, \mathcal{K}$ view $\mathbb{B}(\H \oplus \mathcal{K})$ as the set of matrices
 \begin{align*}
-	\begin{pmatrix}
+	\left\{ \begin{pmatrix}
+	\cdot & \cdot \\
+	\cdot & \cdot
+\end{pmatrix}\right\} \in	\begin{pmatrix}
 		\mathbb{B}(\H) & \mathbb{B}(\mathcal{K},\H)\\
 		\mathbb{B}(\H,\mathcal{K}) &   \mathbb{B}(\mathcal{K})
 	\end{pmatrix}
 \end{align*}
-by compression with the orthogonal projection onto e.g. $\H$. This also holds for the compact operators on $\H \oplus \mathcal{K}$, and more generally:
+by compression with the orthogonal projections onto the pairwise coordinates. This also holds for the compact operators on $\H \oplus \mathcal{K}$, and more generally:
 \begin{lemma}
 	Let $E$ be a Hilbert $A$-module. If $L_a \in \mathbb{K}_A(A_A)$, $S \in \mathbb{K}_A(A_A,E)$, $T \in \mathbb{K}_A(E,A_A)$ and $R \in \mathbb{K}_A(E)$, then
 	\begin{align*}
@@ -379,21 +385,20 @@ We may finally prove the statement which we set out to show:
 \begin{proof}
 	Let $x \in E$, and consider the self-adjoint operator
 	\begin{align*}
-		t = \begin{pmatrix}
+		T = \begin{pmatrix}
 			0 & D_x \\
 			L_x & 0
 		\end{pmatrix}
 	\end{align*}
-	on $A_A \oplus E$, which by \Cref{mult:2x2trick} is self-adjoint and anti-commutes with $1 \oplus -1$. With $t$ being self-adjoint, the function $f(x) = x^{\frac13}$ is continuous on the spectrum $\sigma(t)$, so it defines a compact operator $f(t)$ on $A_A \oplus E$. This operator anti-commutes with $1 \oplus -1$ by the functional calculus applied to the map $\psi \colon \mathbb{K}_A(A_A \oplus E) \to \mathbb{K}_A(A_A \oplus E)$, $s \mapsto (1 \oplus -1) s + s(1 \oplus -1)$, which is a $^*$-homomorphism, so there is $y \in E$ such that
+	on $A_A \oplus E$, which by \Cref{mult:2x2trick} is self-adjoint and anti-commutes with $1 \oplus -1$. With $t$ being self-adjoint, the function $f(x) = x^{\frac13}$ is continuous on the spectrum $\sigma(T)$, so it defines a compact operator $f(T)$ on $A_A \oplus E$. This operator anti-commutes with $1 \oplus -1$ by the functional calculus applied to the map $\psi \colon \mathbb{K}_A(A_A \oplus E) \to \mathbb{K}_A(A_A \oplus E)$, $s \mapsto (1 \oplus -1) s + s(1 \oplus -1)$, which is a $^*$-homomorphism, so there is $y \in E$ such that
 	\begin{align*}
-		f(t) = \begin{pmatrix}
+		f(T) = \begin{pmatrix}
 			0 & D_y \\
 			L_y & 0
 		\end{pmatrix}
 	\end{align*}
-	And so $f(t)^3 = t$ implies that $L_x = L_y D_y L_y = L_{y \langle y,y \rangle}$, so $x = y \langle y, y \rangle$.
+	And so $f(T)^3 = T$ implies that $L_x = L_y D_y L_y = L_{y \langle y,y \rangle}$, so $x = y \langle y, y \rangle$.
 \end{proof}
-
 We empose quite an assortment of topologies on $\mathbb{B}(\H,\H')$ for Hilbert spaces $\H$ and $\H'$ -- this is not the case when we study Hilbert $C^*$-modules: Given Hilbert $A$-module $E$ and $F$, we only consider two topologies -- the norm topology and the \myemph{strict topology}:
 \begin{definition}
 	The \myemph{strict topology} on $\mathcal{L}_A(E,F)$ is the locally convex topology on $\mathcal{L}_A(E,F)$ generated by the family of semi-norm pairs
@@ -403,7 +408,7 @@ We empose quite an assortment of topologies on $\mathbb{B}(\H,\H')$ for Hilbert 
 \end{definition}
 This topology turns out to be very important, and there is many results of the classic theory which apply in this setting as well:
 \begin{proposition}
-	Let $E$ be a Hilbert $A$-module. Then the unit ball of $\mathbb{K}_A(E,F)$, $(\mathbb{K}_A(E,F))_1$, is strictly dense in the unit ball, $(\mathcal{L}_A(E,F))_1$, of $\mathcal{L}_A(E,F)$.
+	Let $E$ be a Hilbert $A$-module. Then the unit ball of $\mathbb{K}_A(E,F)$, $(\mathbb{K}_A(E,F))_1$, is strictly dense in the unit ball, denoted $(\mathcal{L}_A(E,F))_1$, of $\mathcal{L}_A(E,F)$.
 	\label{mult:unitstrictdense}
 \end{proposition}
 \begin{proof}
@@ -411,16 +416,16 @@ This topology turns out to be very important, and there is many results of the c
 	\begin{align*}
 		e_i w\langle x,y \rangle = e_i \Theta_{w,x}(y) \to \Theta_{w,x}(y) = w \langle x,y\rangle,
 	\end{align*}
-	and hence $e_i x \to x$ for all $x \in E$, since $E\langle E,E\rangle \subseteq E$ is dense by \ref{EEEdense}. Then we clearly have, for $t \in (\mathcal{L}_A(E,F))_1$ that
+	and hence $e_i x \to x$ for all $x \in E$, since $E\langle E,E\rangle \subseteq E$ is dense by \Cref{EEEdense}. Then we clearly have, for $t \in (\mathcal{L}_A(E,F))_1$ that
 	\begin{align*}
 		\lv t(e_ix-x)\rv \to 0 \text{  and  } \lv e_it^*y-t^*y\rv \to 0,
 	\end{align*}
-	for $x \in E$ and $y \in F$, so $te_i \to t$ strictly, and by \ref{frnkideal} we see that $te_i \in (\mathbb{K}_A(E,F))_1$, finishing the proof.
+	for $x \in E$ and $y \in F$, so $te_i \to t$ strictly, and by \Cref{frnkideal} we see that $te_i \in (\mathbb{K}_A(E,F))_1$, finishing the proof.
 \end{proof}
 
 
-\sssection{Unitalizations and the Multiplier Algebra}
-We are almost ready to introduce the Multiplier Algebra of a $C^*$-algebra $A$, however, we must introduce some new terminology first
+\sssection{Unitizations and the Multiplier Algebra}
+We are almost ready to introduce the Multiplier Algebra of a $C^*$-algebra $A$, however, we must introduce some new terminology first.
 \begin{definition}
 	An ideal $I$ of a $C^*$-algebra $A$ is an \index{essential ideal} \emph{essential ideal} if it is non-zero and satisfies $I\cap J \neq 0$ for all non-zero ideals $J$ of $A$.
 \end{definition}
@@ -437,15 +442,15 @@ And there is another commonly used equivalent formulation of the definition of e
 \begin{proof}
 	\textbf{1:} It holds that $I^2 \subseteq I$, since $I$ is an ideal. For the other inclusion, note that if $a \geq 0 $ is an element of $I$, then $a=(a^{\frac12})^2 \in I^2$, so $I_+ \subseteq I^2$ hence $I=I^2$.
 
-	\textbf{2:} Note that $I \cap J = (I \cap J )^2$ by (1), and $(I\cap J) (I\cap J) \subseteq IJ \subseteq I \cap J$.
+\noindent\textbf{2:} Note that $I \cap J = (I \cap J )^2$ by (1), and $(I\cap J) (I\cap J) \subseteq IJ \subseteq I \cap J$.
 
-	\textbf{3:} Assume that $I$ is essential and $aI = 0$. Then $(a)I=(a)\cap I = 0$, where $(a)$ is the ideal generated by $a$ in $A$, and hence $(a)=0$ so $a = 0$. For the converse, let $J \neq 0$ be any ideal of $A$ and let $0 \neq a \in J$. By assumption this implies that $aI \neq 0$, so $(a)I=(a)\cap I \neq 0$, which shows that $J \cap I \neq 0$.
+\noindent\textbf{3:} Assume that $I$ is essential and $aI = 0$. Then $(a)I=(a)\cap I = 0$, where $(a)$ is the ideal generated by $a$ in $A$, and hence $(a)=0$ so $a = 0$. For the converse, let $J \neq 0$ be any ideal of $A$ and let $0 \neq a \in J$. By assumption this implies that $aI \neq 0$, so $(a)I=(a)\cap I \neq 0$, which shows that $J \cap I \neq 0$.
 \end{proof}
 As mentioned earlier, it is a useful tool to be able to adjoin units to a non-unital $C^*$-algebra $A$. We formalize this process in the following definition:
 \begin{definition}
-	A \myemph{unitalization} of a $C^*$-algebra $A$ is a pair $(B,\iota)$ consisting of a unital $C^*$-algebra $B$ and an injective homomorphism $\iota \colon A \hookrightarrow B$ such that $\iota(A)$ is an essential ideal of $B$.	
+	A \myemph{unitization} of a $C^*$-algebra $A$ is a pair $(B,\iota)$ consisting of a unital $C^*$-algebra $B$ and an injective $*$-homomorphism $\iota \colon A \hookrightarrow B$ such that $\iota(A)$ is an essential ideal of $B$.	
 \end{definition}
-The most common way of adjoining a unit to a non-unital $C^*$-algebra $A$ is to consider the vector space $A\oplus \C$ and endow it with a proper $*$-algebra structure and give it a certain $C^*$-norm, see e.g., \cite[Theorem 15.1]{zhu}. This can also be done via the use of compact operators on $A$:
+The most common way of adjoining a unit to a non-unital $C^*$-algebra $A$ is to consider the vector space $A\oplus \C$ and endow it with a proper $*$-algebra structure and give it a certain $C^*$-norm, see e.g., \cite[Theorem 15.1]{zhu}. This can also be done via the use of compact operators on $A$.
 \begin{example}
 	Let $A^1 := A \oplus \C$ as a $*$-algebra with $(x,\alpha)(y,\beta):=xy+\alpha y + \beta x + \alpha \beta$ and entrywise addition and involution. Identify $A$ with $\mathbb{K}_A(A_A)$ inside $\mathcal{L}_A(A_A)$ via the left-multipication operator, $L$, on $A$, and consider the algebra generated by $1$ and $\mathbb{K}_A(A_A)$ in $\mathcal{L}_A(A_A)$. 
 	
@@ -453,28 +458,28 @@ The most common way of adjoining a unit to a non-unital $C^*$-algebra $A$ is to 
 	\begin{align*}
 		\lv (a,\alpha)\rv = \sup\left\{ \lv ax + \alpha x \rv \mid \lv x \rv \leq 1, \ x \in A \right\}, \text{ for } (a,\alpha) \in A^1.
 	\end{align*}
-	This gives us the pair $(A^1,\iota)$, where $\iota \colon A \to A^1$, $a \mapsto (a,0)$ is a unitalization of $A$: It is an isometry and hence injective: $\lv \iota(a)\rv = \lv L_a \rv = \lv a \rv$ for all $a \in A$. Moreover, $\iota(A)$ is an ideal since $\mathbb{K}_{A}(A_A)$ is an ideal. It remains to be shown that it is essential:
-
-	Suppose that $(x,\beta) \iota(A)=0$ so for all $a \in A$ we have $xa+\beta a = 0$. If $\beta = 0$ then $\lv(x,0)^*(x,0)\rv = \lv x\rv^2 = 0$ so $x = 0$ and $(x,\beta)=(0,0)$.
+	This gives us the pair $(A^1,\iota)$, where $\iota \colon A \to A^1$, $a \mapsto (a,0)$.
 	
-	Assume that $\beta \neq 0$, then $-\frac{x}{\beta}a = a$ for all $ a \in A$ which implies that $a^* = a^* \left( - \frac{x}{\beta}\right)^*$. Similarly, with $a^*$ instead we obtain $a = a\left(-\frac{x}{\beta}\right)^*$, since $a \in A$ is arbitrary. Letting $a = -\frac{x}{\beta}$, we see that $\frac{x^*}{\beta}$ is self-adjoint as well, since
+	We claim that the pair $(A^1,\iota)$ is a unitization of $A$: $\iota$ is an isometry and hence injective as $\lv \iota(a)\rv = \lv L_a \rv = \lv a \rv$ for all $a \in A$ and $\iota(A)$ is an ideal since $\mathbb{K}_{A}(A_A)$ is an ideal. It remains to be shown that it is essential, so suppose that $(x,\beta) \iota(A)=0$ implying that all $a \in A$ we have $xa+\beta a = 0$. If $\beta = 0$ then $\lv(x,0)^*(x,0)\rv = \lv x\rv^2 = 0$ so $x = 0$ and $(x,\beta)=(0,0)$.
+	
+	Assume that $\beta \neq 0$, then $-\frac{x}{\beta}a = a$ for all $ a \in A$ which implies that $a^* = a^* \left( - \frac{x}{\beta}\right)^*$. Similarly, with $a^*$ instead, we obtain $a = a\left(-\frac{x}{\beta}\right)^*$, since $a \in A$ is arbitrary. Letting $a = -\frac{x}{\beta}$, we see that $\frac{x^*}{\beta}$ is self-adjoint as well, since
 	\begin{align*}
 		-\frac{x}{\beta} = -\frac{x}{\beta} \left(-\frac{x}{\beta}\right)^* = \left(-\frac{x}{\beta}\right)^*,
 	\end{align*}
-	and hence a unit of $A$, a contradiction. Therefore $\beta = 0$, and by the $C^*$-identity we obtain $(x,0) = (0,0)$ so $\iota(A)$ essential in $A^1$.
+	and hence a unit of $A$, a contradiction. Therefore $\beta = 0$, implying that $\iota(A)$ is essential in $A^1$.
 \end{example}
 
 \begin{example}
-	The pair $(\mathcal{L}_A(A_A),L)$, $L\colon a \mapsto L_a$, is a unitalization of $A$ - to see this we need only show that $\mathbb{K}_A(A_A)$ is essential in $\mathcal{L}_A(A_A)$: Suppose that $T \mathbb{K}_A(A_A)=0$, so $TK = 0$ for all compact $K$ on $A$, then with $\Theta_{x,y} \colon z \mapsto x\langle y,z\rangle = xy^*z$, we see by \ref{frnkideal} that $T \Theta_{x,y}=\Theta_{Tx,y}= 0$ for all $x, y \in A$, which shows that for $x,y \in A$ we have $\Theta_{Tx,y}(y) = (Tx)(y^*y)=L_{Tx}(y^*y)=0$, implying that $L_{Tx}=0 \iff Tx = 0$ so $T=0$. 
+	The pair $(\mathcal{L}_A(A_A),L)$, $L\colon a \mapsto L_a$, is a unitization of $A$ - to see this we need only show that $\mathbb{K}_A(A_A)$ is essential in $\mathcal{L}_A(A_A)$: Suppose that $T \mathbb{K}_A(A_A)=0$, so $TK = 0$ for all compact $K$ on $A$, then with $\Theta_{x,y} \colon z \mapsto x\langle y,z\rangle = xy^*z$, we see by \Cref{frnkideal} that $T \Theta_{x,y}=\Theta_{Tx,y}= 0$ for all $x, y \in A$, which shows that for $x,y \in A$ we have $\Theta_{Tx,y}(y) = (Tx)(y^*y)=L_{Tx}(y^*y)=0$, implying that $L_{Tx}=0 \iff Tx = 0$ so $T=0$. 
 	\label{mult:compess}
 \end{example}
 We are interested in a non-commutative analogue of a largest compactification, namely a universal unitization in which every other unitization embeds into:
 \begin{definition}
-	A unitalization $(B, \iota)$ of a $C^*$-algebra $A$ is said to be \myemph{maximal} if to every other unitalization $(C,\iota')$, there is a $*$-homomorphism $\varphi \colon C \to B$ such that the diagram:
+	A unitization $(B, \iota)$ of a $C^*$-algebra $A$ is said to be \myemph{maximal} if to every other unitization $(C,\iota')$, there is a $*$-homomorphism $\pi \colon C \to B$ such that the diagram:
 	\begin{equation}
 	\begin{tikzcd}
 		A\arrow[dr,"\iota'"', hook] \arrow[r, "\iota", hook] & B \\
-		& C \arrow[u, "\exists \varphi"']
+		& C \arrow[u, "\exists \pi"']
 	\end{tikzcd}
 	\end{equation}
 	commutes.
@@ -484,65 +489,81 @@ We are interested in a non-commutative analogue of a largest compactification, n
 \begin{definition}
 	For a $C^*$-algebra $A$, we define the \myemph{multiplier algebra} of $A$ to be $M(A):=\mathcal{L}_A(A_A)$.
 \end{definition}
-It turns out that this is a maximal unitalization of $A$, as we shall see in a moment -- but first we need a bit more work, for instance we need the notion of non-degenerate representations of a $C^*$-algebra on a Hilbert space to be extended to the case of Hilbert $C^*$-modules:
+It turns out that this is a maximal unitization of $A$, as we shall see in a moment -- but first we need a bit more work, for instance we need the notion of non-degenerate representations of a $C^*$-algebra on a Hilbert space to be extended to the case of Hilbert $C^*$-modules:
 \begin{definition}
-	Let $B$ be a $C^*$-algebra and $E$ a Hilbert $A$-module. A homomorphism $\varphi \colon B \to \mathcal{L}_A(E)$ is \myemph{non-degenerate} if the set
+	Let $B$ be a $C^*$-algebra and $E$ a Hilbert $A$-module. A $*$-homomorphism $\varphi \colon B \to \mathcal{L}_A(E)$ is \myemph{non-degenerate} if the set
 	\begin{align*}
 		\varphi(B)E:= \Span\left\{ \varphi(b)x \mid b \in B  \text{ and } x \in E \right\},
 	\end{align*}
 	is dense in $E$. 
 \end{definition}
 \begin{example}
-	In the proof of \ref{mult:unitstrictdense} we saw that the inclusion $\mathbb{K}_A(A_A) \subseteq \mathcal{L}_A(A_A)$ is non-degenerate for all $C^*$-algebras $A$.
+	In the proof of \Cref{mult:unitstrictdense} we saw that the inclusion $\mathbb{K}_A(A_A) \subseteq \mathcal{L}_A(A_A)$ is non-degenerate for all $C^*$-algebras $A$.
 	\label{mult:compnondeg}
 \end{example}
 \begin{proposition}
-	Let $A$ and $C$ be $C^*$-algebras, and let $E$ denote a Hilbert $A$-module and let $B$ be an ideal of $C$. If $\alpha \colon B \to \mathcal{L}_A(E)$ is a non-degenerate  $^*$-homomorphism, then it extends uniquely to a $^*$-homomorphism $\overline \alpha \colon C \to \mathcal{L}_A(E)$. If further we assume that $\alpha$ is injective and $B$ is an essential ideal of $C$, then the extension is injective. 
+	Let $A$ and $C$ be $C^*$-algebras, and let $E$ denote a Hilbert $A$-module and let $B$ be an ideal of $C$. If $\varphi \colon B \to \mathcal{L}_A(E)$ is a non-degenerate $*$-homomorphism, then it extends uniquely to a $^*$-homomorphism $\overline \varphi \colon C \to \mathcal{L}_A(E)$ resulting in a commutative diagram
+	\begin{equation*}
+		\begin{tikzcd}
+			B \ar[r, "\varphi"] \ar[d, hook] & \mathcal{L}_A(E)\\
+			C \ar[ru, "\exists! \overline  \varphi"'] & 
+		\end{tikzcd}
+	\end{equation*}
+	If further we assume that $\varphi$ is injective and $B$ is an essential ideal of $C$, then the extension is injective. 
 	\label{mult:uniqueext}
 \end{proposition}
 \begin{proof}
-	The last statement is clear, since $\ker \overline \alpha \cap B = \ker \alpha \cap B = 0$ which implies that $\ker \overline \alpha = 0$, since $B$ is essential. Let $(e_j)$ be an approximate identity of $B$. Define for $c \in C$ the operator $\overline \alpha(c)$ on $\alpha(B)E$ by
+	The last statement is clear, since $\ker \overline \varphi \cap B = \ker \varphi \cap B = 0$ which implies that $\ker \overline \varphi = 0$, since $B$ is essential. Let $(e_j)$ be an approximate identity of $B$. Define for $c \in C$ the operator $\overline \varphi(c)$ on $\varphi(B)E$ by
 	\begin{align*}
-		\overline \alpha(c) \left( \sum_{i=1}^n \alpha(b_i)(x_i) \right):= \sum_{i=1}^n \alpha(c b_i) (x_i).
+		\overline \varphi(c) \left( \sum_{i=1}^n \varphi(b_i)(x_i) \right):= \sum_{i=1}^n \varphi(c b_i) (x_i).
 	\end{align*}
 	This is well-defined and bounded, for we see that
 	\begin{align*}
-		\lv \sum_{i=1}^n \alpha(c b_i) (x_i) \rv = \lim_{j} \lv \sum_{i=1}^n \alpha(\underbrace{c e_j}_{\in B})\alpha(b_i) (x_i) \rv \leq \lv c \rv \lv \sum_{i=1}^n \alpha(b_i) (x_i)\rv.
+		\lv \sum_{i=1}^n \varphi(c b_i) (x_i) \rv = \lim_{j} \lv \sum_{i=1}^n \varphi(\underbrace{c e_j}_{\in B})\varphi(b_i) (x_i) \rv \leq \lv c \rv \lv \sum_{i=1}^n \varphi(b_i) (x_i)\rv.
 	\end{align*}
-	This extends uniquely to a bounded operator on all of $E$, since $\alpha(B)E$ is dense. It is easy to see that $c \mapsto \overline \alpha(c)$ is a homomorphism. It remains to be shown that is is adjointable: Let $(e_j)$ be an approximate identity for $B$, $c \in C$ and $x,y \in E$, then
+	This extends uniquely to a bounded operator on all of $E$, since $\varphi(B)E$ is dense. It is easy to see that $c \mapsto \overline \varphi(c)$ is a $*$-homomorphism. It remains to be shown that $\overline \varphi(c)$ is adjointable: Let $(e_j)$ be an approximate identity for $B$ and $x,y \in E$. Then
 	\begin{align*}
-		\langle \overline \alpha(c) x,y \rangle = \lim_{j} \langle \underbrace{\alpha(ce_j)}_{\in \mathcal{L}_A(E)} x, y \rangle = \lim_j \langle x , \alpha(ce_j)^* y\rangle = \lim_j  \langle x , \alpha(e_j^*c^*) y\rangle =  \langle  x, \overline \alpha(c) y\rangle,
+		\langle \overline \varphi(c) x,y \rangle = \lim_{j} \langle \underbrace{\varphi(ce_j)}_{\in \mathcal{L}_A(E)} x, y \rangle = \lim_j \langle x , \varphi(ce_j)^* y\rangle = \lim_j  \langle x , \varphi(e_j^*c^*) y\rangle =  \langle  x, \overline \varphi(c) y\rangle,
 	\end{align*}
-	this shows that $\overline \alpha(c^*)$ is an adjoint of $\overline \alpha (c)$, hence it is a $^*$-homomorphism with values in $\mathcal{L}_A(E)$
+	showing that $\overline \varphi(c^*)$ is an adjoint of $\overline \varphi (c)$, hence it is a $^*$-homomorphism with values in $\mathcal{L}_A(E)$
 \end{proof}
 \begin{corollary}
-	The inclusion of $\mathbb{K}_A(A_A) \subseteq \mathcal{L}_A(A_A)$ is a maximal unitalization.	
+	The inclusion of $\mathbb{K}_A(A_A) \subseteq \mathcal{L}_A(A_A)$ is a maximal unitization.	
 \end{corollary}
 \begin{proof}
-	In \ref{mult:compess} we saw that $\mathbb{K}_A(A_A)$ is an essential ideal of $\mathcal{L}_A(A_A)$ and nondegeneracy was seen in \ref{mult:compnondeg}. By \ref{mult:uniqueext}, the corollary follows.
+	In \Cref{mult:compess} we saw that $\mathbb{K}_A(A_A)$ is an essential ideal of $\mathcal{L}_A(A_A)$ and nondegeneracy was seen in \Cref{mult:compnondeg}. By \Cref{mult:uniqueext}, the corollary follows.
 \end{proof}
-In particular, if $E=A_A$ and $C = M(B)$, then the above proposition guarantees an extension from $B$ to $M(B)$ for all non-degenerate homomorphisms $\varphi \colon B \to M(A)$. This will be particularly useful whenever we consider the following case: Let $\pi$ be a non-degenerate representation of a $C^*$-algebra $A$ on a Hilbert space $\H$, i.e., $\pi \colon A \to \mathbb{B}(\H)$. Then $\pi$ extends to a representation of $M(A)$ on $\mathbb{B}(\H)$. 
+In particular, if $E=A_A$ and $C = M(B)$, then the above proposition guarantees an extension from $B$ to $M(B)$ for all non-degenerate $*$-homomorphisms $\varphi \colon B \to M(A)$. This will be particularly useful whenever we consider the following case: Let $\pi$ be a non-degenerate representation of a $C^*$-algebra $A$ on a Hilbert space $\H$, i.e., $\pi \colon A \to \mathbb{B}(\H)$. Then $\pi$ extends to a representation of $M(A)$ on $\mathbb{B}(\H)$. These two cases can be visualized by the following commutative diagrams:
+\begin{equation*}
+	\begin{tikzcd}
+		B \ar[d, hook] \ar[r, "\varphi"] & M(A)\\
+		M(B) \ar[ru,dashed,  "\exists!  \overline \varphi"'] &
+	\end{tikzcd}
+	\begin{tikzcd}
+		A \ar[d, hook] \ar[r, "\pi"'] & \mathbb{B}(\H)\\
+		M(A) \ar[ru, dashed,"\exists! \overline \pi"'] &
+	\end{tikzcd}
+\end{equation*}
 
-We shall now see that the homomorphism provided by the universal property of a maximal unitalization is unique, this is the final ingredient we shall need to show that $M(A)$ is a maximal unitalization of $A$:
+We shall now see that the homomorphism provided by the universal property of a maximal unitization is unique, this is the final ingredient we shall need to show that $M(A)$ is a maximal unitization of $A$:
 \begin{lemma}
-	If $\iota \colon A \hookrightarrow B$ is a maximal unitalization and $j \colon A \hookrightarrow C$ is an essential embedding, then the homomorphism $\varphi \colon C \to B$ of \ref{mult:defmaxun} is unique and injective.
+	If $\iota \colon A \hookrightarrow B$ is a maximal unitization and $j \colon A \hookrightarrow C$ is an essential embedding, then the $*$-homomorphism $\varphi \colon C \to B$ of \Cref{mult:defmaxun} is unique and injective.
 	\label{mult:uniquemax}
 \end{lemma}
 \begin{proof}
-	Suppose that $\varphi, \psi \colon C \to B$ such that $\varphi \circ j = \psi \circ j = \iota$. Then, for $c \in C$, we see that
+	Any $*$-homomorphism $\varphi$ comming from \Cref{mult:defmaxun} must be injective, for $\ker \varphi \cap j(A) = 0$, hence $\ker \varphi = 0$, since $j(A)$ is essential in $C$. Suppose now that we are given two $*$-homomorphisms $\varphi, \psi \colon C \to B$ such that $\varphi \circ j = \psi \circ j = \iota$. Then, for $c \in C$, we see that
 	\begin{align*}
 		0 = \varphi(c) \iota(a) - \psi(c) \iota(a) = \varphi(c) \varphi( j(a)) - \psi(c) \psi( j(a)) =  \varphi(cj(a))-\psi(cj(a))
 	\end{align*}
-	for all $a \in A$, so essentiality of $\iota(A)$ in $B$ and \ref{mult:essentialequiv} implies that $\varphi = \psi$. For injectivity, note that $\ker \varphi \cap j(A) = 0$, hence $\ker \varphi = 0$, since $j(A)$ is essential in $C$.
+	for all $a \in A$, so essentiality of $\iota(A)$ in $B$ and \Cref{mult:essentialequiv} implies that $\varphi = \psi$. 
 \end{proof}
-We may finally show that $(M(A),L)$ is a maximal unitalization for all $C^*$-algebras $A$:
+We may finally show that $(M(A),L)$ is a maximal unitization for all $C^*$-algebras $A$:
 \begin{theorem}
-	For any $C^*$-algebra $A$, the unitalization $(M(A),L)$ is maximal, and unique up to isomorphism
+	For any $C^*$-algebra $A$, the unitization $(M(A),L)$ is maximal, and unique up to isomorphism
 	\label{mult:multmax}
 \end{theorem}
 \begin{proof}
-	For maximality, suppose that $j \colon A \hookrightarrow C$ is an essential embedding of $A$ in a $C^*$-algebra $C$. We know that $L$ is nondegenerate, hence by \ref{mult:uniqueext} we obtain and extension $\overline{L} \colon C \hookrightarrow M(A)$ such that $\overline{L} \circ j = L$.
-	For uniqueness, suppose that $(B,\iota)$ is a maximal unitalization of $A$. By \ref{mult:uniqueext} and maximality of $(B,\iota)$ we obtain the following commutative diagram
+	For maximality, suppose that $j \colon A \hookrightarrow C$ is an essential embedding of $A$ in a $C^*$-algebra $C$. We know that $L$ is nondegenerate, so it extends to $\overline{L} \colon C \hookrightarrow M(A)$ satisfying $\overline{L} \circ j = L$. For uniqueness, suppose that $(B,\iota)$ is a maximal unitization of $A$. By \Cref{mult:uniqueext} and maximality of $(B,\iota)$ we obtain the following commutative diagram
 	\begin{equation}
 		\begin{tikzcd}
 	 		& M(A)\\
@@ -550,21 +571,21 @@ We may finally show that $(M(A),L)$ is a maximal unitalization for all $C^*$-alg
 			& M(A) \arrow[u, "\exists ! \beta"', hook] \ar[uu, "\mathrm{id}_{M(A)}"', bend right  = 90]
 		\end{tikzcd}
 	\end{equation}
-	The identity operator on $M(A)$ is by \ref{mult:uniqueext} the unique operator satisfying $L = \mathrm{id}_{M(A)} \circ L$, but $\overline L \circ \beta \circ L = L$, so they are inverses of eachother hence isomorphisms.
+	The identity map on $M(A)$ is by \Cref{mult:uniqueext} the unique $*$-homomorphism satisfying $L = \mathrm{id}_{M(A)} \circ L$, but $\overline L \circ \beta \circ L = L$, implying that $\hat L = \beta^{-1}$ and $\overline L^{-1} = \beta$, finishing the proof.
 \end{proof}
 
 It is useful to be able to concretely represent the Multiplier Algebra of a $C^*$-algebra -- and while we can use the concretification as $\mathcal{L}_A(A_A)$, there are other useful descriptions as well. We cover a commonly used way in the following:
 \begin{proposition}
-	Let $A,C$ be $C^*$-algebras and $E$ be a Hilbert $C^*$-module. Suppose that $\alpha \colon A \to \mathcal{L}_C(E)$ is an injective nondegenerate homomorphism. Then $\alpha$ extends to an isomorphism of $M(A)$ with the idealizer $\mathcal{I}(A)$ of $\alpha(A)$ in $\mathcal{L}_C(E)$:
+	Let $A$ and $C$ be $C^*$-algebras and $E$ be a Hilbert $C^*$-module. Suppose that $\alpha \colon A \to \mathcal{L}_C(E)$ is an injective nondegenerate $*$-homomorphism. Then $\alpha$ extends to an isomorphism of $M(A)$ with the \myemph{idealizer} \myemph{$\mathbb{I}(A)$} of $\alpha(A)$ in $\mathcal{L}_C(E)$:
 	\begin{align*}
-		\mathcal{I}(A)=\left\{ T \in \mathcal{L}_C(E) \mid T\alpha(A) \subseteq \alpha(A) \text{ and } \alpha(A)T \subseteq \alpha(T) \right\}.	
+		\mathbb{I}(A)=\left\{ T \in \mathcal{L}_C(E) \mid T\alpha(A) \subseteq \alpha(A) \text{ and } \alpha(A)T \subseteq \alpha(T) \right\}.	
 	\end{align*}
 	\label{mult:idealizerismax}
 \end{proposition}
 \begin{proof}
-	It is clear that $\alpha(A)$ is an ideal of the idealizer $\mathcal{I}(A)$, which is in fact essential by nondegeneracy of $\alpha$: If $T\alpha(A) = 0$ then $T\alpha(A)E = 0$ hence $T =0$.
+	It is clear that $\alpha(A)$ is an ideal of the idealizer $\mathbb{I}(A)$, which is in fact essential by nondegeneracy of $\alpha$: If $T\alpha(A) = 0$ then $T\alpha(A)E = 0$ hence $T =0$.
 
-By \ref{mult:multmax} it suffices to show that $(\mathcal{I}(A),\alpha)$ is a maximal unitalization of $A$. Let $\iota \colon A \hookrightarrow B$ be an essential embedding of $A$ into a $C^*$-algebra $B$. Let $\overline \alpha \colon B \hookrightarrow \mathcal{L}_C(E)$ denote the injective extension of $\alpha$ from \ref{mult:uniqueext}. We must show that $\overline \alpha(B) \subseteq \mathcal{I}(A)$: Let $b \in B$ and $a \in A$. Then, as $b \varphi(a) \in \varphi(A)$, we see that $\overline \alpha(b) \underbrace{\alpha(a)}_{=\overline \alpha (\iota(a))} = \overline \alpha(b \iota(a)) \in \alpha(A)$, finish the argument by universality of $M(A)$.
+By \Cref{mult:multmax} it suffices to show that $(\mathbb{I}(A),\alpha)$ is a maximal unitization of $A$. Let $\iota \colon A \hookrightarrow B$ be an essential embedding of $A$ into a $C^*$-algebra $B$. Let $\overline \alpha \colon B \hookrightarrow \mathcal{L}_C(E)$ denote the injective extension of $\alpha$ from \Cref{mult:uniqueext}. We must show that $\overline \alpha(B) \subseteq \mathbb{I}(A)$: Let $b \in B$ and $a \in A$. Then, as $b \varphi(a) \in \varphi(A)$, we see that $\overline \alpha(b) \underbrace{\alpha(a)}_{=\overline \alpha (\iota(a))} = \overline \alpha(b \iota(a)) \in \alpha(A)$, finish the argument by universality of $M(A)$.
 \end{proof}
 
 This allows us to, given any faithful nondegenerate representation of $A$ on a Hilbert space $\H$, to think of $M(A)$ as the idealizer of $A$ in $\mathbb{B}(\H)$, and it immediately allows us to describe the Multiplier algebra of $\mathbb{K}_A(E)$:
@@ -572,7 +593,7 @@ This allows us to, given any faithful nondegenerate representation of $A$ on a H
 	For all $C^*$-algebras $A$ and Hilbert $A$-modules, we have $M(\mathbb{K}_A(E))\cong \mathcal{L}_A(E)$.
 \end{corollary}
 \begin{proof}
-	This follows from \ref{mult:idealizerismax}: As we have seen the inclusion $\mathbb{K}_A(E) \subseteq \mathcal{L}_A(E)$ is nondegenerate and $\mathcal{I}(\mathbb{K}_A(E))=\mathcal{L}_A(E)$ since the compacts is an ideal. In particular $\mathcal{L}_A(E)$ has the strict topology: $T_i \to T$ strictly if and only if $T_iK \to TK$ and $KT_i \to KT$ for all $K \in \mathbb{K}_A(E)$.
+	This follows from \Cref{mult:idealizerismax}: As we have seen the inclusion $\mathbb{K}_A(E) \subseteq \mathcal{L}_A(E)$ is nondegenerate and $\mathbb{I}(\mathbb{K}_A(E))=\mathcal{L}_A(E)$ since the compacts is an ideal. In particular $\mathcal{L}_A(E)$ has the strict topology: $T_i \to T$ strictly if and only if $T_iK \to TK$ and $KT_i \to KT$ for all $K \in \mathbb{K}_A(E)$.
 \end{proof}
 Using this, we can calculate both the adjointable operators and the Multiplier algebras in some settings:
 \begin{example}
@@ -580,23 +601,23 @@ Using this, we can calculate both the adjointable operators and the Multiplier a
 \end{example}
 
 
-A lot of the theory in functional analysis and the study of $C^*$-algebras is motivated by the study of abelian $C^*$-algebras of the form $C_0(\Omega)$ for a locally compact Hausdorff space. This construction is no exception: Unitalizations come naturally from compactifications, e.g., adjoining a unit to $C_0(\Omega)$ corresponds to the one-point compactification of $\Omega$. It turns out that passing from $C_0(\Omega)$ to its multiplier algebra is connected to the largest compactification of $\Omega$, namely the Stone-\v{C}ech compactification $\beta \Omega$ of $\Omega$, which in fact is the protoexample of the multiplier construction.
+A lot of the theory in functional analysis and the study of $C^*$-algebras is motivated by the study of abelian $C^*$-algebras of the form $C_0(\Omega)$ for a locally compact Hausdorff space. This construction is no exception: Unitizations come naturally from compactifications, e.g., adjoining a unit to $C_0(\Omega)$ corresponds to the one-point compactification of $\Omega$. It turns out that passing from $C_0(\Omega)$ to its multiplier algebra is connected to the largest compactification of $\Omega$, namely the Stone-\v{C}ech compactification $\beta \Omega$ of $\Omega$, which in fact is the protoexample of the multiplier construction.
 \begin{example}
 If $\Omega$ is a locally compact Hausdorff space, then $M(C_0(\Omega))\cong C_b(\Omega) = C(\beta \Omega)$.
 \end{example}
 \begin{proof}
-	The unital $C^*$-algebra $C_b(\Omega)$ is isomorphic to $C(Y)$ for some compact Hausdorff space $Y$, which can be realised as $\beta \Omega$ (see \cite[151]{annow}). Note that since $C_0(\Omega)$ separates points in $\Omega$ cf. Urysohn's lemma, it is an essential ideal of $C_b(\Omega)$, and the inclusion $C_0(\Omega) \hookrightarrow C_b(\Omega)$ is non-degenerate (as unital $C^*$-algebras equals their multiplier algebra). Therefore \ref{mult:uniqueext} ensures a unique injective $*$-homomorphism $\varphi \colon C_b(\Omega) \to M(C_0(\Omega))$. 
+	The unital $C^*$-algebra $C_b(\Omega)$ is isomorphic to $C(Y)$ for some compact Hausdorff space $Y$, which can be realised as $\beta \Omega$ (see \cite[151]{annow}). Note that since $C_0(\Omega)$ separates points in $\Omega$ cf. Urysohn's lemma, it is an essential ideal of $C_b(\Omega)$, and the inclusion $C_0(\Omega) \hookrightarrow C_b(\Omega)$ is non-degenerate (as unital $C^*$-algebras equals their multiplier algebra). Therefore \Cref{mult:uniqueext} ensures a unique injective $*$-homomorphism $\varphi \colon C_b(\Omega) \to M(C_0(\Omega))$. 
 
-	For surjectivity, suppose that $g \in M(C_0(\Omega))$ and let $(e_i) \subseteq C_0(\Omega)$ denote an approximate identity. Without loss of generality, assume that $g \geq 0$ in $M(C_0(\Omega))$. Then, for $x \in \Omega$, we have $\{ge_i(x)\}_i \subseteq [0,\lv g \rv]$ and $ge_i(x)$ is increasing, since $e_i$ is and therefore it has a limit, which we denote by $h(x)$, which is bounded above by $\lv g \rv$, and it satisfies $hf = \lim ge_if =  gf \in C_0(\Omega)$ for all $f \in C_0(\Omega)$.
+	For surjectivity, suppose that $g \in M(C_0(\Omega))$ and let $(e_i) \subseteq C_0(\Omega)$ denote an approximate identity. Without loss of generality, assume that $g \geq 0$ in $M(C_0(\Omega))$. Then $\{ge_i(x)\}_i \subseteq [0,\lv g \rv]$ for all $x \in \Omega$. Also $ge_i(x)$ is increasing, since $e_i$ is and, therefore it has a limit for each $x \in \Omega$. Denote this limit by $h(x)$, which is bounded above by $\lv g \rv$. The function $h \colon x \mapsto h(x)$ satisfies $hf = \lim ge_if =  gf \in C_0(\Omega)$ for all $f \in C_0(\Omega)$.
 
 	We claim that $t \mapsto h(t)$ is a continuous map: Suppose that $t_\alpha \to t \in \Omega$, and without loss of generality assume that $t_\alpha \in K$ for all $\alpha$, for some compact neighborhood of $t$. Use Urysohn's lemma to pick $f \in C_0(\Omega)$ such that $f\big|_K = 1$. Then, since $h f \in C_0(\Omega)$ we have
 	\begin{align*}
 		h(t)=f(t) h(t) = (hf)(t) = \lim_{\alpha} hf(t_\alpha) = \lim_{\alpha}h(t_\alpha),
 	\end{align*}
-	so $h$ is continuous. Let $f \in C_0(\Omega)$, then $\varphi(h) f  = \varphi(h) \varphi(f) = \varphi(hf) =  hf = gf$, so by non-degenerancy we see that $\varphi(h) = g$ so $g \in C_b(\Omega)$.
+	so $h$ is continuous. Let $f \in C_0(\Omega)$, then $\varphi(h) f  = \varphi(h) \varphi(f) = \varphi(hf) =  hf = gf$, so by non-degeneracy we see that $\varphi(h) = g$ so $g \in C_b(\Omega)$.
 \end{proof}
 
-In fact, one can show that when equipped with suitable orderings, then there is a correspondance between compactifications of locally compact spaces $\Omega$ and unitalizations of their associated $C^*$-algebras $C_0(\Omega)$.
+In fact, one can show that when equipped with suitable orderings, then there is a correspondance between compactifications of locally compact spaces $\Omega$ and unitizations of their associated $C^*$-algebras $C_0(\Omega)$.
 
 We will now cover an important conerstone for developing the theory of the general crossed product. It begins by defining a new topology
 \begin{definition}
@@ -634,7 +655,7 @@ In particular, for a net of unitary operators on a Hilbert $A$-module, strict an
 	\label{mult:mintens}
 \end{theorem}
 \begin{proof}
-	Let $A,B$ be represented by faithful non-degenerate representations $\pi_A$ and $\pi_B$ on $H_A$ and $H_B$. Identify $M(A)$ and $M(B)$ with the idealizers in $\mathbb{B}(H_A)$ and $\mathbb{B}(H_B)$, respectively. Let $\pi$ be the corresponding non-degenerate and faithful $*$-homomorphism $A \otimes_{\min} B \to \mathbb{B}(H_A \otimes H_B)$ given $\pi(a \otimes b)(\xi \otimes \eta) = \pi_A(a) \xi \otimes \pi_B(b) \eta$, so that $M(A \otimes_{\min} B)$ is the idealizer of $A \otimes_{\min}B$ in $\mathbb{B}(H_A \otimes H_B)$.
+	Let $A,B$ be represented by faithful non-degenerate representations $\pi_A$ and $\pi_B$ on $\H_A$ and $\H_B$. Identify $M(A)$ and $M(B)$ with the idealizers in $\mathbb{B}(\H_A)$ and $\mathbb{B}(\H_B)$, respectively. Let $\pi$ be the corresponding non-degenerate and faithful $*$-homomorphism $A \otimes_{\min} B \to \mathbb{B}(\H_A \otimes \H_B)$ given $\pi(a \otimes b)(\xi \otimes \eta) = \pi_A(a) \xi \otimes \pi_B(b) \eta$, so that $M(A \otimes_{\min} B)$ is the idealizer of $A \otimes_{\min}B$ in $\mathbb{B}(\H_A \otimes \H_B)$.
 
 	If $t \in M(A)$ and $s \in M(B)$, so $t \otimes s \in M(A) \otimes M(B)$, then for all $a \otimes b \in A \otimes_{\min} B$, we have 
 	\begin{align*}
