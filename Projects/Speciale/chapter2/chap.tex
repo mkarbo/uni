@@ -975,52 +975,81 @@ so $\pi \circ \varphi \rtimes u = \pi \rtimes u \circ \tilde \varphi$, and hence
 \end{align*}
 since the integrated form of a covariant representation is norm decreasing. Hence, since the norm of $ \tilde \varphi(f)$ is the supremum of integrated forms of covariant representations of $G \acts \beta B$, we see that $\tilde \varphi$ extends to a morphism $A \rtimes_\alpha G \to B \rtimes_\beta G$.
 \end{proof}
-The above result also applies to the case of the reduced crossed product. This is easily seen by applying the above proof to regular representations $(\tilde \pi, \lambda)$ rather than any covariant representation. The remaining properties for a functor are easily verified, i.e., preserves composition and sends the identity map to the identity map.
+The above result also applies to the case of the reduced crossed product. This is easily seen by applying the  above proof to regular representations $(\tilde \pi, \lambda)$ rather than any covariant representation. The remaining properties for a functor are easily verified, i.e., preserves composition and sends the identity map to the identity map.
 
 \ssection{The case of Abelian groups and Takai Duality}
-In the 70's, Hiroshi Takai published a paper (see \cite{takai1975duality}) showing that the crossed product construction in a way captures the duality of locally compact abelian groups, in the sense of $\hat{\hat G} \cong G$, where $\hat G$ denotes the dual group of $G$. He showed that taking the crossed product twice with $G$ (in the sense that $\hat G \acts {\hat \alpha} A \rtimes_\alpha G$), one obtains an isomorphism 
+In the 70's, Hiroshi Takai published a paper (\cite{takai1975duality}) showing that the crossed product construction in a way captures the Pontrjagin duality of locally compact abelian groups, i.e., that $\hat{\hat G} \cong G$, where $\hat G$ denotes the dual group of $G$. Takai proved that taking the crossed product twice with $G$ (in the sense that $\hat G \acts {\hat \alpha} A \rtimes_\alpha G$), one obtains an isomorphism 
 \begin{align}
-	A \otimes \mathbb{K}(L^2(G)) \hat G \cong  (A \rtimes_\alpha G) \rtimes_{\hat \alpha},
+	A \otimes \mathbb{K}(L^2(G))  \cong  (A \rtimes_\alpha G) \rtimes_{\hat \alpha}  \hat G,
 	\label{eqisotoshow}
 \end{align}
-and in fact that both of these are $G$-dynamical systems and the isomorphism is covariant. \todo{revisit if really raeburn or if pedersen} We will follow Raeburns take on this result, found in \cite{raeburn1988crossed}, since it is more aligned with the results we've developed so far.
+and in fact that both of these are non-trivial $G$-$C^*$-dynamical systems and the isomorphism is covariant. We will follow both Raeburns and Pedersens take on this, see \cite{raeburn1988crossed} and \cite[Chapter 7.9]{pedersenalgauto}, since it is more aligned with the results and notation we have gone through.
 \begin{note}
 	In the above, and in the rest, unless otherwise stated, we will use $A \otimes B$ between two $C^*$-algebras to mean the minimal tensor product. We will generally be dealing with tensor products of so called \myemph{nuclear $C^*$-algebra}, which we recall are $C^*$-algebras $A$ such that for all other $C^*$-algebras $B$ there is only one $C^*$-tensorproduct. This class includes e.g., a commutative $C^*$-algebra or $\mathbb{K}(H)$. For more on this, see e.g., \cite{brown2008c}.
 \end{note}
 
-For the two $C^*$-algebras in \Cref{eqisotoshow}, we first show that the left-hand side is a $C^*$-dynamical system for any (also non-abelian) locally compact group $G$ with respect to the action $\alpha \otimes \mathrm{Ad} \rho$ of $G$:
+For the two $C^*$-algebras in \Cref{eqisotoshow}, we first show that the left-hand side is a $C^*$-dynamical system for any (also non-abelian) locally compact group $G$ with respect to the action $\alpha \otimes \mathrm{Ad} \rho$ of $G$, but first we need a lemma:
+\begin{lemma}
+	Suppose that $G \acts \alpha A$. Then the set $A^c \subseteq A$ given by
+	\begin{align*}
+		A^c := \{x \in A \  \mid \ t \mapsto \alpha_t(x) \text{ is continuous with respect to the norm topology on }  A\},
+	\end{align*}
+	is a $G$-invariant $C^*$-subalgebra of $A$.
+	\label{normfixAc}
+\end{lemma}
+\begin{proof}
+	Clearly $A^c$ is a $*$-subalgebra by continuity of the binary operatios in $A$. Suppose that $(x_i) \subseteq A^c$ is a net with limit $x\in A$. Let $(t_j) \subseteq G$ be any net with limit $t$ and let $\varepsilon>0$. Let $i_0$ be such that for $i \geq i_0$,
+	\begin{align*}
+		\lv x_i - x \rv < \frac\varepsilon3,
+	\end{align*}
+	Since $\alpha_{t_j}(x_i) \to \alpha_{t}(x_i)$ for each $i$, we may for $i \geq i_0$ choose (relative to $i_0$) $j_0$ such that for $j \geq j_0$ we have
+	\begin{align*}
+		\lv \alpha_{t_j}(x_i) - \alpha_t(x_i)\rv < \frac\varepsilon3,
+	\end{align*}
+	Hence for all such $(i,j)$ we have
+	\begin{align*}
+		\lv \alpha_{t_j}(x) - \alpha_{t}(x) \rv \leq \lv \alpha_{t_j}(x) - \alpha_{t_j}(x_i)\rv + \lv \alpha_{t_j}(x_i) - \alpha_t(x_i) \rv + \lv \alpha_t(x_i) - \alpha_t(x)\rv < \varepsilon,	
+	\end{align*}
+	so $x \in A^c$.
+\end{proof}
 \begin{proposition}
-Let $G \acts \alpha A$ and let $\rho$ denote the right-regular representation of $G$ on $L^2(G)$, $\rho_t f(s) = f(st) \Delta(t)^{\frac12}$. Then $A \otimes \mathbb{K}(L^2(G)), G, \alpha \otimes \mathrm{Ad} \rho)$ is a $C^*$-dynamical system.
+Let $G \acts \alpha A$ and let $\rho$ denote the right-regular representation of $G$ on $L^2(G)$, i.e., given by $\rho_t f(s) = f(st) \Delta(t)^{\frac12}$. Then $(A \otimes \mathbb{K}(L^2(G)), G, \alpha \otimes \mathrm{Ad} \rho)$ is a $C^*$-dynamical system.
 \end{proposition}
 \begin{proof}
-The proof relies on the fact that in a von Neumann algebra $\mathcal{W}$ (or Borel $*$-algebra $B$) equipped with a strongly continuous action $G \acts \alpha \mathcal{W}$, the set of elements $x \in \mathcal{W}$ such that $t \mapsto \alpha_t(x)$ is norm-continuous forms a $C^*$-algebra which is invariant under $G$, see e.g., \cite[Proof of Lemma 7.5.1]{pedersenalgauto} or \cite[Proposition III.3.2.4]{blackadar}. \todo{easy proof for $C^*$-algebra as well, no need to cite}
-
-With this in mind, let $(\pi,u)$ be a covariant representation of $(A, G, \alpha)$ on a Hilbert space $H$ with $\pi$ faithful. Define a representation $\sigma$ of $G$ on $H \otimes L^2(G)$ by
+	With \cref{normfixAc} in mind, let $(\pi,u)$ be a covariant representation of $(A, G, \alpha)$ on a Hilbert space $H$ with $\pi$ faithful. Let $\sigma$ denote the diagonal representtion of $G$ on $H \otimes L^2(G)$ given by
 \begin{align*}
 \sigma = u \otimes \rho,
 \end{align*}
-so that $\sigma$ is a strongly continuous unitary representation. For $x \in A \subseteq \mathbb{B}(H)$ and $y \in \mathbb{K}(L^2(G))$ we see that
+which is a strongly continuous unitary representation. For $x \in A \subseteq \mathbb{B}(H)$ and $y \in \mathbb{K}(L^2(G))$ we see that
 \begin{align*}
 	\sigma_t (x \otimes y) \sigma_t^* = \alpha_t(x) \otimes \rho_t y \rho_t^* \in A \otimes \mathbb{K}(L^2(G)) \subseteq \mathbb{B}(H \otimes L^2(G)).
 \end{align*}
-Hence $A \otimes \mathbb{K}(L^2(G))$ is invariant under $\mathrm{Ad}_\sigma$. Moreover, for finite dimensional $y \in \mathbb{K}(L^2(G))$, the map $t \mapsto \mathrm{Ad}_{\sigma_t}(y)$ is norm continuous. The closure of $F = \Span\{a \otimes y \mid a \in A, \ y \text{ finite rank}\}$ equals $A \otimes \mathbb{K}(L^2(G))$. The $C^*$-algebra of elements $x\otimes y \in A \otimes \mathbb{K}(L^2(G))$ such that $t \mapsto \sigma_t x \otimes y\sigma_t^*$ is continuous and invariant under $\mathrm{Ad}_{\sigma_s}$ for all $s$ and contains $F$ hence equals $A \otimes \mathbb{K}(L^2(G))$. Letting $\alpha \otimes \mathrm{Ad}_\rho := \mathrm{Ad}_{\sigma}$, we see that $(A \otimes \mathbb{K}(L^2(G)), G , \alpha \otimes \mathrm{Ad}_\rho)$ is a $C^*$-dynamical system.
+Hence $A \otimes \mathbb{K}(L^2(G))$ is invariant under $\mathrm{Ad} \sigma$. Moreover, for finite dimensional $y \in \mathbb{K}(L^2(G))$, the map $t \mapsto \mathrm{Ad} {\sigma_t}(y)$ is norm continuous. The closure of $F = \Span\{a \otimes y \mid a \in A, \ y \text{ finite rank}\}$ equals $A \otimes \mathbb{K}(L^2(G))$. Let $B$ be the $C^*$-subalgebbra of $A \otimes \mathbb{K}(L^2(G))$ defined by
+\begin{align*}
+	B :=C^*( \{ a \otimes K \ \mid \ t \mapsto \mathrm{Ad} \sigma_t (a \otimes K) \text{ is continuous} \}),
+\end{align*}
+which is a $G$-invariant $C^*$-algebra containing $F$, so that $B$ equals all of $A \otimes \mathbb{K}(L^2(G))$. Clearly $\alpha \otimes \mathrm{Ad} \rho = \mathrm{Ad} {\sigma}$, hence $(A \otimes \mathbb{K}(L^2(G)), G , \alpha \otimes \mathrm{Ad} \rho)$ is a $C^*$-dynamical system.
 \end{proof}
 
-The way we show Takai duality is that we will show that the $C^*$-dynamical system defined in the above proposition is covariantly isomorphic to another dynamical system, and then finally showing an isomorphism between this system and the dual system when $G$ is abelian. We show the first step in this in the following:
+The way we show Takai duality is through a series of appropriate isomorphisms of $C^*$-algebras and $C^*$-dynamical systems, some of which requires $G$ to be abelian. We show the first step in this in the following:
 \begin{theorem}
 Let $G \acts \alpha A$. Then there is a $C^*$-dynamical system $(C_0(G,A) \rtimes_{\gamma,r} G , G, \sigma )$ where we define the actions $G \acts \gamma C_0(G,A)$ and $G \acts \sigma C_0(G,A)$ by
 \begin{align*}
 	\sigma_s (f)(t) = f(ts) \text{ and } \gamma_s f(t) = \alpha_s(f(s^{-1}t)),
 \end{align*}
-for $f \in C_0(G,A)$ and $s,t \in G$. This system is covariantly isomorphic to $(A \otimes \mathbb{K}(L^2(G)), G , \alpha \otimes \mathrm{Ad}_\rho)$.
+for $f \in C_0(G,A)$ and $s,t \in G$. This system is covariantly isomorphic to $(A \otimes \mathbb{K}(L^2(G)), G , \alpha \otimes \mathrm{Ad} \rho)$.
 \label{takai:compactiso}
 \end{theorem}
 \begin{proof}
-\todo{Add as example the dynamical systems} Represent $A$ faithfully on a Hilbert space $\H$, and define a representation of $C_0(G,A)$ on $L^2(G,\H)$ as multiplication operators, i.e.,
+	If we consider the isomorphism $C_0(G, A ) \cong C_0(G) \otimes A$, it is not hard to see that the representations $\sigma$ and $\gamma$ are diagonal actions in disguise: 
+	\begin{align*}
+		\sigma = \mathrm{rt} \otimes \mathrm{id} \text{  and  } \gamma = \mathrm{lt} \otimes \alpha,
+	\end{align*}
+	where $\mathrm{rt}$ and $\mathrm{lt}$ denote the left- and right-translation actions on $C_0(G)$, which implies that they are strongly continuous actions of $G$. Now, represent $A$ faithfully on a Hilbert space $\H$, and define a representation of $C_0(G,A)$ on $L^2(G,\H)$ as multiplication operators, i.e.,
 \begin{align*}
 	\pi(f) \xi (s) = f(s)\xi(s), 
 \end{align*}
-for $f \in C_0(G,A)$, $\xi \in L^2(G,\H)$ and $s \in G$. This is easily seen to be a faithful representation, so by \Cref{mult:reducedfaithful} we obtain a faithful representation $\tilde \pi \rtimes \lambda$ of $C_0(G,A) \rtimes_{\gamma,r} G$ on $L^2(G,L^2(G,\H)) \cong L^2(G \times G, \H)$. Consider $\cc(G \times G,A) \subseteq \cc(G,C_0(G,A))$, via the map $(f \colon (x,y) \mapsto f(x,y)) \mapsto (x \mapsto (y \mapsto f(x,y)))$, and note that there is not necessarily equality (e.g., for the case $G=  \R$ and $A = \C$). For $z \in \cc(G \times G, A)$, we see that
+for $f \in C_0(G,A)$, $\xi \in L^2(G,\H)$ and $s \in G$. This is easily seen to be a faithful representation, so by \Cref{mult:reducedfaithful} we obtain a faithful representation $\tilde \pi \rtimes \lambda$ of $C_0(G,A) \rtimes_{\gamma,r} G$ on $L^2(G,L^2(G,\H)) \cong L^2(G \times G, \H)$. Consider $\cc(G \times G,A) \subseteq \cc(G,C_0(G,A))$, via the map $(f \colon (x,y) \mapsto f(x,y)) \mapsto (x \mapsto (y \mapsto f(x,y)))$, and note that there is not necessarily equality. For $z \in \cc(G \times G, A)$, we see that
 \begin{align*}
 	\tilde \pi \rtimes \lambda (z) \xi(s,t) &= \int_G \alpha_{s^{-1}}(z(r,st)) \xi(r^{-1}s,t) \d r.
 \end{align*}
@@ -1030,14 +1059,15 @@ Define the operator $w$ on $L^2(G\times G,\H)$ by
 \end{align*}
 then $w$ is a unitary operator with adjoint $w^* \xi(s,t) = \xi(st^{-1},t) \Delta(t)^{-\frac12}$. We then calculate for $z \in \cc(G \times G, A)$
 \begin{align*}
-	w^*  (\tilde \pi \rtimes \lambda (z)) w (\xi) (s,t) = \int_G \alpha_{ts^{-1}} (z(r,s)) w \xi(r^{-1} s t^{-1},t) \d r \Delta(t)^{-\frac12} = \int_G \alpha_{ts^{-1}}(z(r,s)) \xi(r^{-1}s,t) \d r,
+	w^*  (\tilde \pi \rtimes \lambda (z)) w (\xi) (s,t) &= \int_G \alpha_{ts^{-1}} (z(r,s)) w \xi(r^{-1} s t^{-1},t) \d r \Delta(t)^{-\frac12}\\
+	&= \int_G \alpha_{ts^{-1}}(z(r,s)) \xi(r^{-1}s,t) \d r,
 \end{align*}
 for all $\xi \in L^2(G \times G, \H)$ and $s,t \in G$. It is not hard to see that any function of $\cc(G \times G , A)$ can be approximated by linear combinations of maps of the form $(s,t) \mapsto z(s)g(t)\alpha_t(x)$ for $z,g \in \cc(G)$ and $x \in A$, and hence also by functions of the form
 \begin{align}
 	f(s,t) = \alpha_{t}(x) z(s^{-1}t)g(t) \Delta(s^{-1}t),
 	\label{functionform1}
 \end{align}
-for fixed $z,g \in \cc(G)$ and $x \in A$. Applying $\mathrm{Ad}_{w}$ to functions of the form \Cref{functionform1} this we get
+for fixed $z,g \in \cc(G)$ and $x \in A$. Applying $\mathrm{Ad} {w}$ to functions of the form \Cref{functionform1} this we get
 \begin{align*}
 	w^* (\tilde \pi \rtimes \lambda(f)) w(\xi)(s,t) &= \int_G \alpha_{ts^{-1}}(f(r,s)) \xi(r^{-1}s,t) \d r\\
 	&= \int_G \alpha_{ts^{-1}}(\alpha_s(x) z(r^{-1}s)g(s) \Delta(r^{-1}s)) \xi(r^{-1}s,t) \d r \\
@@ -1064,13 +1094,13 @@ Denote also by $\sigma_t$ the representation of $G$ on $\cc(G,C_0(G,A))$, $\sigm
 	w^* (\tilde \pi \rtimes \lambda \sigma_r (f) )w \xi(s,t) &= \alpha_{tr}(x)\underbrace{g(sr) \Delta(r)}_{= \rho_r g(s) \Delta(r) ^{\frac12}} \int_G \underbrace{z(qr)}_{= \rho_{r}z(q) \Delta(r)^{-\frac12}} \xi(q,t) \d q\\
 	&= \alpha_{t} ( \alpha_r(x)) \rho_{r} g(s) \int_G \rho_r z(q) \xi(q,t) \d q\\ 
 	&= ( \check \pi(\alpha_r(x)) \otimes \rho_r p_{z,g} \rho_{r}^*) \xi(s,t)\\
-	&= ( \check \pi(\alpha_r(x)) \otimes \mathrm{Ad}_{\rho_r}p_{z,g}) \xi(s,t).
+	&= ( \check \pi(\alpha_r(x)) \otimes \mathrm{Ad} {\rho_r}p_{z,g}) \xi(s,t).
 \end{align*}
 In particular, after identifying $\check \pi (A) $ with $A$, we have
 \begin{align*}
-	w^* (\tilde \pi \rtimes \lambda(\sigma_r(f)))w = (\alpha \otimes \mathrm{Ad}_{\rho})_r(x \otimes p_{z,g}),
+	w^* (\tilde \pi \rtimes \lambda(\sigma_r(f)))w = (\alpha \otimes \mathrm{Ad} {\rho})_r(x \otimes p_{z,g}),
 \end{align*}
-and hence by density, we see that $(C_0(G,A) \rtimes_{\lambda , r}, G , \sigma)$ is covariantly isomorphic to $(A \otimes \mathbb{K}(L^2(G)), G, \alpha \otimes \mathrm{Ad}_{\sigma})$ via $w$, in the sense that $w$ implements a $G$-equivariant spatial isomorphism between the two systems. \todo{define category of $C^*$-systems and covariant isomorphism}
+and hence by density, we see that $(C_0(G,A) \rtimes_{\lambda , r}, G , \sigma)$ is covariantly isomorphic to $(A \otimes \mathbb{K}(L^2(G)), G, \alpha \otimes \mathrm{Ad} {\sigma})$ via $w$, in the sense that $w$ implements a $G$-equivariant spatial isomorphism between the two systems.
 \end{proof}
 Applying the above to the case where $A = \C$ and $\alpha = 1$, we obtain the Stone-von Neumann theorem for reduced crossed products:
 \begin{corollary}
@@ -1079,20 +1109,27 @@ Let $\mathrm{lt}$ denote the representation of $G$ on $C_0(G)$ given by left-tra
 	C_0(G) \rtimes_{\mathrm{lt},r} G \cong \mathbb{K}(L^2(G)) \otimes \C \cong \mathbb{K}(L^2(G)).
 \end{align*}
 \end{corollary}
-It is worth noting that the result also holds for the full crossed product, however, we mention it without proof. The inclined reader is refered to \cite[Theorem 4.24]{williamscrossed} or \cite[§C.6]{williamsmorita}. In particular, this implies that
+It is worth noting that the result also holds for the full crossed product:
+\begin{align*}
+	C_0(G) \rtimes_{\mathrm{lt}} G \cong \mathbb{K}(L^2(G)),
+\end{align*}
+however, we mention it without proof. The inclined reader is refered to \cite[Theorem 4.24]{williamscrossed} or \cite[§C.6]{williamsmorita}. In particular, this implies that
 \begin{align*}
 C_0(G) \rtimes_{\mathrm{lt},r} G \cong C_0(G) \rtimes_{\mathrm{lt}}G,
 \end{align*}
 for all groups $G$.
 
-In the following, we will assume that $G$ in addition to being locally compact is abelian, and we will use $+$ to denote the binary operation. We briefly recall the definition of the dual group $\hat G$ and associated notions. For a better exposition on these topics, we again refer the reader to the excellent work \cite{folland2016fourier} or the author's written project on the subject \cite[Chapter 1-4]{fourierproj}
+In the following, we will assume that $G$ in addition to being locally compact is abelian, and we will use $+$ to denote the binary operation. We briefly recall the definition of the dual group $\hat G$ and associated notions. For a better exposition on these topics, we again refer the reader to the excellent work in \cite{folland2016fourier} or the author's written project on the subject \cite[Chapter 1-4]{fourierproj}
 \begin{definition}
 For a locally compact abelian group $G$, the dual group $\hat G$ is the group of continuous homomorphisms $\xi \colon G \to S^1$, where $S^1$ denotes the circle. For $\xi \in \hat G$ and $t \in G$, we will write $(t,\xi) := \xi(t)$. An alternative and equivalent definition of $\hat G$ is as the set of irreducible unitary representations of $G$, which by commutativity of $G$ are all one-dimensional, or we may identify $\hat G$ with the spectrum, $\sigma(L^1(G))$, of the group algebra via the pairing
 \begin{align}
 	\xi(f):=\int_G (t , \xi) f(t) \d t,
 	\label{abel:fourier}
 \end{align}
-for $f \in L^1(G)$ and $\xi \in \hat G$. 
+for $f \in L^1(G)$ and $\xi \in \hat G$. For a subset $S \subseteq G$, we will denote by \myemph{$S^\perp$} the annihilator of $S$ in $\hat G$, i.e., the set
+\begin{align*}
+	S^\perp := \left\{ \xi \in \hat G \ \mid \ (s, \xi) = 1 \text{ for all } s \in S \right\}.
+\end{align*}
 \end{definition}
 Usually, one will examine the Fourier transformation of $M(G)$, where $M(G)$ is the space of bounded Radon Measures on $G$. It is useful to recall also that $L^1(G) \subseteq M(G)$ by assigning $f$ to $f \cdot \d x$, where $\d x$ is the integrand of the fixed Haar measure on $G$. However, we will instead consider the inverse Fourier transformaton:
 \begin{definition}
@@ -1125,13 +1162,13 @@ for $\xi, \eta \in \H$.
 
 For the rest of this section, we will assume that $G$ is any abelian locally compact group, and we shall think of $A \rtimes_\alpha G$ as operators on $L^2(G,\H_u)$, where $\H_u$ is the universal Hilbert space for $A$.
 \begin{definition}
-Suppose that $G \acts \alpha A$. We define the dual action, $\hat \alpha$, of $\hat G$ on $A \rtimes_\alpha G$ on the dense subset $\cc(G,A,\alpha)$ by
+	Suppose that $G \acts \alpha A$. We define the \myemph{dual action}, \myemph{$\hat \alpha$}, of $\hat G$ on $\cc(G,A,\alpha)$ by
 \begin{align*}
 	\hat \alpha_\xi y(t) =  (t,\xi) y(t),
 \end{align*}
 for $y \in \cc(G,A,\alpha)$, $\xi \in \hat G$ and $t \in G$.
 \end{definition}
-To see that this in fact is a well-defined action, we use the following:
+To see that this extends to a well-defined action on $A \rtimes_\alpha G$, we use the following:
 \begin{lemma}
 Let $G \acts \alpha A$. Define a unitary representation $u$ of $\hat G$ on $L^2(G,H)$ by
 \begin{align*}
@@ -1161,7 +1198,7 @@ The above example is one of the motivations for the notion of a $G$-product:
 \begin{definition}
 	Let $G$ be a group with dual group $\hat G$. We say that a $C^*$-algebra $A$ is a \myemph{$G$-product} if:
 	\begin{enumerate}[nosep]
-		\item There is a homomorphism $\lambda \colon G \to \mathcal{U}(M(A))$ such that the map $t \mapsto \alpha_t y$, $y \in A$ is continuous,
+		\item There is a homomorphism $\lambda \colon G \to \mathcal{U}(M(A))$ such that the map $t \mapsto \lambda_t y$, $y \in A$ is continuous,
 		\item There is a homomorphism $\hat \alpha \colon \hat G \to \mathrm{Aut}(A)$ such that $(A, \hat G, \hat \alpha )$ is a $C^*$-dynamical system satisfying
 			\begin{align*}
 				\hat{\alpha_\chi} \lambda_t = (t,\chi) \lambda_t,
@@ -1200,9 +1237,9 @@ If $f \in \cc(G)$ and $x \in A$, then for all $\xi \in L^2(G,H)$ and $s \in G$ w
 where we have identified $f \otimes x \in \cc(G,A,\alpha)\subseteq A \rtimes_\alpha G$. In particular $x \lambda_f \in A \rtimes_\alpha G$ and likewise $\lambda_f x \in A \rtimes_\alpha G$ for $f \in \cc(G)$ and hence for $f \in L^1(G)$, by dominance of the norm on $A \rtimes_\alpha G$.
 \end{proof}
 
-Now, we are going to show the theorem of Takai by combining the previous results with the following: If $G \acts \alpha A$, we let $\iota$ denote the trivial action of $\hat G$ on $A$. Then
+Now, we are going to show the theorem of Takai by combining the previous results with the following result, for which we recall that given any group $G$ we denote by $G \acts 1 A$ the trivial action of $A$, i.e., the map $t \mapsto \mathrm{id} \in \mathrm{Aut}(A)$. Then
 \begin{lemma}
-For $G \acts \alpha A$, there is an isomorphism $A \rtimes_\iota \hat G \cong C_0(G,A)$. Moreover, the isomorphism is spatially implemented by a unitary $u$.
+For all groups $G$ and $C^*$-algebras $A$, there is an isomorphism $A \rtimes_1 \hat G \cong C_0(G,A)$. Moreover, the isomorphism is spatially implemented by a unitary $u$.
 \label{takai:trivcrossiso}
 \end{lemma}
 \begin{proof}
@@ -1214,48 +1251,52 @@ so that
 \begin{align*}
 	u^* \eta (t) = \int_{\hat G} \eta(\chi) (t, \chi) \d \chi, \text{ for } \eta \in L^2(\hat G,H) \text{ and } t \in G,
 \end{align*}
-where the integrals are defined in the $L^2$-sense. Then, for all $f \in \cc(\hat G, A,\iota)$ we see that
+where the integrals are defined in the $L^2$-sense. Then, for all $f \in \cc(\hat G, A,1)$ we see that
 \begin{align*}
-	f u \xi(\chi) = \int_{\hat G} \iota_{-\sigma}(f(\chi)) \lambda_\sigma (u \xi)(\chi) \d \sigma &= \int_{\hat G} f(\chi) \int_G \xi(t) \overline{(t,\chi - \sigma)} \d t \d \sigma\\
+	f u \xi(\chi) = \int_{\hat G} \mathrm{id}(f(\chi)) \lambda_\sigma (u \xi)(\chi) \d \sigma &= \int_{\hat G} f(\chi) \int_G \xi(t) \overline{(t,\chi - \sigma)} \d t \d \sigma\\
 	&= \int_{\hat G}\int_G f(\chi)(t, \sigma) \xi(t) \overline{(t, \chi)} \d t \d \sigma\\
 	&= \int_{\hat G} \hat f(t) \xi(t) \overline{(t, \chi)} \d t\\
 	&= \int_{\hat G} (\hat f \xi)(t) \overline{(t, \chi)} \d t\\
 	&= u \hat f \xi(\chi)
 \end{align*}
-implying that $u^* f u = \hat f \in C_0(G, A)$. By density of $\cc(\hat G, A, \iota) \subseteq A \rtimes_\iota \hat G$, it follows that $u$ implements the desired isomorphism.
+implying that $u^* f u = \hat f \in C_0(G, A)$. By density of $\cc(\hat G, A, 1) \subseteq A \rtimes_1 \hat G$, it follows that $u$ implements the desired isomorphism.
 \end{proof}
+\begin{remark}
+	Recall that $C_0(\hat G, A) \cong C_0(\hat G) \otimes A$ and that $C_0(\hat G) \cong C^*(G)$ for $G$ abelian, hence the above result shows that the crossed product associated to the trivial $C^*$-dynamical system $G \acts 1 A$ is covariantly isomorphic to $C^*(G) \otimes A$. This generalizes the result for when $A = \C$. We will in the follow write $A \rtimes_1 \hat G$ to emphasize that we consider the dense subset $\cc(\hat G, A)$.
+\end{remark}
 We are now ready to define the $C^*$-dynamical system which we will show is covariantly isomorphic to $(A \otimes \mathbb{K}(L^2(G)), G, \alpha \otimes \mathrm{Ad} \lambda)$ and $\left( (A \rtimes_\alpha G)\rtimes_{\hat \alpha} \hat G, G, \hat{\hat \alpha} \right)$:
 \begin{proposition}
-Suppose that $G \acts \alpha A$. Define for each $t \in G$ the map $\beta_t \colon \cc( \hat G, A, \iota) \to \cc(\hat G, A, \iota)$ by
+Suppose that $G \acts \alpha A$. Define for each $t \in G$ the map $\beta_t \colon \cc( \hat G, A, 1) \to \cc(\hat G, A, 1)$ by
 \begin{align*}
 	\beta_t f(\chi) = \overline{ ( t, \chi)} \alpha_t(f(\chi)),	
 \end{align*}
-for $f \in \cc(\hat G, A, \iota)$ and $\chi \in \hat G$. Then $\beta_t$ extends to an automorphism of $A \rtimes_{\iota} \hat G$ such $t \mapsto \beta_t$ is an action of $G$ on $A \rtimes_\iota \hat G$. With this $\beta$, we have a covariant isomorphism $(A \rtimes_\iota \hat G) \rtimes_\beta G \cong (A \rtimes_\alpha G) \rtimes_{\hat \alpha} \hat G$. \todo{reformulate, you don't show covariant isomorphism}
+for $f \in \cc(\hat G, A, 1)$ and $\chi \in \hat G$. Then $\beta_t$ extends to an automorphism of $A \rtimes_{1} \hat G$ such $t \mapsto \beta_t$ is an action of $G$ on $A \rtimes_1 \hat G$. With this $\beta$, we have a spatial isomorphism $(A \rtimes_1 \hat G) \rtimes_\beta G \cong (A \rtimes_\alpha G) \rtimes_{\hat \alpha} \hat G$. \todo{reformulate, you don't show covariant isomorphism}
 \end{proposition}
 \begin{proof}
 Define $\gamma_t \colon C_0(G,A) \to C_0(G,A)$ to be the diagonal action
 \begin{align*}
 \gamma_t y(s) = \alpha_t (y(s-t)),
 \end{align*}
-here diagonal comes from the fact that $\gamma_t = \alpha_t \otimes \mathrm{lt}_t$, when we identify $C_0(G,A) \cong C_0(G) \otimes A$\todo{add diagonal to earlier introduction}. Let $u$ be as in \Cref{takai:trivcrossiso}, $\hat{\beta_s(y)} \eta(t) = u^*yu$. Then, if $\xi \in L^2(G,H)$ we see that
+here diagonal comes from the fact that $\gamma_t = \alpha_t \otimes \mathrm{lt}_t$, when we identify $C_0(G,A) \cong C_0(G) \otimes A$\todo{add diagonal to earlier introduction}. Let $u$ be as in \Cref{takai:trivcrossiso}, i.e., so $\hat{\beta_s(y)} = u^*\beta_s(y)u$. Then for $\xi \in L^2(G,H)$ it holds that
 \begin{align*}
-\hat{\beta_s(y)}\xi(t) = \hat{\beta_s(y)}(t) \xi(t) = \int_{\hat G} (t, \sigma) \beta_s(y)(\sigma) \xi(t) \d \sigma &= \int_{\hat G} (t-s,\sigma) \alpha_s(y(\sigma)) \xi(t) \d \sigma
+\hat{\beta_s(y)}\xi(t) = \hat{\beta_s(y)}(t) \xi(t) = \int_{\hat G} (t, \sigma) \beta_s(y)(\sigma) \xi(t) \d \sigma &= \int_{\hat G} (t-s,\sigma) \alpha_s(y(\sigma)) \xi(t) \d \sigma,
 \end{align*}
-and we also see that 
+and
 \begin{align*}
-\gamma_s (\hat y) \xi(t) = \alpha_{s}(\hat y(t-s)) \xi(t) = \int_{\hat G} (t-s, \sigma) \alpha_s (y (\sigma)) \xi(t) \d \sigma = \hat{\beta_s(y)} \xi(t),
+\gamma_s (\hat y) \xi(t) = \alpha_{s}(\hat y(t-s)) \xi(t) = \int_{\hat G} (t-s, \sigma) \alpha_s (y (\sigma)) \xi(t) \d \sigma = \hat{\beta_s(y)} \xi(t).
 \end{align*}
-In particular, this allows us to extend $\beta_t$ to an automorphism of $A \rtimes_\iota \hat G$ such that the associated dynamical system is covariantly isomorphic to $(C_0(G,A),G,\gamma)$ via $u$.
+In particular, this allows us to extend $\beta_t$ to an automorphism of $A \rtimes_1 \hat G$ such that the associated dynamical system is covariantly isomorphic to $(C_0(G,A),G,\gamma)$ via $u$.
 
-We now show that the system $(\hat G \rtimes_\iota  A , G, \beta)$ is covariantly isomorphic to $(G \rtimes_\alpha A, \hat G, \hat \alpha)$. For this, we note that an easy calculation shows for $x \in \cc(\hat G \times G, A)$ and $\xi \in L^2(\hat G \times G, H)$ that
+We now show that the system $(\hat G \rtimes_1  A , G, \beta)$ is spatially isomorphic to $(G \rtimes_\alpha A, \hat G, \hat \alpha)$. For this, we note that an easy calculation shows for $x \in \cc(\hat G \times G, A)$ and $\xi \in L^2(\hat G \times G, H)$ that
 \begin{align*}
-x \xi(t, \chi)=\int_G \int_{\hat G} \alpha_{-t}(x(t, \sigma)) \xi(t-s,\chi-\sigma)(t,\sigma)\d \sigma \d s,	
+	x \xi(t, \chi) &= \int_G \int_{\hat G} \beta_{-t}(x(s, \sigma))\xi(t-s,\chi-\sigma)\d \sigma \d s \\
+&=\int_G \int_{\hat G} \alpha_{-t}(x(s, \sigma)) \xi(t-s,\chi-\sigma)(s,\sigma)\d \sigma \d s,	
 \end{align*}
 and similarly for $y \in \cc(G \times \hat G, A)$ and $\eta \in L^2(G \times \hat G, H)$ we have
 \begin{align*}
 y \eta(\chi,t) = \int_{\hat G} \int_G \alpha_{-t}(y(\sigma,s)) \xi(\chi-\sigma, t-s) \overline{(t,\sigma)} \d s \d \sigma,
 \end{align*}
-for all $\chi \in \hat G$ and $t \in G$. Define an isomorphism $\Phi \colon \cc(G \times \hat G, A) \to \cc(\hat G\times G , A)$ and the isometry $w \colon L^2(G \times \hat G, H) \to L^2(\hat G \times G, H)$ by
+for all $\chi \in \hat G$ and $t \in G$. Define an isomorphism $\Phi \colon \cc(G \times \hat G, A) \to \cc(\hat G\times G , A)$ and isometry $w \colon L^2(G \times \hat G, H) \to L^2(\hat G \times G, H)$ by
 \begin{align*}
 \Phi(y)(\chi,t) = (t,\chi) y(t,\chi) \text{ and } w \xi(\chi,t) = \overline{(t,\chi)} \xi(t,\chi)	
 \end{align*}
@@ -1265,13 +1306,13 @@ so that
 \end{align*}
 for $t \in G$, $\chi \in \hat G$. Note now that for $\sigma, \chi \in \hat G$ and $s,t \in G$ we have
 \begin{align*}
-(s,\sigma) \overline{(t-s,\chi- \sigma)}\overline{(s,\sigma)} = \overline{(t,\chi)}(t,\sigma),
+(s,\sigma) \overline{(t-s,\chi- \sigma)}\overline{(s,\chi)} = \overline{(t,\chi)}(t,\sigma),
 \end{align*}
 hence for $x \in \cc(G \times \hat G, A)$ and $\xi \in L^2(G \times \hat G,H)$ we get using the above identities:
 \begin{align*}
-\Phi(x) w \xi(\chi,t)&= \int_{\hat G} \int_G \alpha_{-t}(x(s, \sigma)) \xi(t-s, \sigma- \chi)(s, \sigma) \overline{(t-s,\sigma-\chi)}\overline{(s,\sigma)} \d s \d \sigma\\
-&= \overline{(t,\chi)} \int_{\hat G} \int_G \alpha_{-t}(x(s,\sigma)) \xi(t-s,\sigma-\chi)(t,\sigma) \d s \d \sigma\\
-&= w x \xi(t,\chi),
+\Phi(x) w \xi(\chi,t)&= \int_{\hat G} \int_G \alpha_{-t}(x(s, \sigma)) \xi(t-s, \chi-\sigma)(s, \sigma) \overline{(t-s,\sigma-\chi)}\overline{(s,\chi)} \d s \d \sigma\\
+&= \overline{(t,\chi)} \int_{\hat G} \int_G \alpha_{-t}(x(s,\sigma)) \xi(t-s,\chi-\sigma)(t,\sigma) \d s \d \sigma\\
+&= w x \xi(\chi,t),
 \end{align*}
 so that $w^* \Phi(x) w = x$ for all $x \in \cc(G \times \hat G, A)$. By density, it follows that the two algebras $(G \rtimes_\alpha A) \rtimes_{\hat \alpha} \hat G $ and $(A \rtimes_{\iota} \hat G)\rtimes_{\beta} G$ are isomorphic.
 \end{proof}

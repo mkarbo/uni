@@ -35,42 +35,45 @@
 \indexentry{amenable|hyperpage}{53}
 \indexentry{regular $C^*$-dynamical system|hyperpage}{53}
 \indexentry{nuclear $C^*$-algebra|hyperpage}{55}
-\indexentry{$G$-product|hyperpage}{60}
-\indexentry{Landstad's conditions|hyperpage}{61}
-\indexentry{$\mathaccentV {widehat}870{\alpha }$-integrable|hyperpage}{65}
-\indexentry{$G \mathrel {\mathop {\curvearrowright }\limits ^{}} X$|hyperpage}{71}
-\indexentry{Transformation Group|hyperpage}{71}
-\indexentry{$G$-space|hyperpage}{71}
-\indexentry{compact-open|hyperpage}{72}
-\indexentry{topology on $\mathrm{Homeo}(X)$|hyperpage}{72}
-\indexentry{minimal|hyperpage}{72}
-\indexentry{strongly proximal action|hyperpage}{73}
-\indexentry{$G$-boundary|hyperpage}{73}
-\indexentry{boundary action|hyperpage}{73}
-\indexentry{Furstenberg boundary|hyperpage}{73}
-\indexentry{$\partial _F G$|hyperpage}{73}
-\indexentry{extremally disconnected space|hyperpage}{74}
-\indexentry{weak$^*$-integrals|hyperpage}{75}
-\indexentry{spectral $R$-subspace|hyperpage}{75}
-\indexentry{spectral $M$-subspace|hyperpage}{76}
-\indexentry{Arveson Spectrum|hyperpage}{76}
-\indexentry{hereditary|hyperpage}{77}
-\indexentry{Connes Spectrum|hyperpage}{77}
-\indexentry{$W^*$-system|hyperpage}{78}
-\indexentry{exterior equivalent|hyperpage}{81}
-\indexentry{Cocycle equation|hyperpage}{82}
-\indexentry{$G$-prime|hyperpage}{83}
-\indexentry{$G$-simple|hyperpage}{85}
-\indexentry{detects ideals|hyperpage}{87}
-\indexentry{separates ideals|hyperpage}{87}
-\indexentry{primitive ideal space|hyperpage}{91}
-\indexentry{spectrum of a $C^*$-algebra|hyperpage}{91}
-\indexentry{hull-kernel topology|hyperpage}{91}
-\indexentry{transposed action of $G$|hyperpage}{92}
-\indexentry{Topologically free|hyperpage}{92}
-\indexentry{properly outer|hyperpage}{93}
-\indexentry{disjoint representations|hyperpage}{93}
-\indexentry{$C^*$-simple|hyperpage}{97}
-\indexentry{unique trace property|hyperpage}{97}
-\indexentry{quasi-regular representation|hyperpage}{98}
-\indexentry{$K \mathaccentV {bar}016\rtimes _r G$|hyperpage}{101}
+\indexentry{$S^\perp $|hyperpage}{59}
+\indexentry{dual action|hyperpage}{61}
+\indexentry{$\mathaccentV {widehat}870{\alpha }$|hyperpage}{61}
+\indexentry{$G$-product|hyperpage}{61}
+\indexentry{Landstad's conditions|hyperpage}{62}
+\indexentry{$\mathaccentV {widehat}870{\alpha }$-integrable|hyperpage}{66}
+\indexentry{$G \mathrel {\mathop {\curvearrowright }\limits ^{}} X$|hyperpage}{73}
+\indexentry{Transformation Group|hyperpage}{73}
+\indexentry{$G$-space|hyperpage}{73}
+\indexentry{compact-open|hyperpage}{73}
+\indexentry{topology on $\mathrm{Homeo}(X)$|hyperpage}{73}
+\indexentry{minimal|hyperpage}{74}
+\indexentry{strongly proximal action|hyperpage}{74}
+\indexentry{$G$-boundary|hyperpage}{75}
+\indexentry{boundary action|hyperpage}{75}
+\indexentry{Furstenberg boundary|hyperpage}{75}
+\indexentry{$\partial _F G$|hyperpage}{75}
+\indexentry{extremally disconnected space|hyperpage}{75}
+\indexentry{weak$^*$-integrals|hyperpage}{76}
+\indexentry{spectral $R$-subspace|hyperpage}{76}
+\indexentry{spectral $M$-subspace|hyperpage}{77}
+\indexentry{Arveson Spectrum|hyperpage}{77}
+\indexentry{hereditary|hyperpage}{78}
+\indexentry{Connes Spectrum|hyperpage}{78}
+\indexentry{$W^*$-system|hyperpage}{79}
+\indexentry{exterior equivalent|hyperpage}{82}
+\indexentry{Cocycle equation|hyperpage}{83}
+\indexentry{$G$-prime|hyperpage}{84}
+\indexentry{$G$-simple|hyperpage}{86}
+\indexentry{detects ideals|hyperpage}{88}
+\indexentry{separates ideals|hyperpage}{88}
+\indexentry{primitive ideal space|hyperpage}{92}
+\indexentry{spectrum of a $C^*$-algebra|hyperpage}{92}
+\indexentry{hull-kernel topology|hyperpage}{92}
+\indexentry{transposed action of $G$|hyperpage}{93}
+\indexentry{Topologically free|hyperpage}{93}
+\indexentry{properly outer|hyperpage}{94}
+\indexentry{disjoint representations|hyperpage}{94}
+\indexentry{$C^*$-simple|hyperpage}{98}
+\indexentry{unique trace property|hyperpage}{98}
+\indexentry{quasi-regular representation|hyperpage}{99}
+\indexentry{$K \mathaccentV {bar}016\rtimes _r G$|hyperpage}{102}
