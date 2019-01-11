@@ -124,8 +124,8 @@ f \mapsto \int_G f(s) \d s
 such that for all $f \in \cc(G,\mathcal{D})$ we have
 \begin{align}
 \varphi\left(\int_G f(s) \d s \right) &= \int_G \varphi(f(s)) \d s, \ \text{ for all } \varphi \in \mathcal{D}^*,\\
-\lv \int_G f(s) \d s \rv &\leq \lv f \rv_1 \\
-\int_G (g \otimes x) (s) \d s &=x \int_G g(s) \d s, \text{ for all } g \otimes x \in \cc(G) \odot \mathcal{D},
+\lv \int_G f(s) \d s \rv &\leq \lv f \rv_1, \\
+\int_G (g \otimes x) (s) \d s &=x \int_G g(s) \d s, \text{ for all } g \otimes x \in \cc(G) \odot \mathcal{D}, \\
 T\left( \int_G f(s) \d s \right) &= \int_G T(f(s)) \d s.
 \end{align}
 for all bounded linear operators $T$ between Banach spaces.
@@ -698,7 +698,6 @@ Let $(\pi, u)$ be a non-degenerate covariant representation of $G \acts \alpha A
 \end{align*}
 which combined with \Cref{cross:essnorm} shows the first and last identity. The second equality follows from the last and  \Cref{int:multstrictintegral}.
 \end{proof}
-\todo{swap around the above and below}
 \begin{remark}
 	The above and \Cref{int:indlmdense} implies that the set of functions of the form $\iota_A(a) \iota_G(z)$ for $a \in A$ and $z \in \cc(G)$ spans a dense subset of $A \rtimes_\alpha G$. This will be useful in the following:
 \end{remark}
@@ -1270,14 +1269,14 @@ Suppose that $G \acts \alpha A$. Define for each $t \in G$ the map $\beta_t \col
 \begin{align*}
 	\beta_t f(\chi) = \overline{ ( t, \chi)} \alpha_t(f(\chi)),	
 \end{align*}
-for $f \in \cc(\hat G, A, 1)$ and $\chi \in \hat G$. Then $\beta_t$ extends to an automorphism of $A \rtimes_{1} \hat G$ such $t \mapsto \beta_t$ is an action of $G$ on $A \rtimes_1 \hat G$. With this $\beta$, we have a spatial isomorphism $(A \rtimes_1 \hat G) \rtimes_\beta G \cong (A \rtimes_\alpha G) \rtimes_{\hat \alpha} \hat G$. \todo{reformulate, you don't show covariant isomorphism}
+for $f \in \cc(\hat G, A, 1)$ and $\chi \in \hat G$. Then $\beta_t$ extends to an automorphism of $A \rtimes_{1} \hat G$ such $t \mapsto \beta_t$ is an action of $G$ on $A \rtimes_1 \hat G$. With this $\beta$, we have a spatial isomorphism $(A \rtimes_1 \hat G) \rtimes_\beta G \cong (A \rtimes_\alpha G) \rtimes_{\hat \alpha} \hat G$. 
 \end{proposition}
 \begin{proof}
 Define $\gamma_t \colon C_0(G,A) \to C_0(G,A)$ to be the diagonal action
 \begin{align*}
 \gamma_t y(s) = \alpha_t (y(s-t)),
 \end{align*}
-here diagonal comes from the fact that $\gamma_t = \alpha_t \otimes \mathrm{lt}_t$, when we identify $C_0(G,A) \cong C_0(G) \otimes A$\todo{add diagonal to earlier introduction}. Let $u$ be as in \Cref{takai:trivcrossiso}, i.e., so $\hat{\beta_s(y)} = u^*\beta_s(y)u$. Then for $\xi \in L^2(G,H)$ it holds that
+here diagonal comes from the fact that $\gamma_t = \alpha_t \otimes \mathrm{lt}_t$, when we identify $C_0(G,A) \cong C_0(G) \otimes A$. Let $u$ be as in \Cref{takai:trivcrossiso}, i.e., so $\hat{\beta_s(y)} = u^*\beta_s(y)u$. Then for $\xi \in L^2(G,H)$ it holds that
 \begin{align*}
 \hat{\beta_s(y)}\xi(t) = \hat{\beta_s(y)}(t) \xi(t) = \int_{\hat G} (t, \sigma) \beta_s(y)(\sigma) \xi(t) \d \sigma &= \int_{\hat G} (t-s,\sigma) \alpha_s(y(\sigma)) \xi(t) \d \sigma,
 \end{align*}
@@ -1314,7 +1313,7 @@ hence for $x \in \cc(G \times \hat G, A)$ and $\xi \in L^2(G \times \hat G,H)$ w
 &= \overline{(t,\chi)} \int_{\hat G} \int_G \alpha_{-t}(x(s,\sigma)) \xi(t-s,\chi-\sigma)(t,\sigma) \d s \d \sigma\\
 &= w x \xi(\chi,t),
 \end{align*}
-so that $w^* \Phi(x) w = x$ for all $x \in \cc(G \times \hat G, A)$. By density, it follows that the two algebras $(G \rtimes_\alpha A) \rtimes_{\hat \alpha} \hat G $ and $(A \rtimes_{\iota} \hat G)\rtimes_{\beta} G$ are isomorphic.
+so that $w^* \Phi(x) w = x$ for all $x \in \cc(G \times \hat G, A)$. By density, it follows that the two algebras $(G \rtimes_\alpha A) \rtimes_{\hat \alpha} \hat G $ and $(A \rtimes_{1} \hat G)\rtimes_{\beta} G$ are isomorphic.
 \end{proof}
 We are now ready to prove the main theorem by combining the above:
 \begin{theorem}[Takai Duality]
@@ -1322,17 +1321,17 @@ Suppose that $G \acts \alpha A$. Then the double dual system $\left( (A \rtimes_
 \label{takai:takai}
 \end{theorem}
 \begin{proof}
-We already have the following diagram of isomorphisms
+We already have the following diagram of isomorphisms of $C^*$-algebras
 \begin{equation*}
 	\begin{tikzcd}
-		A \otimes \mathbb{K}(L^2(G)) \ar[r,"\cong"] & C_0(G,A) \rtimes_{\gamma} G \ar[r, "\cong"] & (A \rtimes_\iota \hat G) \rtimes_\beta G \ar[r, "\cong"] & (A \rtimes_\alpha G) \rtimes_{\hat \alpha} \hat G
+		A \otimes \mathbb{K}(L^2(G)) \ar[r,"\cong"] & C_0(G,A) \rtimes_{\gamma} G \ar[r, "\cong"] & (A \rtimes_1 \hat G) \rtimes_\beta G \ar[r, "\cong"] & (A \rtimes_\alpha G) \rtimes_{\hat \alpha} \hat G
 	\end{tikzcd}
 \end{equation*}
-Moreover, the dynamical systems $(A \otimes \mathbb{K}(L^2(G), G, \alpha \otimes \mathrm{Ad} \rho)$ and $(C_0(G,A) \rtimes_{\gamma} G, G, \sigma)$ are covariantly isomorphic, c.f. \Cref{takai:compactiso}. We finish the proof by showing that $(C_0(G,A) \rtimes_{\gamma} G, G, \sigma)$ is covariantly isomorphic to $( (A \rtimes_{\alpha} G)\rtimes_{\hat \alpha} \hat G, G, \hat{\hat{\alpha}})$, which is done by showing the relation on the generating set of functions $z \in \cc(G,C_0(G,A))$, 
+Moreover, the dynamical systems $(A \otimes \mathbb{K}(L^2(G), G, \alpha \otimes \mathrm{Ad} \rho)$ and $(C_0(G,A) \rtimes_{\gamma} G, G, \sigma)$ are covariantly isomorphic, c.f. \Cref{takai:compactiso}. We finish the proof by showing that $(C_0(G,A) \rtimes_{\gamma} G, G, \sigma)$ is covariantly isomorphic to $( (A \rtimes_{\alpha} G)\rtimes_{\hat \alpha} \hat G, G, \hat{\hat{\alpha}})$, which is done by showing the relation on the generating set of functions $z \in \cc(G,C_0(G,A))$ of the form
 \begin{align*}
 	z(s,t) =x f(s) \hat g(t),
 \end{align*}
-for some $x \in A$, $f \in \cc(G)$ and $g \in \cc(\hat G)$. Denote by $\check z \in \cc(G \times \hat G, A)$ the image of $z$ under the isomorphism above, so that
+for some $x \in A$, $f \in \cc(G)$ and $g \in \cc(\hat G)$. Fix such $z$, and denote by $\check z \in \cc(G \times \hat G, A)$ the image of $z$ under the middle isomorphism above, so that
 \begin{align*}
 	\check z(s,\chi) = x f(s) g(\chi),
 \end{align*}
@@ -1340,7 +1339,7 @@ for $(s,\chi) \in G \times \hat G$, and note that the map $g_r \colon \chi \maps
 \begin{align*}
 	\Phi(\check z)(\chi,s) = (s,\chi) \check z(s,\chi) = x f(s) g(\chi) (s,\chi).
 \end{align*}
-In particular, for the action $G \acts \sigma C_0(G,A) \rtimes_{\gamma} G$ is the action $\sigma_r y(s,t) = y(s,t+r)$ for $y \in \cc(G \times G,A)$, then we see that
+In particular, for the action $G \acts \sigma C_0(G,A) \rtimes_{\gamma} G$ given by $\sigma_r y(s,t) = y(s,t+r)$ for $y \in \cc(G \times G,A)$, then we see that
 \begin{align*}
 	\sigma_r z(s,t) = x f(s)  \hat g(t+r) = x f(s) \hat g_r(t),
 \end{align*}
@@ -1352,24 +1351,24 @@ so that
 \begin{align*}
 \Phi(\check{ \sigma_r z})(\chi,s) = x f(s) g(\chi)(s,\chi)(r,\chi) = \Phi(\check z)(\chi,s) (r,\chi).
 \end{align*}
-Note also, that if $G \acts {\hat{\hat{\alpha}}} (A \rtimes_\alpha G) \rtimes_{\hat{\alpha}} \hat G$ is the dual of the dual action, then for $y \in \cc(\hat G \times G, A) \subseteq (A \rtimes_\alpha G) \rtimes_{\hat{\alpha}} \hat G$ then
+Note also, that if $G \acts {\hat{\hat{\alpha}}} (A \rtimes_\alpha G) \rtimes_{\hat{\alpha}} \hat G$ is the dual of the dual action, then for $y \in \cc(\hat G \times G, A) \subseteq (A \rtimes_\alpha G) \rtimes_{\hat{\alpha}} \hat G$ we have
 \begin{align*}
 	\hat{\hat{\alpha}}_r y(\chi,t) = (r,\chi) y(\chi,t),
 \end{align*}
-whence we see that $\hat{\hat{\alpha}}_r(\Phi(\check z))= \Phi(\check{\sigma_r (z)})$, and since $z$ generates $C_0(G,A) \rtimes_\gamma G$, this shows the desired covariant isomorphism of the systems $(C_0(G,A) \rtimes_\gamma G, G, \sigma)$ and $( (A \rtimes_\alpha G)\rtimes_{\hat{\alpha}} \hat G, G, \hat{\hat{\alpha}})$.
+whence we see that $\hat{\hat{\alpha}}_r(\Phi(\check z))= \Phi(\check{\sigma_r (z)})$. Since the set of functions of the form as $z$ generates $C_0(G,A) \rtimes_\gamma G$, this shows the desired covariant isomorphism of the systems $(C_0(G,A) \rtimes_\gamma G, G, \sigma)$ and $( (A \rtimes_\alpha G)\rtimes_{\hat{\alpha}} \hat G, G, \hat{\hat{\alpha}})$.
 \end{proof}
 In particular, since $\hat \R \cong \R$ (self-duality), we observe using Takai duality that the $C^*$-algebra $\mathbb{K}(L^2(\R))$ is isomorphic to $C_0(\R) \rtimes_\mathrm{lt} \R $, which according to the author is an especially beautiful application of the theory.
 
 Before we begin our discussion of simplicity in crossed product in the next chapter, we will actually go back to the concept of a $G$-product and properties thereof, since it will give us a useful characterization of crossed products. We follow the guidelines of \cite{olesenpedersen1} in doing this, but the results are due to Landstad (\cite{landstad1979duality}).
 \begin{definition}
-	An element $y \in M(A)_+$, for a $G$-product $A$, is said to be \myemph{$\hat \alpha $-integrable} if there is an element $I(y) \in M(A)_+$ such that
+	For a $G$-product $A$, an element $y \in M(A)_+$ is said to be \myemph{$\hat \alpha $-integrable} if there is an element $I(y) \in M(A)_+$ such that
 	\begin{align*}
 		\varphi(I(y)) = \int_G \varphi(\hat \alpha_\chi (y)) \d \chi,
 	\end{align*}
 	for all $\varphi \in A^*$. If $x \in M(A)$ is such that $x$ may be decomposed into $\hat \alpha$-integrable positive parts, we then say that $x$ is also $\hat \alpha$-integrable.
 \end{definition}
 \begin{note}
-	If $0 \leq x \leq y \in M(A)_+$ and $y$ is $\hat \alpha$-integrable, then both $x$ is $\hat \alpha$-integrable. This can be seen from considering \todo{finish easy argument using statespace theory}
+	If $0 \leq x \leq y \in M(A)_+$ and $y$ is $\hat \alpha$-integrable, then both $x$ is $\hat \alpha$-integrable. For an argument, we refer the reader to \cite[Remark 7.8.4]{pedersenalgauto}. It is based on the fact that if $y$ is $\hat \alpha$ integrable and $0 \leq x \leq y$, then they induce a lower semicontinuous and bounded map on the state space of $A$.
 
 	In particular, if $z$ is $\hat \alpha $-integrable, then for all positive $y \in A$ we have $yzy \leq \lv y \rv z$ is $\hat \alpha$-integrable.
 \label{noteinthered}
@@ -1404,18 +1403,21 @@ where $1$ is the identity operator on $M(A)$.
 	\label{olpe1lemma2.6}
 \end{lemma}
 \begin{proof}
-	\todo{Note on dirac convolutions being measure convolutions and L1 functions}
 	Recall that for $f \in L^1(G)$, the extension $\hat \lambda$ to $C_0(\hat G)$ satisfies $\hat \lambda(\hat f) = \lambda_f$. Hence, if $\sigma \in \hat G$ and $f \in L^1(G)$, then $\hat {\sigma \cdot f } = \delta_{-\sigma} \ast \hat f$, and so
 	\begin{align*}
-		\hat \lambda (\delta_\sigma \ast \hat f) = \lambda_{\sigma f} = \int_{\hat G} \hat \alpha_\sigma(\lambda_t) f(t) \d t  = \hat \alpha_\sigma ( \lambda_f) = \hat \lambda_\sigma ( \hat \lambda(\hat f)).
+		\hat \lambda (\delta_\sigma \ast \hat f) = \lambda_{\sigma f} = \int_{\hat G} \hat \alpha_\sigma(\lambda_t) f(t) \d t  = \hat \alpha_\sigma ( \lambda_f) = \hat \alpha_\sigma ( \hat \lambda(\hat f)),
 	\end{align*}
-	Continuity of the extension ensures that $\hat \lambda(\delta_{-\sigma} \ast g) = \hat \alpha_{\sigma}(\hat \lambda(g))$ for all $g \in C_b(\hat G)$. Letting $f \in L^1(G) \cap L^2(G)$, we then obtain
+	where $\delta_{\sigma} \ast \hat f$ denotes the measure convolution with the dirac measure at $\sigma$. Continuity of the extension $\hat \lambda$ ensures that $\hat \lambda(\delta_{-\sigma} \ast g) = \hat \alpha_{\sigma}(\hat \lambda(g))$ for all $g \in C_b(\hat G)$. Letting $f \in L^1(G) \cap L^2(G)$, we then obtain
 	\begin{align*}
-	\hat \alpha_\sigma(\lambda_f^* \lambda_f) = \hat \alpha_\sigma(\hat \lambda( | \hat f | ^2)) = \hat \lambda(\delta_\sigma \ast | \hat f |^2).		
+		\hat \alpha_\sigma(\lambda_f^* \lambda_f) = \hat \alpha_\sigma(\hat \lambda( | \hat f | ^2)) = \hat \lambda(\delta_{-\sigma} \ast | \hat f |^2).		
 	\end{align*}
-	Since $\lv \delta_\sigma \ast f \rv_2 = \lv f \rv_2$, we see that
+	By the Plancherel theorem we have $\lv\hat  f \rv_2 = \lv f \rv_2$, and so
 	\begin{align*}
-		I(\lambda_f^* \lambda_f) = I\left( \int \delta_\sigma \ast | \hat f \|^2 \d \sigma \right) \hat \lambda (\lv \hat f \rv_2^2 1) = \lv f \rv_2^2 1.
+		I(\lambda_f^* \lambda_f) =\int_{\hat G} \hat \alpha_\sigma(\lambda_f^* \lambda_f) \d \sigma = \hat \lambda\left(\int_{\hat G} \delta_{-\sigma} \ast  | \hat f |^2 \d \sigma  \right) =\hat \lambda (\lv \hat f \rv_2^2 1) = \lv f \rv_2^2 1,
+	\end{align*}
+	as for all $\chi \in \hat G$ we have
+	\begin{align*}
+		\int_{\hat G } \delta_{-\sigma} \ast |\hat f|^2(\chi) \d \sigma = \int_{\hat G} |\hat f(\chi + \sigma)|^2 \d \sigma =  \int_{\hat G} | \hat f(\sigma)|^2 \d \sigma = \lv \hat f\rv_2^2 = \lv f \rv_2^2.
 	\end{align*}
 \end{proof}
 \begin{lemma}
@@ -1423,7 +1425,7 @@ where $1$ is the identity operator on $M(A)$.
 	\label{olpe1lemma2.7}
 \end{lemma}
 \begin{proof}
-	We first note that by \Cref{olpe1lemma2.5} and \Cref{olpe1lemma2.6}, whenever $f\in L^1(G) \cap L^2(G)$ and $0 \leq x \in B$, we have $0 \leq \lambda_f^* x \lambda_f \leq \lv x \rv \lambda_f^* \lambda_f$. Hence, replacing $x$ with $x^{\frac12}$ and letting $f,g \in L^1(G) \cap L^2(G)$ be arbitrary we see that $( x^{\frac12}\lambda_f)^* x^{\frac12} g  = \lambda_f^* x \lambda_g$ will be $\hat \alpha$-integrable. Hence it holds for every $x \in B$ as well.
+	We first note that by \Cref{olpe1lemma2.5} and \Cref{olpe1lemma2.6}, whenever $f\in L^1(G) \cap L^2(G)$ and $ x \in B_+$, we have $0 \leq \lambda_f^* x \lambda_f \leq \lv x \rv \lambda_f^* \lambda_f$. Hence, replacing $x$ with $x^{\frac12}$ and letting $f,g \in L^1(G) \cap L^2(G)$ be arbitrary we see that $( x^{\frac12}\lambda_f)^* x^{\frac12} g  = \lambda_f^* x \lambda_g$ will be $\hat \alpha$-integrable. Hence it holds for every $x \in B$ as well.
 
 	For the last statement, we see using \Cref{olpe1lemma2.5} that
 	\begin{align*}
@@ -1439,7 +1441,7 @@ where $1$ is the identity operator on $M(A)$.
 	&\leq \int \int (\lv \lambda_t x - x \rv + \lv  x -x\lambda_s^* \rv)  f^*(t) f(s) \d t \d s\\
 	&= \int \lv \lambda_t x -x \rv f^*(t) \d t + \int \lv x \lambda_s - x \lambda_s^* \lambda_s \rv f(s) \d s,
 	\end{align*}
-	which, whenever $x \in A$ will go to zero whenever if $f$ ranges over an approximate identity of $L^1(G)$ consisting of continuous functions with shrinking compact supports, since we assumed continuity of the maps $t \mapsto \lambda_t x$ and $s \mapsto x \lambda_s$ whenever $x \in A$
+	which, whenever $x \in A$ will go to zero whenever if $f$ ranges over an approximate identity of $L^1(G)$ of continuous functions with shrinking compact support approximating the dirach measure at $0$ by continuity of the maps $t \mapsto \lambda_t x$ and $s \mapsto x \lambda_s$.
 \end{proof}
 \begin{proposition}
 	Let $A$ be a $G$-product. If $x = \lambda_f^* y \lambda_f \in A$ for $f \in L^1(G) \cap L^2(G)$ and $y \in A$, then $I(x)$ satisfies Landstad's condition and $x$ is the norm limit of elements given by 
@@ -1464,18 +1466,18 @@ where $1$ is the identity operator on $M(A)$.
 	\begin{align*}
 		\int_G I(x \lambda_{-t}) \lambda_t f_i(t) \d t \to x.
 	\end{align*}
-	in norm, since $(\hat f_i)$ is an approximate identity \todo{add note on shrinking support and norm can be chosen to be 1}. To see that $I\left( x \right)$ satisfies Landstad's condition for each $x$ of the above form, we first note that the first condition is immediately satisfied, since $G$ is abelian and hence unimodular. For the second, let $g \in L^1(G)$ and $\varepsilon > 0$. Pick a symmetric neighborhood $E$ of $0$ satisfying
+	in norm, since $(f_i)$ can be chosen such that $(\hat f_i)$ converges uniformly to $1$ on compact subsets of $\hat G$, see e.g., \cite[Lemma 4.38]{fourierp}. To see that $I\left( x \right)$ satisfies Landstad's condition for each $x$ of the above form, we first note that the first condition is immediately satisfied, since $G$ is abelian and hence unimodular. For the second, let $g \in L^1(G)$ and $\varepsilon > 0$. Pick a symmetric neighborhood $E$ of $0$ satisfying
 	\begin{align*}
 		\lv I(x \lambda_t) - I(x) \rv<\varepsilon \text{ and } \lv g - \delta_t \times g \rv_1 < \varepsilon,
 	\end{align*}
-	for all $t \in E$. Pick now positive $f \in L^1(G)$ satsifying $\lv f \rv_1 = 1$ with support contained in $E$ such that $\hat f \in L^1 (\hat G)$. Then we see that
+	for all $t \in E$. Pick now positive $f \in L^1(G)$ satsifying $\lv f \rv_1 = 1$, $\supp f \subseteq E$ and $\hat f \in L^1 (\hat G)$, so that
 	\begin{align*}
 		\lv g - f \times g \rv_1 = \int_G \left|g(s) - \int_G f(t) g(s-t) \d t\right| \d s &= \int_G \left | \int_G f(t)(g(s)-g(s-t)) \d t \right| \d s \\
 		&\leq \int_G f(t) \int_G | g(s) - g(s-t)| \d s \d t\\
 		& = \int_G f(t) \lv g - \delta_t \ast g \rv \d t \\
 		&< \varepsilon.
 	\end{align*}
-	With this, we see that
+	With this, we have
 	\begin{align*}
 		\lv I(x) \lambda_g - \int_G I(x \lambda_{-t})\lambda_t f(t) \d t \lambda_g \rv &= \lv I(x) \lambda_g - I(x)\lambda_f \lambda_g + I(x) \lambda_f \lambda_g - \int_G I(x \lambda_{-t})\lambda_t f(t) \d t \lambda_g \rv\\
 		&\leq \lv I(x) (\lambda_g - \lambda_f \lambda_g ) \rv + \lv \int_G (I(x) - I(x\lambda_{-t}))\lambda_t f(t) \d t \lambda_g\rv\\
@@ -1520,17 +1522,17 @@ The above proposition was the final ingredient in the theorem of Landstad, which
 	\begin{align*}
 		x_i := \int_G I(x \lambda_{-t}) \lambda_t f_i(t) \d t \to x,
 	\end{align*}
-	in norm. By \Cref{olpe1lemma2.8}, we know that the map, $t \mapsto I(x\lambda_t)=I(\lambda_g^* y \lambda_g t)$, is a continuous map $G \to M(B)$. Continuity of $\mathrm{Ad} u$ and $\pi$ plus the identity above gives that the map $t \mapsto I(x \lambda_{-t}) \otimes \delta_t \ast f$ is continuous from $G \to \cc(G,A) \subseteq A \rtimes_\alpha G$. In particular, density of $\cc(G)\subseteq L^1(G)$ ensures that the integral of $t \mapsto I(x \lambda_{-t} \otimes \delta_t \ast f) \cdot f_i(t)$ makes sense for all $i$, i.e., that
+	in norm. By \Cref{olpe1lemma2.8}, we know that the map, $t \mapsto I(x\lambda_t)=I(\lambda_g^* y \lambda_g t)$, is a continuous map $G \to M(B)$. Continuity of $\mathrm{Ad} u$ and $\pi$ plus the identity above gives that the map $t \mapsto \delta_t \ast f \otimes I(x \lambda_{-t}) $ is continuous from $G \to \cc(G,A) \subseteq A \rtimes_\alpha G$. In particular, density of $\cc(G)\subseteq L^1(G)$ ensures that the integral of $t \mapsto (I(\delta_t \ast f) \otimes x \lambda_{-t}) \cdot f_i(t)$ makes sense for all $i$, so that
 	\begin{align*}
 		u^* \pi(x_i \lambda_f)u &= \int_G u^* (\pi(I(x_i \lambda_{-t})) \lambda_t \lambda_f )f_i(t))u \d t \\
-		&= \int_G (I(x_i \lambda_{-t}) \otimes \delta_t \ast f ) f_i(t) \d t \in A \rtimes_\alpha G.
+		&= \int_G (I(\delta_t \ast f) \otimes x_i \lambda_{-t} ) f_i(t) \d t \in A \rtimes_\alpha G.
 	\end{align*}
 	In the limit of $i$, we get that $u^* \pi(x \lambda_f) u \in A \rtimes_\alpha G$, implying by \Cref{olpe1lemma2.8} that $u^* \pi(z \lambda_f) u \in A \rtimes_\alpha G$ for all $z \in B$. Letting $f$ go through an approximate identity of $L^1(G)$ with shrinking compact support, we know that $z\lambda_f - z \to 0$ for all $z \in B$. Hence
 	\begin{align*}
 		u^* \pi(B) u \subseteq A \rtimes_\alpha G.
 	\end{align*}	
 \end{proof}
-It is quite easy to show that the above $C^*$-dynamical system is unique up to covariant isomorphism, however we will not go into details and refer the reader to \cite[Theorem 2.9]{olesenpedersen1}. The proof relies on the result, which we also wont go into detail with, but include.
+It is quite easy to show that the above $C^*$-dynamical system is unique up to covariant isomorphism, however we will not go into details and refer the reader to \cite[Theorem 2.9]{olesenpedersen1}. The proof relies on the following result, which we also wont go into detail with, but include.
 \begin{lemma}[\mbox{\cite[Lemma 2.10]{olesenpedersen1}}]%
 	Let $(A, G, \alpha)$ be a $C^*$-dynamical system and let $B \subseteq A$ be a $G$-invariant $C^*$-subalgebra of $A$. Then there is a natural injection $B \rtimes_\alpha G \subseteq A \rtimes_\alpha G$ which is surjective if and only if $B = A$.
 \end{lemma}
