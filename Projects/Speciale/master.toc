@@ -40,6 +40,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.3}A Relation between Ideals of $C_r^*(G)$ and $A \rtimes _{\alpha ,r} G$ and a theorem of four}{96}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{106}{chapter*.25}
+\contentsline {chapter}{Bibliography}{106}{chapter*.18}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Index}{110}{section*.26}
+\contentsline {chapter}{Index}{110}{section*.19}

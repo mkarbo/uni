@@ -25,7 +25,7 @@
 {\large\sffamily\bfseries A}\nopagebreak
 
   \item adjointable maps \dotfill \hyperpage{5}
-  \item amenable \dotfill \hyperpage{52}
+  \item amenable \dotfill \hyperpage{53}
   \item Arveson Spectrum \dotfill \hyperpage{76}
 
   \indexspace
@@ -115,7 +115,8 @@
   \indexspace
 {\large\sffamily\bfseries R}\nopagebreak
 
-  \item reduced crossed product \dotfill \hyperpage{50}
+  \item reduced crossed product \dotfill \hyperpage{51}
+  \item regular $C^*$-dynamical system \dotfill \hyperpage{53}
   \item regular representation \dotfill \hyperpage{35}
 
   \indexspace
@@ -132,9 +133,9 @@
   \indexspace
 {\large\sffamily\bfseries T}\nopagebreak
 
-  \item the topology of weak$^*$ uniform convergence on compacta \dotfill 
-		\hyperpage{47}
   \item Topologically free \dotfill \hyperpage{92}
+  \item topology of weak$^*$ uniform convergence on compacta \dotfill 
+		\hyperpage{48}
   \item topology on $\mathrm{Homeo}(X)$ \dotfill \hyperpage{72}
   \item Transformation Group \dotfill \hyperpage{71}
   \item transposed action of $G$ \dotfill \hyperpage{92}
@@ -150,6 +151,6 @@
 {\large\sffamily\bfseries W}\nopagebreak
 
   \item weak$^*$-integrals \dotfill \hyperpage{75}
-  \item weakly contained \dotfill \hyperpage{51}
+  \item weakly contained \dotfill \hyperpage{52}
 
 \end{theindex}
