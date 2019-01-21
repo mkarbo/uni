@@ -13,11 +13,8 @@ Throughout this chapter, we will let $X$ denote an arbitrary locally compact Hau
 		G \times X &\to X\\
 		(t,x) \mapsto &t.x \in X
 	\end{align*}
-	such that for each fixed $t \in G$ the map $x \mapsto t.x$ is a homeomorphism of $X$ and such that $s.(t.x) = (st).x$ and $e.x = x$ for all $s,t \in G$ and $e \in G$. Whenever $G \acts {} X$, the pair $(X,G)$ is called a \myemph{Transformation Group} and $X$ is called a \myemph{$G$-space}.
+	such that for each fixed $t \in G$ the map $x \mapsto t.x$ is a homeomorphism of $X$ and such that $s.(t.x) = (st).x$ and $e.x = x$ for all $s,t \in G$. Whenever $G \acts {} X$, the pair $(X,G)$ is called a \myemph{Transformation Group} and $X$ is called a \myemph{$G$-space}.
 \end{definition}
-\begin{remark}
-	A net $(f_i) \subseteq C(X,Y)$ converges in the compact-open topology if and only if $f_i(x_i) \to f(x)$ for whenever $(x_i)$ is a net with the same index set converging to $x \in X$, see e.g. \cite[Lemma 1.30]{williamscrossed}.
-\end{remark}
 \begin{example}
 	If $h \in \mathrm{Homeo}(X)$, then we obtain an action $\Z  \acts {} X$, $n.x := h^n(x)$, $n \in \Z$, and we may always convert $X$ into a $\Z$-space this way.
 \end{example}
@@ -29,6 +26,9 @@ It is evident from the definition of transformation groups that we are intereste
 	\end{align*}
 	for $K \subseteq X$ compact and $U \subseteq Y$ open. The topology on $\mathrm{Homeo}(X)$\index{topology on $\mathrm{Homeo}(X)$} is the topology such that $(h_i) \subseteq \mathrm{Homeo}(X)$ converges to $h$ if and only if $h_i \to h$ and $h_i^{-1} \to h^{-1}$ in the compact-open topology of $C(X,X)$.
 \end{definition}
+\begin{remark}
+	A net $(f_i) \subseteq C(X,Y)$ converges in the compact-open topology if and only if $f_i(x_i) \to f(x)$ for whenever $(x_i)$ is a net with the same index set converging to $x \in X$, see e.g. \cite[Lemma 1.30]{williamscrossed}.
+\end{remark}
 And, luckily for us, there is a nice correspondance between $C^*$-dynamical systems $(C_0(X),G,\alpha)$ and Transformation Groups $(X,G)$:
 \begin{proposition}
 	There is a bijective correspondance between $C^*$-dynamical systems $(C_0(X),G,\alpha)$ and Transformation groups $(X,G)$ such that when $G \acts {} X$ the corresponding action $G \acts \alpha C_0(X)$ is given by
@@ -80,6 +80,6 @@ Both the existence and uniqueness is covered in \cite[Chapter 4]{bscp}. For disc
 \end{align*}
 for $\theta \in \R\backslash \Q$, see e.g., \cite[Example 4.13]{bscp}.
 
-As mentioned, the Furstenberg boundary has a lot of interesting and nice properties. It is an \myemph{extremally disconnected space} (= the closure of open sets are open), see e.g. \cite[Proposition 2.4]{breuillard2017c} for a newer proof or \cite[4.18]{hamana1979injective} for the original proof.
+As mentioned, the Furstenberg boundary has a lot of interesting and nice properties. It is an \myemph{extremally disconnected space} (meaning that the closure of open sets are open), see e.g. \cite[Proposition 2.4]{breuillard2017c} for a newer proof or \cite[4.18]{hamana1979injective} for the original proof.
 
 We will get back to the connection of crossed product (in particular of the form $C(X) \rtimes_r G$ for $G$-boundaries) and boundary actions, where we will examine connections between the ideal structure of $C_r^*(G)$ and $A \rtimes_r G$ for certain $C^*$-algebras.

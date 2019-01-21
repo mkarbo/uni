@@ -1,8 +1,8 @@
 \chapter{Actions And Automorphisms}
-In this chapter, we will go through theory describing automorphisms on a $C^*$-algebra $A$ and actions of groups $G$ on $C^*$-algebras, including applications in describing the ideal structure of crossed products. A motivation for including and describing this theory is the result of Archbold And Spielberg (see \cite{archbold1994topologically}), which showed that for a large class of groups and $C^*$-algebras, a certain condition on the action $G \acts {} A$ implies simplicity of the associated (reduced) crossed product $A \rtimes G$ ($A \rtimes_{r} G$).
+In this chapter, we will go through theory describing automorphisms on a $C^*$-algebra $A$ and actions of groups $G$ on $C^*$-algebras, including applications in describing the ideal structure of crossed products. A motivation for including and describing this theory is the result of Archbold and Spielberg (see \cite{archbold1994topologically}), which showed that for a large class of groups and $C^*$-algebras, a certain condition on the action $G \acts {} A$ implies simplicity of the associated (reduced) crossed product $A \rtimes G$ ($A \rtimes_{r} G$).
 
 \sssection{Action Properties}
-We are going to discuss a property that an action $G \acts \alpha A$ can have called topological freeness and it's implications on the crossed product. In order to do this, we introduce notation and discuss some results on the spectrum of a general $C^*$-algebra as well as the primitive ideal space of $A$:
+We are going to discuss a property that an action $G \acts \alpha A$ can have called topological freeness and its implications on the crossed product. In order to do this, we introduce notation and discuss some results on the spectrum of a general $C^*$-algebra as well as the primitive ideal space of $A$:
 \begin{definition}
 	For a $C^*$-algebra $A$, we define the \myemph{primitive ideal space} of a $C^*$-algebra $A$ to be the set
 	\begin{align*}
@@ -14,7 +14,7 @@ We are going to discuss a property that an action $G \acts \alpha A$ can have ca
 	\end{align*}
 where $[\cdot]_u$ denotes the class of unitarily equivalent representations.
 
-If $\pi_1 \sim_u \pi_2$, then $\ker \pi_1 = \ker \pi_2$ so the map $\kappa \colon \hat A \to \Prim A$, $[\pi]_u \mapsto \ker \pi$, is surjective and well-defined. We endow $\Prim A$ with a topology called the \myemph{hull-kernel topology} defined such that for $S = (s_i)_{i \in I} \subseteq \Prim A$ we have
+If $\pi_1 \sim_u \pi_2$, then $\ker \pi_1 = \ker \pi_2$ so the map $\kappa \colon \hat A \to \Prim A$, $[\pi]_u \mapsto \ker \pi$, is surjective and well-defined. We endow $\Prim A$ with a topology called the \myemph{hull-kernel topology} defined such that for $S = \{s_i\}_{i \in I} \subseteq \Prim A$ we have
 \begin{align*}
 	\overline S := \{ p \in \Prim A \mid \cap_{i \in I} s_i \subseteq p\}.
 \end{align*}
@@ -29,10 +29,10 @@ These objects interact nicely with dynamical systems (we already saw this for $A
 \end{align*}
 for all irreducible representations $\pi$ of $A$. These are indeed actions on topological spaces (i.e., the corresponding maps out of $G \times \hat A \to \hat A$ and $G \times \Prim A \to \Prim A$ are jointly continuous cf. \cite[Lemma 7.1]{williamsmorita}).
 \begin{definition}
-	For an action $G \acts \alpha A$ we say that the action is \myemph{Topologically free} if for all $t_1,\dots,t_n \in G\backslash\{e\}$ the set $\bigcap_{i=1}^n \left\{ [\pi]_u \in \hat A | \alpha_{t_i}^*([\pi]_u)\neq [\pi]_u \right\}$ is dense in $\hat A$.
+	For an action $G \acts \alpha A$ we say that the action is \myemph{topologically free} if for all $t_1,\dots,t_n \in G\backslash\{e\}$ the set $\bigcap_{i=1}^n \left\{ [\pi]_u \in \hat A | \alpha_{t_i}^*([\pi]_u)\neq [\pi]_u \right\}$ is dense in $\hat A$.
 \end{definition}
 \begin{remark}
-	It is easy to see that for $A=C_0(X)$, then an action is topologically free if and only if for all $e \neq t \in G$, the set of fixpoint of the induced action $G \acts{} X$ have empty interior or equivalently dense complement. Moreover, define 
+	It is easy to see that for $A=C_0(X)$, then an action is topologically free if and only if for all $e \neq t \in G$, the set of fixed points of the induced action $G \acts{} X$ have empty interior or equivalently dense complement. Moreover, define 
 	\begin{align*}
 		G_x^\circ := \{t \in G \ \mid \ t|_U = \mathrm{id} \text{ for some neighborhood } U \text{ of } x\},
 	\end{align*}
@@ -52,7 +52,7 @@ for all irreducible representations $\pi$ of $A$. These are indeed actions on to
 	The action of $G$ on $\dd_F G$ (the Furstenberg boundary) is topologically free if and only if it is free.
 \end{corollary}
 \begin{proof}
-	This follows directly from the earlier remark that $\dd_F G$ is extremally disconnected, since the $(\dd_F G)_s$ is clopen by a theorem of Frolik, see e.g., \cite[Theorem 3.1]{frolik1971maps}, which says that the set of fixed points of a homeomorphism $f \colon X \to X$, where $X$ is a compact extremally disconnected space, is clopen in $X$.
+	This follows directly from the earlier remark that $\dd_F G$ is extremally disconnected, since then $(\dd_F G)_s$ is clopen by a theorem of Frolik, see e.g., \cite[Theorem 3.1]{frolik1971maps}, which says that the set of fixed points of a homeomorphism $f \colon X \to X$, where $X$ is a compact extremally disconnected space, is clopen in $X$.
 \end{proof}
 \begin{definition}
 	For a $C^*$-algebra $A$, we say that $\alpha \in \mathrm{Aut}(A)$ is \myemph{properly outer} if for all $\alpha$-invariant non-zero ideals $I \subseteq A$ and all inner automorphisms $\beta$ of I it holds that
@@ -67,7 +67,7 @@ Elliot and Olesen \& Pedersen showed in \cite[Theorem 3.2]{elliott1980some} and 
 \begin{remark}
 	The proof is based on theory of derivations of $C^*$-algebras, which we will not go into detail with. Shortly put, a derivation of a $C^*$-algebra is a linear map which behaves similar to derivation of differentiable functions. For an exhibition on this, see e.g., \cite[Chapter 8.6]{pedersenalgauto} (or the books they refer to \cite{sakai1978recent} and \cite{bratteli2012operator} by Sakai and Bratteli et al., respectively.) 
 
-	The proof is based on a result of Kadison-Ringrose, which characterizes proper outerness with not, in a sense, never locally looking like an inner automorphism composed with the exponential of a derivation, see \cite{kadison1967derivations} or \cite[Theorem 6.6 (i) and (ii)]{olesenpedersen3}.
+	The proof is based on a result of Kadison-Ringrose, which characterizes proper outerness with not never locally being the composition of an inner automorphism composed with the exponential of a derivation, see \cite{kadison1967derivations} or \cite[Theorem 6.6 (i) and (ii)]{olesenpedersen3}.
 \end{remark}
 
 Recall that for $G$ discrete, it holds that $A \subseteq A \rtimes_\alpha G$, and that if $A^1 = A \oplus \C$ is the canonical unitalization, then we have inclusions $ A \subseteq A \rtimes_\alpha G  \subseteq A^1 \rtimes_\alpha G \subseteq M(A \rtimes_\alpha G)$, where we abuse the notation $\alpha$ to mean $\alpha \oplus 1$ on $A^1 \rtimes_\alpha G$.
@@ -75,12 +75,12 @@ Recall that for $G$ discrete, it holds that $A \subseteq A \rtimes_\alpha G$, an
 	Let $A$ denote an arbitrary $C^*$-algebra with two representations $\pi$ and $\tau$ on $H_\pi$ and $H_\tau$. We say that $\pi$ and $\tau$ are \myemph{disjoint representations} if there is no subrepresentations of one which is unitarily equivalent to a non-zero subrepresentation of the other.
 \end{definition}
 \begin{remark}
-	The above definition is the (to the authors knowledge) original definition. We will use the following fact: If $\pi$ and $\tau$ are disjoint if and only if $1 \oplus 0$ is an element of the strong operator closure of $\pi \oplus \tau (A)$, i.e., there is some net $(x_i) \subseteq A$ bounded with $\pi(x_i) \to 1$ and $\tau(x_i) \to 0$ in the strong operator topology if and only if  $\pi \not \sim _u \tau$, see e.g. \cite[Proposition 2.1.4]{arveson2012invitation}. 
+	The above definition is the (to the author's knowledge) original definition. We will use the following fact: If $\pi$ and $\tau$ are disjoint if and only if $1 \oplus 0$ is an element of the strong operator closure of $\pi \oplus \tau (A)$, i.e., there is some net $(x_i) \subseteq A$ bounded with $\pi(x_i) \to 1$ and $\tau(x_i) \to 0$ in the strong operator topology if and only if  $\pi \not \sim _u \tau$, see e.g. \cite[Proposition 2.1.4]{arveson2012invitation}. 
 \end{remark}
 \sssection{Consequences of Topological Freeness}
 Recall that we may identify $G$ as a subset of the unitary group of $M(A \rtimes_\alpha G)$. We denote this identification by $u_t$, $t \in G$. 
 \begin{lemma}
-	Let $G$ be discrete and $G \acts \alpha A$ and $\pi$ is a non-degenerate representation of $A$. If there is $t \in G$ such that $\pi \circ \alpha_t^{-1}$ and $\pi$ are disjoint representations, then for all completely positive extension $\varphi$ of $\pi$ to $A \rtimes_\alpha G$ of norm $1$ it holds that $\varphi(a u_t) = 0$ for all $a \in A$ and $u_t \in G \subseteq M(A \rtimes_\alpha G)$.
+	Let $G$ be discrete and $G \acts \alpha A$ and let $\pi$ be any non-degenerate representation of $A$. If there is $t \in G$ such that $\pi \circ \alpha_t^{-1}$ and $\pi$ are disjoint representations, then for all completely positive extension $\varphi$ of $\pi$ to $A \rtimes_\alpha G$ of norm $1$ it holds that $\varphi(a u_t) = 0$ for all $a \in A$ and $u_t \in G \subseteq M(A \rtimes_\alpha G)$.
 	\label{ASlem1}
 \end{lemma}
 \begin{proof}
@@ -133,7 +133,7 @@ If we further assume that $A$ is abelian, then the converse holds as well:
 	\label{ASthm2}
 \end{theorem}
 \begin{proof}
-	Since $A$ is commutative, we have $A \cong C_0(\hat A)$, by Gelfand theory. Let $x \in \hat A$. Recall that \todo{Add in prelim about top actions} actions of $G$ on locally compact Hausdorff spaces correspond to actions on $C_0(X)$, via the formula $t.f(x) :=  \alpha_t(f)(x) := f(t^{-1}.x)$, here $t.x$ denotes the image of the homeomorphism $t \colon X \to X$. Consider the Hilbert space $\ell^2(\left\{ t.x \mid t \in G\} \right\}$. We define the covariant pair $(\pi_x,u)$ for $(A,G)$ by
+	Let $x \in \hat A$. Recall that \todo{Add in prelim about top actions} actions of $G$ on locally compact Hausdorff spaces correspond to actions on $C_0(X)$, via the formula $t.f(x) :=  \alpha_t(f)(x) := f(t^{-1}.x)$, here $t.x$ denotes the image of the homeomorphism $t \colon X \to X$. Consider the Hilbert space $\ell^2(\left\{ t.x \mid t \in G\} \right\}$. We define the covariant pair $(\pi_x,u)$ for $(A,G)$ by
 	\begin{align*}
 		\pi_x(f) \delta_{t.x} = f(t.x) \delta_{t.x} \text{ and } u_s \delta_{t.x} = \delta_{st.x},
 	\end{align*}
@@ -161,14 +161,14 @@ If we further assume that $A$ is abelian, then the converse holds as well:
 \begin{proof}
 	This follows directly from \cref{ASthm1}, \cref{ASthm2} and \cref{ASlem1}.
 \end{proof}
-Once again, this gives an easy proof of simplicity of $C(S^1) \rtimes_{\theta} \Z$ for $\theta$ irrational, since the action is very clearly topologically free (there are no fixpoints on $S^1$ for irrational rotation), and we already know that it is minimal and $I_r = 0$.
+Once again, this gives an easy proof of simplicity of $C(S^1) \rtimes_{\theta} \Z$ for $\theta$ irrational, since the action is very clearly topologically free (there are no fixed points on $S^1$ for irrational rotation), and we already know that it is minimal and $I_r = 0$.
 
-\sssection{A Relation between Ideals of $C_r^*(G)$ and $A \rtimes_{\alpha,r} G$ and a theorem of four}.
+\sssection{A Relation between Ideals of $C_r^*(G)$ and $A \rtimes_{\alpha,r} G$ and a theorem of four}
 From here on, let $G$ denote a discrete countable group and $X$ a compact $G$-space. In the following, we will discuss recent developments regarding the classification of $C^*$-simple groups, in particular the results based on theory of boundary actions and topological freeness discussed earlier, and its relation to simplicity of associated crossed products $A \rtimes_{\alpha,r} G$. 
 
-We say that a group $G$ is \myemph{$C^*$-simple} if its reduced group is $C^*$-simple, and we say that $G$ has the \myemph{unique trace property} if the canonical faithful tracial state $\tau_0 \colon f \mapsto \langle \delta_e f , \delta_e\rangle_{\ell^2(G)}$ is the only tracial state on $C_r^*(G)$. It was an open question for a long time wether having the unique tracial state was equivalent to being $C^*$-simple. In 2014, using theory of boundary actions, this was shown by to false by Le Boudec (see \cite[Thoerem A]{le2017c}). However, $C^*$-simplicity does imply unique tracial state which is equivalent to having no non-trivial amenable normal subgroups (see e.g. the authors project on this subject: \cite[Chapter 5]{bscp}).
+We say that a group $G$ is \myemph{$C^*$-simple} if its reduced group is $C^*$-simple, and we say that $G$ has the \myemph{unique trace property} if the canonical faithful tracial state $\tau_0 \colon f \mapsto \langle f\delta_e  , \delta_e\rangle_{\ell^2(G)}$ is the only tracial state on $C_r^*(G)$. It was an open question for a long time wether having the unique tracial state was equivalent to being $C^*$-simple. In 2014, using theory of boundary actions, this was shown by to false by Le Boudec (see \cite[Thoerem A]{le2017c}). However, $C^*$-simplicity does imply unique tracial state which is equivalent to having no non-trivial amenable normal subgroups (see e.g. the author's project on this subject: \cite[Chapter 5]{bscp}).
 
-It is quite a strong condition on a group $G$ to be $C^*$-simple, since as mentioned amenable groups are not $C^*$-simple (nor do they have any amenable subgroups, see again \cite[Chapter 5]{bscp}). Groups which are $C^*$-simple include the class of Powers groups (an homage to R.T. Powers proof on simplicity of the free group on two generators, see \cite{powers1975simplicity} or \cite[chapter 3]{bscp}) which includes the free groups on finite number of generators.
+It is quite a strong condition on a group $G$ to be $C^*$-simple, since as mentioned amenable groups are not $C^*$-simple (In fact, $C^*$-simple groups have no non-trivial amenable normal subgroups, see again \cite[Chapter 5]{bscp}). Groups which are $C^*$-simple include the class of Powers groups (an homage to R.T. Powers' proof on simplicity of the free group on two generators, see \cite{powers1975simplicity} or \cite[chapter 3]{bscp}) which includes the free groups on finite number of generators.
 
 In order to show our desired results, we need to cover a bit of theory on conditional expectations and crossed products. For instance whenever $N$ is a normal subgroup of a discrete group $G$, then the inclusion $N \subseteq G$ gives rise to a conditional expecation $E_{N}^G \colon C_r^*(G) \to C_r^*(N)$ given by $\lambda_s \mapsto 1_{N}(s) \lambda_s$, see e.g. \cite[Corollary 2.5.12]{brown2008c}. Moreover, supposing that $A = C(X)$, then for all $x \in X$, the associated conditional expectation $E_{G_x}^G \colon C_r^* (G) \to C_r^*(G_x)$ (here $G_x$ is the stabilizer subgroup) extends to a condotional expecation
 \begin{align}
@@ -177,7 +177,7 @@ In order to show our desired results, we need to cover a bit of theory on condit
 	\label{eq:stabcond}
 \end{align}
 
-The following result shows the close relationship between topological freeness of actions and $C^*$-simplicty of groups with the ideal structure of crossed products of $G$-boundaries. It is (to the authors knowledge) due to \cite{breuillard2017c}, however we follow a proof of Ozawa (see e.g., \cite{ozawa2014lecture}). The result is heavily inspired by the proof of the Archbold-Spielberg result covered earlier.
+The following result shows the close relationship between topological freeness of actions and $C^*$-simplicty of groups with the ideal structure of crossed products of $G$-boundaries. It is (to the author's knowledge) due to \cite{breuillard2017c}, however we follow a proof of Ozawa (see e.g., \cite{ozawa2014lecture}). The result is heavily inspired by the proof of the Archbold-Spielberg result covered earlier.
 \begin{proposition}
 	Let $G \acts {} X$ be a minimal action. If the stabilizer group $G_x := \{ t \in G \ \mid \ t.x =x\}$ is $C^*$-simple for some $x \in X$, then the corresponding reduced crossed product $C(X) \rtimes_{\alpha,r} G$ is simple.
 	\label{ozawa15pt1}
@@ -187,23 +187,23 @@ The following result shows the close relationship between topological freeness o
 	\begin{align*}
 		C(X) + I \to (C(X)+I)/I \cong C(X) \stackrel {\delta_x} \to \C,
 	\end{align*}
-	where we used that the proper ideal $C(X) \cap I$ of $C(X)$ must be $0$ by minimality of $G \acts {} X$. Let $\varphi_x$ denote any state extending the above composition with $\varphi_x(I) =0$. The result will follow one we show that $\varphi_x = \varphi_x \circ E_x$, for then $\varphi_x (E_x(I)) = \varphi_x(I) = 0 $ implying that $\varphi_x= 0$ on all of $C(X) \rtimes_{\alpha,r}G$ if $E_x(I)$ is dense in $C_r^*(G_x)$. 
+	where we used that the proper ideal $C(X) \cap I$ of $C(X)$ must be $0$ by minimality of $G \acts {} X$. Let $\varphi_x$ denote any state extending the above composition with $\varphi_x(I) =0$. The result will follow once we show that $\varphi_x = \varphi_x \circ E_x$, for then $\varphi_x (E_x(I)) = \varphi_x(I) = 0 $ implying that $\varphi_x= 0$ on all of $C(X) \rtimes_{\alpha,r}G$ if $E_x(I)$ is dense in $C_r^*(G_x)$. 
 
-	To see that $\varphi_x = \varphi_x \circ E_x$ it suffices to show that $\varphi_x (\lambda_s) = 0$ for $s \not \in G \backslash G_x$: If not, then since $C(X)$ is in the multiplicative domain of $\varphi_x$ it holds that $\varphi_x(f \lambda_s) =  \varphi_x( f(x) \lambda_s)  =  \varphi_x (E_x( f\lambda_s))$. So assume that $s.x \neq x$ and choose a function $h \in C(X)$ such that $h(x) = 1$ and $h(s^{-1}.y) = 0$ for all $y \in \supp h$ (using that $G$ is a normal space and applying Uryhson's lemma). In particular, this implies that 
+	To see that $\varphi_x = \varphi_x \circ E_x$ it suffices to show that $\varphi_x (\lambda_s) = 0$ for $s \not \in G_x$: If not, then since $C(X)$ is in the multiplicative domain of $\varphi_x$ it holds that $\varphi_x(f \lambda_s) =  \varphi_x( f(x) \lambda_s)  =  \varphi_x (E_x( f\lambda_s))$. So assume that $s.x \neq x$ and choose a function $h \in C(X)$ such that $h(x) = 1$ and $h(s^{-1}.y) = 0$ for all $y \in \supp h$ (using that $G$ is a normal space and applying Uryhson's lemma). In particular, this implies that 
 	\begin{align*}
 		\varphi_x(\lambda_s) = \varphi_x(h\lambda_sh) = \varphi_x(h \alpha_s(h)\lambda_s)   = 0,
 	\end{align*}
 	finishing the proof.
 \end{proof}
 \begin{remark}
-	Given a group $G$, if $N$ is an amenable normal subgroup of $G$, then the quotient map $\C G \to \C G/N$ extends to a $*$-homomorphism $\pi_N \colon C_r^*(G) \to C_r^*\left( G/N \right)$ such that
+	Given a group $G$, if $N$ is an amenable normal subgroup of $G$, then the quotient map $\C G \to \C \left(G/N\right)$ extends to a $*$-homomorphism $\pi_N \colon C_r^*(G) \to C_r^*\left( G/N \right)$ such that
 \begin{equation}
 	\begin{tikzcd}
 		\C G \ar[r,"q"] \ar[d,"\lambda_G"'] & \C\left( G/N \right) \ar[d, "\lambda_{G/N}"]\\
 		C_r^*(G) \ar[r,"\pi_N"'] & C_r^*\left( G/N \right)
 	\end{tikzcd}
 \end{equation}
-is commutative with the horizontal maps being the left-regular representations, see e.g. \cite[Proposition 3]{de2007simplicity} for a proof. In general, the associated representation of $G$ as operators on $\ell^2(G/N)$ given by composition of the above is often refered to as the \myemph{quasi-regular representation}. We will use this result in a moment.
+is commutative with the vertical maps being the left-regular representations, see e.g. \cite[Proposition 3]{de2007simplicity} for a proof. In general, the associated representation of $G$ as operators on $\ell^2(G/N)$ given by composition of the above is often refered to as the \myemph{quasi-regular representation}. We will use this result in a moment.
 \end{remark}
 We have seen that topological freeness implies simplicity of $A \rtimes_{\alpha,r} G$ for $G$-simple $C^*$-algebras. We now prepare to cover a result from the same paper as above allows us to determine topological freeness from properties of $G$ and $C(X)\rtimes_\alpha G$, but first we need a lemma which will allow us to describe a useful representation:
 \begin{lemma}
@@ -253,10 +253,10 @@ Then the $^*$-homomorphism $\Pi_x \colon C(X) \rtimes_r G \to \mathbb{B}(\ell^2(
 	Since we assumed simplicity of $C(X) \rtimes_r G$, this implies that $s = e$ and hence $G_x^\circ $ is trivial whence the minimality assumption finishes the proof.
 \end{proof}
 \begin{note}
-	In order to prove the main theorem of this section, we will need a corollary result saying that $C(\dd _F G)$ is injective as a $G$-$C^*$-algebra (as an object in the category of $G$-$C^*$-algebras): whenever $A$ is a unital $C^*$-algebra and $G \acts{} A$, then there is a $G$-morphism of $A$ into $C(\dd_F G)$, obtained by the $G$morphism which maps $1$ to $1$. For a proof, see e.g. \cite[Theorem 6 + Corollary 7]{ozawa2014lecture}.
+	In order to prove the main theorem of this section, we will need a corollary saying that $C(\dd _F G)$ is injective as a $G$-$C^*$-algebra (as an object in the category of $G$-$C^*$-algebras): whenever $A$ is a unital $C^*$-algebra and $G \acts{} A$, then there is a $G$-morphism of $A$ into $C(\dd_F G)$, obtained by the $G$-morphism which maps $1$ to $1$. For a proof, see e.g. \cite[Theorem 6 + Corollary 7]{ozawa2014lecture}.
 \end{note}
 \begin{proposition}
-	Let $G \acts {} A$ with $1 \in A$ and let $X$ be a $G$-boundary. If $A \rtimes_r G$ is non-simple then $(A \otimes C(X))\rtimes_r G$ is non-simple in the following way: If $I \subseteq A \rtimes_r G$ is a non-trivial ideal, then the ideal generated by $I$ in $(A \otimes C(X)\rtimes_r G$ is proper.
+	Let $G \acts {} A$ with $1 \in A$ and let $X$ be a $G$-boundary. If $A \rtimes_r G$ is non-simple then $(A \otimes C(X))\rtimes_r G$ is non-simple in the following way: If $I \subseteq A \rtimes_r G$ is a non-trivial ideal, then the ideal generated by $I$ in $(A \otimes C(X))\rtimes_r G$ is proper.
 	\label{ozawprop17}
 \end{proposition}
 \begin{proof}
@@ -364,7 +364,7 @@ We will need the following small lemma for the big theorem of this section, and 
 For a proof, see \cite[lemma 11]{ozawa2014lecture}. With these results in hand, we may prove a (super substantial) result, again due to \cite{breuillard2017c} and \cite{kalantar2017boundaries}:
 \begin{theorem}
 	For a discrete group $G$, the following are equivalent:
-	\begin{enumerate}
+\begin{enumerate}
 		\item $G$ is $C^*$-simple.
 		\item $C(\dd_F G) \rtimes_r G$ is simple (equivalently the action is free/topologically free).
 		\item There is some $G$-boundary $X$ such that the action is topologically free.
@@ -378,7 +378,7 @@ For a proof, see \cite[lemma 11]{ozawa2014lecture}. With these results in hand, 
 	\begin{align*}
 		\Phi (\pi(f \lambda_s)) = \delta_{e}(s) \Phi(\pi(f)) = E(f)	
 	\end{align*}
-	after identifying $C(X) \subseteq C(\dd_F G)$. In particular, this implies that $\pi$ must be faithfull, since $E$ is, and since $\pi$ is a $*$-homomorphism it is injective. In particular, since each $G_x$ are amenable for $X= \dd_F G$ by \cref{stabfurstamen} that simplicity of $C( \dd_F G) \rtimes_r G$ implies topological freeness (and freeness, since $\dd_F G$ is extremally disconnected as mentioned earlier) of the action.
+	after identifying $C(X) \subseteq C(\dd_F G)$. In particular, this implies that $\pi$ must be faithfull, since $E$ is, and since $\pi$ is a $*$-homomorphism it is injective. In particular, since each $G_x$ are amenable for $X= \dd_F G$ by \cref{stabfurstamen}, simplicity of $C( \dd_F G) \rtimes_r G$ implies topological freeness (and freeness, since $\dd_F G$ is extremally disconnected as mentioned earlier) of the action.
 
 	$2 \implies 5$: Consider a $G$-$C^*$-algebra $A$ which is $G$-simple and unital. Let $I$ be a proper ideal of $A \rtimes_r G$. Let $J$ be the ideal of $(A \otimes C(\dd_F G)) \rtimes_r G$ generated by $I$ after identifying $A \rtimes_r G \subseteq (A \otimes C(\dd_F G) ) \rtimes_r G$, and let $i$ denote this identification of $A \rtimes_r G$. By \cref{ozawprop17}, it is a proper ideal, so by \cref{ozawprop18}, the $G$-invariant ideal $J_A = J \cap (A \otimes C(\dd_F G))$ satisfies
 	\begin{align*}
@@ -404,15 +404,15 @@ For a proof, see \cite[lemma 11]{ozawa2014lecture}. With these results in hand, 
 	If $G$ is $C^*$-simple, then $C(X) \rtimes_{r}G$ is simple for all compact minimal $G$-spaces $X$.
 \end{corollary}
 \begin{note}
-	As mentioned in the original article, the above result (and the rest of the paper) provided a much needed take on the theory of $C^*$-simplicity of discrete groups. Prior to this, the most common way of checking $C^*$-simplicity was the technique initially found by Powers (see \cite{powers1975simplicity} or the authors take on the subject \cite[chapter 3]{bscp}) in his proof for $C^*$-simplicity of $\mathbb{F}_2$. As mentioned, the new results of \cite{breuillard2017c} provided a route to an answer of the long lasting question of equivalence of $C^*$-simplicity and the unique trace property.
+	As mentioned in the original article, the above result (and the rest of the paper) provided a much needed take on the theory of $C^*$-simplicity of discrete groups. Prior to this, the most common way of checking $C^*$-simplicity was the technique initially found by Powers (see \cite{powers1975simplicity} or the author's take on the subject \cite[chapter 3]{bscp}) in his proof for $C^*$-simplicity of $\mathbb{F}_2$. As mentioned, the new results of \cite{breuillard2017c} provided a route to an answer of the long lasting question of equivalence of $C^*$-simplicity and the unique trace property.
 \end{note}
-We include also a result of the late Uffe Haagerup, which was based on the above article as well, and characterized $C^*$-simplicity and uniqueness of trace in terms of convex hulls and states and an averaging property similar to that of Powers' original paper. For a proof, see the original article \cite{haagerup2015new} or the authors discussion and covering of the result \cite[Chapter 5]{bscp}:
+We include also a result of the late Uffe Haagerup, which was based on the above article as well, and characterized $C^*$-simplicity and uniqueness of trace in terms of convex hulls and states and an averaging property similar to that of Powers' original paper. For a proof, see the original article \cite{haagerup2015new} or the author's discussion and covering of the result \cite[Chapter 5]{bscp}:
 \begin{theorem}
 	Let $G$ be a discrete countable group with canonical tracial state $\tau_0$ on $C_r^*(G)$. Then the following are equivalent:
 	\begin{enumerate}
 		\item $G$ is $C^*$-simple,
-		\item $G$ admits a fre boundary action,
-		\item $\tau_0 \in \left\{ s.\varphi \ \mid \ s \in G \right\}$ for all states $\varphi $ on $C_r^*(G)$, where $s.\varphi(a) = \varphi(\lambda_s a \lambda_s^*)$,
+		\item $G$ admits a free boundary action,
+		\item $\tau_0 \in\overline{ \left\{ s.\varphi \ \mid \ s \in G \right\}}^{w^*}$ for all states $\varphi $ on $C_r^*(G)$, where $s.\varphi(a) = \varphi(\lambda_s a \lambda_s^*)$,
 		\item $\tau_0 \in \overline{\mathrm{conv}}^{w^*}\left\{ s . \varphi \ \mid \ s \in G \right\}$, for all states $\varphi$ on $C_r^*(G)$,
 		\item for all $t_1,\dots,t_m \in G\backslash\{e\}$ and $\varepsilon > 0$ there exists $s_1,\dots,s_n \in G$ such that
 			\begin{align*}

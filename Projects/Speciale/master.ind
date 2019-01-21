@@ -3,7 +3,7 @@
 
   \item $*$-strong topology \dotfill \hyperpage{19}
   \item $C^*$-dynamical system \dotfill \hyperpage{32}
-  \item $C^*$-simple \dotfill \hyperpage{99}
+  \item $C^*$-simple \dotfill \hyperpage{98}
   \item $G \mathrel {\mathop {\curvearrowright }\limits ^{}} X$ \dotfill 
 		\hyperpage{73}
   \item $G$-boundary \dotfill \hyperpage{75}
@@ -11,7 +11,7 @@
   \item $G$-product \dotfill \hyperpage{61}
   \item $G$-simple \dotfill \hyperpage{87}
   \item $G$-space \dotfill \hyperpage{73}
-  \item $K \mathaccentV {bar}016\rtimes _r G$ \dotfill \hyperpage{103}
+  \item $K \mathaccentV {bar}016\rtimes _r G$ \dotfill \hyperpage{102}
   \item $S^\perp $ \dotfill \hyperpage{59}
   \item $W^*$-system \dotfill \hyperpage{80}
   \item $\mathaccentV {widehat}870{\alpha }$ \dotfill \hyperpage{61}
@@ -41,7 +41,7 @@
   \item Cocycle equation \dotfill \hyperpage{84}
   \item Compact Operators on a Hilbert $A$-module \dotfill 
 		\hyperpage{8}
-  \item compact-open \dotfill \hyperpage{74}
+  \item compact-open \dotfill \hyperpage{73}
   \item Connes Spectrum \dotfill \hyperpage{79}
   \item covariant representation \dotfill \hyperpage{32}
 
@@ -49,7 +49,7 @@
 {\large\sffamily\bfseries D}\nopagebreak
 
   \item detects ideals \dotfill \hyperpage{89}
-  \item disjoint representations \dotfill \hyperpage{95}
+  \item disjoint representations \dotfill \hyperpage{94}
   \item dual action \dotfill \hyperpage{61}
 
   \indexspace
@@ -72,7 +72,7 @@
   \item hereditary \dotfill \hyperpage{79}
   \item Hilbert $A$-module \dotfill \hyperpage{2}
   \item Hilbert $C^*$-module over $A$ \dotfill \hyperpage{2}
-  \item hull-kernel topology \dotfill \hyperpage{93}
+  \item hull-kernel topology \dotfill \hyperpage{92}
 
   \indexspace
 {\large\sffamily\bfseries I}\nopagebreak
@@ -107,13 +107,13 @@
 
   \item polarization identity \dotfill \hyperpage{6}
   \item positive definite \dotfill \hyperpage{46}
-  \item primitive ideal space \dotfill \hyperpage{93}
-  \item properly outer \dotfill \hyperpage{95}
+  \item primitive ideal space \dotfill \hyperpage{92}
+  \item properly outer \dotfill \hyperpage{94}
 
   \indexspace
 {\large\sffamily\bfseries Q}\nopagebreak
 
-  \item quasi-regular representation \dotfill \hyperpage{100}
+  \item quasi-regular representation \dotfill \hyperpage{99}
 
   \indexspace
 {\large\sffamily\bfseries R}\nopagebreak
@@ -129,24 +129,24 @@
   \item separates ideals \dotfill \hyperpage{89}
   \item spectral $M$-subspace \dotfill \hyperpage{78}
   \item spectral $R$-subspace \dotfill \hyperpage{77}
-  \item spectrum of a $C^*$-algebra \dotfill \hyperpage{93}
+  \item spectrum of a $C^*$-algebra \dotfill \hyperpage{92}
   \item strict topology \dotfill \hyperpage{12}
   \item strongly proximal action \dotfill \hyperpage{75}
 
   \indexspace
 {\large\sffamily\bfseries T}\nopagebreak
 
-  \item Topologically free \dotfill \hyperpage{94}
+  \item topologically free \dotfill \hyperpage{93}
   \item topology of weak$^*$ uniform convergence on compacta \dotfill 
 		\hyperpage{48}
-  \item topology on $\mathrm{Homeo}(X)$ \dotfill \hyperpage{74}
+  \item topology on $\mathrm{Homeo}(X)$ \dotfill \hyperpage{73}
   \item Transformation Group \dotfill \hyperpage{73}
-  \item transposed action of $G$ \dotfill \hyperpage{94}
+  \item transposed action of $G$ \dotfill \hyperpage{93}
 
   \indexspace
 {\large\sffamily\bfseries U}\nopagebreak
 
-  \item unique trace property \dotfill \hyperpage{99}
+  \item unique trace property \dotfill \hyperpage{98}
   \item unitization \dotfill \hyperpage{13}
   \item universal norm \dotfill \hyperpage{38}
 

@@ -14,7 +14,7 @@ We say that $\alpha_f$ and $\alpha_\mu$ are the \myemph{weak$^*$-integrals} of $
 \end{align*}
 which is a dense ideal of $L^1(G)$, see \cite[Theorem 4.60]{folland2016fourier}.
 \begin{definition}
-	Let $(A, G, \alpha)$ be a $C^*$-dynamical system. For open sets $U \subseteq \hat G$, we define the \myemph{spectral $R$-subspace} $R^\alpha(U)$ to be the subspace of $A$ defined by
+	Let $(A, G, \alpha)$ be a $C^*$-dynamical a-system. For open sets $U \subseteq \hat G$, we define the \myemph{spectral $R$-subspace} $R^\alpha(U)$ to be the subspace of $A$ defined by
 	\begin{align*}
 		R^\alpha(U) := \overline{ \Span \left\{ \alpha_f(a) \mid a \in A, f \in \cc^1(G) \text{ with } \supp \hat f \subseteq U \right\} }^{w},
 	\end{align*}
@@ -26,7 +26,7 @@ which is a dense ideal of $L^1(G)$, see \cite[Theorem 4.60]{folland2016fourier}.
 \end{definition}
 By \cite[Theorem 8.1.4]{pedersenalgauto}, it follows that the $R$- and $M$-spaces are $G$-invariant subsets, and
 \begin{align*}
-	\bigcap_i M^\alpha(K_i) = M^\alpha\left(\bigcap_I K_i\right),
+	\bigcap_i M^\alpha(K_i) = M^\alpha\left(\bigcap_i K_i\right),
 \end{align*}
 for all collections of subsets $(K_i)$ of $\hat G$. This allows us to give the following definition:
 \begin{definition}
@@ -35,7 +35,7 @@ for all collections of subsets $(K_i)$ of $\hat G$. This allows us to give the f
 In his dissertation (see \cite{connesclassification}), Alain Connes proved a series of equivalent characterizations of $\Sp \alpha$, which we will need. We include it without proof and instead refer the reader to \cite[Proposition 8.1.9 and 8.1.8]{pedersenalgauto} for the proof.
 \begin{proposition}
 	Let $(A, G, \alpha)$ be a $C^*$-dynamical a-system. Then for $\sigma \in \hat G$ the following are equivalent:
-	\begin{enumerate}
+	\begin{enumerate}[nosep]
 		\item $\sigma \in \Sp \alpha$,
 		\item For all neighborhoods $U$ of $\sigma$: $R^\alpha(U) \neq 0$,
 		\item There is a net $(a_i) \subseteq A$, $\lv a_i \rv = 1$, such that $\lv\alpha_t(x_i) - (t,\sigma)x_i\rv \to 0$ uniformly on compacts of $G$,
@@ -105,7 +105,7 @@ But first, a lemma which we will use several times throughout this chapter:
 	\label{connesideal1}
 \end{proposition}
 \begin{proof}
-	We will be considering $A \rtimes_\alpha G$ as a $G$-product, so that $A \subseteq M(A \rtimes\alpha G)$ is the set of elements satisfying Landstad's conditions \todo{Cref Landstad}. Assume that $I \cap \alpha_t(I) = 0$ for $0 \neq I \in \mathcal{I}(A)$. Using \cref{poselyx} pick elements $0 \neq x,y \in I_+$ be such that $yx=y$. Let $K$ be a compact neighborhood of $0 \in G$ such that $ \lv \alpha_s(x)-x\rv < 1$ for $s \in K$. Then $1-(\alpha_s(x)-x)$ is invertible with inverse $\sum_{n=0}^\infty (\alpha_s(x)-x)^n$. Then
+	We will be considering $A \rtimes_\alpha G$ as a $G$-product, so that $A \subseteq M(A \rtimes_\alpha G)$ is the set of elements satisfying Landstad's conditions \todo{Cref Landstad}. Assume that $I \cap \alpha_t(I) = 0$ for $0 \neq I \in \mathcal{I}(A)$. Using \cref{poselyx} pick elements $0 \neq x,y \in I_+$ be such that $yx=y$. Let $K$ be a compact neighborhood of $0 \in G$ such that $ \lv \alpha_s(x)-x\rv < 1$ for $s \in K$. Then $1-(\alpha_s(x)-x)$ is invertible with inverse $\sum_{n=0}^\infty (\alpha_s(x)-x)^n$. Then
 	\begin{align*}
 		\alpha_s(y)=\alpha_s(y)x \sum_{n=0}^\infty (\alpha_s(x)-x)^n \in I,
 	\end{align*}
@@ -182,13 +182,13 @@ We now define an equivalence on the of $(A,G)$-$C^*$-dynamical systems, i.e., th
 \end{definition}
 \begin{lemma}
 	A necessary and sufficient condition for $(A, G , \alpha)$ and $(A, G , \alpha')$ being exterior equivalent is that there exists a strongly continuous map $G \to \mathcal{U} M(A)$ such that
-	\begin{enumerate}
-		\item $u_{s+t}=u_s\alpha_s(u_t)$ for all $s,t \in G$ and\\
+	\begin{enumerate}[nosep]
+		\item $u_{s+t}=u_s\alpha_s(u_t)$ for all $s,t \in G$ and
 		\item $\alpha_t' = (\mathrm{Ad} u_t ) \alpha_t$.
 	\end{enumerate}
 \end{lemma}
 \begin{proof}
-Suppose that $(A, G , \alpha)$ and $(A,G,\alpha')$ are exterior equivalent. Extend $\lambda$ to $M(M_2(A))$, and define the operator
+Suppose that $(A, G , \alpha)$ and $(A,G,\alpha')$ are exterior equivalent. Extend $\lambda$ to $M(M_2(A))$, and define for each $t \in G$ the operator
 \begin{align*}
 	m_t:=\lambda_t\begin{pmatrix}
 		0 & 0 \\
@@ -243,7 +243,7 @@ see also \cite[lemma 4.3]{olesenpedersen1}. This is particularly useful for us, 
 	If $(A, G, \alpha)$ and $(B, G, \beta)$ are covariantly isomorphic $C^*$-dynamical systems, then (after identifying $A$ with $B$), we see that $(A,G, \alpha)$ and $(A, G, \beta)$ are trivially exteriorly equivalent.
 \end{note}
 \begin{theorem}
-	Let $(A,G,\alpha)$ be a $C^*$-dynamical system. Then $\hat G(\alpha)=\hat G (\hat{\hat \alpha})$ for $(A, G, \alpha)$ and $(A \rtimes_\alpha G \rtimes_{\hat \alpha} \hat G, G, \hat{\hat \alpha})$.
+	Let $(A,G,\alpha)$ be a $C^*$-dynamical a-system. Then $\hat G(\alpha)=\hat G (\hat{\hat \alpha})$ for $(A, G, \alpha)$ and $(A \rtimes_\alpha G \rtimes_{\hat \alpha} \hat G, G, \hat{\hat \alpha})$.
 	\label{dualactionspectrum}
 \end{theorem}
 \begin{proof}
@@ -262,9 +262,9 @@ see also \cite[lemma 4.3]{olesenpedersen1}. This is particularly useful for us, 
 	\end{align*}
 	finishing the proof.
 \end{proof}
-Which gives us the first ingredient in determining the ideal structure of $A \rtimes_\alpha G$:
+This gives us the first ingredient in determining the ideal structure of $A \rtimes_\alpha G$:
 \begin{corollary}
-	Let $(A,G,\alpha)$ be a $C^*$-dynamical system. Then $\sigma \in \hat G ( \alpha)$ if and only if $I \cap \hat \alpha_\sigma (I) \neq 0$ for all non-zero ideals $I \subseteq A \rtimes_\alpha G$.
+	Let $(A,G,\alpha)$ be a $C^*$-dynamical a-system. Then $\sigma \in \hat G ( \alpha)$ if and only if $I \cap \hat \alpha_\sigma (I) \neq 0$ for all non-zero ideals $I \subseteq A \rtimes_\alpha G$.
 	\label{olpe1.5.4}
 \end{corollary}
 \begin{proof}
@@ -276,12 +276,12 @@ Which gives us the first ingredient in determining the ideal structure of $A \rt
 \begin{remark}
 	Analogously with the regular definition of a prime $C^*$-algebra, the definition of $A$ being $G$-prime is equivalent to every non-zero $G$-invariant ideal of $A$ being essential or if $\alpha_t(x) A \alpha_s(y)=0$ for all $s,t \in G$ implies $x = 0$ or $y = 0$. We will not go into details with this, the details are almost identical to the ones for regular primitivity of $A$.
 
-	Also worth noting is that if $(A,G,\alpha)$ and $(B, \Gamma, \beta)$ are covariantly isomorphic (i.e., there is a $G$-equivariant isomorphism $\varphi \colon A \to B$), then $A$ is $G$-prime if and only if $B$ is $\Gamma$-prime, obviously.
+	Also worth noting is that if $(A,G,\alpha)$ and $(B, \Gamma, \beta)$ are covariantly isomorphic, then $A$ is $G$-prime if and only if $B$ is $\Gamma$-prime, obviously.
 \end{remark}
 With this, we obtain:
 \begin{lemma}
-	Let $(A,G,\alpha)$ be a $C^*$-dynamical system. Then the following are equivalent:
-	\begin{enumerate}
+	Let $(A,G,\alpha)$ be a $C^*$-dynamical a-system. Then the following are equivalent:
+	\begin{enumerate}[nosep]
 		\item $A$ is prime;
 		\item (a) $A$ is $G$-prime and (b) $G(\hat \alpha ) =G$.
 	\end{enumerate}
@@ -293,14 +293,14 @@ With this, we obtain:
 	Assume towards a contradiction that (a) and (b) holds and $A$ is not prime, and let $I, J$ be non-zero ideals of $A$ such that $I \cap J = 0$. If $t \in G$ is such that $\alpha_t(I) \cap J \neq 0$, then, since $-t \in G(\hat \alpha)$, it must hold that with $L := \alpha_t(I)) \cap J$, we have $L \cap \alpha_{-t}(L) \neq 0$, but $L \cap \alpha_{-t}(L) \subseteq  J \cap I = 0$, so $\alpha_t(I) \cap J = 0$. Let $I_G$ be the smallest ideal containing $\bigcap_{t \in G} \alpha_t(I)$ and note that in particular $I_g$ is a non-zero $G$-invariant ideal of $A$, hence essential by (a). Then $I_G \cap J = 0$, but since $I_G$ is essential in $A$, this implies that $J = 0$, a contradiction. Hence $A$ is a prime $C^*$-algebra.
 \end{proof}
 \begin{lemma}
-	Let $(A, G, \alpha)$ be a $C^*$-dynamical system. Then $A$ is $G$-prime if and only if $A \rtimes_\alpha G$ is $\hat G$-prime.			
+	Let $(A, G, \alpha)$ be a $C^*$-dynamical a-system. Then $A$ is $G$-prime if and only if $A \rtimes_\alpha G$ is $\hat G$-prime.			
 	\label{olpe1.5.7}
 \end{lemma}
 \begin{proof}
 	It is quite easy to see that if $I,J$ are non-zero $\hat G$-invariant ideals of $A \rtimes_\alpha G$ with $I \cap J = 0$, then whenever $f \in L^1(G) \cap L^2(G)$, $\lv f \rv_1  \neq 0$ and $x \in I_+$ and $y \in J_+$ are non-zero, then by \cref{olpe1lemma2.8} we have $a := I(\lambda_f^* y \lambda_f) \in A$ and $b := I(\lambda_f^* x \lambda_f)$ since $A$ are the elements of $M(A \rtimes_\alpha G)$ satisfying Landstad's condition.
 	
 	It is not hard to see that $a z b = 0$ for all $z \in M(A \rtimes_\alpha G)$ (in particular for all $z \in A \subseteq M(A \rtimes_\alpha G)$) since:
-	\begin{enumerate}
+	\begin{enumerate}[nosep]
 		\item For $z \in M(A \rtimes_\alpha G)$ we have $z \lambda_f^* y \lambda_f \in J$
 		\item The ideals are $\hat G$-invariant
 	\end{enumerate}
@@ -318,21 +318,21 @@ With this, we obtain:
 \end{proof}
 Combining the previous round of results, we obtain a nice result:
 \begin{corollary}
-	For a $C^*$-dynamical system $(A,G,\alpha)$, the following are equivalent:
-	\begin{enumerate}
+	For a $C^*$-dynamical a-system $(A,G,\alpha)$, the following are equivalent:
+	\begin{enumerate}[nosep]
 		\item $A \rtimes_\alpha G$ is prime;
 		\item (a) $A$ is $G$-prime and (b) $\hat G(\alpha) = \hat G$.
 	\end{enumerate}
 	\label{olpe1.5.8}
 \end{corollary}
 
-Analogously to the case of primitivity and $G$-primitivity, we introduce the notion of $G$-simplicity of a dynamical system:
+Analogously to the case of primitivity and $G$-primitivity, we introduce the notion of $G$-simplicity of a dynamical system, which is closely related to minimality of actions on spaces:
 \begin{definition}
 	Let $(A,G,\alpha)$ be a $C^*$-dynamical system. We say that $A$ is \myemph{$G$-simple} if there are no non-trivial $G$-invariant ideals $J$ of $A$.
 \end{definition}
 It is clear that $G$-simple is a stronger requirement than being $G$-prime and is more closely related to simplicity of $A$. We will now see that the set of $G$-invariant ideals of $A$ is in bijection with the set of $\hat G$-invariant ideals of the crossed product $A \rtimes_\alpha G$, and list a necessary and sufficient condition for simplicity of $A \rtimes_\alpha G$ for a large class of groups, but first, we have the following:
 \begin{proposition}
-	Given a $C^*$-dynamical systems $(A,G,\alpha)$, it holds that $A$ is $G$-simple if and only if $A \rtimes_\alpha G$ is $\hat G$-simple.
+	Given a $C^*$-dynamical a-systems $(A,G,\alpha)$, it holds that $A$ is $G$-simple if and only if $A \rtimes_\alpha G$ is $\hat G$-simple.
 	\label{olpe1.6.1}
 \end{proposition}
 \begin{proof}
@@ -352,8 +352,8 @@ It is clear that $G$-simple is a stronger requirement than being $G$-prime and i
 \end{proof}
 Allowing us to, analogously with the case of primitivity, to obtain the following:
 \begin{proposition}	
-	For a $C^*$-dynamical system $(A,G,\alpha)$, if $A$ is simple then
-\begin{enumerate}
+	For a $C^*$-dynamical a-system $(A,G,\alpha)$, if $A$ is simple then
+	\begin{enumerate}[nosep]
 	\item $A \rtimes_\alpha G$ is $\hat G$-simple;
 	\item $G(\hat \alpha) = G$.
 \end{enumerate}
@@ -362,8 +362,8 @@ Allowing us to, analogously with the case of primitivity, to obtain the followin
 	If $A$ is simple, then $A$ is in particular $G$-simple implying that $A \rtimes_\alpha G$ is $\hat G$-simple by \cref{olpe1.6.1}. Similarly, if $A$ is simple then $A$ is prime so $G(\hat \alpha) = G$ by \cref{olpe1.3.4}.
 \end{proof}
 \begin{proposition}
-	For a $C^*$-dynamical system $(A,G,\alpha)$, if $A \rtimes_\alpha G$ is simple then 
-	\begin{enumerate}
+	For a $C^*$-dynamical a-system $(A,G,\alpha)$, if $A \rtimes_\alpha G$ is simple then 
+	\begin{enumerate}[nosep]
 		\item $A$ is $G$-simple;
 		\item $\hat G(\alpha)= \hat G$.
 	\end{enumerate}
@@ -389,8 +389,8 @@ We proceed to show that whenever $G$ is discrete, then the converse of the above
 	If $t \in G$, then there is $1 \leq k \leq n$ such that $t-t_k \in U$ and hence $\alpha_t(y_0) = \cdots \alpha_{t+t_k}(y) \dots \in I$, implying that the orbit $\{\alpha_s(y_0) \mid s \in G\}$ is contained in $I$. Let $I_0$ be the smallest ideal containing this orbit, then $y_0 \in I_0 \subseteq I \neq A$ contradicting the assumption that $A$ is $G$-simple, since $I_0$ is $G$-invariant. Hence $A$ is simple.
 \end{proof}
 \begin{theorem}
-	Let $(A, G ,\alpha)$ be a $C^*$-dynamical system with $G$ discrete, then the following are equivalent:
-	\begin{enumerate}
+	Let $(A, G ,\alpha)$ be a $C^*$-dynamical a-system with $G$ discrete, then the following are equivalent:
+	\begin{enumerate}[nosep]
 		\item $A \rtimes_\alpha G$ is simple;
 		\item (a) $A$ is $G$-simple and (b) $\hat G(\alpha) = \hat G$.
 	\end{enumerate}
@@ -406,13 +406,13 @@ We will now see that the Connes spectrum, in a way, measures how well $A$ sees i
 	Let $A$ be a $C^*$-subalgebra of a $C^*$-algebra $B$. We say that $A$ \myemph{detects ideals} in $B$ if $J \cap A = 0$ happens if and only if $J = 0$ for each ideal $J$ of $B$. Similarly, we say that $A$ \myemph{separates ideals} in $B$ if $I \cap A = J \cap A$ implies $I=J$ whenever $I,J$ are ideals of $B$.
 \end{definition}
 \begin{lemma}
-	Let $(A,G,\alpha)$ be a $C^*$-dynamical system and assume that for all ideals $0 \neq I \subseteq A$ and each $t \in G$ we have $I \cap \alpha_t(I) \neq 0$. Then for each non-zero ideal $0 \neq J \subseteq A$ and each compact $K \subseteq G$ there is $z \in J \backslash\{0\}$ such that $\alpha_t(z) \in J$ for all $t \in K$. 
+	Let $(A,G,\alpha)$ be a $C^*$-dynamical a-system and assume that for all ideals $0 \neq I \subseteq A$ and each $t \in G$ we have $I \cap \alpha_t(I) \neq 0$. Then for each non-zero ideal $0 \neq J \subseteq A$ and each compact $K \subseteq G$ there is $z \in J \backslash\{0\}$ such that $\alpha_t(z) \in J$ for all $t \in K$. 
 	\label{olpe2.2.1}
 \end{lemma}
 \begin{proof}
-	Choose $0 \neq x,y \in J_+$ such that $yx=x$ and a neighborhood $0 \in U \subseteq G$ such that $\lv \alpha_t(x)-x\rv < 1$ for all $t \in U$ so that $\alpha_t(y) \in J$ whenever $ t \in U$. Let now $t_1,\dots,t_n \in G$ be such that $K \subseteq \bigcup_{1 \leq i \leq n} (U-t_n)$, by compactness of $K$. Assume that for some $2 \leq m < n$ we can find $a_2,\dots,a_m \in A$ such that $z_1:= \alpha_{t_1}(y) \neq 0$ and $z_m = z_{m-1} a_m \alpha_{t_m}(y) \neq 0$. We claim that then there is $a_{m+1} \in A$ such that $z_{m+1}=z_{m}a_{m+1}\alpha_{t_{m+1}}(y) \neq 0$:
-
-	Suppose not, so that $z_m A \alpha_{t_{m+1}}(y) = 0$. Then $z_m A \alpha_{t_{m+1}-t_m}(z_m) \subseteq  z_m A \alpha_{t_{m+1}}(y)=0$, by assumption. Since $z_m \neq 0$, if $I$ is the ideal generated by $z_n$, then $I \cap \alpha_{s}(I) = I \alpha_{s}(I)= 0$, contradicting our assumption. Hence we can pick $a_{m+1} \in A$ such that $z_{m+1} = z_m a_{m+1} \alpha_{t_{m+1}}(y) \neq 0$. Let $z = z_m$, so that $\alpha_t(z) \in J$ for all $t \in K$, since $t +t_m \in U$ for some $m$ so $\alpha_{t+t_{n}}(m)$ is a factor of $\alpha_t(z)$. By choosing $t_1,\dots,t_n$ smart (e.g., as elements of $-K$), we may without loss of generality assume that $0 \in K$, so that $z \in J$, finishing the proof.
+	Choose $0 \neq x,y \in J_+$ such that $yx=x$ and a neighborhood $0 \in U \subseteq G$ such that $\lv \alpha_t(x)-x\rv < 1$ for all $t \in U$ so that $\alpha_t(y) \in J$ whenever $ t \in U$. Let now $t_1,\dots,t_n \in G$ be such that $K \subseteq \bigcup_{1 \leq i \leq n} (U-t_n)$, by compactness of $K$. Assume that for some $2 \leq m < n$ we can find $a_2,\dots,a_m \in A$ such that $z_1:= \alpha_{t_1}(y) \neq 0$ and $z_m = z_{m-1} a_m \alpha_{t_m}(y) \neq 0$.
+	
+	We claim that then there is $a_{m+1} \in A$ such that $z_{m+1}=z_{m}a_{m+1}\alpha_{t_{m+1}}(y) \neq 0$:	Suppose not, so that $z_m A \alpha_{t_{m+1}}(y) = 0$. Then $z_m A \alpha_{t_{m+1}-t_m}(z_m) \subseteq  z_m A \alpha_{t_{m+1}}(y)=0$, by assumption. Since $z_m \neq 0$, if $I$ is the ideal generated by $z_n$, then $I \cap \alpha_{s}(I) = I \alpha_{s}(I)= 0$, contradicting our assumption. Hence we can pick $a_{m+1} \in A$ such that $z_{m+1} = z_m a_{m+1} \alpha_{t_{m+1}}(y) \neq 0$. Let $z = z_m$, so that $\alpha_t(z) \in J$ for all $t \in K$, since $t +t_m \in U$ for some $m$ so $\alpha_{t+t_{n}}(m)$ is a factor of $\alpha_t(z)$. By choosing $t_1,\dots,t_n$ smart (e.g., as elements of $-K$), we may without loss of generality assume that $0 \in K$, so that $z \in J$, finishing the proof.
 \end{proof}
 \begin{proposition}
 Let $(A,G,\alpha)$ be a $C^*$-dynamical system and assume that for each non-zero ideal $0 \neq I \subseteq A$ it holds that $I \cap \alpha_t(I) \neq 0 $ for all $t \in G$. If $0 \neq J \subseteq A$ is an ideal invariant under a subgroup $G_0$ of $G$ with compact quotient $G/G_0$, then there is a non-zero $G$-invariant ideal $J_0 \subseteq J$.
@@ -426,12 +426,12 @@ Let $(A,G,\alpha)$ be a $C^*$-dynamical system and assume that for each non-zero
 	\label{olpe2.2.4}
 \end{proposition}
 \begin{proof}
-	We know that $\sigma \in \hat G(\alpha)$ if and only if $\hat \alpha_\sigma(I) \cap I \neq 0$ for all non-zero ideals $I\subseteq A \rtimes_\alpha G$, cf. \cref{olpe1.5.4}. Note that since $G$ is assumed discrete, $\hat G$ is compact and since $\hat G(\alpha)$ is closed in $\hat G$, this implies that $\hat G$ is compact as well. By \cref{olpe2.2.2}, since $\hat G(\alpha) /\{0\}$ is compact and the conditions are satisfied, there is a non-zero $\hat G(\alpha)$-invariant ideal $I_0\subseteq I$, hence in particular it will be $\hat \alpha_\sigma$-invariant. 
+	We know that $\sigma \in \hat G(\alpha)$ if and only if $\hat \alpha_\sigma(I) \cap I \neq 0$ for all non-zero ideals $I\subseteq A \rtimes_\alpha G$, cf. \cref{olpe1.5.4}. Note that since $G$ is assumed discrete, $\hat G$ is compact and since $\hat G(\alpha)$ is closed in $\hat G$, this implies that $\hat G(\alpha)$ is compact as well. By \cref{olpe2.2.2}, since $\hat G(\alpha) /\{0\}$ is compact and the conditions are satisfied, there is a non-zero $\hat G(\alpha)$-invariant ideal $I_0\subseteq I$, hence in particular it will be $\hat \alpha_\sigma$-invariant. 
 \end{proof}
 We summarize, for discrete groups (though some of them are also true for non-discrete groups), our characterization of the Connes spectrum in the following theorem:
 \begin{theorem}
 	Let $(A,G,\alpha)$ be a $C^*$-dynamical system with $G$ discrete. Then the following are equivalent:
-	\begin{enumerate}
+	\begin{enumerate}[nosep]
 		\item $\hat G(\alpha) = \hat G$.
 		\item For each $\sigma \in \hat G$ and each non-zero ideal $I \subseteq A \rtimes_\alpha G$ we have $I \cap \hat \alpha_\sigma(I) \neq 0$.
 		\item For each non-zero ideal $I \subseteq A \rtimes_\alpha G$ there is a non-zero $\hat G$-invariant ideal $I_0 \subseteq I$.
@@ -442,9 +442,9 @@ We summarize, for discrete groups (though some of them are also true for non-dis
 \begin{proof}
 	The implication (1) $\iff$ (2) is \cref{olpe1.5.4} and the implication (2) $\implies$ (3) is \cref{olpe2.2.2}. We show that (3) $\implies$ (4) $\implies$ (2) for discrete groups:
 
-	Assume (3) and let $I$ be a non-zero ideal of $A \rtimes_\alpha G$, which without loss of generality may be assumed to be $\hat G$-invariant by (3). If $0 \neq x \in I_+$, then $a = \int_{\hat G} \hat \alpha_{\sigma}(x) \d \sigma$ is a non-zero element of $I_+$ which is fixed under $\hat G$. By \cite[lemma 3.2]{landstad1979towards}, for discrete groups $G$, the elements of $A \rtimes_\alpha G$ which are fixed by $\hat G$ correspond exactly to $A$, hence $a \in A \cap I$, showing (4).
+	Assume (3). Let $I$ be a non-zero ideal of $A \rtimes_\alpha G$, which without loss of generality may be assumed to be $\hat G$-invariant by (3). If $0 \neq x \in I_+$, then $a = \int_{\hat G} \hat \alpha_{\sigma}(x) \d \sigma$ is a non-zero element of $I_+$ which is fixed under $\hat G$. By \cite[lemma 3.2]{landstad1979towards}, for discrete groups $G$, the elements of $A \rtimes_\alpha G$ which are fixed by $\hat G$ correspond exactly to $A$, hence $a \in A \cap I$, showing (4).
 
-	Assume (4)., then given $\sigma \in \hat G$ and a non-zero ideal $I \subseteq A \rtimes_\alpha G$, if $a \in A \cap I$, then again by \cite[lemma 3.2]{landstad1979towards} we have $a = \hat \alpha_\sigma(a)$, so $a \in I \cap \hat \alpha_\sigma(I)$, showing (2).
+	Assume (4). Then given $\sigma \in \hat G$ and a non-zero ideal $I \subseteq A \rtimes_\alpha G$, if $a \in A \cap I$, then again by \cite[lemma 3.2]{landstad1979towards} we have $a = \hat \alpha_\sigma(a)$, so $a \in I \cap \hat \alpha_\sigma(I)$, showing (2).
 \end{proof}
 
 \Cref{olpe1thm} of Olesen and Pedersen is from 1978, and was one of the first results characterizing simplicity by the means of Connes spectrum. In year after, following a paper of Gootman and Rosenberg (see \cite{gootman1979structure}) on the Generalized Effros-Hahn conjecture, Olesen and Pedersen improved it for the case where $A$ and $G$ are separable to include a larger class of groups, including $\R$ and $S^1$, based on the previous results. We include a corollary of their main theorem for completeness, and refer the reader to \cite{olesenpedersen2} for the full discussion.
