@@ -1,14 +1,18 @@
 \chapter{The Group Spectra And Applications}
-As previously mentioned, we will now begin describing the theory, both old and new, describing the ideal structure of crossed products $A \rtimes_\alpha G$ for topological groups $G$. We will begin by introducing some new structures and concepts associated to this theory.
+As promised, we will now begin describing the theory, both old and new, which is the main topic of this thesis: We will be describing the ideal structure of crossed products $A \rtimes_\alpha G$ for topological groups $G$. Since we will describe theory which only describes dynamical systems $(A,G,\alpha)$ where $G$ is abelian and also theory which describes the general case, we introduce the notation that a $C^*$-dynamical system $(A, G, \alpha)$ is a \myemph{$C^*$-dynamic a-system} if $G$ is abelian. 
 
-Since we will describe theory which only describes dynamical systems $(A,G,\alpha)$ where $G$ is abelian and also theory which describes the general case, we introduce the notation that a triple $(A, G, \alpha)$ is a $C^*$-dynamic a-system if $G \acts \alpha A$ and $G$ is abelian. 
+The theory we will now cover provided some of the initial ways of characterizing the ideal structure (and lack thereof) in crossed products of $C^*$-algebras and topological groups. It also provided a new angle to tackle some problems and led to the discovery of other results which paved the way for more modern results. 
+
+A main motivation of the following can be seen as the following: Given an abelian group $G$ acting on a $C^*$-algebra $A$ via an action $G \acts \alpha A$, can we describe the ideal structure of $A \rtimes_\alpha G$ by means of properties of $G$ and properties of $A$? We will develop a theory which allows us to answer this question for a large class of $C^*$-algebras and groups.
 
 \sssection{The Arveson and Connes spectra}
-For the time being, we will unless otherwise stated, assume that $G$ is abelian with dual group $\hat G$ as in the previous chapter. Recall that whenever we have a $C^*$-dynamical a-system $(A, G, \alpha)$, we also obtain an association of $L^1(G)$ as $A$-valued integral-weights via $ A \ni x \mapsto \alpha_f(x) \in A$ for $f \in L^1(G)$. In fact, for each bounded Radon measure $\mu \in M(G)$ we obtain an $A$-valued weight $\alpha_\mu$ satisfying
+For the time being, we will unless otherwise stated, assume that $G$ is abelian with dual group $\hat G$. Recall that whenever we have a $C^*$-dynamical a-system $(A, G, \alpha)$, we also obtain an association of $L^1(G)$ as operators on $A$, via to defining to each $f \in L^1(G)$ the operator $\alpha_f$ on $A$ satisfying
 \begin{align*}
-	\varphi(\alpha_f(a)) = \int_G \varphi(\alpha_t(x)) \d \mu(t), \text{ for all } a \in A \text{ and } \varphi \in A^*.
+	\varphi(\alpha_f(a)) = \int_G \varphi(\alpha_t(x)) f(t) \d t, \text{ for all } a \in A \text{ and } \varphi \in A^*.
 \end{align*}
-We say that $\alpha_f$ and $\alpha_\mu$ are the \myemph{weak$^*$-integrals} of $f$ and $\mu$, respectively. Fore a more detailed exposition of vector-valued integration, see e.g., \cite[Appendix 3, Lemma 7.4.4]{pedersenalgauto} or \cite[Appendix A.3]{folland2016fourier}. For a group $G$ we define the subset $\cc^1(G)$ of $\cc(G)$ by
+This association extends also to the set of finite Radon measures on $G$, $M(G)$. We say that $\alpha_f$ and $\alpha_\mu$ are the \myemph{weak$^*$-integrals} of $f$ and $\mu$, respectively. For a more detailed exposition of vector-valued integration, see e.g., \cite[Appendix 3, Lemma 7.4.4]{pedersenalgauto} or \cite[Appendix A.3]{folland2016fourier}.
+
+For a group $G$ we define the subset $\cc^1(G)$ of $\cc(G)$ by
 \begin{align*}
 	\cc^1(G):= \{ f \in \cc(G) \mid \hat f \in \cc(\hat G)\},
 \end{align*}
@@ -21,8 +25,7 @@ which is a dense ideal of $L^1(G)$, see \cite[Theorem 4.60]{folland2016fourier}.
 	and similarly, for each closed subset $K \subseteq \hat G$ we define the \myemph{spectral $M$-subspace} $M^\alpha(K)$ to be the subspace of $A$ defined by
 	\begin{align*}
 		M^\alpha(K) := \overline{\Span \left\{ x \in A \mid \alpha_f(x) = 0 \text{ for all } f \in \cc^1(G) \text{ with } \supp \hat f \subseteq K^c \right\}},
-	\end{align*}
-	i.e., as the annihilator of $R^{\alpha'}(K^c)$, where $\alpha'_f(\varphi)$ is the element of $A^*$ such that $\alpha'_f(\varphi)(x)=\varphi(\alpha_f(x))$ for all $x \in A$.
+	\end{align*}	
 \end{definition}
 By \cite[Theorem 8.1.4]{pedersenalgauto}, it follows that the $R$- and $M$-spaces are $G$-invariant subsets, and
 \begin{align*}
@@ -45,13 +48,13 @@ In his dissertation (see \cite{connesclassification}), Alain Connes proved a ser
 		\item It holds that $M^{\alpha}(\{\sigma\}) := \{x \in A \mid  \alpha_t(x) = (t,\sigma)x \text{ for all } t \in G\} \neq 0$.
 	\end{enumerate}
 \end{proposition}
-One very common use of the above is to take the last condition as the definition:
+One common use of the above proposition is to take the last condition as the definition:
 \begin{align*}
 		\Sp \alpha := \left\{ \chi \in \hat G \mid \hat f(\chi) = 0 \text{ whenever } f \in L^1(G) \text{ satisfies } \alpha_f(x) = 0 \text{ for all } x \in A  \right\}.
 	\end{align*}
 We will frequently switch between the above equivalent conditions.
 
-The main motivation (in our case) for introducing the Arveson spectrum is to define the Connes Spectrum. For this, we need to introduce the concept of hereditary sub-$C^*$-algebras:
+The main motivation (in our case) for introducing the Arveson spectrum is to define the Connes Spectrum. For this, we remind the reader of the concept of hereditary sub-$C^*$-algebras:
 \begin{definition}
 	We say that a $C^*$-subalgebra $B\subseteq A$ is \myemph{hereditary} if for all positive $x \in A_+$ we have $x \in B_+$ whenever $y \in B_+$ with $0 \leq x \leq y$. 
 	
@@ -73,7 +76,7 @@ This bijection will be useful soon, since we may define the Connes spectrum of a
 	\end{align*}
 \end{definition}
 \sssection{The Connes Spectrum and Simplicity}
-As we shall see, the Connes spectrum serves as a useful tool in the theory of classification of crossed products. It both serves as an invariant, but also as a way to characterize the ideal structure for a large class of crossed products, and served as a bridge between different results and theorems. For instance it is an invariant under an equivalence relation called exterior equivalence (yet to be defined) and the Connes spectrum of the dual system detects ideals in $A$. 
+As we shall see, the Connes spectrum serves as a useful tool in the theory of classification of crossed products. It both serves as an invariant, but also as a way to characterize the ideal structure for a large class of crossed products, and served as a bridge between different results and theorems. For instance it is an invariant under an equivalence relation on the class of $G$-$C^*$-dynamical systems called \textit{exterior equivalence} (yet to be defined) and the Connes spectrum of the dual system detects ideals in $A$. 
 
 But first, a lemma which we will use several times throughout this chapter:
 \begin{lemma}
@@ -81,39 +84,42 @@ But first, a lemma which we will use several times throughout this chapter:
 	\label{poselyx}
 \end{lemma}
 \begin{proof}
-	Let $z \in I_+$, $z \neq 0$. Pick $0 < \varepsilon < \lv z\rv$, and note that $I$ is hereditary in the unitization of $A$, so $z-\varepsilon \in I_+$. Consider the two functions $h_\varepsilon$ and $f_{\varepsilon}$ given by
+	Let $z \in I_+$, $z \neq 0$. Pick $0 < \varepsilon < \lv z\rv$, and note that $I$ is hereditary in the unitization of $A$, so $z-\varepsilon \in I_+$. Consider the two continuous functions on $\R$, $h_\varepsilon$ and $f_{\varepsilon}$, given by
 	\begin{align*}
 		f_\varepsilon(t) = \begin{cases}
-			\frac t \varepsilon, & t \leq \varepsilon\\
+			0, & t \leq 0\\
+			\frac t \varepsilon, &  0 \leq t \leq \varepsilon\\
 			1 & \text{ else}
 		\end{cases}, \quad  h_\varepsilon(t) = \begin{cases}
 			0, &  t < \varepsilon\\
-			t, & t \geq \varepsilon
+			t-\varepsilon, & t \geq \varepsilon
 		\end{cases}
 	\end{align*}
-	Then it is obvious $f_\varepsilon(t) h_\varepsilon(t) = h_\varepsilon(t)$ and setting $y := h_\varepsilon(z)$ and $x = f_\varepsilon(z-\varepsilon)$ we obtain the desired result by the continuous functional calculus.
+	Setting $y := h_\varepsilon(z)$ and $x = f_\varepsilon(z)$ gives the desired result by the continuous functional calculus.
 \end{proof}
 \begin{remark}
-	The proof of the following result due to Olesen and Pedersen, relies on the theory of $W^*$-dynamical systems, which quite similar to that of $C^*$-dynamical systems. We will use some properties without proof, as it will take us too much off-course to develop properly, and instead refer the reader to relevant material on the subject whenever needed.	
+	The proof of the following result due to Olesen and Pedersen, relies on the theory of $W^*$-dynamical systems, which quite similar to that of $C^*$-dynamical systems. We will use some properties without proof, as it will take us too much off-course to develop in depth, and instead refer the reader to relevant material on the subject whenever needed.	
 \begin{definition}
 	A \myemph{$W^*$-system} is a triple $(\mathscr{M},G,\beta)$ where $\mathscr{M}$ is a von Neumann Algebra, $G$ a locally compact Hausdorff group and $\beta \colon G \to \mathrm{Aut}(\mathscr{M})$ is group homomorphism which is continuous with respect to the pointwise weak topology on $\mathrm{Aut}(\mathscr{M})$.
 \end{definition}
 	 We refer the curious reader to \cite[Chapter 7.4 and 7.10]{pedersenalgauto} for a thorough exposition of the subjects.
 \end{remark}
 \begin{proposition}
-	Let $(A, G, \alpha)$ be a $C^*$-dynamical a-system. Then $t \in G(\hat \alpha)$ if and only if $I \cap \alpha_t(I) \neq 0$ for all non-zero ideals of $A$.
+	Let $(A, G, \alpha)$ be a $C^*$-dynamical a-system. Then $t \in G(\hat \alpha)$ if and only if $I \cap \alpha_t(I) \neq 0$ for all non-zero ideals $I$ of $A$.
 	\label{connesideal1}
 \end{proposition}
 \begin{proof}
-	We will be considering $A \rtimes_\alpha G$ as a $G$-product, so that $A \subseteq M(A \rtimes_\alpha G)$ is the set of elements satisfying Landstad's conditions \todo{Cref Landstad}. Assume that $I \cap \alpha_t(I) = 0$ for $0 \neq I \in \mathcal{I}(A)$. Using \cref{poselyx} pick elements $0 \neq x,y \in I_+$ be such that $yx=y$. Let $K$ be a compact neighborhood of $0 \in G$ such that $ \lv \alpha_s(x)-x\rv < 1$ for $s \in K$. Then $1-(\alpha_s(x)-x)$ is invertible with inverse $\sum_{n=0}^\infty (\alpha_s(x)-x)^n$. Then
+	We will be considering $A \rtimes_\alpha G$ as a $G$-product, so that $A \subseteq M(A \rtimes_\alpha G)$ is the set of elements satisfying Landstad's conditions. Assume that $I \cap \alpha_t(I) = 0$ for non-zero ideals $I$ of $A$. Using \cref{poselyx} pick elements $0 \neq x,y \in I_+$ be such that $yx=y$. Let $K$ be a compact neighborhood of $0 \in G$ such that $ \lv \alpha_s(x)-x\rv < 1$ for $s \in K$. Then $1-(\alpha_s(x)-x)$ is invertible in the unitization $A^1$ of $A$ with inverse $\sum_{n=0}^\infty (\alpha_s(x)-x)^n$. We see that
 	\begin{align*}
-		\alpha_s(y)=\alpha_s(y)x \sum_{n=0}^\infty (\alpha_s(x)-x)^n \in I,
+		\alpha_s(y) = \alpha_s(y)(1-(\alpha_s(x)-x)) \sum_{n=0}^\infty (\alpha_s(x)-x)^n = \alpha_s(y)x \sum_{n=0}^\infty (\alpha_s(x)-x)^n \in I,
 	\end{align*}
-	since $\alpha_s(y)-\alpha_s(yx)=0$, implying that 
+	as $\alpha_s(y)-\alpha_s(yx)=0$, whence
 	\begin{align*}
 	y a \alpha_{t-s}(y) = \alpha_{-s}(\alpha_s(y)\alpha_s(a)\alpha_t(y)) \in  \alpha_{-s}(I A \alpha_t(I)) = 0,
 	\end{align*}
-	for all $a \in A$ and $s \in K$. Every $y$ in $A$ satisfies $\hat\alpha(y) = y$ by Landstad's condition. Hence $B:= C^*(\{y z y \mid z \in A \rtimes_\alpha G\}) \subseteq A \rtimes_\alpha G$ is a $\hat \alpha$-invariant hereditary subalgebra, i.e., $B \in \mathscr{H}^{\hat \alpha}(A \rtimes_\alpha G)$. We claim that $t \not \in \Sp {\hat \alpha |_B}$: Pick any $g \in L^1(G)$ with continuous $\hat g$ such that $\mathrm{supp} \hat g \subseteq t-K$. We show that $\hat \alpha_g |_B = 0$ so that $t \not\in \Sp {\hat \alpha|_B}$, by density of $\hat {L^1(\hat G)}$ in $C_0(G)$; let $b \in B$ be of the form
+	for all $a \in A$ and $s \in K$. 
+	
+	Every $y$ in $A$ satisfies $\hat\alpha_\sigma(y) = y$, $\sigma \in \hat G$, by Landstad's condition. Hence $B:= C^*(\{y z y \mid z \in A \rtimes_\alpha G\}) \subseteq A \rtimes_\alpha G$ is an $\hat \alpha$-invariant hereditary $C^*$-subalgebra, i.e., $B \in \mathscr{H}^{\hat \alpha}(A \rtimes_\alpha G)$. We claim that $t \not \in \Sp {\hat \alpha |_B}$: Pick any $g \in L^1(G)$ with $\mathrm{supp} \hat g \subseteq t-K$. To see that $t \not \in \Sp {\hat \alpha|_B}$, it suffices to show that $\hat \alpha_g |_B = 0$, as the Fourier transform densely embed $L^1(\hat G)$ in $C_0(G)$. To see this, let $b \in B$ be of the form
 	\begin{align*}
 		b = y \lambda_f^* a \lambda_f y,
 	\end{align*}
@@ -127,16 +133,20 @@ But first, a lemma which we will use several times throughout this chapter:
 		&= \int_G y I(\lambda_f^* a \lambda_f \lambda_{-s}) \lambda_s y \hat g(s) \d s\\
 		&= \int_G y I(\lambda_f^* a \lambda_f \lambda_{-s}) \alpha_s(y) \lambda_s \hat g(s)\d s = 0,
 	\end{align*}
-	where we used the identity of \cref{eq:olpe1lemma2.8} and covariance of $(\alpha_s,\lambda_s)$. The last equality follows from $I(\lambda_f^* a \lambda_f \lambda_{-s}) \in A$ by \cref{olpe1lemma2.8,landstadcross} combined the fact that $y a' \alpha_s(y)= 0 $ for all $a' \in A$ and $s \in \mathrm{supp} \hat g$ by the above. 
+	where we used the identity of \cref{eq:olpe1lemma2.8} and covariance of $(\alpha_s,\lambda_s)$. The last equality follows from $I(\lambda_f^* a \lambda_f \lambda_{-s}) \in A$ by \cref{olpe1lemma2.8,landstadcross} combined with the fact that $y a' \alpha_s(y)= 0 $ for all $a' \in A$ and $s \in \mathrm{supp} \hat g$ by the above. 
 	
-	The set of elements of the form $y \lambda_f^* a \lambda_f y$ spans a dense subset of $B$ by \cref{olpe1lemma2.7}, since every $x \in A$ may be approximated by $\lambda_f^* x \lambda_f$ in norm. Thus $\hat \alpha_g | B \neq 0$, and since $g$ can be chosen such that $\hat g (t) \neq 0$, we conclude that $t \not \in \Sp {\hat \alpha|_B}$, implying in particular that  $ t \not \in G(\hat \alpha)$.
-
-	For the converse, assume $t \not \in G(\hat \alpha)$, and let $U$ be a neighborhood of $t$. Let $B \in \mathscr{H}^{\hat \alpha}(A \rtimes_\alpha G)$ witness this, i.e., be such that $\hat \alpha _g | B = 0$ whenever $g \in L^1(\hat G)$ with $\mathrm{supp} \hat g \subseteq U $. Choose a neighborhood $U' \subseteq U$ and a neighborhood $0 \in U_0$ such that $U' + U_0-U_0 \subseteq U$, doable choosing $U_0$ arbitrarily small. Given $f_1,f_2 \in L^1(G)$ with support contained in $U_0$, then for all $g \in L^1(\hat G)$ such that $\mathrm{supp} \hat g \subseteq U'$ we have
+	The set of elements of the form $y \lambda_f^* a \lambda_f y$ spans a dense subset of $B$ by \cref{olpe1lemma2.7}, as every $x \in A$ may be approximated by $\lambda_f^* x \lambda_f$ in norm. Thus $\hat \alpha_g | B \neq 0$, and since $g$ can be chosen such that $\hat g (t) \neq 0$, we conclude that $t \not \in \Sp {\hat \alpha|_B}$, implying in particular that  $ t \not \in G(\hat \alpha)$.
+	
+	For the converse, assume $t \not \in G(\hat \alpha)$, and let $U$ be a neighborhood of $t$ and $B \in \mathscr{H}^{\hat \alpha}(A \rtimes_\alpha G)$ witness this: 
+	\begin{align*}
+		\hat \alpha _g | B = 0 \text{ whenever } g \in L^1(\hat G) \text{ with } \mathrm{supp} \hat g \subseteq U.
+	\end{align*}
+	Choose a neighborhood $U' \subseteq U$ and a neighborhood $U_0$ of $0$ such that $U' + U_0-U_0 \subseteq U$. Suppose that $f_1,f_2 \in L^1(G)$, $\mathrm{supp} f_i \subseteq U_0$. If $g \in L^1(\hat G)$ with $\mathrm{supp} \hat g \subseteq U'$, then for each $s \in U_0-U_0$ we have
 \begin{align}
-	\hat {((s,\cdot)g)}(t) = \int_{\hat G} (t+s, \sigma) g(\sigma) \d \sigma = \hat g(s+t)  \neq 0 \iff t \in \mathrm{supp} \hat g - s \subseteq U'+U_0-U_0 \subseteq U
+	\hat {((s,\cdot)g)}(t) = \int_{\hat G} (t+s, \sigma) g(\sigma) \d \sigma = \hat g(s+t)  \neq 0 \iff t \in \mathrm{supp} \hat g - s \subseteq U'+U_0-U_0 \subseteq U.
 	\label{L0eq1}
 \end{align}
-for all $s \in U_0-U_0$, so $sg := (s, \cdot) g$ will satisfy $\hat \alpha_g = 0$ on $B$. Hence, if $y \in B$ we have
+For $s \in G$, let $sg := (s, \cdot) g$ and see that the above shows that $\hat \alpha_{sg} = 0$ on $B$. Now, for $y \in B$ we see that
 \begin{align}
 	\hat \alpha_g(\lambda_{f_1}^* y \lambda_{f_2}) &=  \int_{G \times G \times \hat G} \lambda_{-r} \hat \alpha_\sigma \lambda_s (s-r,\sigma) g(\sigma) \overline{f_1}(r) f_2(s) \d s \d r \d \sigma\\
 	&=  \int_{G \times G \times \hat G} \alpha_{-r}(\hat \alpha_\sigma(y)) \lambda_{-r} \lambda_{s+r}(s,\sigma) g(\sigma) \overline{f_1}(r) f_2(s+r) \d s \d r \d \sigma\\
@@ -144,11 +154,15 @@ for all $s \in U_0-U_0$, so $sg := (s, \cdot) g$ will satisfy $\hat \alpha_g = 0
 	&= 0,
 	\label{L0eq2}
 \end{align}
-since $r \in \mathrm{supp} f_1$ and $s+r \in \mathrm{supp} f_2$ implies $s \in U_0-U_0$ so $\hat \alpha_{sg}(y) = 0$. Since $B$ is a hereditary $C^*$-subalgebra, there is a left ideal of $A \rtimes_\alpha G$, which necessarily must be $\hat G$-invariant by invariance of $B$, such that $B = L^* \cap L$. Let $f \in L^1(G) \cap L^2(G)$, such that $f \neq 0 \in L^1(G)$ and with $\mathrm{supp} f \subseteq U_0$. Define
+for if $r \in \mathrm{supp} f_1$ and $s+r \in \mathrm{supp} f_2$, then $s \in U_0-U_0$ so $\hat \alpha_{sg}(y) = 0$.
+
+Since $B$ is a hereditary $C^*$-subalgebra, there is a left ideal of $A \rtimes_\alpha G$, which necessarily must be $\hat G$-invariant by invariance of $B$, such that $B = L^* \cap L$.
+
+Pick an arbitrary non-zero $f \in \cc(G)$ with $\mathrm{supp} f \subseteq U_0$ and define
 \begin{align*}
 	L_0 :=	\overline{\Span {\left\{\bigcup_{\sigma \in \hat G} L \lambda_{\sigma f}\right\}}},
 \end{align*}
-so that $L_0$ is a closed $\hat G$-invariant left ideal of $A \rtimes_\alpha G$ giving rise to a hereditary $C^*$-subalgebra given by $B_0:= L_0^* \cap L_0 \in \mathscr H^{\hat \alpha}(A \rtimes_{\alpha}G)$.
+so that $L_0$ is a closed $\hat G$-invariant left ideal of $A \rtimes_\alpha G$. Define now the a hereditary $C^*$-subalgebra $B_0:= L_0^* \cap L_0 \in \mathscr H^{\hat \alpha}(A \rtimes_{\alpha}G)$.
 
 Since $f$ was chosen such that $ \supp f \subseteq U_0$, if $\sigma_1,\sigma_2  \in \hat G$, then for all $g \in L^1(G)$ with $\supp \hat g \subseteq U'$ and $y_1,y_2 \in L$ we have
 \begin{align*}
@@ -156,23 +170,21 @@ Since $f$ was chosen such that $ \supp f \subseteq U_0$, if $\sigma_1,\sigma_2  
 \end{align*}
 by \Cref{L0eq1,L0eq2}. Since $B_0$ is densely spanned by elements of the form evaluated in the previous equation, this implies that $t \not\in \Sp {\hat \alpha|_{B_0}}$.
 
-Let $\mathscr{M}_0$ denote the strong operator closure of $B_0$ in $\mathbb{B}(L^2(G,H))$ (recall that $G$ is abelian, so $A \rtimes_\alpha G \subseteq \mathbb{B}(L^2(G,H))$), and let $\beta$ denote the restriction to $\mathscr{M}_0$ of the $\sigma$-weakly extension of $\hat \alpha$ making $(\mathscr{M}_0, \hat G, \beta)$ into a $W^*$-dynamical system, i.e., $\beta = \hat \alpha|_{\mathscr{M}_0}$. We define $R^{\beta}(\Omega)$ to be $\sigma$-weak closure of $R^{\hat \alpha}(\Omega)$ for open sets $\Omega \subseteq \hat G$. In particular, we have $\Sp {\hat \alpha|_{B_0}}= \Sp {\beta|_{\mathscr{M}_0}}$ , see e.g. \cite[Proposition 8.8.9]{pedersenalgauto}, so that $t \not \in \Sp {\beta|_{\mathscr{M}_0}}$.
+Let $\mathscr{M}_0$ denote the strong operator closure of $B_0$ in $\mathbb{B}(L^2(G,H))$, and let $\beta$ denote a $\sigma$-weakly extension of $\hat \alpha|_{B_0}$ to $\mathscr{M}_0$ making $(\mathscr{M}_0, \hat G, \beta)$ into a $W^*$-dynamical system. We define $R^{\beta}(\Omega)$ to be $\sigma$-weak closure of $R^{\hat \alpha}(\Omega)$ for open sets $\Omega \subseteq \hat G$. Then $\Sp {\hat \alpha|_{B_0}}= \Sp {\beta|_{\mathscr{M}_0}}$ cf. e.g. \cite[Proposition 8.8.9]{pedersenalgauto}. In particular, $t \not \in \Sp {\beta|_{\mathscr{M}_0}}$.
 
-Since $B_0$ is the closure of a set of integrable positive elements (see \cref{olpe1lemma2.7}), let $0 \neq y \in B_0$ be a positive and integrable element and let $x_0 := I(y_0)$. Then $x_0 \in \mathscr{M}_0$, which can be seen by letting $g_i \in \cc(\hat G)$ be a net of positive functions such that $g_i(\sigma)\to 1$ for all $\sigma \in \hat G$ and setting $x_i := \hat \alpha_{g_i}(y_0) = \int_{\hat G} \hat \alpha_{\sigma}(y_0) g_i(\sigma) \d \sigma $. We then have a net $(x_i) \subseteq B_0$ which increases strongly to $x_0$. 
+Since $B_0$ is the closure of a set of integrable positive elements (see \cref{olpe1lemma2.7}), let $0 \neq y_0 \in B_0$ be a positive and integrable element and let $x_0 := I(y_0) \in A$. Then $x_0 \in \mathscr{M}_0$: Let $g_i \in \cc(\hat G)$ be a net of positive functions such that $g_i(\sigma)\to 1$ for all $\sigma \in \hat G$ and set $x_i := \hat \alpha_{g_i}(y_0) = \int_{\hat G} \hat \alpha_{\sigma}(y_0) g_i(\sigma) \d \sigma $. It is easy to see that $x_i$ increases in strongly to $x_0$.
 
-If $x \in A$, then $x_0 x \lambda_t x_0 = \lim_{i-\text{strong}} x_i x \lambda_t x_i \in \mathscr{M}_0$. By \cref{olpe1lemma2.8}, $x_0 \in A$, and hence for all $\sigma \in \hat G$ we have:
+If $x \in A$, then $x_0 x \lambda_t x_0 = \lim_{i-\text{strong}} x_i x \lambda_t x_i \in \mathscr{M}_0$, and hence
 \begin{align*}
-	\beta_{\sigma}(x_0 x \lambda_t x_0) = \hat \alpha_\sigma( x_0 x \lambda_t x_0) = x_0 x \hat \alpha_\sigma(\lambda_t) x_0 =  (t,\sigma) x_0 x \lambda_t x_0,
+	\beta_{\sigma}(x_0 x \lambda_t x_0) =(t,\sigma) x_0 x \lambda_t x_0= x_0 x \hat \alpha_\sigma(\lambda_t) x_0 =   \hat \alpha_\sigma( x_0 x \lambda_t x_0)  ,
 \end{align*}
-by Landstad's condition and the properties of a $G$-product. However, the only element which satisfies $\hat \alpha_\sigma (a)=(t,\sigma) a$ is $0$, since $t \not \in \Sp {\hat \alpha |_{\mathscr{M}_0}}$.
-
-In particular,
+for all $\sigma \in \hat G$, by Landstad's condition and the properties of a $G$-product. However, the only element which satisfies $\hat \alpha_\sigma (a)=(t,\sigma) a$ is $0$, as $t \not \in \Sp {\hat \alpha |_{B_0}}$. In particular this implies that
 \begin{align*}
 	x_0 x \alpha_t(x_0) = (x_0 x \lambda_t x_0) \lambda_{-t} = 0,
 \end{align*}
 for all $x \in A$. If $I = \overline{(x_0)} \subseteq A$ is the smallest ideal containing $x_0$, then $0 \neq I \subseteq A$ with $I \cap \alpha_t(I)=I\cdot\alpha_t(I)=0$.
 \end{proof}
-We now define an equivalence on the of $(A,G)$-$C^*$-dynamical systems, i.e., the class of $C^*$-dynamical systems $(A, G, \alpha)$ for fixed $(A,G)$. 
+We now define an equivalence on the class of $(A,G)$-$C^*$-dynamical systems, i.e., the class of $C^*$-dynamical systems $(A, G, \alpha)$ for fixed $(A,G)$. 
 \begin{definition}
 	We say that the $C^*$-dynamical systems $(A,G,\alpha)$ and $(A, G, \alpha')$ are \myemph{exterior equivalent} if there is a $C^*$-dynamical system $(M_2(A), G, \lambda)$ such that
 	\begin{align*}
@@ -212,7 +224,32 @@ since $\lambda_t \in \mathrm{Aut}(M(M_2(A)))$. Similarly $m_tm_t^* = \begin{pmat
 	0 & 0 \\
 	u_t & 0
 \end{pmatrix}$
-for some unitary operator $u_t \in M(A)$, $t \in G$. It is easy to verify that $u_t$ satisfies the desired properties. For the converse, define $\lambda_t$ on $M_2(A)$ by
+for some unitary operator $u_t \in M(A)$, $t \in G$. It is easy to verify that $u_t$ satisfies the desired properties: let $s,t \in G$, then
+\begin{align*}
+	\begin{pmatrix}
+		0 & 0 \\
+		u_{s+t} & 0
+	\end{pmatrix}
+	= \lambda_s\left( \begin{pmatrix}
+		0 & 0 \\
+		1 & 0
+	\end{pmatrix} \begin{pmatrix}
+		u_t & 0 \\
+		0 & 0 
+	\end{pmatrix}\right) =\begin{pmatrix}
+		0 & 0 \\
+		u_t & 0 
+	\end{pmatrix}
+	\begin{pmatrix}
+		\alpha_s(u_t) & 0 \\
+		0 & 0
+	\end{pmatrix}
+	=\begin{pmatrix}
+		0 & 0 \\
+		u_s \alpha_s(u_t) & 0
+	\end{pmatrix}.
+\end{align*}
+The other properties follows analogously. For the converse, define $\lambda_t$ on $M_2(A)$ by
 \begin{align*}
 	\lambda_t \begin{pmatrix}
 		a & b \\
@@ -223,7 +260,7 @@ for some unitary operator $u_t \in M(A)$, $t \in G$. It is easy to verify that $
 		u_t \alpha_t(c) & \alpha'_t(d)
 	\end{pmatrix}
 \end{align*}
-and check that this is indeed an action.
+It is straight forward to check that this is an action fulfilling the desired requirements.
 \end{proof}
 Traditionally, the second condition was called exterior equivalence while the first is called the \myemph{Cocycle equation}. In his thesis (\cite[2.2.5]{connesclassification}), Connes showed that whenever $p\sim q$ are $G$-invariant equivalent projections in $M(A)$ (in the traditional sense, i.e., $p = v^*v$ and $ q = v v^*$ for a partial isometry $v$), then
 \begin{align*}
@@ -239,30 +276,34 @@ see also \cite[lemma 4.3]{olesenpedersen1}. This is particularly useful for us, 
 		\hat G(\alpha) = \hat G ( \gamma|_{p(M_2(A)p}) = \hat G(\gamma|_{q(M_2(A))q}) = \hat G(\alpha').
 	\end{align*}
 \end{proof}
-\begin{note}
+\begin{remark}
 	If $(A, G, \alpha)$ and $(B, G, \beta)$ are covariantly isomorphic $C^*$-dynamical systems, then (after identifying $A$ with $B$), we see that $(A,G, \alpha)$ and $(A, G, \beta)$ are trivially exteriorly equivalent.
-\end{note}
+\end{remark}
 \begin{theorem}
 	Let $(A,G,\alpha)$ be a $C^*$-dynamical a-system. Then $\hat G(\alpha)=\hat G (\hat{\hat \alpha})$ for $(A, G, \alpha)$ and $(A \rtimes_\alpha G \rtimes_{\hat \alpha} \hat G, G, \hat{\hat \alpha})$.
 	\label{dualactionspectrum}
 \end{theorem}
 \begin{proof}
 	First, let $I$ be the trivial representation of $G$ on $\mathbb{K}(L^2(G))$. Then $\hat G(\alpha) = \hat G(\alpha \otimes I)$:
-	Let $\{\xi_i\}$ be a basis of $L^2(G)$, and let $p_i$ be the minimal projection onto $\C \xi_i$. Let $\iota_i$ be the hereditary embedding of $A$ into $A \otimes \mathbb{K}(L^2(G))$, $a \mapsto a \otimes p_i$. Since $A \subseteq A \otimes \mathbb{K}(L^2(G))$ as a hereditary $C^*$-subalgebra, $\hat G(\alpha \otimes I) \subseteq \hat G(\alpha)$. (In fact it is a good exercise to show that given a projection in $p$ a $C^*$-algebra $A$, the cut-off $C^*$-algebra $pAp \subseteq A$ is hereditary, however we instead refer to \cite[Example II.7.3.14]{blackadar})
+	Let $\{\xi_i\}$ be a basis of $L^2(G)$, and let $p_i$ be the minimal projection onto $\C \xi_i$. Let $\iota_i$ be the hereditary embedding of $A$ into $A \otimes \mathbb{K}(L^2(G))$, $a \mapsto a \otimes p_i$. Since $A \subseteq A \otimes \mathbb{K}(L^2(G))$ as a hereditary $C^*$-subalgebra, $\hat G(\alpha \otimes I) \subseteq \hat G(\alpha)$, as given a projection in $p$ a $C^*$-algebra $A$, the cut-off $C^*$-algebra $pAp \subseteq A$ is hereditary, see e.g., \cite[Example II.7.3.14]{blackadar}.
 	
-	For the other inclusion, note that given any non-zero $G$-invariant hereditary $C^*$-subalgebra $B \subseteq A \otimes \mathbb{K}(L^2(G))$, we have $\iota_i(A) \cap B \neq 0$ for some $i$. For else, given $0 < b \in B$, we have $b_i := (1 \otimes p_i) b (1\otimes p_i)  \in \iota_i(A) \cap B= 0$ for all $i$ (apply hereditarity of $B$ to the opposite cutoff and $b$). From this we infer that $b_i \eta \otimes \xi_i = 0$ for all $i$ and all $\eta \in H$, where $A \subseteq \mathbb{B}(H)$. Since $\{\xi_i\} $ is a basis, this implies that $b = 0$. In particular, $\Sp {\alpha \otimes I |_B} \supseteq \Sp { \alpha |_{\iota_i^{-1}(B \cap \iota_i(A))}}$, so that $\hat G(\alpha \otimes I) \supseteq \hat G(\alpha)$.
+	For the other inclusion, we claim that given any non-zero $G$-invariant hereditary $C^*$-subalgebra $B \subseteq A \otimes \mathbb{K}(L^2(G))$ it must hold that $\iota_i(A) \cap B \neq 0$ for some $i$. To see this, given $0 < b \in B$, define $b_i := (1 \otimes p_i) b (1\otimes p_i)$. Then $b_i \leq b$ as $b-b_i = (1 \otimes I-p_i) b (1 \otimes I-p_i) \geq 0$, so $b_i \in B$ hence $b_i  \in \iota_i(A) \cap B= 0$ for all $i$. From this we infer that $b_i \eta \otimes \xi_i = 0$ for all $i$ and all $\eta \in H$, where $A \subseteq \mathbb{B}(H)$. Since $\{\xi_i\} $ is a basis, this implies that $b = 0$, showing the claim. Then $\Sp {\alpha \otimes I |_B} \supseteq \Sp { \alpha |_{\iota_i^{-1}(B \cap \iota_i(A))}}$, so that $\hat G(\alpha \otimes I) \supseteq \hat G(\alpha)$.
 
 	We already know that $\hat G(\hat{\hat \alpha}) = \hat G(\alpha \otimes \mathrm{Ad} \rho)$ by Takai duality. Hence it suffices to show that
 	\begin{align*}
 		(A \otimes \mathbb{K}(L^2(G)), G , \alpha \otimes I) \sim_{\mathrm{ext}} (A \otimes \mathbb{K}(L^2(G)), G , \alpha \otimes \mathrm{Ad} \rho).
 	\end{align*}
-	To see this, let $u_t := 1 \otimes \rho_t \in M(A \otimes \mathbb{K}(L^2(G)))$. Clearly $(\alpha_s \otimes I) (u_t) = \alpha_s(1) \otimes \rho_t = 1 \otimes \rho_t$, so $u_{s+t}= u_s \alpha_s(u_t)$. Also clearly $\alpha \otimes \mathrm{Ad} \rho = \mathrm{Ad} u \circ \alpha \otimes I$, and $t \mapsto u_t$ is equally clearly strongly continuous. We conclude that 
+	To see this, let $u_t := 1 \otimes \rho_t \in M(A \otimes \mathbb{K}(L^2(G)))$. Then for each $s,t \in G$
+	\begin{align*}
+		(\alpha_s \otimes I) (u_t) = \alpha_s(1) \otimes \rho_t = 1 \otimes \rho_t=u_t \text{ implying that } u_{s+t}= u_s (\alpha_s \otimes I)(u_t).
+	\end{align*}
+	Also $\alpha \otimes \mathrm{Ad} \rho = \mathrm{Ad} u \circ \alpha \otimes I$, and the diagonal representation $t \mapsto u_t$ is strongly continuous, whence we conclude that 
 	\begin{align*}
 		\hat G ( \hat {\hat \alpha}) = \hat G ( \alpha \otimes \mathrm{Ad} \rho) = \hat G( \alpha \otimes I) = \hat G( \alpha),
 	\end{align*}
 	finishing the proof.
 \end{proof}
-This gives us the first ingredient in determining the ideal structure of $A \rtimes_\alpha G$:
+This gives us the first ingredient in determining the ideal structure of $A \rtimes_\alpha G$ via means of the Connes spectrum:
 \begin{corollary}
 	Let $(A,G,\alpha)$ be a $C^*$-dynamical a-system. Then $\sigma \in \hat G ( \alpha)$ if and only if $I \cap \hat \alpha_\sigma (I) \neq 0$ for all non-zero ideals $I \subseteq A \rtimes_\alpha G$.
 	\label{olpe1.5.4}
@@ -271,7 +312,7 @@ This gives us the first ingredient in determining the ideal structure of $A \rti
 	Apply \cref{connesideal1} to $\hat{ \hat{ \alpha}}$ and combine it with \cref{dualactionspectrum} to obtain the desired result.
 \end{proof}
 \begin{definition}
-	\todo{include Prime $A$ in prelim} Let $G \acts \alpha A$. We say that $A$ is \myemph{$G$-prime} if whenever $I,J$ are non-zero $G$-invariant ideals in $A$ it holds that $I \cap J \neq 0$.
+	Let $G \acts \alpha A$. We say that $A$ is \myemph{$G$-prime} if whenever $I,J$ are non-zero $G$-invariant ideals in $A$ it holds that $I \cap J \neq 0$.
 \end{definition}
 \begin{remark}
 	Analogously with the regular definition of a prime $C^*$-algebra, the definition of $A$ being $G$-prime is equivalent to every non-zero $G$-invariant ideal of $A$ being essential or if $\alpha_t(x) A \alpha_s(y)=0$ for all $s,t \in G$ implies $x = 0$ or $y = 0$. We will not go into details with this, the details are almost identical to the ones for regular primitivity of $A$.
@@ -288,9 +329,9 @@ With this, we obtain:
 	\label{olpe1.3.4}
 \end{lemma}
 \begin{proof}
-	That $A$ is prime implies $A$ being $G$-prime is obvious and the last implication follows directly from \cref{connesideal1}.
+	That $A$ is prime implies $A$ being $G$-prime is obvious, and (b) follows directly from \cref{connesideal1}, as $\alpha_t(I)$ is a non-zero ideal of $A$ whenever $I$ is.
 
-	Assume towards a contradiction that (a) and (b) holds and $A$ is not prime, and let $I, J$ be non-zero ideals of $A$ such that $I \cap J = 0$. If $t \in G$ is such that $\alpha_t(I) \cap J \neq 0$, then, since $-t \in G(\hat \alpha)$, it must hold that with $L := \alpha_t(I)) \cap J$, we have $L \cap \alpha_{-t}(L) \neq 0$, but $L \cap \alpha_{-t}(L) \subseteq  J \cap I = 0$, so $\alpha_t(I) \cap J = 0$. Let $I_G$ be the smallest ideal containing $\bigcap_{t \in G} \alpha_t(I)$ and note that in particular $I_g$ is a non-zero $G$-invariant ideal of $A$, hence essential by (a). Then $I_G \cap J = 0$, but since $I_G$ is essential in $A$, this implies that $J = 0$, a contradiction. Hence $A$ is a prime $C^*$-algebra.
+	For the converse, assume towards a contradiction that (a) and (b) holds and $A$ is not prime, and let $I, J$ be non-zero ideals of $A$ such that $I \cap J = 0$. If $t \in G$ is such that $\alpha_t(I) \cap J \neq 0$ then setting $L := \alpha_t(I)) \cap J$ we must have $L \cap \alpha_{-t}(L) \neq 0$ as $-t \in G(\hat \alpha)$. However, $L \cap \alpha_{-t}(L) \subseteq  J \cap I = 0$, so $\alpha_t(I) \cap J = 0$. Let $I_G$ be the smallest ideal containing $\bigcap_{t \in G} \alpha_t(I)$ and note that in particular $I_G$ is a non-zero $G$-invariant ideal of $A$, hence essential by (a). Then $I_G \cap J = 0$, but since $I_G$ is essential in $A$, this implies that $J = 0$, a contradiction, so $A$ is prime.
 \end{proof}
 \begin{lemma}
 	Let $(A, G, \alpha)$ be a $C^*$-dynamical a-system. Then $A$ is $G$-prime if and only if $A \rtimes_\alpha G$ is $\hat G$-prime.			
@@ -314,7 +355,7 @@ With this, we obtain:
 	\end{align*}
 	so if $I'$ and $J'$ are the smallest ideals generated by $\{ \alpha_s(a) \mid s \in G\}$ and $\{ \alpha_s(b) \mid s \in G\}$, respectively, which must be $G$-invariant, then $I'\cdot J' = 0$ implying that $A$ is not $G$-prime.
 
-	For the converse, given non-zero $G$-invariant ideals $I,J$ of $A$ then $J':=J \otimes \mathbb{K}(L^2(G))$ and $I':=I \otimes \mathbb{K}(L^2(G))$ are $G$-invariant ideals of $A \otimes \mathbb{K}(L^2(G))$ with respect to the action $\alpha \otimes \mathrm{Ad} \rho$, clearly satisfying $ J'\cap I' = 0$. By Takai duality, this implies that $A \rtimes_\alpha G$ is not $\hat G$-prime. 
+	For the converse, given non-zero $G$-invariant ideals $I,J$ of $A$ with $I \cap J = 0$. Setting $J':=J \otimes \mathbb{K}(L^2(G))$ and $I':=I \otimes \mathbb{K}(L^2(G))$, then $I'$ and $J'$ are $G$-invariant ideals of $A \otimes \mathbb{K}(L^2(G))$ with respect to the action $\alpha \otimes \mathrm{Ad} \rho$ and clearly satisfying $ J'\cap I' = 0$. By Takai duality, this implies that $A \rtimes_\alpha G$ is not $\hat G$-prime. 
 \end{proof}
 Combining the previous round of results, we obtain a nice result:
 \begin{corollary}
@@ -330,23 +371,30 @@ Analogously to the case of primitivity and $G$-primitivity, we introduce the not
 \begin{definition}
 	Let $(A,G,\alpha)$ be a $C^*$-dynamical system. We say that $A$ is \myemph{$G$-simple} if there are no non-trivial $G$-invariant ideals $J$ of $A$.
 \end{definition}
-It is clear that $G$-simple is a stronger requirement than being $G$-prime and is more closely related to simplicity of $A$. We will now see that the set of $G$-invariant ideals of $A$ is in bijection with the set of $\hat G$-invariant ideals of the crossed product $A \rtimes_\alpha G$, and list a necessary and sufficient condition for simplicity of $A \rtimes_\alpha G$ for a large class of groups, but first, we have the following:
+It is clear that $G$-simple is a stronger requirement than being $G$-prime and is more closely related to simplicity of $A$. We will now see that the set of $G$-invariant ideals of $A$ is in bijection with the set of $\hat G$-invariant ideals of the crossed product $A \rtimes_\alpha G$, and list a necessary and sufficient condition for simplicity of $A \rtimes_\alpha G$ covering a large class of groups, but first, we have the following:
 \begin{proposition}
 	Given a $C^*$-dynamical a-systems $(A,G,\alpha)$, it holds that $A$ is $G$-simple if and only if $A \rtimes_\alpha G$ is $\hat G$-simple.
 	\label{olpe1.6.1}
 \end{proposition}
 \begin{proof}
-	We begin by showing that if $A\rtimes_\alpha G$ is not $\hat G$-simple then $A$ is $G$-simple: Supose towards a contradiction that $A \rtimes_\alpha G$ is not $\hat G$-simple but $A$ is $G$-simple and choose a non-trivial $\hat G$-invariant ideal $J$ witnessing this. Then there is some state $\varphi \in \mathcal{S}(A \rtimes_\alpha G)$ such that $\varphi(J) = 0$, i.e., by letting $\varphi$ be the state obtained by the representation with kernel $J$. Extend $\varphi$ to all of $M(A \rtimes_\alpha G)$ and note that $\varphi(A) \neq 0$: Whenever $u_i$ is an approximate identity of $A$ we have $u_i x \to x$ for all $x \in A \rtimes_\alpha G$, which by Cauchy-Schwarz gives
+	We begin by showing that if $A\rtimes_\alpha G$ is not $\hat G$-simple then $A$ is $G$-simple: Suppose towards a contradiction that $A \rtimes_\alpha G$ is not $\hat G$-simple, but $A$ is $G$-simple and choose a non-trivial $\hat G$-invariant ideal $J$ witnessing this. Then there is some state $\varphi \in \mathcal{S}(A \rtimes_\alpha G)$ such that $\varphi(J) = 0$, i.e., by letting $\varphi$ be the state obtained by the representation with kernel $J$. Extend $\varphi$ to all of $M(A \rtimes_\alpha G)$ and note that $\varphi(A) \neq 0$: Whenever $u_i$ is an approximate identity of $A$ we have $u_i x \to x$ for all $x \in A \rtimes_\alpha G$, which by Cauchy-Schwarz gives
 	\begin{align*}
 	|\varphi(u_i^* x)| \leq \varphi(u_i^*u_i)\varphi(x^*x),
 	\end{align*}
 	implying that if $\varphi(A) = 0$ then $\varphi(x) = \lim \varphi(u_i^* x) \leq 0$ for all $x \in A \rtimes_\alpha G$ contradicting our assumptions.
 	
-	Let now $N$ be the subset of $A$ (by \cref{landstadcross} and \cref{olpe1lemma2.8}) given by
+	Set now $N$ to be the set
 	\begin{align*}
 		N:=\{ I(y) \mid y \in J \text{ is } \hat \alpha-\text{integrable}\},
 	\end{align*}
-	so that $\varphi(N) = 0$ by $\hat G$-invariance of $J$, implying that $N \subseteq A$ is not dense. The $*$-linearity of $I$ shows that $N$ is a $*$-subspace, and since the action on $A$ is given by $\alpha_t(a) = \lambda_t a \lambda_{-t}$ and every element is $\hat \alpha$-invariant, we see that $a I(y) b = I(ayb) \in N$ and $\alpha_t(I(y)) = \lambda_t I(y) \lambda_{-t} = I(\lambda_t y \lambda_{-t}) \in N$ for all $I(y)\in N$, $t \in G$ and $a,b \in A$. We conclude that $N$ is an algebraic $*$-ideal of $A$, which is non-zero since $I(\lambda_f^* y \lambda_f) \in N$ for all $y \in J$ and $f \in L^1(G) \cap L^2(G)$ by \cref{olpe1lemma2.8}. Thus the closure of $N$ is a non-trivial $G$-invariant ideal of $A$.
+	which by \cref{landstadcross} and \cref{olpe1lemma2.8} is a subset of $A$ such that $\varphi(N) = 0$ by $\hat G$-invariance of $J$. In particular, this implies that $N$ can not be dense in $A$.
+	
+	The $*$-linearity of $I$ shows that $N$ is a $*$-subspace, and in fact an algebraic $*$-ideal of $A$: To each $a,b \in A$, $t \in G$ and $I(y) \in N$ we have
+	\begin{itemize}
+		\item $a I(y)b = I(ayb)$,
+		\item $\alpha_t(I(y))= \lambda_t I(y) \lambda_{-t} = I(\lambda_t y \lambda_{-t})$,
+	\end{itemize}
+	since the action on $A$ is given by $\alpha_t(a) = \lambda_t a \lambda_{-t}$ and $A$ satisfying Landstad's condition. Also $N$ is a non-zero ideal, as $I(\lambda_f^* y \lambda_f) \in N$ for all $y \in J$ and $f \in L^1(G) \cap L^2(G)$ by \cref{olpe1lemma2.8}. Thus the closure of $N$ is a non-trivial $G$-invariant ideal of $A$.
 
 	For the converse, if $J$ is a non-zero $G$-invariant ideal of $A$, then $J \otimes \mathbb{K}(L^2(G))$ is a non-zero $\hat G$-invariant ideal of $A \otimes \mathbb{K}(L^2(G))$ with respect to the action $\alpha \otimes \mathrm{Ad} \rho$, and the result follows from Takai duality.
 \end{proof}
@@ -378,15 +426,15 @@ We proceed to show that whenever $G$ is discrete, then the converse of the above
 	\label{olpe1.6.4}
 \end{lemma}
 \begin{proof}
-	Assume that $I$ is a non-trivial ideal of $A$, and choose non-zero elements $x,y \in I_+$ with $yx=y$ as in the proof of \cref{connesideal1}. Let $0 \in U$ be a neighborhood such that 
+	Assume that $I$ is a non-trivial ideal of $A$, and choose non-zero elements $x,y \in I_+$ with $yx=y$. Let $0 \in U$ be a neighborhood such that 
 	\begin{align*}
 		\lv \alpha_s(x)-x\rv < 1, \text{ for all }s \in U,
 	\end{align*}
-	so that $\alpha_s(y) \in I$ for all $s \in U$, as per the proof of \cref{connesideal1}. Let $t_1,\dots,t_n \in G$ be such that $\{ U - t_i\}$ covers $G$. Recall that primitivity implies that for all non-zero $a,b \in A$ there is $z \in A$ with $azy \neq 0$ (or equivalently, $aAb = 0 $ implies $a=0$ or $b = 0$). Recursively, find $a_1,\dots,a_{n-1} \in A \backslash \{0\}$ such that
+	so that $\alpha_s(y) \in I$ for all $s \in U$, as per the proof of \cref{connesideal1}. Let $t_1,\dots,t_n \in G$ be such that $\{ U - t_i\}$ covers $G$. For all non-zero $a,b \in A$ there is $z \in A$ with $azb \neq 0$, as $A$ is prime. With this, we recursively, find $a_1,\dots,a_{n-1} \in A \backslash \{0\}$ such that
 	\begin{align*}
 	0 \neq	y_0 = \alpha_{t_1}(y) a_1 \alpha_{t_2}(y) a_2\cdots \alpha_{t_{n-1}}(y) a_{n-1} \alpha_{t_n}(y).
 	\end{align*}
-	If $t \in G$, then there is $1 \leq k \leq n$ such that $t-t_k \in U$ and hence $\alpha_t(y_0) = \cdots \alpha_{t+t_k}(y) \dots \in I$, implying that the orbit $\{\alpha_s(y_0) \mid s \in G\}$ is contained in $I$. Let $I_0$ be the smallest ideal containing this orbit, then $y_0 \in I_0 \subseteq I \neq A$ contradicting the assumption that $A$ is $G$-simple, since $I_0$ is $G$-invariant. Hence $A$ is simple.
+	If $t \in G$, then there is $1 \leq k \leq n$ such that $t-t_k \in U$ and hence $\alpha_t(y_0) =\alpha(t)(\alpha_{t-1}(y)) \cdots \alpha_{t+t_k}(y) \dots \in I$, implying that the orbit $\{\alpha_s(y_0) \mid s \in G\}$ is contained in $I$. Let $I_0$ be the smallest ideal containing this orbit, then $y_0 \in I_0 \subseteq I \neq A$, however this is contradicting the assumption that $A$ is $G$-simple by invariance of $I_0$. This implies that $A$ is simple.
 \end{proof}
 \begin{theorem}
 	Let $(A, G ,\alpha)$ be a $C^*$-dynamical a-system with $G$ discrete, then the following are equivalent:
@@ -397,9 +445,9 @@ We proceed to show that whenever $G$ is discrete, then the converse of the above
 	\label{olpe1thm}
 \end{theorem}
 \begin{proof}
-	The first implication is \cref{olpe1.6.3}. 
+	The implication $1 \implies 2$ is \cref{olpe1.6.3}. 
 	
-	For the converse, note that $A \rtimes_\alpha G$ is prime by \cref{olpe1.5.8} and by \cref{olpe1.6.1} it is also $\hat G$-simple. Since $G$ is discrete, $\hat G$ is compact and \cref{olpe1.6.4} implies that $A \rtimes_\alpha G$ is simple.
+	For the converse, note that $A \rtimes_\alpha G$ is prime by \cref{olpe1.5.8} and by \cref{olpe1.6.1} it is also $\hat G$-simple. As $G$ is discrete, $\hat G$ is compact so \cref{olpe1.6.4} implies that $A \rtimes_\alpha G$ is simple.
 \end{proof}
 We will now see that the Connes spectrum, in a way, measures how well $A$ sees ideals of $A \rtimes_\alpha G$ whenever $G$ is discrete and abelian.
 \begin{definition}
@@ -410,16 +458,18 @@ We will now see that the Connes spectrum, in a way, measures how well $A$ sees i
 	\label{olpe2.2.1}
 \end{lemma}
 \begin{proof}
-	Choose $0 \neq x,y \in J_+$ such that $yx=x$ and a neighborhood $0 \in U \subseteq G$ such that $\lv \alpha_t(x)-x\rv < 1$ for all $t \in U$ so that $\alpha_t(y) \in J$ whenever $ t \in U$. Let now $t_1,\dots,t_n \in G$ be such that $K \subseteq \bigcup_{1 \leq i \leq n} (U-t_n)$, by compactness of $K$. Assume that for some $2 \leq m < n$ we can find $a_2,\dots,a_m \in A$ such that $z_1:= \alpha_{t_1}(y) \neq 0$ and $z_m = z_{m-1} a_m \alpha_{t_m}(y) \neq 0$.
+	Without loss of generality, assume that $0 \in K$, for we may translate $K$ to obtain the desired result else.	Choose $0 \neq x,y \in J_+$ such that $yx=x$ and a neighborhood $U$ of $0 \in G$ such that $\lv \alpha_t(x)-x\rv < 1$ for all $t \in U$ so that $\alpha_t(y) \in J$ whenever $ t \in U$. Let now $t_1,\dots,t_n \in G$ be such that $K \subseteq \bigcup_{1 \leq i \leq n} (U-t_n)$, by compactness of $K$. Assume that for some $2 \leq m < n$ we can find $a_2,\dots,a_m \in A$ such that $z_1:= \alpha_{t_1}(y) \neq 0$ and $z_m = z_{m-1} a_m \alpha_{t_m}(y) \neq 0$.
 	
-	We claim that then there is $a_{m+1} \in A$ such that $z_{m+1}=z_{m}a_{m+1}\alpha_{t_{m+1}}(y) \neq 0$:	Suppose not, so that $z_m A \alpha_{t_{m+1}}(y) = 0$. Then $z_m A \alpha_{t_{m+1}-t_m}(z_m) \subseteq  z_m A \alpha_{t_{m+1}}(y)=0$, by assumption. Since $z_m \neq 0$, if $I$ is the ideal generated by $z_n$, then $I \cap \alpha_{s}(I) = I \alpha_{s}(I)= 0$, contradicting our assumption. Hence we can pick $a_{m+1} \in A$ such that $z_{m+1} = z_m a_{m+1} \alpha_{t_{m+1}}(y) \neq 0$. Let $z = z_m$, so that $\alpha_t(z) \in J$ for all $t \in K$, since $t +t_m \in U$ for some $m$ so $\alpha_{t+t_{n}}(m)$ is a factor of $\alpha_t(z)$. By choosing $t_1,\dots,t_n$ smart (e.g., as elements of $-K$), we may without loss of generality assume that $0 \in K$, so that $z \in J$, finishing the proof.
+	We claim that then there is $a_{m+1} \in A$ such that $z_{m+1}=z_{m}a_{m+1}\alpha_{t_{m+1}}(y) \neq 0$:	Suppose not, so that $z_m A \alpha_{t_{m+1}}(y) = 0$. Then $z_m A \alpha_{t_{m+1}-t_m}(z_m) \subseteq  z_m A \alpha_{t_{m+1}}(y)=0$, by assumption. Since $z_m \neq 0$, if $I$ is the ideal generated by $z_n$, then $I \cap \alpha_{t_{m+1}-t_m}(I) = I \alpha_{t_{m+1}-t_m}(I)= 0$, contradicting our assumption. Hence we can pick $a_{m+1} \in A$ such that $z_{m+1} = z_m a_{m+1} \alpha_{t_{m+1}}(y) \neq 0$. 
+	
+	Let $z = z_n$, so that $\alpha_t(z) \in J$ for all $t \in K$ (as $t + t_m \in U$ for some $m$ so $\alpha_{t+t_{n}}(y)$ is a factor of $\alpha_t(z)$). As $0 \in K$, we have $z \in J$, finishing the proof.
 \end{proof}
 \begin{proposition}
 Let $(A,G,\alpha)$ be a $C^*$-dynamical system and assume that for each non-zero ideal $0 \neq I \subseteq A$ it holds that $I \cap \alpha_t(I) \neq 0 $ for all $t \in G$. If $0 \neq J \subseteq A$ is an ideal invariant under a subgroup $G_0$ of $G$ with compact quotient $G/G_0$, then there is a non-zero $G$-invariant ideal $J_0 \subseteq J$.
 	\label{olpe2.2.2}
 \end{proposition}
 \begin{proof}
-	If $q$ denotes the quotient map $G \to G/G_0$, then, by compactness of the quotient, there is a finite number of pre-compact sets of $G$ whose image cover $G/G_0$, in particular, we may choose $E \subseteq G$ compact such that $G/G_0 = q(E)$. Choose $x\in J$ satisfying \cref{olpe2.2.1}. Each $s \in G$ is of the form $t+s_0$ for some $t \in K$ and $s_0 \in G_0$, since $q(E) = G/G_0$. In particular, this means that $\alpha_s(x) = \alpha_{s_0}(\alpha_t(x)) \in \alpha_{s_0}(J) \subseteq J$, by assumption and our choice of $x$. Hence the smallest ideal generated by the orbit $\{ \alpha_t(x) \mid t \in G\}$ will be a non-zero $G$-invariant ideal contained in $J$.
+	If $q$ denotes the quotient map $G \to G/G_0$, then, by compactness of the quotient, there is a finite number of pre-compact sets of $G$ whose image cover $G/G_0$, in particular, we may choose $E \subseteq G$ compact such that $G/G_0 = q(E)$. Choose nonzero $x\in J$ satisfying \cref{olpe2.2.1}. Each $s \in G$ is of the form $t+s_0$ for some $t \in E$ and $s_0 \in G_0$, as $q(E) = G/G_0$. In particular, this means that $\alpha_s(x) = \alpha_{s_0}(\alpha_t(x)) \in \alpha_{s_0}(J) \subseteq J$, by assumption and our choice of $x$. Hence the smallest ideal generated by the orbit $\{ \alpha_t(x) \mid t \in G\}$ will be a non-zero $G$-invariant ideal contained in $J$.
 \end{proof}
 \begin{proposition}
 	Let $(A,G,\alpha)$ be a $C^*$-dynamical system with $G$ discrete. Then $\sigma \in \hat G(\alpha)$ if and only if given any non-zero ideal $J$ of $A \rtimes_\alpha G$ there is a non-zero $\hat \alpha_\sigma$-invariant ideal $J_0 \subseteq J$.
@@ -458,13 +508,13 @@ To show that this theory is indeed usable (i.e., one can for instance actually d
 	\begin{align*}
 		\hat G(\alpha) = \overline{\bigcup_{x \in X} G_x^\perp}.
 	\end{align*}
-	\todo{include in prelim or earlier} In particular, if $G = \Z$, then if $G_x=\{0\}$ for some $x \in X$ then $\hat \Z(\alpha) = \hat \Z \cong S^1$. In fact, if $\alpha \in \mathrm{Aut}(C_0(X))$ is the automorphism of the dynamical system, then the operator spectrum of $\alpha$ and the Connes spectrum of the system coincide.
+	In particular, if $G = \Z$ then $\hat \Z(\alpha) = \hat \Z \cong S^1$ whenever then $G_x=\{0\}$ for some $x \in X$.
 	\label{olgootconnes}
 \end{theorem}
 \begin{example}
 	Let $\theta \in \R \backslash \Q$ and let $\Z \acts \alpha C(S^1)$ denote rotation by $\theta$. Then $C(S^1) \rtimes_\alpha \Z$ is simple.
 \end{example}
 \begin{proof}
-	It is easy to establish that $C(S^1)$ is $\Z$-simple, since the system is minimal (see e.g. \todo{add self} \cite[5.2]{glasner1976proximal}). It remains to be shown that $\hat \Z(\alpha) = \hat \Z = S^1$. By \cref{olgootconnes} it suffices to show that some isotropy group is $0$, but clearly $\alpha_k(z) = z$ if and only if $k = 0$ (since $\theta$ is irrational), hence $\Z_{z} = \{0\}$ so $\hat \Z (\alpha) = S^1$, implying by \cref{olpe1thm} that $C(S^1) \rtimes_\alpha \Z$ is simple.
+	It is easy to establish that $C(S^1)$ is $\Z$-simple, since the system is minimal. It remains to be shown that $\hat \Z(\alpha) = \hat \Z = S^1$. By \cref{olgootconnes} it suffices to show that some isotropy group is $0$, but clearly $\alpha_k(z) = z$ if and only if $k = 0$ (since $\theta$ is irrational), hence $\Z_{z} = \{0\}$ so $\hat \Z (\alpha) = S^1$, implying by \cref{olpe1thm} that $C(S^1) \rtimes_\alpha \Z$ is simple.
 \end{proof}
-While the above result might be an example of 'nuking the ant', since it can (arguably) easier be shown, e.g., through theory of conditional expectations and the concept of free actions, that the crossed product is simple, we use it to show that the theory is relevant: We can, in not-degenerate examples, compute the Connes spectrum and use the theorem to answer questions about interesting $C^*$-algebras. It is to the authors knowledge not a standard proof seen in common literature.
+While the above result might be an example of 'nuking the ant', as there are standard ways of achieving the same result without developing the general machinery we have covered thus far, we use it to show that the theory is relevant: We can, in not-degenerate examples, compute the Connes spectrum and use the theorem to answer questions about interesting $C^*$-algebras. It is to the authors knowledge not a standard proof seen in common literature.

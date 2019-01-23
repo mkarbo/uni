@@ -38,9 +38,16 @@ And, luckily for us, there is a nice correspondance between $C^*$-dynamical syst
 	\label{dynamiccorr}
 \end{proposition}
 For a proof, see \cite[Lemma 1.33, 2.5 and Proposition 2.6]{williamscrossed}.
+\begin{definition}
+	If $G \acts {} X$, then for $x \in X$ the \myemph{stabilizer of $x$}, denoted by \myemph{$G_x$}, is the normal subgroup of $G$ which fixes $x$, i.e., $G_x := \{ t \in G \  \mid \ t.x = x\}$. 
+\end{definition}
+\begin{remark}
+	It is a normal subgroup, for if $t \in G_x$, then $t^{-1}.x= t^{-1}t.x = x$, and hence for $s \in G$ we have $sts^{-1}.x= st(st)^{-1}.x=x$.
+\end{remark}
+We shall see that the stabilizer subgroups is an object of interest in the theory of crossed product later on. In the next section we will discuss a certain important example of $G$-spaces, called $G$-boundaries. In the last chapter we will show that these are important object, for instance we are going to connect the theory concerning $G$-boundaries to characterizations of simplicity of the reduced group $C^*$-algebra of discrete groups and various other results.
 
 \ssubsection{Boundary Actions and the Furstenberg boundary}
-The rest of this chapter is largely based on discussion and results covered authors written project (see \cite{bscp}), which covers and discusses (in a lesser generality) results of Furman and Glasner, see e.g., \cite{furman2003minimal} and \cite{glasner1976proximal} respectively. We will not go through the proofs and techincal details, and instead offer a heuristic explanation.
+The rest of this chapter is largely based on discussion and results covered authors written project (see \cite{bscp}), which covers and discusses (in a lesser generality) results of Furman and Glasner, see e.g., \cite{furman2003minimal} and \cite{glasner1976proximal} respectively. We will not go through the proofs and techincal details, and instead offer a heuristic explanation with references as needed.
 \begin{definition}
 	An action $G \acts {} X$ is said to be \myemph{minimal} if there are no non-trivial $G$-invariant closed subsets of $X$.
 \end{definition}
@@ -52,10 +59,10 @@ The rest of this chapter is largely based on discussion and results covered auth
 \end{example}
 See e.g., \mbox{\cite[Example 4.6]{bscp}}. 
 \begin{definition}
-	A subset $Y \subseteq X$ of a $G$-space is minimal if it is non-empty, closed and $G$-invariant and contains no other non-empty closed $G$-invariant subsets.
+	A subset $Y \subseteq X$ of a $G$-space is a minimal subset if it is non-empty, closed and $G$-invariant and contains no other non-empty closed $G$-invariant subsets.
 \end{definition}
 \begin{remark}
-	It is evident that $Y \subseteq X$ is minimal if and only if the action restricts to a minimal action on $Y$. Moreover, an easy application of Zorn's lemma ensures that every compact $G$-space admits a minimal subset.
+	It is evident that $Y \subseteq X$ is minimal if and only if the action restricts to a minimal action on $Y$. Moreover, an application of Zorn's lemma ensures that every compact $G$-space admits a minimal subset.
 \end{remark}
 An easy application of abstract change-of-variable and dominated convergence shows that if we let $\mathrm{Prob}(X)$ denote the set of Radon probability measures on a compact $G$-space $X$, then we obtain a continuous action on $\mathrm{Prob}(X)$ of $G$ as well (with respect to the weak$^*$-topology of $C_0(X)^*$), which is given by $t.\mu(f) := \mu(\alpha_{t^{-1}}.f)$, where $\alpha$ is the induced action on $C_0(X)$ of $G$. This leads us the following:
 \begin{definition}
@@ -70,7 +77,14 @@ An easy application of abstract change-of-variable and dominated convergence sho
 \begin{definition}
 	A compact $G$-space $X$ is caled a \myemph{$G$-boundary} if the action is a \myemph{boundary action} which are minimal and strongly proximal actions.
 \end{definition}
-For discrete countable groups, the theory of boundary actions and compact $G$-boundaries have strong influence on the classification of group $C^*$-algebras and other areas, as discovered by E. Breuillard, M. Kalantar, M. Kennedy, N. Ozawa (see e.g. \cite{breuillard2017c}). If $G$ is any (also non-discrete) group, then there is a particularly important $G$-boundary:
+The following result is arguably the most important result of the theory of boundary actions, and is due to Furstenberg and a proof can be found in \cite[Proposition 4.23]{bscp}.
+\begin{proposition}
+	If $X$ is a $G$-boundary and $Y$ is a minimal compact $G$-space, then any continuous $G$-equivariant map $\varphi \colon Y \to \mathrm{Prob}(X)$ has $\delta_X \cong X$ as its range. If one such map exists, then it is unique. 
+\end{proposition}
+\begin{remark}
+	The above proposition is equivalent to the statement that any $G$-equivariant to any injective u.c.p map $ \psi \colon C(X)\to C(X)$ being an isomorphism of $C^*$-algebras. This is because for such $\psi$ we may define a $G$-equivariant map $\psi_* \colon Y \to \mathrm{Prob}(X)$, $\psi_*(y)(f)=\psi(f)(y)$, $y \in Y$ and $f \in C(X)$, and this assignment is a one-to-one correspondance. See e.g., \cite[Lemma 4.16 and 4.17]{bscp} for a proof.
+\end{remark}
+For discrete countable groups, the theory of boundary actions and compact $G$-boundaries have strongly influenced the theory of classification of group $C^*$-algebras and other areas, for instance by E. Breuillard, M. Kalantar, M. Kennedy, N. Ozawa in \cite{breuillard2017c}. If $G$ is any (also non-discrete) group, then there is a particularly important $G$-boundary:
 \begin{definition}
 	The \myemph{Furstenberg boundary} of a group $G$ is the universal compact $G$-boundary, abbreviated \myemph{$\dd_F G$}, such that every other compact $G$-boundary $X$ is the continuous image of a $G$-equivariant map $\dd_F G \to X$.
 \end{definition}

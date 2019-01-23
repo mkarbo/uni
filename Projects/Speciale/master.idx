@@ -46,15 +46,18 @@
 \indexentry{$G$-space|hyperpage}{73}
 \indexentry{compact-open|hyperpage}{73}
 \indexentry{topology on $\mathrm{Homeo}(X)$|hyperpage}{73}
+\indexentry{stabilizer of $x$|hyperpage}{74}
+\indexentry{$G_x$|hyperpage}{74}
 \indexentry{minimal|hyperpage}{74}
 \indexentry{strongly proximal action|hyperpage}{75}
 \indexentry{$G$-boundary|hyperpage}{75}
 \indexentry{boundary action|hyperpage}{75}
-\indexentry{Furstenberg boundary|hyperpage}{75}
-\indexentry{$\partial _F G$|hyperpage}{75}
+\indexentry{Furstenberg boundary|hyperpage}{76}
+\indexentry{$\partial _F G$|hyperpage}{76}
 \indexentry{extremally disconnected space|hyperpage}{76}
+\indexentry{$C^*$-dynamic a-system|hyperpage}{77}
 \indexentry{weak$^*$-integrals|hyperpage}{77}
-\indexentry{spectral $R$-subspace|hyperpage}{77}
+\indexentry{spectral $R$-subspace|hyperpage}{78}
 \indexentry{spectral $M$-subspace|hyperpage}{78}
 \indexentry{Arveson Spectrum|hyperpage}{78}
 \indexentry{hereditary|hyperpage}{79}
@@ -66,14 +69,14 @@
 \indexentry{$G$-simple|hyperpage}{87}
 \indexentry{detects ideals|hyperpage}{89}
 \indexentry{separates ideals|hyperpage}{89}
-\indexentry{primitive ideal space|hyperpage}{92}
-\indexentry{spectrum of a $C^*$-algebra|hyperpage}{92}
-\indexentry{hull-kernel topology|hyperpage}{92}
-\indexentry{transposed action of $G$|hyperpage}{93}
-\indexentry{topologically free|hyperpage}{93}
-\indexentry{properly outer|hyperpage}{94}
-\indexentry{disjoint representations|hyperpage}{94}
-\indexentry{$C^*$-simple|hyperpage}{98}
-\indexentry{unique trace property|hyperpage}{98}
-\indexentry{quasi-regular representation|hyperpage}{99}
-\indexentry{$K \mathaccentV {bar}016\rtimes _r G$|hyperpage}{102}
+\indexentry{primitive ideal space|hyperpage}{93}
+\indexentry{spectrum of a $C^*$-algebra|hyperpage}{93}
+\indexentry{hull-kernel topology|hyperpage}{93}
+\indexentry{transposed action of $G$|hyperpage}{94}
+\indexentry{topologically free|hyperpage}{94}
+\indexentry{properly outer|hyperpage}{95}
+\indexentry{disjoint representations|hyperpage}{96}
+\indexentry{$C^*$-simple|hyperpage}{99}
+\indexentry{unique trace property|hyperpage}{99}
+\indexentry{quasi-regular representation|hyperpage}{101}
+\indexentry{$K \mathaccentV {bar}016\rtimes _r G$|hyperpage}{104}

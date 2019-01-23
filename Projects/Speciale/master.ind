@@ -2,8 +2,9 @@
 {\large\sffamily\bfseries Symbols}\nopagebreak
 
   \item $*$-strong topology \dotfill \hyperpage{19}
+  \item $C^*$-dynamic a-system \dotfill \hyperpage{77}
   \item $C^*$-dynamical system \dotfill \hyperpage{32}
-  \item $C^*$-simple \dotfill \hyperpage{98}
+  \item $C^*$-simple \dotfill \hyperpage{99}
   \item $G \mathrel {\mathop {\curvearrowright }\limits ^{}} X$ \dotfill 
 		\hyperpage{73}
   \item $G$-boundary \dotfill \hyperpage{75}
@@ -11,7 +12,8 @@
   \item $G$-product \dotfill \hyperpage{61}
   \item $G$-simple \dotfill \hyperpage{87}
   \item $G$-space \dotfill \hyperpage{73}
-  \item $K \mathaccentV {bar}016\rtimes _r G$ \dotfill \hyperpage{102}
+  \item $G_x$ \dotfill \hyperpage{74}
+  \item $K \mathaccentV {bar}016\rtimes _r G$ \dotfill \hyperpage{104}
   \item $S^\perp $ \dotfill \hyperpage{59}
   \item $W^*$-system \dotfill \hyperpage{80}
   \item $\mathaccentV {widehat}870{\alpha }$ \dotfill \hyperpage{61}
@@ -19,7 +21,7 @@
 		\hyperpage{66}
   \item $\mathbb  {I}(A)$ \dotfill \hyperpage{17}
   \item $\mathcal  {L}_A(E_1,E_2)$ \dotfill \hyperpage{4}
-  \item $\partial _F G$ \dotfill \hyperpage{75}
+  \item $\partial _F G$ \dotfill \hyperpage{76}
   \item $f \ast_\alpha g$ \dotfill \hyperpage{32}
   \item (Ir)rational Rotation Algebra \dotfill \hyperpage{39}
 
@@ -49,7 +51,7 @@
 {\large\sffamily\bfseries D}\nopagebreak
 
   \item detects ideals \dotfill \hyperpage{89}
-  \item disjoint representations \dotfill \hyperpage{94}
+  \item disjoint representations \dotfill \hyperpage{96}
   \item dual action \dotfill \hyperpage{61}
 
   \indexspace
@@ -64,7 +66,7 @@
 
   \item full \dotfill \hyperpage{3}
   \item full crossed product \dotfill \hyperpage{39}
-  \item Furstenberg boundary \dotfill \hyperpage{75}
+  \item Furstenberg boundary \dotfill \hyperpage{76}
 
   \indexspace
 {\large\sffamily\bfseries H}\nopagebreak
@@ -72,7 +74,7 @@
   \item hereditary \dotfill \hyperpage{79}
   \item Hilbert $A$-module \dotfill \hyperpage{2}
   \item Hilbert $C^*$-module over $A$ \dotfill \hyperpage{2}
-  \item hull-kernel topology \dotfill \hyperpage{92}
+  \item hull-kernel topology \dotfill \hyperpage{93}
 
   \indexspace
 {\large\sffamily\bfseries I}\nopagebreak
@@ -107,13 +109,13 @@
 
   \item polarization identity \dotfill \hyperpage{6}
   \item positive definite \dotfill \hyperpage{46}
-  \item primitive ideal space \dotfill \hyperpage{92}
-  \item properly outer \dotfill \hyperpage{94}
+  \item primitive ideal space \dotfill \hyperpage{93}
+  \item properly outer \dotfill \hyperpage{95}
 
   \indexspace
 {\large\sffamily\bfseries Q}\nopagebreak
 
-  \item quasi-regular representation \dotfill \hyperpage{99}
+  \item quasi-regular representation \dotfill \hyperpage{101}
 
   \indexspace
 {\large\sffamily\bfseries R}\nopagebreak
@@ -128,25 +130,26 @@
   \item semi-inner-product $A$-module \dotfill \hyperpage{2}
   \item separates ideals \dotfill \hyperpage{89}
   \item spectral $M$-subspace \dotfill \hyperpage{78}
-  \item spectral $R$-subspace \dotfill \hyperpage{77}
-  \item spectrum of a $C^*$-algebra \dotfill \hyperpage{92}
+  \item spectral $R$-subspace \dotfill \hyperpage{78}
+  \item spectrum of a $C^*$-algebra \dotfill \hyperpage{93}
+  \item stabilizer of $x$ \dotfill \hyperpage{74}
   \item strict topology \dotfill \hyperpage{12}
   \item strongly proximal action \dotfill \hyperpage{75}
 
   \indexspace
 {\large\sffamily\bfseries T}\nopagebreak
 
-  \item topologically free \dotfill \hyperpage{93}
+  \item topologically free \dotfill \hyperpage{94}
   \item topology of weak$^*$ uniform convergence on compacta \dotfill 
 		\hyperpage{48}
   \item topology on $\mathrm{Homeo}(X)$ \dotfill \hyperpage{73}
   \item Transformation Group \dotfill \hyperpage{73}
-  \item transposed action of $G$ \dotfill \hyperpage{93}
+  \item transposed action of $G$ \dotfill \hyperpage{94}
 
   \indexspace
 {\large\sffamily\bfseries U}\nopagebreak
 
-  \item unique trace property \dotfill \hyperpage{98}
+  \item unique trace property \dotfill \hyperpage{99}
   \item unitization \dotfill \hyperpage{13}
   \item universal norm \dotfill \hyperpage{38}
 

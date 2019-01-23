@@ -1,8 +1,7 @@
 \chapter{Actions And Automorphisms}
-In this chapter, we will go through theory describing automorphisms on a $C^*$-algebra $A$ and actions of groups $G$ on $C^*$-algebras, including applications in describing the ideal structure of crossed products. A motivation for including and describing this theory is the result of Archbold and Spielberg (see \cite{archbold1994topologically}), which showed that for a large class of groups and $C^*$-algebras, a certain condition on the action $G \acts {} A$ implies simplicity of the associated (reduced) crossed product $A \rtimes G$ ($A \rtimes_{r} G$).
-
+In this chapter, we will go through theory describing automorphisms on a $C^*$-algebra $A$ and actions of groups $G$ on $C^*$-algebras. The goal of this chapter is to characterize the ideal structure of crossed products with discrete groups through properties of the associated action. We will cover a theorem of Archbold and Spielberg (see \cite{archbold1994topologically}) stating that the reduced crossed product $A \rtimes_{\alpha,r} G$ is simple whenever the action of $G$ is topologically free, which is something we will describe later on. After that we will cover some important consequences of this result, including an important result in the classification of group $C^*$-algebras.
 \sssection{Action Properties}
-We are going to discuss a property that an action $G \acts \alpha A$ can have called topological freeness and its implications on the crossed product. In order to do this, we introduce notation and discuss some results on the spectrum of a general $C^*$-algebra as well as the primitive ideal space of $A$:
+We are going to discuss the concept of topologically free actions $G \acts \alpha A$ and its implications on the crossed product. In order to do this, we introduce notation and discuss some results on the spectrum of a general $C^*$-algebra as well as the primitive ideal space of $A$:
 \begin{definition}
 	For a $C^*$-algebra $A$, we define the \myemph{primitive ideal space} of a $C^*$-algebra $A$ to be the set
 	\begin{align*}
@@ -18,7 +17,7 @@ If $\pi_1 \sim_u \pi_2$, then $\ker \pi_1 = \ker \pi_2$ so the map $\kappa \colo
 \begin{align*}
 	\overline S := \{ p \in \Prim A \mid \cap_{i \in I} s_i \subseteq p\}.
 \end{align*}
-To see that this is in fact a topology, we refer to \cite[Appendix A.2]{williamsmorita}. We also endow $\hat A$ with the corresponding initial topology stemming from the surjective map $\kappa$.
+To see that this is in fact a topology, we refer the reader to \cite[Appendix A.2]{williamsmorita} for the details. We also endow $\hat A$ with the corresponding initial topology stemming from the surjective map $\kappa$.
 \end{definition}
 \begin{remark}
 	For a commutative $C^*$-algebra (i.e., $A = C_0(X)$), the spectrum of $A$ is the Gelfand Space of $A$, i.e., non-zero $*$-homomorphisms $A \to \C$, since irreducible representations of commutative spaces are one-dimensional. Moreover, in this case it holds that $\hat A \cong \Prim A$.
@@ -27,32 +26,40 @@ These objects interact nicely with dynamical systems (we already saw this for $A
 \begin{align*}
 	\alpha_r^*([\pi]_u) := [\pi \circ \alpha_{r^{-1}}] \text{ and } \alpha_{r}^*(\ker \pi) = \ker \pi \circ \alpha_{r^{-1}},
 \end{align*}
-for all irreducible representations $\pi$ of $A$. These are indeed actions on topological spaces (i.e., the corresponding maps out of $G \times \hat A \to \hat A$ and $G \times \Prim A \to \Prim A$ are jointly continuous cf. \cite[Lemma 7.1]{williamsmorita}).
+for all irreducible representations $\pi$ of $A$. These are indeed actions on topological spaces, i.e., the corresponding maps out of $G \times \hat A \to \hat A$ and $G \times \Prim A \to \Prim A$ are jointly continuous, see e.g., \cite[Lemma 7.1]{williamsmorita}.
 \begin{definition}
 	For an action $G \acts \alpha A$ we say that the action is \myemph{topologically free} if for all $t_1,\dots,t_n \in G\backslash\{e\}$ the set $\bigcap_{i=1}^n \left\{ [\pi]_u \in \hat A | \alpha_{t_i}^*([\pi]_u)\neq [\pi]_u \right\}$ is dense in $\hat A$.
 \end{definition}
 \begin{remark}
-	It is easy to see that for $A=C_0(X)$, then an action is topologically free if and only if for all $e \neq t \in G$, the set of fixed points of the induced action $G \acts{} X$ have empty interior or equivalently dense complement. Moreover, define 
+	If $A=C_0(X)$, then the action $G \acts \alpha A$ if and only if for all $e \neq t \in G$, the set of fixed points of the induced action $G \acts{} X$ have empty interior or equivalently dense complement. Moreover, define 
 	\begin{align*}
 		G_x^\circ := \{t \in G \ \mid \ t|_U = \mathrm{id} \text{ for some neighborhood } U \text{ of } x\},
 	\end{align*}
 	which is clearly a normal subgroup of $G$, then the action is topologically free if and only $G_x^\circ = \{e\}$ for all $x$: If $t.y= y$ for all $y \in U$ of some neighborhood $U$ of $x$, then the fixpoint set of $t$ has non-empty interior.
 \end{remark}
 \begin{definition}
-	We say that an action $G \acts {} X$ is free if every stabilizer is trivial, i.e., if for each $x \in X$ the stabilizer $G_x :=\{g \in G \ \mid \ g.x =x\}$ is trivial.
+	We say that an action $G \acts {} X$ is free if every stabilizer is trivial, i.e., if for each $x \in X$ we have $G_x = \{e\}$.
 \end{definition}
+\begin{remark}
+	In \cite{olesenpedersen3}, Olesen and Pedersen characterized topological freeness of actions $\Z \acts {\alpha} A$, $\alpha \in \mathrm{Aut}(A)$, in terms of the Connes spectrum (and many other characterizations). They showed the equivalence of the following:
+	\begin{enumerate}[nosep]
+		\item For each $n \neq 0$, the set $\{ [\pi]_u \in \hat A \ \mid \ [\pi \circ \alpha^{n}]_u = [\pi]_u\}$ is has empty interior,
+		\item $\hat \Z(\alpha) = \hat \Z = S^1$.
+	\end{enumerate}
+	The result is \cite[Theorem 10.4]{olesenpedersen3}, and the proof goes beyond the scope of this thesis. However, we include it to highlight that the theory developed in the previous chapter served as a stepping stone towards newer results which we will cover in this chapter.
+\end{remark}
 \begin{lemma}
 	Suppose that $G \acts {} X$ is a minimal action. If $G_x^\circ = \{e\}$ for some $x \in X$, then $G_y^\circ = \{e\}$ for all $y \in X$, i.e., the action is topologically free.
 	\label{topfreeminimal}
 \end{lemma}
 \begin{proof}
-	Let $x \in X$ be such that $G_x^\circ = \{e\}$. Suppose towards a contradiction that $s \in G_y^\circ$, $y \neq e$. Let $U \subseteq X$ witness this, i.e, be open with $y \in U$ and $s|_U=\mathrm{id}$. By minimality of the action, there is $t \in G$ such that $x \in tU$. Then $tst^{-1}(tv) =  tsv = tv$ for all $v \in U$, so $tst^{-1}|_{tU}=  \mathrm{id}$. By assumption, this implies that $tst^{-1} = e$, which forces $s = e$ (if $t = e$, then $s \in G_x^\circ$ and if $t \neq e$ then $s = e$), a contradiction on our assumption.
+	Let $x \in X$ be such that $G_x^\circ = \{e\}$. Let $y \in X$ and suppose towards a contradiction that $s \in G_y^\circ\{e\}$. Let $U \subseteq X$ witness this, i.e, be open with $y \in U$ and $s|_U=\mathrm{id}$. By minimality of the action, there is $t \in G$ such that $x \in tU$. Then $tst^{-1}.(t.v) =  ts.v = t.v$ for all $v \in U$, so $tst^{-1}|_{tU}=  \mathrm{id}$. By assumption, this implies that $tst^{-1} = e$, which forces $s = e$ (if $t = e$, then $s \in G_x^\circ = \{e\}$ and if $t \neq e$ then $s = e$), contradicting the assumption that $s \neq e$. 
 \end{proof}
 \begin{corollary}
 	The action of $G$ on $\dd_F G$ (the Furstenberg boundary) is topologically free if and only if it is free.
 \end{corollary}
 \begin{proof}
-	This follows directly from the earlier remark that $\dd_F G$ is extremally disconnected, since then $(\dd_F G)_s$ is clopen by a theorem of Frolik, see e.g., \cite[Theorem 3.1]{frolik1971maps}, which says that the set of fixed points of a homeomorphism $f \colon X \to X$, where $X$ is a compact extremally disconnected space, is clopen in $X$.
+	This follows directly from the earlier remark that $\dd_F G$ is extremally disconnected, for $\dd_F G_s$ is clopen by a theorem of Frolik, see e.g., \cite[Theorem 3.1]{frolik1971maps}, which states that the set of fixed points of a homeomorphism $f \colon X \to X$, where $X$ is a compact extremally disconnected space, is clopen in $X$.
 \end{proof}
 \begin{definition}
 	For a $C^*$-algebra $A$, we say that $\alpha \in \mathrm{Aut}(A)$ is \myemph{properly outer} if for all $\alpha$-invariant non-zero ideals $I \subseteq A$ and all inner automorphisms $\beta$ of I it holds that
@@ -60,22 +67,20 @@ for all irreducible representations $\pi$ of $A$. These are indeed actions on to
 		\lv \alpha|_I - \beta \rv = 2.
 	\end{align*}
 \end{definition}
-Elliot and Olesen \& Pedersen showed in \cite[Theorem 3.2]{elliott1980some} and \cite[Theorem 7.2]{olesenpedersen3}, respectively, that for discrete groups $G$ with $G \acts \alpha A$ minimal, a sufficient condition for $C^*$-simplicity of $A \rtimes_{\alpha,r} G$ for a large class of $C^*$-algebras was that $\alpha_t$ be properly outer for $t \neq e$. Archbold and Spielberg later improved on this result in \cite{archbold1994topologically}. We will go through their result. 
+Elliot and Olesen + Pedersen showed in \cite[Theorem 3.2]{elliott1980some} and \cite[Theorem 7.2]{olesenpedersen3}, respectively, that for discrete groups $G$ with $G \acts \alpha A$ minimal, a sufficient condition for $C^*$-simplicity of $A \rtimes_{\alpha,r} G$ for a large class of $C^*$-algebras was that $\alpha_t$ be properly outer for $t \neq e$. Archbold and Spielberg later improved on this result in \cite{archbold1994topologically}. We will go through their result and some recent applications.
 \begin{proposition}[\mbox{\cite[Proposition 1]{archbold1994topologically}}]
 	Let $(A,G,\alpha)$ be a $C^*$-dynamical system. If $\alpha$ is topologically free, then $\alpha_t$ is properly outer for all $t \neq e$.
 \end{proposition}
 \begin{remark}
-	The proof is based on theory of derivations of $C^*$-algebras, which we will not go into detail with. Shortly put, a derivation of a $C^*$-algebra is a linear map which behaves similar to derivation of differentiable functions. For an exhibition on this, see e.g., \cite[Chapter 8.6]{pedersenalgauto} (or the books they refer to \cite{sakai1978recent} and \cite{bratteli2012operator} by Sakai and Bratteli et al., respectively.) 
+	The proof is based on theory of derivations of $C^*$-algebras, which we will not go into detail with. Shortly put, a derivation of a $C^*$-algebra $A$ is a linear map on $A$ which behaves similar to derivation of differentiable functions. For an exhibition on this, see e.g., \cite[Chapter 8.6]{pedersenalgauto} (or the books they refer to, \cite{sakai1978recent} and \cite{bratteli2012operator}, by Sakai and Bratteli et al., respectively.) 
 
 	The proof is based on a result of Kadison-Ringrose, which characterizes proper outerness with not never locally being the composition of an inner automorphism composed with the exponential of a derivation, see \cite{kadison1967derivations} or \cite[Theorem 6.6 (i) and (ii)]{olesenpedersen3}.
 \end{remark}
-
-Recall that for $G$ discrete, it holds that $A \subseteq A \rtimes_\alpha G$, and that if $A^1 = A \oplus \C$ is the canonical unitalization, then we have inclusions $ A \subseteq A \rtimes_\alpha G  \subseteq A^1 \rtimes_\alpha G \subseteq M(A \rtimes_\alpha G)$, where we abuse the notation $\alpha$ to mean $\alpha \oplus 1$ on $A^1 \rtimes_\alpha G$.
 \begin{definition}
-	Let $A$ denote an arbitrary $C^*$-algebra with two representations $\pi$ and $\tau$ on $H_\pi$ and $H_\tau$. We say that $\pi$ and $\tau$ are \myemph{disjoint representations} if there is no subrepresentations of one which is unitarily equivalent to a non-zero subrepresentation of the other.
+	Let $A$ denote an arbitrary $C^*$-algebra with two representations $\pi$ and $\tau$ on Hilbert spaces $\H_\pi$ and $\H_\tau$. We say that $\pi$ and $\tau$ are \myemph{disjoint representations} if there is no subrepresentations of one which is unitarily equivalent to a non-zero subrepresentation of the other.
 \end{definition}
 \begin{remark}
-	The above definition is the (to the author's knowledge) original definition. We will use the following fact: If $\pi$ and $\tau$ are disjoint if and only if $1 \oplus 0$ is an element of the strong operator closure of $\pi \oplus \tau (A)$, i.e., there is some net $(x_i) \subseteq A$ bounded with $\pi(x_i) \to 1$ and $\tau(x_i) \to 0$ in the strong operator topology if and only if  $\pi \not \sim _u \tau$, see e.g. \cite[Proposition 2.1.4]{arveson2012invitation}. 
+	The above definition is the (to the author's knowledge) original definition. We will use the following fact: If $\pi$ and $\tau$ are disjoint if and only if $1 \oplus 0$ is an element of the strong operator closure of $\pi \oplus \tau (A)$, i.e., there is some bounded net $(x_i) \subseteq A$ with $\pi(x_i) \to 1$ and $\tau(x_i) \to 0$ in their strong operator topology, and this happens if and only if $\pi \not \sim _u \tau$. See e.g. \cite[Proposition 2.1.4]{arveson2012invitation} for a proof. 
 \end{remark}
 \sssection{Consequences of Topological Freeness}
 Recall that we may identify $G$ as a subset of the unitary group of $M(A \rtimes_\alpha G)$. We denote this identification by $u_t$, $t \in G$. 
@@ -84,40 +89,54 @@ Recall that we may identify $G$ as a subset of the unitary group of $M(A \rtimes
 	\label{ASlem1}
 \end{lemma}
 \begin{proof}
-	Let $(e_i) \subseteq A$ be a bounded net such that $\pi  \circ \alpha_{t}^{-1}(e_i) \to 1$ in the strong operator topology and $\pi(e_i) \to 0$. Let $\varphi$ be a unital completely positive extension of $\pi$ to $A^1  \rtimes_\alpha G$ of norm one, possible by non-degeneracy of $\pi$, see e.g. \cite[Proposition 2.2.1]{brown2008c}. Then, for $a \in A$ and $t \in G$:
+	Let $(e_i) \subseteq A$ be a bounded net such that $\pi  \circ \alpha_{t}^{-1}(e_i) \to 1$ in the strong operator topology and $\pi(e_i) \to 0$. Let $\varphi$ be a completely positive extension of $\pi$ to $A  \rtimes_\alpha G$ of norm one. Then, for $a \in A$ and $t \in G$:
 	\begin{align*}
 		\varphi(a u_t) = \lim_{\text{SOT}} \varphi(x_i )\varphi(a u_t) = \lim_{\text{SOT}} \varphi(u_t \alpha_{t}^{-1}(x_i a )) = \lim_{\text{SOT}} \varphi(u_t) \varphi(\alpha_t^{-1}(x_i))\varphi(\alpha_{t}^{-1}(a)) = 0,
 	\end{align*}
-	by the bimodule property, see \cite[Proposition 1.5.7 p.t (2)]{brown2008c}.
+	as $A \subseteq \mathrm{mult}(\varphi)$. \todo{Move to prelim} see \cite[Proposition 1.5.7 p.t (2)]{brown2008c}.
 \end{proof}
 With this, we obtain the following:
 \begin{theorem}
-	Let $(A,G,\alpha)$ be a $C^*$-dynamical system, $G$ discrete. If $\alpha$ is topologically free, then $A$ detects ideals in $A \rtimes_\alpha G$ modulo the kernel of the canonical surjection $A \rtimes_\alpha G \to A \rtimes_{\alpha,r}G$.
+	Let $(A,G,\alpha)$ be a $C^*$-dynamical system, $G$ discrete. If $\alpha$ is topologically free, then $A$ detects ideals in $A \rtimes_{\alpha}G$ modulo the kernel of the canonical surjection $A \rtimes_\alpha G \to A \rtimes_{\alpha,r}G$. 
 	\label{ASthm1}
 \end{theorem}
 \begin{proof}
-	Let $I_r$ denote the kernel of the canonical surjection $ \pi_r \colon A \rtimes_\alpha G \to A \rtimes_{\alpha , r}G$ and let $E$ denote the canonical faithful conditional expectation (see e.g., \cite[Proposition 4.1.9]{brown2008c}) given by
+	\todo{Include in prelim}
+	Let $I_r$ denote the kernel of the canonical surjection $ \pi_r \colon A \rtimes_\alpha G \to A \rtimes_{\alpha , r}G$ and let $E$ denote the canonical faithful conditional expectation (see e.g., \cite[Proposition 4.1.9]{brown2008c} \todo{include in Prelim}) given by
 	\begin{align*}
 	E_r \colon A \rtimes_{\alpha,r} G &\to A, \\ 
 		c_c(G,A) \ni \sum_{g \in G} a_g  u_g &\mapsto a_e \in A,
 	\end{align*}
 	and let $E = E_r \circ \pi_r$ denote the canonical conditional expectation $A \rtimes_{\alpha }G \to A$.
 	
-	Suppose that $I$ is an ideal of $A \rtimes_\alpha G$ with $A \cap I=0$ and $I \not \subseteq I_r$. Since $E_r$ is faithful, there is $a \in I_+$ such that $E(a) \neq 0$, e.g., as the pre-image of a non-zero positive element of the image of $I$ in $A \rtimes_{\alpha,r}G$. By density of $\cc(G,A)$ in $A \rtimes_\alpha G$, pick $b = \sum_{g \in F} b_g u_g$ for some finite set $F \subseteq G$ with
+	Suppose that $I$ is an ideal of $A \rtimes_\alpha G$ with $A \cap I=0$ and $I \not \subseteq I_r$. Since $E_r$ is faithful. By density of $\cc(G,A)$ in $A \rtimes_\alpha G$, pick $b = \sum_{g \in F} b_g u_g$ for some finite set $F \subseteq G$ with
 	\begin{align*}
 		\lv a - b \rv < \frac{\lv E (a) \rv}{2}.
 	\end{align*}
-	By assumption, the set $P := \bigcap_{e \neq t \in F}\left\{ p \in \hat A \mid \alpha_{t}^*(p) \neq p \right\}$ is dense in $\hat A$. Let $[\pi] \in P$. Pick a c.c.p extension of the composition $\pi \circ q$, where $q \colon A+I \to (A+I)/I\cong A$ is the quotient map, e.g., by using unitizations and \cite[Proposition 2.2.1]{brown2008c} repeatedly and restricting to the desired domains. Denote the extension by $\tau$, which has $\lv \tau \rv = \lim \lv \tau(e_i)\rv = 1\lv \pi \rv = 1$, where $e_i$ is an approximate identity of $A \rtimes_\alpha G$ contained in $A$. 
+	By assumption, the set $P := \bigcap_{e \neq t \in F}\left\{ p \in \hat A \mid \alpha_{t}^*(p) \neq p \right\}$ is dense in $\hat A$. Let $[\pi] \in P$. Let $\pi'$ denote the composition
+	\begin{equation*}
+		\begin{tikzcd}
+			A + I \ar[r, "q"] & (A+I)/I \ar[r, "\cong"] & A \ar[r, "\pi"]  & \mathbb{B}(\H_\pi),
+		\end{tikzcd}
+	\end{equation*}
+	where $q$ is the quotient map. We are going to extend $\pi'$ to a completely positive map on $A \rtimes_\alpha G$ in the following way:	For $x \in A \rtimes_\alpha G$, let $\tau(x) := P _e\tilde \pi \rtimes \lambda(x) P_e$, where $P_e$ is the minimal projection $\H_\pi \otimes \ell^2(G) \to \H_\pi \otimes \C \delta_{e}$, then $\tau \colon A \rtimes_\alpha G$ is a completely positive map extending $\pi'$ (after identifying $\H_\pi$ with $\H_\pi \otimes \C \delta_e$) to all of $A \rtimes_\alpha G$; if $a \in A$ and $s,t \in G$ then
+	\begin{align*}
+		\tau(au_s) \xi \otimes \delta_t = \begin{cases}
+			\pi(a) \xi \otimes \delta_e & \text{ if } s = t = e,\\
+			0 & \text{ else}
+		\end{cases}
+	\end{align*}
+	for all $\xi \in \H_\pi$. If $x \in I$, then $P_e \tilde \pi \rtimes_r \lambda (x) P_e = 0$ as $A \cap I = 0$. In particular, $\tau$ is completely positive and $\lv \tau \rv = \lim \lv \tau(e_i)\rv = 1\lv \pi \rv = 1$, where $e_i$ is an approximate identity of $A$. 
 	
-	Recall that $[\pi] \in P$ if and only if for $t \in F\backslash\{e\}$ the representations $\pi$ and $\pi \circ \alpha_{t}^{-1}$ are disjoint (by the remark following the definition), implying by \cref{ASlem1} that
+	For $t \in F\backslash\{e\}$ the representations $\pi$ and $\pi \circ \alpha_{t}^{-1}$ are disjoint, since $[\pi] \in P$. By \cref{ASlem1} we then see that
 	\begin{align*}
 		\tau(b) = \sum_{t \in F} \tau(b_t u_t) = \tau(b_e) = \tau(E(b)).
 	\end{align*}
-	Note that if $x \in I$, then $\tau(x) = 0$, since then $\tau(x) = \pi \circ q(x) = \pi(0) =0$. Hence
+	Since $\tau(I) = 0$, we have
 	\begin{align*}
 		\lv \pi(E(b))\rv = \lv \tau(b) \rv = \lv \tau(b-a)\rv \leq \lv b-a\rv.
 	\end{align*}
-	Since $P$ is dense in $\hat A$, and $\hat A$ corresponds to states of $A$, we see that $\lv E(b)\rv \leq \lv b-a\rv$, giving the contradiction
+	As $P$ is dense in $\hat A$, we see that $\lv E(b)\rv \leq \lv b-a\rv$ yielding the contradiction
 	\begin{align*}
 		\lv E(a) \rv \leq \lv E(a-b)\rv + \lv E(b)\rv \leq 2 \lv a-b\rv <  \lv E(a)\rv,
 	\end{align*}
@@ -129,34 +148,40 @@ With this, we obtain the following:
 
 If we further assume that $A$ is abelian, then the converse holds as well:
 \begin{theorem}
-	Let $(A,G,\alpha)$ be a $C^*$-dynamical system with $A$ abelian and $G$ discrete. Then the converse of the implication in \cref{ASthm1} holds.
+	Let $X$ be a locally compact Hausdorff space. Given $C^*$-dynamical sytem $(C_0(X),G,\alpha)$ with $G$ discrete, if $C_0(X)$ detect ideals in $C_0(X) \rtimes_{\alpha}G$ modulo $I_r$, then the action is topologically free.
 	\label{ASthm2}
 \end{theorem}
 \begin{proof}
-	Let $x \in \hat A$. Recall that \todo{Add in prelim about top actions} actions of $G$ on locally compact Hausdorff spaces correspond to actions on $C_0(X)$, via the formula $t.f(x) :=  \alpha_t(f)(x) := f(t^{-1}.x)$, here $t.x$ denotes the image of the homeomorphism $t \colon X \to X$. Consider the Hilbert space $\ell^2(\left\{ t.x \mid t \in G\} \right\}$. We define the covariant pair $(\pi_x,u)$ for $(A,G)$ by
+	Let $x \in X$, and consider the Hilbert space $\ell^2(G.x) = \ell^2(\left\{ t.x \mid t \in G\} \right\}$. We define the covariant pair $(\pi_x,u)$ for $(C_0(X),G,\alpha)$ by
 	\begin{align*}
 		\pi_x(f) \delta_{t.x} = f(t.x) \delta_{t.x} \text{ and } u_s \delta_{t.x} = \delta_{st.x},
 	\end{align*}
-	for $f \in C_0(\hat A)$ and $t,s \in G$. That they are representations is easy to verify, we show covariance instead:
+	for $f \in C_0(X)$ and $t,s \in G$. That they are representations is easy to verify, we show covariance instead:
 	\begin{align*}
-		u_s \pi_x(f) u_{s^{-1}} \delta_{t.x} = u_{s} f(s^{-1}t.x)\delta_{s^{-1}t.x} = f(s^{-1}t.x) \delta_{t.x} = s.f(t.x) = \pi_x(s.f)\delta_{t.x},
+		u_s \pi_x(f) u_{s^{-1}} \delta_{t.x} = u_{s} f(s^{-1}t.x)\delta_{s^{-1}t.x} = f(s^{-1}t.x) \delta_{t.x} = s.f(t.x)\delta_{t.x} = \pi_x(s.f)\delta_{t.x},
 	\end{align*}
-	so that we obtain a representation $\pi_x \rtimes u_x$ of $A \rtimes_\alpha G$ on $\ell^2(G.x)$ satisfying the same relations (here we identify $G$ with its image in $M(A \rtimes_\alpha G)$). Let $I = \bigcap_{x \in \hat A} \ker \pi_{x}$. If $f \in I$, then $f(t.x) = 0$ for all $t \in G$ (in particular for $t=e$) and $x \in \hat A$, so $f = 0$. Hence $I \cap A = 0$.
+	so that we obtain a representation $\pi_x \rtimes u_x$ of $C_0(X) \rtimes_\alpha G$ on $\ell^2(G.x)$. Let $I = \bigcap_{x \in  X} \ker \pi_{x}$. If $f \in I$, then $f(t.x) = 0$ for all $t \in G$ (in particular for $t=e$) and $x \in  X$, so $f = 0$. Hence $I \cap C_0(X) = 0$.
 	
-	Suppose that $G \acts \alpha A$ is not topologically free. Then there is $e \neq s \in G$ such that $V=\left\{ y \in \hat A \mid s.y \neq y \right\}$ is not dense in $\hat A$. Let $0 \neq f \in C_0(\hat A)$ with $\supp f \subseteq \overline{V}^c$. Whenever $t.x \in \supp f$, we have $st.x = t.x$, so
+	Suppose that $G \acts \alpha C_0(X)$ is not topologically free. Then there is $e \neq s \in G$ such that $V_s=\left\{ y \in X  \mid s.y \neq y \right\}$ is not dense in $X$. Let $0 \neq f \in C_0(X)$ with $\supp f \subseteq \overline{V_s}^c$. Let $t \in G$ and note that
+	\begin{itemize}[nosep]
+	\item If $t.x \in \supp f$ then $st.x = t.x$ and we see that
 	\begin{align*}
-		\pi_x\rtimes u_x(f-fu_s)\delta_{tx} = f(t.x) \delta_{t.x} - f(st.x)\delta_{st.x}= 0,
+		\pi_x\rtimes u_x(f-fu_s)\delta_{tx} = f(t.x) \delta_{t.x} - f(st.x)\delta_{st.x}= 0.
 	\end{align*}
-	and if $t.x \not \in \supp(f)$, then (as $s.x=x \iff x = s^{-1}.(s.x)=s^{-1}.x$) we see that $st.x \not \in \supp f$, and hence $\pi_{x} \rtimes u_x (f-f u_s) = 0$ again. Thus $f-f u_s \in I \subseteq I_r$, since $x$ was arbitrary. Since $E(f u_s) = E_r(\pi_r(fu_s)
-) =0$, we see that 
+	\item If $st.x  \in \supp f$, then $t.x = s^{-1}st.x = st.x$ as well.
+	\item If $t.x \not \in \supp f$ then $st.x \not \in \supp f$ and we see that
+	\begin{align*}
+		\pi_x\rtimes u_x(f-fu_s)\delta_{tx} = f(t.x) \delta_{t.x} - f(st.x)\delta_{st.x}= 0.
+	\end{align*}
+\end{itemize}
+	 Thus $f-f u_s \in I \subseteq I_r$ as $x \in X$ was arbitrary. Since $E(f u_s) = E_r(\pi_r(fu_s)) =0$, we see that 
 	\begin{align*}
 		0 \neq f = E(f-fu_s) = E_r (\pi(f-fu_s))= E_r(0) =0,
 	\end{align*}
-	a contradiction. We conclude that the action of $A$ is topologically free.
+	a contradiction. We conclude that the action of $C_0(X)$ is topologically free.
 \end{proof}
-
 \begin{corollary}
-	Suppose that $G \acts \alpha C_0(X)$ with $G$ discrete. Then $A \rtimes_\alpha G$ is simple if and only if the action is minimal, topologically free and $I_r = 0$.
+	Suppose that $G \acts \alpha C_0(X)$ with $G$ discrete. Then $C_0(X) \rtimes_\alpha G$ is simple if and only if the action is minimal, topologically free and $I_r = 0$.
 \end{corollary}
 \begin{proof}
 	This follows directly from \cref{ASthm1}, \cref{ASthm2} and \cref{ASlem1}.
@@ -164,13 +189,13 @@ If we further assume that $A$ is abelian, then the converse holds as well:
 Once again, this gives an easy proof of simplicity of $C(S^1) \rtimes_{\theta} \Z$ for $\theta$ irrational, since the action is very clearly topologically free (there are no fixed points on $S^1$ for irrational rotation), and we already know that it is minimal and $I_r = 0$.
 
 \sssection{A Relation between Ideals of $C_r^*(G)$ and $A \rtimes_{\alpha,r} G$ and a theorem of four}
-From here on, let $G$ denote a discrete countable group and $X$ a compact $G$-space. In the following, we will discuss recent developments regarding the classification of $C^*$-simple groups, in particular the results based on theory of boundary actions and topological freeness discussed earlier, and its relation to simplicity of associated crossed products $A \rtimes_{\alpha,r} G$. 
+From here on, let $G$ denote a discrete countable group and $X$ a compact $G$-space. In the following, we will discuss recent developments regarding the classification of $C^*$-simple groups. In particular results based on theory of boundary actions and topological freeness from earlier will be reviewd and their relations to simplicity of associated crossed products $A \rtimes_{\alpha,r} G$. 
 
-We say that a group $G$ is \myemph{$C^*$-simple} if its reduced group is $C^*$-simple, and we say that $G$ has the \myemph{unique trace property} if the canonical faithful tracial state $\tau_0 \colon f \mapsto \langle f\delta_e  , \delta_e\rangle_{\ell^2(G)}$ is the only tracial state on $C_r^*(G)$. It was an open question for a long time wether having the unique tracial state was equivalent to being $C^*$-simple. In 2014, using theory of boundary actions, this was shown by to false by Le Boudec (see \cite[Thoerem A]{le2017c}). However, $C^*$-simplicity does imply unique tracial state which is equivalent to having no non-trivial amenable normal subgroups (see e.g. the author's project on this subject: \cite[Chapter 5]{bscp}).
+We say that a group $G$ is \myemph{$C^*$-simple} if its reduced group is $C^*$-simple, and we say that $G$ has the \myemph{unique trace property} if the canonical faithful tracial state $\tau_0 \colon f \mapsto \langle f\delta_e  , \delta_e\rangle_{\ell^2(G)}$ is the only tracial state on $C_r^*(G)$. It was an open question for a long time wether having the unique tracial state was equivalent to being $C^*$-simple. In 2014, using theory of boundary actions, this was shown by to false by Le Boudec (see \cite[Thoerem A]{le2017c}). However, $C^*$-simplicity does imply unique tracial state which is equivalent to having no non-trivial amenable normal subgroups (see e.g. the author's project on this subject: \cite[Chapter 5]{bscp}). The breakthrough which started this development was due to Kennedy and Kalantar (see \cite{kalantar2017boundaries}).
 
-It is quite a strong condition on a group $G$ to be $C^*$-simple, since as mentioned amenable groups are not $C^*$-simple (In fact, $C^*$-simple groups have no non-trivial amenable normal subgroups, see again \cite[Chapter 5]{bscp}). Groups which are $C^*$-simple include the class of Powers groups (an homage to R.T. Powers' proof on simplicity of the free group on two generators, see \cite{powers1975simplicity} or \cite[chapter 3]{bscp}) which includes the free groups on finite number of generators.
+It is quite a strong condition on a group $G$ to be $C^*$-simple, for example discrete amenable (in particular abelian) groups are not $C^*$-simple. Groups which are $C^*$-simple include the class of Powers groups (an homage to R.T. Powers' proof on simplicity of the free group on two generators, see \cite{powers1975simplicity} or \cite[chapter 3]{bscp}) which includes the free groups on finite number of generators.
 
-In order to show our desired results, we need to cover a bit of theory on conditional expectations and crossed products. For instance whenever $N$ is a normal subgroup of a discrete group $G$, then the inclusion $N \subseteq G$ gives rise to a conditional expecation $E_{N}^G \colon C_r^*(G) \to C_r^*(N)$ given by $\lambda_s \mapsto 1_{N}(s) \lambda_s$, see e.g. \cite[Corollary 2.5.12]{brown2008c}. Moreover, supposing that $A = C(X)$, then for all $x \in X$, the associated conditional expectation $E_{G_x}^G \colon C_r^* (G) \to C_r^*(G_x)$ (here $G_x$ is the stabilizer subgroup) extends to a condotional expecation
+In order to show our desired results, we need to cover a bit of theory on conditional expectations and crossed products. For instance whenever $N$ is a normal subgroup of a discrete group $G$, then the inclusion $N \subseteq G$ gives rise to a conditional expecation $E_{N}^G \colon C_r^*(G) \to C_r^*(N)$ given by $\lambda_s \mapsto 1_{N}(s) \lambda_s$, see e.g. \cite[Corollary 2.5.12]{brown2008c}. Moreover, supposing that $A = C(X)$, then for all $x \in X$, the associated conditional expectation $E_{G_x}^G \colon C_r^* (G) \to C_r^*(G_x)$ extends to a conditional expecation
 \begin{align}
 	E_x \colon C(X) \rtimes_{\alpha,r} G &\to C_r^*(G_x), \\
 	f \lambda_s &\mapsto f(x) E_{G_x}^G(\lambda_s).
@@ -179,24 +204,43 @@ In order to show our desired results, we need to cover a bit of theory on condit
 
 The following result shows the close relationship between topological freeness of actions and $C^*$-simplicty of groups with the ideal structure of crossed products of $G$-boundaries. It is (to the author's knowledge) due to \cite{breuillard2017c}, however we follow a proof of Ozawa (see e.g., \cite{ozawa2014lecture}). The result is heavily inspired by the proof of the Archbold-Spielberg result covered earlier.
 \begin{proposition}
-	Let $G \acts {} X$ be a minimal action. If the stabilizer group $G_x := \{ t \in G \ \mid \ t.x =x\}$ is $C^*$-simple for some $x \in X$, then the corresponding reduced crossed product $C(X) \rtimes_{\alpha,r} G$ is simple.
+	Let $G \acts {} X$ be a minimal action on a compact Hausdorff space $X$. If the stabilizer group $G_x$ is $C^*$-simple for some $x \in X$, then the corresponding reduced crossed product $C(X) \rtimes_{\alpha,r} G$ is simple.
 	\label{ozawa15pt1}
 \end{proposition}
 \begin{proof}
-	Suppose that $I \subseteq C(X) \rtimes_r G$ is a non-trivial closed ideal and let $x \in X$. Let $E$ denote the canoncial faithful conditional expectation $C(X) \rtimes_r G \to C(X)$, $f \lambda_s \mapsto f$ if $s  = e$ and $0$ else (see e.g., \cite[proposition 4.1.9]{brown2008c}). Then $E(I) \neq 0$, since $E$ is faithful and by minimality of $G \acts {} X$ it is dense in $C(X)$. If $\tau_r$ denotes the canoncial faithful tracial state on $C_r^*(G)$ and let $f \in E(I)$ with $E(f) \neq 0$ and $f(x) \neq 0$. Then $\tau_r (E_x(f \lambda_e))= f(x) = \delta_x(E(f\lambda_e))$, so that $E_x(I)$ is non-zero in $C_r^*(G_x)$. We claim that $E_x(I)$ is not dense in $C_r^*(G_x)$. Similar to the proof of \cref{ASthm1}, we consider state on $C(X) + I$ given by the composition:
+	Suppose that $I \subseteq C(X) \rtimes_r G$ is a non-trivial closed ideal and let $x \in X$. Let $E$ denote the canoncial faithful conditional expectation $C(X) \rtimes_r G \to C(X)$. Then
+\begin{itemize}
+	\item $E(I) \neq 0$ as $E$ is faithful,
+	\item $E(I)$ is dense in $C(X)$ by minimality of $G \acts{}X$, as $\overline{E(I)}$ is a non-empty $G$-invariant ideal of $C(X)$ so $\overline{E(I)} = C(X)$.
+\end{itemize}
+Let $\tau_0$ denote the canoncial faithful tracial state on $C_r^*(G)$ let $f \in C(X)\{0\}$ with $f(x) \neq 0$. Then 
+\begin{align*}
+	\tau_0 (E_x(f \lambda_e))= f(x) = \delta_x(E(f\lambda_e)),
+\end{align*}
+so $E_x(I) \neq \{0\}$ in $C_r^*(G_x)$. 
+
+We claim that $E_x(I)$ is not dense in $C_r^*(G_x)$, and similar to the proof of \cref{ASthm1}, we consider state on $C(X) + I$ given by the composition:
 	\begin{align*}
 		C(X) + I \to (C(X)+I)/I \cong C(X) \stackrel {\delta_x} \to \C,
 	\end{align*}
-	where we used that the proper ideal $C(X) \cap I$ of $C(X)$ must be $0$ by minimality of $G \acts {} X$. Let $\varphi_x$ denote any state extending the above composition with $\varphi_x(I) =0$. The result will follow once we show that $\varphi_x = \varphi_x \circ E_x$, for then $\varphi_x (E_x(I)) = \varphi_x(I) = 0 $ implying that $\varphi_x= 0$ on all of $C(X) \rtimes_{\alpha,r}G$ if $E_x(I)$ is dense in $C_r^*(G_x)$. 
-
-	To see that $\varphi_x = \varphi_x \circ E_x$ it suffices to show that $\varphi_x (\lambda_s) = 0$ for $s \not \in G_x$: If not, then since $C(X)$ is in the multiplicative domain of $\varphi_x$ it holds that $\varphi_x(f \lambda_s) =  \varphi_x( f(x) \lambda_s)  =  \varphi_x (E_x( f\lambda_s))$. So assume that $s.x \neq x$ and choose a function $h \in C(X)$ such that $h(x) = 1$ and $h(s^{-1}.y) = 0$ for all $y \in \supp h$ (using that $G$ is a normal space and applying Uryhson's lemma). In particular, this implies that 
+	where we used that the proper ideal $C(X) \cap I$ of $C(X)$ must be $0$ by minimality of $G \acts {} X$. Let $\varphi_x$ denote any state extending the above composition with $\varphi_x(I) =0$.
+	
+	The result will follow once we show that $\varphi_x = \varphi_x \circ E_x$, for then $E_x(I)$ can not be dense: If $\varphi_x = \varphi_x \circ E_x$ and $E_x(I)$ is dense in $C_r^*(G_x)$, then 
 	\begin{align*}
-		\varphi_x(\lambda_s) = \varphi_x(h\lambda_sh) = \varphi_x(h \alpha_s(h)\lambda_s)   = 0,
+		\varphi_x(C(X) \rtimes_r G) = \varphi_x (E_x(C(X) \rtimes_r G)) = \varphi_x(C^*_r(G_x))=\{0\},
+	\end{align*}
+a contradiction. To see that $\varphi_x = \varphi_x \circ E_x$ it suffices to show that $\varphi_x (\lambda_s) = 0$ for $s \not \in G_x$: If $s \in G_x$, then as $C(X)$ is in the multiplicative domain of $\varphi_x$, it holds for each $f \in C(X)$ that
+	\begin{align*}
+		\varphi_x(f \lambda_s) =  \varphi_x( f(x) \lambda_s)  =  \varphi_x (E_x( f\lambda_s)).
+	\end{align*}
+	So assume that $s \not \in G_x$, i.e., that $s.x \neq x$. Using Uryhson's lemma we pick a function $h \in C(X)$ with $h(x) = 1$ and $h(s^{-1}.x) = 0$. Then
+	\begin{align*}
+		\varphi_x(\lambda_s) =\varphi_x(h)\varphi_x(\lambda_s) \varphi_x(h)= \varphi_x(h\lambda_sh) = \varphi_x(h (s.h)\lambda_s)=f(x)f(s^{-1}.x) \varphi_x(\lambda_s) = 0,
 	\end{align*}
 	finishing the proof.
 \end{proof}
 \begin{remark}
-	Given a group $G$, if $N$ is an amenable normal subgroup of $G$, then the quotient map $\C G \to \C \left(G/N\right)$ extends to a $*$-homomorphism $\pi_N \colon C_r^*(G) \to C_r^*\left( G/N \right)$ such that
+	Given a group $G$, if $N$ is an amenable normal subgroup of $G$, then the quotient map $\C( G) \to \C \left(G/N\right)$ extends to a $*$-homomorphism $\pi_N \colon C_r^*(G) \to C_r^*\left( G/N \right)$ such that
 \begin{equation}
 	\begin{tikzcd}
 		\C G \ar[r,"q"] \ar[d,"\lambda_G"'] & \C\left( G/N \right) \ar[d, "\lambda_{G/N}"]\\
@@ -204,6 +248,7 @@ The following result shows the close relationship between topological freeness o
 	\end{tikzcd}
 \end{equation}
 is commutative with the vertical maps being the left-regular representations, see e.g. \cite[Proposition 3]{de2007simplicity} for a proof. In general, the associated representation of $G$ as operators on $\ell^2(G/N)$ given by composition of the above is often refered to as the \myemph{quasi-regular representation}. We will use this result in a moment.
+\label{quotientextend}
 \end{remark}
 We have seen that topological freeness implies simplicity of $A \rtimes_{\alpha,r} G$ for $G$-simple $C^*$-algebras. We now prepare to cover a result from the same paper as above allows us to determine topological freeness from properties of $G$ and $C(X)\rtimes_\alpha G$, but first we need a lemma which will allow us to describe a useful representation:
 \begin{lemma}
@@ -215,21 +260,21 @@ We have seen that topological freeness implies simplicity of $A \rtimes_{\alpha,
 	\label{CXGrep}
 \end{lemma}
 \begin{proof}
-	First some notation: For the remainder of this proof, we will let $\lambda^x$ denote the representation of $G$ in $C_r^*(G/G_x^\circ)$ from the above remark and $\lambda$ denote the left-regular representation of $G$. Observe that we may define a $*$-homomorphism $\pi_x \colon C(X) \to \ell^\infty(G/G_x^\circ)$, $\pi_x(f)([t])=f(tx)$: It is well-defined, for if $[s]=[t] \in G/G_x^\circ$, then $s^{-1}tx = x$ if and only if $sx=tx$ and 
+	For the remainder of this proof, we will let $\lambda^x$ denote the representation of $G$ in $C_r^*(G/G_x^\circ)$ from \cref{quotientextend} and $\lambda$ denote the left-regular representation of $G$. Observe that we may define a $*$-homomorphism $\pi_x \colon C(X) \to \ell^\infty(G/G_x^\circ)$, given by $\pi_x(f)([t])=f(tx)$: It is well-defined, for if $[s]=[t] \in G/G_x^\circ$, then 
 	\begin{align*}
 		\pi_x(f)([t])=f(tx) = f(sx) = \pi_x(f)([s]),
 	\end{align*}
-	for all $s,t \in G$ and $f \in C(X)$, and it is easy to check that it is a $*$-homomorphism. Moreover, it is injective, for if $\pi_x(f) = \pi_x(g)$, then $f(tx)=g(tx)$ for all $t \in G$, which by minimality (all orbits are dense in $X$) implies that $f=g$.
+	for all $s,t \in G$ and $f \in C(X)$ as $s^{-1}tx = x$ if and only if $sx=tx$. It is easy to verify that it is a $*$-homomorphism. In fact, it is injactive: If $\pi_x(f) = \pi_x(g)$, then $f(tx)=g(tx)$ for all $t \in G$, which by minimality implies that $f=g$.
 	
-	Let now $\pi_x$ denote the associated representation of $C(X)$ as multiplication operators on $\ell^2(G/G_x^\circ)$ and note that for all $t,s \in G$ and $f \in C(X)$:
+	Redefine now $\pi_x$ to denote the associated representation of $C(X)$ as multiplication operators on $\ell^2(G/G_x^\circ)$ and note that for all $t,s \in G$ and $f \in C(X)$:
 	\begin{align*}
 		\lambda^x_t \pi_x (f) \lambda^x_{t^{-1}} \delta_{[s]} = f(t^{-1}sx)\lambda^x_{t^{-1}} \delta_{[ts]} = f(t^{-1}sx) \delta_{[s]} = t.f(sx) \delta_{[t]} = \pi_x(t.f) \delta_{[s]},
 	\end{align*}
-	so that the pair $(\lambda^x, \pi_x, \ell^2(G/G_x^\circ))$ is a covariant pair for $(C(X),G)$\todo{make remark on leaving out alpha when unneccesary}. By Fell's absorbtion principle (see \cite[Proposition 4.1.7]{brown2008c} or \cite[25]{approxtalk})., we may identify
+	so that the pair $(\lambda^x, \pi_x, \ell^2(G/G_x^\circ))$ is a covariant pair for the $C^*$-dynamical system $G \acts {} C(X)$. By Fell's absorbtion principle (see \cite[Proposition 4.1.7]{brown2008c} or \cite[25]{approxtalk}), we may identify
 	\begin{align*}
 		C(X) \rtimes_r G =C^*\left(\{\lambda^x_t \otimes  \lambda_t \}_{t \in G} , \{\pi_x(f) \otimes 1 \}_{f \in C(X)}\right) \subseteq \mathbb{B}(\ell^2(G/G_x^\circ)) \otimes C_r^*(G),
 	\end{align*}
-	where $f$ is mapped to $\pi_x(f) \otimes 1$ and $\lambda_t$ is mapped to $\lambda^x_t \otimes \lambda_t$. Now, since $G$ is discrete and countable, $C_r^*(G) \cong C^*(\{\lambda_t\}_{t \in G})$, and by the above remark we obtain a $*$-homomorphism 
+	where $f$ is mapped to $\pi_x(f) \otimes 1$ and $\lambda_t$ is mapped to $\lambda^x_t \otimes \lambda_t$. Now, since $G$ is discrete and countable, $C_r^*(G) \cong C^*(\{\lambda_t\}_{t \in G})$, and by \cref{quotientextend} we obtain a $*$-homomorphism 
 \begin{align*}
 	 C^*(\{\lambda_t\}_{t \in G}) \to C^*(\{\lambda_t^x\}_{t \in G}), \quad \lambda_t\mapsto  \lambda_t^x,
 \end{align*}
@@ -237,7 +282,7 @@ for all $t \in G$. Combining everything, we obtain a representation $\sigma$ of 
 \begin{align*}
 	\sigma_x(f) = \pi_x(f) \otimes 1 \text{  and  } \sigma_x(f)(\lambda_t)=\lambda_t^x \otimes \lambda_t^x.	
 \end{align*}
-Let $\iota \colon \mathbb{B}(\ell^2(G/G_x^\circ)) \otimes \mathbb{B}(\ell^2(G/G_x^\circ)) \subseteq  \mathbb{B}(\ell^2(G/G_x^\circ) \otimes \ell^2(G/G_x^\circ))$ be the canonical unique embedding of $C^*$-algebras and let $u$ be the embedding of the diagonal space in $\ell^2(G/G_x^\circ)  \subseteq \ell^2(G/G_x^\circ) \otimes \ell^2(G/G_x^\circ)$, $u \delta_{[t]} = \delta_{[t]} \otimes \delta_{[t]}$, so that $u$ is a unitary operator.
+Let $\iota \colon \mathbb{B}(\ell^2(G/G_x^\circ)) \otimes \mathbb{B}(\ell^2(G/G_x^\circ)) \subseteq  \mathbb{B}(\ell^2(G/G_x^\circ) \otimes \ell^2(G/G_x^\circ))$ be the canonical unique embedding of $C^*$-algebras and let $u$ be the unitary operator embedding $\ell^2(G/G_x^\circ)$ in the diagonal space of $\ell^2(G/G_x^\circ) \otimes \ell^2(G/G_x^\circ)$, i.e., $u \delta_{[t]} = \delta_{[t]} \otimes \delta_{[t]}$.
 
 Then the $^*$-homomorphism $\Pi_x \colon C(X) \rtimes_r G \to \mathbb{B}(\ell^2(G/G_x^\circ))$ given by $\Pi_x(a) := u^* \iota(\sigma_x(a)) u $ has the desired properties.
 \end{proof}
@@ -246,31 +291,43 @@ Then the $^*$-homomorphism $\Pi_x \colon C(X) \rtimes_r G \to \mathbb{B}(\ell^2(
 	\label{ozawa15pt2}
 \end{proposition}
 \begin{proof}
-	First, let $\Pi_x$ denote the representation of \cref{CXGrep} and suppose that $s \in G_x^\circ$ and let $U$ be a neighborhood of $x$ witnessing this, i.e, be such that $s|_U = \mathrm{id}$ and pick $f \in C(X)$, $f \neq 0$ with $\supp f \subseteq U$. By the same argument as in the proof of \cref{ASthm2}, if $tx \in \supp f$ then $stx=tx$ and if $tx \not \in \supp f$ then $stx \not \in \supp f$, so
+	First, let $\Pi_x$ denote the representation of \cref{CXGrep} and suppose that $s \in G_x^\circ$ and let $U$ be a neighborhood of $x$ witnessing this, i.e, be such that $s|_U = \mathrm{id}$, and let $f \in C(X)\backslash\{0\}$ with $\supp f \subseteq U$. By the same argument as in the proof of \cref{ASthm2}, if $t.x \in \supp f$ then $st.x=t.x$ and if $t.x \not \in \supp f$ then $st.x \not \in \supp f$, so
 	\begin{align*}
-		\Pi_x\left(f ( 1-\lambda_s)) \right) \delta_{[t]} = f(tx) \delta_{[t]} -f(stx) \delta_{[st]} = f(tx) \delta_{[t]} - f(tx)\delta_{[t]} = 0.
+		\Pi_x\left(f ( 1-\lambda_s)) \right) \delta_{[t]} = f(t.x) \delta_{[t]} -f(st.x) \delta_{[st]}  = 0.
 	\end{align*}
 	Since we assumed simplicity of $C(X) \rtimes_r G$, this implies that $s = e$ and hence $G_x^\circ $ is trivial whence the minimality assumption finishes the proof.
 \end{proof}
-\begin{note}
-	In order to prove the main theorem of this section, we will need a corollary saying that $C(\dd _F G)$ is injective as a $G$-$C^*$-algebra (as an object in the category of $G$-$C^*$-algebras): whenever $A$ is a unital $C^*$-algebra and $G \acts{} A$, then there is a $G$-morphism of $A$ into $C(\dd_F G)$, obtained by the $G$-morphism which maps $1$ to $1$. For a proof, see e.g. \cite[Theorem 6 + Corollary 7]{ozawa2014lecture}.
-\end{note}
+	In order to prove the main theorem of this section, we need two results which, arguably, is outside the scope of this thesis. We include them with reference to proofs.
+\begin{lemma}[\mbox{\cite[Lemma 3.1]{hamana1985injective}}]
+	Let $A$ and $B$ be unital $C^*$-algebras and $G$ a discrete group such that $G \acts \alpha A$ and $G \acts \beta B$. If $\psi \colon A \to B$ is a $G$-equivariant unital completely positive map, then there a $G$-equivariant unital completely positive map 
+	\begin{align*}
+		\tilde \psi \colon A \rtimes_{\alpha,r}  G &\to B \rtimes_{\alpha,r} G
+		a \lambda_s \mapsto \psi(a) \lambda_s 
+	\end{align*}
+	which extends $\psi$. Moreover, $\psi$ is an isometry or surjection if and only if $\tilde \psi$ is and similarly $\psi$ is a $*$-homomorphism if and only if $\tilde \psi$ is.
+	\label{hamanalift}
+\end{lemma}
+\begin{lemma}[\mbox{\cite[Theorem 6 + Corollary 7]{ozawa2014lecture}}]
+	whenever $A$ is a unital $G$-$C^*$-algebra, then there is a $G$-equivariant unital completely positive map of $A$ into $C(\dd_F G)$ extending the map sending $1$ to $1$. 
+	\label{1lifthamana}
+\end{lemma}
+With these results, we continue.
 \begin{proposition}
 	Let $G \acts {} A$ with $1 \in A$ and let $X$ be a $G$-boundary. If $A \rtimes_r G$ is non-simple then $(A \otimes C(X))\rtimes_r G$ is non-simple in the following way: If $I \subseteq A \rtimes_r G$ is a non-trivial ideal, then the ideal generated by $I$ in $(A \otimes C(X))\rtimes_r G$ is proper.
 	\label{ozawprop17}
 \end{proposition}
 \begin{proof}
-	Consider the embedding $A \rtimes_r G$ in $(A \otimes C(X)) \rtimes_r G$ via the map $a \lambda_s \mapsto (a \otimes 1) \lambda_s$. That this is an actual embedding of $C^*$-algebras is due to a technical lemma of Hamana, see e.g., \cite[lemma 3.1]{hamana1979injective}. Let $\pi$ be a non-faithful representation of $A \rtimes_r G$ on $\mathbb{B}(H)$ with kernel $I$, and let $\overline \pi$ denote a unital completely positive extension $(A \otimes C(X)) \rtimes_r G \to \mathbb{B}(H)$. Using \cite[Proposition 1.5.6]{brown2008c}, we see that $\overline \pi(axb) = \pi(a) \overline \pi(x) \pi(b)$ for all $a,b \in A \rtimes_r G$ and $x \in (A \otimes C(X)) \rtimes_r G$, so that the image of $\pi(A)$ and $\overline \pi(C(X))$ commute, since
+	Consider the embedding of $A \rtimes_r G$ in $(A \otimes C(X)) \rtimes_r G$,  $a \lambda_s \mapsto (a \otimes 1) \lambda_s$, induced by the embedding $A \subseteq A \otimes C(X)$, $a \mapsto a \otimes 1$. Let $\pi$ be a non-faithful representation of $A \rtimes_r G$ on $\mathbb{B}(\H)$ with kernel $I$, and let $\overline \pi$ denote a unital completely positive extension $(A \otimes C(X)) \rtimes_r G \to \mathbb{B}(\H)$. As $A \rtimes_r G$ is contained in the multiplicative domain of $\overline \pi$, the bimodule property implies that $\overline \pi(axb) = \pi(a) \overline \pi(x) \pi(b)$ for all $a,b \in A \rtimes_r G$ and $x \in (A \otimes C(X)) \rtimes_r G$, so that the image of $\pi(A)$ and $\overline \pi(C(X))$ commute, since
 	\begin{align*}
 		(a \otimes 1 )\lambda_s (1 \otimes f ) \lambda_e = (1 \otimes f) \lambda_e (a \otimes 1) \lambda_s,
 	\end{align*}
 	for all $ a \in A$, $f \in C(X)$ and $s \in G$ and the bimodule property for $\overline \pi$ of $A \rtimes_r G$ mentioned earlier. 
 
-	Using the remark from earlier, let $\psi$ denote any $G$-equivariant unital completely positive map from $C^*(\{\overline \pi (f) \ \mid \ f \in C(X) \}) \to C(\dd_F G)$. By a result of Furstenberg, see e.g. \cite[lemma 4.16 + proposition 4.23]{bscp}, the composition $\psi \circ \overline \pi|_{C(X)}$ is injective and unique, so it must be the inclusion of $C(X)$ in $C(\dd_F G)$. 
-	
+	Define an action of $G$ on $C^*(\overline \pi(C(X)))$ by inner automorphisms $s \mapsto \mathrm{Ad} \overline \pi(\lambda_s)$. By the virtue of \cref{1lifthamana} let $\psi$ denote any $G$-equivariant unital completely positive map from $C^*(\{\overline \pi (f) \ \mid \ f \in C(X) \}) \to C(\dd_F G)$. By a result of Furstenberg, see e.g. \cite[lemma 4.16 + proposition 4.23]{bscp}, the composition $\psi \circ \overline \pi|_{C(X)}$ must be the unique $G$-equivariant injective $*$-homomorphism, i.e., the inclusion of $C(X)$ in $C(\dd_F G)$.
+
 	In particular $\psi$ is then a $*$-homomorphism: Suppose that $f,h \in C(X)$, so that $\psi ( \overline \pi(fg))= \psi (\overline \pi(f)) \psi ( \overline \pi(g))$ implying that the multiplicative domain of $\psi$ contains the image of $\overline \pi(C(X))$ and hence is all of $C^*(\{\overline \pi(f) \ \mid \ f \in C(X)\})$ by continuity. Also, the range of $\psi$ is contained in the range of $\psi \circ \overline \pi$, which by injectivity is isomorphic to $C(X)$.
 
-	Define an action of $G$ on $C^*(\overline \pi(C(X)))$ by inner automorphisms $s \mapsto \mathrm{Ad} \overline \pi(\lambda_s)$, under which the kernel $K := \ker \psi$ becomes invariant. Consider the $C^*$-algebra 
+	, under which the kernel $K := \ker \psi$ becomes invariant. Consider the $C^*$-algebra 
 	\begin{align*}
 		B := C^*(\overline \pi ( ( A \otimes C(X)) \rtimes_r G)) = \overline{ C^*(\overline \pi(C(X))) \cdot \pi(A \rtimes_r G)},
 	\end{align*}
@@ -311,18 +368,18 @@ Then the $^*$-homomorphism $\Pi_x \colon C(X) \rtimes_r G \to \mathbb{B}(\ell^2(
 			0 \ar[r] & J_A^x \ar[r] & A \ar[r, "q_x"] & A/J_A^x \ar[r] & 0
 		\end{tikzcd}
 	\end{equation*}
-	commutes with exact rows. We claim that if $y \in \cap_{x \in X} \pi_x$ then $y = 0$: Let $\varepsilon > 0$ and pick some irreducible representation $\pi$ of $(A \otimes C(X))/J_A$ on a Hilbert space $H$ such that $\lv \pi(a) \rv \geq \lv a \rv - \varepsilon$ (recall that $\lv a \rv = \sup_{[\pi]_u} \lv \pi(a)\rv$, where $[\pi]$ runs through irreducible representations over a $C^*$-algebra).
+	commutes with exact rows. We claim that if $y \in \cap_{x \in X} \pi_x$ then $y = 0$: Let $\varepsilon > 0$ and pick some irreducible representation $\pi$ of $(A \otimes C(X))/J_A$ on a Hilbert space $\H$ such that $\lv \pi(a) \rv \geq \lv a \rv - \varepsilon$ (recall that $\lv a \rv = \sup_{[\pi]_u} \lv \pi(a)\rv$, where $[\pi]$ runs through irreducible representations over a $C^*$-algebra).
 	
-	Since every element of $(A \otimes C(X))/J_A$ commutes with elements of the form $[1 \otimes f]_{J_A}$, $f \in C(X)$, we see that $\pi\left( (1 \otimes C(X))/J_A \right) \subseteq \C 1_H$, since the commutant of an irreducible representation is trivial. Hence the composition
+	Since every element of $(A \otimes C(X))/J_A$ commutes with elements of the form $[1 \otimes f]_{J_A}$, $f \in C(X)$, we see that $\pi\left( (1 \otimes C(X))/J_A \right) \subseteq \C 1_\H$, since the commutant of an irreducible representation is trivial. Hence the composition
 	\begin{equation*}
 		\begin{tikzcd}
-			 C(X) \ar[r] & 1 \otimes C(X) \ar[r] & (1 \otimes C(X))/J_A \ar[r, "\pi"] & \C 1_H 
+			 C(X) \ar[r] & 1 \otimes C(X) \ar[r] & (1 \otimes C(X))/J_A \ar[r, "\pi"] & \C 1_\H 
 		\end{tikzcd}
 	\end{equation*}
-	defines a character on $C(X)$, hence there is $x \in X$ such that $\pi([1 \otimes f]) = \delta_x(f)1_H$ for all $f \in C(X)$. Let $\pi_A^x$ denote the representation given by 
+	defines a character on $C(X)$, hence there is $x \in X$ such that $\pi([1 \otimes f]) = \delta_x(f)1_\H$ for all $f \in C(X)$. Let $\pi_A^x$ denote the representation given by 
 	\begin{equation*}
 		\begin{tikzcd}
-			A \ar[r] &A \otimes 1  \ar[r] & (A \otimes 1)/J_A \ar[r, "\pi"] & \mathbb{B}(H),
+			A \ar[r] &A \otimes 1  \ar[r] & (A \otimes 1)/J_A \ar[r, "\pi"] & \mathbb{B}(\H),
 		\end{tikzcd}
 	\end{equation*}
 	i.e., $\pi_A^x \colon a \mapsto \pi([a \otimes 1])$. This gives us the following commutative diagram
@@ -330,7 +387,7 @@ Then the $^*$-homomorphism $\Pi_x \colon C(X) \rtimes_r G \to \mathbb{B}(\ell^2(
 		\begin{tikzcd}
 			A \otimes C(X) \ar[rr, "q"] \ar [dd, "\mathrm{id}\otimes \delta_x"] \ar[rrdd, "\pi_A \otimes \delta_x"] && (A \otimes C(X))/J_A \ar[dd, "\pi"]\\ 
 			 & & \\
-			A \ar[rr, "\pi_A^x"] && \mathbb{B}(H)
+			A \ar[rr, "\pi_A^x"] && \mathbb{B}(\H)
 		\end{tikzcd}
 	\end{equation*}
 	Combining everything, if $a \in A \otimes C(X)$ is such that $\pi_x([a]_{J_A})=0$, then $a_x \in J_a^x$, where $y_x := \mathrm{id} \otimes \delta_x (y)$. Pick a representative $b \in J_A$ such that $a_x = b_x$. Then
@@ -339,13 +396,13 @@ Then the $^*$-homomorphism $\Pi_x \colon C(X) \rtimes_r G \to \mathbb{B}(\ell^2(
 	\end{align*}
 	Letting $\varepsilon \to 0$, this implies that $[a] = 0$ whenever all $\pi_x([a]) = 0$. 
 	
-	The rest of the proof follows analogously to the proof of the Archbold-Spielberg result: Let $x \in X$ such that $J_A^x \neq A$, and assume $A/J_A^x \subseteq \mathbb{B}(H)$ via some faithful representation $\pi$. Consider the composition
+	The rest of the proof follows analogously to the proof of the Archbold-Spielberg result: Let $x \in X$ such that $J_A^x \neq A$, and assume $A/J_A^x \subseteq \mathbb{B}(\H)$ via some faithful representation $\pi$. Consider the composition
 	\begin{equation}
 		\begin{tikzcd}
-			J + A \otimes C(X) \ar[r, "Q"] & (J+ A \otimes C(X))/J \cong  (A \otimes C(X))/J_A \ar[r, "\pi_x"] & A/J_A^x \ar[r, "\pi"] &\mathbb{B}(H)
+			J + A \otimes C(X) \ar[r, "Q"] & (J+ A \otimes C(X))/J \cong  (A \otimes C(X))/J_A \ar[r, "\pi_x"] & A/J_A^x \ar[r, "\pi"] &\mathbb{B}(\H)
 		\end{tikzcd}
 	\end{equation}
-	where we used the isomorphism theorem. Use Arveson's theorem to extend the above composition to a unital completely positive map $\Phi_x \colon (A \otimes C(X)) \rtimes_r G \to \mathbb{B}(H)$. We claim that $\Phi_x \circ E = \Phi_x$, where $E$ is the canonical conditional expectation onto $A \otimes C(X)$: This is true, since $A \otimes C(X)$ is in the multiplicative domain of $\Phi_x$ and 
+	where we used the isomorphism theorem. Use Arveson's theorem to extend the above composition to a unital completely positive map $\Phi_x \colon (A \otimes C(X)) \rtimes_r G \to \mathbb{B}(\H)$. We claim that $\Phi_x \circ E = \Phi_x$, where $E$ is the canonical conditional expectation onto $A \otimes C(X)$: This is true, since $A \otimes C(X)$ is in the multiplicative domain of $\Phi_x$ and 
 	\begin{align*}
 		\Phi_x(1 \otimes f) = \pi_x(q(1 \otimes f)) = f(x).
 	\end{align*}
