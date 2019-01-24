@@ -670,6 +670,29 @@
   \field{year}{2014}
 \endentry
 
+\entry{kwasniewski2016aperiodicity}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Kwa{\'s}niewski}{K.}%
+     {Bartosz~K}{B.~K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Meyer}{M.}%
+     {Ralf}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{KBKMR1}
+  \strng{fullhash}{KBKMR1}
+  \field{labelalpha}{KM16}
+  \field{sortinit}{K}
+  \field{title}{Aperiodicity, topological freeness and pure outerness: from
+  group actions to Fell bundles}
+  \field{journaltitle}{arXiv preprint arXiv:1611.06954}
+  \field{year}{2016}
+\endentry
+
 \entry{kadison1967derivations}{article}{}
   \name{author}{2}{}{%
     {{}%

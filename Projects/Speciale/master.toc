@@ -2,44 +2,46 @@
 \defcounter {refsection}{0}\relax 
 \select@language {english}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {1}Hilbert $C^*$-modules and the Multiplier Algebra}{1}{chapter.1}
+\contentsline {chapter}{\chapternumberline {1}Preliminaries and Prerequisites}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}Hilbert $C^*$-modules}{1}{section.1.1}
+\contentsline {chapter}{\chapternumberline {2}Hilbert $C^*$-modules and the Multiplier Algebra}{2}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.2}The $C^*$-algebra of adjointable operators}{4}{section.1.2}
+\contentsline {section}{\numberline {2.1}Hilbert $C^*$-modules}{2}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.3}Unitizations and the Multiplier Algebra}{13}{section.1.3}
+\contentsline {section}{\numberline {2.2}The $C^*$-algebra of adjointable operators}{5}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {2}Crossed Products with Topological Groups}{22}{chapter.2}
+\contentsline {section}{\numberline {2.3}Unitizations and the Multiplier Algebra}{14}{section.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Integral Forms And Representation Theory}{22}{section.2.1}
+\contentsline {chapter}{\chapternumberline {3}Crossed Products with Topological Groups}{23}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Crossed Products}{32}{section.2.2}
+\contentsline {section}{\numberline {3.1}Integral Forms And Representation Theory}{23}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Properties of Crossed products}{46}{section.2.3}
+\contentsline {section}{\numberline {3.2}Crossed Products}{33}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}The case of Abelian groups and Takai Duality}{55}{section.2.4}
+\contentsline {section}{\numberline {3.3}Properties of Crossed products}{47}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}An Important Example: Transformation Groups and actions on Spaces}{72}{section.2.5}
+\contentsline {section}{\numberline {3.4}The case of Abelian groups and Takai Duality}{56}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.1}Topological Dynamics}{73}{subsection.2.5.1}
+\contentsline {section}{\numberline {3.5}An Important Example: Transformation Groups and actions on Spaces}{73}{section.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.2}Boundary Actions and the Furstenberg boundary}{74}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {3.5.1}Topological Dynamics}{74}{subsection.3.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {3}The Group Spectra And Applications}{77}{chapter.3}
+\contentsline {subsection}{\numberline {3.5.2}Boundary Actions and the Furstenberg boundary}{75}{subsection.3.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}The Arveson and Connes spectra}{77}{section.3.1}
+\contentsline {chapter}{\chapternumberline {4}The Group Spectra And Applications}{78}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}The Connes Spectrum and Simplicity}{79}{section.3.2}
+\contentsline {section}{\numberline {4.1}The Arveson and Connes spectra}{78}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {4}Actions And Automorphisms}{93}{chapter.4}
+\contentsline {section}{\numberline {4.2}The Connes Spectrum and Simplicity}{80}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Action Properties}{93}{section.4.1}
+\contentsline {chapter}{\chapternumberline {5}Actions And Automorphisms}{94}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Consequences of Topological Freeness}{96}{section.4.2}
+\contentsline {section}{\numberline {5.1}Action Properties}{94}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}A Relation between Ideals of $C_r^*(G)$ and $A \rtimes _{\alpha ,r} G$ and a theorem of four}{99}{section.4.3}
+\contentsline {section}{\numberline {5.2}Consequences of Topological Freeness}{97}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{110}{chapter*.5}
+\contentsline {section}{\numberline {5.3}A Relation between Ideals of $C_r^*(G)$ and $A \rtimes _{\alpha ,r} G$ and a theorem of four}{100}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Index}{114}{section*.6}
+\contentsline {chapter}{Bibliography}{111}{chapter*.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Index}{115}{section*.6}

@@ -1,15 +1,14 @@
 \chapter{Hilbert $C^*$-modules and the Multiplier Algebra}
-\pagenumbering{arabic}
 In this chapter we introduce some of the fundamental theory of Hilbert $C^*$-modules, which may be thought of as a generalization of Hilbert spaces. The primary source of inspiration and techniques are the excellent books on the subject: \cite{williamsmorita}, \cite{lance1995hilbert} and \cite{murphy2014c}. After reviewing the basic definitions we will proceed to contruct and prove theorems regarding the Multiplier Algebra, which plays a crucial part in the development of the theory of the general crossed product, one of the basic constructions of this thesis.
 
 
 
 \sssection{Hilbert $C^*$-modules}
-Given a non-unital $C^*$-algebra $A$, we can extend a lot of the theory of unital $C^*$-algebras to $A$ by considering the unitization $A^\dagger = A + 1\C$ with the canonical operations. This is the 'smallest' unitization in the sense that $A$ the inclusion map is non-degenerate and maps $A$ to an ideal of $A^\dagger$ such that $A^\dagger/A \cong \C$. We can also consider a maximal unitization, called the \myemph{Multiplier Algebra} of $A$, denoted by $M(A)$. We will now construct it and some theory revolving it, in particular that of Hilbert-modules:
+Given a non-unital $C^*$-algebra $A$, we can extend a lot of the theory of unital $C^*$-algebras to $A$ by considering the unitization $A^1 = A + 1\C$ with the canonical operations. This is the 'smallest' unitization in the sense that the inclusion map $A \subseteq A^1$ is non-degenerate and maps $A$ to an ideal of $A^1$ such that $A^1/A \cong \C$. We can also consider a maximal unitization, called the \myemph{Multiplier Algebra} of $A$, denoted by $M(A)$. We will now construct it and some theory revolving it, in particular that of Hilbert-modules:
 \begin{definition}
 	Let $A$ be any $C^*$-algebra. An \myemph{inner-product $A$-module} is a complex vector space $E$ which is also a right-$A$-module which is equipped with a map $\langle \cdot, \cdot\rangle_A \colon E \times E \to A$ such that for $x,y,z \in E, \ \alpha,\beta \in \C$ and $a \in A$ we have
 	\begin{align}
-		\langle a , \alpha y + \beta z \rangle_A &= \alpha \langle x,y\rangle_A+\beta \langle x,z \rangle_A\\
+		\langle x , \alpha y + \beta z \rangle_A &= \alpha \langle x,y\rangle_A+\beta \langle x,z \rangle_A\\
 		\langle x , y \cdot a \rangle_{A} &= \langle x,y\rangle_A \cdot a\\
 		\langle y,x \rangle_A &= \langle x,y\rangle_A^*\\
 		\langle x,x \rangle_A &\geq 0\\
@@ -17,7 +16,7 @@ Given a non-unital $C^*$-algebra $A$, we can extend a lot of the theory of unita
 	\end{align}
 	If $\langle \cdot , \cdot \rangle$ satisfy (1.1)-(1.4) but not (1.5) above, we say that $E$ is a \myemph{semi-inner-product $A$-module}. If there is no confusion, we simply write $\langle \cdot, \cdot \rangle$ to mean the $A$-valued inner-product on $E$. Similarly, we will often denote $x \cdot a$ by $xa$. 
 
-	There is of course a corresponding version of left inner-product $A$-modules, with the above conditions adjusted suitably. However, we will unless otherwise specified always mean a right $A$-module in the following.
+	There is of course a corresponding version of left inner-product $A$-modules, with the above conditions adjusted suitably. However, we will, unless otherwise specified, always mean a right $A$-module in the following.
 	\label{mult:defmod}
 \end{definition}
 It is easy to see that this generalizes the notion of Hilbert spaces, for if $A= \C$, then any Hilbert space (over $\C$) is a inner-product $\C$-module. Even when $E$ is only a semi-inner-product $A$-module, we still have a lot of the nice properties of regular inner-producte, e.g.:
@@ -38,7 +37,7 @@ For $c \geq 0 $ in $A$, it holds that $a^*c a \leq \lv c \rv_A a^*a$: Let $A \su
 \end{align*}
 If $\langle x , x \rangle = 0$, then $0 \leq 2a^*a \leq t \langle y , y\rangle \to 0$, as $t \to 0$ so that $a^*a = 0$ as wanted. If $\langle x , x \rangle \neq 0$, then $t = \lv \langle x,x\rangle\rv_A$ gives the wanted inequality.
 \end{proof}
-Recall that for $0 \leq a \leq b \in A$, it holds that $\lv a \rv_A \leq \lv b \rv_A$. This and the above implies that $\lv \langle x,y \rangle\rv_A^2 \leq \lv \langle x, x \rangle \rv_A \lv \langle y,y\rangle \rv_A$. 
+Recall that for $a,b \in A_+$ with $0 \leq a \leq b$, it holds that $\lv a \rv_A \leq \lv b \rv_A$. This and the above implies that $\lv \langle x,y \rangle\rv_A^2 \leq \lv \langle x, x \rangle \rv_A \lv \langle y,y\rangle \rv_A$. 
 \begin{definition}
 	If $E$ is an (semi-)inner-product $A$-module, we define a (semi-)norm on $E$ by
 	\begin{align*}
@@ -136,7 +135,7 @@ The set of adjointable maps between Hilbert $A$-modules is of great importance a
 	so $tx = z$, and hence $t$ is bounded, by the Closed Graph Theorem.
 \end{proof}
 
-In particular, similar to the way that the algebra $\mathbb{B}(\H) = \mathcal{L}_\C(\H_\C,\H_\C)$ is of great importance, we examine for a fixed Hilbert $A$-module $E$, the $*$-subalgebra $\mathcal{L}(E):=\mathcal{L}(E,E)$ of $\mathbb{B}(E)$, i.e., the bounded operators on $E$.
+In particular, similar to the way that the algebra $\mathbb{B}(\H) = \mathcal{L}_\C(\H_\C,\H_\C)$ is of great importance, we examine for a fixed Hilbert $A$-module $E$, the $*$-subalgebra $\mathcal{L}_A(E):=\mathcal{L}_A(E,E)$ of $\mathbb{B}(E)$, i.e., the bounded operators on $E$.
 \begin{proposition}
 	The algebra $\mathcal{L}(E)$ is a closed $*$-subalgebra of $\mathbb{B}(E)$ such that for $t \in \mathcal{L}(E)$ we have
 	\begin{align*}
@@ -377,7 +376,7 @@ by compression with the orthogonal projections onto the pairwise coordinates. Th
 	The last statement follows readily from the isomorphism from \Cref{mult:isocompactgen}, the anti-commutativity forces $L_a = 0$ and $R = 0$ and self-adjointess forces $D_x^* = L_x$.
 \end{proof}
 
-We may finally prove the statement which we set out to show:
+We may finally prove the desired improvement of \cref{EEEdense}:
 \begin{proposition}
 	Let $E$ be a Hilbert $A$-module. Then for every $x \in E$ there is a unique $y \in E$ such that $x = y \langle y , y \rangle$.
 	\label{mult:EeqEEE}
@@ -425,7 +424,7 @@ This topology turns out to be very important, and there is many results of the c
 
 
 \sssection{Unitizations and the Multiplier Algebra}
-We are almost ready to introduce the Multiplier Algebra of a $C^*$-algebra $A$, however, we must introduce some new terminology first.
+We are almost ready to introduce the Multiplier Algebra of a $C^*$-algebra $A$, which as mentoned is the maximal unitization of $A$. To understand and do this, we first introduce the notion of unitizations.
 \begin{definition}
 	An ideal $I$ of a $C^*$-algebra $A$ is an \index{essential ideal} \emph{essential ideal} if it is non-zero and satisfies $I\cap J \neq 0$ for all non-zero ideals $J$ of $A$.
 \end{definition}
@@ -475,11 +474,11 @@ The most common way of adjoining a unit to a non-unital $C^*$-algebra $A$ is to 
 \end{example}
 We are interested in a non-commutative analogue of a largest compactification, namely a universal unitization in which every other unitization embeds into:
 \begin{definition}
-	A unitization $(B, \iota)$ of a $C^*$-algebra $A$ is said to be \myemph{maximal} if to every other unitization $(C,\iota')$, there is a $*$-homomorphism $\pi \colon C \to B$ such that the diagram:
+	A unitization $(B, \iota)$ of a $C^*$-algebra $A$ is said to be \myemph{maximal} if to every other unitization $(C,\iota')$, there is a $*$-homomorphism $\varphi \colon C \to B$ such that the diagram:
 	\begin{equation}
 	\begin{tikzcd}
-		A\arrow[dr,"\iota'"', hook] \arrow[r, "\iota", hook] & B \\
-		& C \arrow[u, "\exists \pi"']
+		A\arrow[d,"\iota'"', hook] \arrow[r, "\iota", hook] & B \\
+		 C \arrow[ur, "\exists \varphi"']& 
 	\end{tikzcd}
 	\end{equation}
 	commutes.
@@ -568,7 +567,7 @@ We may finally show that $(M(A),L)$ is a maximal unitization for all $C^*$-algeb
 		\begin{tikzcd}
 	 		& M(A)\\
 			A\arrow[rd, " L" ',hook] \arrow[r, "\iota"', hook] \arrow[ru, "L"', hook] & B \ar[u , "\exists !\overline L"', hook ]\\
-			& M(A) \arrow[u, "\exists ! \beta"', hook] \ar[uu, "\mathrm{id}_{M(A)}"', bend right  = 90]
+			& M(A) \arrow[u, "\exists ! \beta"', hook] \ar[uu, "\mathrm{id}_{M(A)}"', bend right  = 55]
 		\end{tikzcd}
 	\end{equation}
 	The identity map on $M(A)$ is by \Cref{mult:uniqueext} the unique $*$-homomorphism satisfying $L = \mathrm{id}_{M(A)} \circ L$, but $\overline L \circ \beta \circ L = L$, implying that $\hat L = \beta^{-1}$ and $\overline L^{-1} = \beta$, finishing the proof.
@@ -588,7 +587,7 @@ It is useful to be able to concretely represent the Multiplier Algebra of a $C^*
 By \Cref{mult:multmax} it suffices to show that $(\mathbb{I}(A),\alpha)$ is a maximal unitization of $A$. Let $\iota \colon A \hookrightarrow B$ be an essential embedding of $A$ into a $C^*$-algebra $B$. Let $\overline \alpha \colon B \hookrightarrow \mathcal{L}_C(E)$ denote the injective extension of $\alpha$ from \Cref{mult:uniqueext}. We must show that $\overline \alpha(B) \subseteq \mathbb{I}(A)$: Let $b \in B$ and $a \in A$. Then, as $b \varphi(a) \in \varphi(A)$, we see that $\overline \alpha(b) \underbrace{\alpha(a)}_{=\overline \alpha (\iota(a))} = \overline \alpha(b \iota(a)) \in \alpha(A)$, finish the argument by universality of $M(A)$.
 \end{proof}
 
-This allows us to, given any faithful nondegenerate representation of $A$ on a Hilbert space $\H$, to think of $M(A)$ as the idealizer of $A$ in $\mathbb{B}(\H)$, and it immediately allows us to describe the Multiplier algebra of $\mathbb{K}_A(E)$:
+Given any faithful nondegenerate representation of $A$ on a Hilbert space $\H$, we may think of $M(A)$ as the idealizer of $A$ in $\mathbb{B}(\H)$, and it immediately allows us to describe the Multiplier algebra of $\mathbb{K}_A(E)$:
 \begin{corollary}
 	For all $C^*$-algebras $A$ and Hilbert $A$-modules, we have $M(\mathbb{K}_A(E))\cong \mathcal{L}_A(E)$.
 \end{corollary}
@@ -601,7 +600,7 @@ Using this, we can calculate both the adjointable operators and the Multiplier a
 \end{example}
 
 
-A lot of the theory in functional analysis and the study of $C^*$-algebras is motivated by the study of abelian $C^*$-algebras of the form $C_0(\Omega)$ for a locally compact Hausdorff space. This construction is no exception: Unitizations come naturally from compactifications, e.g., adjoining a unit to $C_0(\Omega)$ corresponds to the one-point compactification of $\Omega$. It turns out that passing from $C_0(\Omega)$ to its multiplier algebra is connected to the largest compactification of $\Omega$, namely the Stone-\v{C}ech compactification $\beta \Omega$ of $\Omega$, which in fact is the protoexample of the multiplier construction.
+A lot of the theory in functional analysis and the study of $C^*$-algebras is motivated by the study of abelian $C^*$-algebras of the form $C_0(\Omega)$ for a locally compact Hausdorff space $\Omega$. This construction is no exception: Unitizations come naturally from compactifications, e.g., adjoining a unit to $C_0(\Omega)$ corresponds to the one-point compactification of $\Omega$. It turns out that passing from $C_0(\Omega)$ to its multiplier algebra is connected to the largest compactification of $\Omega$, namely the Stone-\v{C}ech compactification $\beta \Omega$ of $\Omega$, which in fact is the prototype of the multiplier construction.
 \begin{example}
 If $\Omega$ is a locally compact Hausdorff space, then $M(C_0(\Omega))\cong C_b(\Omega) = C(\beta \Omega)$.
 \end{example}
@@ -619,7 +618,7 @@ If $\Omega$ is a locally compact Hausdorff space, then $M(C_0(\Omega))\cong C_b(
 
 In fact, one can show that when equipped with suitable orderings, then there is a correspondance between compactifications of locally compact spaces $\Omega$ and unitizations of their associated $C^*$-algebras $C_0(\Omega)$.
 
-We will now cover an important conerstone for developing the theory of the general crossed product. It begins by defining a new topology
+We will now cover an important cornerstone for developing the theory of the general crossed product. It begins by defining a new topology
 \begin{definition}
 	Given a Hilbert $A$-module, the \myemph{$*$-strong topology} on $\mathcal{L}_A(E)$ is the topology for which $T_i \to T$ if and only if $T_i x \to Tx$ and $T_i^* x \to T^*x$ for all $x \in E$. It has a neighborhood basis consisting of sets of the form
 	\begin{align*}
@@ -663,14 +662,14 @@ In particular, for a net of unitary operators on a Hilbert $A$-module, strict an
 	\end{align*}
 	and similarly $(\pi(a \otimes b) ) t \otimes s \in \pi(A \otimes_{\min} B)$, so $t \otimes s \in M(A \otimes_{\min} B)$ by density of the span of elements of the form $a \otimes b$ in $A \otimes_{\min} B$, showing that $M(A) \otimes_{\min} M(B)  \subseteq M(A \otimes_{\min} B)$.
 \end{proof}
-There is not equiality in the above, for instance if we consider the compact operators in the spot of both $A$ and $B$. However, if $B$ is finite-dimensional, the inclusion is an equality:
+The above inclusion is often not surjective, for instance if we consider the compact operators in the spot of both $A$ and $B$. However, if $B$ is finite-dimensional, the inclusion is an equality:
 \begin{lemma}
-	For all $C^*$-algebras $A$ and $n \geq 1$: $M(A \otimes M_n(\C) ) = M_n(M(A))$.
+	For all $C^*$-algebras $A$ and $n \geq 1$: $ M(M_n(A)) \cong M(A \otimes M_n(\C) ) = M_n(M(A))$.
 \end{lemma}
 \begin{proof}
-	For this, suppose that $M_n(M(A)) \subseteq M_n(\mathbb{B}(H))$. It suffices to show that given any $t=(t_{i,j})$ in the idealizer of $M_{n}(M(A))$, each $t_{i,j}$ is in the idealizer of $M(A)$. Let $\{e_{l,k}\}$ be the canonical matrix units of $M_n(\C)$, then for all fixed $k,l =1,\dots,n$ we have
+	If $(x_{i,j}) \in M(M_n(A))$, then for all $a \in A$, the column operator $a_k := (\underbrace{ 0,\dots, a}_{k} ,\dots,0)^T \in A^n $, $k=1,\dots,n$ must satisfy
 	\begin{align*}
-		\sum_{i=1}^n t_{i,k} a \otimes e_{i,l} = t a \otimes e_{k,l} \in M_n(A),
+		(x_{1,k}a,x_{2,k}a,\dots,x_{n,k}a)^T \in A^n,
 	\end{align*}
-	and similarly from the right. This shows that $a \otimes t_{i,j}, t_{i,j} a \in M(A)$ for all $a \in A$ and $i,j = 1,\dots,n$, that $t_{i,j} \in M(A)$ and hence $t \in M_n(M(A))$.
+	and similarly $a_kx \in A^n$, since we may consider $M(M_n(A))$ as the idealizer of $M_n(A)$. This implies that $x_{i,j}a \in A$ and $ax_{i,j} \in A$ for all $i,j=1,\dots,n$ and $a \in A$, so $(x_{i,j}) \in M_n(M(A)$. The other inclusion is immediate. 
 \end{proof}

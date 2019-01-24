@@ -1,7 +1,7 @@
 \chapter{Actions And Automorphisms}
 In this chapter, we will go through theory describing automorphisms on a $C^*$-algebra $A$ and actions of groups $G$ on $C^*$-algebras. The goal of this chapter is to characterize the ideal structure of crossed products with discrete groups through properties of the associated action. We will cover a theorem of Archbold and Spielberg (see \cite{archbold1994topologically}) stating that the reduced crossed product $A \rtimes_{\alpha,r} G$ is simple whenever the action of $G$ is topologically free, which is something we will describe later on. After that we will cover some important consequences of this result, including an important result in the classification of group $C^*$-algebras.
 \sssection{Action Properties}
-We are going to discuss the concept of topologically free actions $G \acts \alpha A$ and its implications on the crossed product. In order to do this, we introduce notation and discuss some results on the spectrum of a general $C^*$-algebra as well as the primitive ideal space of $A$:
+We are going to discuss the concept of topologically free actions $G \acts \alpha A$ and its implications on the crossed product. In order to do this, we introduce notation some and discuss some results on the spectrum of a general $C^*$-algebra as well as the primitive ideal space of $A$:
 \begin{definition}
 	For a $C^*$-algebra $A$, we define the \myemph{primitive ideal space} of a $C^*$-algebra $A$ to be the set
 	\begin{align*}
@@ -191,7 +191,7 @@ Once again, this gives an easy proof of simplicity of $C(S^1) \rtimes_{\theta} \
 \sssection{A Relation between Ideals of $C_r^*(G)$ and $A \rtimes_{\alpha,r} G$ and a theorem of four}
 From here on, let $G$ denote a discrete countable group and $X$ a compact $G$-space. In the following, we will discuss recent developments regarding the classification of $C^*$-simple groups. In particular results based on theory of boundary actions and topological freeness from earlier will be reviewd and their relations to simplicity of associated crossed products $A \rtimes_{\alpha,r} G$. 
 
-We say that a group $G$ is \myemph{$C^*$-simple} if its reduced group is $C^*$-simple, and we say that $G$ has the \myemph{unique trace property} if the canonical faithful tracial state $\tau_0 \colon f \mapsto \langle f\delta_e  , \delta_e\rangle_{\ell^2(G)}$ is the only tracial state on $C_r^*(G)$. It was an open question for a long time wether having the unique tracial state was equivalent to being $C^*$-simple. In 2014, using theory of boundary actions, this was shown by to false by Le Boudec (see \cite[Thoerem A]{le2017c}). However, $C^*$-simplicity does imply unique tracial state which is equivalent to having no non-trivial amenable normal subgroups (see e.g. the author's project on this subject: \cite[Chapter 5]{bscp}). The breakthrough which started this development was due to Kennedy and Kalantar (see \cite{kalantar2017boundaries}).
+We say that a group $G$ is \myemph{$C^*$-simple} if its reduced group is $C^*$-simple, and we say that $G$ has the \myemph{unique trace property} if the canonical faithful tracial state $\tau_0 \colon f \mapsto \langle f\delta_e  , \delta_e\rangle_{\ell^2(G)}$ is the only tracial state on $C_r^*(G)$. It was an open question for a long time wether having unique tracial state was equivalent to being $C^*$-simple. In 2014, using theory of boundary actions, this was shown by to false by Le Boudec (see \cite[Thoerem A]{le2017c}). However, $C^*$-simplicity does imply unique tracial state which is equivalent to having no non-trivial amenable normal subgroups (see e.g. the author's project on this subject: \cite[Chapter 5]{bscp}). The breakthrough which started this development was due to Kennedy and Kalantar (see \cite{kalantar2017boundaries}).
 
 It is quite a strong condition on a group $G$ to be $C^*$-simple, for example discrete amenable (in particular abelian) groups are not $C^*$-simple. Groups which are $C^*$-simple include the class of Powers groups (an homage to R.T. Powers' proof on simplicity of the free group on two generators, see \cite{powers1975simplicity} or \cite[chapter 3]{bscp}) which includes the free groups on finite number of generators.
 
@@ -247,7 +247,7 @@ a contradiction. To see that $\varphi_x = \varphi_x \circ E_x$ it suffices to sh
 is commutative with the vertical maps being the left-regular representations, see e.g. \cite[Proposition 3]{de2007simplicity} for a proof. In general, the associated representation of $G$ as operators on $\ell^2(G/N)$ given by composition of the above is often refered to as the \myemph{quasi-regular representation}. We will use this result in a moment.
 \label{quotientextend}
 \end{remark}
-We have seen that topological freeness implies simplicity of $A \rtimes_{\alpha,r} G$ for $G$-simple $C^*$-algebras. We now prepare to cover a result from the same paper as above allows us to determine topological freeness from properties of $G$ and $C(X)\rtimes_\alpha G$, but first we need a lemma which will allow us to describe a useful representation:
+We have seen that topological freeness implies simplicity of $A \rtimes_{\alpha,r} G$ for $G$-simple $C^*$-algebras. We now prepare to cover a result from the same paper as above. The result allows us to determine topological freeness from properties of $G$ and $C(X)\rtimes_\alpha G$, but first we need a lemma which will allow us to describe a useful representation:
 \begin{lemma}
 	Suppose that $X$ is a minimal $G$-space such that for some $x \in X$ the normal subgroup $G_x^\circ$ is amenable. Then there is a representation $\Pi_x$ of $C(X) \rtimes_r G$ on $\ell^2(G/G_x^\circ)$ such that
 	\begin{align*}
@@ -423,7 +423,7 @@ We will need the following small lemma for the big theorem of this section, and 
 	For $G$ discrete, each stabilizer subgroup $G_x$ for $x \in \dd_F G$ is amenable.
 	\label{stabfurstamen}
 \end{lemma}
-For a proof, see \cite[lemma 11]{ozawa2014lecture}. With these results in hand, we may prove a (super substantial) result, again due to \cite{breuillard2017c} and \cite{kalantar2017boundaries}:
+For a proof, see \cite[lemma 11]{ozawa2014lecture}. With these results in hand, we may prove a (very substantial) result, again due to \cite{breuillard2017c} and \cite{kalantar2017boundaries}:
 \begin{theorem}
 	For a discrete group $G$, the following are equivalent:
 \begin{enumerate}

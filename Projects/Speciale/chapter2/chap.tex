@@ -3,7 +3,7 @@ Given a $C^*$-dynamical system $(A,G,\alpha)$ with $G$ discrete, it is not a dif
 
 However, when $G$ is not discrete, we run into issues as we a prior can not assume that a unitary representation of $G$ is continuous in norm, which is required by classic constructions seen e.g., in \cite{brown2008c}. In this chapter we will develop the necessary theory to define the topological analogues of these techniques, i.e., for when $G$ is a locally compact Hausdorff group.
 
-We assume familiarity with basic theory of analysis in topological groups, basic representation theory of topological groups and Fourier analysis thereon and will not go to lengths to explain results from this field, for a reference, we recommend the excellent books on the subject: \cite{folland2016fourier}, \cite{berg1984harmonic} and \cite{folland2013real}. After defining and studying the crossed product construction we examine some important cases including the case where $G$ is abelian and the case where $A$ is.
+We assume familiarity with basic theory of analysis in topological groups, basic representation theory of topological groups and Fourier theory and will not go to lengths to explain results from this field, for a reference, we recommend the excellent books on the subject: \cite{folland2016fourier}, \cite{berg1984harmonic} and \cite{folland2013real} or the author's project discussing these results \cite{fourierproj}. After defining and studying the crossed product construction we examine some important cases including the case where $G$ is abelian and the case where $A$ is.
 \sssection{Integral Forms And Representation Theory}
 Throughout this chapter, we let $G$ be a locally compact topological group and $A$ a $C^*$-algebra, with no added assumptions unless otherwise specified. We will write $G \acts \alpha A$ to specify that $\alpha \colon G \to \Aut(A)$ is an action of $G$ on $A$, i.e., a strongly continuous group homomorphism, and we adopt the notation $\alpha_t := \alpha(t)$, $t \in G$, whenever it is sensible to do so. We will always fix a base left Haar measure $\mu$ on $G$, whose integrand we will denote by $\d t$, with modular function $\Delta \colon G \to (0,\infty)$. 
 
@@ -238,7 +238,7 @@ It might happen that we consider e.g., multiple integrals of the form above with
 	I(f) :=\int_G^{M_s(A)} f(s) \d s.
 \end{align*}
 
-In the construction of the general crossed product and other $C^*$-algebras associated to a $C^*$-dynamical system $(A,G,\alpha)$ we will need to deal with the algebra $\cc(G,A)$ quite a lot. We will want to develop a sort of twisted-convolution incorporating the action $\alpha$ of $G$. However, in order to do this properly, we will need a form of Fubini's theorem for the above:
+In the construction of the general crossed product and other $C^*$-algebras associated to a $C^*$-dynamical system $(A,G,\alpha)$ we will need to deal with the algebra $\cc(G,A)$ quite a lot. We will want to develop a sort of twisted-convolution incorporating the action $\alpha$ of $G$. However, in order to do this properly, we will need a form of Fubini's theorem for the above. For this, we need the following lemma.
 \begin{lemma}
 For $f \in \cc(G \times G  , B)$, the function
 \begin{align*}
@@ -331,14 +331,14 @@ Straightforward calculations show that $f \mapsto \lv f \rv_1$ is a norm, and we
 	\begin{align*}
 		u_t \pi(a) u_t^* = \pi(\alpha_s(a)).
 	\end{align*}
-	If no confusion can be obtained, we will use the shorthan $(\pi,u):= (\pi,u,\H)$. We say that a covariant representation $(\pi,u)$ is a \textit{non-degenerate covaraint representation} if $\pi$ is, and degenerate otherwise.
+	If there is no chance of confusion we will use the shorthand notation $(\pi,u):= (\pi,u,\H)$. We say that a covariant representation $(\pi,u)$ is a \textit{non-degenerate covaraint representation} if $\pi$ is non-degenerate, and degenerate otherwise.
 \end{definition}
 
 For discrete and countable groups $G$ acting on a $C^*$-algebra $A$ via an action $\alpha$, we may easily construct a $*$-representation of $\cc(G,A)$ from a covariant representation $(\pi,u)$ by letting $\pi \rtimes u \colon \cc(A,G,\alpha) \to \mathbb{B}(\H)$ be the map
 \begin{align*}
 \sum_{g \in G} a_g \delta_g \mapsto \pi(a_g) u_g,
 \end{align*}
-however as discussed previously, this is not enough when $G$ is not discrete Luckily, our efforts in the previous section will prove fruitful, for it turns out that we developed the tools to construct the desired generalization:
+however as discussed previously, this is not enough when $G$ is not discrete. Luckily, our efforts in the previous section will prove fruitful, for it turns out that we developed the tools to construct the desired generalization:
 \begin{lemma}
 Suppose that $G \acts \alpha A$. If $(\pi,u)$ is a covariant representation of the associated $C^*$-dynamical system, then for all $f \in \cc(G,A)$, the map
 \begin{align*}
@@ -396,7 +396,7 @@ implying that $\pi \rtimes u$ is a $*$-homomorphism. Assuming non-degeneracy of 
 showing that $\lv \pi \rtimes u(f)h-h\rv \leq 2 \varepsilon$.
 \end{proof}
 
-Now, given a locally compact topological group $G$, let $\lambda \colon G \to \U(L^2(G))$ be the left-regular representation $\langle \lambda_g \xi, \eta\rangle = \int_G \xi(g^{-1}s)\overline{\eta(s)}\d s$ for $g \in G$ and $\xi, \eta \in L^2(G)$. Even though $L^2(G)$ consists of equivalence classes (unless e.g., $G$ is discrete), we will abbreviate $\lambda_g \xi(s) := \xi(g^{-1}s)$. Given a Hilbert space $\H$, we will also $\lambda_g$ to denote the operator $I \otimes \lambda_g$ on $\H \otimes L^2(G) \cong L^2(G,\H)$. With this, we have the following:
+Now, given a locally compact topological group $G$, let $\lambda \colon G \to \U(L^2(G))$ be the left-regular representation $\langle \lambda_g \xi, \eta\rangle = \int_G \xi(g^{-1}s)\overline{\eta(s)}\d s$ for $g \in G$ and $\xi, \eta \in L^2(G)$. Even though $L^2(G)$ consists of equivalence classes (unless e.g., $G$ is discrete), we will abbreviate $\lambda_g \xi(s) := \xi(g^{-1}s)$. Given a Hilbert space $\H$, we will also set $\lambda_g$ to denote the operator $I \otimes \lambda_g$ on $\H \otimes L^2(G) \cong L^2(G,\H)$. With this, we have the following:
 \begin{lemma}
 Suppose that $G \acts \alpha A$, and $\pi$ is a representation of $A$ on $\H$. Define $\tilde{\pi}(a) \colon L^2(G,\H) \to L^2(G,\H)$ by 
 \begin{align*}
@@ -599,7 +599,7 @@ Before we commence the proof of the above, we want to point out that the above t
 \end{tikzcd}
 \label{diag:iotacom}
 \end{equation}
-And we shall see that the pair $\iota_G, \iota_A)$ is in fact a covariant pair. But first, the proof of the above lemma:
+And we shall see that the pair $(\iota_G, \iota_A)$ is in fact a covariant pair. But first, the proof of the above lemma:
 \begin{proof}
 Let $\iota_G(s)$ be defined on $\cc(G,A,\alpha)$ as earlier. By \Cref{cross:iotaG}, we see that
 \begin{align*}
@@ -621,7 +621,7 @@ For continuity, let $f \in \cc(G,A,\alpha)$. We will see that $\iota_G$ is stron
 \end{align*}
 which goes to $0$, by uniform continuity of $\varphi$ and the fact that $\alpha_{r_i}(a) \to a$ for all $ a\in A$ as $r_i \to e$.
 \end{proof}
-And, we summarize the above in the following
+We summarize the above in the following
 \begin{proposition}
 For a $C^*$-dynamical system $G \acts \alpha A$, there exists a non-degenerate faithful $*$-homomorphsim 
 \begin{align*}
@@ -648,7 +648,7 @@ The only thing left to be shown is the covariance relation, but this follows imm
 \end{align*}
 for $f \in \cc(G,a,\alpha)$, $a \in A$ and $s,r \in G$.
 \end{proof}
-We now embark on our final task in our construction and picture painting of the general crossed product $A \rtimes_ \alpha G$, namely we wish to properly characterize its representation theory. We are going to see that $A \rtimes_\alpha G$ is the $C^*$-algebra whose representation theory is in a one-to-one correspondance with the covariant representations of $(A,G,\alpha)$ via the map $(\pi,u) \mapsto \pi \rtimes u$, but before we finalize the description of the representation theory of $A \rtimes_\alpha G$, we need to extend the map $\iota_G$ to $C^*(G)$, the full group $C^*$-algebra of $G$, since this will provide us with a useful characterization of a dense subset of $A \rtimes_\alpha G$.
+We now embark on our final task in our construction and characterization of the general crossed product $A \rtimes_ \alpha G$, namely we wish to properly characterize its representation theory. We are going to see that $A \rtimes_\alpha G$ is the $C^*$-algebra whose representation theory is in a one-to-one correspondance with the covariant representations of $(A,G,\alpha)$ via the map $(\pi,u) \mapsto \pi \rtimes u$, but before we finalize the description of the representation theory of $A \rtimes_\alpha G$, we need to extend the map $\iota_G$ to $C^*(G)$, the full group $C^*$-algebra of $G$, since this will provide us with a useful characterization of a dense subset of $A \rtimes_\alpha G$.
 \begin{lemma}
 There exists a $*$-homomorphsim $\tilde \iota_G \colon C^*(G) \to M(A \rtimes_\alpha G)$ such that
 \begin{align*}
@@ -734,14 +734,23 @@ We want to examine some interesting properties of crossed products, such as what
 \begin{definition}
 Suppose that $G \acts \alpha A$ is a dynamical system, then a bounded continuous (with respect to the norm on $A^*$) function $\varphi \colon G \to A^*$ is \myemph{positive definite} if any of the following equivalent statements hold:
 \begin{enumerate}[nosep]
-	\item There is a positive functional $\psi \in (A \rtimes_\alpha G)^*$ such that $\varphi(t)(a) = \psi(\iota_A(a) \iota_G(t))$ for all $t \in G$ and $a \in A$,
-	\item $\sum_{i,j} \varphi (s_i^{-1}s_j)(\alpha_{s_{i}^{-1}}(x_{i}^* x_{j})) \geq 0 $ for all finite sets $s_1,\dots,s_n \in G$ and $x_1,\dots,x_n \in A$,
-	\item $\sum_{i,j}\int_G \varphi(t)(x_{i}^*\alpha_t(x_j))(f_i^* \times f_j)(t) \d t \geq 0$ for all finite sets $f_1,\dots,f_n \in \cc(G,A,\alpha)$ and $x_1,\dots,x_n \in A$, and
-	\item $\int \varphi(t)(f^* \rtimes f)(t) \d t \geq 0$ for all $f \in \cc(G,A,\alpha)$.
+	\item There is a positive functional $\psi \in (A \rtimes_\alpha G)^*$ such that $\varphi(t)(a) = \psi(\iota_A(a) \iota_G(t))$ for all $t \in G$ and $a \in A$.
+	\item For all finite sets $s_1,\dots,s_n \in G$ and $x_1,\dots,x_n \in A$ we have
+		\begin{align*}
+			\sum_{i,j} \varphi (s_i^{-1}s_j)(\alpha_{s_{i}^{-1}}(x_{i}^* x_{j})) \geq 0 .
+		\end{align*}
+	\item For all finite sets $f_1,\dots,f_n \in \cc(G,A,\alpha)$ and $x_1,\dots,x_n \in A$ we have
+		\begin{align*}
+			\sum_{i,j}\int_G \varphi(t)(x_{i}^*\alpha_t(x_j))(f_i^* \times f_j)(t) \d t \geq 0.
+		\end{align*}
+	\item For all $f \in \cc(G,A,\alpha)$ we have
+		\begin{align*}
+			\int \varphi(t)(f^* \rtimes f)(t) \d t \geq 0
+		\end{align*}
 \end{enumerate}
 \end{definition}
 \begin{remark}
-Note that in the above, a priori without explanation the first definition does not make sense, since $\iota_A(a) \iota_G(t)$ might not be an element of $A \rtimes_\alpha G$, however, since states of $A \rtimes_\alpha G$ correspond to non-degenerate representations which extend to $M(A \rtimes_\alpha G)$, we may in fact extend each positive functional $\psi$ on $A \rtimes_\alpha G$ to all of $M(A \rtimes_\alpha G)$. We will also denote this extension by $\psi$. 
+Note that in the above, a priori the first definition does not make sense, since $\iota_A(a) \iota_G(t)$ might not be an element of $A \rtimes_\alpha G$, however, since states of $A \rtimes_\alpha G$ correspond to non-degenerate representations of $A \rtimes_\alpha G$ all of which extend to $M(A \rtimes_\alpha G)$, we may in fact extend each positive functional $\psi$ on $A \rtimes_\alpha G$ to all of $M(A \rtimes_\alpha G)$. We will also denote this extension by $\psi$. 
 \end{remark}
 If $G$ acts trivially on $\C$, then the above becomes the regular result about equivalent definitions of positive definite functions on $G$, as described in \cite{folland2016fourier} or in \cite{pedersenalgauto}.
 
@@ -781,13 +790,13 @@ In particular, density of $\cc(G, A,\alpha) \subseteq A \rtimes_\alpha G$ implie
 \end{remark}
 For $A = \C$ again and $\alpha = 1$, we may represent $G$ on $M(C^*(G))$ via $t \mapsto \delta_t$, and then $\Gamma_\varphi$ becomes the map $t \mapsto \varphi(\delta_t)$ for $ \varphi \in C^*(G)^*$ which leads to the following result (see \cite[7.1.11]{pedersenalgauto}):
 \begin{proposition}
-For $A= \C$ and $\alpha = 1$, the isomorphism above is a homeomorphism from $\mathcal{S}(C^*(G))$ with the weak$^*$-topology onto the set of positive-definite functions on $G$ with $\Gamma_\varphi(e)=1$ equipped with the topology of uniform convergence on compacta.
+For $A= \C$ and $\alpha = 1$, the isomorphism above is a homeomorphism from $\mathcal{S}(C^*(G))$ with the weak$^*$-topology onto the set of positive-definite functions on $G$ with $\Gamma_\varphi(e)=1$ equipped with the topology of uniform convergence on compacts.
 \label{mult:OGstatehomeo}
 \end{proposition}
 
-Generalizing the above, we introduce a topology on $B_+^1(A \rtimes_\alpha G)$, which extends the topology of uniform convergence on compacta of $G$ to the general case:
+Generalizing the above, we introduce a topology on $B_+^1(A \rtimes_\alpha G)$, which extends the topology of uniform convergence on compacts of $G$ to the general case:
 \begin{definition}
-We define the \myemph{topology of weak$^*$ uniform convergence on compacta} on $B_+^1(A \rtimes_\alpha G)$ to be the topology satisfying that a net $\Gamma_{\varphi_i} \subseteq B_+^1(A \rtimes_\alpha G)$ converges to $\Gamma_{\varphi} \in B_+^1(A \rtimes_\alpha G)$ if and only if for each $a \in A$, the restriction of the map
+We define the \myemph{topology of weak$^*$ uniform convergence on compacts} on $B_+^1(A \rtimes_\alpha G)$ to be the topology satisfying that a net $\Gamma_{\varphi_i} \subseteq B_+^1(A \rtimes_\alpha G)$ converges to $\Gamma_{\varphi} \in B_+^1(A \rtimes_\alpha G)$ if and only if for each $a \in A$, the restriction of the map
 \begin{align*}
 	t \mapsto \Gamma_{\varphi_i}(t)(a)
 \end{align*}
@@ -800,15 +809,15 @@ where $f \in B_{+}^1(A \rtimes_\alpha G)$, $\varepsilon > 0$, $a \in A$ and $K \
 
 We then obtain:
 \begin{proposition}
-The map $\mathcal{S}(A \rtimes_\alpha G) \ni \varphi \mapsto \Gamma_\varphi \in B_+^1(A \rtimes_\alpha G)$ is a homeomorphism with respect to the weak$^*$-topology on $\mathcal{S}(A \rtimes_\alpha G)$ and the topology of weak$^*$ convergence uniformly on compacta of $G$.	
+The map $\mathcal{S}(A \rtimes_\alpha G) \ni \varphi \mapsto \Gamma_\varphi \in B_+^1(A \rtimes_\alpha G)$ is a homeomorphism with respect to the weak$^*$-topology on $\mathcal{S}(A \rtimes_\alpha G)$ and the topology of weak$^*$ convergence uniformly on compacts of $G$.	
 \end{proposition}
 \begin{proof}
-We have already established the bijectivity. For the last part, suppose that we have a convergent net $(\varphi_i) \subseteq \mathcal{S}(A \rtimes _\alpha  G)$	with limit $\varphi \in \mathcal{S}(A \rtimes_\alpha G)$. We will in the following also write $\Gamma_\varphi$ to denote the extension from $A$ to $A^1$. For $x,y \in A^1$, define the map $\Psi_{\varphi}(x,y) \colon G \to \C$ by $t \mapsto \Gamma_\varphi(x^* \alpha_t(y))$. The polarization identity and linearity ensures that if for all $x \in A^1$ we have $\Psi_{\varphi_i}(x,x) \to \Psi_{\varphi}(x,x)$ in the topology of convergence uniformly on compacta then $\Psi_{\varphi_i}(x,y) \to \Psi_{\varphi}(x,y)$ as well. By \Cref{mult:OGstatehomeo}, we see that $\Psi_{\varphi_i}(x,x) \to \Psi_{\varphi}(x,x)$ in the topology of convergence uniformly on compacta of $G$, and setting $y = 1_{A^1}$, we see that $\Gamma_{\varphi_i} \to \Gamma_\varphi$.
+We have already established the bijectivity. For the last part, suppose that we have a convergent net $(\varphi_i) \subseteq \mathcal{S}(A \rtimes _\alpha  G)$	with limit $\varphi \in \mathcal{S}(A \rtimes_\alpha G)$. We will in the following also write $\Gamma_\varphi$ to denote the extension from $A$ to $A^1$. For $x,y \in A^1$, define the map $\Psi_{\varphi}(x,y) \colon G \to \C$ by $t \mapsto \Gamma_\varphi(x^* \alpha_t(y))$. The polarization identity and linearity ensures that if for all $x \in A^1$ we have $\Psi_{\varphi_i}(x,x) \to \Psi_{\varphi}(x,x)$ in the topology of convergence uniformly on compacts then $\Psi_{\varphi_i}(x,y) \to \Psi_{\varphi}(x,y)$ as well. By \Cref{mult:OGstatehomeo}, we see that $\Psi_{\varphi_i}(x,x) \to \Psi_{\varphi}(x,x)$ in the topology of convergence uniformly on compacts of $G$, and setting $y = 1_{A^1}$, we see that $\Gamma_{\varphi_i} \to \Gamma_\varphi$.
 
 Conversely, suppose that $\Gamma_{\varphi_i} \to \Gamma_{\varphi}$, then in particular $\varphi_{i}(f \otimes x) \to \varphi(f \otimes x)$ for all $x \in A$ and $f \in \cc(G)$ by \Cref{eq:gammafun} and hence on all of $A \rtimes_\alpha G$, since the functions $f \otimes x$ span a dense subset of $A \rtimes_\alpha G$.
 \end{proof}
 
-For discrete groups, it is well-known that if $G$ is amenable (or more generally acts amenably on $A$), i.e., has a left-invariant mean $m \in \ell^\infty(G)$, then there is only one crossed product of $G$ and any $C^*$-algebra $A$ (if $G$ is not amenable, but admits an amenable action on $A$, then the statement is true for crossed products with $A$ as well, see e.g., \cite[4.3.4]{brown2008c} or the authors notes on the subject \cite[Part 2, pg. 26, 32]{approxtalk}).
+For discrete groups, it is well-known that if $G$ is amenable (or more generally acts amenably on $A$), i.e., has a left-invariant mean $m \in \ell^\infty(G)$, then there is only one crossed product of $G$ and any $C^*$-algebra $A$. If $G$ is not amenable, but admits an amenable action (in the sense of \cite[Chapter 4.3]{brown2008c}) on $A$, then the statement is true for crossed products with $A$ as well, see e.g., \cite[4.3.4]{brown2008c} or the authors notes on the subject \cite[Part 2, pg. 26, 32]{approxtalk}.
 
 We will see that this is true for locally compact groups as well - in particular, it is true for abelian groups locally compact groups as they are amenable, c.f. \cite[appendix G]{bekka2008kazhdan}.
 
@@ -914,13 +923,13 @@ Let $E$ be the set of states contained in $(\pi,\H)$, which will be weak$^*$ den
 
 Note that the set of vector states in $\tilde \pi_u \rtimes_r \lambda$ is exactly the set of functionals which give rise to $A_+^1(A \rtimes_\alpha G)$, by definition and the fact that we may view $A \rtimes_{\alpha,r} G$ as the image of $A \rtimes_\alpha G$ under $\tilde \pi_u \rtimes \lambda$.
 
-By the isomorphism between the statespace of $A \rtimes_\alpha G$ and $B(A \rtimes_\alpha G)$, it suffices to show that $F \subseteq A_+^1(A \rtimes_\alpha G)$ is dense in the topology of weak$^*$ convergence uniformly on compacta, and by the above remark and \Cref{mult:vectorstateapprox}, it is enough to consider approximations of the functions of the form
+By the isomorphism between the statespace of $A \rtimes_\alpha G$ and $B(A \rtimes_\alpha G)$, it suffices to show that $F \subseteq A_+^1(A \rtimes_\alpha G)$ is dense in the topology of weak$^*$ convergence uniformly on compacts, and by the above remark and \Cref{mult:vectorstateapprox}, it is enough to consider approximations of the functions of the form
 \begin{align*}
 	\Gamma_{\tilde \varphi_z}(t) (x) =\varphi\left( \int_G z^*(s) \alpha_s(x) \alpha_{st}(z\left( (st)^{-1} \right)\d s \right),
 \end{align*}
 for suitable $\varphi \in \mathcal{S}(A)$ and $z \in \cc(G,A,\alpha)$, i.e., with $\varphi(z^* \ast z(e)) = 1$, since they span a dense subset of $A_+^1(A \rtimes_\alpha G)$.
 
-Let such $\varphi$ and $z$ be given. By density of $E$, pick a convergent net $\varphi_i \to \varphi$ in the weak$^*$-topology. This implies that $\Gamma_{\tilde {\varphi_i}_z}(t) \to \Gamma_{\tilde \varphi_z}(t)$ weak$^*$, uniformly on compacta of $G$. Since $\varphi_i \in E$, the corresponding representation $(\pi_{\varphi_i},H_{\varphi_i})$ will be a sub-representation of $(\pi,H)$, from which we conclude that $\Gamma_{\tilde {\varphi_i}_z} \in F$, finishing the proof.
+Let such $\varphi$ and $z$ be given. By density of $E$, pick a convergent net $\varphi_i \to \varphi$ in the weak$^*$-topology. This implies that $\Gamma_{\tilde {\varphi_i}_z}(t) \to \Gamma_{\tilde \varphi_z}(t)$ weak$^*$, uniformly on compacts of $G$. Since $\varphi_i \in E$, the corresponding representation $(\pi_{\varphi_i},H_{\varphi_i})$ will be a sub-representation of $(\pi,H)$, from which we conclude that $\Gamma_{\tilde {\varphi_i}_z} \in F$, finishing the proof.
 \end{proof}
 In particular, this means that we may always consider $A \rtimes_{\alpha,r}G$ as the completion of $\cc(G,A,\alpha)$ under the regular representation induced by a faithful representation of $A$, which will be convenient, as we shall see, for in a large case of groups there is only one crossed product. The following useful lemma can be found in \cite[Lemma 7.7.6]{pedersenalgauto}:
 \begin{lemma}
@@ -930,7 +939,7 @@ If $\Gamma_\varphi \in B_+^1(A \rtimes_\alpha G)$ has compact support, then $\Ga
 
 We recall one of the several equivalent definition of amenability for locally compact groups $G$:
 \begin{definition}
-A group $G$ is \myemph{amenable} if there is a net of unit vectors $(f_i) \subseteq L^2(G)$ such that $(f_i \ast \tilde f_i)$ converges uniformly on compacta of $G$ to $1$, where $\tilde f (t) = \overline f(t^{-1})$ for $f \in L^2(G)$ and $t \in G$.
+A group $G$ is \myemph{amenable} if there is a net of unit vectors $(f_i) \subseteq L^2(G)$ such that $(f_i \ast \tilde f_i)$ converges uniformly on compacts of $G$ to $1$, where $\tilde f (t) = \overline f(t^{-1})$ for $f \in L^2(G)$ and $t \in G$.
 \end{definition}
 See e.g., \cite[Appendix G]{bekka2008kazhdan}, \cite[Proposition 7.3.7 and 7.3.8]{pedersenalgauto} for the above and many more useful characterizations. 
 
@@ -943,7 +952,7 @@ If $G$ is amenable, then any $G$ $C^*$-dynamical system $(A,G,\alpha)$ is regula
 \label{cross:amenable}
 \end{theorem}
 \begin{proof}
-By applying the above to $G \acts 1 \C$ as the trivial action, we obtain a net $\Psi_i \in B_{+}(\C \rtimes_\alpha G)$ with compact support converging uniformly on compacta to $1$, by amenability of $G$ and \cite[Lemma 7.2.4]{pedersenalgauto}. It is easy to see that the pointwise product $\Psi_i \Gamma_\varphi \in B_+^1(A \rtimes_\alpha G)$ for all $\varphi \in \mathcal{S}(A \rtimes_\alpha G)$, and since $\Psi_i$ has compact support, we see that $\Psi_i \Gamma_\varphi \in A_+(A \rtimes_\alpha G)$ and $\Psi_i \Gamma_\varphi \to \Gamma_\varphi$ in the topology of weak$^*$ uniformly convergence on compacta of $G$. Hence, $A_+(A \rtimes_\alpha G) \subseteq B_+(A \rtimes_\alpha G)$ is dense. In particular, this implies that if $\pi$ denotes the universal faithful representation of $A \rtimes_\alpha G$, then $\ker \tilde \pi_u \rtimes \lambda \subseteq \ker \pi = 0$, by weak containment (\cite[80]{dixmier1969c}), so $A \rtimes_\alpha G \cong \tilde \pi_u \rtimes \lambda( A \rtimes_\alpha G) = A \rtimes_{\alpha,r}G$.
+By applying the above to $G \acts 1 \C$ as the trivial action, we obtain a net $\Psi_i \in B_{+}(\C \rtimes_\alpha G)$ with compact support converging uniformly on compacts to $1$, by amenability of $G$ and \cite[Lemma 7.2.4]{pedersenalgauto}. It is easy to see that the pointwise product $\Psi_i \Gamma_\varphi \in B_+^1(A \rtimes_\alpha G)$ for all $\varphi \in \mathcal{S}(A \rtimes_\alpha G)$, and since $\Psi_i$ has compact support, we see that $\Psi_i \Gamma_\varphi \in A_+(A \rtimes_\alpha G)$ and $\Psi_i \Gamma_\varphi \to \Gamma_\varphi$ in the topology of weak$^*$ uniformly convergence on compacts of $G$. Hence, $A_+(A \rtimes_\alpha G) \subseteq B_+(A \rtimes_\alpha G)$ is dense. In particular, this implies that if $\pi$ denotes the universal faithful representation of $A \rtimes_\alpha G$, then $\ker \tilde \pi_u \rtimes \lambda \subseteq \ker \pi = 0$, by weak containment (\cite[80]{dixmier1969c}), so $A \rtimes_\alpha G \cong \tilde \pi_u \rtimes \lambda( A \rtimes_\alpha G) = A \rtimes_{\alpha,r}G$.
 \end{proof}
 Combining the above, we obtain
 \begin{corollary}
@@ -1368,7 +1377,7 @@ Before we begin our discussion of simplicity in crossed product in the next chap
 	for all $\varphi \in A^*$. If $x \in M(A)$ is such that $x$ may be decomposed into $\hat \alpha$-integrable positive parts, we then say that $x$ is also $\hat \alpha$-integrable.
 \end{definition}
 \begin{note}
-	If $0 \leq x \leq y \in M(A)_+$ and $y$ is $\hat \alpha$-integrable, then both $x$ is $\hat \alpha$-integrable. For an argument, we refer the reader to \cite[Remark 7.8.4]{pedersenalgauto}. It is based on the fact that if $y$ is $\hat \alpha$ integrable and $0 \leq x \leq y$, then they induce a lower semicontinuous and bounded map on the state space of $A$.
+	If $0 \leq x \leq y \in M(A)_+$ and $y$ is $\hat \alpha$-integrable, then $x$ is also $\hat \alpha$-integrable. For an argument, we refer the reader to \cite[Remark 7.8.4]{pedersenalgauto}. It is based on the fact that if $y$ is $\hat \alpha$ integrable and $0 \leq x \leq y$, then they induce a lower semicontinuous and bounded map on the state space of $A$.
 
 	In particular, if $z$ is $\hat \alpha $-integrable, then for all positive $y \in A$ we have $yzy \leq \lv y \rv z$ is $\hat \alpha$-integrable.
 \label{noteinthered}
@@ -1537,4 +1546,4 @@ It is quite easy to show that the above $C^*$-dynamical system is unique up to c
 	Let $(A, G, \alpha)$ be a $C^*$-dynamical system and let $B \subseteq A$ be a $G$-invariant $C^*$-subalgebra of $A$. Then there is a natural injection $B \rtimes_\alpha G \subseteq A \rtimes_\alpha G$ which is surjective if and only if $B = A$.
 \end{lemma}
 
-We end this section with the promise that the results describes here, in particular Takai Duality, has concrete utilizations in describing the ideal structure of crossed products, even if they are not apparent just yet. In particular, in a series papers of Olesen and Pedersen (we have covered some of the theory of one of them), see e.g., \cite{olesenpedersen1}, \cite{olesenpedersen2} and \cite{olesenpedersen3}, Takai duality is used to describe a necessary and sufficient condition for simplicity of $A \rtimes_\alpha G$ in terms of a certain subgroup of $\hat G$ and certain properties of the action $G \acts \alpha A$. These particular articles established the foundation of much of the theory which we will examine in the next chapter.
+We end this section with the promise that the results described here, in particular Takai Duality, has concrete utilizations in describing the ideal structure of crossed products, even if they are not apparent just yet. In particular, in a series papers of Olesen and Pedersen (we have covered some of the theory of one of them), see e.g., \cite{olesenpedersen1}, \cite{olesenpedersen2} and \cite{olesenpedersen3}, Takai duality is used to describe a necessary and sufficient condition for simplicity of $A \rtimes_\alpha G$ in terms of a certain subgroup of $\hat G$ and certain properties of the action $G \acts \alpha A$. These particular articles established the foundation of much of the theory which we will examine in the next chapter.
