@@ -49,25 +49,25 @@ is positive and contractive.
 \item As a consequence of the above, we see that every bounded linear functional can be decomposed into a linear combination of four states.
 \end{itemize}
 We will also need a few important results:
-\begin{definition}
+\begin{defnonum}
 	Let $A$ be a unital $C^*$-algebra. An operator subsystem $E$ is a closed self-adjoint subspace of $A$ containing the identity.
-\end{definition}
-\begin{lemma}[\mbox{\cite[1.5.14 - 1.5.16]{brown2008c}}]
+\end{defnonum}
+\begin{lemnonum}[\mbox{\cite[1.5.14 - 1.5.16]{brown2008c}}]
 Let $E \subseteq A$ be an operator subsystem of a unital $C^*$-algebra $A$. Then all positive linear functionals on $E$ extends to a positive linear functional on $A$ of same norm. In particular, this applies to states.
-\end{lemma}
-\begin{theorem}[\mbox{\myemph{Arveson's Extension Theorem}}]
+\end{lemnonum}
+\begin{thmnonum}[\mbox{\myemph{Arveson's Extension Theorem}}]
 	Let $A$ be a unital $C^*$-algebra and $E \subseteq A$ an operator subsystem. Then every contractive completely positive map $\varphi \colon E \to \mathbb{B}(\H)$ extends to a contractive completely positive map $\tilde \varphi \colon A \to \mathbb{B}(\H)$
-\end{theorem}
+\end{thmnonum}
 For a proof of the above, see \cite[Theorem 1.6.1]{brown2008c}.
-\begin{definition}
+\begin{defnonum}
 	Let $A$ and $B$ be $C^*$-algebras and $\varphi \colon A \to B$ a contractive completely positive map. The set
 	\begin{align*}
 		A_\varphi := \{a \in A \ \mid \ \varphi(a^*a)=\varphi(a)^*\varphi(a) \text{ and } \varphi(a a^*) = \varphi(a) \varphi(a)^*\},
 	\end{align*}
 	is called the \myemph{multiplicative domain} of $\varphi$ in $A$.
-\end{definition}
+\end{defnonum}
 It turns out that the above behaves exceptionally well:
-\begin{proposition}[\mbox{\cite[Proposition 1.5.7]{brown2008c}}]	
+\begin{propnonum}[\mbox{\cite[Proposition 1.5.7]{brown2008c}}]	
 	Let $A$ and $B$ be $C^*$-algebras and $\varphi \colon A \to B$ a contractive completely positive map. Then
 	\begin{enumerate}
 		\item (\myemph{Schwarz Inequality}) The inequality $\varphi(a)^*\varphi(a) \leq \varphi(a^*a)$ holds for all $a \in A$.
@@ -78,25 +78,25 @@ It turns out that the above behaves exceptionally well:
 			for all $b \in A$.
 		\item $A_\varphi$ is a $C^*$-subalgebra of $A$.
 	\end{enumerate}
-\end{proposition}
+\end{propnonum}
 A very important result is the result of Tomiyama, which characterizes something called conditional expectations in a very nice way.
-\begin{definition}
+\begin{defnonum}
 	Let $A \subseteq B$ be $C^*$-algebras. A projection from $B$ onto $A$ is a linear map $E \colon B \to A$ such that $E(a)=a$ for all $a \in A$. A \myemph{conditional expectation} from $B$ onto $A$ is a contractive completely positive projection $E \colon B \to A$ such that
 	\begin{align*}
 		E(axa')=a E(x) a',
 	\end{align*}
 	for every $a,a' \in A$ and $x \in B$.
-\end{definition}
-\begin{theorem}[Tomiyama's theorem]
+\end{defnonum}
+\begin{thmnonum}[Tomiyama's theorem]
 	Let $A \subseteq B$ be $C^*$-algebras and $E$ a projection from $B$ onto $A$. Then the following are equivalent:
 	\begin{enumerate}
 		\item $E$ is a conditional expectation,
 		\item $E$ is contractive completely positive,
 		\item $E$ is contractive.
 	\end{enumerate}
-\end{theorem}
+\end{thmnonum}
 For a proof of the above, see \cite[Theorem 1.5.10]{brown2008c}.
-\begin{definition}
+\begin{defnonum}
 	A \myemph{unitary representation} of a group $G$ is a strongly continuous group homomorphism $u \colon G \to \mathcal{U}(\H)$, $t \mapsto u_t: = u(t)$, of a Hilbert space $\H$. That is, for each $\xi \in \H$, the map $t \mapsto u_t \xi$ is continuous. 
-\end{definition}
+\end{defnonum}
 

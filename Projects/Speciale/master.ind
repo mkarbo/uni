@@ -1,171 +1,172 @@
 \begin{theindex}
 {\large\sffamily\bfseries Symbols}\nopagebreak
 
-  \item $*$-strong topology \dotfill \hyperpage{23}
-  \item $C^*$-dynamic a-system \dotfill \hyperpage{81}
-  \item $C^*$-dynamical system \dotfill \hyperpage{36}
-  \item $C^*$-simple \dotfill \hyperpage{103}
+  \item $*$-strong topology \dotfill \hyperpage{19}
+  \item $C^*$-dynamic a-system \dotfill \hyperpage{77}
+  \item $C^*$-dynamical system \dotfill \hyperpage{32}
+  \item $C^*$-simple \dotfill \hyperpage{99}
   \item $G \mathrel {\mathop {\curvearrowright }\limits ^{}} X$ \dotfill 
-		\hyperpage{77}
-  \item $G$-boundary \dotfill \hyperpage{79}
-  \item $G$-prime \dotfill \hyperpage{89}
-  \item $G$-product \dotfill \hyperpage{65}
-  \item $G$-simple \dotfill \hyperpage{91}
-  \item $G$-space \dotfill \hyperpage{77}
-  \item $G_x$ \dotfill \hyperpage{78}
-  \item $K \mathaccentV {bar}016\rtimes _r G$ \dotfill \hyperpage{108}
-  \item $S^\perp $ \dotfill \hyperpage{63}
-  \item $W^*$-system \dotfill \hyperpage{84}
-  \item $\mathaccentV {widehat}870{\alpha }$ \dotfill \hyperpage{65}
+		\hyperpage{73}
+  \item $G$-boundary \dotfill \hyperpage{75}
+  \item $G$-prime \dotfill \hyperpage{85}
+  \item $G$-product \dotfill \hyperpage{61}
+  \item $G$-simple \dotfill \hyperpage{87}
+  \item $G$-space \dotfill \hyperpage{73}
+  \item $G_x$ \dotfill \hyperpage{74}
+  \item $K \mathaccentV {bar}016\rtimes _r G$ \dotfill \hyperpage{104}
+  \item $S^\perp $ \dotfill \hyperpage{59}
+  \item $W^*$-system \dotfill \hyperpage{80}
+  \item $\mathaccentV {widehat}870{\alpha }$ \dotfill \hyperpage{61}
   \item $\mathaccentV {widehat}870{\alpha }$-integrable \dotfill 
-		\hyperpage{70}
-  \item $\mathbb  {I}(A)$ \dotfill \hyperpage{21}
-  \item $\mathcal  {L}_A(E_1,E_2)$ \dotfill \hyperpage{8}
-  \item $\partial _F G$ \dotfill \hyperpage{80}
-  \item $f \ast_\alpha g$ \dotfill \hyperpage{36}
-  \item (Ir)rational Rotation Algebra \dotfill \hyperpage{43}
+		\hyperpage{66}
+  \item $\mathbb  {I}(A)$ \dotfill \hyperpage{17}
+  \item $\mathcal  {L}_A(E_1,E_2)$ \dotfill \hyperpage{4}
+  \item $\partial _F G$ \dotfill \hyperpage{76}
+  \item $f \ast_\alpha g$ \dotfill \hyperpage{32}
+  \item (Ir)rational Rotation Algebra \dotfill \hyperpage{39}
 
   \indexspace
 {\large\sffamily\bfseries A}\nopagebreak
 
-  \item adjointable maps \dotfill \hyperpage{9}
-  \item amenable \dotfill \hyperpage{57}
-  \item Arveson Spectrum \dotfill \hyperpage{82}
-  \item Arveson's Extension Theorem \dotfill \hyperpage{3}
+  \item adjointable maps \dotfill \hyperpage{5}
+  \item amenable \dotfill \hyperpage{53}
+  \item Arveson Spectrum \dotfill \hyperpage{78}
+  \item Arveson's Extension Theorem \dotfill \hyperpage{v}
 
   \indexspace
 {\large\sffamily\bfseries B}\nopagebreak
 
-  \item Bimodule Property \dotfill \hyperpage{4}
-  \item boundary action \dotfill \hyperpage{79}
+  \item Bimodule Property \dotfill \hyperpage{vi}
+  \item boundary action \dotfill \hyperpage{75}
 
   \indexspace
 {\large\sffamily\bfseries C}\nopagebreak
 
-  \item Cocycle equation \dotfill \hyperpage{88}
+  \item Cocycle equation \dotfill \hyperpage{84}
   \item Compact Operators on a Hilbert $A$-module \dotfill 
-		\hyperpage{12}
-  \item compact-open \dotfill \hyperpage{77}
-  \item conditional expectation \dotfill \hyperpage{4}
-  \item Connes Spectrum \dotfill \hyperpage{83}
-  \item contractive completely positive \dotfill \hyperpage{3}
-  \item covariant representation \dotfill \hyperpage{36}
+		\hyperpage{8}
+  \item compact-open \dotfill \hyperpage{73}
+  \item conditional expectation \dotfill \hyperpage{vi}
+  \item Connes Spectrum \dotfill \hyperpage{79}
+  \item contractive completely positive \dotfill \hyperpage{v}
+  \item covariant representation \dotfill \hyperpage{32}
 
   \indexspace
 {\large\sffamily\bfseries D}\nopagebreak
 
-  \item detects ideals \dotfill \hyperpage{93}
-  \item disjoint representations \dotfill \hyperpage{100}
-  \item dual action \dotfill \hyperpage{65}
+  \item detects ideals \dotfill \hyperpage{89}
+  \item disjoint representations \dotfill \hyperpage{96}
+  \item Dixmier property \dotfill \hyperpage{ii}
+  \item dual action \dotfill \hyperpage{61}
 
   \indexspace
 {\large\sffamily\bfseries E}\nopagebreak
 
-  \item essential ideal \dotfill \hyperpage{17}
-  \item exterior equivalent \dotfill \hyperpage{87}
-  \item extremally disconnected space \dotfill \hyperpage{80}
+  \item essential ideal \dotfill \hyperpage{13}
+  \item exterior equivalent \dotfill \hyperpage{83}
+  \item extremally disconnected space \dotfill \hyperpage{76}
 
   \indexspace
 {\large\sffamily\bfseries F}\nopagebreak
 
-  \item Fell bundles \dotfill \hyperpage{96}
-  \item full \dotfill \hyperpage{7}
-  \item full crossed product \dotfill \hyperpage{43}
-  \item Furstenberg boundary \dotfill \hyperpage{80}
+  \item Fell bundles \dotfill \hyperpage{92}
+  \item full \dotfill \hyperpage{3}
+  \item full crossed product \dotfill \hyperpage{39}
+  \item Furstenberg boundary \dotfill \hyperpage{76}
 
   \indexspace
 {\large\sffamily\bfseries H}\nopagebreak
 
-  \item hereditary \dotfill \hyperpage{83}
-  \item Hilbert $A$-module \dotfill \hyperpage{6}
-  \item Hilbert $C^*$-module over $A$ \dotfill \hyperpage{6}
-  \item hull-kernel topology \dotfill \hyperpage{97}
+  \item hereditary \dotfill \hyperpage{79}
+  \item Hilbert $A$-module \dotfill \hyperpage{2}
+  \item Hilbert $C^*$-module over $A$ \dotfill \hyperpage{2}
+  \item hull-kernel topology \dotfill \hyperpage{93}
 
   \indexspace
 {\large\sffamily\bfseries I}\nopagebreak
 
-  \item idealizer \dotfill \hyperpage{21}
-  \item induced regular representation \dotfill \hyperpage{39}
-  \item inductive limit topology \dotfill \hyperpage{28}
-  \item inner-product $A$-module \dotfill \hyperpage{5}
-  \item integrated form \dotfill \hyperpage{37}
+  \item idealizer \dotfill \hyperpage{17}
+  \item induced regular representation \dotfill \hyperpage{35}
+  \item inductive limit topology \dotfill \hyperpage{24}
+  \item inner-product $A$-module \dotfill \hyperpage{1}
+  \item integrated form \dotfill \hyperpage{33}
 
   \indexspace
 {\large\sffamily\bfseries L}\nopagebreak
 
-  \item Landstad's conditions \dotfill \hyperpage{66}
+  \item Landstad's conditions \dotfill \hyperpage{62}
 
   \indexspace
 {\large\sffamily\bfseries M}\nopagebreak
 
-  \item maximal \dotfill \hyperpage{18}
-  \item minimal \dotfill \hyperpage{79}
-  \item multiplicative domain \dotfill \hyperpage{3}
-  \item Multiplier Algebra \dotfill \hyperpage{5}
-  \item multiplier algebra \dotfill \hyperpage{19}
+  \item maximal \dotfill \hyperpage{14}
+  \item minimal \dotfill \hyperpage{75}
+  \item multiplicative domain \dotfill \hyperpage{v}
+  \item Multiplier Algebra \dotfill \hyperpage{1}
+  \item multiplier algebra \dotfill \hyperpage{15}
 
   \indexspace
 {\large\sffamily\bfseries N}\nopagebreak
 
-  \item non-degenerate \dotfill \hyperpage{19}
-  \item nuclear $C^*$-algebra \dotfill \hyperpage{59}
+  \item non-degenerate \dotfill \hyperpage{15}
+  \item nuclear $C^*$-algebra \dotfill \hyperpage{55}
 
   \indexspace
 {\large\sffamily\bfseries P}\nopagebreak
 
-  \item polarization identity \dotfill \hyperpage{10}
-  \item positive definite \dotfill \hyperpage{50}
-  \item primitive ideal space \dotfill \hyperpage{97}
-  \item properly outer \dotfill \hyperpage{99}
+  \item polarization identity \dotfill \hyperpage{6}
+  \item positive definite \dotfill \hyperpage{46}
+  \item primitive ideal space \dotfill \hyperpage{93}
+  \item properly outer \dotfill \hyperpage{95}
 
   \indexspace
 {\large\sffamily\bfseries Q}\nopagebreak
 
-  \item quasi-regular representation \dotfill \hyperpage{105}
+  \item quasi-regular representation \dotfill \hyperpage{101}
 
   \indexspace
 {\large\sffamily\bfseries R}\nopagebreak
 
-  \item reduced crossed product \dotfill \hyperpage{55}
-  \item regular $C^*$-dynamical system \dotfill \hyperpage{57}
-  \item regular representation \dotfill \hyperpage{39}
+  \item reduced crossed product \dotfill \hyperpage{51}
+  \item regular $C^*$-dynamical system \dotfill \hyperpage{53}
+  \item regular representation \dotfill \hyperpage{35}
 
   \indexspace
 {\large\sffamily\bfseries S}\nopagebreak
 
-  \item Schwarz Inequality \dotfill \hyperpage{4}
-  \item semi-inner-product $A$-module \dotfill \hyperpage{6}
-  \item separates ideals \dotfill \hyperpage{93}
-  \item spectral $M$-subspace \dotfill \hyperpage{82}
-  \item spectral $R$-subspace \dotfill \hyperpage{82}
-  \item spectrum of a $C^*$-algebra \dotfill \hyperpage{97}
-  \item stabilizer of $x$ \dotfill \hyperpage{78}
-  \item strict topology \dotfill \hyperpage{16}
-  \item strongly proximal action \dotfill \hyperpage{79}
+  \item Schwarz Inequality \dotfill \hyperpage{vi}
+  \item semi-inner-product $A$-module \dotfill \hyperpage{2}
+  \item separates ideals \dotfill \hyperpage{89}
+  \item spectral $M$-subspace \dotfill \hyperpage{78}
+  \item spectral $R$-subspace \dotfill \hyperpage{78}
+  \item spectrum of a $C^*$-algebra \dotfill \hyperpage{93}
+  \item stabilizer of $x$ \dotfill \hyperpage{74}
+  \item strict topology \dotfill \hyperpage{12}
+  \item strongly proximal action \dotfill \hyperpage{75}
 
   \indexspace
 {\large\sffamily\bfseries T}\nopagebreak
 
-  \item topological group \dotfill \hyperpage{1}
-  \item topologically free \dotfill \hyperpage{98}
+  \item topological group \dotfill \hyperpage{iii}
+  \item topologically free \dotfill \hyperpage{94}
   \item topology of weak$^*$ uniform convergence on compacts \dotfill 
-		\hyperpage{52}
-  \item topology on $\mathrm{Homeo}(X)$ \dotfill \hyperpage{78}
-  \item Transformation Group \dotfill \hyperpage{77}
-  \item transposed action of $G$ \dotfill \hyperpage{98}
+		\hyperpage{48}
+  \item topology on $\mathrm{Homeo}(X)$ \dotfill \hyperpage{74}
+  \item Transformation Group \dotfill \hyperpage{73}
+  \item transposed action of $G$ \dotfill \hyperpage{94}
 
   \indexspace
 {\large\sffamily\bfseries U}\nopagebreak
 
-  \item unique trace property \dotfill \hyperpage{103}
-  \item unitary representation \dotfill \hyperpage{4}
-  \item unitization \dotfill \hyperpage{17}
-  \item universal norm \dotfill \hyperpage{42}
+  \item unique trace property \dotfill \hyperpage{99}
+  \item unitary representation \dotfill \hyperpage{vi}
+  \item unitization \dotfill \hyperpage{13}
+  \item universal norm \dotfill \hyperpage{38}
 
   \indexspace
 {\large\sffamily\bfseries W}\nopagebreak
 
-  \item weak$^*$-integrals \dotfill \hyperpage{81}
-  \item weakly contained \dotfill \hyperpage{56}
+  \item weak$^*$-integrals \dotfill \hyperpage{77}
+  \item weakly contained \dotfill \hyperpage{52}
 
 \end{theindex}
