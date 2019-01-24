@@ -457,16 +457,23 @@ For a proof, see \cite[lemma 11]{ozawa2014lecture}. With these results in hand, 
 	\begin{align*}
 		J_A \rtimes_r G \subseteq J \subseteq J_A \bar \rtimes_r G.
 	\end{align*}
-	We also identify $A$ with its image in $(A \otimes C(\dd_F G)) \rtimes_r G$. Then $I_A := J \cap A$ is a $G$-equivariant ideal of $A$ which is $G$-invariant as the inclusion $A \subseteq (A \otimes C(\dd_F G)) \rtimes_r G$ is $G$-equivariant. Recall that we assumed $G$-simplicity of $A$ so $I_A = \{0\}$, implying that $I_A \bar \rtimes_r G = 0$, for if $x \in I_A \bar \rtimes_r G$ then $x^*x \in I_A \bar \rtimes_r G$, which happens if and only if $E(x^*x) \in I_A$, where $E$ is the canonical faithful conditional expectation $A \rtimes_r G \to A$. As $I_A = 0$ and $E$ is faithful, this implies that $x^*x = 0$. 
+	We also identify $A$ with its image in $(A \otimes C(\dd_F G)) \rtimes_r G$. Then $I_A := J \cap A$ is a $G$-equivariant ideal of $A$ as the inclusion $A \subseteq (A \otimes C(\dd_F G)) \rtimes_r G$ is $G$-equivariant. By assumption that $A$ is $G$-simple we must have $I_A = \{0\}$. This in turn implies that $I_A \bar \rtimes_r G = 0$, for if $x \in I_A \bar \rtimes_r G$ then $x^*x \in I_A \bar \rtimes_r G$, which happens if and only if $E(x^*x) \in I_A$, where $E$ is the canonical faithful conditional expectation $A \rtimes_r G \to A$. As $I_A = 0$ and $E$ is faithful, this implies that $x^*x = 0$ whence $x = 0$.
 
-	We finish the proof by showing that $I \subseteq I_A \bar \rtimes_r G$: Let $y \in I \subseteq J \subseteq J_A \bar \rtimes_r G$, and note that we then obtain a commutative diagram with exact rows
+	We finish the proof by showing that $I \subseteq I_A \bar \rtimes_r G$. For this, note that the commutative diagram with exact rows
 	\begin{equation*}
 		\begin{tikzcd}
-			0 \ar[r] &  I_A \bar \rtimes_r G \ar[d, hook] \ar[r] & A \rtimes_r G \ar[r] \ar[d, hook] & (A / I_A)\rtimes_r G  \ar[r] \ar[d, hook]  & 0\\
-			0  \ar[r] & J_A \bar \rtimes_r G  \ar[r] & (A \otimes C(X)) \rtimes_r G \ar[r] & \left((A \otimes C(X))/J_A\right) \rtimes_r G \ar[r] & 0
+			0 \ar[r] & I_A \ar[r] \ar[d, hook] & A \ar[r] \ar[d, hook] & A/I_A \ar[r] \ar[d, hook] & 0 \\
+			0 \ar[r] & J_A \ar[r] & A \otimes C(X) \ar[r] & (A \otimes C(X))/J_A \ar[r] & 0
 		\end{tikzcd}
 	\end{equation*}
-	as $I_A \subseteq J_A$. Then, since $y \in A \rtimes_r G$ and $y \in J_A \bar \rtimes_r G$, it follows that $y \in I_A \bar \rtimes_r G = \{0\}$ by the above diagram. As $y$ was arbitrary, this shows that $I = \{0\}$.
+	induces the commutative diagram
+	\begin{equation*}
+		\begin{tikzcd}
+			A \rtimes_r G \ar[r, "\pi_A"] \ar[d,hook]& (A/I_A) \rtimes_r G \ar[d, hook]\\
+			(A \otimes C(X)) \rtimes_r G \ar[r, "\pi_J"] & ( (A \otimes C(X))/J_A) \rtimes_r G
+		\end{tikzcd}
+	\end{equation*}
+	By construction $\ker \pi_A = I_A \bar \rtimes_r G$ and $\ker \pi_J = J_a \bar \rtimes_r G$. Now, let $y \in I \subseteq J \subseteq J_A \bar \rtimes_r G$. By commutativity of the above diagram, $y \in I_A \bar \rtimes_r G = \{0\}$, so $I = \{0\}$.
 
 	$8 \implies 1$: Trivial when applied to the trivial $G$-boundary $\{\cdot\}$.
 
