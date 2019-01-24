@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.12.7)  24 JAN 2019 00:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.12.7)  24 JAN 2019 13:17
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -3907,56 +3907,59 @@ ntifier (name{theorem.4.3.5}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.326 
-      pdfTeX warning (ext4): destination with the same identifier (name{theorem
-.4.3.6}) has been already used, duplicate ignored
+l.326 	D
+        efine an action of $G$ on $C^*(\overline \pi(C(X)))$ by inner automo...
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.4.3.6
+}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.326 
-      pdfTeX warning (ext4): destination with the same identifier (name{theorem
-.4.3.7}) has been already used, duplicate ignored
+l.326 	D
+        efine an action of $G$ on $C^*(\overline \pi(C(X)))$ by inner automo...
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.4.3.7
+}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.326 
-      ] [104pdfTeX warning (ext4): destination with the same identifier (name{t
-heorem.4.3.8}) has been already used, duplicate ignored
+l.326 	D
+        efine an action of $G$ on $C^*(\overline \pi(C(X)))$ by inner automo...
+] [104pdfTeX warning (ext4): destination with the same identifier (name{theorem
+.4.3.8}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.352 	\end{align*}
-                   pdfTeX warning (ext4): destination with the same identifier 
-(name{theorem.4.3.9}) has been already used, duplicate ignored
+l.356 	\begin{align*}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{theorem.4.3.9}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.352 	\end{align*}
-                   ] [105pdfTeX warning (ext4): destination with the same ident
-ifier (name{theorem.4.3.10}) has been already used, duplicate ignored
+l.356 	\begin{align*}
+                     ] [105pdfTeX warning (ext4): destination with the same ide
+ntifier (name{theorem.4.3.10}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.391 	\end{equation*}
+l.397 	\end{equation*}
                       ] [106pdfTeX warning (ext4): destination with the same id
 entifier (name{theorem.4.3.11}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.424 		\item $
+l.430 		\item $
                G$ is $C^*$-simple.] [107] [108pdfTeX warning (ext4): destinatio
 n with the same identifier (name{theorem.4.3.13}) has been already used, duplic
 ate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.476 			\end{align*}
+l.482 			\end{align*}
                      pdfTeX warning (ext4): destination with the same identifie
 r (name{theorem.4.3.14}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.476 			\end{align*}
+l.482 			\end{align*}
                      ]) [109]
 Overfull \hbox (6.72047pt too wide) in paragraph at lines 35--35
 []\T1/cmr/m/n/10 Nathanial Patrick Brown and Naru-taka Ozawa. \T1/cmr/m/it/10 C
@@ -4035,10 +4038,10 @@ Package logreq Info: Writing requests to 'master.run.xml'.
  )
 (\end occurred when \iftrue on line 5 was incomplete) 
 Here is how much of TeX's memory you used:
- 42430 strings out of 493029
- 772422 string characters out of 6136234
- 1119068 words of memory out of 5000000
- 44766 multiletter control sequences out of 15000+600000
+ 42432 strings out of 493029
+ 772452 string characters out of 6136234
+ 1119071 words of memory out of 5000000
+ 44768 multiletter control sequences out of 15000+600000
  35750 words of font info for 104 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,20n,82p,10483b,2398s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -4073,10 +4076,10 @@ m-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb
 onts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm
 -super/sftt1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfxc1095.pfb>
 </usr/share/texmf/fonts/type1/public/cm-super/sfxc1200.pfb>
-Output written on master.pdf (118 pages, 1224475 bytes).
+Output written on master.pdf (118 pages, 1224443 bytes).
 PDF statistics:
- 1622 PDF objects out of 1728 (max. 8388607)
- 1450 compressed objects within 15 object streams
+ 1621 PDF objects out of 1728 (max. 8388607)
+ 1449 compressed objects within 15 object streams
  519 named destinations out of 1000 (max. 500000)
  186 words of extra memory for PDF output out of 10000 (max. 10000000)
 
