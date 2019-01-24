@@ -1,83 +1,91 @@
-\indexentry{Multiplier Algebra|hyperpage}{2}
-\indexentry{inner-product $A$-module|hyperpage}{2}
-\indexentry{semi-inner-product $A$-module|hyperpage}{3}
-\indexentry{Hilbert $C^*$-module over $A$|hyperpage}{3}
-\indexentry{Hilbert $A$-module|hyperpage}{3}
-\indexentry{full|hyperpage}{4}
-\indexentry{$\mathcal  {L}_A(E_1,E_2)$|hyperpage}{5}
-\indexentry{adjointable maps|hyperpage}{6}
-\indexentry{polarization identity|hyperpage}{7}
-\indexentry{Compact Operators on a Hilbert $A$-module|hyperpage}{9}
-\indexentry{strict topology|hyperpage}{13}
-\indexentry{strict topology|hyperpage}{13}
-\indexentry{essential ideal|hyperpage}{14}
-\indexentry{unitization|hyperpage}{14}
-\indexentry{maximal|hyperpage}{15}
-\indexentry{multiplier algebra|hyperpage}{16}
-\indexentry{non-degenerate|hyperpage}{16}
-\indexentry{idealizer|hyperpage}{18}
-\indexentry{$\mathbb  {I}(A)$|hyperpage}{18}
-\indexentry{$*$-strong topology|hyperpage}{20}
-\indexentry{inductive limit topology|hyperpage}{25}
-\indexentry{$f \ast_\alpha g$|hyperpage}{33}
-\indexentry{$C^*$-dynamical system|hyperpage}{33}
-\indexentry{covariant representation|hyperpage}{33}
-\indexentry{integrated form|hyperpage}{34}
-\indexentry{induced regular representation|hyperpage}{36}
-\indexentry{regular representation|hyperpage}{36}
-\indexentry{universal norm|hyperpage}{39}
-\indexentry{full crossed product|hyperpage}{40}
-\indexentry{(Ir)rational Rotation Algebra|hyperpage}{40}
-\indexentry{positive definite|hyperpage}{47}
-\indexentry{topology of weak$^*$ uniform convergence on compacts|hyperpage}{49}
-\indexentry{reduced crossed product|hyperpage}{52}
-\indexentry{weakly contained|hyperpage}{53}
-\indexentry{amenable|hyperpage}{54}
-\indexentry{regular $C^*$-dynamical system|hyperpage}{54}
-\indexentry{nuclear $C^*$-algebra|hyperpage}{56}
-\indexentry{$S^\perp $|hyperpage}{60}
-\indexentry{dual action|hyperpage}{62}
-\indexentry{$\mathaccentV {widehat}870{\alpha }$|hyperpage}{62}
-\indexentry{$G$-product|hyperpage}{62}
-\indexentry{Landstad's conditions|hyperpage}{63}
-\indexentry{$\mathaccentV {widehat}870{\alpha }$-integrable|hyperpage}{67}
-\indexentry{$G \mathrel {\mathop {\curvearrowright }\limits ^{}} X$|hyperpage}{74}
-\indexentry{Transformation Group|hyperpage}{74}
-\indexentry{$G$-space|hyperpage}{74}
-\indexentry{compact-open|hyperpage}{74}
-\indexentry{topology on $\mathrm{Homeo}(X)$|hyperpage}{75}
-\indexentry{stabilizer of $x$|hyperpage}{75}
-\indexentry{$G_x$|hyperpage}{75}
-\indexentry{minimal|hyperpage}{76}
-\indexentry{strongly proximal action|hyperpage}{76}
-\indexentry{$G$-boundary|hyperpage}{76}
-\indexentry{boundary action|hyperpage}{76}
-\indexentry{Furstenberg boundary|hyperpage}{77}
-\indexentry{$\partial _F G$|hyperpage}{77}
-\indexentry{extremally disconnected space|hyperpage}{77}
-\indexentry{$C^*$-dynamic a-system|hyperpage}{78}
-\indexentry{weak$^*$-integrals|hyperpage}{78}
-\indexentry{spectral $R$-subspace|hyperpage}{79}
-\indexentry{spectral $M$-subspace|hyperpage}{79}
-\indexentry{Arveson Spectrum|hyperpage}{79}
-\indexentry{hereditary|hyperpage}{80}
-\indexentry{Connes Spectrum|hyperpage}{80}
-\indexentry{$W^*$-system|hyperpage}{81}
-\indexentry{exterior equivalent|hyperpage}{84}
-\indexentry{Cocycle equation|hyperpage}{85}
-\indexentry{$G$-prime|hyperpage}{86}
-\indexentry{$G$-simple|hyperpage}{88}
-\indexentry{detects ideals|hyperpage}{90}
-\indexentry{separates ideals|hyperpage}{90}
-\indexentry{Fell bundles|hyperpage}{93}
-\indexentry{primitive ideal space|hyperpage}{94}
-\indexentry{spectrum of a $C^*$-algebra|hyperpage}{94}
-\indexentry{hull-kernel topology|hyperpage}{94}
-\indexentry{transposed action of $G$|hyperpage}{95}
-\indexentry{topologically free|hyperpage}{95}
-\indexentry{properly outer|hyperpage}{96}
-\indexentry{disjoint representations|hyperpage}{97}
-\indexentry{$C^*$-simple|hyperpage}{100}
-\indexentry{unique trace property|hyperpage}{100}
-\indexentry{quasi-regular representation|hyperpage}{102}
-\indexentry{$K \mathaccentV {bar}016\rtimes _r G$|hyperpage}{105}
+\indexentry{topological group|hyperpage}{1}
+\indexentry{contractive completely positive|hyperpage}{3}
+\indexentry{Arveson's Extension Theorem|hyperpage}{3}
+\indexentry{multiplicative domain|hyperpage}{3}
+\indexentry{Schwarz Inequality|hyperpage}{4}
+\indexentry{Bimodule Property|hyperpage}{4}
+\indexentry{conditional expectation|hyperpage}{4}
+\indexentry{unitary representation|hyperpage}{4}
+\indexentry{Multiplier Algebra|hyperpage}{5}
+\indexentry{inner-product $A$-module|hyperpage}{5}
+\indexentry{semi-inner-product $A$-module|hyperpage}{6}
+\indexentry{Hilbert $C^*$-module over $A$|hyperpage}{6}
+\indexentry{Hilbert $A$-module|hyperpage}{6}
+\indexentry{full|hyperpage}{7}
+\indexentry{$\mathcal  {L}_A(E_1,E_2)$|hyperpage}{8}
+\indexentry{adjointable maps|hyperpage}{9}
+\indexentry{polarization identity|hyperpage}{10}
+\indexentry{Compact Operators on a Hilbert $A$-module|hyperpage}{12}
+\indexentry{strict topology|hyperpage}{16}
+\indexentry{strict topology|hyperpage}{16}
+\indexentry{essential ideal|hyperpage}{17}
+\indexentry{unitization|hyperpage}{17}
+\indexentry{maximal|hyperpage}{18}
+\indexentry{multiplier algebra|hyperpage}{19}
+\indexentry{non-degenerate|hyperpage}{19}
+\indexentry{idealizer|hyperpage}{21}
+\indexentry{$\mathbb  {I}(A)$|hyperpage}{21}
+\indexentry{$*$-strong topology|hyperpage}{23}
+\indexentry{inductive limit topology|hyperpage}{28}
+\indexentry{$f \ast_\alpha g$|hyperpage}{36}
+\indexentry{$C^*$-dynamical system|hyperpage}{36}
+\indexentry{covariant representation|hyperpage}{36}
+\indexentry{integrated form|hyperpage}{37}
+\indexentry{induced regular representation|hyperpage}{39}
+\indexentry{regular representation|hyperpage}{39}
+\indexentry{universal norm|hyperpage}{42}
+\indexentry{full crossed product|hyperpage}{43}
+\indexentry{(Ir)rational Rotation Algebra|hyperpage}{43}
+\indexentry{positive definite|hyperpage}{50}
+\indexentry{topology of weak$^*$ uniform convergence on compacts|hyperpage}{52}
+\indexentry{reduced crossed product|hyperpage}{55}
+\indexentry{weakly contained|hyperpage}{56}
+\indexentry{amenable|hyperpage}{57}
+\indexentry{regular $C^*$-dynamical system|hyperpage}{57}
+\indexentry{nuclear $C^*$-algebra|hyperpage}{59}
+\indexentry{$S^\perp $|hyperpage}{63}
+\indexentry{dual action|hyperpage}{65}
+\indexentry{$\mathaccentV {widehat}870{\alpha }$|hyperpage}{65}
+\indexentry{$G$-product|hyperpage}{65}
+\indexentry{Landstad's conditions|hyperpage}{66}
+\indexentry{$\mathaccentV {widehat}870{\alpha }$-integrable|hyperpage}{70}
+\indexentry{$G \mathrel {\mathop {\curvearrowright }\limits ^{}} X$|hyperpage}{77}
+\indexentry{Transformation Group|hyperpage}{77}
+\indexentry{$G$-space|hyperpage}{77}
+\indexentry{compact-open|hyperpage}{77}
+\indexentry{topology on $\mathrm{Homeo}(X)$|hyperpage}{78}
+\indexentry{stabilizer of $x$|hyperpage}{78}
+\indexentry{$G_x$|hyperpage}{78}
+\indexentry{minimal|hyperpage}{79}
+\indexentry{strongly proximal action|hyperpage}{79}
+\indexentry{$G$-boundary|hyperpage}{79}
+\indexentry{boundary action|hyperpage}{79}
+\indexentry{Furstenberg boundary|hyperpage}{80}
+\indexentry{$\partial _F G$|hyperpage}{80}
+\indexentry{extremally disconnected space|hyperpage}{80}
+\indexentry{$C^*$-dynamic a-system|hyperpage}{81}
+\indexentry{weak$^*$-integrals|hyperpage}{81}
+\indexentry{spectral $R$-subspace|hyperpage}{82}
+\indexentry{spectral $M$-subspace|hyperpage}{82}
+\indexentry{Arveson Spectrum|hyperpage}{82}
+\indexentry{hereditary|hyperpage}{83}
+\indexentry{Connes Spectrum|hyperpage}{83}
+\indexentry{$W^*$-system|hyperpage}{84}
+\indexentry{exterior equivalent|hyperpage}{87}
+\indexentry{Cocycle equation|hyperpage}{88}
+\indexentry{$G$-prime|hyperpage}{89}
+\indexentry{$G$-simple|hyperpage}{91}
+\indexentry{detects ideals|hyperpage}{93}
+\indexentry{separates ideals|hyperpage}{93}
+\indexentry{Fell bundles|hyperpage}{96}
+\indexentry{primitive ideal space|hyperpage}{97}
+\indexentry{spectrum of a $C^*$-algebra|hyperpage}{97}
+\indexentry{hull-kernel topology|hyperpage}{97}
+\indexentry{transposed action of $G$|hyperpage}{98}
+\indexentry{topologically free|hyperpage}{98}
+\indexentry{properly outer|hyperpage}{99}
+\indexentry{disjoint representations|hyperpage}{100}
+\indexentry{$C^*$-simple|hyperpage}{103}
+\indexentry{unique trace property|hyperpage}{103}
+\indexentry{quasi-regular representation|hyperpage}{105}
+\indexentry{$K \mathaccentV {bar}016\rtimes _r G$|hyperpage}{108}

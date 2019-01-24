@@ -93,22 +93,21 @@ Recall that we may identify $G$ as a subset of the unitary group of $M(A \rtimes
 	\begin{align*}
 		\varphi(a u_t) = \lim_{\text{SOT}} \varphi(x_i )\varphi(a u_t) = \lim_{\text{SOT}} \varphi(u_t \alpha_{t}^{-1}(x_i a )) = \lim_{\text{SOT}} \varphi(u_t) \varphi(\alpha_t^{-1}(x_i))\varphi(\alpha_{t}^{-1}(a)) = 0,
 	\end{align*}
-	as $A \subseteq \mathrm{mult}(\varphi)$. \todo{Move to prelim} see \cite[Proposition 1.5.7 p.t (2)]{brown2008c}.
+	as $A$ is contained in the multiplicative domain of $\varphi$.
 \end{proof}
+
+	Whenever $G \acts\alpha A$, we let $I_r$ denote the kernel of the canonical surjection $ \pi_r \colon A \rtimes_\alpha G \to A \rtimes_{\alpha , r}G$ and $E_r$ denote the canonical faithful conditional expectation, see e.g., \cite[Proposition 4.1.9]{brown2008c}, given by
+	\begin{align*}
+	E_r \colon A \rtimes_{\alpha,r} G &\to A, \\ 
+		c_c(G,A) \ni \sum_{g \in G} a_g  u_g &\mapsto a_e \in A,
+	\end{align*}
+	and let $E = E_r \circ \pi_r$ denote the canonical conditional expectation $A \rtimes_{\alpha }G \to A$. Also, we will identify $A$ inside $A \rtimes_\alpha G$ and $A \rtimes_{\alpha,r}G$ via $a \mapsto a\lambda_e$.	
 With this, we obtain the following:
 \begin{theorem}
 	Let $(A,G,\alpha)$ be a $C^*$-dynamical system, $G$ discrete. If $\alpha$ is topologically free, then $A$ detects ideals in $A \rtimes_{\alpha}G$ modulo the kernel of the canonical surjection $A \rtimes_\alpha G \to A \rtimes_{\alpha,r}G$. 
 	\label{ASthm1}
 \end{theorem}
 \begin{proof}
-	\todo{Include in prelim}
-	Let $I_r$ denote the kernel of the canonical surjection $ \pi_r \colon A \rtimes_\alpha G \to A \rtimes_{\alpha , r}G$ and let $E$ denote the canonical faithful conditional expectation (see e.g., \cite[Proposition 4.1.9]{brown2008c} \todo{include in Prelim}) given by
-	\begin{align*}
-	E_r \colon A \rtimes_{\alpha,r} G &\to A, \\ 
-		c_c(G,A) \ni \sum_{g \in G} a_g  u_g &\mapsto a_e \in A,
-	\end{align*}
-	and let $E = E_r \circ \pi_r$ denote the canonical conditional expectation $A \rtimes_{\alpha }G \to A$.
-	
 	Suppose that $I$ is an ideal of $A \rtimes_\alpha G$ with $A \cap I=0$ and $I \not \subseteq I_r$. Since $E_r$ is faithful, let $a \in I_+$ with $E_r(a) \neq 0$. By density of $\cc(G,A)$ in $A \rtimes_\alpha G$, pick $b = \sum_{g \in F} b_g u_g$ for some finite set $F \subseteq G$ with
 	\begin{align*}
 		\lv a - b \rv < \frac{\lv E (a) \rv}{2}.
