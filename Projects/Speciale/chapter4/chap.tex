@@ -26,7 +26,7 @@ These objects interact nicely with dynamical systems (we already saw this for $A
 \begin{align*}
 	\alpha_r^*([\pi]_u) := [\pi \circ \alpha_{r^{-1}}] \text{ and } \alpha_{r}^*(\ker \pi) = \ker \pi \circ \alpha_{r^{-1}},
 \end{align*}
-for all irreducible representations $\pi$ of $A$. These are indeed actions on topological spaces, i.e., the corresponding maps out of $G \times \hat A \to \hat A$ and $G \times \Prim A \to \Prim A$ are jointly continuous, see e.g., \cite[Lemma 7.1]{williamsmorita}.
+for all irreducible representations $\pi$ of $A$. These are indeed actions on topological spaces, i.e., the corresponding maps $G \times \hat A \to \hat A$ and $G \times \Prim A \to \Prim A$ are jointly continuous, see e.g., \cite[Lemma 7.1]{williamsmorita}.
 \begin{definition}
 	For an action $G \acts \alpha A$ we say that the action is \myemph{topologically free} if for all $t_1,\dots,t_n \in G\backslash\{e\}$ the set $\bigcap_{i=1}^n \left\{ [\pi]_u \in \hat A | \alpha_{t_i}^*([\pi]_u)\neq [\pi]_u \right\}$ is dense in $\hat A$.
 \end{definition}
@@ -59,7 +59,7 @@ for all irreducible representations $\pi$ of $A$. These are indeed actions on to
 	The action of $G$ on $\dd_F G$ (the Furstenberg boundary) is topologically free if and only if it is free.
 \end{corollary}
 \begin{proof}
-	This follows directly from the earlier remark that $\dd_F G$ is extremally disconnected, for $\dd_F G_s$ is clopen by a theorem of Frolik, see e.g., \cite[Theorem 3.1]{frolik1971maps}, which states that the set of fixed points of a homeomorphism $f \colon X \to X$, where $X$ is a compact extremally disconnected space, is clopen in $X$.
+	This follows directly from the earlier remark that $\dd_F G$ is extremally disconnected, for $(\dd_F G)_s$ is clopen by a theorem of Frolik, see e.g., \cite[Theorem 3.1]{frolik1971maps}, which states that the set of fixed points of a homeomorphism $f \colon X \to X$, where $X$ is a compact extremally disconnected space, is clopen in $X$.
 \end{proof}
 \begin{definition}
 	For a $C^*$-algebra $A$, we say that $\alpha \in \mathrm{Aut}(A)$ is \myemph{properly outer} if for all $\alpha$-invariant non-zero ideals $I \subseteq A$ and all inner automorphisms $\beta$ of I it holds that
@@ -80,7 +80,7 @@ Elliot and Olesen + Pedersen showed in \cite[Theorem 3.2]{elliott1980some} and \
 	Let $A$ denote an arbitrary $C^*$-algebra with two representations $\pi$ and $\tau$ on Hilbert spaces $\H_\pi$ and $\H_\tau$. We say that $\pi$ and $\tau$ are \myemph{disjoint representations} if there is no subrepresentations of one which is unitarily equivalent to a non-zero subrepresentation of the other.
 \end{definition}
 \begin{remark}
-	The above definition is the (to the author's knowledge) original definition. We will use the following fact: If $\pi$ and $\tau$ are disjoint if and only if $1 \oplus 0$ is an element of the strong operator closure of $\pi \oplus \tau (A)$, i.e., there is some bounded net $(x_i) \subseteq A$ with $\pi(x_i) \to 1$ and $\tau(x_i) \to 0$ in their strong operator topology, and this happens if and only if $\pi \not \sim _u \tau$. See e.g. \cite[Proposition 2.1.4]{arveson2012invitation} for a proof. 
+	The above definition is the (to the author's knowledge) original definition. We will use the following fact: If $\pi$ and $\tau$ are disjoint if and only if $1 \oplus 0$ is an element of the strong operator closure of $(\pi \oplus \tau) (A)$, i.e., there is some bounded net $(x_i) \subseteq A$ with $\pi(x_i) \to 1$ and $\tau(x_i) \to 0$ in their strong operator topology, and this happens if and only if $\pi \not \sim _u \tau$. See e.g. \cite[Proposition 2.1.4]{arveson2012invitation} for a proof. 
 \end{remark}
 \sssection{Consequences of Topological Freeness}
 Recall that we may identify $G$ as a subset of the unitary group of $M(A \rtimes_\alpha G)$. We denote this identification by $u_t$, $t \in G$. 
@@ -89,7 +89,7 @@ Recall that we may identify $G$ as a subset of the unitary group of $M(A \rtimes
 	\label{ASlem1}
 \end{lemma}
 \begin{proof}
-	Let $(e_i) \subseteq A$ be a bounded net such that $\pi  \circ \alpha_{t}^{-1}(e_i) \to 1$ in the strong operator topology and $\pi(e_i) \to 0$. Let $\varphi$ be a completely positive extension of $\pi$ to $A  \rtimes_\alpha G$ of norm one. Then, for $a \in A$ and $t \in G$:
+	Let $(x_i) \subseteq A$ be a bounded net such that $\pi  \circ \alpha_{t}^{-1}(x_i) \to 1$ in the strong operator topology and $\pi(x_i) \to 0$. Let $\varphi$ be a completely positive extension of $\pi$ to $A  \rtimes_\alpha G$ of norm one. Then, for $a \in A$ and $t \in G$:
 	\begin{align*}
 		\varphi(a u_t) = \lim_{\text{SOT}} \varphi(x_i )\varphi(a u_t) = \lim_{\text{SOT}} \varphi(u_t \alpha_{t}^{-1}(x_i a )) = \lim_{\text{SOT}} \varphi(u_t) \varphi(\alpha_t^{-1}(x_i))\varphi(\alpha_{t}^{-1}(a)) = 0,
 	\end{align*}
@@ -109,7 +109,7 @@ With this, we obtain the following:
 	\end{align*}
 	and let $E = E_r \circ \pi_r$ denote the canonical conditional expectation $A \rtimes_{\alpha }G \to A$.
 	
-	Suppose that $I$ is an ideal of $A \rtimes_\alpha G$ with $A \cap I=0$ and $I \not \subseteq I_r$. Since $E_r$ is faithful. By density of $\cc(G,A)$ in $A \rtimes_\alpha G$, pick $b = \sum_{g \in F} b_g u_g$ for some finite set $F \subseteq G$ with
+	Suppose that $I$ is an ideal of $A \rtimes_\alpha G$ with $A \cap I=0$ and $I \not \subseteq I_r$. Since $E_r$ is faithful, let $a \in I_+$ with $E_r(a) \neq 0$. By density of $\cc(G,A)$ in $A \rtimes_\alpha G$, pick $b = \sum_{g \in F} b_g u_g$ for some finite set $F \subseteq G$ with
 	\begin{align*}
 		\lv a - b \rv < \frac{\lv E (a) \rv}{2}.
 	\end{align*}
@@ -119,7 +119,7 @@ With this, we obtain the following:
 			A + I \ar[r, "q"] & (A+I)/I \ar[r, "\cong"] & A \ar[r, "\pi"]  & \mathbb{B}(\H_\pi),
 		\end{tikzcd}
 	\end{equation*}
-	where $q$ is the quotient map. We are going to extend $\pi'$ to a completely positive map on $A \rtimes_\alpha G$ in the following way:	For $x \in A \rtimes_\alpha G$, let $\tau(x) := P _e\tilde \pi \rtimes \lambda(x) P_e$, where $P_e$ is the minimal projection $\H_\pi \otimes \ell^2(G) \to \H_\pi \otimes \C \delta_{e}$, then $\tau \colon A \rtimes_\alpha G$ is a completely positive map extending $\pi'$ (after identifying $\H_\pi$ with $\H_\pi \otimes \C \delta_e$) to all of $A \rtimes_\alpha G$; if $a \in A$ and $s,t \in G$ then
+	where $q$ is the quotient map. We are going to extend $\pi'$ to a completely positive map on $A \rtimes_\alpha G$ in the following way:	For $x \in A \rtimes_\alpha G$, let $\tau(x) := P _e(\tilde \pi \rtimes \lambda(x)) P_e$, where $P_e$ is the minimal projection $\H_\pi \otimes \ell^2(G) \to \H_\pi \otimes \C \delta_{e}$, then $\tau \colon A \rtimes_\alpha G$ is a completely positive map extending $\pi'$ (after identifying $\H_\pi$ with $\H_\pi \otimes \C \delta_e$) to all of $A \rtimes_\alpha G$; if $a \in A$ and $s,t \in G$ then
 	\begin{align*}
 		\tau(au_s) \xi \otimes \delta_t = \begin{cases}
 			\pi(a) \xi \otimes \delta_e & \text{ if } s = t = e,\\
@@ -148,11 +148,11 @@ With this, we obtain the following:
 
 If we further assume that $A$ is abelian, then the converse holds as well:
 \begin{theorem}
-	Let $X$ be a locally compact Hausdorff space. Given $C^*$-dynamical sytem $(C_0(X),G,\alpha)$ with $G$ discrete, if $C_0(X)$ detect ideals in $C_0(X) \rtimes_{\alpha}G$ modulo $I_r$, then the action is topologically free.
+	Let $X$ be a locally compact Hausdorff space. Given a $C^*$-dynamical system $(C_0(X),G,\alpha)$ with $G$ discrete, if $C_0(X)$ detect ideals in $C_0(X) \rtimes_{\alpha}G$ modulo $I_r$, then the action is topologically free.
 	\label{ASthm2}
 \end{theorem}
 \begin{proof}
-	Let $x \in X$, and consider the Hilbert space $\ell^2(G.x) = \ell^2(\left\{ t.x \mid t \in G\} \right\}$. We define the covariant pair $(\pi_x,u)$ for $(C_0(X),G,\alpha)$ by
+	Let $x \in X$, and consider the Hilbert space $\ell^2(G.x)$. We define the covariant pair $(\pi_x,u)$ for $(C_0(X),G,\alpha)$ by
 	\begin{align*}
 		\pi_x(f) \delta_{t.x} = f(t.x) \delta_{t.x} \text{ and } u_s \delta_{t.x} = \delta_{st.x},
 	\end{align*}
@@ -162,7 +162,7 @@ If we further assume that $A$ is abelian, then the converse holds as well:
 	\end{align*}
 	so that we obtain a representation $\pi_x \rtimes u_x$ of $C_0(X) \rtimes_\alpha G$ on $\ell^2(G.x)$. Let $I = \bigcap_{x \in  X} \ker \pi_{x}$. If $f \in I$, then $f(t.x) = 0$ for all $t \in G$ (in particular for $t=e$) and $x \in  X$, so $f = 0$. Hence $I \cap C_0(X) = 0$.
 	
-	Suppose that $G \acts \alpha C_0(X)$ is not topologically free. Then there is $e \neq s \in G$ such that $V_s=\left\{ y \in X  \mid s.y \neq y \right\}$ is not dense in $X$. Let $0 \neq f \in C_0(X)$ with $\supp f \subseteq \overline{V_s}^c$. Let $t \in G$ and note that
+	Suppose that $G \acts \alpha C_0(X)$ is not topologically free. Then there is $e \neq s \in G$ such that $V_s=\left\{ y \in X  \mid s.y \neq y \right\}$ is not dense in $X$. Let $0 \neq f \in C_0(X)$ with $\supp f \subseteq \overline{V_s}^c$. Let $t \in G$ and note the following:
 	\begin{itemize}[nosep]
 	\item If $t.x \in \supp f$ then $st.x = t.x$ and we see that
 	\begin{align*}
@@ -204,16 +204,13 @@ In order to show our desired results, we need to cover a bit of theory on condit
 
 The following result shows the close relationship between topological freeness of actions and $C^*$-simplicty of groups with the ideal structure of crossed products of $G$-boundaries. It is (to the author's knowledge) due to \cite{breuillard2017c}, however we follow a proof of Ozawa (see e.g., \cite{ozawa2014lecture}). The result is heavily inspired by the proof of the Archbold-Spielberg result covered earlier.
 \begin{proposition}
-	Let $G \acts {} X$ be a minimal action on a compact Hausdorff space $X$. If the stabilizer group $G_x$ is $C^*$-simple for some $x \in X$, then the corresponding reduced crossed product $C(X) \rtimes_{\alpha,r} G$ is simple.
+	Let $G \acts {} X$ be a minimal action on a compact Hausdorff space $X$. If the stabilizer group $G_x$ is $C^*$-simple for some $x \in X$, then the corresponding reduced crossed product $C(X) \rtimes_{r} G$ is simple.
 	\label{ozawa15pt1}
 \end{proposition}
 \begin{proof}
-	Suppose that $I \subseteq C(X) \rtimes_r G$ is a non-trivial closed ideal and let $x \in X$. Let $E$ denote the canoncial faithful conditional expectation $C(X) \rtimes_r G \to C(X)$. Then
-\begin{itemize}
-	\item $E(I) \neq 0$ as $E$ is faithful,
-	\item $E(I)$ is dense in $C(X)$ by minimality of $G \acts{}X$, as $\overline{E(I)}$ is a non-empty $G$-invariant ideal of $C(X)$ so $\overline{E(I)} = C(X)$.
-\end{itemize}
-Let $\tau_0$ denote the canoncial faithful tracial state on $C_r^*(G)$ let $f \in C(X)\{0\}$ with $f(x) \neq 0$. Then 
+	Suppose that $I \subseteq C(X) \rtimes_r G$ is a non-trivial closed ideal and let $x \in X$. Let $E$ denote the canoncial faithful conditional expectation $C(X) \rtimes_r G \to C(X)$. Then $E(I) \neq \{0\}$ as $E$ is faithful which implies that $E(I)$ is dense in $C(X)$ by minimality of $G \acts{}X$, as $\overline{E(I)}$ is a non-empty $G$-invariant ideal of $C(X)$ so $\overline{E(I)} = C(X)$.
+
+Let $\tau_0$ denote the canoncial faithful tracial state on $C_r^*(G)$ let $f \in C(X)$ with $f(x) \neq 0$. Then 
 \begin{align*}
 	\tau_0 (E_x(f \lambda_e))= f(x) = \delta_x(E(f\lambda_e)),
 \end{align*}
@@ -252,23 +249,23 @@ is commutative with the vertical maps being the left-regular representations, se
 \end{remark}
 We have seen that topological freeness implies simplicity of $A \rtimes_{\alpha,r} G$ for $G$-simple $C^*$-algebras. We now prepare to cover a result from the same paper as above allows us to determine topological freeness from properties of $G$ and $C(X)\rtimes_\alpha G$, but first we need a lemma which will allow us to describe a useful representation:
 \begin{lemma}
-	Suppose that $X$ is a minimal $G$-space such that for some $x \in X$ the normal subgroup $G_x^\circ$ is amenable. Then there is a representation $\pi_x$ of $C(X) \rtimes_r G$ on $\ell^2(G/G_x^\circ)$ such that
+	Suppose that $X$ is a minimal $G$-space such that for some $x \in X$ the normal subgroup $G_x^\circ$ is amenable. Then there is a representation $\Pi_x$ of $C(X) \rtimes_r G$ on $\ell^2(G/G_x^\circ)$ such that
 	\begin{align*}
-		\Pi_x(f)\delta_{[t]} = f(tx)\delta_{[t]} \text{  and  } \Pi_x(\lambda_s)\delta_{[t]} = \delta_{[st]},
+		\Pi_x(f)\delta_{[t]} = f(t.x)\delta_{[t]} \text{  and  } \Pi_x(\lambda_s)\delta_{[t]} = \delta_{[st]},
 	\end{align*}
 	for $s,t \in G$ and $f \in C(X)$.
 	\label{CXGrep}
 \end{lemma}
 \begin{proof}
-	For the remainder of this proof, we will let $\lambda^x$ denote the representation of $G$ in $C_r^*(G/G_x^\circ)$ from \cref{quotientextend} and $\lambda$ denote the left-regular representation of $G$. Observe that we may define a $*$-homomorphism $\pi_x \colon C(X) \to \ell^\infty(G/G_x^\circ)$, given by $\pi_x(f)([t])=f(tx)$: It is well-defined, for if $[s]=[t] \in G/G_x^\circ$, then 
+	For the remainder of this proof, we will let $\lambda^x$ denote the representation of $G$ on $C_r^*(G/G_x^\circ)$ from \cref{quotientextend} and $\lambda$ denote the left-regular representation of $G$. Observe that we may define a $*$-homomorphism $\pi_x \colon C(X) \to \ell^\infty(G/G_x^\circ)$, given by $\pi_x(f)([t])=f(t.x)$: It is well-defined, for if $[s]=[t] \in G/G_x^\circ$, then 
 	\begin{align*}
-		\pi_x(f)([t])=f(tx) = f(sx) = \pi_x(f)([s]),
+		\pi_x(f)([t])=f(t.x) = f(s.x) = \pi_x(f)([s]),
 	\end{align*}
-	for all $s,t \in G$ and $f \in C(X)$ as $s^{-1}tx = x$ if and only if $sx=tx$. It is easy to verify that it is a $*$-homomorphism. In fact, it is injactive: If $\pi_x(f) = \pi_x(g)$, then $f(tx)=g(tx)$ for all $t \in G$, which by minimality implies that $f=g$.
+	for all $s,t \in G$ and $f \in C(X)$ as $s^{-1}t.x = x$ if and only if $s.x=t.x$. It is easy to verify that it is a $*$-homomorphism. In fact, it is injective, for if $\pi_x(f) = \pi_x(g)$, then $f(t.x)=g(t.x)$ for all $t \in G$, which by minimality implies that $f=g$.
 	
-	Redefine now $\pi_x$ to denote the associated representation of $C(X)$ as multiplication operators on $\ell^2(G/G_x^\circ)$ and note that for all $t,s \in G$ and $f \in C(X)$:
+	Redefine now $\pi_x$ to denote the associated representation of $C(X)$ as multiplication operators on $\ell^2(G/G_x^\circ)$ and note that for all $t,s \in G$ and $f \in C(X)$ we have
 	\begin{align*}
-		\lambda^x_t \pi_x (f) \lambda^x_{t^{-1}} \delta_{[s]} = f(t^{-1}sx)\lambda^x_{t^{-1}} \delta_{[ts]} = f(t^{-1}sx) \delta_{[s]} = t.f(sx) \delta_{[t]} = \pi_x(t.f) \delta_{[s]},
+		\lambda^x_t \pi_x (f) \lambda^x_{t^{-1}} \delta_{[s]} = f(t^{-1}s.x)\lambda^x_{t^{-1}} \delta_{[ts]} = f(t^{-1}s.x) \delta_{[s]} = t.f(s.x) \delta_{[t]} = \pi_x(t.f) \delta_{[s]},
 	\end{align*}
 	so that the pair $(\lambda^x, \pi_x, \ell^2(G/G_x^\circ))$ is a covariant pair for the $C^*$-dynamical system $G \acts {} C(X)$. By Fell's absorbtion principle (see \cite[Proposition 4.1.7]{brown2008c} or \cite[25]{approxtalk}), we may identify
 	\begin{align*}
@@ -287,7 +284,7 @@ Let $\iota \colon \mathbb{B}(\ell^2(G/G_x^\circ)) \otimes \mathbb{B}(\ell^2(G/G_
 Then the $^*$-homomorphism $\Pi_x \colon C(X) \rtimes_r G \to \mathbb{B}(\ell^2(G/G_x^\circ))$ given by $\Pi_x(a) := u^* \iota(\sigma_x(a)) u $ has the desired properties.
 \end{proof}
 \begin{proposition}
-	Suppose that $X$ is a minimal $G$-space and $C(X) \rtimes_\alpha G$ is simple. If there is some $x \in X$ such that the normal subgroup $G_x^\circ$ of $G$ is amenable, then the action $G \acts { } X$ is topologically free. 
+	Suppose that $X$ is a minimal $G$-space and $C(X) \rtimes_r G$ is simple. If there is some $x \in X$ such that the normal subgroup $G_x^\circ$ of $G$ is amenable, then the action $G \acts { } X$ is topologically free. 
 	\label{ozawa15pt2}
 \end{proposition}
 \begin{proof}
@@ -301,19 +298,19 @@ Then the $^*$-homomorphism $\Pi_x \colon C(X) \rtimes_r G \to \mathbb{B}(\ell^2(
 \begin{lemma}[\mbox{\cite[Lemma 3.1]{hamana1985injective}}]
 	Let $A$ and $B$ be unital $C^*$-algebras and $G$ a discrete group such that $G \acts \alpha A$ and $G \acts \beta B$. If $\psi \colon A \to B$ is a $G$-equivariant unital completely positive map, then there a $G$-equivariant unital completely positive map 
 	\begin{align*}
-		\tilde \psi \colon A \rtimes_{\alpha,r}  G &\to B \rtimes_{\alpha,r} G
+		\tilde \psi \colon A \rtimes_{\alpha,r}  G &\to B \rtimes_{\alpha,r} G\\
 		a \lambda_s \mapsto \psi(a) \lambda_s 
 	\end{align*}
 	which extends $\psi$. Moreover, $\psi$ is an isometry or surjection if and only if $\tilde \psi$ is and similarly $\psi$ is a $*$-homomorphism if and only if $\tilde \psi$ is.
 	\label{hamanalift}
 \end{lemma}
 \begin{lemma}[\mbox{\cite[Theorem 6 + Corollary 7]{ozawa2014lecture}}]
-	whenever $A$ is a unital $G$-$C^*$-algebra, then there is a $G$-equivariant unital completely positive map of $A$ into $C(\dd_F G)$ extending the map sending $1$ to $1$. 
+	whenever $A$ is a unital $G$-$C^*$-algebra, then there is a $G$-equivariant unital completely positive map of $A$ into $C(\dd_F G)$ extending the map sending $1_A$ to $1_{C(\dd_F G)}$, which is $G$-equivariant as $G$ act by automorphisms on $A$ and $C(\dd_F G)$. 
 	\label{1lifthamana}
 \end{lemma}
 With these results, we continue.
 \begin{proposition}
-	Let $G \acts {} A$ with $1 \in A$ and let $X$ be a $G$-boundary. If $A \rtimes_r G$ is non-simple then $(A \otimes C(X))\rtimes_r G$ is non-simple in the following way: If $I \subseteq A \rtimes_r G$ is a non-trivial ideal, then the ideal generated by $I$ in $(A \otimes C(X))\rtimes_r G$ is proper.
+	Let $G \acts {} A$ with $1 \in A$ and let $X$ be a $G$-boundary. If $I\subseteq A \rtimes_r G$ is a non-trivial ideal, then the ideal generated by $I$ in $(A \otimes C(X))\rtimes_r G$ is proper.
 	\label{ozawprop17}
 \end{proposition}
 \begin{proof}
@@ -335,17 +332,14 @@ With these results, we continue.
 	\begin{align*}
 		K' :=\overline{K \cdot \pi(A \rtimes_r G)}.
 	\end{align*}
-	Let $x \in B$ and let $(e_i)$ denote an approximate identity of $K'$, and see that
-	\begin{itemize}[nosep]
-		\item if $e_i x \to x$, then $x \in K'$,
-		\item if $x \in K'$, then $e_i x \to x$,
-	\end{itemize}
-	so $K' \cap C^*(\overline \pi(C(X))) = K$. Let $q$ denote the quotient map $B \to B/K'$, and note that the composition $q \circ \overline \pi$ will be multiplicative when restricted to $A \otimes C(X)$ as $A \rtimes_r G$ is contained in the multiplicative domain of $\overline \pi$. Moreover, $q$ will be $G$-equivariant with respect to $\mathrm{Ad} \lambda_s$, $s \in G$. 
+	Let $x \in B$ and let $(e_i)$ denote an approximate identity of $K'$. If $e_i x \to x$, then $x \in K'$, hence $x \in K'$ if and only if $e_i x\to x$ so $K' \cap C^*(\overline \pi(C(X))) = K$. 
+	
+	Let $q$ denote the quotient map $B \to B/K'$, and note that the composition $q \circ \overline \pi$ will be multiplicative when restricted to $A \otimes C(X)$ as $A \rtimes_r G$ is contained in the multiplicative domain of $\overline \pi$. Moreover, $q$ will be $G$-equivariant with respect to $\mathrm{Ad} \lambda_s$, $s \in G$. 
 
 	We conclude that the ideal $\ker (q \circ \overline \pi)$ contains $I$ and is proper since the non-zero ideal $K$ of $C^*(\overline \pi(C(X)))$ is proper, hence the ideal generated by $I$ will be non-trivial and proper.
 \end{proof}
 \begin{definition}
-	Let $B$ be a $C^*$-algebra equipped with a $G$-action and let $K \subseteq B$ be a $G$-invariant ideal of $B$. We then define an ideal \myemph{$K \bar \rtimes_r G$} of $B \rtimes_r G$ by
+	Let $B$ be a $G$-$C^*$-algebra and $K \subseteq B$ be a $G$-invariant ideal of $B$. We then define an ideal \myemph{$K \bar \rtimes_r G$} of $B \rtimes_r G$ by
 	\begin{align*}
 		K \bar \rtimes_r G := \{b \in B \rtimes_r G \ \mid \ E(b \lambda_s^* ) \in K \text{ for all } s \in G\},
 	\end{align*}
@@ -465,22 +459,18 @@ For a proof, see \cite[lemma 11]{ozawa2014lecture}. With these results in hand, 
 	\end{align*}
 	We also identify $A$ with its image in $(A \otimes C(\dd_F G)) \rtimes_r G$. Then $I_A := J \cap A$ is a $G$-equivariant ideal of $A$ which is $G$-invariant as the inclusion $A \subseteq (A \otimes C(\dd_F G)) \rtimes_r G$ is $G$-equivariant. Recall that we assumed $G$-simplicity of $A$ so $I_A = \{0\}$, implying that $I_A \bar \rtimes_r G = 0$, for if $x \in I_A \bar \rtimes_r G$ then $x^*x \in I_A \bar \rtimes_r G$, which happens if and only if $E(x^*x) \in I_A$, where $E$ is the canonical faithful conditional expectation $A \rtimes_r G \to A$. As $I_A = 0$ and $E$ is faithful, this implies that $x^*x = 0$. 
 
-	We finish the proof by showing that $I \subseteq I_A \bar \rtimes_r G$: Let $y \in I \subseteq J \subseteq J_A \bar \rtimes_r G$. Moreover, we have the following commutative diagram
+	We finish the proof by showing that $I \subseteq I_A \bar \rtimes_r G$: Let $y \in I \subseteq J \subseteq J_A \bar \rtimes_r G$, and note that we then obtain a commutative diagram with exact rows
 	\begin{equation*}
 		\begin{tikzcd}
-			0 \ar[r] &  I_A \bar \rtimes_r G \ar[d] \ar[r] & A \rtimes_r G \ar[r, "\pi_A"] \ar[d, hook] & (A / I_A)\rtimes_r G  \ar[r] \ar[d, hook]  & 0\\
-			0  \ar[r] & J_A \bar \rtimes_r G  \ar[r] & (A \otimes C(X)) \rtimes_r G \ar[r, "\pi"] & \left((A \otimes C(X))/J_A\right) \rtimes_r G \ar[r] & 0
+			0 \ar[r] &  I_A \bar \rtimes_r G \ar[d, hook] \ar[r] & A \rtimes_r G \ar[r] \ar[d, hook] & (A / I_A)\rtimes_r G  \ar[r] \ar[d, hook]  & 0\\
+			0  \ar[r] & J_A \bar \rtimes_r G  \ar[r] & (A \otimes C(X)) \rtimes_r G \ar[r] & \left((A \otimes C(X))/J_A\right) \rtimes_r G \ar[r] & 0
 		\end{tikzcd}
 	\end{equation*}
-	In particular,
+	as $I_A \subseteq J_A$. Then, since $y \in A \rtimes_r G$ and $y \in J_A \bar \rtimes_r G$, it follows that $y \in I_A \bar \rtimes_r G = \{0\}$ by the above diagram. As $y$ was arbitrary, this shows that $I = \{0\}$.
 
-	It is easy to see that $I \subseteq I_A \bar \rtimes_r G$: if $y \in I$, then $i(y) \in J \subseteq J_A \bar \rtimes_r G$. By the above diagram, this implies that $y \in \ker \pi = I_A \bar \rtimes_r G$. 
-	
-	We finish the claim by showing that $I_A \bar \rtimes_r G = 0$: For all $y \in I_A \rtimes_r G$ we have $E_A(y^*y) \in I_A = 0$, so $y = 0$ by faithfulness. This shows that $I = 0$, since $I \subseteq I_A \bar \rtimes_r G = 0$.
+	$8 \implies 1$: Trivial when applied to the trivial $G$-boundary $\{\cdot\}$.
 
-	$5 \implies 1$: Trivial when applied to the trivial $G$-boundary $\{\cdot\}$.
-
-	$5 \implies 4 \implies 3 \implies 2$: follows from \cref{ozawa15pt1} and \cref{ozawa15pt2}.
+	$8 \implies 7 \implies 6 \implies 5$: follows from \cref{ozawa15pt1} and \cref{ozawa15pt2}.
 \end{proof}
 \begin{corollary}
 	If $G$ is $C^*$-simple, then $C(X) \rtimes_{r}G$ is simple for all compact minimal $G$-spaces $X$.
@@ -505,4 +495,5 @@ We include also a result of the late Uffe Haagerup, which was based on the above
 	\end{enumerate}
 	\label{uffecsimple}
 \end{theorem}
+We end this chapter (in fact this thesis) by saying that, to a certain degree, the above result have been developed further even, and the theory is still finding new applications and developments today. The consequence is that mathematicians now have a much stronger toolkit for determening $C^*$-simplicity of discrete groups than ten years ago.
 

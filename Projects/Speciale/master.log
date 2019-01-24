@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.12.7)  24 JAN 2019 14:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.12.7)  24 JAN 2019 16:52
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -3834,8 +3834,8 @@ em.4.2.3}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.185 \end{corollary}
-                     ]
+l.180 	\end{align*}
+                   ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 191.
@@ -3883,83 +3883,89 @@ ifier (name{theorem.4.3.1}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.231 	\end{align*}
-                   ] [101pdfTeX warning (ext4): destination with the same ident
-ifier (name{theorem.4.3.2}) has been already used, duplicate ignored
+l.230 	\begin{align*}
+                     ] [101pdfTeX warning (ext4): destination with the same ide
+ntifier (name{theorem.4.3.2}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.264 	\begin{align*}
-                     pdfTeX warning (ext4): destination with the same identifie
-r (name{theorem.4.3.3}) has been already used, duplicate ignored
+l.265 
+      pdfTeX warning (ext4): destination with the same identifier (name{theorem
+.4.3.3}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.264 	\begin{align*}
-                     ] [102pdfTeX warning (ext4): destination with the same ide
-ntifier (name{theorem.4.3.4}) has been already used, duplicate ignored
+l.265 
+      ] [102pdfTeX warning (ext4): destination with the same identifier (name{t
+heorem.4.3.4}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.295 	\begin{align*}
-                     ] [103pdfTeX warning (ext4): destination with the same ide
-ntifier (name{theorem.4.3.5}) has been already used, duplicate ignored
+l.294 	\end{align*}
+                   ] [103pdfTeX warning (ext4): destination with the same ident
+ifier (name{theorem.4.3.5}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.326 	D
-        efine an action of $G$ on $C^*(\overline \pi(C(X)))$ by inner automo...
-pdfTeX warning (ext4): destination with the same identifier (name{theorem.4.3.6
-}) has been already used, duplicate ignored
+l.324 
+      pdfTeX warning (ext4): destination with the same identifier (name{theorem
+.4.3.6}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.326 	D
-        efine an action of $G$ on $C^*(\overline \pi(C(X)))$ by inner automo...
-pdfTeX warning (ext4): destination with the same identifier (name{theorem.4.3.7
-}) has been already used, duplicate ignored
+l.324 
+      pdfTeX warning (ext4): destination with the same identifier (name{theorem
+.4.3.7}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.326 	D
-        efine an action of $G$ on $C^*(\overline \pi(C(X)))$ by inner automo...
-] [104pdfTeX warning (ext4): destination with the same identifier (name{theorem
-.4.3.8}) has been already used, duplicate ignored
+l.324 
+      ] [104pdfTeX warning (ext4): destination with the same identifier (name{t
+heorem.4.3.8}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.358 	\end{align*}
-                   pdfTeX warning (ext4): destination with the same identifier 
-(name{theorem.4.3.9}) has been already used, duplicate ignored
+l.354 \end{remark}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{theorem.4.3.9}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.358 	\end{align*}
-                   ] [105pdfTeX warning (ext4): destination with the same ident
-ifier (name{theorem.4.3.10}) has been already used, duplicate ignored
+l.354 \end{remark}
+                  ] [105pdfTeX warning (ext4): destination with the same identi
+fier (name{theorem.4.3.10}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.399 	\end{equation*}
-                      ] [106] [107pdfTeX warning (ext4): destination with the s
-ame identifier (name{theorem.4.3.11}) has been already used, duplicate ignored
+l.393 	\end{equation*}
+                      ] [106]
+Overfull \hbox (21.23822pt too wide) in paragraph at lines 444--445
+[]\T1/cmr/m/n/10 By sim-plic-ity of $\OML/cmm/m/it/10 C[]\OT1/cmr/m/n/10 (\OML/
+cmm/m/it/10 G\OT1/cmr/m/n/10 )$\T1/cmr/m/n/10 , we may con-sider the canon-cial
+ tra-cial state as a map $\OML/cmm/m/it/10 ^^\[] [] [] ^^Y\OT1/cmr/m/n/10 (\OML
+/cmm/m/it/10 C[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 G\OT1/cmr/m/n/10 )) \OMS/cmsy
+/m/n/10 !
+ []
+
+[107pdfTeX warning (ext4): destination with the same identifier (name{theorem.4
+.3.11}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.459 
+l.455 
       ] [108pdfTeX warning (ext4): destination with the same identifier (name{t
 heorem.4.3.13}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.487 \begin{theorem}
-                     pdfTeX warning (ext4): destination with the same identifie
-r (name{theorem.4.3.14}) has been already used, duplicate ignored
+l.480 \end{note}
+                pdfTeX warning (ext4): destination with the same identifier (na
+me{theorem.4.3.14}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.487 \begin{theorem}
-                     ]) [109]
+l.480 \end{note}
+                ]) [109]
 Overfull \hbox (6.72047pt too wide) in paragraph at lines 35--35
 []\T1/cmr/m/n/10 Nathanial Patrick Brown and Naru-taka Ozawa. \T1/cmr/m/it/10 C
 *-algebras and finite-dimensional
@@ -4031,10 +4037,6 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 39.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 39.
 Package rerunfilecheck Info: File `master.out' has not changed.
 (rerunfilecheck)             Checksum: B547324C31C38FED6084CE3E1990CCCD;1632.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package logreq Info: Writing requests to 'master.run.xml'.
 \openout1 = `master.run.xml'.
 
@@ -4079,7 +4081,7 @@ m-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb
 onts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm
 -super/sftt1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfxc1095.pfb>
 </usr/share/texmf/fonts/type1/public/cm-super/sfxc1200.pfb>
-Output written on master.pdf (118 pages, 1224433 bytes).
+Output written on master.pdf (118 pages, 1225464 bytes).
 PDF statistics:
  1625 PDF objects out of 1728 (max. 8388607)
  1453 compressed objects within 15 object streams
