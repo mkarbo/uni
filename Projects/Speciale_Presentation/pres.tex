@@ -72,6 +72,7 @@
 \newcommand{\K}{K[ \wdots{x_1}{x_n} ]}
 \newcommand{\I}{\langle \wdots{p_1}{p_m}  \rangle}
 
+\renewcommand{\hat}[1]{\widehat{#1}}
 
 \newtheorem{theorem}{Sætning}
 \newtheorem{definition}{Definition}
@@ -139,23 +140,148 @@
 \frametitle{What the hell is my thesis about? Crossed products and dynamics}
 	\visible<2->{To a $C^*$-dynamical system $(A,G,\alpha)$, our goal is to answer the following question:}
 	\begin{center}
-		\visible<3->{\emph{What properties $P$ describes the ideal structure of $A \rtimes_\alpha G$?}}
+		\visible<3->{\emph{Question 1: What properties $P$ describes the ideal structure of $A \rtimes_\alpha G$?}}
 	\end{center}
-	\visible<4->{During this talk, the hope is that we will provide some answers to this question.}
+	\visible<4->{During this talk, the hope is that we will provide some answers to this question.} \visible<5->{\textbf{Answering question 1 in the above form is \underline{hard}}}. 
 	
 	\mbox{}
 
-	\visible<5->{In particular, we shall cover following cases:}
+	\visible<5->{Instead, we break it into special cases}\visible<6->{ Some cases discussed today will be:}
 	\begin{itemize}
-		\item<6-> $A$ is abelian - this corresponds to a topological dynamical system.
-		\item<7-> $G$ is abelian - by means of group spectra.
-		\item<8-> $A = \C$ - this corresponds to the group $C^*$-algebra constructon.
+		\item<7-> Which properties $P$ answers Question 1 when $A$ is abelian? 
+		\item<8-> Which properties $P$ answers Question 1 when $G$ is abelian?
+		\item<9-> Which properties $P$ answers Question 1 when $A = \C$?
+		\item<10-> Which properties $P$ answers Question 1 when $G$ is discrete?
 	\end{itemize}
-
-	\visible<9->{However, answering this question be quite hard, especially when $G$ is non-discrete!}
+	\visible<11->{And of course, we have overlaps between the above cases.}
 \end{frame}
 \section{Some notation and preliminaries}
-\begin{frame}[t]
-
+\begin{frame}
+\frametitle{Disclaimer}
+	\visible<2->{The theory discussed today is quite heavy and dull for the uninitiated.}\visible<3->{ Sorry.}
 \end{frame}
+\begin{frame}[t]
+\frametitle{A short primer on $C^*$-dynamical systems.}
+\visible<2->{Lots of prerequisite theory needed to understand todays talk.}\visible<3->{ \textbf{Not} possible to cover all.}
+\visible<4->{
+\begin{block}{Definitin}
+	An abstract $C^*$-algebra $A$ is a Banach algebra $A$ equipped with an involution such that 
+	\begin{align*}
+		\lv a \rv ^2 = \lv a^*a\rv,
+	\end{align*}
+	for all $a \in A$.
+\end{block}
+}
+\visible<5->{Notable examples include}
+\begin{itemize}
+	\item<6-> The algebra $C_0(X)$ of continuous functions vanishing at infinity on a locally compact Hausdorff space $X$.
+	\item<7-> The algebra $\mathbb{B}(\H)$ of bounded linear operators on a Hilbert space $\H$.
+	\item<8-> The group $C^*$-algebras $C_r^*(G)$ and $C^*(G)$ of a locally compact Hausdorff group $G$.
+\end{itemize}
+\visible<9->{All of these $C^*$-algebras play a crucial role in the theory of crossed products.}
+\end{frame}
+\begin{frame}[t]
+\frametitle{A short primer on $C^*$-dynamical systems.}
+\visible<1->{
+\begin{block}{Definitin}
+	An abstract \emph{$C^*$-algebra} $A$ is an involutive Banach algebra $A$ satisfying 
+	\begin{align*}
+		\lv a \rv ^2 = \lv a^*a\rv,
+	\end{align*}
+	for all $a \in A$.
+\end{block}
+}
+\visible<2->{
+\begin{block}{Definition}
+	A \emph{representation} of a $C^*$-algebra $A$ is a pair $\left( \pi, \H \right)$ consisting of a bounded $*$-homomorphism $\pi \colon A \to \mathbb{B}(\H)$.
+\end{block}
+}
+\visible<3->{
+	\begin{block}{The Gelfand-Neimark-Segal result}
+	The Gelfand-Neimark-Segal result is an important result stating that all $C^*$-algebras $A$ are faithfully represented on a Hilbert space.
+\end{block}
+}
+\end{frame}
+\begin{frame}[t]
+	\frametitle{A short primer on topological group theory}
+	\visible<2->{
+		\begin{block}{Definition}
+			A topological group $G$ is topological space equipped with a group structure such that the maps $G \times G \ni (s,t) \mapsto st$ and $G \ni t \mapsto t^{-1} \in G$ are continuous for all $s,t \in G$.\visible<3->{ By $G$ we will \textbf{always} denote a topological group $G$ with a locally compact Hausdorff topology.}
+		\end{block}
+	}
+	\visible<4->{Important cases include $\Z$, $\R$ and $S^1$.}
+	\visible<5->{Topological group are important and arises naturally in many fields of mathematics.}\visible<6->{ We will need results from the theory of \textbf{abstract harmonic analysis}, \textbf{representation theory} and \textbf{Fourier analysis}}
+	\visible<7->{
+		\begin{block}{Definition}
+			A unitary representation of a group $G$ is a pair $(u,\H)$ consisting of a group homomorphism $u \colon G \to \mathcal{U}(\H)$ such that for all $\xi \in \H$ the map $t \mapsto u_t \xi$ is continuous (= $u$ is strongly continuous).
+		\end{block}
+	}
+\end{frame}
+\begin{frame}[t]
+	\frametitle{A short primer on topological group theory}
+	\visible<1->{
+		\begin{block}{Definition}
+			A topological group $G$ is topological space equipped with a group structure such that the maps $G \times G \ni (s,t) \mapsto st$ and $G \ni t \mapsto t^{-1} \in G$ are continuous for all $s,t \in G$.\visible<1->{ By $G$ we will \textbf{always} denote a topological group $G$ with a locally compact Hausdorff topology.}
+		\end{block}
+	}
+	\visible<1->{
+		\begin{block}{Definition}
+			A unitary representation of a group $G$ is a pair $(u,\H)$ consisting of a group homomorphism $u \colon G \to \mathcal{U}(\H)$ such that for all $\xi \in \H$ the map $t \mapsto u_t \xi$ is continuous (= $u$ is strongly continuous).
+		\end{block}
+	}
+	\visible<2->{An important example is the \emph{left-regular representation} of $G$:}
+\visible<3->{
+	\begin{block}{Definition}
+		The left-regular representation of $G$ is the tuple $(\lambda, L^2(G))$, where
+		\begin{align*}
+			\lambda_t \xi(s) = \xi(t^{-1}s), 
+		\end{align*}
+		for $\xi \in L^2(G)$ and $s,t \in G$.
+	\end{block}
+}
+\end{frame}
+\begin{frame}[t]
+	\frametitle{The perhaps shortest primer on $C^*$-dynamical systems}
+	\visible<2->{
+		\begin{block}{Definition}
+			A \emph{$C^*$-dynamical system} is a triple $(A,G,\alpha)$ consisting of
+			\begin{itemize}
+				\item<3-> A $C^*$-algebra $A$,
+				\item<4-> A topological group $G$ and
+				\item<5-> a strongly continuous group homomorphism $\alpha \colon G \to \mathrm{Aut}(A)$ ($\forall a \in A : G \ni  t \mapsto \alpha_t(a) \in A \text{ is continuous}$).
+			\end{itemize}
+		\end{block}
+	}
+	\visible<7->{
+		\begin{block}{Definition}
+			A covariant representation of $(A,G,\alpha)$ is a triple $(\pi, u , \H)$ consisting of representations of $A$ and $G$ as bounded operators on a common Hilbert space $\H$ satisfying the relation
+			\begin{align*}
+				u_t \pi(a) u_t^* = \pi(\alpha_t(a)) \text{ for all } a \in A \text{ and } t \in G.
+			\end{align*}
+		\end{block}
+	}
+	\visible<8->{When $G$ is discrete and $A$ is unital, it is easy to associate to such a triple a \textbf{nice} new $C^*$-algebra:}
+\end{frame}
+\begin{frame}[t]
+	\frametitle{The perhaps shortest primer on $C^*$-dynamical systems and crossed products}
+	\visible<1->{When $G$ is discrete and $A$ is unital, it is easy to associate to such a triple a \textbf{nice} new $C^*$-algebra:}
+	\visible<2->{
+		\begin{block}{Discrete crossed product cookbook recipe}
+\begin{enumerate}
+	\item<2-> Given $(A,G,\alpha)$ with $G$ discrete and $A$ unital, consider the $*$-algebra 
+			\begin{align*}
+				C_c(G,A) = \{ \sum_{t \in F} a_t \delta_t  \mid F \subseteq G \text{ finite} \}.
+			\end{align*}
+	\item<3-> Pick a covariant representation $(\pi,u,\H)$ of $(A,G,\alpha)$ (they exist!)
+	\item<4-> Define a representation $\pi \rtimes u$ of $C_c(G,A)$ by
+		\begin{align*}
+			\pi \rtimes u \left( \sum a_t \delta_t \right) := \sum \pi(a_t) u_t	
+		\end{align*}
+	\item<5-> Take the closure of $\pi \rtimes u(C_c(G,A))$
+\end{enumerate}
+		\end{block}
+	}
+	\visible<6->{This is the building stone for constructing crossed products.} \visible<7->{Fails when $G$ is non-discrete.}
+\end{frame}
+\section{The general crossed product construction}
 \end{document}

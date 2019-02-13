@@ -10,17 +10,34 @@
 \headcommand {\beamer@framepages {3}{3}}
 \headcommand {\slideentry {1}{0}{2}{4/19}{}{0}}
 \headcommand {\beamer@framepages {4}{19}}
-\headcommand {\slideentry {1}{0}{3}{20/28}{}{0}}
-\headcommand {\beamer@framepages {20}{28}}
-\headcommand {\sectionentry {2}{Some notation and preliminaries}{29}{Some notation and preliminaries}{0}}
-\headcommand {\beamer@sectionpages {3}{28}}
-\headcommand {\beamer@subsectionpages {3}{28}}
-\headcommand {\slideentry {2}{0}{1}{29/29}{}{0}}
-\headcommand {\beamer@framepages {29}{29}}
-\headcommand {\slideentry {2}{0}{2}{30/30}{}{0}}
-\headcommand {\beamer@framepages {30}{30}}
-\headcommand {\beamer@partpages {1}{30}}
-\headcommand {\beamer@subsectionpages {29}{30}}
-\headcommand {\beamer@sectionpages {29}{30}}
-\headcommand {\beamer@documentpages {30}}
-\headcommand {\def \inserttotalframenumber {7}}
+\headcommand {\slideentry {1}{0}{3}{20/30}{}{0}}
+\headcommand {\beamer@framepages {20}{30}}
+\headcommand {\sectionentry {2}{Some notation and preliminaries}{31}{Some notation and preliminaries}{0}}
+\headcommand {\beamer@sectionpages {3}{30}}
+\headcommand {\beamer@subsectionpages {3}{30}}
+\headcommand {\slideentry {2}{0}{1}{31/31}{}{0}}
+\headcommand {\beamer@framepages {31}{31}}
+\headcommand {\slideentry {2}{0}{2}{32/34}{}{0}}
+\headcommand {\beamer@framepages {32}{34}}
+\headcommand {\slideentry {2}{0}{3}{35/43}{}{0}}
+\headcommand {\beamer@framepages {35}{43}}
+\headcommand {\slideentry {2}{0}{4}{44/46}{}{0}}
+\headcommand {\beamer@framepages {44}{46}}
+\headcommand {\slideentry {2}{0}{5}{47/53}{}{0}}
+\headcommand {\beamer@framepages {47}{53}}
+\headcommand {\slideentry {2}{0}{6}{54/56}{}{0}}
+\headcommand {\beamer@framepages {54}{56}}
+\headcommand {\slideentry {2}{0}{7}{57/64}{}{0}}
+\headcommand {\beamer@framepages {57}{64}}
+\headcommand {\slideentry {2}{0}{8}{65/71}{}{0}}
+\headcommand {\beamer@framepages {65}{71}}
+\headcommand {\sectionentry {3}{The general crossed product construction}{72}{The general crossed product construction}{0}}
+\headcommand {\beamer@sectionpages {31}{71}}
+\headcommand {\beamer@subsectionpages {31}{71}}
+\headcommand {\slideentry {3}{0}{1}{72/72}{}{0}}
+\headcommand {\beamer@framepages {72}{72}}
+\headcommand {\beamer@partpages {1}{72}}
+\headcommand {\beamer@subsectionpages {72}{72}}
+\headcommand {\beamer@sectionpages {72}{72}}
+\headcommand {\beamer@documentpages {72}}
+\headcommand {\def \inserttotalframenumber {14}}
