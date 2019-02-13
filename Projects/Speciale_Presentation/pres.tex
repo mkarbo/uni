@@ -1,0 +1,161 @@
+\documentclass[9pt,notheorems,xcolor=pdftex,dvipsnames,table]{beamer}
+\usepackage[utf8]{inputenc}
+%\usefonttheme{serif}
+\usetheme{Madrid}
+\definecolor{light-gray}{gray}{0.95}
+\setbeamercolor{background canvas}{bg=light-gray}
+\linespread{1.2}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{graphicx}
+\usepackage{soul}
+\usepackage{ulem}
+%\setbeamertemplate{sidebar right}{}
+\setbeamertemplate{navigation symbols}{}
+\makeatletter
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertauthor
+  \end{beamercolorbox}%
+   \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
+\newcommand{\dd}{\partial}
+
+%\setbeamertemplate{footline}{%
+%\hfill\usebeamertemplate***{navigation symbols}
+%\hspace{1cm}\insertframenumber{}/\inserttotalframenumber}
+
+\usepackage{calligra}
+
+\usepackage{tikz}
+\usepackage{tikz-cd}
+
+\newcommand{\lv}{\lVert}
+\newcommand{\rv}{\rVert}
+
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Ran}{Ran}
+\DeclareMathOperator{\Prob}{Prob}
+\DeclareMathOperator{\conv}{conv}
+\DeclareMathOperator{\AR}{AR}
+\DeclareMathOperator{\Homeo}{Homeo}
+\newcommand{\acts}[1]{\stackrel{#1}{\curvearrowright}}
+\newcommand{\cc}{C_c}
+\renewcommand{\emph}[1]{{\textit{#1}}}
+\renewcommand{\{}{\left\lbrace}
+\renewcommand{\}}{\right\rbrace}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\Q}{\mathbb{Q}}
+\renewcommand{\H}{\mathcal{H}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Gal}{\mathrm{Gal}}
+\newcommand{\IN}{\mathrm{in}_{\leq}}
+\newcommand{\lex}{\leq_{\mathrm{lex}}}
+\newcommand{\lcm}{\mathrm{lcm}}
+\newcommand{\wdots}[2]{ #1, \ldots ,#2 }
+\renewcommand{\P}{\{ \wdots{p_1}{p_m} \}}
+\newcommand{\K}{K[ \wdots{x_1}{x_n} ]}
+\newcommand{\I}{\langle \wdots{p_1}{p_m}  \rangle}
+
+
+\newtheorem{theorem}{Sætning}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+
+
+\usepackage{array}
+\usepackage{amsthm,amsmath,amssymb}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{url}
+
+\title{Simplicty and uniqueness of trace of group $C^*$-algebras}
+\subtitle{Bachelor thesis defense}
+\author{Malthe Munk Karbo}
+\institute{Advisor: Mikael Rørdam}
+\date{February 3, 2017}
+
+
+\newcommand{\divides}{\bigm|}
+\newcommand{\ndivides}{%
+  \mathrel{\mkern.5mu % small adjustment
+    % superimpose \nmid to \big|
+    \ooalign{\hidewidth$\big|$\hidewidth\cr$\nmid$\cr}%
+  }%
+}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Table of Contents}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{Table of Contents}
+\tableofcontents
+\end{frame}
+
+\section{Introduction, history and motivation}
+\begin{frame}[t]
+\frametitle{What the hell is my thesis about? Crossed products and dynamics}
+\visible<2->{The main subject of this thesis is a theory describing the ideal structure of something called \emph{crossed products} associated to a certain type of dynamical systems.}
+
+\mbox{}
+
+\visible<3->{A natural question is: \textbf{What is the all the fuzz about?}} \visible<4->{The crossed product construction associates to a $C^*$-dynamical system $(A,G,\alpha)$ a $C^*$-algebra $A \rtimes_\alpha G$.}\visible<5->{ This construction is \underline{important}:}
+\begin{itemize}
+	\item<6-> It provides many important and interesting examples of new $C^*$-algebras.
+	\item<7-> It encodes quite a bit of information about both $G$ and $A$ and the action $G \acts \alpha A$.
+	\item<8-> The construction served as a way of answering many questions in the history of operator algebras.
+	\item<9-> Ties together with classic theory of dynamics.
+	\item<10-> Ties together with many areas in $C^*$-theory, including the group $C^*$-algebra construction.
+\end{itemize}
+\visible<11->{\textbf{Okay, but why do we care about the ideal structure of this construction?}}\visible<12->{ Many answers, most notably we want to do \underline{classification.}}
+
+\visible<13->{And the most important question:}\visible<14->{ \textbf{Real world application?}}\visible<15->{\textbf{ (money?)}} \visible<16->{Probably not}
+\end{frame}
+\begin{frame}[t]
+\frametitle{What the hell is my thesis about? Crossed products and dynamics}
+	\visible<2->{To a $C^*$-dynamical system $(A,G,\alpha)$, our goal is to answer the following question:}
+	\begin{center}
+		\visible<3->{\emph{What properties $P$ describes the ideal structure of $A \rtimes_\alpha G$?}}
+	\end{center}
+	\visible<4->{During this talk, the hope is that we will provide some answers to this question.}
+	
+	\mbox{}
+
+	\visible<5->{In particular, we shall cover following cases:}
+	\begin{itemize}
+		\item<6-> $A$ is abelian - this corresponds to a topological dynamical system.
+		\item<7-> $G$ is abelian - by means of group spectra.
+		\item<8-> $A = \C$ - this corresponds to the group $C^*$-algebra constructon.
+	\end{itemize}
+
+	\visible<9->{However, answering this question be quite hard, especially when $G$ is non-discrete!}
+\end{frame}
+\section{Some notation and preliminaries}
+\begin{frame}[t]
+
+\end{frame}
+\end{document}
