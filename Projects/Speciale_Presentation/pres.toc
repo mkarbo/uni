@@ -2,4 +2,7 @@
 \beamer@sectionintoc {1}{Introduction, history and motivation}{3}{0}{1}
 \beamer@sectionintoc {2}{Some notation and preliminaries}{31}{0}{2}
 \beamer@sectionintoc {3}{The general crossed product construction}{73}{0}{3}
-\beamer@sectionintoc {4}{The case of $G$ abelian}{110}{0}{4}
+\beamer@sectionintoc {4}{Simplicity}{110}{0}{4}
+\beamer@sectionintoc {5}{The case of $G$ abelian}{117}{0}{5}
+\beamer@sectionintoc {6}{The case of $A$ abelian and $G$ discrete}{134}{0}{6}
+\beamer@sectionintoc {7}{An application of the theory}{142}{0}{7}

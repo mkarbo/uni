@@ -422,6 +422,25 @@
 		\end{block}
 	}
 \end{frame}
+\section{Simplicity}
+\begin{frame}[t]
+	\visible<2->{Techniques for determining the ideal structure of an abstract $C^*$-algebra can be hard.}\visible<3->{ Further assumptions can help, but might not hold generally}
+	\visible<4->{
+		\begin{block}{Result for general simplicity}
+			Suppose that $A$ is a \underline{unital} $C^*$-algebra equipped with a faithful tracial state $\tau$. If to each $a \in A$ it holds that
+			\begin{align*}
+				\overline{\mathrm{conv}\{ u a u^* \mid u \text{ unitary} \}} \cap \C1 \neq \emptyset,
+			\end{align*}
+		then $A$ is simple
+	\end{block}
+	}
+	\visible<5->{Works for group $C^*$-algebras of discrete groups, but $A \rtimes_\alpha G$ is not unital for non-discrete groups}
+
+	\mbox{}
+
+	\visible<6->{Need a less general approach to answer Question 1.}
+\end{frame}
+
 \section{The case of $G$ abelian}
 \begin{frame}[t]
 	\frametitle{The case of $G$ abelian}
@@ -490,4 +509,1115 @@ Turns out that the Connes spectrum encodes quite a bit of information about the 
 }
 \visible<4->{Was the first result in a series of Olesen and Pedersen about ideals in $A \rtimes_\alpha G$.}\visible<5->{ The spectra helped connecting various theories and techniques together.}
 \end{frame}
+
+\begin{frame}[t]
+	\frametitle{The case of $G$ abelian}
+\visible<1->{
+Turns out that the Connes spectrum encodes quite a bit of information about the dynamical system, the action and the crossed product.
+}
+\visible<1->{
+	\begin{block}{Theorem}
+		Suppose that $G$ is discrete and abelian. Then the following are equivalent;
+		\begin{enumerate}
+			\item $A \rtimes_\alpha G$ is simple (!),
+			\item a. $A$ is $G$-simple and b. $\hat G(\alpha) = \hat G$.
+		\end{enumerate}
+	\end{block}
+}
+\visible<2->{
+	\begin{block}{Theorem}	
+	The following are equivalent
+	\begin{enumerate}
+		\item $\hat G(\alpha) = \hat G$.
+		\item For each $\sigma \in \hat G$ and each non-zero ideal $I \subseteq A \rtimes_\alpha G$ we have $I \cap \hat \alpha_\sigma(I) \neq 0$.
+		\item For each non-zero ideal $I \subseteq A \rtimes_\alpha G$ there is a non-zero $\hat G$-invariant ideal $I_0 \subseteq I$.
+		\item $A$ detects ideals in $A \rtimes_\alpha G$.
+	\end{enumerate}
+	\end{block}
+
+}
+\end{frame}
+
+\section{The case of $A$ abelian and $G$ discrete}
+\begin{frame}[t]
+	\frametitle{The case of $A=C_0(X)$ abelian and $G$ discrete}
+	\visible<2->{Some years after the results of Olesen and Pedersen, a new result emerged;}\visible<3->{ the Archbold-Spielberg result.}
+	\visible<4->{
+		\begin{block}{}
+			There is a one-to-one correspondance
+			\begin{align*}
+				\{\text{Topological dynamical systems}\} &\leftrightarrow \{C^*\text{-dynamical abelian systems} \}\\
+				\{ (X,G)\} &\leftrightarrow \{ (C_0(X),G,\alpha) \}
+			\end{align*}
+\end{block}
+	}
+	\visible<5->{
+		\begin{definition}
+			The action $\alpha$ is topologically free if the set
+			\begin{align*}
+				G_x := \{ t \in G \mid t.x = x\}
+			\end{align*}
+			has dense complement for each $x \in X$
+		\end{definition}
+	}
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{The case of $A=C_0(X)$ abelian and $G$ discrete}
+	\visible<1->{
+		\begin{definition}
+			The action $\alpha$ is topologically free if the set
+			\begin{align*}
+				G_x := \{ t \in G \mid t.x = x\}
+			\end{align*}
+			has dense complement for each $x \in X$
+		\end{definition}
+	}
+	\visible<2->{
+		\begin{block}{Archbold-Spielberg for commutative $C^*$-algebra}
+			The algebra $C_0(X) \rtimes_\alpha G$ is simple if and only if $\alpha $ is topologically free, minimal and $A \rtimes_\alpha G \cong A \rtimes_{\alpha,r}G$ via a regular representation $\tilde \pi \rtimes \lambda$.	
+		\end{block}
+	}
+\end{frame}
+\section{An application of the theory}
+\begin{frame}[t]
+	\frametitle{A recent application ($G$ discrete)}
+	\visible<2->{
+	Recently (= within the last 5 years), the field studying $C^*$-simplicity of groups has seen tremendous development.} \visible<3->{Why?}\visible<4->{ A series of result connecting results about
+	}
+	\begin{itemize}
+		\item<5-> Group $C^*$-algebras,
+		\item<6-> Crossed products,
+		\item<7-> Boundary actions and
+		\item<8-> Topological freeness.
+	\end{itemize}
+	\visible<9->{What happened?}
+	\begin{itemize}
+		\item<10-> Kennedy and Kalantar paper was released
+		\item<11-> Gave new angle on old problem; How do we describe simplicity of $C_r^*(G)$ by algebraic properties of $G$?
+		\item<12->Answered question about implications; \begin{center}
+$C_r^*(G)$ simple $\implies$ $C_r^*(G)$ unique trace $\iff$ trivial amenable radical of $G$.
+\end{center}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{A recent application ($G$ discrete)}
+	\begin{itemize}
+		\item<1->Answered question about implications; \begin{center}
+$C_r^*(G)$ simple $\implies$ $C_r^*(G)$ unique trace $\iff$ trivial amenable radical of $G$.
+\end{center}
+	\end{itemize}
+	\visible<2->{
+		\begin{block}{Kennedy, Kalantar, Breulliard and Ozawa}
+	The following are equivalent:	
+\begin{enumerate}
+		\item $G$ is $C^*$-simple.
+		\item $C(X) \rtimes_r G$ is simple for all $G$-boundaries $X$.
+		\item $C(\dd_F G) \rtimes_r G$ is simple.
+		\item The action $G \acts {} \dd_F G$ is free.
+		\item The action $G \acts {} \dd_F G$ is topologically free.
+		\item There is some $G$-boundary $X$ such that the action is topologically free.
+		\item Whenever $X$ is a compact minimal $G$-space, amenability of $G_x$ for some $x \in X$ implies topological freeness of the action on $X$.
+		\item If $G \acts \alpha A$ with $A$ unital, then $A \rtimes_{\alpha,r} G$ is simple whenever $A$ is $G$-simple.
+	\end{enumerate}
+\end{block}
+	}
+\end{frame}
+\begin{frame}
+Thanks for listening.
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<100->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+\end{frame}
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
+\begin{frame}
+	\visible<10->{\mbox{}}
+\end{frame}
+
+
+
 \end{document}
