@@ -42,7 +42,7 @@
 
 \newcommand{\lv}{\lVert}
 \newcommand{\rv}{\rVert}
-
+\renewcommand{\d}{\mathrm{d}}
 \DeclareMathOperator{\supp}{supp}
 \DeclareMathOperator{\Ext}{Ext}
 \DeclareMathOperator{\Aut}{Aut}
@@ -85,11 +85,11 @@
 \usepackage{multicol}
 \usepackage{url}
 
-\title{Simplicty and uniqueness of trace of group $C^*$-algebras}
-\subtitle{Bachelor thesis defense}
+\title{Simplicty of Crossed Products of $C^*$-algebras}
+\subtitle{Masters thesis defense}
 \author{Malthe Munk Karbo}
-\institute{Advisor: Mikael Rørdam}
-\date{February 3, 2017}
+\institute{Advisor: Søren Eilers}
+\date{February 15, 2019}
 
 
 \newcommand{\divides}{\bigm|}
@@ -263,25 +263,231 @@
 	\visible<8->{When $G$ is discrete and $A$ is unital, it is easy to associate to such a triple a \textbf{nice} new $C^*$-algebra:}
 \end{frame}
 \begin{frame}[t]
-	\frametitle{The perhaps shortest primer on $C^*$-dynamical systems and crossed products}
-	\visible<1->{When $G$ is discrete and $A$ is unital, it is easy to associate to such a triple a \textbf{nice} new $C^*$-algebra:}
+	\frametitle{Cooking with $C^*$-algebras}
 	\visible<2->{
 		\begin{block}{Discrete crossed product cookbook recipe}
 \begin{enumerate}
-	\item<2-> Given $(A,G,\alpha)$ with $G$ discrete and $A$ unital, consider the $*$-algebra 
+	\item<3-> Given $(A,G,\alpha)$ with $G$ discrete and $A$ unital, consider the $*$-algebra 
 			\begin{align*}
 				C_c(G,A) = \{ \sum_{t \in F} a_t \delta_t  \mid F \subseteq G \text{ finite} \}.
 			\end{align*}
-	\item<3-> Pick a covariant representation $(\pi,u,\H)$ of $(A,G,\alpha)$ (they exist!)
-	\item<4-> Define a representation $\pi \rtimes u$ of $C_c(G,A)$ by
+	\item<4-> Pick a covariant representation $(\pi,u,\H)$ of $(A,G,\alpha)$.
+	\item<5-> Define a representation $\pi \rtimes u$ of $C_c(G,A)$ as operators on $\H$ by
 		\begin{align*}
-			\pi \rtimes u \left( \sum a_t \delta_t \right) := \sum \pi(a_t) u_t	
+			\pi \rtimes u \left( \sum a_t \delta_t \right) := \sum \pi(a_t) u_t.
 		\end{align*}
-	\item<5-> Take the closure of $\pi \rtimes u(C_c(G,A))$
+	\item<6-> Take the closure of $\pi \rtimes u(C_c(G,A))$ to obtain a $C^*$-algebra encoding some information about the dynamical system $(A,G,\alpha)$.
 \end{enumerate}
 		\end{block}
 	}
-	\visible<6->{This is the building stone for constructing crossed products.} \visible<7->{Fails when $G$ is non-discrete.}
+	\visible<7->{This is the building stone for constructing crossed products.} \visible<8->{Fails when $G$ is non-discrete.}
 \end{frame}
 \section{The general crossed product construction}
+\begin{frame}
+	\frametitle{An interlude - how do we proceed?}
+	\visible<2->{As previously discussed, we have a goal:}\visible<3->{ To describe the ideal structure of general crossed products by means of certain properties.}
+	
+	\visible<4->{To reach this goal today (we hope), we lay out the following plan for today:}
+	\visible<5->{
+\begin{enumerate}
+	\item\mbox{} \visible<6->{Cover the construction of the crossed product in the general case.}
+	\item\mbox{} \visible<7->{Proceed with describing the ideal structure.}
+	\item\mbox{} \visible<8->{Conclusion.}
+	\item<5-8>
+	\item<5-8>
+	\item<5-8>
+	\item<5-8>
+	\item<5-8>
+	\item<5-8>
+	\item<5-8>
+	\item<5-8>
+	\item<5-8>
+	\item<5-8>
+\end{enumerate}
+	}
+	\visible<9->{}
+\end{frame}
+\begin{frame}[t]
+	\frametitle{The issue with non-discrete groups}
+	\begin{itemize}
+		\item<2-> The goal: Given $(A,G,\alpha)$ and a covariant representation $(\pi,u,\H)$, we wish to construct a represention $\pi \rtimes u$ of $C_c(G,A)$ on $\H$.
+		\item<3-> The model: given $f \in C_c(G,A)$ we want
+		\begin{align*}
+			\pi \rtimes u(f) = \int_G \pi(f(s) u_s \d s \in \mathbb{B}(\H)
+		\end{align*}
+	\item<4-> The issue?\visible<5->{ Is the map $s \mapsto \pi(f(s)) u_s$ continuous? Is this integral well-defined?}
+	\end{itemize}
+	\visible<6->{The solution? Multiplier algebra $M(A)$ of $A$:}
+\end{frame}
+\begin{frame}[t]
+	\frametitle{The issue with non-discrete groups}
+	The solution? The multiplier algebra $M(A)$ of $A$: \visible<2->{We equip it with a topology; the \emph{strict topology} (denoted by $M_s(A)$).}
+	\visible<3->{
+		\begin{block}{Theorem}
+			Let $A$ be a $C^*$-algebra. Then there is a unique linear map $\int \colon C_c(G,M_s(A)) \to M(A)$ such that for all non-degenerate representations $\pi \colon A \to \mathbb{B}(H)$, $\xi, \eta \in \H$ and $f \in C_c(G,M_s(A))$ we have
+			\begin{align*}
+				\langle \overline \pi\left( \int(f) \right) \xi , \eta \rangle = \int_G \langle \overline \pi(f(s)) \xi , \eta \rangle \d s.
+			\end{align*}
+			And we write $\int(f) := \int_G f(s) \d s$.
+		\end{block}
+}
+\end{frame}
+\begin{frame}[t]
+	\frametitle{The issue with non-discrete groups}
+	\begin{itemize}
+		\item<1-> The goal: Given $(A,G,\alpha)$ and a covariant representation $(\pi,u,\H)$, we wish to construct a represention $\pi \rtimes u$ of $C_c(G,A)$ on $\H$.
+		\item<1-> The model: given $f \in C_c(G,A)$ we want
+		\begin{align*}
+			\pi \rtimes u(f) = \int_G \pi(f(s) u_s \d s \in \mathbb{B}(\H)
+		\end{align*}
+	\item<1-> The issue?\visible<1->{ Is the map $s \mapsto \pi(f(s)) u_s$ continuous? Is this integral well-defined?}
+	\end{itemize}
+	\visible<1->{The solution? Multiplier algebra $M(A)$ of $A$:}\visible<2->{
+		\begin{align*}
+			G \ni s \mapsto \pi(f(s)) u_s \in \mathbb{B}(\H)
+		\end{align*}
+		is strictly continuous for all $f \in C_c(G,A)$.
+	}\visible<3->{ We set
+	\begin{align*}
+		\pi \rtimes u(f) := \int(\pi(f)u) = \int_G \pi(f(s)) u_s \d s.
+	\end{align*}	
+}
+\end{frame}
+\begin{frame}[t]
+	\frametitle{The crossed product construction}
+	\visible<2->{
+		\begin{block}{Definition}
+			The \emph{full crossed product} of $(A,G,\alpha)$ is the $C^*$-algebra $A \rtimes_\alpha G$ obtained by taking the closure of $C_c(G,A)$ with respect to the norm
+			\begin{align*}
+				\lv f \rv_u = \sup\{\lv \pi \rtimes u (f)\rv  \mid (\pi,u,\H) \text{ is a (non-degenerate) covariant representation}\}
+			\end{align*}
+		\end{block}
+	}
+	\visible<3->{
+		\begin{block}{Theorem}
+			There is a faithful homomorphism $A \hookrightarrow M(A \rtimes_\alpha G)$ and an injective strictly continuous group homomorphism $U \colon G \to \mathcal{U}(M(A\rtimes_\alpha G))$ such that for $a \in A$, $s,r \in G$ and $f \in C_c(G,A)$
+			\begin{align*}
+				af(s) = a f(s), \quad U_r f(s) = \alpha_r(f(r^{-1}s)) \text{  and  } \alpha_r(a) = U_r a U_r^*.
+			\end{align*}
+		\end{block}
+	}
+	\visible<4->{
+		\begin{block}{Theorem}
+			The diagram commutes for all non-degenerate covariant representations $(\pi,u,\H)$.
+		\end{block}
+	}
+	\visible<5->{Makes up for lack of copies inside $A \rtimes_\alpha G$.}
+\end{frame}
+\begin{frame}[t]
+	\frametitle{The reduced crossed product construction}
+	\visible<2->{The previous construction is the 'large' crossed product. We also have a small one.}
+	\visible<3->{
+		\begin{block}{Definition}
+			Let $(\pi,\H)$ be a faithful representation of $A$. Then we may define a representation $(\tilde \pi, L^2(G, \H)$ by $\tilde \pi(a) \xi(s) = \pi(\alpha_{r^{-1}}(a)) \xi(r)$ for $\xi \in L^2(G,\H)$ and $r \in G$.
+			
+			\visible<4->{ Abusing notation, $\lambda$ will also denote the representation of $G$ on $L^2(G,H)$ given by 
+				\begin{align*}
+				\lambda_s \xi(r) = \xi(s^{-1}r).
+			\end{align*}}
+		\end{block}
+	}
+	\visible<5->{
+		\begin{block}{Lemma}
+			The triple $(\tilde \pi, \lambda, L^2(G,\H))$ is a covariant representation. 
+		\end{block}
+	}
+\end{frame}
+\begin{frame}[t]
+	\frametitle{The reduced crossed product construction}
+	\visible<1->{The previous construction is the 'large' crossed product. We also have a small one.}
+	\visible<1->{
+		\begin{block}{Lemma}
+			The triple $(\tilde \pi, \lambda, L^2(G,\H))$ is a covariant representation.
+		\end{block}
+	}
+	\visible<2->{
+	\begin{block}{Theorem}	
+	If $\tilde \pi$ is faithful (non-degenerate) then $\tilde \pi \rtimes \lambda$ is faithful (non-degenerate).
+	\end{block}
+}
+	\visible<3->{
+		\begin{block}{Definition}
+			The reduced crossed product is the $C^*$-algebra $A \rtimes_{\alpha,r}G$ obtained by taking the closure of $\tilde \pi \rtimes \lambda(C_c(G,A))$ in $\mathbb{B}(L^2(G,\H))$ where $\pi$ is any faithful non-degenerate representation of $A$ on $\H$. 
+\end{block}
+	}
+	\visible<4->{$A \rtimes_{\alpha ,r }G$ is much more concretely defined than $A \rtimes_\alpha G$, and thus easier to work with.}
+	\visible<5->{
+		\begin{block}{Theorem}
+			If $G$ is amenable (=admits left-invariant mean), then $A \rtimes_\alpha G \cong A \rtimes_{\alpha,r}G$	
+		\end{block}
+	}
+\end{frame}
+\section{The case of $G$ abelian}
+\begin{frame}[t]
+	\frametitle{The case of $G$ abelian}
+	\visible<2->{The goal of today was to find properties $P$ answering our initial question.}
+
+	\visible<3->{When $G$ is abelian, we have a rich theory drawing on the strengths of abstract harmonic analysis whenever $G \acts \alpha A$:}
+	\begin{itemize}
+		\item<4-> $\rightsquigarrow \hat G \acts{ \hat{\alpha}} A \rtimes_\alpha G$, $\hat \alpha_\chi(f)(s) = \chi(s)f(s)$.
+		\item<5-> $\rightsquigarrow$ a duality theory called Takai duality;
+		\begin{align*}
+			(A \rtimes_\alpha G, \hat G , \hat \alpha) \cong (A \otimes \mathbb{K}(L^2(G)), \hat G, \alpha \otimes \mathrm{Ad} \rho)
+		\end{align*}
+	\end{itemize}
+	\visible<6->{
+		\begin{block}{Definition}
+			The Arveson spectrum of $\alpha$ is the set
+			\begin{align*}
+				\mathrm{Sp}(\alpha) := \{ \chi \in \hat G \ \mid \ \alpha_f= 0 \text{ implies } \hat f(\chi) = 0 \text{ for all } f \in L^1(G) \}
+			\end{align*}
+\end{block}
+	}
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{The case of $G$ abelian}
+	\begin{itemize}
+		\item	$ G \acts \alpha A\rightsquigarrow \hat G \acts{ \hat{\alpha}} A \rtimes_\alpha G$, $\hat \alpha_\chi(f)(s) = \chi(s)f(s)$.
+	\end{itemize}
+		\begin{block}{Definition}
+			The Arveson spectrum of $\alpha$ is the set
+			\begin{align*}
+				\mathrm{Sp}(\alpha) := \{ \chi \in \hat G \ \mid \ \alpha_f= 0 \text{ implies } \hat f(\chi) = 0 \text{ for all } f \in L^1(G) \}
+			\end{align*}
+\end{block}
+\visible<2->{Here $\alpha _f$ is the weak$^*$-integral of $f$ in $A$}
+\visible<3->{
+	\begin{block}{Definition}
+	The Connes spectrum $\hat G(\alpha)$ of the action $\hat G$ is the set
+	\begin{align*}
+		\bigcap_{D \in H^\alpha(A)}\mathrm{Sp}(\alpha |_D)
+	\end{align*}
+\end{block}
+}
+\end{frame}
+\begin{frame}[t]
+	\frametitle{The case of $G$ abelian}
+\visible<1->{
+	\begin{block}{Definition}
+	The Connes spectrum $\hat G(\alpha)$ of the action $\hat G$ is the set
+	\begin{align*}
+		\bigcap_{D \in H^\alpha(A)}\mathrm{Sp}(\alpha |_D)
+	\end{align*}
+\end{block}
+}
+\visible<2->{
+Turns out that the Connes spectrum encodes quite a bit of information about the dynamical system, the action and the crossed product.
+}
+\visible<3->{
+	\begin{block}{Theorem}
+		Suppose that $G$ is discrete and abelian. Then the following are equivalent;
+		\begin{enumerate}
+			\item $A \rtimes_\alpha G$ is simple (!),
+			\item a. $A$ is $G$-simple and b. $\hat G(\alpha) = \hat G$.
+		\end{enumerate}
+	\end{block}
+}
+\visible<4->{Was the first result in a series of Olesen and Pedersen about ideals in $A \rtimes_\alpha G$.}\visible<5->{ The spectra helped connecting various theories and techniques together.}
+\end{frame}
 \end{document}
