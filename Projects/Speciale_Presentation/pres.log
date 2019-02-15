@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.12.7)  15 FEB 2019 00:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.12.7)  15 FEB 2019 14:02
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1560,11 +1560,7 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 
 ] [53
 
-]
-Overfull \vbox (1.86078pt too high) detected at line 242
- []
-
-[54
+] [54
 
 ]
 Overfull \vbox (1.86078pt too high) detected at line 242
@@ -1578,7 +1574,11 @@ Overfull \vbox (1.86078pt too high) detected at line 242
 
 [56
 
-] [57
+]
+Overfull \vbox (1.86078pt too high) detected at line 242
+ []
+
+[57
 
 ] [58
 
@@ -1606,14 +1606,14 @@ Overfull \vbox (1.86078pt too high) detected at line 242
 
 ] [70
 
+] [71
+
 ]
-[71
+[72
 
-] [72
+] [73
 
-] (./pres.toc) [73
-
-] [74
+] (./pres.toc) [74
 
 ] [75
 
@@ -1631,10 +1631,10 @@ Overfull \vbox (1.86078pt too high) detected at line 242
 
 ] [82
 
-]
-[83
+] [83
 
-] [84
+]
+[84
 
 ] [85
 
@@ -1662,10 +1662,10 @@ Overfull \vbox (1.86078pt too high) detected at line 242
 
 ] [97
 
-]
-[98
+] [98
 
-] [99
+]
+[99
 
 ] [100
 
@@ -1687,10 +1687,10 @@ Overfull \vbox (1.86078pt too high) detected at line 242
 
 ] [109
 
-]
-(./pres.toc) [110
+] [110
 
-] [111
+]
+(./pres.toc) [111
 
 ] [112
 
@@ -1702,6 +1702,8 @@ Overfull \vbox (1.86078pt too high) detected at line 242
 
 ] [116
 
+] [117
+
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
@@ -1711,9 +1713,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 444.
 
-(./pres.toc) [117
-
-] [118
+(./pres.toc) [118
 
 ] [119
 
@@ -1731,10 +1731,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [126
 
-]
-[127
+] [127
 
-] [128
+]
+[128
 
 ] [129
 
@@ -1746,6 +1746,8 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [133
 
+] [134
+
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
@@ -1763,9 +1765,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 541.
 
-(./pres.toc) [134
-
-] [135
+(./pres.toc) [135
 
 ] [136
 
@@ -1779,10 +1779,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [141
 
-] (./pres.toc)
-[142
+] [142
 
-] [143
+] (./pres.toc)
+[143
 
 ] [144
 
@@ -1804,10 +1804,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [153
 
-]
-[154
+] [154
 
-] [155
+]
+[155
 
 ] [156
 
@@ -1829,10 +1829,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [165
 
-]
-[166
+] [166
 
-] [167
+]
+[167
 
 ] [168
 
@@ -1854,10 +1854,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [177
 
-]
-[178
+] [178
 
-] [179
+]
+[179
 
 ] [180
 
@@ -1879,10 +1879,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [189
 
-]
-[190
+] [190
 
-] [191
+]
+[191
 
 ] [192
 
@@ -1904,10 +1904,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [201
 
-]
-[202
+] [202
 
-] [203
+]
+[203
 
 ] [204
 
@@ -1929,10 +1929,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [213
 
-]
-[214
+] [214
 
-] [215
+]
+[215
 
 ] [216
 
@@ -1954,10 +1954,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [225
 
-]
-[226
+] [226
 
-] [227
+]
+[227
 
 ] [228
 
@@ -1979,10 +1979,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [237
 
-]
-[238
+] [238
 
-] [239
+]
+[239
 
 ] [240
 
@@ -2004,10 +2004,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [249
 
-]
-[250
+] [250
 
-] [251
+]
+[251
 
 ] [252
 
@@ -2029,10 +2029,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [261
 
-]
-[262
+] [262
 
-] [263
+]
+[263
 
 ] [264
 
@@ -2054,10 +2054,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [273
 
-]
-[274
+] [274
 
-] [275
+]
+[275
 
 ] [276
 
@@ -2079,10 +2079,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [285
 
-]
-[286
+] [286
 
-] [287
+]
+[287
 
 ] [288
 
@@ -2104,10 +2104,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [297
 
-]
-[298
+] [298
 
-] [299
+]
+[299
 
 ] [300
 
@@ -2129,10 +2129,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [309
 
-]
-[310
+] [310
 
-] [311
+]
+[311
 
 ] [312
 
@@ -2154,10 +2154,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [321
 
-]
-[322
+] [322
 
-] [323
+]
+[323
 
 ] [324
 
@@ -2179,10 +2179,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [333
 
-]
-[334
+] [334
 
-] [335
+]
+[335
 
 ] [336
 
@@ -2204,10 +2204,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [345
 
-]
-[346
+] [346
 
-] [347
+]
+[347
 
 ] [348
 
@@ -2229,10 +2229,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [357
 
-]
-[358
+] [358
 
-] [359
+]
+[359
 
 ] [360
 
@@ -2254,10 +2254,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [369
 
-]
-[370
+] [370
 
-] [371
+]
+[371
 
 ] [372
 
@@ -2279,10 +2279,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [381
 
-]
-[382
+] [382
 
-] [383
+]
+[383
 
 ] [384
 
@@ -2304,10 +2304,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [393
 
-]
-[394
+] [394
 
-] [395
+]
+[395
 
 ] [396
 
@@ -2329,10 +2329,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [405
 
-]
-[406
+] [406
 
-] [407
+]
+[407
 
 ] [408
 
@@ -2354,10 +2354,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [417
 
-]
-[418
+] [418
 
-] [419
+]
+[419
 
 ] [420
 
@@ -2379,10 +2379,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [429
 
-]
-[430
+] [430
 
-] [431
+]
+[431
 
 ] [432
 
@@ -2404,10 +2404,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [441
 
-]
-[442
+] [442
 
-] [443
+]
+[443
 
 ] [444
 
@@ -2429,10 +2429,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [453
 
-]
-[454
+] [454
 
-] [455
+]
+[455
 
 ] [456
 
@@ -2454,10 +2454,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [465
 
-]
-[466
+] [466
 
-] [467
+]
+[467
 
 ] [468
 
@@ -2479,10 +2479,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [477
 
-]
-[478
+] [478
 
-] [479
+]
+[479
 
 ] [480
 
@@ -2504,10 +2504,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [489
 
-]
-[490
+] [490
 
-] [491
+]
+[491
 
 ] [492
 
@@ -2529,10 +2529,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [501
 
-]
-[502
+] [502
 
-] [503
+]
+[503
 
 ] [504
 
@@ -2554,10 +2554,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [513
 
-]
-[514
+] [514
 
-] [515
+]
+[515
 
 ] [516
 
@@ -2579,10 +2579,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [525
 
-]
-[526
+] [526
 
-] [527
+]
+[527
 
 ] [528
 
@@ -2604,10 +2604,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [537
 
-]
-[538
+] [538
 
-] [539
+]
+[539
 
 ] [540
 
@@ -2629,10 +2629,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [549
 
-]
-[550
+] [550
 
-] [551
+]
+[551
 
 ] [552
 
@@ -2654,10 +2654,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [561
 
-]
-[562
+] [562
 
-] [563
+]
+[563
 
 ] [564
 
@@ -2679,10 +2679,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [573
 
-]
-[574
+] [574
 
-] [575
+]
+[575
 
 ] [576
 
@@ -2704,10 +2704,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [585
 
-]
-[586
+] [586
 
-] [587
+]
+[587
 
 ] [588
 
@@ -2729,10 +2729,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [597
 
-]
-[598
+] [598
 
-] [599
+]
+[599
 
 ] [600
 
@@ -2754,10 +2754,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [609
 
-]
-[610
+] [610
 
-] [611
+]
+[611
 
 ] [612
 
@@ -2779,10 +2779,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [621
 
-]
-[622
+] [622
 
-] [623
+]
+[623
 
 ] [624
 
@@ -2804,10 +2804,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [633
 
-]
-[634
+] [634
 
-] [635
+]
+[635
 
 ] [636
 
@@ -2829,10 +2829,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [645
 
-]
-[646
+] [646
 
-] [647
+]
+[647
 
 ] [648
 
@@ -2854,10 +2854,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [657
 
-]
-[658
+] [658
 
-] [659
+]
+[659
 
 ] [660
 
@@ -2879,10 +2879,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [669
 
-]
-[670
+] [670
 
-] [671
+]
+[671
 
 ] [672
 
@@ -2904,10 +2904,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [681
 
-]
-[682
+] [682
 
-] [683
+]
+[683
 
 ] [684
 
@@ -2929,10 +2929,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [693
 
-]
-[694
+] [694
 
-] [695
+]
+[695
 
 ] [696
 
@@ -2954,10 +2954,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [705
 
-]
-[706
+] [706
 
-] [707
+]
+[707
 
 ] [708
 
@@ -2979,10 +2979,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [717
 
-]
-[718
+] [718
 
-] [719
+]
+[719
 
 ] [720
 
@@ -3004,10 +3004,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [729
 
-]
-[730
+] [730
 
-] [731
+]
+[731
 
 ] [732
 
@@ -3029,10 +3029,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [741
 
-]
-[742
+] [742
 
-] [743
+]
+[743
 
 ] [744
 
@@ -3054,10 +3054,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [753
 
-]
-[754
+] [754
 
-] [755
+]
+[755
 
 ] [756
 
@@ -3079,10 +3079,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [765
 
-]
-[766
+] [766
 
-] [767
+]
+[767
 
 ] [768
 
@@ -3104,10 +3104,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [777
 
-]
-[778
+] [778
 
-] [779
+]
+[779
 
 ] [780
 
@@ -3129,10 +3129,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [789
 
-]
-[790
+] [790
 
-] [791
+]
+[791
 
 ] [792
 
@@ -3154,10 +3154,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [801
 
-]
-[802
+] [802
 
-] [803
+]
+[803
 
 ] [804
 
@@ -3179,10 +3179,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [813
 
-]
-[814
+] [814
 
-] [815
+]
+[815
 
 ] [816
 
@@ -3204,10 +3204,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [825
 
-]
-[826
+] [826
 
-] [827
+]
+[827
 
 ] [828
 
@@ -3229,10 +3229,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [837
 
-]
-[838
+] [838
 
-] [839
+]
+[839
 
 ] [840
 
@@ -3254,10 +3254,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [849
 
-]
-[850
+] [850
 
-] [851
+]
+[851
 
 ] [852
 
@@ -3279,10 +3279,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [861
 
-]
-[862
+] [862
 
-] [863
+]
+[863
 
 ] [864
 
@@ -3304,10 +3304,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [873
 
-]
-[874
+] [874
 
-] [875
+]
+[875
 
 ] [876
 
@@ -3329,10 +3329,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [885
 
-]
-[886
+] [886
 
-] [887
+]
+[887
 
 ] [888
 
@@ -3354,10 +3354,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [897
 
-]
-[898
+] [898
 
-] [899
+]
+[899
 
 ] [900
 
@@ -3379,10 +3379,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [909
 
-]
-[910
+] [910
 
-] [911
+]
+[911
 
 ] [912
 
@@ -3404,10 +3404,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [921
 
-]
-[922
+] [922
 
-] [923
+]
+[923
 
 ] [924
 
@@ -3429,10 +3429,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [933
 
-]
-[934
+] [934
 
-] [935
+]
+[935
 
 ] [936
 
@@ -3454,10 +3454,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [945
 
-]
-[946
+] [946
 
-] [947
+]
+[947
 
 ] [948
 
@@ -3479,10 +3479,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [957
 
-]
-[958
+] [958
 
-] [959
+]
+[959
 
 ] [960
 
@@ -3504,10 +3504,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [969
 
-]
-[970
+] [970
 
-] [971
+]
+[971
 
 ] [972
 
@@ -3529,10 +3529,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [981
 
-]
-[982
+] [982
 
-] [983
+]
+[983
 
 ] [984
 
@@ -3554,10 +3554,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [993
 
-]
-[994
+] [994
 
-] [995
+]
+[995
 
 ] [996
 
@@ -3899,6 +3899,8 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [1158
 
+] [1159
+
 ]
 \tf@nav=\write6
 \openout6 = `pres.nav'.
@@ -3926,9 +3928,9 @@ LaTeX Font Warning: Size substitutions with differences
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1623.
  ) 
 Here is how much of TeX's memory you used:
- 24301 strings out of 493029
- 461206 string characters out of 6136234
- 534411 words of memory out of 5000000
+ 24303 strings out of 493029
+ 461229 string characters out of 6136234
+ 534418 words of memory out of 5000000
  24970 multiletter control sequences out of 15000+600000
  17499 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -3952,10 +3954,10 @@ xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on pres.pdf (1158 pages, 1019969 bytes).
+Output written on pres.pdf (1159 pages, 1021450 bytes).
 PDF statistics:
- 6743 PDF objects out of 7423 (max. 8388607)
- 5494 compressed objects within 55 object streams
- 2324 named destinations out of 2487 (max. 500000)
+ 6749 PDF objects out of 7423 (max. 8388607)
+ 5499 compressed objects within 55 object streams
+ 2326 named destinations out of 2487 (max. 500000)
  147 words of extra memory for PDF output out of 10000 (max. 10000000)
 
